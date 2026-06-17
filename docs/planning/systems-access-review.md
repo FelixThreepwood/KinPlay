@@ -28,7 +28,10 @@
 
 3. Physical Android device testing
    - Required before calling the demo usable.
-   - Need to verify ADB, USB debugging, install permissions, and screen-size behavior.
+   - Review status: user-side device handoff path accepted on 2026-06-17.
+   - PM decision: Android device access is complete for MVP workflow because the user will transfer APK artifacts from the CyberForgeX SMB share to physical Android devices for testing.
+   - Artifact drop folder: `/mnt/cyberforgex-torrents/KinPlay/apk-drops`.
+   - Future build tasks should place APKs or similar installable artifacts in that folder for user pickup.
 
 4. Content schema and seed content workflow
    - Required now because KinPlay is content-led.
