@@ -145,7 +145,17 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
             Text("Guided family play", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
             Text("Short, safe, parent-led activities for kids ages 2–8. Offline-first, no accounts, no ads, and no data collection in the MVP.")
             SeedCard(contentPack)
-            HomeButton("Quick Play", "Start a short no-prep activity") { navController.navigate(Routes.QuickPlay) }
+            val favoriteItems = contentPack.items.filter { it.id in favoriteIds }
+            val recentItems = recentIds.mapNotNull { id -> contentPack.items.firstOrNull { it.id == id } }
+            if (favoriteItems.isNotEmpty()) {
+                Text("Favorites", fontWeight = FontWeight.Bold)
+                favoriteItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
+            }
+            if (recentItems.isNotEmpty()) {
+                Text("Recently played", fontWeight = FontWeight.Bold)
+                recentItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
+            }
+            HomeButton("Pick For Me", "Randomly choose a quick local activity") { navController.navigate(Routes.QuickPlay) }
             HomeButton("Pick a Game", "Browse activity cards") { navController.navigate(Routes.PickGame) }
             HomeButton("Mad Libs", "Fill prompts and reveal a silly story") { navController.navigate(Routes.MadLibs) }
             HomeButton("Calm Down", "Quiet activities for transitions") { navController.navigate(Routes.CalmDown) }
@@ -203,7 +213,7 @@ fun QuickPlayScreen(contentPack: ContentPack, navController: NavController) {
             if (quickPick == null) {
                 Text("No eligible Quick Play item found yet.")
             } else {
-                ContentCard(quickPick, navController)
+                ContentCard(quickPick, emptySet(), navController)
                 Button(onClick = { navController.navigate(Routes.detail(quickPick.id)) }) { Text("Start this activity") }
             }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
@@ -213,24 +223,24 @@ fun QuickPlayScreen(contentPack: ContentPack, navController: NavController) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContentListScreen(title: String, items: List<KinPlayItem>, navController: NavController) {
+fun ContentListScreen(title: String, items: List<KinPlayItem>, favoriteIds: Set<String>, navController: NavController) {
     Scaffold(topBar = { TopAppBar(title = { Text(title) }) }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
             Text(title, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
             if (items.isEmpty()) {
                 Text("No matching local content found.")
             }
-            items.forEach { item -> ContentCard(item, navController) }
+            items.forEach { item -> ContentCard(item, favoriteIds, navController) }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
         }
     }
 }
 
 @Composable
-fun ContentCard(item: KinPlayItem, navController: NavController) {
+fun ContentCard(item: KinPlayItem, favoriteIds: Set<String>, navController: NavController) {
     Card(colors = CardDefaults.cardColors(containerColor = Color(0xFFFFF0C2)), modifier = Modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(item.title, fontWeight = FontWeight.Bold)
+            Text("${if (item.id in favoriteIds) "★ " else ""}${item.title}", fontWeight = FontWeight.Bold)
             Text(item.summary)
             Text("Ages ${item.minAge}–${item.maxAge} • ${item.durationMinutes} min • ${item.energyLevel}")
             Text("Materials: ${if (item.materials.isEmpty()) "none" else item.materials.joinToString()}")
@@ -245,7 +255,13 @@ fun ContentCard(item: KinPlayItem, navController: NavController) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ActivityDetailScreen(item: KinPlayItem?, navController: NavController) {
+fun ActivityDetailScreen(
+    item: KinPlayItem?,
+    isFavorite: Boolean,
+    onToggleFavorite: () -> Unit,
+    onMarkPlayed: () -> Unit,
+    navController: NavController,
+) {
     Scaffold(topBar = { TopAppBar(title = { Text(item?.title ?: "Activity") }) }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
             if (item == null) {
@@ -262,6 +278,8 @@ fun ActivityDetailScreen(item: KinPlayItem?, navController: NavController) {
                     Text("Parent note", fontWeight = FontWeight.Bold)
                     Text(item.parentNotes)
                 }
+                Button(onClick = onMarkPlayed) { Text("Mark played") }
+                OutlinedButton(onClick = onToggleFavorite) { Text(if (isFavorite) "Remove favorite" else "Add favorite") }
                 SectionList("Replay variations", item.variations)
                 Text("Safety tags: ${item.safetyTags.joinToString()}")
             }
@@ -348,15 +366,12 @@ data class ContentPack(
     val title: String = "Loading seed pack...",
     val items: List<KinPlayItem> = emptyList(),
 ) {
-    fun activeItems() = items.filter { it.status == "active" }
+    fun activeItems() = items.activeContent()
     fun activities() = activeItems().filter { it.type == "activity" }
     fun madLibs() = activeItems().filter { it.type == "mad_libs" }
-    fun pickGameItems() = activeItems().filter { "pick_a_game" in it.modes && it.type != "mad_libs" }
+    fun pickGameItems() = items.itemsForMode("pick_a_game").filter { it.type != "mad_libs" }
     fun calmDownItems() = activeItems().filter { "calm_down" in it.modes || "calming" in it.safetyTags }
-    fun quickPlayPick(): KinPlayItem? = activeItems()
-        .filter { "quick_play" in it.modes && it.type != "mad_libs" }
-        .sortedWith(compareBy<KinPlayItem> { it.materials.isNotEmpty() }.thenBy { it.durationMinutes }.thenBy { it.title })
-        .firstOrNull()
+    fun quickPlayPick(): KinPlayItem? = items.pickForMode("quick_play")
 
     companion object {
         fun fromJson(root: JSONObject): ContentPack {
@@ -380,16 +395,16 @@ data class KinPlayItem(
     val maxAge: Int,
     val durationMinutes: Int,
     val energyLevel: String,
-    val materials: List<String>,
-    val safetyTags: List<String>,
-    val setupSteps: List<String>,
-    val playSteps: List<String>,
-    val parentNotes: String,
-    val variations: List<String>,
-    val promptText: String,
-    val followUps: List<String>,
-    val madLibsFields: List<MadLibField>,
-    val madLibsTemplate: String,
+    val materials: List<String> = emptyList(),
+    val safetyTags: List<String> = emptyList(),
+    val setupSteps: List<String> = emptyList(),
+    val playSteps: List<String> = emptyList(),
+    val parentNotes: String = "",
+    val variations: List<String> = emptyList(),
+    val promptText: String = "",
+    val followUps: List<String> = emptyList(),
+    val madLibsFields: List<MadLibField> = emptyList(),
+    val madLibsTemplate: String = "",
 ) {
     fun renderMadLib(answers: Map<String, String>): String {
         var result = madLibsTemplate
@@ -441,6 +456,36 @@ data class MadLibField(
             example = json.optString("example", ""),
         )
     }
+}
+
+fun List<KinPlayItem>.activeContent(): List<KinPlayItem> = filter { it.status == "active" }
+
+fun List<KinPlayItem>.itemsForMode(mode: String): List<KinPlayItem> = activeContent().filter { mode in it.modes }
+
+fun List<KinPlayItem>.pickForMode(mode: String, seed: Long = System.currentTimeMillis()): KinPlayItem? {
+    val eligible = itemsForMode(mode).filter { it.type != "mad_libs" }
+    if (eligible.isEmpty()) return null
+    return eligible[Random(seed).nextInt(eligible.size)]
+}
+
+fun List<String>.withRecentFirst(id: String, limit: Int = 10): List<String> =
+    (listOf(id) + filterNot { it == id }).take(limit)
+
+fun Set<String>.toggleFavorite(id: String): Set<String> =
+    if (id in this) this - id else this + id
+
+private fun loadIdSet(context: Context, key: String): Set<String> =
+    context.getSharedPreferences("kinplay", Context.MODE_PRIVATE).getStringSet(key, emptySet()).orEmpty()
+
+private fun saveIdSet(context: Context, key: String, ids: Set<String>) {
+    context.getSharedPreferences("kinplay", Context.MODE_PRIVATE).edit().putStringSet(key, ids).apply()
+}
+
+private fun loadIdList(context: Context, key: String): List<String> =
+    context.getSharedPreferences("kinplay", Context.MODE_PRIVATE).getString(key, "").orEmpty().split(",").filter { it.isNotBlank() }
+
+private fun saveIdList(context: Context, key: String, ids: List<String>) {
+    context.getSharedPreferences("kinplay", Context.MODE_PRIVATE).edit().putString(key, ids.joinToString(",")).apply()
 }
 
 fun JSONObject.stringList(name: String): List<String> {
