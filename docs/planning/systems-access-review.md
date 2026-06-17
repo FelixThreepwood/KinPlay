@@ -46,6 +46,8 @@
 5. Kanban tracking
    - Recommended now because the project has multiple phases, dependencies, and human review gates.
    - Board created: `kinplay`.
+   - Review status: complete for MVP on 2026-06-17.
+   - PM decision: keep Hermes Kanban as the working project board. Blocked states are intentional human gates; GitHub Issues/Projects remain deferred until MVP scope stabilizes.
 
 ## Beneficial soon, not MVP-blocking
 
