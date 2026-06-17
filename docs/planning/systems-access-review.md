@@ -36,6 +36,12 @@
 4. Content schema and seed content workflow
    - Required now because KinPlay is content-led.
    - Use JSON assets first; avoid backend and runtime AI in MVP.
+   - Review status: complete for MVP on 2026-06-17.
+   - MVP spec: `docs/product/mvp-spec.md`.
+   - Content workflow: `docs/content/content-workflow.md`.
+   - JSON schema: `content/kinplay-content.schema.json`.
+   - Seed pack: `content/seed/kinplay_seed_v1.json`, currently 12 items: 7 activities including 2 calm-down cards, 3 Mad Libs templates, and 2 prompt cards.
+   - Validation: seed pack passes JSON Schema Draft 2020-12 validation.
 
 5. Kanban tracking
    - Recommended now because the project has multiple phases, dependencies, and human review gates.

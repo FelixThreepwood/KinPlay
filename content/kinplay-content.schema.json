@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FelixThreepwood/KinPlay/content/kinplay-content.schema.json",
+  "title": "KinPlay Content Pack",
+  "type": "object",
+  "required": ["schemaVersion", "packId", "title", "locale", "items"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "packId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$" },
+    "title": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "locale": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$" },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/contentItem" }
+    }
+  },
+  "$defs": {
+    "contentItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "status",
+        "title",
+        "summary",
+        "modes",
+        "ageTags",
+        "minAge",
+        "maxAge",
+        "durationMinutes",
+        "energyLevel",
+        "materials",
+        "safetyTags"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,80}$" },
+        "type": { "enum": ["activity", "mad_libs", "prompt"] },
+        "status": { "enum": ["active", "draft", "retired"] },
+        "title": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "summary": { "type": "string", "minLength": 1, "maxLength": 220 },
+        "modes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["quick_play", "pick_a_game", "mad_libs", "calm_down"] }
+        },
+        "ageTags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["age_2_3", "age_4_5", "age_6_8", "all_ages"] }
+        },
+        "minAge": { "type": "integer", "minimum": 2, "maximum": 8 },
+        "maxAge": { "type": "integer", "minimum": 2, "maximum": 8 },
+        "durationMinutes": { "type": "integer", "minimum": 1, "maximum": 30 },
+        "energyLevel": { "enum": ["calm", "low", "medium", "high"] },
+        "materials": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 60 }
+        },
+        "safetyTags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "parent_supervision",
+              "movement",
+              "quiet",
+              "no_materials",
+              "small_objects",
+              "food_optional",
+              "outdoor_optional",
+              "reading_help",
+              "sibling_friendly",
+              "calming"
+            ]
+          }
+        },
+        "setupSteps": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 180 }
+        },
+        "playSteps": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+        },
+        "parentNotes": { "type": "string", "maxLength": 500 },
+        "variations": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 180 }
+        },
+        "promptText": { "type": "string", "maxLength": 600 },
+        "followUps": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 180 }
+        },
+        "madLibs": { "$ref": "#/$defs/madLibsTemplate" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "activity" } } },
+          "then": { "required": ["setupSteps", "playSteps"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "prompt" } } },
+          "then": { "required": ["promptText"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "mad_libs" } } },
+          "then": { "required": ["madLibs"] }
+        }
+      ]
+    },
+    "madLibsTemplate": {
+      "type": "object",
+      "required": ["fields", "template"],
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/madLibField" }
+        },
+        "template": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "readAloudNote": { "type": "string", "maxLength": 240 }
+      }
+    },
+    "madLibField": {
+      "type": "object",
+      "required": ["key", "label", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "key": { "type": "string", "pattern": "^[a-z][a-z0-9_]{1,40}$" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "kind": {
+          "enum": ["noun", "verb", "adjective", "adverb", "place", "animal", "person_name", "sound", "food", "number", "color", "object"]
+        },
+        "example": { "type": "string", "maxLength": 60 }
+      }
+    }
+  }
+}
