@@ -13,10 +13,18 @@
 
 1. GitHub repository and commits
    - Required now for source control, rollback, and handoff.
+   - Review status: confirmed ready for MVP on 2026-06-17.
+   - Current repo: `FelixThreepwood/KinPlay` on GitHub, default branch `main`, public visibility, Hermione has `ADMIN` access via `gh`.
+   - PM decision: use GitHub as the canonical source of truth for code and durable checkpoints; keep Hermes Kanban as the working execution board for now. Do not create a GitHub Projects layer until MVP scope stabilizes.
 
 2. Android SDK / JDK / Gradle wrapper
    - Required now for building APKs.
    - Keep SDK/JDK user-local unless system-wide need appears.
+   - Review status: confirmed ready for MVP on 2026-06-17 after remediation.
+   - JDK: Temurin OpenJDK 17.0.19 installed user-local at `~/.local/jdks/temurin-17`.
+   - Android SDK: installed user-local at `~/Android/Sdk` with `platforms;android-35`, `build-tools;35.0.0`, and `platform-tools` / ADB 37.0.0.
+   - Gradle wrapper: generated and verified with Gradle 8.13 via `./gradlew tasks --no-daemon`.
+   - Project env helper: `scripts/android-env.sh` exports `JAVA_HOME`, `ANDROID_HOME`, `ANDROID_SDK_ROOT`, and Android SDK tools on `PATH`.
 
 3. Physical Android device testing
    - Required before calling the demo usable.
