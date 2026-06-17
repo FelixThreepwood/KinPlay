@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "packId": "kinplay_seed_v1",
+  "title": "KinPlay Seed Pack v1",
+  "locale": "en-US",
+  "items": [
+    {
+      "id": "animal_mirror_parade",
+      "type": "activity",
+      "status": "active",
+      "title": "Animal Mirror Parade",
+      "summary": "Take turns leading silly animal movements while everyone mirrors the leader.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "medium",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Clear a small safe space for walking and wiggling."
+      ],
+      "playSteps": [
+        "Choose one leader.",
+        "The leader moves like an animal while everyone copies.",
+        "Switch leaders after three animals."
+      ],
+      "parentNotes": "Use gentle movements for younger children and avoid jumping near furniture.",
+      "variations": [
+        "Whisper the animal for a quiet round.",
+        "Let each child invent a brand-new animal."
+      ]
+    },
+    {
+      "id": "couch_cushion_quest",
+      "type": "activity",
+      "status": "active",
+      "title": "Couch Cushion Quest",
+      "summary": "A tiny indoor scavenger hunt using safe household clues.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 10,
+      "energyLevel": "low",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose three safe objects in the room."
+      ],
+      "playSteps": [
+        "Give one clue at a time.",
+        "Children point to or fetch the matching object.",
+        "Celebrate each find with a silly cheer."
+      ],
+      "parentNotes": "Keep objects visible for younger children.",
+      "variations": [
+        "Use colors only.",
+        "Use rhyming clues for older children."
+      ]
+    },
+    {
+      "id": "story_spark_circle",
+      "type": "activity",
+      "status": "active",
+      "title": "Story Spark Circle",
+      "summary": "Build a family story one sentence at a time.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 12,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Sit where everyone can hear each other."
+      ],
+      "playSteps": [
+        "Parent starts with: Once there was a tiny dragon who loved pancakes.",
+        "Each person adds one sentence.",
+        "End when everyone has added three turns."
+      ],
+      "parentNotes": "Younger kids can add one word or sound instead of a full sentence.",
+      "variations": [
+        "Make the hero a family pet.",
+        "Set the story at bedtime, the park, or a castle."
+      ]
+    },
+    {
+      "id": "freeze_dance_statues",
+      "type": "activity",
+      "status": "active",
+      "title": "Freeze Dance Statues",
+      "summary": "Dance, freeze, and pose as funny statues.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 7,
+      "energyLevel": "high",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Clear a safe dance space."
+      ],
+      "playSteps": [
+        "Parent claps a rhythm or plays family-approved music outside the app.",
+        "Everyone dances.",
+        "When the parent says freeze, everyone becomes a statue."
+      ],
+      "parentNotes": "Keep movement gentle and stop before children get too wild.",
+      "variations": [
+        "Freeze as animals.",
+        "Freeze as superheroes."
+      ]
+    },
+    {
+      "id": "pillow_boat_adventure",
+      "type": "activity",
+      "status": "active",
+      "title": "Pillow Boat Adventure",
+      "summary": "Pretend pillows are boats crossing a living-room sea.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_2_3",
+        "age_4_5"
+      ],
+      "minAge": 2,
+      "maxAge": 5,
+      "durationMinutes": 10,
+      "energyLevel": "medium",
+      "materials": [
+        "pillows"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Place pillows on the floor with walking space between them."
+      ],
+      "playSteps": [
+        "Pretend the floor is water.",
+        "Step from boat to boat slowly.",
+        "Name friendly sea creatures you see."
+      ],
+      "parentNotes": "No jumping. Keep pillows flat and stable.",
+      "variations": [
+        "Make it a quiet tiptoe adventure.",
+        "Add a stuffed animal passenger."
+      ]
+    },
+    {
+      "id": "calm_cloud_breaths",
+      "type": "activity",
+      "status": "active",
+      "title": "Calm Cloud Breaths",
+      "summary": "A short breathing reset using imaginary clouds.",
+      "modes": [
+        "calm_down"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 3,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "calming",
+        "parent_supervision"
+      ],
+      "setupSteps": [
+        "Sit or stand comfortably."
+      ],
+      "playSteps": [
+        "Pretend to hold a fluffy cloud.",
+        "Smell the cloud slowly.",
+        "Blow it gently across the sky.",
+        "Repeat three times."
+      ],
+      "parentNotes": "Keep the tone soft and brief.",
+      "variations": [
+        "Use pretend flower breaths.",
+        "Use pretend cocoa breaths."
+      ]
+    },
+    {
+      "id": "quiet_color_hunt",
+      "type": "activity",
+      "status": "active",
+      "title": "Quiet Color Hunt",
+      "summary": "Find colors silently and point to each one.",
+      "modes": [
+        "calm_down",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 5,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "calming",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose a room or sitting spot."
+      ],
+      "playSteps": [
+        "Parent names a color softly.",
+        "Children silently point to something with that color.",
+        "Repeat with five colors."
+      ],
+      "parentNotes": "Good for waiting rooms or bedtime transitions.",
+      "variations": [
+        "Use shapes instead of colors."
+      ]
+    },
+    {
+      "id": "moon_pancake_mission",
+      "type": "mad_libs",
+      "status": "active",
+      "title": "Moon Pancake Mission",
+      "summary": "A silly space breakfast story.",
+      "modes": [
+        "mad_libs"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "madLibs": {
+        "fields": [
+          {
+            "key": "name",
+            "label": "A name",
+            "kind": "person_name",
+            "example": "Jethro"
+          },
+          {
+            "key": "adjective",
+            "label": "An adjective",
+            "kind": "adjective",
+            "example": "wiggly"
+          },
+          {
+            "key": "food",
+            "label": "A food",
+            "kind": "food",
+            "example": "pancakes"
+          },
+          {
+            "key": "animal",
+            "label": "An animal",
+            "kind": "animal",
+            "example": "llama"
+          },
+          {
+            "key": "sound",
+            "label": "A funny sound",
+            "kind": "sound",
+            "example": "boing"
+          }
+        ],
+        "template": "Captain {name} flew a {adjective} rocket to the moon to deliver {food}. When the hatch opened, a moon {animal} shouted {sound}! Everyone laughed and shared breakfast among the stars.",
+        "readAloudNote": "Read with a dramatic countdown."
+      }
+    },
+    {
+      "id": "dragon_laundry_day",
+      "type": "mad_libs",
+      "status": "active",
+      "title": "Dragon Laundry Day",
+      "summary": "A dragon tries to help with chores.",
+      "modes": [
+        "mad_libs"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "madLibs": {
+        "fields": [
+          {
+            "key": "color",
+            "label": "A color",
+            "kind": "color",
+            "example": "purple"
+          },
+          {
+            "key": "object",
+            "label": "An object",
+            "kind": "object",
+            "example": "sock"
+          },
+          {
+            "key": "verb",
+            "label": "An action word",
+            "kind": "verb",
+            "example": "twirl"
+          },
+          {
+            "key": "number",
+            "label": "A number",
+            "kind": "number",
+            "example": "seven"
+          }
+        ],
+        "template": "The {color} dragon found a tiny {object} in the laundry basket. It tried to {verb} it clean, but accidentally made {number} bubbles float through the house.",
+        "readAloudNote": "Pause before the bubble surprise."
+      }
+    },
+    {
+      "id": "backyard_castle_news",
+      "type": "mad_libs",
+      "status": "active",
+      "title": "Backyard Castle News",
+      "summary": "A royal announcement from a pretend castle.",
+      "modes": [
+        "mad_libs"
+      ],
+      "ageTags": [
+        "age_6_8"
+      ],
+      "minAge": 6,
+      "maxAge": 8,
+      "durationMinutes": 10,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "madLibs": {
+        "fields": [
+          {
+            "key": "place",
+            "label": "A place",
+            "kind": "place",
+            "example": "backyard"
+          },
+          {
+            "key": "adjective",
+            "label": "An adjective",
+            "kind": "adjective",
+            "example": "sparkly"
+          },
+          {
+            "key": "noun",
+            "label": "A noun",
+            "kind": "noun",
+            "example": "crown"
+          },
+          {
+            "key": "animal",
+            "label": "An animal",
+            "kind": "animal",
+            "example": "frog"
+          }
+        ],
+        "template": "Breaking news from the castle of {place}: the royal {adjective} {noun} has been found by a brave {animal}. The kingdom will celebrate with extra giggles tonight.",
+        "readAloudNote": "Use a news announcer voice."
+      }
+    },
+    {
+      "id": "if_toys_could_talk",
+      "type": "prompt",
+      "status": "active",
+      "title": "If Toys Could Talk",
+      "summary": "Imagine what a favorite toy would say.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 5,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "promptText": "Pick a toy nearby. If it could talk for one minute, what would it ask your family?",
+      "followUps": [
+        "What voice would it use?",
+        "What adventure would it want next?"
+      ]
+    },
+    {
+      "id": "tiny_kindness_plan",
+      "type": "prompt",
+      "status": "active",
+      "title": "Tiny Kindness Plan",
+      "summary": "Think of one small kind thing to do today.",
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 4,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "calming",
+        "sibling_friendly"
+      ],
+      "promptText": "What is one tiny kind thing we can do for someone in our family today?",
+      "followUps": [
+        "Who should we help?",
+        "Can we do it in less than two minutes?"
+      ]
+    },
+    {
+      "id": "family_charades_animals",
+      "type": "activity",
+      "status": "active",
+      "title": "Family Animal Charades",
+      "summary": "Act out friendly animals while everyone guesses.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "medium",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Clear a small safe movement space."
+      ],
+      "playSteps": [
+        "Parent secretly chooses a friendly animal.",
+        "Act it out without words.",
+        "Children guess, then take turns acting."
+      ],
+      "parentNotes": "For younger kids, whisper the animal and act together.",
+      "variations": [
+        "Use jobs, foods, or storybook creatures instead of animals."
+      ]
+    },
+    {
+      "id": "would_you_rather_silly_family",
+      "type": "prompt",
+      "status": "active",
+      "title": "Silly Would You Rather",
+      "summary": "Choose between two harmless silly options and explain why.",
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 5,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "promptText": "Would you rather have pancakes for shoes or spaghetti for hair for one silly day?",
+      "followUps": [
+        "What would be the funniest part?",
+        "What would you do first?"
+      ]
+    },
+    {
+      "id": "timed_drawing_tiny_monster",
+      "type": "activity",
+      "status": "active",
+      "title": "Timed Drawing: Tiny Monster",
+      "summary": "Draw a friendly tiny monster before the timer ends.",
+      "modes": [
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 10,
+      "energyLevel": "low",
+      "materials": [
+        "paper",
+        "crayons or pencils"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "small_objects",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Give each child paper and a safe drawing tool.",
+        "Set a one-minute timer outside the app or count slowly together."
+      ],
+      "playSteps": [
+        "Draw a friendly tiny monster.",
+        "Add one silly detail after time ends.",
+        "Let each child name their monster."
+      ],
+      "parentNotes": "No judging art quality; the goal is fast playful creativity.",
+      "variations": [
+        "Draw a robot, snack creature, or castle pet."
+      ]
+    }
+  ]
+}
