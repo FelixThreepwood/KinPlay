@@ -1,0 +1,127 @@
+# KinPlay Mad Libs
+
+## Moon Pancake Mission
+- ID: `moon_pancake_mission`
+- Type: mad_libs
+- Modes: mad_libs
+- Age: 4–8
+- Duration: 8 min
+- Energy: calm
+- Summary: A silly space breakfast story.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Fields: A name (person_name, e.g. Zigzag), An adjective (adjective, e.g. wiggly), A food (food, e.g. pancakes), An animal (animal, e.g. llama), A funny sound (sound, e.g. boing)
+- Template: Captain {name} flew a {adjective} rocket to the moon to deliver {food}. When the hatch opened, a moon {animal} shouted {sound}! Everyone laughed and shared breakfast among the stars.
+- Read-aloud note: Read with a dramatic countdown.
+
+## Dragon Laundry Day
+- ID: `dragon_laundry_day`
+- Type: mad_libs
+- Modes: mad_libs
+- Age: 4–8
+- Duration: 8 min
+- Energy: calm
+- Summary: A dragon tries to help with chores.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Fields: A color (color, e.g. purple), An object (object, e.g. sock), An action word (verb, e.g. twirl), A number (number, e.g. seven)
+- Template: The {color} dragon found a tiny {object} in the laundry basket. It tried to {verb} it clean, but accidentally made {number} bubbles float through the house.
+- Read-aloud note: Pause before the bubble surprise.
+
+## Backyard Castle News
+- ID: `backyard_castle_news`
+- Type: mad_libs
+- Modes: mad_libs
+- Age: 6–8
+- Duration: 10 min
+- Energy: calm
+- Summary: A royal announcement from a pretend castle.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Fields: A place (place, e.g. backyard), An adjective (adjective, e.g. sparkly), A noun (noun, e.g. crown), An animal (animal, e.g. frog)
+- Template: Breaking news from the castle of {place}: the royal {adjective} {noun} has been found by a brave {animal}. The kingdom will celebrate with extra giggles tonight.
+- Read-aloud note: Use a news announcer voice.
+
+## Wizard Pajama Parade
+- ID: `wizard_pajama_parade`
+- Type: mad_libs
+- Modes: mad_libs
+- Age: 4–8
+- Duration: 8 min
+- Energy: calm
+- Summary: A sleepy parade gets very silly.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Fields: A name (person_name, e.g. Moonbeam), A color (color, e.g. blue), An animal (animal, e.g. penguin), A funny sound (sound, e.g. whoosh)
+- Template: Professor {name} announced the first {color} pajama parade. A tiny {animal} led the march and shouted {sound} every time someone yawned.
+- Read-aloud note: Read it with a sleepy announcer voice.
+
+## Robot Cookie Factory
+- ID: `robot_cookie_factory`
+- Type: mad_libs
+- Modes: mad_libs
+- Age: 4–8
+- Duration: 8 min
+- Energy: calm
+- Summary: A robot bakes pretend cookies with a surprise.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Fields: An adjective (adjective, e.g. bouncy), A food (food, e.g. cookies), A number (number, e.g. nine), An object (object, e.g. spoon)
+- Template: The {adjective} robot opened a factory for {food}. It pressed one button and {number} tiny {object}s danced across the counter.
+- Read-aloud note: Pause before the dancing objects.
+
+## Undersea Bedtime Bus
+- ID: `undersea_bedtime_bus`
+- Type: mad_libs
+- Modes: mad_libs
+- Age: 4–8
+- Duration: 8 min
+- Energy: calm
+- Summary: A bus drives under the sea at bedtime.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Fields: An animal (animal, e.g. turtle), A place (place, e.g. pillow fort), A color (color, e.g. green), A sound (sound, e.g. bubble-pop)
+- Template: The bedtime bus was driven by a sleepy {animal}. It stopped at {place}, flashed its {color} lights, and whispered {sound} to the fish.
+- Read-aloud note: Use a soft bus-driver voice.
+
+## Castle Pizza Problem
+- ID: `castle_pizza_problem`
+- Type: mad_libs
+- Modes: mad_libs
+- Age: 6–8
+- Duration: 10 min
+- Energy: calm
+- Summary: A castle feast needs a strange solution.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Fields: A noun (noun, e.g. crown), An adjective (adjective, e.g. crunchy), A food (food, e.g. pizza), An action word (verb, e.g. wiggle)
+- Template: The royal {noun} refused to eat the {adjective} {food} until everyone agreed to {verb} around the table one time.
+- Read-aloud note: Read it as a royal decree.
+
+## Space Pet Show
+- ID: `space_pet_show`
+- Type: mad_libs
+- Modes: mad_libs
+- Age: 6–8
+- Duration: 10 min
+- Energy: calm
+- Summary: Pets compete in a zero-gravity show.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Fields: A name (person_name, e.g. Sparkplug), An animal (animal, e.g. hamster), An adverb (adverb, e.g. slowly), A sound (sound, e.g. plink)
+- Template: Judge {name} welcomed the space {animal} show. The winner floated {adverb} through the ring and made a proud {sound}.
+- Read-aloud note: Use a game-show voice.
+
+## Breakfast Dragon Train
+- ID: `breakfast_dragon_train`
+- Type: mad_libs
+- Modes: mad_libs
+- Age: 4–8
+- Duration: 8 min
+- Energy: calm
+- Summary: A dragon train delivers breakfast.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Fields: A color (color, e.g. orange), A food (food, e.g. waffles), A place (place, e.g. kitchen), A number (number, e.g. three)
+- Template: The {color} dragon train delivered {food} to the {place}. It rang its bell {number} times and served everyone a plate of giggles.
+- Read-aloud note: Make the train bell sound gentle.

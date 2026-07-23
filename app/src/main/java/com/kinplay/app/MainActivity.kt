@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -37,9 +38,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavType
@@ -68,14 +71,26 @@ private object Routes {
     fun detail(itemId: String) = "detail/$itemId"
 }
 
+private val Ink = Color(0xFF1F2A24)
+private val MutedInk = Color(0xFF637067)
+private val Canvas = Color(0xFFF7F2E8)
+private val SurfaceWarm = Color(0xFFFFFCF4)
+private val SurfaceLeaf = Color(0xFFE7F0E4)
+private val Forest = Color(0xFF2F5D45)
+private val ForestDark = Color(0xFF193A2C)
+private val Gold = Color(0xFFE3A62F)
+
 @Composable
 fun KinPlayApp() {
     MaterialTheme(
         colorScheme = MaterialTheme.colorScheme.copy(
-            primary = Color(0xFF4F6F52),
-            secondary = Color(0xFFF0B84F),
-            surface = Color(0xFFFFFBF0),
-            background = Color(0xFFFFFBF0),
+            primary = Forest,
+            onPrimary = Color.White,
+            secondary = Gold,
+            tertiary = ForestDark,
+            surface = SurfaceWarm,
+            background = Canvas,
+            onSurface = Ink,
         ),
     ) {
         Surface(modifier = Modifier.fillMaxSize()) {
@@ -94,7 +109,7 @@ fun KinPlayApp() {
             val navController = rememberNavController()
             NavHost(navController = navController, startDestination = Routes.Home) {
                 composable(Routes.Home) { HomeScreen(contentPack, favoriteIds, recentIds, navController) }
-                composable(Routes.QuickPlay) { QuickPlayScreen(contentPack, navController) }
+                composable(Routes.QuickPlay) { QuickPlayScreen(contentPack, favoriteIds, recentIds, navController) }
                 composable(Routes.PickGame) { ContentListScreen("Pick a Game", contentPack.pickGameItems(), favoriteIds, navController) }
                 composable(Routes.MadLibs) { MadLibsScreen(contentPack.madLibs(), navController) }
                 composable(Routes.CalmDown) { ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController) }
@@ -137,26 +152,25 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
         topBar = {
             TopAppBar(
                 title = { Text("KinPlay") },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFFFFF0C2)),
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = Canvas, titleContentColor = Ink),
             )
         },
     ) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
-            Text("Guided family play", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-            Text("Short, safe, parent-led activities for kids ages 2–8. Offline-first, no accounts, no ads, and no data collection in the MVP.")
-            SeedCard(contentPack)
+            HeroPanel(contentPack)
             val favoriteItems = contentPack.items.filter { it.id in favoriteIds }
             val recentItems = recentIds.mapNotNull { id -> contentPack.items.firstOrNull { it.id == id } }
             if (favoriteItems.isNotEmpty()) {
-                Text("Favorites", fontWeight = FontWeight.Bold)
+                SectionTitle("Favorites", "Saved picks for faster family starts")
                 favoriteItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
             }
             if (recentItems.isNotEmpty()) {
-                Text("Recently played", fontWeight = FontWeight.Bold)
+                SectionTitle("Recently played", "Return to what already worked")
                 recentItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
             }
+            SectionTitle("Start playing", "Offline, parent-led choices for ages 2–8")
             HomeButton("Pick For Me", "Randomly choose a quick local activity") { navController.navigate(Routes.QuickPlay) }
-            HomeButton("Pick a Game", "Browse activity cards") { navController.navigate(Routes.PickGame) }
+            HomeButton("Pick a Game", "Browse the full activity library") { navController.navigate(Routes.PickGame) }
             HomeButton("Mad Libs", "Fill prompts and reveal a silly story") { navController.navigate(Routes.MadLibs) }
             HomeButton("Calm Down", "Quiet activities for transitions") { navController.navigate(Routes.CalmDown) }
             HomeButton("About / Safety", "Parent-led safety and privacy notes") { navController.navigate(Routes.AboutSafety) }
@@ -169,34 +183,96 @@ fun PageColumn(modifier: Modifier = Modifier, content: @Composable ColumnScope.(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(Color(0xFFFFFBF0))
+            .background(Canvas)
             .verticalScroll(rememberScrollState())
-            .padding(20.dp),
-        verticalArrangement = Arrangement.spacedBy(14.dp),
+            .padding(horizontal = 18.dp, vertical = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
         content = content,
     )
 }
 
 @Composable
+fun HeroPanel(contentPack: ContentPack) {
+    Card(
+        colors = CardDefaults.cardColors(containerColor = ForestDark),
+        elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
+        shape = RoundedCornerShape(28.dp),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Text("KinPlay", style = MaterialTheme.typography.headlineLarge, color = Color.White, fontWeight = FontWeight.Bold)
+            Text(
+                "Professional, offline-first family play for parent-led moments: quick games, calm resets, creative prompts, and read-aloud silliness.",
+                color = Color(0xFFE7EFE8),
+            )
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                StatPill("${contentPack.activeItems().size}", "active")
+                StatPill("${contentPack.activities().size}", "activities")
+                StatPill("${contentPack.madLibs().size}", "stories")
+            }
+        }
+    }
+}
+
+@Composable
+fun SectionTitle(title: String, subtitle: String? = null) {
+    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        Text(title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Ink)
+        if (subtitle != null) {
+            Text(subtitle, style = MaterialTheme.typography.bodySmall, color = MutedInk)
+        }
+    }
+}
+
+@Composable
+fun StatPill(value: String, label: String) {
+    Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF406E55)), shape = RoundedCornerShape(16.dp)) {
+        Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(value, color = Color.White, fontWeight = FontWeight.Bold)
+            Text(label, color = Color(0xFFD7E7D9), style = MaterialTheme.typography.bodySmall)
+        }
+    }
+}
+
+@Composable
+fun DetailPill(text: String) {
+    Card(colors = CardDefaults.cardColors(containerColor = SurfaceLeaf), shape = RoundedCornerShape(14.dp)) {
+        Text(text, modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp), style = MaterialTheme.typography.bodySmall, color = ForestDark, fontWeight = FontWeight.Bold)
+    }
+}
+
+@Composable
 fun HomeButton(title: String, subtitle: String, onClick: () -> Unit) {
-    Button(onClick = onClick, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(18.dp)) {
-        Column(modifier = Modifier.padding(vertical = 8.dp)) {
-            Text(title, fontWeight = FontWeight.Bold)
-            Text(subtitle, style = MaterialTheme.typography.bodySmall)
+    Card(
+        colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
+        shape = RoundedCornerShape(22.dp),
+        modifier = Modifier.fillMaxWidth().clickable(onClick = onClick),
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                Text(title, fontWeight = FontWeight.Bold, color = Ink)
+                Text(subtitle, style = MaterialTheme.typography.bodySmall, color = MutedInk)
+            }
+            Text("›", style = MaterialTheme.typography.headlineSmall, color = Forest, fontWeight = FontWeight.Bold)
         }
     }
 }
 
 @Composable
 fun SeedCard(contentPack: ContentPack) {
-    Card(colors = CardDefaults.cardColors(containerColor = Color(0xFFEAF4EA)), modifier = Modifier.fillMaxWidth()) {
+    Card(colors = CardDefaults.cardColors(containerColor = SurfaceLeaf), modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Text("Local seed pack", fontWeight = FontWeight.Bold)
-            Text(contentPack.title)
-            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                Text("${contentPack.activeItems().size} active")
-                Text("${contentPack.activities().size} activities")
-                Text("${contentPack.madLibs().size} Mad Libs")
+            Text("Local seed pack", fontWeight = FontWeight.Bold, color = ForestDark)
+            Text(contentPack.title, color = Ink)
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                DetailPill("${contentPack.activeItems().size} active")
+                DetailPill("${contentPack.activities().size} activities")
+                DetailPill("${contentPack.madLibs().size} stories")
             }
         }
     }
@@ -204,8 +280,10 @@ fun SeedCard(contentPack: ContentPack) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun QuickPlayScreen(contentPack: ContentPack, navController: NavController) {
-    val quickPick = remember(contentPack.items) { contentPack.quickPlayPick() }
+fun QuickPlayScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: List<String>, navController: NavController) {
+    val quickPick = remember(contentPack.items, recentIds) {
+        contentPack.items.pickForModeAvoidingRecent("quick_play", recentIds)
+    }
     Scaffold(topBar = { TopAppBar(title = { Text("Quick Play") }) }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
             Text("Quick Play", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
@@ -213,7 +291,7 @@ fun QuickPlayScreen(contentPack: ContentPack, navController: NavController) {
             if (quickPick == null) {
                 Text("No eligible Quick Play item found yet.")
             } else {
-                ContentCard(quickPick, emptySet(), navController)
+                ContentCard(quickPick, favoriteIds, navController)
                 Button(onClick = { navController.navigate(Routes.detail(quickPick.id)) }) { Text("Start this activity") }
             }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
@@ -226,7 +304,7 @@ fun QuickPlayScreen(contentPack: ContentPack, navController: NavController) {
 fun ContentListScreen(title: String, items: List<KinPlayItem>, favoriteIds: Set<String>, navController: NavController) {
     Scaffold(topBar = { TopAppBar(title = { Text(title) }) }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
-            Text(title, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+            SectionTitle(title, "${items.size} offline local cards")
             if (items.isEmpty()) {
                 Text("No matching local content found.")
             }
@@ -237,16 +315,55 @@ fun ContentListScreen(title: String, items: List<KinPlayItem>, favoriteIds: Set<
 }
 
 @Composable
-fun ContentCard(item: KinPlayItem, favoriteIds: Set<String>, navController: NavController) {
-    Card(colors = CardDefaults.cardColors(containerColor = Color(0xFFFFF0C2)), modifier = Modifier.fillMaxWidth()) {
-        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text("${if (item.id in favoriteIds) "★ " else ""}${item.title}", fontWeight = FontWeight.Bold)
-            Text(item.summary)
-            Text("Ages ${item.minAge}–${item.maxAge} • ${item.durationMinutes} min • ${item.energyLevel}")
-            Text("Materials: ${if (item.materials.isEmpty()) "none" else item.materials.joinToString()}")
+fun ContentCard(
+    item: KinPlayItem,
+    favoriteIds: Set<String>,
+    navController: NavController,
+) {
+    val title = "${if (item.id in favoriteIds) "★ " else ""}${item.title}"
+    Card(
+        colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
+        shape = RoundedCornerShape(22.dp),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Column(modifier = Modifier.padding(horizontal = 14.dp, vertical = 11.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(title, fontWeight = FontWeight.Bold, color = Ink, modifier = Modifier.weight(1f))
+            }
+            CompactCardDetails(item, navController)
+        }
+    }
+}
+
+@Composable
+fun CompactCardDetails(item: KinPlayItem, navController: NavController) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
+        verticalAlignment = Alignment.Top,
+    ) {
+        Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+            Text(item.summary, style = MaterialTheme.typography.bodySmall, color = Ink)
+            Text(
+                "Materials: ${if (item.materials.isEmpty()) "none" else item.materials.joinToString()}",
+                style = MaterialTheme.typography.bodySmall,
+            )
             if (item.type == "mad_libs") {
-                Text("Mad Libs fields: ${item.madLibsFields.size}")
-            } else {
+                Text("Mad Libs fields: ${item.madLibsFields.size}", style = MaterialTheme.typography.bodySmall)
+            }
+        }
+        Column(
+            horizontalAlignment = Alignment.End,
+            verticalArrangement = Arrangement.spacedBy(3.dp),
+        ) {
+            DetailPill("${item.durationMinutes} min")
+            DetailPill(item.displayAgeRange())
+            Text(item.energyLevel, style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.End, color = MutedInk)
+            if (item.type != "mad_libs") {
                 Button(onClick = { navController.navigate(Routes.detail(item.id)) }) { Text("Open") }
             }
         }
@@ -267,23 +384,35 @@ fun ActivityDetailScreen(
             if (item == null) {
                 Text("Activity not found.")
             } else {
-                Text(item.title, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-                Text(item.summary)
-                Text("Ages ${item.minAge}–${item.maxAge} • ${item.durationMinutes} min • ${item.energyLevel}")
-                Text("Materials", fontWeight = FontWeight.Bold)
-                Text(if (item.materials.isEmpty()) "No materials needed." else item.materials.joinToString())
-                SectionList("Setup", item.setupSteps)
-                SectionList("Steps", item.playSteps)
+                Text(item.title, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = Ink)
+                Text(item.summary, color = MutedInk)
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    DetailPill(item.displayAgeRange())
+                    DetailPill("${item.durationMinutes} min")
+                    DetailPill(item.energyLevel)
+                }
+                item.detailSections().forEach { section ->
+                    SectionList(section.title, section.lines)
+                }
                 if (item.parentNotes.isNotBlank()) {
                     Text("Parent note", fontWeight = FontWeight.Bold)
                     Text(item.parentNotes)
                 }
                 Button(onClick = onMarkPlayed) { Text("Mark played") }
                 OutlinedButton(onClick = onToggleFavorite) { Text(if (isFavorite) "Remove favorite" else "Add favorite") }
-                SectionList("Replay variations", item.variations)
-                Text("Safety tags: ${item.safetyTags.joinToString()}")
+                Text("Safety tags: ${item.safetyTags.joinToString { it.displayTagLabel() }}")
             }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back") }
+        }
+    }
+}
+
+@Composable
+fun InfoPanel(title: String, body: String) {
+    Card(colors = CardDefaults.cardColors(containerColor = SurfaceWarm), shape = RoundedCornerShape(20.dp), modifier = Modifier.fillMaxWidth()) {
+        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            Text(title, fontWeight = FontWeight.Bold, color = Ink)
+            Text(body, color = MutedInk)
         }
     }
 }
@@ -354,7 +483,7 @@ fun AboutSafetyScreen(navController: NavController) {
             Text("Parent-led by design", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
             Text("KinPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.")
             Text("MVP privacy", fontWeight = FontWeight.Bold)
-            Text("No accounts, analytics, ads, purchases, camera, microphone, contacts, or location permission are requested.")
+            Text("No accounts, analytics, ads, purchases, camera, microphone, contacts, location, or other sensitive Android permissions are requested.")
             Text("Content source", fontWeight = FontWeight.Bold)
             Text("The app ships seed content as a local JSON asset and does not need network access for the MVP flow.")
             Button(onClick = { navController.popBackStack() }) { Text("Back home") }
@@ -458,6 +587,11 @@ data class MadLibField(
     }
 }
 
+data class DetailSection(
+    val title: String,
+    val lines: List<String>,
+)
+
 fun List<KinPlayItem>.activeContent(): List<KinPlayItem> = filter { it.status == "active" }
 
 fun List<KinPlayItem>.itemsForMode(mode: String): List<KinPlayItem> = activeContent().filter { mode in it.modes }
@@ -466,6 +600,36 @@ fun List<KinPlayItem>.pickForMode(mode: String, seed: Long = System.currentTimeM
     val eligible = itemsForMode(mode).filter { it.type != "mad_libs" }
     if (eligible.isEmpty()) return null
     return eligible[Random(seed).nextInt(eligible.size)]
+}
+
+fun List<KinPlayItem>.pickForModeAvoidingRecent(
+    mode: String,
+    recentIds: List<String>,
+    seed: Long = System.currentTimeMillis(),
+): KinPlayItem? {
+    val eligible = itemsForMode(mode).filter { it.type != "mad_libs" }
+    if (eligible.isEmpty()) return null
+    val unplayed = eligible.filterNot { it.id in recentIds }
+    val pool = if (unplayed.isNotEmpty()) unplayed else eligible
+    return pool[Random(seed).nextInt(pool.size)]
+}
+
+fun KinPlayItem.displayAgeRange(): String =
+    if (minAge == maxAge) "Age $minAge" else "Ages $minAge–$maxAge"
+
+fun String.displayTagLabel(): String =
+    split('_')
+        .filter { it.isNotBlank() }
+        .joinToString(" ") { it.lowercase() }
+        .replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+
+fun KinPlayItem.detailSections(): List<DetailSection> = buildList {
+    add(DetailSection("Materials", listOf(if (materials.isEmpty()) "No materials needed." else materials.joinToString())))
+    if (setupSteps.isNotEmpty()) add(DetailSection("Setup", setupSteps))
+    if (playSteps.isNotEmpty()) add(DetailSection("Steps", playSteps))
+    if (promptText.isNotBlank()) add(DetailSection("Prompt", listOf(promptText)))
+    if (followUps.isNotEmpty()) add(DetailSection("Follow-up questions", followUps))
+    if (variations.isNotEmpty()) add(DetailSection("Replay variations", variations))
 }
 
 fun List<String>.withRecentFirst(id: String, limit: Int = 10): List<String> =

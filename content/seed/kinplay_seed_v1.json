@@ -302,7 +302,7 @@
             "key": "name",
             "label": "A name",
             "kind": "person_name",
-            "example": "Jethro"
+            "example": "Zigzag"
           },
           {
             "key": "adjective",
@@ -610,6 +610,1382 @@
       "variations": [
         "Draw a robot, snack creature, or castle pet."
       ]
+    },
+    {
+      "id": "sock_skating_rink",
+      "type": "activity",
+      "status": "draft",
+      "title": "Sock Skating Rink",
+      "summary": "Slide carefully on socks across a pretend tiny rink.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "medium",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Use only a smooth, clear floor area and remove obstacles."
+      ],
+      "playSteps": [
+        "Stand with feet close and take tiny sliding steps.",
+        "Parent calls out slow skating shapes: circle, line, stop.",
+        "Finish with a silly statue pose."
+      ],
+      "parentNotes": "Skip this on slippery or crowded floors; small steps only.",
+      "variations": [
+        "Make it silent skating.",
+        "Pretend to deliver cocoa to stuffed animals."
+      ]
+    },
+    {
+      "id": "stuffed_animal_rescue",
+      "type": "activity",
+      "status": "active",
+      "title": "Stuffed Animal Rescue",
+      "summary": "Rescue plush friends from safe spots around the room.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 9,
+      "energyLevel": "medium",
+      "materials": [
+        "stuffed animals"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Place three stuffed animals in visible, safe places."
+      ],
+      "playSteps": [
+        "Parent describes one animal in trouble.",
+        "Children walk to rescue it and bring it to base.",
+        "Give each rescue a gentle checkup and a name."
+      ],
+      "parentNotes": "Keep hiding spots visible for younger children.",
+      "variations": [
+        "Use color clues.",
+        "Older kids invent the rescue report."
+      ]
+    },
+    {
+      "id": "kitchen_band_rehearsal",
+      "type": "activity",
+      "status": "active",
+      "title": "Kitchen Band Rehearsal",
+      "summary": "Make a gentle rhythm band with safe household items.",
+      "modes": [
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 12,
+      "energyLevel": "medium",
+      "materials": [
+        "wooden spoons",
+        "plastic bowls"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "small_objects",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose non-breakable items and set a soft volume rule."
+      ],
+      "playSteps": [
+        "Parent taps a simple beat.",
+        "Children copy the beat.",
+        "Each child gets one short solo.",
+        "End with a quiet final note."
+      ],
+      "parentNotes": "No glass, sharp tools, or loud banging.",
+      "variations": [
+        "Use claps only.",
+        "Play fast, slow, loud, and quiet rounds."
+      ]
+    },
+    {
+      "id": "blanket_fort_post_office",
+      "type": "activity",
+      "status": "active",
+      "title": "Blanket Fort Post Office",
+      "summary": "Deliver pretend mail between cozy stations.",
+      "modes": [
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 15,
+      "energyLevel": "low",
+      "materials": [
+        "blanket",
+        "paper scraps",
+        "crayons or pencils"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "small_objects",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Build a simple blanket fort or choose two chairs as stations.",
+        "Make a few pretend letters."
+      ],
+      "playSteps": [
+        "One child writes or draws a message.",
+        "Another delivers it to the fort.",
+        "The receiver reads, acts, or guesses the message."
+      ],
+      "parentNotes": "Help younger children draw instead of write.",
+      "variations": [
+        "Use picture-only mail.",
+        "Add kindness notes for family members."
+      ]
+    },
+    {
+      "id": "teddy_bear_doctor",
+      "type": "activity",
+      "status": "active",
+      "title": "Teddy Bear Doctor",
+      "summary": "Run a pretend checkup for stuffed animals.",
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 10,
+      "energyLevel": "calm",
+      "materials": [
+        "stuffed animals"
+      ],
+      "safetyTags": [
+        "quiet",
+        "calming",
+        "parent_supervision",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Gather one or two stuffed animals."
+      ],
+      "playSteps": [
+        "Ask what the animal needs.",
+        "Check ears, paws, and heartbeat with pretend tools.",
+        "Prescribe hugs, rest, or a silly song."
+      ],
+      "parentNotes": "Keep the tone gentle and reassuring.",
+      "variations": [
+        "Make a waiting room.",
+        "Older kids create patient charts."
+      ]
+    },
+    {
+      "id": "shape_detective",
+      "type": "activity",
+      "status": "active",
+      "title": "Shape Detective",
+      "summary": "Search the room for circles, squares, and triangles.",
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 6,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "calming",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Pick a room with visible safe objects."
+      ],
+      "playSteps": [
+        "Parent names a shape.",
+        "Children point to matching objects.",
+        "Count how many shapes you found."
+      ],
+      "parentNotes": "Good for waiting or transitions.",
+      "variations": [
+        "Use textures instead.",
+        "Older kids combine shape plus color."
+      ]
+    },
+    {
+      "id": "pirate_map_steps",
+      "type": "activity",
+      "status": "active",
+      "title": "Pirate Map Steps",
+      "summary": "Follow a tiny pretend map using steps and turns.",
+      "modes": [
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 12,
+      "energyLevel": "medium",
+      "materials": [
+        "paper",
+        "crayons or pencils"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "small_objects",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Draw a simple map with three stops in one room."
+      ],
+      "playSteps": [
+        "Start at the X.",
+        "Take tiny steps to each landmark.",
+        "At the treasure spot, invent what was found."
+      ],
+      "parentNotes": "Keep routes clear and slow.",
+      "variations": [
+        "Use a verbal map only.",
+        "Let each child draw one stop."
+      ]
+    },
+    {
+      "id": "whisper_zoo",
+      "type": "activity",
+      "status": "active",
+      "title": "Whisper Zoo",
+      "summary": "Create a quiet zoo using animal whispers and gentle poses.",
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 7,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "calming",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Sit or stand in a comfortable spot."
+      ],
+      "playSteps": [
+        "Parent names a quiet animal.",
+        "Everyone makes its smallest sound.",
+        "Hold a gentle animal pose for five seconds."
+      ],
+      "parentNotes": "Useful when the room needs to stay calm.",
+      "variations": [
+        "Use underwater animals.",
+        "Use bedtime animals."
+      ]
+    },
+    {
+      "id": "rainbow_sort_sprint",
+      "type": "activity",
+      "status": "active",
+      "title": "Rainbow Sort Sprint",
+      "summary": "Sort safe toys or blocks by color in a short timed challenge.",
+      "modes": [
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 10,
+      "energyLevel": "medium",
+      "materials": [
+        "safe toys or blocks"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "small_objects",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose items too large to swallow and clear a sorting space."
+      ],
+      "playSteps": [
+        "Pick three colors.",
+        "Sort items into color groups.",
+        "Count each group together."
+      ],
+      "parentNotes": "Avoid small items around toddlers.",
+      "variations": [
+        "Sort by size.",
+        "Make a quiet no-timer version."
+      ]
+    },
+    {
+      "id": "family_news_desk",
+      "type": "activity",
+      "status": "active",
+      "title": "Family News Desk",
+      "summary": "Report happy family news from a pretend desk.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_6_8"
+      ],
+      "minAge": 6,
+      "maxAge": 8,
+      "durationMinutes": 10,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose a pretend microphone object or use empty hands."
+      ],
+      "playSteps": [
+        "Parent gives a headline: Something kind happened today.",
+        "Each child reports one sentence.",
+        "End with a pretend weather report for the room."
+      ],
+      "parentNotes": "Coach shy kids with sentence starters.",
+      "variations": [
+        "Report from outer space.",
+        "Interview a stuffed animal."
+      ]
+    },
+    {
+      "id": "five_senses_tour",
+      "type": "activity",
+      "status": "active",
+      "title": "Five Senses Tour",
+      "summary": "Notice safe sights, sounds, and textures in the room.",
+      "modes": [
+        "calm_down",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 6,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "calming",
+        "parent_supervision"
+      ],
+      "setupSteps": [
+        "Sit together or walk slowly."
+      ],
+      "playSteps": [
+        "Name five things you see.",
+        "Name four sounds or quiet spots.",
+        "Touch three safe textures.",
+        "Take one slow breath."
+      ],
+      "parentNotes": "Skip taste and smell unless a parent chooses safe options.",
+      "variations": [
+        "Do only three senses.",
+        "Make it a bedtime tour."
+      ]
+    },
+    {
+      "id": "cleanup_countdown_game",
+      "type": "activity",
+      "status": "active",
+      "title": "Cleanup Countdown Game",
+      "summary": "Turn a tiny cleanup into a cooperative mission.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 5,
+      "energyLevel": "medium",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose a small, safe cleanup zone."
+      ],
+      "playSteps": [
+        "Parent picks five items to put away.",
+        "Count down from five together.",
+        "Celebrate when the tiny mission is complete."
+      ],
+      "parentNotes": "Keep it small so it feels successful.",
+      "variations": [
+        "Sort by person.",
+        "Use robot voices."
+      ]
+    },
+    {
+      "id": "paper_airplane_weather",
+      "type": "activity",
+      "status": "active",
+      "title": "Paper Airplane Weather",
+      "summary": "Test paper airplanes through gentle pretend weather.",
+      "modes": [
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_6_8"
+      ],
+      "minAge": 6,
+      "maxAge": 8,
+      "durationMinutes": 15,
+      "energyLevel": "low",
+      "materials": [
+        "paper"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "small_objects",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Fold simple paper airplanes and clear a throwing lane."
+      ],
+      "playSteps": [
+        "Fly once in calm weather.",
+        "Fly once during pretend wind.",
+        "Compare which flight went farther."
+      ],
+      "parentNotes": "Throw away from faces and fragile items.",
+      "variations": [
+        "Use crumpled paper comets.",
+        "Make prediction tickets before each flight."
+      ]
+    },
+    {
+      "id": "copycat_clap_code",
+      "type": "activity",
+      "status": "active",
+      "title": "Copycat Clap Code",
+      "summary": "Repeat short clap patterns and invent family codes.",
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 6,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "calming",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Sit where everyone can see hands."
+      ],
+      "playSteps": [
+        "Parent claps a two-part pattern.",
+        "Children repeat it.",
+        "Add one clap each round if everyone is ready."
+      ],
+      "parentNotes": "Keep patterns short for younger kids.",
+      "variations": [
+        "Tap knees instead.",
+        "Use whisper words between claps."
+      ]
+    },
+    {
+      "id": "backyard_micro_safari",
+      "type": "activity",
+      "status": "active",
+      "title": "Backyard Micro Safari",
+      "summary": "Look for tiny outdoor details with parent supervision.",
+      "modes": [
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 15,
+      "energyLevel": "low",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "outdoor_optional",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose a safe yard, porch, or window view."
+      ],
+      "playSteps": [
+        "Find one leaf, one shadow, and one tiny movement.",
+        "Describe each discovery.",
+        "Leave plants and bugs undisturbed."
+      ],
+      "parentNotes": "Hands-off observing only unless parent approves.",
+      "variations": [
+        "Do it from a window.",
+        "Draw the best discovery afterward."
+      ]
+    },
+    {
+      "id": "chair_train_station",
+      "type": "activity",
+      "status": "active",
+      "title": "Chair Train Station",
+      "summary": "Make chairs into a pretend train and announce stops.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 10,
+      "energyLevel": "low",
+      "materials": [
+        "chairs"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Place stable chairs safely with walking space."
+      ],
+      "playSteps": [
+        "Everyone boards the pretend train.",
+        "Parent announces the first stop.",
+        "At each stop, children name what they see."
+      ],
+      "parentNotes": "No climbing or standing on chairs.",
+      "variations": [
+        "Use floor cushions instead.",
+        "Let older kids be conductors."
+      ]
+    },
+    {
+      "id": "memory_tray_peek",
+      "type": "activity",
+      "status": "active",
+      "title": "Memory Tray Peek",
+      "summary": "Look at safe objects, hide them, and remember what changed.",
+      "modes": [
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "calm",
+      "materials": [
+        "tray or towel",
+        "safe household objects"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "small_objects",
+        "quiet",
+        "calming"
+      ],
+      "setupSteps": [
+        "Place three to five safe objects on a tray."
+      ],
+      "playSteps": [
+        "Everyone looks for ten seconds.",
+        "Cover the tray.",
+        "Remove one object and reveal the tray.",
+        "Guess what changed."
+      ],
+      "parentNotes": "Use large objects if toddlers are nearby.",
+      "variations": [
+        "Start with two objects.",
+        "Older kids rearrange the tray."
+      ]
+    },
+    {
+      "id": "emotion_weather_report",
+      "type": "activity",
+      "status": "active",
+      "title": "Emotion Weather Report",
+      "summary": "Describe feelings as weather and choose a next step.",
+      "modes": [
+        "calm_down"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 5,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "calming",
+        "parent_supervision"
+      ],
+      "setupSteps": [
+        "Sit somewhere comfortable."
+      ],
+      "playSteps": [
+        "Parent asks: what is your inside weather?",
+        "Choose sunny, cloudy, stormy, windy, or calm.",
+        "Pick one helpful action: hug, breath, water, quiet, or talk."
+      ],
+      "parentNotes": "Do not force sharing; offer choices.",
+      "variations": [
+        "Use colors instead of weather.",
+        "Draw the weather after talking."
+      ]
+    },
+    {
+      "id": "tiny_tower_engineers",
+      "type": "activity",
+      "status": "active",
+      "title": "Tiny Tower Engineers",
+      "summary": "Build a small stable tower and test gentle changes.",
+      "modes": [
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 12,
+      "energyLevel": "low",
+      "materials": [
+        "blocks or plastic cups"
+      ],
+      "safetyTags": [
+        "parent_supervision",
+        "small_objects",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose safe building pieces and a flat surface."
+      ],
+      "playSteps": [
+        "Build the tallest tower that still stands.",
+        "Change one thing and test again.",
+        "Name the tower design."
+      ],
+      "parentNotes": "Keep pieces away from mouths.",
+      "variations": [
+        "Build the widest tower.",
+        "Make a team tower with one piece per turn."
+      ]
+    },
+    {
+      "id": "family_recipe_pretend",
+      "type": "activity",
+      "status": "active",
+      "title": "Family Recipe Pretend",
+      "summary": "Invent a silly no-cook recipe out loud.",
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 7,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "calming",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Sit together. No real cooking required."
+      ],
+      "playSteps": [
+        "Pick a pretend dish name.",
+        "Each person adds one imaginary ingredient.",
+        "Parent reads the recipe back dramatically."
+      ],
+      "parentNotes": "Keep food allergy talk gentle if it comes up.",
+      "variations": [
+        "Make a dragon recipe.",
+        "Make a bedtime recipe."
+      ]
+    },
+    {
+      "id": "hallway_balance_beam",
+      "type": "activity",
+      "status": "active",
+      "title": "Hallway Balance Beam",
+      "summary": "Walk a pretend balance line with careful slow steps.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 6,
+      "energyLevel": "low",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose a clear path and identify a pretend line."
+      ],
+      "playSteps": [
+        "Walk heel-to-toe slowly.",
+        "Freeze at the end.",
+        "Return with tiny penguin steps."
+      ],
+      "parentNotes": "No running or raised surfaces.",
+      "variations": [
+        "Use a tape line if parent approves.",
+        "Carry a stuffed animal safely."
+      ]
+    },
+    {
+      "id": "quiet_library_helper",
+      "type": "activity",
+      "status": "active",
+      "title": "Quiet Library Helper",
+      "summary": "Sort books or toys into tiny groups with whisper voices.",
+      "modes": [
+        "calm_down",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "calm",
+      "materials": [
+        "books or toys"
+      ],
+      "safetyTags": [
+        "quiet",
+        "calming",
+        "parent_supervision",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Choose a small pile of books or toys."
+      ],
+      "playSteps": [
+        "Whisper-sort by size, color, or favorite.",
+        "Make one neat stack.",
+        "Pick one item to talk about softly."
+      ],
+      "parentNotes": "Use only a few items to avoid overwhelm.",
+      "variations": [
+        "Sort stuffed animals.",
+        "Create a bedtime shelf."
+      ]
+    },
+    {
+      "id": "best_part_today",
+      "type": "prompt",
+      "status": "active",
+      "title": "Best Part Today",
+      "summary": "Share one good moment from the day.",
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 4,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "sibling_friendly",
+        "calming"
+      ],
+      "promptText": "What was one good part of today, even if it was tiny?",
+      "followUps": [
+        "Who was there?",
+        "Would you want to do it again?"
+      ]
+    },
+    {
+      "id": "superpower_for_helping",
+      "type": "prompt",
+      "status": "active",
+      "title": "Helping Superpower",
+      "summary": "Invent a superpower that helps someone.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 5,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "promptText": "If you had one helping superpower for ten minutes, what would it do?",
+      "followUps": [
+        "Who would you help first?",
+        "What would your hero name be?"
+      ]
+    },
+    {
+      "id": "kind_robot_instructions",
+      "type": "prompt",
+      "status": "active",
+      "title": "Kind Robot Instructions",
+      "summary": "Give a robot kind, silly instructions.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 5,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "promptText": "A tiny robot wants to be helpful. What three kind jobs should it do?",
+      "followUps": [
+        "What sound does it make?",
+        "What job should it not do?"
+      ]
+    },
+    {
+      "id": "three_word_story",
+      "type": "prompt",
+      "status": "active",
+      "title": "Three Word Story",
+      "summary": "Make a story from only three chosen words.",
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "age_6_8"
+      ],
+      "minAge": 6,
+      "maxAge": 8,
+      "durationMinutes": 6,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "sibling_friendly",
+        "calming"
+      ],
+      "promptText": "Choose three words and make the shortest story you can with all of them.",
+      "followUps": [
+        "Can someone else add one sentence?",
+        "Can you make it gentler or sillier?"
+      ]
+    },
+    {
+      "id": "thank_you_detective",
+      "type": "prompt",
+      "status": "active",
+      "title": "Thank-You Detective",
+      "summary": "Notice someone to thank today.",
+      "modes": [
+        "calm_down",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 4,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "sibling_friendly",
+        "calming"
+      ],
+      "promptText": "Who did something helpful or kind today that we can thank?",
+      "followUps": [
+        "What exactly did they do?",
+        "How could we say thank you?"
+      ]
+    },
+    {
+      "id": "silly_invention_pitch",
+      "type": "prompt",
+      "status": "active",
+      "title": "Silly Invention Pitch",
+      "summary": "Pitch a harmless invention for family life.",
+      "modes": [
+        "quick_play",
+        "pick_a_game"
+      ],
+      "ageTags": [
+        "age_6_8"
+      ],
+      "minAge": 6,
+      "maxAge": 8,
+      "durationMinutes": 7,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "promptText": "Invent something silly that would make family life more fun. What is it called?",
+      "followUps": [
+        "What problem does it solve?",
+        "What color is it?"
+      ]
+    },
+    {
+      "id": "wizard_pajama_parade",
+      "type": "mad_libs",
+      "status": "active",
+      "title": "Wizard Pajama Parade",
+      "summary": "A sleepy parade gets very silly.",
+      "modes": [
+        "mad_libs"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "madLibs": {
+        "fields": [
+          {
+            "key": "name",
+            "label": "A name",
+            "kind": "person_name",
+            "example": "Moonbeam"
+          },
+          {
+            "key": "color",
+            "label": "A color",
+            "kind": "color",
+            "example": "blue"
+          },
+          {
+            "key": "animal",
+            "label": "An animal",
+            "kind": "animal",
+            "example": "penguin"
+          },
+          {
+            "key": "sound",
+            "label": "A funny sound",
+            "kind": "sound",
+            "example": "whoosh"
+          }
+        ],
+        "template": "Professor {name} announced the first {color} pajama parade. A tiny {animal} led the march and shouted {sound} every time someone yawned.",
+        "readAloudNote": "Read it with a sleepy announcer voice."
+      }
+    },
+    {
+      "id": "robot_cookie_factory",
+      "type": "mad_libs",
+      "status": "active",
+      "title": "Robot Cookie Factory",
+      "summary": "A robot bakes pretend cookies with a surprise.",
+      "modes": [
+        "mad_libs"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "madLibs": {
+        "fields": [
+          {
+            "key": "adjective",
+            "label": "An adjective",
+            "kind": "adjective",
+            "example": "bouncy"
+          },
+          {
+            "key": "food",
+            "label": "A food",
+            "kind": "food",
+            "example": "cookies"
+          },
+          {
+            "key": "number",
+            "label": "A number",
+            "kind": "number",
+            "example": "nine"
+          },
+          {
+            "key": "object",
+            "label": "An object",
+            "kind": "object",
+            "example": "spoon"
+          }
+        ],
+        "template": "The {adjective} robot opened a factory for {food}. It pressed one button and {number} tiny {object}s danced across the counter.",
+        "readAloudNote": "Pause before the dancing objects."
+      }
+    },
+    {
+      "id": "undersea_bedtime_bus",
+      "type": "mad_libs",
+      "status": "active",
+      "title": "Undersea Bedtime Bus",
+      "summary": "A bus drives under the sea at bedtime.",
+      "modes": [
+        "mad_libs"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "madLibs": {
+        "fields": [
+          {
+            "key": "animal",
+            "label": "An animal",
+            "kind": "animal",
+            "example": "turtle"
+          },
+          {
+            "key": "place",
+            "label": "A place",
+            "kind": "place",
+            "example": "pillow fort"
+          },
+          {
+            "key": "color",
+            "label": "A color",
+            "kind": "color",
+            "example": "green"
+          },
+          {
+            "key": "sound",
+            "label": "A sound",
+            "kind": "sound",
+            "example": "bubble-pop"
+          }
+        ],
+        "template": "The bedtime bus was driven by a sleepy {animal}. It stopped at {place}, flashed its {color} lights, and whispered {sound} to the fish.",
+        "readAloudNote": "Use a soft bus-driver voice."
+      }
+    },
+    {
+      "id": "castle_pizza_problem",
+      "type": "mad_libs",
+      "status": "active",
+      "title": "Castle Pizza Problem",
+      "summary": "A castle feast needs a strange solution.",
+      "modes": [
+        "mad_libs"
+      ],
+      "ageTags": [
+        "age_6_8"
+      ],
+      "minAge": 6,
+      "maxAge": 8,
+      "durationMinutes": 10,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "madLibs": {
+        "fields": [
+          {
+            "key": "noun",
+            "label": "A noun",
+            "kind": "noun",
+            "example": "crown"
+          },
+          {
+            "key": "adjective",
+            "label": "An adjective",
+            "kind": "adjective",
+            "example": "crunchy"
+          },
+          {
+            "key": "food",
+            "label": "A food",
+            "kind": "food",
+            "example": "pizza"
+          },
+          {
+            "key": "verb",
+            "label": "An action word",
+            "kind": "verb",
+            "example": "wiggle"
+          }
+        ],
+        "template": "The royal {noun} refused to eat the {adjective} {food} until everyone agreed to {verb} around the table one time.",
+        "readAloudNote": "Read it as a royal decree."
+      }
+    },
+    {
+      "id": "space_pet_show",
+      "type": "mad_libs",
+      "status": "active",
+      "title": "Space Pet Show",
+      "summary": "Pets compete in a zero-gravity show.",
+      "modes": [
+        "mad_libs"
+      ],
+      "ageTags": [
+        "age_6_8"
+      ],
+      "minAge": 6,
+      "maxAge": 8,
+      "durationMinutes": 10,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "madLibs": {
+        "fields": [
+          {
+            "key": "name",
+            "label": "A name",
+            "kind": "person_name",
+            "example": "Sparkplug"
+          },
+          {
+            "key": "animal",
+            "label": "An animal",
+            "kind": "animal",
+            "example": "hamster"
+          },
+          {
+            "key": "adverb",
+            "label": "An adverb",
+            "kind": "adverb",
+            "example": "slowly"
+          },
+          {
+            "key": "sound",
+            "label": "A sound",
+            "kind": "sound",
+            "example": "plink"
+          }
+        ],
+        "template": "Judge {name} welcomed the space {animal} show. The winner floated {adverb} through the ring and made a proud {sound}.",
+        "readAloudNote": "Use a game-show voice."
+      }
+    },
+    {
+      "id": "breakfast_dragon_train",
+      "type": "mad_libs",
+      "status": "active",
+      "title": "Breakfast Dragon Train",
+      "summary": "A dragon train delivers breakfast.",
+      "modes": [
+        "mad_libs"
+      ],
+      "ageTags": [
+        "age_4_5",
+        "age_6_8"
+      ],
+      "minAge": 4,
+      "maxAge": 8,
+      "durationMinutes": 8,
+      "energyLevel": "calm",
+      "materials": [],
+      "safetyTags": [
+        "quiet",
+        "no_materials",
+        "reading_help",
+        "sibling_friendly"
+      ],
+      "madLibs": {
+        "fields": [
+          {
+            "key": "color",
+            "label": "A color",
+            "kind": "color",
+            "example": "orange"
+          },
+          {
+            "key": "food",
+            "label": "A food",
+            "kind": "food",
+            "example": "waffles"
+          },
+          {
+            "key": "place",
+            "label": "A place",
+            "kind": "place",
+            "example": "kitchen"
+          },
+          {
+            "key": "number",
+            "label": "A number",
+            "kind": "number",
+            "example": "three"
+          }
+        ],
+        "template": "The {color} dragon train delivered {food} to the {place}. It rang its bell {number} times and served everyone a plate of giggles.",
+        "readAloudNote": "Make the train bell sound gentle."
+      }
     }
   ]
 }

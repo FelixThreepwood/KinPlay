@@ -1,0 +1,452 @@
+# KinPlay Activities
+
+## Animal Mirror Parade
+- ID: `animal_mirror_parade`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 2–8
+- Duration: 8 min
+- Energy: medium
+- Summary: Take turns leading silly animal movements while everyone mirrors the leader.
+- Materials: none
+- Safety tags: parent_supervision, movement, no_materials, sibling_friendly
+- Setup: Clear a small safe space for walking and wiggling.
+- Play steps: Choose one leader. / The leader moves like an animal while everyone copies. / Switch leaders after three animals.
+- Parent note: Use gentle movements for younger children and avoid jumping near furniture.
+- Variations: Whisper the animal for a quiet round. / Let each child invent a brand-new animal.
+
+## Couch Cushion Quest
+- ID: `couch_cushion_quest`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 4–8
+- Duration: 10 min
+- Energy: low
+- Summary: A tiny indoor scavenger hunt using safe household clues.
+- Materials: none
+- Safety tags: parent_supervision, no_materials, sibling_friendly
+- Setup: Choose three safe objects in the room.
+- Play steps: Give one clue at a time. / Children point to or fetch the matching object. / Celebrate each find with a silly cheer.
+- Parent note: Keep objects visible for younger children.
+- Variations: Use colors only. / Use rhyming clues for older children.
+
+## Story Spark Circle
+- ID: `story_spark_circle`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 4–8
+- Duration: 12 min
+- Energy: calm
+- Summary: Build a family story one sentence at a time.
+- Materials: none
+- Safety tags: quiet, no_materials, reading_help, sibling_friendly
+- Setup: Sit where everyone can hear each other.
+- Play steps: Parent starts with: Once there was a tiny dragon who loved pancakes. / Each person adds one sentence. / End when everyone has added three turns.
+- Parent note: Younger kids can add one word or sound instead of a full sentence.
+- Variations: Make the hero a family pet. / Set the story at bedtime, the park, or a castle.
+
+## Freeze Dance Statues
+- ID: `freeze_dance_statues`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 2–8
+- Duration: 7 min
+- Energy: high
+- Summary: Dance, freeze, and pose as funny statues.
+- Materials: none
+- Safety tags: parent_supervision, movement, no_materials, sibling_friendly
+- Setup: Clear a safe dance space.
+- Play steps: Parent claps a rhythm or plays family-approved music outside the app. / Everyone dances. / When the parent says freeze, everyone becomes a statue.
+- Parent note: Keep movement gentle and stop before children get too wild.
+- Variations: Freeze as animals. / Freeze as superheroes.
+
+## Pillow Boat Adventure
+- ID: `pillow_boat_adventure`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 2–5
+- Duration: 10 min
+- Energy: medium
+- Summary: Pretend pillows are boats crossing a living-room sea.
+- Materials: pillows
+- Safety tags: parent_supervision, movement, sibling_friendly
+- Setup: Place pillows on the floor with walking space between them.
+- Play steps: Pretend the floor is water. / Step from boat to boat slowly. / Name friendly sea creatures you see.
+- Parent note: No jumping. Keep pillows flat and stable.
+- Variations: Make it a quiet tiptoe adventure. / Add a stuffed animal passenger.
+
+## Calm Cloud Breaths
+- ID: `calm_cloud_breaths`
+- Type: activity
+- Modes: calm_down
+- Age: 2–8
+- Duration: 3 min
+- Energy: calm
+- Summary: A short breathing reset using imaginary clouds.
+- Materials: none
+- Safety tags: quiet, no_materials, calming, parent_supervision
+- Setup: Sit or stand comfortably.
+- Play steps: Pretend to hold a fluffy cloud. / Smell the cloud slowly. / Blow it gently across the sky. / Repeat three times.
+- Parent note: Keep the tone soft and brief.
+- Variations: Use pretend flower breaths. / Use pretend cocoa breaths.
+
+## Quiet Color Hunt
+- ID: `quiet_color_hunt`
+- Type: activity
+- Modes: calm_down, pick_a_game
+- Age: 2–8
+- Duration: 5 min
+- Energy: calm
+- Summary: Find colors silently and point to each one.
+- Materials: none
+- Safety tags: quiet, no_materials, calming, sibling_friendly
+- Setup: Choose a room or sitting spot.
+- Play steps: Parent names a color softly. / Children silently point to something with that color. / Repeat with five colors.
+- Parent note: Good for waiting rooms or bedtime transitions.
+- Variations: Use shapes instead of colors.
+
+## Family Animal Charades
+- ID: `family_charades_animals`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 2–8
+- Duration: 8 min
+- Energy: medium
+- Summary: Act out friendly animals while everyone guesses.
+- Materials: none
+- Safety tags: parent_supervision, movement, no_materials, sibling_friendly
+- Setup: Clear a small safe movement space.
+- Play steps: Parent secretly chooses a friendly animal. / Act it out without words. / Children guess, then take turns acting.
+- Parent note: For younger kids, whisper the animal and act together.
+- Variations: Use jobs, foods, or storybook creatures instead of animals.
+
+## Timed Drawing: Tiny Monster
+- ID: `timed_drawing_tiny_monster`
+- Type: activity
+- Modes: pick_a_game
+- Age: 4–8
+- Duration: 10 min
+- Energy: low
+- Summary: Draw a friendly tiny monster before the timer ends.
+- Materials: paper, crayons or pencils
+- Safety tags: parent_supervision, small_objects, sibling_friendly
+- Setup: Give each child paper and a safe drawing tool. / Set a one-minute timer outside the app or count slowly together.
+- Play steps: Draw a friendly tiny monster. / Add one silly detail after time ends. / Let each child name their monster.
+- Parent note: No judging art quality; the goal is fast playful creativity.
+- Variations: Draw a robot, snack creature, or castle pet.
+
+
+## Stuffed Animal Rescue
+- ID: `stuffed_animal_rescue`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 2–8
+- Duration: 9 min
+- Energy: medium
+- Summary: Rescue plush friends from safe spots around the room.
+- Materials: stuffed animals
+- Safety tags: parent_supervision, movement, sibling_friendly
+- Setup: Place three stuffed animals in visible, safe places.
+- Play steps: Parent describes one animal in trouble. / Children walk to rescue it and bring it to base. / Give each rescue a gentle checkup and a name.
+- Parent note: Keep hiding spots visible for younger children.
+- Variations: Use color clues. / Older kids invent the rescue report.
+
+## Kitchen Band Rehearsal
+- ID: `kitchen_band_rehearsal`
+- Type: activity
+- Modes: pick_a_game
+- Age: 4–8
+- Duration: 12 min
+- Energy: medium
+- Summary: Make a gentle rhythm band with safe household items.
+- Materials: wooden spoons, plastic bowls
+- Safety tags: parent_supervision, small_objects, sibling_friendly
+- Setup: Choose non-breakable items and set a soft volume rule.
+- Play steps: Parent taps a simple beat. / Children copy the beat. / Each child gets one short solo. / End with a quiet final note.
+- Parent note: No glass, sharp tools, or loud banging.
+- Variations: Use claps only. / Play fast, slow, loud, and quiet rounds.
+
+## Blanket Fort Post Office
+- ID: `blanket_fort_post_office`
+- Type: activity
+- Modes: pick_a_game
+- Age: 4–8
+- Duration: 15 min
+- Energy: low
+- Summary: Deliver pretend mail between cozy stations.
+- Materials: blanket, paper scraps, crayons or pencils
+- Safety tags: parent_supervision, small_objects, sibling_friendly
+- Setup: Build a simple blanket fort or choose two chairs as stations. / Make a few pretend letters.
+- Play steps: One child writes or draws a message. / Another delivers it to the fort. / The receiver reads, acts, or guesses the message.
+- Parent note: Help younger children draw instead of write.
+- Variations: Use picture-only mail. / Add kindness notes for family members.
+
+## Teddy Bear Doctor
+- ID: `teddy_bear_doctor`
+- Type: activity
+- Modes: quick_play, pick_a_game, calm_down
+- Age: 2–8
+- Duration: 10 min
+- Energy: calm
+- Summary: Run a pretend checkup for stuffed animals.
+- Materials: stuffed animals
+- Safety tags: quiet, calming, parent_supervision, sibling_friendly
+- Setup: Gather one or two stuffed animals.
+- Play steps: Ask what the animal needs. / Check ears, paws, and heartbeat with pretend tools. / Prescribe hugs, rest, or a silly song.
+- Parent note: Keep the tone gentle and reassuring.
+- Variations: Make a waiting room. / Older kids create patient charts.
+
+## Shape Detective
+- ID: `shape_detective`
+- Type: activity
+- Modes: quick_play, pick_a_game, calm_down
+- Age: 2–8
+- Duration: 6 min
+- Energy: calm
+- Summary: Search the room for circles, squares, and triangles.
+- Materials: none
+- Safety tags: quiet, no_materials, calming, sibling_friendly
+- Setup: Pick a room with visible safe objects.
+- Play steps: Parent names a shape. / Children point to matching objects. / Count how many shapes you found.
+- Parent note: Good for waiting or transitions.
+- Variations: Use textures instead. / Older kids combine shape plus color.
+
+## Pirate Map Steps
+- ID: `pirate_map_steps`
+- Type: activity
+- Modes: pick_a_game
+- Age: 4–8
+- Duration: 12 min
+- Energy: medium
+- Summary: Follow a tiny pretend map using steps and turns.
+- Materials: paper, crayons or pencils
+- Safety tags: parent_supervision, movement, small_objects, sibling_friendly
+- Setup: Draw a simple map with three stops in one room.
+- Play steps: Start at the X. / Take tiny steps to each landmark. / At the treasure spot, invent what was found.
+- Parent note: Keep routes clear and slow.
+- Variations: Use a verbal map only. / Let each child draw one stop.
+
+## Whisper Zoo
+- ID: `whisper_zoo`
+- Type: activity
+- Modes: quick_play, pick_a_game, calm_down
+- Age: 2–8
+- Duration: 7 min
+- Energy: calm
+- Summary: Create a quiet zoo using animal whispers and gentle poses.
+- Materials: none
+- Safety tags: quiet, no_materials, calming, sibling_friendly
+- Setup: Sit or stand in a comfortable spot.
+- Play steps: Parent names a quiet animal. / Everyone makes its smallest sound. / Hold a gentle animal pose for five seconds.
+- Parent note: Useful when the room needs to stay calm.
+- Variations: Use underwater animals. / Use bedtime animals.
+
+## Rainbow Sort Sprint
+- ID: `rainbow_sort_sprint`
+- Type: activity
+- Modes: pick_a_game
+- Age: 4–8
+- Duration: 10 min
+- Energy: medium
+- Summary: Sort safe toys or blocks by color in a short timed challenge.
+- Materials: safe toys or blocks
+- Safety tags: parent_supervision, small_objects, sibling_friendly
+- Setup: Choose items too large to swallow and clear a sorting space.
+- Play steps: Pick three colors. / Sort items into color groups. / Count each group together.
+- Parent note: Avoid small items around toddlers.
+- Variations: Sort by size. / Make a quiet no-timer version.
+
+## Family News Desk
+- ID: `family_news_desk`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 6–8
+- Duration: 10 min
+- Energy: calm
+- Summary: Report happy family news from a pretend desk.
+- Materials: none
+- Safety tags: quiet, no_materials, sibling_friendly
+- Setup: Choose a pretend microphone object or use empty hands.
+- Play steps: Parent gives a headline: Something kind happened today. / Each child reports one sentence. / End with a pretend weather report for the room.
+- Parent note: Coach shy kids with sentence starters.
+- Variations: Report from outer space. / Interview a stuffed animal.
+
+## Five Senses Tour
+- ID: `five_senses_tour`
+- Type: activity
+- Modes: calm_down, pick_a_game
+- Age: 4–8
+- Duration: 6 min
+- Energy: calm
+- Summary: Notice safe sights, sounds, and textures in the room.
+- Materials: none
+- Safety tags: quiet, no_materials, calming, parent_supervision
+- Setup: Sit together or walk slowly.
+- Play steps: Name five things you see. / Name four sounds or quiet spots. / Touch three safe textures. / Take one slow breath.
+- Parent note: Skip taste and smell unless a parent chooses safe options.
+- Variations: Do only three senses. / Make it a bedtime tour.
+
+## Cleanup Countdown Game
+- ID: `cleanup_countdown_game`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 2–8
+- Duration: 5 min
+- Energy: medium
+- Summary: Turn a tiny cleanup into a cooperative mission.
+- Materials: none
+- Safety tags: parent_supervision, movement, sibling_friendly
+- Setup: Choose a small, safe cleanup zone.
+- Play steps: Parent picks five items to put away. / Count down from five together. / Celebrate when the tiny mission is complete.
+- Parent note: Keep it small so it feels successful.
+- Variations: Sort by person. / Use robot voices.
+
+## Paper Airplane Weather
+- ID: `paper_airplane_weather`
+- Type: activity
+- Modes: pick_a_game
+- Age: 6–8
+- Duration: 15 min
+- Energy: low
+- Summary: Test paper airplanes through gentle pretend weather.
+- Materials: paper
+- Safety tags: parent_supervision, small_objects, sibling_friendly
+- Setup: Fold simple paper airplanes and clear a throwing lane.
+- Play steps: Fly once in calm weather. / Fly once during pretend wind. / Compare which flight went farther.
+- Parent note: Throw away from faces and fragile items.
+- Variations: Use crumpled paper comets. / Make prediction tickets before each flight.
+
+## Copycat Clap Code
+- ID: `copycat_clap_code`
+- Type: activity
+- Modes: quick_play, pick_a_game, calm_down
+- Age: 4–8
+- Duration: 6 min
+- Energy: calm
+- Summary: Repeat short clap patterns and invent family codes.
+- Materials: none
+- Safety tags: quiet, no_materials, calming, sibling_friendly
+- Setup: Sit where everyone can see hands.
+- Play steps: Parent claps a two-part pattern. / Children repeat it. / Add one clap each round if everyone is ready.
+- Parent note: Keep patterns short for younger kids.
+- Variations: Tap knees instead. / Use whisper words between claps.
+
+## Backyard Micro Safari
+- ID: `backyard_micro_safari`
+- Type: activity
+- Modes: pick_a_game
+- Age: 4–8
+- Duration: 15 min
+- Energy: low
+- Summary: Look for tiny outdoor details with parent supervision.
+- Materials: none
+- Safety tags: parent_supervision, outdoor_optional, sibling_friendly
+- Setup: Choose a safe yard, porch, or window view.
+- Play steps: Find one leaf, one shadow, and one tiny movement. / Describe each discovery. / Leave plants and bugs undisturbed.
+- Parent note: Hands-off observing only unless parent approves.
+- Variations: Do it from a window. / Draw the best discovery afterward.
+
+## Chair Train Station
+- ID: `chair_train_station`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 2–8
+- Duration: 10 min
+- Energy: low
+- Summary: Make chairs into a pretend train and announce stops.
+- Materials: chairs
+- Safety tags: parent_supervision, sibling_friendly
+- Setup: Place stable chairs safely with walking space.
+- Play steps: Everyone boards the pretend train. / Parent announces the first stop. / At each stop, children name what they see.
+- Parent note: No climbing or standing on chairs.
+- Variations: Use floor cushions instead. / Let older kids be conductors.
+
+## Memory Tray Peek
+- ID: `memory_tray_peek`
+- Type: activity
+- Modes: pick_a_game, calm_down
+- Age: 4–8
+- Duration: 8 min
+- Energy: calm
+- Summary: Look at safe objects, hide them, and remember what changed.
+- Materials: tray or towel, safe household objects
+- Safety tags: parent_supervision, small_objects, quiet, calming
+- Setup: Place three to five safe objects on a tray.
+- Play steps: Everyone looks for ten seconds. / Cover the tray. / Remove one object and reveal the tray. / Guess what changed.
+- Parent note: Use large objects if toddlers are nearby.
+- Variations: Start with two objects. / Older kids rearrange the tray.
+
+## Emotion Weather Report
+- ID: `emotion_weather_report`
+- Type: activity
+- Modes: calm_down
+- Age: 4–8
+- Duration: 5 min
+- Energy: calm
+- Summary: Describe feelings as weather and choose a next step.
+- Materials: none
+- Safety tags: quiet, no_materials, calming, parent_supervision
+- Setup: Sit somewhere comfortable.
+- Play steps: Parent asks: what is your inside weather? / Choose sunny, cloudy, stormy, windy, or calm. / Pick one helpful action: hug, breath, water, quiet, or talk.
+- Parent note: Do not force sharing; offer choices.
+- Variations: Use colors instead of weather. / Draw the weather after talking.
+
+## Tiny Tower Engineers
+- ID: `tiny_tower_engineers`
+- Type: activity
+- Modes: pick_a_game
+- Age: 4–8
+- Duration: 12 min
+- Energy: low
+- Summary: Build a small stable tower and test gentle changes.
+- Materials: blocks or plastic cups
+- Safety tags: parent_supervision, small_objects, sibling_friendly
+- Setup: Choose safe building pieces and a flat surface.
+- Play steps: Build the tallest tower that still stands. / Change one thing and test again. / Name the tower design.
+- Parent note: Keep pieces away from mouths.
+- Variations: Build the widest tower. / Make a team tower with one piece per turn.
+
+## Family Recipe Pretend
+- ID: `family_recipe_pretend`
+- Type: activity
+- Modes: quick_play, pick_a_game, calm_down
+- Age: 4–8
+- Duration: 7 min
+- Energy: calm
+- Summary: Invent a silly no-cook recipe out loud.
+- Materials: none
+- Safety tags: quiet, no_materials, calming, sibling_friendly
+- Setup: Sit together. No real cooking required.
+- Play steps: Pick a pretend dish name. / Each person adds one imaginary ingredient. / Parent reads the recipe back dramatically.
+- Parent note: Keep food allergy talk gentle if it comes up.
+- Variations: Make a dragon recipe. / Make a bedtime recipe.
+
+## Hallway Balance Beam
+- ID: `hallway_balance_beam`
+- Type: activity
+- Modes: quick_play, pick_a_game
+- Age: 4–8
+- Duration: 6 min
+- Energy: low
+- Summary: Walk a pretend balance line with careful slow steps.
+- Materials: none
+- Safety tags: parent_supervision, movement, no_materials, sibling_friendly
+- Setup: Choose a clear path and identify a pretend line.
+- Play steps: Walk heel-to-toe slowly. / Freeze at the end. / Return with tiny penguin steps.
+- Parent note: No running or raised surfaces.
+- Variations: Use a tape line if parent approves. / Carry a stuffed animal safely.
+
+## Quiet Library Helper
+- ID: `quiet_library_helper`
+- Type: activity
+- Modes: calm_down, pick_a_game
+- Age: 2–8
+- Duration: 8 min
+- Energy: calm
+- Summary: Sort books or toys into tiny groups with whisper voices.
+- Materials: books or toys
+- Safety tags: quiet, calming, parent_supervision, sibling_friendly
+- Setup: Choose a small pile of books or toys.
+- Play steps: Whisper-sort by size, color, or favorite. / Make one neat stack. / Pick one item to talk about softly.
+- Parent note: Use only a few items to avoid overwhelm.
+- Variations: Sort stuffed animals. / Create a bedtime shelf.

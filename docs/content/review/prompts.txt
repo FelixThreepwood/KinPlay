@@ -1,0 +1,118 @@
+# KinPlay Prompts
+
+## If Toys Could Talk
+- ID: `if_toys_could_talk`
+- Type: prompt
+- Modes: quick_play, pick_a_game
+- Age: 2–8
+- Duration: 5 min
+- Energy: calm
+- Summary: Imagine what a favorite toy would say.
+- Materials: none
+- Safety tags: quiet, no_materials, sibling_friendly
+- Prompt: Pick a toy nearby. If it could talk for one minute, what would it ask your family?
+- Follow-ups: What voice would it use? / What adventure would it want next?
+
+## Tiny Kindness Plan
+- ID: `tiny_kindness_plan`
+- Type: prompt
+- Modes: quick_play, pick_a_game, calm_down
+- Age: 4–8
+- Duration: 4 min
+- Energy: calm
+- Summary: Think of one small kind thing to do today.
+- Materials: none
+- Safety tags: quiet, no_materials, calming, sibling_friendly
+- Prompt: What is one tiny kind thing we can do for someone in our family today?
+- Follow-ups: Who should we help? / Can we do it in less than two minutes?
+
+## Silly Would You Rather
+- ID: `would_you_rather_silly_family`
+- Type: prompt
+- Modes: quick_play, pick_a_game, calm_down
+- Age: 4–8
+- Duration: 5 min
+- Energy: calm
+- Summary: Choose between two harmless silly options and explain why.
+- Materials: none
+- Safety tags: quiet, no_materials, sibling_friendly
+- Prompt: Would you rather have pancakes for shoes or spaghetti for hair for one silly day?
+- Follow-ups: What would be the funniest part? / What would you do first?
+
+## Best Part Today
+- ID: `best_part_today`
+- Type: prompt
+- Modes: quick_play, pick_a_game, calm_down
+- Age: 2–8
+- Duration: 4 min
+- Energy: calm
+- Summary: Share one good moment from the day.
+- Materials: none
+- Safety tags: quiet, no_materials, sibling_friendly, calming
+- Prompt: What was one good part of today, even if it was tiny?
+- Follow-ups: Who was there? / Would you want to do it again?
+
+## Helping Superpower
+- ID: `superpower_for_helping`
+- Type: prompt
+- Modes: quick_play, pick_a_game
+- Age: 4–8
+- Duration: 5 min
+- Energy: calm
+- Summary: Invent a superpower that helps someone.
+- Materials: none
+- Safety tags: quiet, no_materials, sibling_friendly
+- Prompt: If you had one helping superpower for ten minutes, what would it do?
+- Follow-ups: Who would you help first? / What would your hero name be?
+
+## Kind Robot Instructions
+- ID: `kind_robot_instructions`
+- Type: prompt
+- Modes: quick_play, pick_a_game
+- Age: 4–8
+- Duration: 5 min
+- Energy: calm
+- Summary: Give a robot kind, silly instructions.
+- Materials: none
+- Safety tags: quiet, no_materials, sibling_friendly
+- Prompt: A tiny robot wants to be helpful. What three kind jobs should it do?
+- Follow-ups: What sound does it make? / What job should it not do?
+
+## Three Word Story
+- ID: `three_word_story`
+- Type: prompt
+- Modes: quick_play, pick_a_game, calm_down
+- Age: 6–8
+- Duration: 6 min
+- Energy: calm
+- Summary: Make a story from only three chosen words.
+- Materials: none
+- Safety tags: quiet, no_materials, sibling_friendly, calming
+- Prompt: Choose three words and make the shortest story you can with all of them.
+- Follow-ups: Can someone else add one sentence? / Can you make it gentler or sillier?
+
+## Thank-You Detective
+- ID: `thank_you_detective`
+- Type: prompt
+- Modes: calm_down, pick_a_game
+- Age: 4–8
+- Duration: 4 min
+- Energy: calm
+- Summary: Notice someone to thank today.
+- Materials: none
+- Safety tags: quiet, no_materials, sibling_friendly, calming
+- Prompt: Who did something helpful or kind today that we can thank?
+- Follow-ups: What exactly did they do? / How could we say thank you?
+
+## Silly Invention Pitch
+- ID: `silly_invention_pitch`
+- Type: prompt
+- Modes: quick_play, pick_a_game
+- Age: 6–8
+- Duration: 7 min
+- Energy: calm
+- Summary: Pitch a harmless invention for family life.
+- Materials: none
+- Safety tags: quiet, no_materials, sibling_friendly
+- Prompt: Invent something silly that would make family life more fun. What is it called?
+- Follow-ups: What problem does it solve? / What color is it?
