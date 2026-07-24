@@ -31,6 +31,7 @@
         "maxAge",
         "durationMinutes",
         "energyLevel",
+        "quickCategories",
         "materials",
         "safetyTags"
       ],
@@ -57,6 +58,21 @@
         "maxAge": { "type": "integer", "minimum": 2, "maximum": 8 },
         "durationMinutes": { "type": "integer", "minimum": 1, "maximum": 30 },
         "energyLevel": { "enum": ["calm", "low", "medium", "high"] },
+        "quickCategories": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "quiet_games",
+              "dinner_table",
+              "outdoor_adventures",
+              "get_energy_out",
+              "brain_games",
+              "quality_time"
+            ]
+          }
+        },
         "materials": {
           "type": "array",
           "items": { "type": "string", "minLength": 1, "maxLength": 60 }

@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
@@ -33,9 +34,9 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
@@ -48,8 +49,10 @@ import androidx.navigation.NavController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.kinplay.app.feedback.FeedbackOverlay
 import org.json.JSONObject
 import kotlin.random.Random
 
@@ -60,14 +63,17 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+const val CONTENT_CARD_DEFAULT_EXPANDED = false
+
 private object Routes {
     const val Home = "home"
     const val QuickPlay = "quick_play"
     const val PickGame = "pick_game"
-    const val MadLibs = "mad_libs"
     const val CalmDown = "calm_down"
     const val AboutSafety = "about_safety"
+    const val Category = "category/{categoryId}"
     const val Detail = "detail/{itemId}"
+    fun category(categoryId: String) = "category/$categoryId"
     fun detail(itemId: String) = "detail/$itemId"
 }
 
@@ -107,24 +113,55 @@ fun KinPlayApp() {
                 saveIdList(context, "recent_ids", ids)
             }
             val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = Routes.Home) {
-                composable(Routes.Home) { HomeScreen(contentPack, favoriteIds, recentIds, navController) }
-                composable(Routes.QuickPlay) { QuickPlayScreen(contentPack, favoriteIds, recentIds, navController) }
-                composable(Routes.PickGame) { ContentListScreen("Pick a Game", contentPack.pickGameItems(), favoriteIds, navController) }
-                composable(Routes.MadLibs) { MadLibsScreen(contentPack.madLibs(), navController) }
-                composable(Routes.CalmDown) { ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController) }
-                composable(Routes.AboutSafety) { AboutSafetyScreen(navController) }
-                composable(
-                    Routes.Detail,
-                    arguments = listOf(navArgument("itemId") { type = NavType.StringType }),
-                ) { entry ->
-                    val itemId = entry.arguments?.getString("itemId").orEmpty()
-                    ActivityDetailScreen(
-                        item = contentPack.items.firstOrNull { it.id == itemId },
-                        isFavorite = itemId in favoriteIds,
-                        onToggleFavorite = { persistFavorites(favoriteIds.toggleFavorite(itemId)) },
-                        onMarkPlayed = { persistRecent(recentIds.withRecentFirst(itemId)) },
-                        navController = navController,
+            Box(modifier = Modifier.fillMaxSize()) {
+                NavHost(navController = navController, startDestination = Routes.Home) {
+                    composable(Routes.Home) { HomeScreen(contentPack, favoriteIds, recentIds, navController) }
+                    composable(Routes.QuickPlay) { QuickPlayScreen(contentPack, favoriteIds, recentIds, navController) }
+                    composable(Routes.PickGame) { ContentListScreen("All Games", contentPack.gameLibraryItems(), favoriteIds, navController) }
+                    composable(Routes.CalmDown) { ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController) }
+                    composable(Routes.AboutSafety) { AboutSafetyScreen(navController) }
+                    composable(
+                        Routes.Category,
+                        arguments = listOf(navArgument("categoryId") { type = NavType.StringType }),
+                    ) { entry ->
+                        val categoryId = entry.arguments?.getString("categoryId").orEmpty()
+                        val category = QuickCategory.fromId(categoryId)
+                        ContentListScreen(
+                            title = category?.label ?: "Games",
+                            items = contentPack.itemsForQuickCategory(categoryId),
+                            favoriteIds = favoriteIds,
+                            navController = navController,
+                        )
+                    }
+                    composable(
+                        Routes.Detail,
+                        arguments = listOf(navArgument("itemId") { type = NavType.StringType }),
+                    ) { entry ->
+                        val itemId = entry.arguments?.getString("itemId").orEmpty()
+                        ActivityDetailScreen(
+                            item = contentPack.activeItemById(itemId),
+                            isFavorite = itemId in favoriteIds,
+                            onToggleFavorite = { persistFavorites(favoriteIds.toggleFavorite(itemId)) },
+                            onMarkPlayed = { persistRecent(recentIds.withRecentFirst(itemId)) },
+                            navController = navController,
+                        )
+                    }
+                }
+                if (BuildConfig.FEEDBACK_ENABLED) {
+                    val backStackEntry by navController.currentBackStackEntryAsState()
+                    val itemId = backStackEntry?.arguments?.getString("itemId")
+                    val categoryId = backStackEntry?.arguments?.getString("categoryId")
+                    val currentItem = itemId?.let(contentPack::activeItemById)
+                    val route = when {
+                        itemId != null -> "detail/$itemId"
+                        categoryId != null -> "category/$categoryId"
+                        else -> backStackEntry?.destination?.route ?: Routes.Home
+                    }
+                    FeedbackOverlay(
+                        context = context,
+                        screen = route,
+                        contentId = currentItem?.id,
+                        contentTitle = currentItem?.title,
                     )
                 }
             }
@@ -157,9 +194,10 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
         },
     ) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
-            HeroPanel(contentPack)
-            val favoriteItems = contentPack.items.filter { it.id in favoriteIds }
-            val recentItems = recentIds.mapNotNull { id -> contentPack.items.firstOrNull { it.id == id } }
+            SectionTitle("What fits right now?", "Tap a quick list to see familiar family games")
+            QuickCategoryGrid(contentPack) { category -> navController.navigate(Routes.category(category.id)) }
+            val favoriteItems = contentPack.favoriteItems(favoriteIds)
+            val recentItems = contentPack.recentItems(recentIds)
             if (favoriteItems.isNotEmpty()) {
                 SectionTitle("Favorites", "Saved picks for faster family starts")
                 favoriteItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
@@ -168,12 +206,40 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                 SectionTitle("Recently played", "Return to what already worked")
                 recentItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
             }
-            SectionTitle("Start playing", "Offline, parent-led choices for ages 2–8")
-            HomeButton("Pick For Me", "Randomly choose a quick local activity") { navController.navigate(Routes.QuickPlay) }
-            HomeButton("Pick a Game", "Browse the full activity library") { navController.navigate(Routes.PickGame) }
-            HomeButton("Mad Libs", "Fill prompts and reveal a silly story") { navController.navigate(Routes.MadLibs) }
-            HomeButton("Calm Down", "Quiet activities for transitions") { navController.navigate(Routes.CalmDown) }
+            SectionTitle("More ways to start", "Offline, parent-led choices for ages 2–8")
+            HomeButton("Pick For Me", "Randomly choose a quick local game") { navController.navigate(Routes.QuickPlay) }
+            HomeButton("Browse All Games", "See the full library, including story games") { navController.navigate(Routes.PickGame) }
             HomeButton("About / Safety", "Parent-led safety and privacy notes") { navController.navigate(Routes.AboutSafety) }
+        }
+    }
+}
+
+@Composable
+fun QuickCategoryGrid(contentPack: ContentPack, onSelect: (QuickCategory) -> Unit) {
+    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        QuickCategory.defaultGrid.chunked(2).forEach { categoryRow ->
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                categoryRow.forEach { category ->
+                    val count = contentPack.itemsForQuickCategory(category.id).size
+                    Card(
+                        colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
+                        shape = RoundedCornerShape(18.dp),
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(88.dp)
+                            .clickable { onSelect(category) },
+                    ) {
+                        Column(
+                            modifier = Modifier.fillMaxSize().padding(12.dp),
+                            verticalArrangement = Arrangement.SpaceBetween,
+                        ) {
+                            Text(category.label, fontWeight = FontWeight.Bold, color = Ink)
+                            Text("$count games  ›", style = MaterialTheme.typography.bodySmall, color = Forest)
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -185,7 +251,7 @@ fun PageColumn(modifier: Modifier = Modifier, content: @Composable ColumnScope.(
             .fillMaxSize()
             .background(Canvas)
             .verticalScroll(rememberScrollState())
-            .padding(horizontal = 18.dp, vertical = 16.dp),
+            .padding(start = 18.dp, end = 18.dp, top = 16.dp, bottom = 96.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
         content = content,
     )
@@ -206,9 +272,9 @@ fun HeroPanel(contentPack: ContentPack) {
                 color = Color(0xFFE7EFE8),
             )
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                StatPill("${contentPack.activeItems().size}", "active")
-                StatPill("${contentPack.activities().size}", "activities")
-                StatPill("${contentPack.madLibs().size}", "stories")
+                StatPill("${contentPack.gameLibraryItems().size}", "games")
+                StatPill("${QuickCategory.defaultGrid.size}", "quick lists")
+                StatPill("100%", "offline")
             }
         }
     }
@@ -270,9 +336,8 @@ fun SeedCard(contentPack: ContentPack) {
             Text("Local seed pack", fontWeight = FontWeight.Bold, color = ForestDark)
             Text(contentPack.title, color = Ink)
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                DetailPill("${contentPack.activeItems().size} active")
-                DetailPill("${contentPack.activities().size} activities")
-                DetailPill("${contentPack.madLibs().size} stories")
+                DetailPill("${contentPack.gameLibraryItems().size} games")
+                DetailPill("${QuickCategory.defaultGrid.size} quick lists")
             }
         }
     }
@@ -321,11 +386,12 @@ fun ContentCard(
     navController: NavController,
 ) {
     val title = "${if (item.id in favoriteIds) "★ " else ""}${item.title}"
+    var expanded by rememberSaveable(item.id) { mutableStateOf(CONTENT_CARD_DEFAULT_EXPANDED) }
     Card(
         colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(22.dp),
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().clickable { expanded = !expanded },
     ) {
         Column(modifier = Modifier.padding(horizontal = 14.dp, vertical = 11.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Row(
@@ -333,8 +399,11 @@ fun ContentCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(title, fontWeight = FontWeight.Bold, color = Ink, modifier = Modifier.weight(1f))
+                Text(if (expanded) "⌃" else "⌄", color = Forest, fontWeight = FontWeight.Bold)
             }
-            CompactCardDetails(item, navController)
+            if (expanded) {
+                CompactCardDetails(item, navController)
+            }
         }
     }
 }
@@ -363,9 +432,7 @@ fun CompactCardDetails(item: KinPlayItem, navController: NavController) {
             DetailPill("${item.durationMinutes} min")
             DetailPill(item.displayAgeRange())
             Text(item.energyLevel, style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.End, color = MutedInk)
-            if (item.type != "mad_libs") {
-                Button(onClick = { navController.navigate(Routes.detail(item.id)) }) { Text("Open") }
-            }
+            Button(onClick = { navController.navigate(Routes.detail(item.id)) }) { Text("Open") }
         }
     }
 }
@@ -398,6 +465,9 @@ fun ActivityDetailScreen(
                     Text("Parent note", fontWeight = FontWeight.Bold)
                     Text(item.parentNotes)
                 }
+                if (item.type == "mad_libs") {
+                    MadLibPlayPanel(item)
+                }
                 Button(onClick = onMarkPlayed) { Text("Mark played") }
                 OutlinedButton(onClick = onToggleFavorite) { Text(if (isFavorite) "Remove favorite" else "Add favorite") }
                 Text("Safety tags: ${item.safetyTags.joinToString { it.displayTagLabel() }}")
@@ -425,52 +495,35 @@ fun SectionList(title: String, values: List<String>) {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MadLibsScreen(items: List<KinPlayItem>, navController: NavController) {
-    var selected by remember(items) { mutableStateOf(items.firstOrNull()) }
-    val answers = remember(selected?.id) { mutableStateMapOf<String, String>() }
-    var revealed by remember(selected?.id) { mutableStateOf(false) }
-    Scaffold(topBar = { TopAppBar(title = { Text("Mad Libs") }) }) { innerPadding ->
-        PageColumn(Modifier.padding(innerPadding)) {
-            Text("Mad Libs", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-            if (items.isEmpty()) {
-                Text("No Mad Libs templates found.")
-            } else {
-                Text("Choose a story")
-                items.forEach { item ->
-                    OutlinedButton(onClick = {
-                        selected = item
-                        answers.clear()
-                        revealed = false
-                    }) { Text(item.title) }
-                }
-                val story = selected
-                if (story != null) {
-                    Text(story.title, fontWeight = FontWeight.Bold)
-                    story.madLibsFields.forEach { field ->
-                        OutlinedTextField(
-                            value = answers[field.key].orEmpty(),
-                            onValueChange = { answers[field.key] = it },
-                            label = { Text(field.label) },
-                            placeholder = { Text(field.example) },
-                            modifier = Modifier.fillMaxWidth(),
-                            singleLine = true,
-                        )
-                    }
-                    val allFilled = story.madLibsFields.all { answers[it.key].orEmpty().isNotBlank() }
-                    Button(onClick = { revealed = true }, enabled = allFilled) { Text("Reveal story") }
-                    if (revealed) {
-                        Card(colors = CardDefaults.cardColors(containerColor = Color(0xFFEAF4EA)), modifier = Modifier.fillMaxWidth()) {
-                            Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                                Text("Your story", fontWeight = FontWeight.Bold)
-                                Text(story.renderMadLib(answers))
-                            }
-                        }
-                    }
-                }
+fun MadLibPlayPanel(story: KinPlayItem) {
+    val answers = story.madLibsFields.associate { field ->
+        field.key to rememberSaveable(story.id, field.key) { mutableStateOf("") }
+    }
+    var revealed by rememberSaveable(story.id) { mutableStateOf(false) }
+    InfoPanel("Story game", "Fill in each prompt without reading the story first, then reveal the result.")
+    story.madLibsFields.forEach { field ->
+        OutlinedTextField(
+            value = answers.getValue(field.key).value,
+            onValueChange = {
+                answers.getValue(field.key).value = it
+                revealed = false
+            },
+            label = { Text(field.label) },
+            placeholder = { Text(field.example) },
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true,
+        )
+    }
+    val answerValues = answers.mapValues { it.value.value }
+    val allFilled = story.madLibsFields.all { answerValues[it.key].orEmpty().isNotBlank() }
+    Button(onClick = { revealed = true }, enabled = allFilled) { Text("Reveal story") }
+    if (revealed && allFilled) {
+        Card(colors = CardDefaults.cardColors(containerColor = SurfaceLeaf), modifier = Modifier.fillMaxWidth()) {
+            Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text("Your story", fontWeight = FontWeight.Bold)
+                Text(story.renderMadLib(answerValues))
             }
-            OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
         }
     }
 }
@@ -496,9 +549,14 @@ data class ContentPack(
     val items: List<KinPlayItem> = emptyList(),
 ) {
     fun activeItems() = items.activeContent()
+    fun activeItemById(id: String) = activeItems().firstOrNull { it.id == id }
+    fun favoriteItems(favoriteIds: Set<String>) = activeItems().filter { it.id in favoriteIds }
+    fun recentItems(recentIds: List<String>) = recentIds.mapNotNull(::activeItemById)
     fun activities() = activeItems().filter { it.type == "activity" }
     fun madLibs() = activeItems().filter { it.type == "mad_libs" }
-    fun pickGameItems() = items.itemsForMode("pick_a_game").filter { it.type != "mad_libs" }
+    fun gameLibraryItems() = activeItems()
+    fun pickGameItems() = gameLibraryItems()
+    fun itemsForQuickCategory(categoryId: String) = items.itemsForQuickCategory(categoryId)
     fun calmDownItems() = activeItems().filter { "calm_down" in it.modes || "calming" in it.safetyTags }
     fun quickPlayPick(): KinPlayItem? = items.pickForMode("quick_play")
 
@@ -524,6 +582,7 @@ data class KinPlayItem(
     val maxAge: Int,
     val durationMinutes: Int,
     val energyLevel: String,
+    val quickCategories: List<String> = emptyList(),
     val materials: List<String> = emptyList(),
     val safetyTags: List<String> = emptyList(),
     val setupSteps: List<String> = emptyList(),
@@ -556,6 +615,7 @@ data class KinPlayItem(
                 maxAge = json.getInt("maxAge"),
                 durationMinutes = json.getInt("durationMinutes"),
                 energyLevel = json.getString("energyLevel"),
+                quickCategories = json.stringList("quickCategories"),
                 materials = json.stringList("materials"),
                 safetyTags = json.stringList("safetyTags"),
                 setupSteps = json.stringList("setupSteps"),
@@ -592,9 +652,26 @@ data class DetailSection(
     val lines: List<String>,
 )
 
+enum class QuickCategory(val id: String, val label: String) {
+    QUIET_GAMES("quiet_games", "Quiet Games"),
+    DINNER_TABLE("dinner_table", "At the Dinner Table"),
+    OUTDOOR_ADVENTURES("outdoor_adventures", "Outdoor Adventures"),
+    GET_ENERGY_OUT("get_energy_out", "Get the Energy Out"),
+    BRAIN_GAMES("brain_games", "Brain Games"),
+    QUALITY_TIME("quality_time", "Quality Time");
+
+    companion object {
+        val defaultGrid = entries.toList()
+        fun fromId(id: String): QuickCategory? = entries.firstOrNull { it.id == id }
+    }
+}
+
 fun List<KinPlayItem>.activeContent(): List<KinPlayItem> = filter { it.status == "active" }
 
 fun List<KinPlayItem>.itemsForMode(mode: String): List<KinPlayItem> = activeContent().filter { mode in it.modes }
+
+fun List<KinPlayItem>.itemsForQuickCategory(categoryId: String): List<KinPlayItem> =
+    activeContent().filter { categoryId in it.quickCategories }
 
 fun List<KinPlayItem>.pickForMode(mode: String, seed: Long = System.currentTimeMillis()): KinPlayItem? {
     val eligible = itemsForMode(mode).filter { it.type != "mad_libs" }

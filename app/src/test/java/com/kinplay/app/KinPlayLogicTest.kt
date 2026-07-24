@@ -22,6 +22,76 @@ class KinPlayLogicTest {
     private val calmPrompt = activeQuick.copy(id = "c", type = "prompt", title = "Calm", modes = listOf("calm_down"), energyLevel = "calm")
 
     @Test
+    fun quickCategoryGridUsesTheSixRequestedChoicesInOrder() {
+        assertEquals(
+            listOf(
+                "Quiet Games",
+                "At the Dinner Table",
+                "Outdoor Adventures",
+                "Get the Energy Out",
+                "Brain Games",
+                "Quality Time",
+            ),
+            QuickCategory.defaultGrid.map { it.label },
+        )
+    }
+
+    @Test
+    fun oneGameCanAppearInMoreThanOneQuickCategory() {
+        val ifToysCouldTalk = activeQuick.copy(
+            id = "if_toys_could_talk",
+            title = "If Toys Could Talk",
+            quickCategories = listOf("quiet_games", "quality_time"),
+        )
+
+        assertEquals(listOf(ifToysCouldTalk), listOf(ifToysCouldTalk).itemsForQuickCategory("quiet_games"))
+        assertEquals(listOf(ifToysCouldTalk), listOf(ifToysCouldTalk).itemsForQuickCategory("quality_time"))
+    }
+
+    @Test
+    fun quickCategoryFilteringExcludesDraftContent() {
+        val taggedActive = activeQuick.copy(quickCategories = listOf("brain_games"))
+        val taggedDraft = taggedActive.copy(id = "draft", status = "draft")
+
+        assertEquals(listOf(taggedActive), listOf(taggedActive, taggedDraft).itemsForQuickCategory("brain_games"))
+    }
+
+    @Test
+    fun fullGameLibraryIncludesMadLibsAsOrdinaryGames() {
+        val madLib = activeQuick.copy(id = "story", type = "mad_libs", modes = listOf("mad_libs"))
+        val pack = ContentPack(items = listOf(activeQuick, madLib, inactiveQuick))
+
+        assertEquals(listOf(activeQuick, madLib), pack.gameLibraryItems())
+    }
+
+    @Test
+    fun directItemLookupExcludesDraftContent() {
+        val pack = ContentPack(items = listOf(activeQuick, inactiveQuick))
+
+        assertEquals(activeQuick, pack.activeItemById(activeQuick.id))
+        assertEquals(null, pack.activeItemById(inactiveQuick.id))
+    }
+
+    @Test
+    fun favoriteSelectionsExcludeDraftContent() {
+        val pack = ContentPack(items = listOf(activeQuick, inactiveQuick))
+
+        assertEquals(listOf(activeQuick), pack.favoriteItems(setOf(activeQuick.id, inactiveQuick.id)))
+    }
+
+    @Test
+    fun recentSelectionsExcludeDraftContent() {
+        val pack = ContentPack(items = listOf(activeQuick, inactiveQuick))
+
+        assertEquals(listOf(activeQuick), pack.recentItems(listOf(inactiveQuick.id, activeQuick.id)))
+    }
+
+    @Test
+    fun gameCardsAreCollapsedByDefault() {
+        assertFalse(CONTENT_CARD_DEFAULT_EXPANDED)
+    }
+
+    @Test
     fun itemsForModeReturnsOnlyActiveContentForThatMode() {
         val result = listOf(activeQuick, inactiveQuick, calmPrompt).itemsForMode("quick_play")
 

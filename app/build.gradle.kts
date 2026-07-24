@@ -4,6 +4,9 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+val appVersionName = "0.3.0-beta1"
+val isVersionedBeta = appVersionName.contains("-beta", ignoreCase = true)
+
 android {
     namespace = "com.kinplay.app"
     compileSdk = 35
@@ -12,8 +15,8 @@ android {
         applicationId = "com.kinplay.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "0.2.0-beta1"
+        versionCode = 3
+        versionName = appVersionName
 
         vectorDrawables {
             useSupportLibrary = true
@@ -21,7 +24,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("boolean", "FEEDBACK_ENABLED", "true")
+        }
         release {
+            buildConfigField("boolean", "FEEDBACK_ENABLED", isVersionedBeta.toString())
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -37,6 +44,10 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 }
 

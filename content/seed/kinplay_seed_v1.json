@@ -40,6 +40,11 @@
       "variations": [
         "Whisper the animal for a quiet round.",
         "Let each child invent a brand-new animal."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "get_energy_out",
+        "quality_time"
       ]
     },
     {
@@ -78,6 +83,11 @@
       "variations": [
         "Use colors only.",
         "Use rhyming clues for older children."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -117,6 +127,12 @@
       "variations": [
         "Make the hero a family pet.",
         "Set the story at bedtime, the park, or a castle."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -155,6 +171,10 @@
       "variations": [
         "Freeze as animals.",
         "Freeze as superheroes."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "get_energy_out"
       ]
     },
     {
@@ -195,6 +215,10 @@
       "variations": [
         "Make it a quiet tiptoe adventure.",
         "Add a stuffed animal passenger."
+      ],
+      "quickCategories": [
+        "get_energy_out",
+        "quality_time"
       ]
     },
     {
@@ -233,6 +257,10 @@
       "variations": [
         "Use pretend flower breaths.",
         "Use pretend cocoa breaths."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "quality_time"
       ]
     },
     {
@@ -270,6 +298,12 @@
       "parentNotes": "Good for waiting rooms or bedtime transitions.",
       "variations": [
         "Use shapes instead of colors."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "outdoor_adventures",
+        "brain_games"
       ]
     },
     {
@@ -331,7 +365,13 @@
         ],
         "template": "Captain {name} flew a {adjective} rocket to the moon to deliver {food}. When the hatch opened, a moon {animal} shouted {sound}! Everyone laughed and shared breakfast among the stars.",
         "readAloudNote": "Read with a dramatic countdown."
-      }
+      },
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
+      ]
     },
     {
       "id": "dragon_laundry_day",
@@ -386,7 +426,13 @@
         ],
         "template": "The {color} dragon found a tiny {object} in the laundry basket. It tried to {verb} it clean, but accidentally made {number} bubbles float through the house.",
         "readAloudNote": "Pause before the bubble surprise."
-      }
+      },
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
+      ]
     },
     {
       "id": "backyard_castle_news",
@@ -440,7 +486,13 @@
         ],
         "template": "Breaking news from the castle of {place}: the royal {adjective} {noun} has been found by a brave {animal}. The kingdom will celebrate with extra giggles tonight.",
         "readAloudNote": "Use a news announcer voice."
-      }
+      },
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
+      ]
     },
     {
       "id": "if_toys_could_talk",
@@ -469,6 +521,12 @@
       "followUps": [
         "What voice would it use?",
         "What adventure would it want next?"
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -501,6 +559,12 @@
       "followUps": [
         "Who should we help?",
         "Can we do it in less than two minutes?"
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -538,6 +602,11 @@
       "parentNotes": "For younger kids, whisper the animal and act together.",
       "variations": [
         "Use jobs, foods, or storybook creatures instead of animals."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "get_energy_out",
+        "quality_time"
       ]
     },
     {
@@ -569,6 +638,12 @@
       "followUps": [
         "What would be the funniest part?",
         "What would you do first?"
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -609,6 +684,10 @@
       "parentNotes": "No judging art quality; the goal is fast playful creativity.",
       "variations": [
         "Draw a robot, snack creature, or castle pet."
+      ],
+      "quickCategories": [
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -648,6 +727,9 @@
       "variations": [
         "Make it silent skating.",
         "Pretend to deliver cocoa to stuffed animals."
+      ],
+      "quickCategories": [
+        "get_energy_out"
       ]
     },
     {
@@ -687,6 +769,11 @@
       "variations": [
         "Use color clues.",
         "Older kids invent the rescue report."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "get_energy_out",
+        "quality_time"
       ]
     },
     {
@@ -728,6 +815,10 @@
       "variations": [
         "Use claps only.",
         "Play fast, slow, loud, and quiet rounds."
+      ],
+      "quickCategories": [
+        "get_energy_out",
+        "quality_time"
       ]
     },
     {
@@ -770,6 +861,9 @@
       "variations": [
         "Use picture-only mail.",
         "Add kindness notes for family members."
+      ],
+      "quickCategories": [
+        "quality_time"
       ]
     },
     {
@@ -811,6 +905,10 @@
       "variations": [
         "Make a waiting room.",
         "Older kids create patient charts."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "quality_time"
       ]
     },
     {
@@ -850,6 +948,11 @@
       "variations": [
         "Use textures instead.",
         "Older kids combine shape plus color."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -891,6 +994,12 @@
       "variations": [
         "Use a verbal map only.",
         "Let each child draw one stop."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "get_energy_out",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -930,6 +1039,10 @@
       "variations": [
         "Use underwater animals.",
         "Use bedtime animals."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "quality_time"
       ]
     },
     {
@@ -969,6 +1082,11 @@
       "variations": [
         "Sort by size.",
         "Make a quiet no-timer version."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "get_energy_out",
+        "brain_games"
       ]
     },
     {
@@ -1006,6 +1124,12 @@
       "variations": [
         "Report from outer space.",
         "Interview a stuffed animal."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1046,6 +1170,12 @@
       "variations": [
         "Do only three senses.",
         "Make it a bedtime tour."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1083,6 +1213,11 @@
       "variations": [
         "Sort by person.",
         "Use robot voices."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "get_energy_out",
+        "quality_time"
       ]
     },
     {
@@ -1121,6 +1256,11 @@
       "variations": [
         "Use crumpled paper comets.",
         "Make prediction tickets before each flight."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1161,6 +1301,12 @@
       "variations": [
         "Tap knees instead.",
         "Use whisper words between claps."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1198,6 +1344,10 @@
       "variations": [
         "Do it from a window.",
         "Draw the best discovery afterward."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "quality_time"
       ]
     },
     {
@@ -1236,6 +1386,9 @@
       "variations": [
         "Use floor cushions instead.",
         "Let older kids be conductors."
+      ],
+      "quickCategories": [
+        "quality_time"
       ]
     },
     {
@@ -1279,6 +1432,12 @@
       "variations": [
         "Start with two objects.",
         "Older kids rearrange the tray."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1317,6 +1476,12 @@
       "variations": [
         "Use colors instead of weather.",
         "Draw the weather after talking."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1356,6 +1521,10 @@
       "variations": [
         "Build the widest tower.",
         "Make a team tower with one piece per turn."
+      ],
+      "quickCategories": [
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1396,6 +1565,12 @@
       "variations": [
         "Make a dragon recipe.",
         "Make a bedtime recipe."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1435,6 +1610,11 @@
       "variations": [
         "Use a tape line if parent approves.",
         "Carry a stuffed animal safely."
+      ],
+      "quickCategories": [
+        "outdoor_adventures",
+        "get_energy_out",
+        "quality_time"
       ]
     },
     {
@@ -1475,6 +1655,11 @@
       "variations": [
         "Sort stuffed animals.",
         "Create a bedtime shelf."
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1506,6 +1691,12 @@
       "followUps": [
         "Who was there?",
         "Would you want to do it again?"
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1536,6 +1727,12 @@
       "followUps": [
         "Who would you help first?",
         "What would your hero name be?"
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1566,6 +1763,12 @@
       "followUps": [
         "What sound does it make?",
         "What job should it not do?"
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1597,6 +1800,12 @@
       "followUps": [
         "Can someone else add one sentence?",
         "Can you make it gentler or sillier?"
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1628,6 +1837,12 @@
       "followUps": [
         "What exactly did they do?",
         "How could we say thank you?"
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1657,6 +1872,12 @@
       "followUps": [
         "What problem does it solve?",
         "What color is it?"
+      ],
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
       ]
     },
     {
@@ -1712,7 +1933,13 @@
         ],
         "template": "Professor {name} announced the first {color} pajama parade. A tiny {animal} led the march and shouted {sound} every time someone yawned.",
         "readAloudNote": "Read it with a sleepy announcer voice."
-      }
+      },
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
+      ]
     },
     {
       "id": "robot_cookie_factory",
@@ -1767,7 +1994,13 @@
         ],
         "template": "The {adjective} robot opened a factory for {food}. It pressed one button and {number} tiny {object}s danced across the counter.",
         "readAloudNote": "Pause before the dancing objects."
-      }
+      },
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
+      ]
     },
     {
       "id": "undersea_bedtime_bus",
@@ -1822,7 +2055,13 @@
         ],
         "template": "The bedtime bus was driven by a sleepy {animal}. It stopped at {place}, flashed its {color} lights, and whispered {sound} to the fish.",
         "readAloudNote": "Use a soft bus-driver voice."
-      }
+      },
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
+      ]
     },
     {
       "id": "castle_pizza_problem",
@@ -1876,7 +2115,13 @@
         ],
         "template": "The royal {noun} refused to eat the {adjective} {food} until everyone agreed to {verb} around the table one time.",
         "readAloudNote": "Read it as a royal decree."
-      }
+      },
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
+      ]
     },
     {
       "id": "space_pet_show",
@@ -1930,7 +2175,13 @@
         ],
         "template": "Judge {name} welcomed the space {animal} show. The winner floated {adverb} through the ring and made a proud {sound}.",
         "readAloudNote": "Use a game-show voice."
-      }
+      },
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
+      ]
     },
     {
       "id": "breakfast_dragon_train",
@@ -1985,7 +2236,13 @@
         ],
         "template": "The {color} dragon train delivered {food} to the {place}. It rang its bell {number} times and served everyone a plate of giggles.",
         "readAloudNote": "Make the train bell sound gentle."
-      }
+      },
+      "quickCategories": [
+        "quiet_games",
+        "dinner_table",
+        "brain_games",
+        "quality_time"
+      ]
     }
   ]
 }
