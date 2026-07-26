@@ -99,6 +99,17 @@ Smoke test pass criteria:
 
 Ask each tester to complete at least two sessions if possible.
 
+### 30-second unfamiliar/tired-parent acceptance test
+
+Use at least one tester who has not received a walkthrough. Ask them to imagine they are tired and need a family activity now, then start a stopwatch at a fresh launch.
+
+1. Without coaching, have the tester choose any game or activity.
+2. Confirm the choice exposes materials and setup burden before play, including `none` where applicable.
+3. Confirm the card provides the exact prompt or complete steps; the tester must not invent content or ask what to do next.
+4. Stop timing when the tester can begin the first spoken or physical play step.
+
+Pass only when the tester reaches a ready choice and can start within 30 seconds, without outside explanation or invention. Record elapsed time, chosen item, any hesitation, whether materials/setup were clear, and pass/fail. Treat coaching, hidden setup burden, incomplete content, or a start time over 30 seconds as a failure requiring triage.
+
 ### Session 1: First-run observation
 
 Parent should start from a fresh launch and choose what they naturally want to try first.

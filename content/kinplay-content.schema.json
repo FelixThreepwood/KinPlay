@@ -73,6 +73,9 @@
             ]
           }
         },
+        "participantSuitability": {
+          "enum": ["one_on_one", "group", "both"]
+        },
         "materials": {
           "type": "array",
           "items": { "type": "string", "minLength": 1, "maxLength": 60 }
@@ -128,6 +131,15 @@
         {
           "if": { "properties": { "type": { "const": "mad_libs" } } },
           "then": { "required": ["madLibs"] }
+        },
+        {
+          "if": {
+            "properties": {
+              "quickCategories": { "contains": { "const": "quality_time" } }
+            },
+            "required": ["quickCategories"]
+          },
+          "then": { "required": ["participantSuitability"] }
         }
       ]
     },

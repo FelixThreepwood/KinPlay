@@ -4,6 +4,8 @@
 - ID: `if_toys_could_talk`
 - Type: prompt
 - Modes: quick_play, pick_a_game
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 2–8
 - Duration: 5 min
 - Energy: calm
@@ -17,6 +19,8 @@
 - ID: `tiny_kindness_plan`
 - Type: prompt
 - Modes: quick_play, pick_a_game, calm_down
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 4 min
 - Energy: calm
@@ -26,23 +30,28 @@
 - Prompt: What is one tiny kind thing we can do for someone in our family today?
 - Follow-ups: Who should we help? / Can we do it in less than two minutes?
 
-## Silly Would You Rather
+## Would You Rather
 - ID: `would_you_rather_silly_family`
 - Type: prompt
 - Modes: quick_play, pick_a_game, calm_down
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 5 min
 - Energy: calm
-- Summary: Choose between two harmless silly options and explain why.
+- Summary: Choose between ready-to-read, harmless silly options and explain why.
 - Materials: none
 - Safety tags: quiet, no_materials, sibling_friendly
 - Prompt: Would you rather have pancakes for shoes or spaghetti for hair for one silly day?
-- Follow-ups: What would be the funniest part? / What would you do first?
+- Variations: Gross & Silly — Would you rather sneeze bubbles or burp tiny trumpet sounds? / Gross & Silly — Would you rather have noodles for hair or soft green peas for toes? / Gross & Silly — Would you rather brush furry teeth or comb a very stinky sock? / Gross & Silly — Would you rather hiccup “pickle” or pass a tiny squeaky toot whenever you laugh?
+- Follow-ups: What would be the funniest part? / Would your answer change for just one minute?
 
 ## Best Part Today
 - ID: `best_part_today`
 - Type: prompt
 - Modes: quick_play, pick_a_game, calm_down
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 2–8
 - Duration: 4 min
 - Energy: calm
@@ -56,6 +65,8 @@
 - ID: `superpower_for_helping`
 - Type: prompt
 - Modes: quick_play, pick_a_game
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 5 min
 - Energy: calm
@@ -69,6 +80,8 @@
 - ID: `kind_robot_instructions`
 - Type: prompt
 - Modes: quick_play, pick_a_game
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 5 min
 - Energy: calm
@@ -82,6 +95,8 @@
 - ID: `three_word_story`
 - Type: prompt
 - Modes: quick_play, pick_a_game, calm_down
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: group
 - Age: 6–8
 - Duration: 6 min
 - Energy: calm
@@ -95,6 +110,8 @@
 - ID: `thank_you_detective`
 - Type: prompt
 - Modes: calm_down, pick_a_game
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 4 min
 - Energy: calm
@@ -108,6 +125,8 @@
 - ID: `silly_invention_pitch`
 - Type: prompt
 - Modes: quick_play, pick_a_game
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 6–8
 - Duration: 7 min
 - Energy: calm

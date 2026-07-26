@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-val appVersionName = "0.3.0-beta1"
+val appVersionName = "0.4.0-beta1"
 val isVersionedBeta = appVersionName.contains("-beta", ignoreCase = true)
 
 android {
@@ -15,7 +15,7 @@ android {
         applicationId = "com.kinplay.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 3
+        versionCode = 4
         versionName = appVersionName
 
         vectorDrawables {
@@ -64,6 +64,8 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.9.0")
 
     testImplementation("junit:junit:4.13.2")
+    testImplementation("com.google.code.gson:gson:2.13.1")
+    testImplementation("org.json:json:20240303")
 
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")

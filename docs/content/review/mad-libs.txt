@@ -4,6 +4,8 @@
 - ID: `moon_pancake_mission`
 - Type: mad_libs
 - Modes: mad_libs
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
@@ -18,6 +20,8 @@
 - ID: `dragon_laundry_day`
 - Type: mad_libs
 - Modes: mad_libs
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
@@ -32,6 +36,8 @@
 - ID: `backyard_castle_news`
 - Type: mad_libs
 - Modes: mad_libs
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 6–8
 - Duration: 10 min
 - Energy: calm
@@ -46,6 +52,8 @@
 - ID: `wizard_pajama_parade`
 - Type: mad_libs
 - Modes: mad_libs
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
@@ -60,6 +68,8 @@
 - ID: `robot_cookie_factory`
 - Type: mad_libs
 - Modes: mad_libs
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
@@ -74,6 +84,8 @@
 - ID: `undersea_bedtime_bus`
 - Type: mad_libs
 - Modes: mad_libs
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
@@ -88,6 +100,8 @@
 - ID: `castle_pizza_problem`
 - Type: mad_libs
 - Modes: mad_libs
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 6–8
 - Duration: 10 min
 - Energy: calm
@@ -102,6 +116,8 @@
 - ID: `space_pet_show`
 - Type: mad_libs
 - Modes: mad_libs
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 6–8
 - Duration: 10 min
 - Energy: calm
@@ -116,6 +132,8 @@
 - ID: `breakfast_dragon_train`
 - Type: mad_libs
 - Modes: mad_libs
+- Quick categories: quiet_games, dinner_table, brain_games, quality_time
+- Participant suitability: both
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm

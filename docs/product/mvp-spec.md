@@ -11,6 +11,7 @@ KinPlay is an Android app for guided family play with young children. The MVP sh
 - Parent-led: the adult chooses or starts a session; children participate verbally or physically.
 - Short sessions: default to 5-15 minutes.
 - Low setup: each activity lists materials, if any, before start.
+- Low cognitive load: every choice is ready to use; the parent never has to invent the game, prompt, or next step.
 - Safe by default: content includes age tags, safety tags, and supervision notes.
 
 ## MVP modes
@@ -34,6 +35,8 @@ KinPlay is an Android app for guided family play with young children. The MVP sh
    - No scary, competitive, or high-energy prompts.
 
 ## MVP content types
+
+Games and activities are first-class content. Discovery language and categories must include cooperative creative activities—such as drawing, washable coloring, and washable painting—alongside familiar games.
 
 ### Activity card
 
@@ -164,6 +167,9 @@ The MVP spec is satisfied when:
 - The app launches on a physical Android device after manual transfer.
 - Home screen exposes Quick Play, Pick a Game, Mad Libs, and Calm Down.
 - Content loads from local JSON assets.
+- An unfamiliar or tired parent can choose a ready-to-use item and start it within 30 seconds without outside explanation.
+- Every choice shows its setup/material burden before play, including an explicit `none` state when no materials are needed.
+- Every active activity supplies complete setup and play steps, and every prompt supplies words that can be read aloud immediately; the parent is never required to invent content.
 - At least 12 seed items exist:
   - 5 activity cards
   - 3 Mad Libs templates

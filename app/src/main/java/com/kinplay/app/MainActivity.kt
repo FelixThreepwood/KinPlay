@@ -64,6 +64,14 @@ class MainActivity : ComponentActivity() {
 }
 
 const val CONTENT_CARD_DEFAULT_EXPANDED = false
+const val HOME_DESCRIPTOR = "Ready-to-use family games & activities"
+const val HOME_INSTRUCTION_SECTION_ENABLED = false
+const val BROWSE_LIBRARY_LABEL = "Browse All Games & Activities"
+const val MAD_LIBS_COLLECTION_ID = "mad_libs_collection"
+private val FAMILIAR_QUIET_TITLES = listOf("I Spy", "Charades", "Would You Rather", "Animal Guessing", "Alphabet Story")
+
+fun contentListBackLabel(isMadLibsSubmenu: Boolean = false): String =
+    if (isMadLibsSubmenu) "Back to Quiet Games" else "Back home"
 
 private object Routes {
     const val Home = "home"
@@ -71,6 +79,7 @@ private object Routes {
     const val PickGame = "pick_game"
     const val CalmDown = "calm_down"
     const val AboutSafety = "about_safety"
+    const val MadLibsCollection = "mad_libs_collection"
     const val Category = "category/{categoryId}"
     const val Detail = "detail/{itemId}"
     fun category(categoryId: String) = "category/$categoryId"
@@ -117,9 +126,18 @@ fun KinPlayApp() {
                 NavHost(navController = navController, startDestination = Routes.Home) {
                     composable(Routes.Home) { HomeScreen(contentPack, favoriteIds, recentIds, navController) }
                     composable(Routes.QuickPlay) { QuickPlayScreen(contentPack, favoriteIds, recentIds, navController) }
-                    composable(Routes.PickGame) { ContentListScreen("All Games", contentPack.gameLibraryItems(), favoriteIds, navController) }
+                    composable(Routes.PickGame) { ContentListScreen("All Games & Activities", contentPack.gameLibraryItems(), favoriteIds, navController) }
                     composable(Routes.CalmDown) { ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController) }
                     composable(Routes.AboutSafety) { AboutSafetyScreen(navController) }
+                    composable(Routes.MadLibsCollection) {
+                        ContentListScreen(
+                            title = "Mad Libs",
+                            items = contentPack.madLibs(),
+                            favoriteIds = favoriteIds,
+                            navController = navController,
+                            backLabel = contentListBackLabel(isMadLibsSubmenu = true),
+                        )
+                    }
                     composable(
                         Routes.Category,
                         arguments = listOf(navArgument("categoryId") { type = NavType.StringType }),
@@ -127,7 +145,7 @@ fun KinPlayApp() {
                         val categoryId = entry.arguments?.getString("categoryId").orEmpty()
                         val category = QuickCategory.fromId(categoryId)
                         ContentListScreen(
-                            title = category?.label ?: "Games",
+                            title = category?.label ?: "Games & Activities",
                             items = contentPack.itemsForQuickCategory(categoryId),
                             favoriteIds = favoriteIds,
                             navController = navController,
@@ -188,14 +206,21 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("KinPlay") },
+                title = {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(10.dp),
+                    ) {
+                        Text("KinPlay", fontWeight = FontWeight.Bold)
+                        Text(HOME_DESCRIPTOR, style = MaterialTheme.typography.bodySmall, color = MutedInk, maxLines = 1)
+                    }
+                },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Canvas, titleContentColor = Ink),
             )
         },
     ) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
-            SectionTitle("What fits right now?", "Tap a quick list to see familiar family games")
-            QuickCategoryGrid(contentPack) { category -> navController.navigate(Routes.category(category.id)) }
+            QuickCategoryGrid { category -> navController.navigate(Routes.category(category.id)) }
             val favoriteItems = contentPack.favoriteItems(favoriteIds)
             val recentItems = contentPack.recentItems(recentIds)
             if (favoriteItems.isNotEmpty()) {
@@ -207,20 +232,19 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                 recentItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
             }
             SectionTitle("More ways to start", "Offline, parent-led choices for ages 2–8")
-            HomeButton("Pick For Me", "Randomly choose a quick local game") { navController.navigate(Routes.QuickPlay) }
-            HomeButton("Browse All Games", "See the full library, including story games") { navController.navigate(Routes.PickGame) }
+            HomeButton("Pick For Me", "Choose a ready-to-use local activity") { navController.navigate(Routes.QuickPlay) }
+            HomeButton(BROWSE_LIBRARY_LABEL, "See the full library, including story activities") { navController.navigate(Routes.PickGame) }
             HomeButton("About / Safety", "Parent-led safety and privacy notes") { navController.navigate(Routes.AboutSafety) }
         }
     }
 }
 
 @Composable
-fun QuickCategoryGrid(contentPack: ContentPack, onSelect: (QuickCategory) -> Unit) {
+fun QuickCategoryGrid(onSelect: (QuickCategory) -> Unit) {
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
         QuickCategory.defaultGrid.chunked(2).forEach { categoryRow ->
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 categoryRow.forEach { category ->
-                    val count = contentPack.itemsForQuickCategory(category.id).size
                     Card(
                         colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
                         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
@@ -235,7 +259,7 @@ fun QuickCategoryGrid(contentPack: ContentPack, onSelect: (QuickCategory) -> Uni
                             verticalArrangement = Arrangement.SpaceBetween,
                         ) {
                             Text(category.label, fontWeight = FontWeight.Bold, color = Ink)
-                            Text("$count games  ›", style = MaterialTheme.typography.bodySmall, color = Forest)
+                            Text("${category.placeCue}  ›", style = MaterialTheme.typography.bodySmall, color = Forest)
                         }
                     }
                 }
@@ -366,7 +390,13 @@ fun QuickPlayScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentId
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContentListScreen(title: String, items: List<KinPlayItem>, favoriteIds: Set<String>, navController: NavController) {
+fun ContentListScreen(
+    title: String,
+    items: List<KinPlayItem>,
+    favoriteIds: Set<String>,
+    navController: NavController,
+    backLabel: String = contentListBackLabel(),
+) {
     Scaffold(topBar = { TopAppBar(title = { Text(title) }) }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
             SectionTitle(title, "${items.size} offline local cards")
@@ -374,7 +404,7 @@ fun ContentListScreen(title: String, items: List<KinPlayItem>, favoriteIds: Set<
                 Text("No matching local content found.")
             }
             items.forEach { item -> ContentCard(item, favoriteIds, navController) }
-            OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
+            OutlinedButton(onClick = { navController.popBackStack() }) { Text(backLabel) }
         }
     }
 }
@@ -401,6 +431,12 @@ fun ContentCard(
                 Text(title, fontWeight = FontWeight.Bold, color = Ink, modifier = Modifier.weight(1f))
                 Text(if (expanded) "⌃" else "⌄", color = Forest, fontWeight = FontWeight.Bold)
             }
+            item.participantFitLabel()?.let { label ->
+                Text(label, style = MaterialTheme.typography.bodySmall, color = ForestDark, fontWeight = FontWeight.Bold)
+            }
+            item.collapsedCardPreviewLines().forEach { previewLine ->
+                Text(previewLine, style = MaterialTheme.typography.bodySmall, color = MutedInk)
+            }
             if (expanded) {
                 CompactCardDetails(item, navController)
             }
@@ -417,10 +453,7 @@ fun CompactCardDetails(item: KinPlayItem, navController: NavController) {
     ) {
         Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
             Text(item.summary, style = MaterialTheme.typography.bodySmall, color = Ink)
-            Text(
-                "Materials: ${if (item.materials.isEmpty()) "none" else item.materials.joinToString()}",
-                style = MaterialTheme.typography.bodySmall,
-            )
+            Text(item.setupBurdenLabel(), style = MaterialTheme.typography.bodySmall)
             if (item.type == "mad_libs") {
                 Text("Mad Libs fields: ${item.madLibsFields.size}", style = MaterialTheme.typography.bodySmall)
             }
@@ -432,7 +465,7 @@ fun CompactCardDetails(item: KinPlayItem, navController: NavController) {
             DetailPill("${item.durationMinutes} min")
             DetailPill(item.displayAgeRange())
             Text(item.energyLevel, style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.End, color = MutedInk)
-            Button(onClick = { navController.navigate(Routes.detail(item.id)) }) { Text("Open") }
+            Button(onClick = { navController.openItem(item) }) { Text("Open") }
         }
     }
 }
@@ -458,6 +491,7 @@ fun ActivityDetailScreen(
                     DetailPill("${item.durationMinutes} min")
                     DetailPill(item.energyLevel)
                 }
+                item.participantFitLabel()?.let { DetailPill(it) }
                 item.detailSections().forEach { section ->
                     SectionList(section.title, section.lines)
                 }
@@ -501,7 +535,7 @@ fun MadLibPlayPanel(story: KinPlayItem) {
         field.key to rememberSaveable(story.id, field.key) { mutableStateOf("") }
     }
     var revealed by rememberSaveable(story.id) { mutableStateOf(false) }
-    InfoPanel("Story game", "Fill in each prompt without reading the story first, then reveal the result.")
+    InfoPanel("Story activity", "Fill in each prompt without reading the story first, then reveal the result.")
     story.madLibsFields.forEach { field ->
         OutlinedTextField(
             value = answers.getValue(field.key).value,
@@ -556,7 +590,16 @@ data class ContentPack(
     fun madLibs() = activeItems().filter { it.type == "mad_libs" }
     fun gameLibraryItems() = activeItems()
     fun pickGameItems() = gameLibraryItems()
-    fun itemsForQuickCategory(categoryId: String) = items.itemsForQuickCategory(categoryId)
+    fun itemsForQuickCategory(categoryId: String) =
+        if (categoryId == QuickCategory.QUIET_GAMES.id) quietGamesDisplayItems() else items.itemsForQuickCategory(categoryId)
+    fun quietGamesDisplayItems(): List<KinPlayItem> {
+        val quietItems = items.itemsForQuickCategory(QuickCategory.QUIET_GAMES.id)
+        val familiarByTitle = quietItems.filterNot { it.type == "mad_libs" }.associateBy { it.title }
+        val familiar = FAMILIAR_QUIET_TITLES.mapNotNull(familiarByTitle::get)
+        val remaining = quietItems.filterNot { it.type == "mad_libs" || it.title in FAMILIAR_QUIET_TITLES }
+        val collection = madLibs().takeIf { it.isNotEmpty() }?.let(::madLibsCollectionItem)
+        return familiar + listOfNotNull(collection) + remaining
+    }
     fun calmDownItems() = activeItems().filter { "calm_down" in it.modes || "calming" in it.safetyTags }
     fun quickPlayPick(): KinPlayItem? = items.pickForMode("quick_play")
 
@@ -593,6 +636,8 @@ data class KinPlayItem(
     val followUps: List<String> = emptyList(),
     val madLibsFields: List<MadLibField> = emptyList(),
     val madLibsTemplate: String = "",
+    val readAloudNote: String = "",
+    val participantSuitability: ParticipantSuitability? = null,
 ) {
     fun renderMadLib(answers: Map<String, String>): String {
         var result = madLibsTemplate
@@ -626,6 +671,8 @@ data class KinPlayItem(
                 followUps = json.stringList("followUps"),
                 madLibsFields = if (fields == null) emptyList() else List(fields.length()) { MadLibField.fromJson(fields.getJSONObject(it)) },
                 madLibsTemplate = madLibs?.optString("template", "").orEmpty(),
+                readAloudNote = madLibs?.optString("readAloudNote", "").orEmpty(),
+                participantSuitability = ParticipantSuitability.fromWireValue(json.optString("participantSuitability", "")),
             )
         }
     }
@@ -652,13 +699,23 @@ data class DetailSection(
     val lines: List<String>,
 )
 
-enum class QuickCategory(val id: String, val label: String) {
-    QUIET_GAMES("quiet_games", "Quiet Games"),
-    DINNER_TABLE("dinner_table", "At the Dinner Table"),
-    OUTDOOR_ADVENTURES("outdoor_adventures", "Outdoor Adventures"),
-    GET_ENERGY_OUT("get_energy_out", "Get the Energy Out"),
-    BRAIN_GAMES("brain_games", "Brain Games"),
-    QUALITY_TIME("quality_time", "Quality Time");
+enum class ParticipantSuitability(val wireValue: String, val displayLabel: String) {
+    ONE_ON_ONE("one_on_one", "Best for 1:1"),
+    GROUP("group", "Best for a group"),
+    BOTH("both", "Works 1:1 or with a group");
+
+    companion object {
+        fun fromWireValue(value: String): ParticipantSuitability? = entries.firstOrNull { it.wireValue == value }
+    }
+}
+
+enum class QuickCategory(val id: String, val label: String, val placeCue: String) {
+    QUIET_GAMES("quiet_games", "Quiet Games", "Waiting room • couch"),
+    DINNER_TABLE("dinner_table", "At the Dinner Table", "Dining table • restaurant"),
+    OUTDOOR_ADVENTURES("outdoor_adventures", "Outdoor Adventures", "Backyard • park"),
+    GET_ENERGY_OUT("get_energy_out", "Get the Energy Out", "Living room • backyard"),
+    BRAIN_GAMES("brain_games", "Brain Games", "Table • waiting room"),
+    QUALITY_TIME("quality_time", "Quality Time", "Anywhere • 1:1 or group");
 
     companion object {
         val defaultGrid = entries.toList()
@@ -694,6 +751,49 @@ fun List<KinPlayItem>.pickForModeAvoidingRecent(
 fun KinPlayItem.displayAgeRange(): String =
     if (minAge == maxAge) "Age $minAge" else "Ages $minAge–$maxAge"
 
+fun KinPlayItem.participantFitLabel(): String? = participantSuitability?.displayLabel
+
+fun KinPlayItem.setupBurdenLabel(): String =
+    if (materials.isEmpty()) "No materials" else "Needs: ${materials.joinToString()}"
+
+fun KinPlayItem.setupPreviewLabel(maxCharacters: Int = 84): String {
+    val prefix = "Setup: "
+    val firstStep = setupSteps.firstOrNull { it.isNotBlank() }?.trim() ?: return "${prefix}No setup needed"
+    val availableCharacters = (maxCharacters - prefix.length).coerceAtLeast(1)
+    if (firstStep.length <= availableCharacters) return prefix + firstStep
+    if (availableCharacters == 1) return prefix + "…"
+
+    val candidate = firstStep.take(availableCharacters - 1).trimEnd()
+    val lastSpace = candidate.lastIndexOf(' ')
+    val shortened = if (lastSpace > 0) candidate.substring(0, lastSpace) else candidate
+    return prefix + shortened.trimEnd() + "…"
+}
+
+fun KinPlayItem.collapsedCardPreviewLines(): List<String> =
+    listOf(setupBurdenLabel(), setupPreviewLabel())
+
+fun KinPlayItem.isMadLibsCollection(): Boolean = id == MAD_LIBS_COLLECTION_ID
+
+private fun madLibsCollectionItem(stories: List<KinPlayItem>) = KinPlayItem(
+    id = MAD_LIBS_COLLECTION_ID,
+    type = "collection",
+    status = "active",
+    title = "Mad Libs",
+    summary = "Open all ${stories.size} ready-to-fill silly stories.",
+    modes = listOf("mad_libs"),
+    minAge = stories.minOf { it.minAge },
+    maxAge = stories.maxOf { it.maxAge },
+    durationMinutes = stories.minOf { it.durationMinutes },
+    energyLevel = "calm",
+    quickCategories = listOf(QuickCategory.QUIET_GAMES.id),
+    safetyTags = listOf("quiet", "no_materials", "reading_help"),
+    participantSuitability = ParticipantSuitability.BOTH,
+)
+
+private fun NavController.openItem(item: KinPlayItem) {
+    navigate(if (item.isMadLibsCollection()) Routes.MadLibsCollection else Routes.detail(item.id))
+}
+
 fun String.displayTagLabel(): String =
     split('_')
         .filter { it.isNotBlank() }
@@ -706,6 +806,7 @@ fun KinPlayItem.detailSections(): List<DetailSection> = buildList {
     if (playSteps.isNotEmpty()) add(DetailSection("Steps", playSteps))
     if (promptText.isNotBlank()) add(DetailSection("Prompt", listOf(promptText)))
     if (followUps.isNotEmpty()) add(DetailSection("Follow-up questions", followUps))
+    if (readAloudNote.isNotBlank()) add(DetailSection("Read-aloud note", listOf(readAloudNote)))
     if (variations.isNotEmpty()) add(DetailSection("Replay variations", variations))
 }
 

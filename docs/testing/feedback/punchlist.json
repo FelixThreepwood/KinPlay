@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-25T19:22:25-07:00",
+  "nextItemNumber": 11,
+  "batches": [
+    {
+      "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.3.0-beta1",
+        "versionCode": 3
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-07-24T00:44:48-07:00",
+      "sourceNoteCount": 4,
+      "canonicalItemCount": 4,
+      "childIdentifyingInformationRemoved": false,
+      "privacyReview": "No child-identifying information was present in the sanitized project record. A generic family reference was normalized.",
+      "canonicalItemIds": [
+        "KPF-0001",
+        "KPF-0002",
+        "KPF-0003",
+        "KPF-0004"
+      ]
+    },
+    {
+      "batchId": "KP-BATCH-A8304102-7BCF-47E1-A6BF-C1106EAB629C",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.3.0-beta1",
+        "versionCode": 3
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-07-24T09:36:32-07:00",
+      "sourceNoteCount": 8,
+      "canonicalItemCount": 10,
+      "existingCanonicalItemCount": 4,
+      "newCanonicalItemCount": 6,
+      "replayedSourceNoteCount": 4,
+      "replayedSourceNoteIds": [
+        "KP-NOTE-D759FF56-977B-4C96-A0D5-B581132B8BF5",
+        "KP-NOTE-110948F7-99FE-40E5-A990-5EDE9DFD60B2",
+        "KP-NOTE-39377C47-9245-4B37-BB42-FDF889B5DA33",
+        "KP-NOTE-3B05B013-BD41-408C-82C5-8C908F15D1A1"
+      ],
+      "canonicalItemIds": [
+        "KPF-0001",
+        "KPF-0002",
+        "KPF-0003",
+        "KPF-0004",
+        "KPF-0005",
+        "KPF-0006",
+        "KPF-0007",
+        "KPF-0008",
+        "KPF-0009",
+        "KPF-0010"
+      ],
+      "childIdentifyingInformationRemoved": false,
+      "privacyReview": "No child-identifying information was present in the sanitized project record. Generic references to children and family were normalized.",
+      "duplicateHandling": "Four source note IDs were exact replays from the earlier batch. They were linked to existing items and did not increase occurrence counts."
+    }
+  ],
+  "items": [
+    {
+      "id": "KPF-0001",
+      "title": "Lead Quiet Games with familiar named games",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "category/quiet_games",
+      "normalizedFinding": "Begin Quiet Games with familiar formats: I Spy, Charades, Would You Rather, Animal Guessing with yes/no questions, and Alphabet Story. Place optional categories and variations inside each familiar game.",
+      "expectedBehavior": "A tester can choose a familiar game immediately and then use optional suggestions or variations.",
+      "occurrenceCount": 2,
+      "sourceNoteIds": [
+        "KP-NOTE-D759FF56-977B-4C96-A0D5-B581132B8BF5",
+        "KP-NOTE-110948F7-99FE-40E5-A990-5EDE9DFD60B2"
+      ],
+      "duplicateMergeRationale": "Both notes request I Spy; the second expands the same discoverability and list-organization need.",
+      "reproductionStatus": "not_applicable_content_request",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0002",
+      "title": "Group Mad Libs stories under a Mad Libs submenu",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "information_architecture"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "category/quiet_games",
+      "normalizedFinding": "Collect individual Mad Libs stories beneath one Mad Libs entry and submenu.",
+      "expectedBehavior": "Quiet Games shows one Mad Libs entry that opens the available stories.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-D759FF56-977B-4C96-A0D5-B581132B8BF5"
+      ],
+      "reproductionStatus": "needs_confirmation_during_revision",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0003",
+      "title": "Add a child-appropriate Gross Would You Rather set",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_request"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "category/quiet_games",
+      "normalizedFinding": "Add a gross-humor Would You Rather variation using absurd bodily or food concepts while excluding crass or inappropriate material.",
+      "expectedBehavior": "Would You Rather offers a clearly labeled, reviewed, child-appropriate gross-humor prompt set.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-39377C47-9245-4B37-BB42-FDF889B5DA33"
+      ],
+      "reproductionStatus": "not_applicable_content_request",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0004",
+      "title": "Add Race Like an Animal as an active game",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_request"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "category/quiet_games",
+      "targetCategory": "active_high_energy",
+      "targetCategoryInferenceConfidence": 0.95,
+      "normalizedFinding": "Add a race in which participants choose an animal and imitate its movement. Suggested animals include kangaroo, cheetah, rabbit, and frog.",
+      "expectedBehavior": "The activity explains animal selection, a safe race area, and animal-style movement.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3B05B013-BD41-408C-82C5-8C908F15D1A1"
+      ],
+      "reproductionStatus": "not_applicable_content_request",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0005",
+      "title": "Add Indoor Marco Polo with pillows",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_request",
+        "safety_review"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "home",
+      "targetCategory": "active_high_energy_indoor",
+      "normalizedFinding": "Add an indoor Marco Polo activity that incorporates pillows.",
+      "expectedBehavior": "The activity supplies ready-to-use setup and play instructions and is safety-reviewed before activation.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-AA2C17B1-8FA2-44EA-80BB-D2DFD4379AEF"
+      ],
+      "reproductionStatus": "not_applicable_content_request",
+      "safetyReview": "completed_redesigned_awaiting_family_device_retest",
+      "safetyRedesign": "Eyes remain open; players walk only; the adult supervises as a stationary caller. Pillows are flat boundary/island markers only, never thrown, used for face covering, piled, or jumped on. Setup clears stairs, furniture edges, cords, pets, and fragile objects, and play stops if it becomes chaotic.",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0006",
+      "title": "Minimize and compact the home screen",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "usability",
+        "information_architecture"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Keep KinPlay at the upper-left, place a concise one-line descriptor beside it, remove the What fits now instructional section, and move the six-category grid upward. Defer richer graphics and animated characters to later development.",
+      "expectedBehavior": "The first screen presents identity, purpose, and category choices with minimal copy and no unnecessary vertical gap.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-09B10E03-CB5C-4C41-B2F8-E024775D1628"
+      ],
+      "reproductionStatus": "visual_review_required",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0007",
+      "title": "Show suitable-place cues on category cards",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "usability",
+        "content_metadata"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Replace each category card’s game count with a concise list of suitable play locations, including waiting-room cues for quiet activities and backyard or living-room cues for high-energy activities.",
+      "expectedBehavior": "A parent can choose a category from the current setting without interpreting an inventory count.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C"
+      ],
+      "reproductionStatus": "visual_and_content_review_required",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0008",
+      "title": "Label Quality Time activities by group suitability",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_metadata",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Mark the Quality Time category and each activity as intended for one-on-one play, group play, or both.",
+      "expectedBehavior": "A parent can identify participant fit before opening or starting an activity.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C"
+      ],
+      "reproductionStatus": "content_review_required",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0009",
+      "title": "Include activities as well as games",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "product_scope",
+        "content_request"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Treat suitable activities as first-class content alongside games, including drawing, coloring, and painting.",
+      "expectedBehavior": "Discovery and category language accommodate both games and activities that support family engagement and children’s creativity.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C"
+      ],
+      "reproductionStatus": "product_copy_and_content_review_required",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0010",
+      "title": "Make low-cognitive-load parent support a product requirement",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "product_principle",
+        "usability_requirement"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.3.0-beta1 (3)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "KinPlay should supply ready-to-use inspiration, choices, and facilitation so an exhausted or overwhelmed parent does not have to invent the activity. The intended outcome is family interaction, closeness, and children’s creativity and imagination.",
+      "expectedBehavior": "Core flows provide immediately usable choices and guidance while minimizing decisions, setup work, and creative effort required from the parent.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-B3C04782-B438-4B0E-876D-3A87A15C8D37"
+      ],
+      "relatedItemIds": [
+        "KPF-0001",
+        "KPF-0006",
+        "KPF-0007",
+        "KPF-0008",
+        "KPF-0009"
+      ],
+      "reproductionStatus": "product_acceptance_review_required",
+      "implementationStatus": "complete",
+      "retestBuild": "0.4.0-beta1 (4)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    }
+  ]
+}
