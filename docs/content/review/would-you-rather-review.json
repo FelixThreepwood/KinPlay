@@ -1,0 +1,2909 @@
+{
+  "schemaVersion": 1,
+  "libraryId": "would_you_rather_v1",
+  "reviewedOn": "2026-07-26",
+  "reviewScope": "All 320 rendered prompts were reviewed for originality, readability, category fit, and the KinPlay child-safety exclusions.",
+  "provenance": {
+    "origin": "original_kinplay_editorial_work",
+    "statement": "No external prompt collection was used or copied.",
+    "method": "Original option pools and pairings were authored for KinPlay, rendered into final text, then checked for duplicates and prohibited material."
+  },
+  "safetyPolicy": {
+    "audience": "Family use, approximately ages 4–8 with caregiver participation.",
+    "excluded": [
+      "sexual or crude language",
+      "profanity",
+      "violence, injury, or death",
+      "humiliation or bullying",
+      "protected-trait or body-shaming jokes",
+      "hazardous ingestion or dangerous dares",
+      "disease or disability jokes",
+      "real brands or copyrighted characters",
+      "personal data",
+      "graphic bodily material"
+    ],
+    "superGrossBoundary": "Mild fictional bodily humor is limited to burps, farts, boogers, stinky socks, and harmless pretend messes."
+  },
+  "prompts": [
+    {
+      "id": "wyr_cute_silly_001",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a062cad83790769fbed146171feba3f70294eb60c4c146743f422a32fe7afec8"
+    },
+    {
+      "id": "wyr_cute_silly_002",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e5c8c1f5683b74d83254befc65c9a76b964de9cf2d97a388d38617dc686a59ee"
+    },
+    {
+      "id": "wyr_cute_silly_003",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "06c5100bf2e17135282d0afa4c790bf4331cb16f9e7dd5c5f641b211ea0ddd5d"
+    },
+    {
+      "id": "wyr_cute_silly_004",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "05b39044b1e208343431faed2532cd7ded766e27a8964401260c63fae21d1563"
+    },
+    {
+      "id": "wyr_cute_silly_005",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "bd24c5ae07e0690d3e0e238a68064d3399bcd99b92be060a9b797e12407081ec"
+    },
+    {
+      "id": "wyr_cute_silly_006",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "89128c9c11ed3cac0e182a20ba17a7ee2716ae72fce7ba8ddb8af62a0af71353"
+    },
+    {
+      "id": "wyr_cute_silly_007",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7153d2fbb6c09a0341fa15ecda43038e876d027cd6b8e1c2a16e926a7cd9c29b"
+    },
+    {
+      "id": "wyr_cute_silly_008",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e9c71c66360ca2a73acb5c95d6422cbe979a2105874b99ceb656b36d51bede4b"
+    },
+    {
+      "id": "wyr_cute_silly_009",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8bac3233cc4dcb39ec40f6571fda7d6c1f5aec13c97bac84a8c9cebcec4e66fe"
+    },
+    {
+      "id": "wyr_cute_silly_010",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9b0ada10f185ad36623ecc2654c2e638974e33c7318581e88fdeced8e08ddbec"
+    },
+    {
+      "id": "wyr_cute_silly_011",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7e1268903540b0275fa98ce6af97c15e2a1847ea38bfe09253f39706abe5744d"
+    },
+    {
+      "id": "wyr_cute_silly_012",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "53cf1c5b48e31059a22823565a6c564f88c100dcd4a7bdc3c2379c5fad0284ef"
+    },
+    {
+      "id": "wyr_cute_silly_013",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a3db1ad4183680650d84335af4868943289e4c69ff9bc968091bd9ab53530d8f"
+    },
+    {
+      "id": "wyr_cute_silly_014",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "aa5a1fb8b63377898d7097d1b2b133fef28e2e42f5898b55ffe677d699b55fda"
+    },
+    {
+      "id": "wyr_cute_silly_015",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9b624a2ca1c7ffd50827972da2ea0604316fa1ced5d83beb2d7a7417110154c8"
+    },
+    {
+      "id": "wyr_cute_silly_016",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8d26345df677b0b15cc4d5cd26315654b4ccd12cf5b5a2be2a04d8119021850c"
+    },
+    {
+      "id": "wyr_cute_silly_017",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "795e6c18ce7427ad1013c17cd2a453389c905f7aa4366a0bc328fcd497533241"
+    },
+    {
+      "id": "wyr_cute_silly_018",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0dd0acbcbc0126313ce781af8f0814c9eafb466b4c002647be783a362561cae0"
+    },
+    {
+      "id": "wyr_cute_silly_019",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ac9195ff45981300b57d749e9db930cad9b38e4762316c7ec4073f15987a7702"
+    },
+    {
+      "id": "wyr_cute_silly_020",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "96652b03a627f4ea240cdb5cdb0acf42757e8c288c3f0aaaffb52748fe5893de"
+    },
+    {
+      "id": "wyr_cute_silly_021",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "fd6c09eb73a87e3594f41e10d54f5a2db65845c92ed30f1a3e08faf993979317"
+    },
+    {
+      "id": "wyr_cute_silly_022",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9f2455c18850f33e44b35c2a3bfd5efd94d2fec5318a07be8348fb358cbf80b5"
+    },
+    {
+      "id": "wyr_cute_silly_023",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "6ab1f4f5ecdc8bcf77fc3a55440352b80efaeda152624db2ed44c8772afd0fb3"
+    },
+    {
+      "id": "wyr_cute_silly_024",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1834ac50dc6ecedccb048f728bc6f3c121b13ed9f881ca882fa295e394ce8414"
+    },
+    {
+      "id": "wyr_cute_silly_025",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b0d71e2809dacae7a5d75c20578f3028c4ec8bad9bac3f99dfd564f66cc1c778"
+    },
+    {
+      "id": "wyr_cute_silly_026",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7bdb88b6bdb6c189e557c981a0c0c6126e204dc968c64994a7661e07f555cba4"
+    },
+    {
+      "id": "wyr_cute_silly_027",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "46749dcdaeb83c90de9ed1af53285dc3d64b2c6c05da76bd5d6b6bdd314116f3"
+    },
+    {
+      "id": "wyr_cute_silly_028",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "bcbb41c15b51ec2f2b58590e9353f56d5b6bc36a721223b85fd2bbf5a0a910a4"
+    },
+    {
+      "id": "wyr_cute_silly_029",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "85deb063ddc88c96bfbd506ae7b028d4c8ecf42e02c61901e8b293edddfe6ee8"
+    },
+    {
+      "id": "wyr_cute_silly_030",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "2ffd8fae56e9e600b4f11dc908049ce9135bcc07bb500db1d71956c8438b6a64"
+    },
+    {
+      "id": "wyr_cute_silly_031",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "881b00ceff1192f2a67e19cdf725b0ab2784158ca45705d947ddb4d5e8b74107"
+    },
+    {
+      "id": "wyr_cute_silly_032",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4e45e53516b2c3cb0dc967def27863866b5e7493f3c304f2f492b51b895b7966"
+    },
+    {
+      "id": "wyr_cute_silly_033",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "2be329d0aa1a8ca8c2d86ec398aaed3f5b11d8aed8ee00f84aebf2b04ef70bed"
+    },
+    {
+      "id": "wyr_cute_silly_034",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4602d85d1d64a5b1b34adf9c98251d784b8ab7b4bba36ca6c4ef25696e37e9e5"
+    },
+    {
+      "id": "wyr_cute_silly_035",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "648b4934e0918cf0bee9b9aefbb7cffabdd106371e561a925970afaeef2a4740"
+    },
+    {
+      "id": "wyr_cute_silly_036",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "6bf5fac6b723f103e47aaf0b3c67a0f41d059c3049ee63bbb977a529e49f68c1"
+    },
+    {
+      "id": "wyr_cute_silly_037",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "fa723da9da8c52643b9bcb58f46fd6cc7ad224cb786e6c39d2e8e711de720baf"
+    },
+    {
+      "id": "wyr_cute_silly_038",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "21d4fe23deeb357ef130491e15f3c5c6337d6789d60d7c9e69ece54450fa5e94"
+    },
+    {
+      "id": "wyr_cute_silly_039",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a706ff90c4dd476626fba8610ad510a365bfc62296c0b497e579c82cc44ec3c3"
+    },
+    {
+      "id": "wyr_cute_silly_040",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9fb34956826bd9141060596dfa64a3e7c9e5ddf18d325878cb4b5521f3954fbb"
+    },
+    {
+      "id": "wyr_cute_silly_041",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "29fecd8d7a55788f65a1e8fd520916143032700648f46a8003616a5ac1098557"
+    },
+    {
+      "id": "wyr_cute_silly_042",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d8bf44bac0dc7f8722fe85ec44c896fd7d4d9194a0da51c0d447ab829708a111"
+    },
+    {
+      "id": "wyr_cute_silly_043",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "28c9442b45915a46eb21a34a4a73cc43153b2f06a9ea291e6573bfb2a16e0f84"
+    },
+    {
+      "id": "wyr_cute_silly_044",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "efa94c822e92c7f5c7069027ede4de2244576901a72acbb3012e280a92636767"
+    },
+    {
+      "id": "wyr_cute_silly_045",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "98ca6f8c0aec757aee38f31200fb9a2cb5b3eb773cdc881f6cd60170a92637de"
+    },
+    {
+      "id": "wyr_cute_silly_046",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f6a81df1cae71b20b64395ac5e386895112b5d3854cb0679dba40f4525e2da26"
+    },
+    {
+      "id": "wyr_cute_silly_047",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5fba6e0e56337efad9bb39cd1c67b84aed242793635ebd3ae003a8d1199f6c48"
+    },
+    {
+      "id": "wyr_cute_silly_048",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9f49e3bca13a2656ae537aa74eb8128695b109a9abaa2ae4c482bdb70b4714f0"
+    },
+    {
+      "id": "wyr_cute_silly_049",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d5da3fa0f2dc4a3f293afdc943ab7c8f0eda94edc18c1eb9e0ff571e6ecf4cc7"
+    },
+    {
+      "id": "wyr_cute_silly_050",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9c76e0b256a021db02920c5909c8d119851d359df8ff8b777a47a01aedcdc82c"
+    },
+    {
+      "id": "wyr_cute_silly_051",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b2754896c3c2448fb7ef2a594ebe4cdb1c1fddc9e8d9508279a2ec114a756102"
+    },
+    {
+      "id": "wyr_cute_silly_052",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b52c1cdd8ad5f464662f1d74cb5a16cdbaeaf0936a566077e1b1d4db3ca518e2"
+    },
+    {
+      "id": "wyr_cute_silly_053",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "574e8dd19ba05ec34509625d8741312c531df41c6d703fa5279088f6af2a2d36"
+    },
+    {
+      "id": "wyr_cute_silly_054",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "960299c63b6792b75103a3bdab722f9c5b1899fe323cc8c95f9db44c84df076c"
+    },
+    {
+      "id": "wyr_cute_silly_055",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "2bebd96931e57ed69ecbc64ee1cfff076b46bf8ac8d6edef57cb88e316e01c94"
+    },
+    {
+      "id": "wyr_cute_silly_056",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "2d20b4d67eda2a63445fef20b5e82f30c758a33ef372d74a527391f6dfd5ef36"
+    },
+    {
+      "id": "wyr_cute_silly_057",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "48ee27f6187fa123e94634102058033ff5d74bd3710709e3f5a9255d85f2d0b1"
+    },
+    {
+      "id": "wyr_cute_silly_058",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "441eb38d6a633e06c85e40942c21306e33185a5e2da9717ab08f785ecdecd5f3"
+    },
+    {
+      "id": "wyr_cute_silly_059",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d5b8d487160af95576bed646b5a78283eb2532d65ae0f6aab4509a55c1099eea"
+    },
+    {
+      "id": "wyr_cute_silly_060",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b66c169359d251eb45a6e9e8b262944c0d1ac27c7e123210051f1fe5afcec44b"
+    },
+    {
+      "id": "wyr_cute_silly_061",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "17eaa1dd3c88c81aa0c13befebd6a70f12b3e7d38ea935b64f3fd22b0fcd1590"
+    },
+    {
+      "id": "wyr_cute_silly_062",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "eb879ff0f7e065086462f533a79b04929140fe36a3607bc377c7cea0426784e0"
+    },
+    {
+      "id": "wyr_cute_silly_063",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c6c589a81a1875c1aff3a2ad717e639d1e453776c8b17ebc58e063dca56f3c6f"
+    },
+    {
+      "id": "wyr_cute_silly_064",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ea84cb76545b003a4d621d6d7a7a11839d6d276d31825b4314106346d9b88e81"
+    },
+    {
+      "id": "wyr_cute_silly_065",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8877a6950a085e23a2a5a754dadc2bd736d159e684da751f044db32ddd176072"
+    },
+    {
+      "id": "wyr_cute_silly_066",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ed86552e6e967bd2afb2fc76c3e876bd20f40336aea50752859fe2b0594e706d"
+    },
+    {
+      "id": "wyr_cute_silly_067",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "28e920c293a279746649997a3fcf0c73a5dca96caca73f9aaa54b97f44cbf771"
+    },
+    {
+      "id": "wyr_cute_silly_068",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "22bef7ea9a5abc60421f6869e6b77f006abab03f4ef281e60c14d148b276079a"
+    },
+    {
+      "id": "wyr_cute_silly_069",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "61655857d869f4d2d7a3b02070a19e2615a0a1b14f5281dfad6a8823694fbaa6"
+    },
+    {
+      "id": "wyr_cute_silly_070",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "bb99f1ee3ab53e715a7738d09dbe77400e34fce8f9a9675fb9c6a890d4720421"
+    },
+    {
+      "id": "wyr_cute_silly_071",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1beb2333a444a1a0e8665a294139747e6b0c834e63c3e0631b2ee3c54810f4ac"
+    },
+    {
+      "id": "wyr_cute_silly_072",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ddf8e2c958713c0818d5bf99fee56a0cfde2cca9397c900b4b3681d0645366a1"
+    },
+    {
+      "id": "wyr_cute_silly_073",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "212a8ef3a8520f9a37b682a0caa3d5217618f11340ce45fe230e3d2846b002b6"
+    },
+    {
+      "id": "wyr_cute_silly_074",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "09afb6fa5a2e9d73c1fbc88975a85f5ae1633be184f1b26d8724f45cd67d0c59"
+    },
+    {
+      "id": "wyr_cute_silly_075",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d20848e2e35d1a5d3112413b712e437292165b9aafd5095ccfe9ff62a1c7f889"
+    },
+    {
+      "id": "wyr_cute_silly_076",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "44aa9513fba98953d15e347667162f7ad3f634675801a1756a8c2ffcb8f56fe9"
+    },
+    {
+      "id": "wyr_cute_silly_077",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "30273d12621d7d63946bfbdefb5cf1483a82f018d34ff05e09bd6ab1d8341c5c"
+    },
+    {
+      "id": "wyr_cute_silly_078",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "3e7199121965ccc7a2a700176573926a061fd0e0eae5180664b4509f4f03a081"
+    },
+    {
+      "id": "wyr_cute_silly_079",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "57d2f887d6858c5dd34b8c1e6ed709c98270d2f0916ff8cef5dbb135ebca2b8f"
+    },
+    {
+      "id": "wyr_cute_silly_080",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4eabe10c2b81924db54f18c97e470dedc11456c833afd06f434307395eaa5c0d"
+    },
+    {
+      "id": "wyr_animals_001",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a332385505c98d2c4136edb38232aa1662bd04364303239711b8e330d081d969"
+    },
+    {
+      "id": "wyr_animals_002",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1978943128018181715ccab7ba78ecfa47adb4084f78cef626f4eccbeb2c5e28"
+    },
+    {
+      "id": "wyr_animals_003",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "fee28b1f6acf187f08f00686afdea581283bcf3d347dad3af3a4815ef309e8f0"
+    },
+    {
+      "id": "wyr_animals_004",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1c2eb5b40ecf122ae100f8d83eba6f748675404299eb13e30b9a48fc6cc8d29e"
+    },
+    {
+      "id": "wyr_animals_005",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b251303163cc3abc1fff86dc1d5533c19c6a895b589c0cb3341ddfc4024b97aa"
+    },
+    {
+      "id": "wyr_animals_006",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ff08f587b2e3f7c627a1dde0a2407134740811cd43825ce48407412ee02eec0a"
+    },
+    {
+      "id": "wyr_animals_007",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "2bdb63bf4b9abfbb1bcee65fd5dd133b3ee3a8494e9990db1946b84774b48002"
+    },
+    {
+      "id": "wyr_animals_008",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "6eabd5ef7fa6bbda227cb9b5ee7b7dd6b7145cb0375144448f223d256ab56851"
+    },
+    {
+      "id": "wyr_animals_009",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8614037ac11e0e037c50eece808c88625db23364662a2bb88cfe279127f80a10"
+    },
+    {
+      "id": "wyr_animals_010",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8d1246ac0582b99f51d678c062dc2d573be01de1ffc428629b272206887d4274"
+    },
+    {
+      "id": "wyr_animals_011",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "fd22cc9a770d97c8f844affcd7a26dde13cca37ca3423700c2d655c6cd51e63d"
+    },
+    {
+      "id": "wyr_animals_012",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ff42bfd476eba501cf5ea00b7d9ae132229f11ec9ce9e6d4359729ff8cff151a"
+    },
+    {
+      "id": "wyr_animals_013",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "6c06bef0c70c93b407c5cd3cdd912a7bf069407e531e403b7960688b344bc182"
+    },
+    {
+      "id": "wyr_animals_014",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "fa9b6639a19712c2a2ce7cbb9c9edb987d9654863f176f8afa3b5ac409e79272"
+    },
+    {
+      "id": "wyr_animals_015",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5c70608d3f7bd1f9dc99026bd219292d3e3c078f4210a83de2861e6efb9bc890"
+    },
+    {
+      "id": "wyr_animals_016",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "6408f3cdbc74a9a06b1a3a7ede3abe9da78612fa299c1c2c2ca34de583bb43fa"
+    },
+    {
+      "id": "wyr_animals_017",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9312f5c8eda6bc825982ef6e3a0d143187af0c2a4b532c5b952018dd0086d20c"
+    },
+    {
+      "id": "wyr_animals_018",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8167096327d55c924297e4585fb28e42a75afa6d1e17fb6b99346fa76303eae4"
+    },
+    {
+      "id": "wyr_animals_019",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1da6388d68d99999a3d3a5eca15753ee628f3b099bb49f46b557317a3a4ba160"
+    },
+    {
+      "id": "wyr_animals_020",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c21f23ffc9b76c25a0e85d67b2baa4a47242fcb610d1390ab0157cd49e68fa47"
+    },
+    {
+      "id": "wyr_animals_021",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a96222bb83a1350299b27427519f519f9af8b7e996ac5f59c297ab140727fa89"
+    },
+    {
+      "id": "wyr_animals_022",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "3e0113c18c49e4d5d91e9ecf59b3a593e81e31845c9dc69d72d66b5e24eb8b25"
+    },
+    {
+      "id": "wyr_animals_023",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f6c8645292e822fa2e7df32bd203c885a93d5c563b6f2cd3e1ad20d7e10fa51f"
+    },
+    {
+      "id": "wyr_animals_024",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "559f74d01d9dd027092691fe961f2b61c5d750d100e0b290a174dae460469dd8"
+    },
+    {
+      "id": "wyr_animals_025",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c6ce20ab5d201c6c6c0d8238ca7c6fc9fbff780e1af08c1af4fbba06444778a3"
+    },
+    {
+      "id": "wyr_animals_026",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "cbbccb766bd6a7c5842d73ff200dad39f7c64ea4e7258b84cdb9c0719daf87b3"
+    },
+    {
+      "id": "wyr_animals_027",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e06ddff3e3f9e38e17520e6bfb2c97f12f058e658440cf8900db111d3e4a3ae9"
+    },
+    {
+      "id": "wyr_animals_028",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a39325d06719abc13dd0472a5be2c237afd4a299fc1388812f2a1045f16cb789"
+    },
+    {
+      "id": "wyr_animals_029",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b555ecadd67824be6eb8848d760bfa2dc6ef9c07b74e94161617b117b9d65d04"
+    },
+    {
+      "id": "wyr_animals_030",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "791a572779a402dba311bb751cf83636e579db103de003408c215fde43530a89"
+    },
+    {
+      "id": "wyr_animals_031",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "2eb2f20a07f138c0be69b242c0dc0dc4f7953afeb0ddaf4339747cbf4a2ef798"
+    },
+    {
+      "id": "wyr_animals_032",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "20ecd9ab6f73488a31f6d8abb118ddb9b2bcd7bd201d765be1b3ad7a5f0a58f4"
+    },
+    {
+      "id": "wyr_animals_033",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5fe14d91513facd36c64d33b2c4bd81fa71af8bfc716e56d2d0e746b08ea735e"
+    },
+    {
+      "id": "wyr_animals_034",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "81122f6ebe44f43321bab10edd2c88edf0e422acb39fcaea0ff0f654a560e5b8"
+    },
+    {
+      "id": "wyr_animals_035",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0b2407807dcd04b2fbbdbfe4e7188db1de3a356399f0dc69b633b2014a14d4e7"
+    },
+    {
+      "id": "wyr_animals_036",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7549cc9463bcd5c54ed708aeb949240b740f028e2acc7b402728b1c3c5462d74"
+    },
+    {
+      "id": "wyr_animals_037",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d995718a3e997cd4b9a8ff5e3fe85b2e40a7f4ed0870da5a24b012a6243b2fb2"
+    },
+    {
+      "id": "wyr_animals_038",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "85ba913e58ddc789acd62a119c8c6b9c771265535e664104e21aadc86e465f6e"
+    },
+    {
+      "id": "wyr_animals_039",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c3fd11016e85a9ecd29d496d3fb5df091ad47528a6d8c5c2d5dcaaab68f123e6"
+    },
+    {
+      "id": "wyr_animals_040",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b1ae65ab3e5066097d14a1d36b6ca91874e3066732ec670fac9cd7a2cfdf14cc"
+    },
+    {
+      "id": "wyr_animals_041",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "bb980846468d3174bf23c80c0c7d2d52e5850a21e5cffa1a25d074d0ea2477a5"
+    },
+    {
+      "id": "wyr_animals_042",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "88161a13648ae06be9b1a5b6561e3b6c29de0fdac4558162b6dbf2458f3ac773"
+    },
+    {
+      "id": "wyr_animals_043",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e666602998d0eb176cc75a2a10fc5da28021d2e2d8130112629306ed7aefb7d5"
+    },
+    {
+      "id": "wyr_animals_044",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a521f66e2763fc4f523fb71389c3c9f0b003fc4c514aee248230d0804b6a8dd2"
+    },
+    {
+      "id": "wyr_animals_045",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0d18253717bb32c01deab8255307086b15799f4606dafd55816f66e7d89e6060"
+    },
+    {
+      "id": "wyr_animals_046",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "2eef40c8f8602d64b4230a2ef3950318c6bfb1cbcd7985c4b1fb0656a8f32bde"
+    },
+    {
+      "id": "wyr_animals_047",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "84fb6c0356bc143f111c5688582c60dd13060432df52cdda083f0be57e1cc9b9"
+    },
+    {
+      "id": "wyr_animals_048",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "554da8465a8a8b6b81d97028d9f45de2151393a768fac3f3a8622bb1ead38ea5"
+    },
+    {
+      "id": "wyr_animals_049",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "fbf3b44175fe68f1c4b4dce29770c16b9262a38fa2486ab205d538f9230b53b2"
+    },
+    {
+      "id": "wyr_animals_050",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "92e4d8d6e220bb5b98366ed532c21148d40dbf8b081ccb50a7985da58cccbe5c"
+    },
+    {
+      "id": "wyr_animals_051",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ddb3c6efaa2dabb91251569965c39b485b51111ecbffb6870083f7b5cd9ec8f5"
+    },
+    {
+      "id": "wyr_animals_052",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e7ffd7910b65c40298b00ee3a179b786249d625a9ac75bd9d3e1fd5e8769d86d"
+    },
+    {
+      "id": "wyr_animals_053",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "beda8366e98f5b0e617e572771a56dd38d2da4e178926f393907eee11c7d368a"
+    },
+    {
+      "id": "wyr_animals_054",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8ed63063f321e337fe351631c681eadd371550f6c22a75f77b3b1c7d4f6e5ac0"
+    },
+    {
+      "id": "wyr_animals_055",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4f24af588967237581a329322e90a7e95892404d187516857629ca659e729554"
+    },
+    {
+      "id": "wyr_animals_056",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "39faeb6fb239c373e94def9d6581a7a8d78c11cd49e90afef3101f93cfdc9151"
+    },
+    {
+      "id": "wyr_animals_057",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "37fc554cb5aeebe6179fb798df4303463afb82ceffc4ba4747208bc97c11df22"
+    },
+    {
+      "id": "wyr_animals_058",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b1cce45c80550e02f5ff331b96a05882c5ce49e5ba216250b30998b722b8480c"
+    },
+    {
+      "id": "wyr_animals_059",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "29865f2e24a9a6aef846330b10e61964d367bd7ee64380bb4a7c9d006e2bab1a"
+    },
+    {
+      "id": "wyr_animals_060",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4586a5abf4856490e27ca5e9d95d9749a482b3ae9e57f17982615255a63dc41a"
+    },
+    {
+      "id": "wyr_animals_061",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4f7efc90b0b1977ef4c566a30423f76df7b2eb58194727dbcca3868d4b32f335"
+    },
+    {
+      "id": "wyr_animals_062",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b55f16f823cc998c098005f56b45ef1bedd465ee42ad005f8be1fb30e8e00893"
+    },
+    {
+      "id": "wyr_animals_063",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c08430d5d36f32d7a9842ab77de31edb125665251b1f4e091b8ad2c627482ecf"
+    },
+    {
+      "id": "wyr_animals_064",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "cd723198d0d5ba44012e33161f5c7458924d8559f8864f87daf150a2d4333bea"
+    },
+    {
+      "id": "wyr_animals_065",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "3655ded44d42292c31e8930199f76222f358a108a9faa0aebae55e3bc35f4143"
+    },
+    {
+      "id": "wyr_animals_066",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9c38575f98384522c69a658da879840d0142fc06637551feda821193d19e058e"
+    },
+    {
+      "id": "wyr_animals_067",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "695c5dd4ac3d46983fcb64066f84427834ac377b9347dec5ad0b033e061b68a9"
+    },
+    {
+      "id": "wyr_animals_068",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7244995cb66c9da0d92661374cbf987f9b45c7f6902005818bda956069c5599e"
+    },
+    {
+      "id": "wyr_animals_069",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1480cda2feae68e1792172ffefa2b3b2518be4d3233090859bbf2e89e7b6c3c4"
+    },
+    {
+      "id": "wyr_animals_070",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8be134f1bc0c91d4396febd61ad9ac9e7459c248adb52162fe59e9f66df12034"
+    },
+    {
+      "id": "wyr_animals_071",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b4e76e03f784b79f4457937a06cdce06380ab4488344766ba7e94bf6f070e379"
+    },
+    {
+      "id": "wyr_animals_072",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9b09d18d073a9f4d679546bdfa2e7d79fe70e934c992e256b4b5153b3fefe8b0"
+    },
+    {
+      "id": "wyr_animals_073",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e099325d64d561f8855ff90666770d8fc2944b9c05a3ead8f5a9f57ffebde61c"
+    },
+    {
+      "id": "wyr_animals_074",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "be93d6d9eedbd5c59d3f26976493a5b159dccd8474cd525ee18b12a6bb63b96a"
+    },
+    {
+      "id": "wyr_animals_075",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "55fa9067e2845fa0e060f81339ca022dc09e0057f024e08f1d12d9f848b28406"
+    },
+    {
+      "id": "wyr_animals_076",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9d6efa3671ff55a119665e54bcfcd39d041d8ab609243928c30aea46e61c7ba7"
+    },
+    {
+      "id": "wyr_animals_077",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "80e97ded1d1bf78cab6efb84e2907a6afc158fb24703fba291cb8d2e57f71551"
+    },
+    {
+      "id": "wyr_animals_078",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "05475dcffc63de0390de5b5c7334d2d2c2c3fc6c0d160f0e9e4841746731ce62"
+    },
+    {
+      "id": "wyr_animals_079",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "60903838691f6c6a69fe0acf14a122d0e669fa0255a6d57c7f3ebf68ad7878d9"
+    },
+    {
+      "id": "wyr_animals_080",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "bbeb5cc7e4bc2925561f11c25a547bea50f5c62cb36cafd7e02250a0f5764926"
+    },
+    {
+      "id": "wyr_gross_001",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "627caf42c6098cc90ef348a42aade825d1a57e85874ee30aafa17b91180fca3f"
+    },
+    {
+      "id": "wyr_gross_002",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f4f162dc3083ded2f0ccd18bda73fa8e4bd63ecb04c62f2b35db60a790148ded"
+    },
+    {
+      "id": "wyr_gross_003",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "79ecebdbd509ad180677ae1681c79b98c7209b840fe50eea7ed8616d2681684e"
+    },
+    {
+      "id": "wyr_gross_004",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "3ad47b40bce577ecf861f3d63591a82ae417b812fe2d3d20af87a2fa6f0b204b"
+    },
+    {
+      "id": "wyr_gross_005",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0a309a6a3bdcf8db1c2dbbe57da3c529d8d6f6de13503385d22a3d58f8796aee"
+    },
+    {
+      "id": "wyr_gross_006",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "07bd4520e902e5ba2d75731e90b3f9c37781d6b2c315e7259af6f43fa6ffe818"
+    },
+    {
+      "id": "wyr_gross_007",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "03a61029558b309d3437f5c31ed578bf2c5aec1ea71fd0a5a85f65a4f3ecc280"
+    },
+    {
+      "id": "wyr_gross_008",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "40009cc460c1e8954b47ce8210ca765b4f3e5492e7175e77bd21fd9349b03bb0"
+    },
+    {
+      "id": "wyr_gross_009",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d6997a0b83f77b3e697f7051601abfa6ac66b874ea45e1ad5a1303a0ed712ee4"
+    },
+    {
+      "id": "wyr_gross_010",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8e243f8b7fef26f489700683b0dc2cd458b8a0e27a0be4a21cdd5bb9c85095e6"
+    },
+    {
+      "id": "wyr_gross_011",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "214c6c4f545d16cd0d63e4a4362e966550971093971641d93bdfa79a3b87285d"
+    },
+    {
+      "id": "wyr_gross_012",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ef84d3650b588bafaa2bea1fc50d7b89dd574784acfa63751bcdc6e0c822a121"
+    },
+    {
+      "id": "wyr_gross_013",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "aa0ea749df4cba52231fc1d0951c6eb776f7fbebc9b44719a51fc46e13b5debd"
+    },
+    {
+      "id": "wyr_gross_014",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "67ee149550d396d28ddf566fb7c4f4fc6a3f077f12d38d8ba4faa9cdfded25ee"
+    },
+    {
+      "id": "wyr_gross_015",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "05f693d0444105349dfaa3e90f7faa15a8aef885aa6ae78b6bfb8e26f6dc8683"
+    },
+    {
+      "id": "wyr_gross_016",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c249bc889c0ff505f1a7a3c6e755ee01f086f86de5b701758500e100c419290a"
+    },
+    {
+      "id": "wyr_gross_017",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0ac9d08b67981e7af89f3f7858d25c517b3d531188aa9fb7360563d25e4ab786"
+    },
+    {
+      "id": "wyr_gross_018",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "082d433339588d8d8e991a3e9683a706b25f99dcf8648d7146f1e58ded0f668a"
+    },
+    {
+      "id": "wyr_gross_019",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b1f93543f491b9bf4700b83fa2eec4c2c3f8872fb149ae8c8c9684168e8bea94"
+    },
+    {
+      "id": "wyr_gross_020",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "dabec2de8d29a2bc10e32f458863896491be619d5ef1b8fc2082104dbba2093f"
+    },
+    {
+      "id": "wyr_gross_021",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "61da9ee605fb1b5f8fbe0d22eebd6575d2ee0733cdf9c6b1930c2cd1a2cb5231"
+    },
+    {
+      "id": "wyr_gross_022",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5ac3f608d54270c54b446f579262dd203534fdd6ae82824289df34a9cfbe0169"
+    },
+    {
+      "id": "wyr_gross_023",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d3bef0dd6b3426d68593b32afd36964dc646536874844921c10b2e7d4d6d7e13"
+    },
+    {
+      "id": "wyr_gross_024",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d39a96000b9ef826da40c04db826c87e5928325cdb7987ff4925420580c1be51"
+    },
+    {
+      "id": "wyr_gross_025",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "24fa9c3ad2eb32e8e3970424399d206018352c609d867faf4d506ee43eab0e26"
+    },
+    {
+      "id": "wyr_gross_026",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "b51b704c98349b75ffd1f4bd3c4228923087948e1103c4d519e755b5b329dadd"
+    },
+    {
+      "id": "wyr_gross_027",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a4e87d1d0057336c781280b4b1fc0235e62c9bacae131e150f3e96c6d9ad979a"
+    },
+    {
+      "id": "wyr_gross_028",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5a814553d8a0cedc82cd086bcdc4db137fb5c4b0441923b01febc08d8fd7718c"
+    },
+    {
+      "id": "wyr_gross_029",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "23614da89a90034d4d7c98041c2916f02938dfb585b9007e73ee4941f2c355c3"
+    },
+    {
+      "id": "wyr_gross_030",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "91490c45dd29654d7bb88788d061ec979bd9d8ff8167461ee38f38d63a95ca3e"
+    },
+    {
+      "id": "wyr_gross_031",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c9aedef59c4a004a8cbdf0c1662f99d7709378dbedc78c5525322f42eea5233d"
+    },
+    {
+      "id": "wyr_gross_032",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "6e3b5b018962ec454ee3a30b62edfbd3dd04129113b2dcb6288568fab219fcf7"
+    },
+    {
+      "id": "wyr_gross_033",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "85f66b07af02f881f95ad01f3663e0132dfd94518445fa8737f8f551ff11eaef"
+    },
+    {
+      "id": "wyr_gross_034",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7423f281cd814a0116706024a913041b71d849b45070027252318af52eaf07b9"
+    },
+    {
+      "id": "wyr_gross_035",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5857c454092f21dc287893ae9b954e735e7bcf1cdac9143854da400ae4492c7d"
+    },
+    {
+      "id": "wyr_gross_036",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "9487ced4a337d55a8ce9db287d2ce349c4d92607abbf252d2134756a9766587d"
+    },
+    {
+      "id": "wyr_gross_037",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1da7e96cfc9a02aa99766e6dbd3f911c0a993fdb202e8ad70823d1143132af31"
+    },
+    {
+      "id": "wyr_gross_038",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c3a8ae5a7f3d8956c90959886bac5788cd490a64d0356140a20b4ccf5e331fb8"
+    },
+    {
+      "id": "wyr_gross_039",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "3c36adb3b1e7a7d1637ff09fc71d24090df8a7440f5c92d638abbfcc92c463f4"
+    },
+    {
+      "id": "wyr_gross_040",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c67d9f09b21e723c626a92b4cfd77968cfc08c20106c2f273b6540d034eeef87"
+    },
+    {
+      "id": "wyr_gross_041",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1297b9132a7dec046a397e9dedc726bdd8de034d5200369b4ebc2653911a84ee"
+    },
+    {
+      "id": "wyr_gross_042",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "20448f63d168bd512a3e804fba99338092c9fc418f9817fbe26ca07448cda3f2"
+    },
+    {
+      "id": "wyr_gross_043",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8d2ce63edcbb1dfdfb7ee7123f184f89525c18380b47e5df03539c9ea16fc0e8"
+    },
+    {
+      "id": "wyr_gross_044",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "6215f4d0f7999e984b8ac7ebff9dc122d50cb9abf184511affed67afab6c5ab6"
+    },
+    {
+      "id": "wyr_gross_045",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "740ac6bb29312477b4bc9eaf4d61da1186edd2c775404e637bab1f9224433ad8"
+    },
+    {
+      "id": "wyr_gross_046",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "63145b6192c7b7b6a488ba91818e5c4f7211928e0e260c0c457eeb31f9a7b8bb"
+    },
+    {
+      "id": "wyr_gross_047",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5cb915a633af045ebad0800378f88ba0516caff0f42226667623e13f7aeb9b96"
+    },
+    {
+      "id": "wyr_gross_048",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f1bc2a02bda067f340fc3927adbe6784714697892683fa90c68c97ab85b69d6b"
+    },
+    {
+      "id": "wyr_gross_049",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ba158593a67352b97ab0c779929a4197ba524b5dd591b64de3f864cf2a54bca2"
+    },
+    {
+      "id": "wyr_gross_050",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e72b7068111d64b5519bce7b25530cc7b5df23126e290a0820bbdce539263703"
+    },
+    {
+      "id": "wyr_gross_051",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0d38e5aa87098485c09ffa6cd94c10f87621ec22bc483e8cc77c6e9e84440775"
+    },
+    {
+      "id": "wyr_gross_052",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5351a89e13d9cdac4e2100e2d98ddba4c1eb5db3d534fea497187e31f9b45244"
+    },
+    {
+      "id": "wyr_gross_053",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "29e876f748d817ee713fea4c9770af9a54d79d569c2a4c0ca355935d58cd6ef5"
+    },
+    {
+      "id": "wyr_gross_054",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "317c3d35d2e3725a9a46c84efa2447f450fe254aa515105bcb642c47eaaab2a2"
+    },
+    {
+      "id": "wyr_gross_055",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f14c5ca146a51f7b73177389f19e0564fdac3dd9cd8b53605b8529e52c3eab5a"
+    },
+    {
+      "id": "wyr_gross_056",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a5629023f3d5da70e14c321d4c4fe8f4dbd9a8ca96c50e3d662c6202ad59d105"
+    },
+    {
+      "id": "wyr_gross_057",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "31d63a09a14266de66a9caad3e5b3b7fa8b6b490ca9c67ac9a45b979c299b35e"
+    },
+    {
+      "id": "wyr_gross_058",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1c285fe6063af325b47db76f2cb31a5f03fa227983e025e5991b403853e4ec26"
+    },
+    {
+      "id": "wyr_gross_059",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d15a1e4d10a2433d7da2cd6a797b3a7229db03b088952bf10665463295becb8e"
+    },
+    {
+      "id": "wyr_gross_060",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "df147a7ce7ede86704d4049a81e62db89589743603b4024ef349fd7ce3a99922"
+    },
+    {
+      "id": "wyr_gross_061",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "17bd3b3006fbfe63f2ae20a0b20807d1b89983508aa8addada790c22ef96c588"
+    },
+    {
+      "id": "wyr_gross_062",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e94009eee6cf9a5e9ba1c7398edadd4cc69e4fdde07f51a5754d7ea3fb66002e"
+    },
+    {
+      "id": "wyr_gross_063",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5d3841132c2aa2ae89fc317efdae45c4bd33f1b613e62230e9e17ae975446738"
+    },
+    {
+      "id": "wyr_gross_064",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c703917055ec29eab4bb5a0f589b1567bc459252d6fb3b83b1bc4c396f23d03c"
+    },
+    {
+      "id": "wyr_gross_065",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0eb04246e3e867c37391731622d3f44e346e3fbdbd1831c207392ab810792c5d"
+    },
+    {
+      "id": "wyr_gross_066",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "71bea8075f83570a2d3587db3f12c7a96db67d5d4d22189e7ac2bbbeaf94cfdb"
+    },
+    {
+      "id": "wyr_gross_067",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f9bd5a94feb86de0b05bd0d3a4f35152e34934d96d712aabaa57ac5a1454ba29"
+    },
+    {
+      "id": "wyr_gross_068",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "fd567f82f8b2d1edca2ae37337b6791f0735dae2736485de254b7b93db0d4eda"
+    },
+    {
+      "id": "wyr_gross_069",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f83ce8cbb92840e381f67b924cd21c9684d48285d01f4cfa93fb747fada8c13c"
+    },
+    {
+      "id": "wyr_gross_070",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c337e7a9d15a48ee61fce0d0746292de9426fac253a540386686f506dd5e2250"
+    },
+    {
+      "id": "wyr_gross_071",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "aba8eb6a0e6a6f96e7a10844ecc65e37a976960e0460943f22c2bf397a1af466"
+    },
+    {
+      "id": "wyr_gross_072",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4382e576e3e2ca27a1bb38b6c3e0b7e7060d584213ddd5e8a6d51654c4ffa67c"
+    },
+    {
+      "id": "wyr_gross_073",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0e61ff7d41c69a326ddd81068fda2cf3bc17d5a371ccdd1823aa07c0c2ad6a25"
+    },
+    {
+      "id": "wyr_gross_074",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e3937fb4860162f6d6deba8dbbf4ab47309473ca29cda55b21b90d12d0c5830e"
+    },
+    {
+      "id": "wyr_gross_075",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0463ea50b244d66695b1058bd92f6971389452bf4ec5a2f867509d792eecea3d"
+    },
+    {
+      "id": "wyr_gross_076",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c3eccfcce27fd1f34098db88a885f61829b4fb94afa63bd911f684ac26ec2902"
+    },
+    {
+      "id": "wyr_gross_077",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a503c5ae1fa3a515e8a4f166fea31526cba37c4195aa7f4fb9d53c7c6c2a773c"
+    },
+    {
+      "id": "wyr_gross_078",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ee6a3908e0e24d6f55fe5e891f3d99f4a4dd243989c40501e2b6eb44e48b67e3"
+    },
+    {
+      "id": "wyr_gross_079",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8e92b90c00d7de42f538119e33b311307b5f72c704553f90c24d97a24dd0e8a6"
+    },
+    {
+      "id": "wyr_gross_080",
+      "categoryId": "gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4ea907e6ed873bc801f5bd2595a54dacfe73455ed12d7f0377c1770bd1495118"
+    },
+    {
+      "id": "wyr_super_gross_001",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d04daa89e6f088eef8cc721816d435233847b25dd729f4b6353c30d1e0c75f52"
+    },
+    {
+      "id": "wyr_super_gross_002",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d54440849de2ac1fba499ca0a5cd7debebf6f0df6e95a25133a7ed5e2be8ddc9"
+    },
+    {
+      "id": "wyr_super_gross_003",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8fce498755c411cd8ea3e3d0c43c1144d61d2691c95438a6ffc052a194d3eeb2"
+    },
+    {
+      "id": "wyr_super_gross_004",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c443542463090bbd8046ff036023c7def65feed1f10d77e89ddd1ef7ddb025af"
+    },
+    {
+      "id": "wyr_super_gross_005",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a7fd1348af2ff51f2321b0a82136f8d7916fd396755dfc06810732de7db8cb49"
+    },
+    {
+      "id": "wyr_super_gross_006",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7c7acbd511b55c72b0b98e85e90bf226504a57711f9af092c3f6f908ea164f41"
+    },
+    {
+      "id": "wyr_super_gross_007",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ffdc1fdc4f311e4621814ff01fcf83b50429d611e55e448dbd6372d2da08b72d"
+    },
+    {
+      "id": "wyr_super_gross_008",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "323ffec870d28ef2e027523344148a6063d628996c8b5ecc1fe65afaf1845c87"
+    },
+    {
+      "id": "wyr_super_gross_009",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "3ec4f51302c238dc0745e9e4243e7304553f8acca5d24c7a41de8fe1149c2015"
+    },
+    {
+      "id": "wyr_super_gross_010",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c6424710d2e28ad25e4c1f82cd797db286d1edda9609b0430eec9741a8d0d15c"
+    },
+    {
+      "id": "wyr_super_gross_011",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "75d6ab0a29501eb10a8f4a21934ec74e3042311ecd415f476f3f6299ec90ec98"
+    },
+    {
+      "id": "wyr_super_gross_012",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "3971910c6af62a260ed1e3ec9e329ec375368bb65ef68792e95e468729407b33"
+    },
+    {
+      "id": "wyr_super_gross_013",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c4fcbadc016631a257ebd299a66cd90c74393e2883b98612630ac634ca27d57f"
+    },
+    {
+      "id": "wyr_super_gross_014",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a3b9ccf1a9f8ca2029ff3225fd5cfd4e800460c88b5cfa8eaff15488c7888faa"
+    },
+    {
+      "id": "wyr_super_gross_015",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0b04d5712ec42fbf671f6d1404ee72d7bf903ad722877e31df4b71315fa45a05"
+    },
+    {
+      "id": "wyr_super_gross_016",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "81fc6b809ef0b767e58b72ff40630e5b069558c7d38b7e7015460179fddc2203"
+    },
+    {
+      "id": "wyr_super_gross_017",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "35cb0e49cc50af31eeebf1d034db494f45d66c96991116264185c9a1e645840d"
+    },
+    {
+      "id": "wyr_super_gross_018",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "6272923dd60cc04aee1cf6a91b4769a755a64dd8b8826aad7e81e5699f0fa330"
+    },
+    {
+      "id": "wyr_super_gross_019",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7b5440b84ebc6985c75da0a7b8bab36ddc272047bcecf35c1f04cb75951308d9"
+    },
+    {
+      "id": "wyr_super_gross_020",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "491357e754c16b0fd45f208dcf4eb3cd5d47e4ba3449c8c903e6b48cc1697e6c"
+    },
+    {
+      "id": "wyr_super_gross_021",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "3908554b859563bcc664e224b5b42295032ea2d9432bd53e425cc1365d60a6ff"
+    },
+    {
+      "id": "wyr_super_gross_022",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7d0e0a130499834c6eec0b7c0e4b6f51ae33b8205221b1a230eb9c4cb6a88047"
+    },
+    {
+      "id": "wyr_super_gross_023",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "5bacdc1adac4b2378badd2422ffe7cef43e5367af01d206b3305cb5d659d8580"
+    },
+    {
+      "id": "wyr_super_gross_024",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ee3987c3c4c04c0a35d89feae4fd74d00e1987817cba24e9b9f6fcfcd3750422"
+    },
+    {
+      "id": "wyr_super_gross_025",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4fc0f8ea95af68f8b2118c0d2247c94912971ada608d928a126a0edae8070882"
+    },
+    {
+      "id": "wyr_super_gross_026",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "24332b8cc74346212ed845de1ec069d0e8b7c5ccc84479c104ed8f7091a4905f"
+    },
+    {
+      "id": "wyr_super_gross_027",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "999696f5ef71c6b55e4cd8ce96ee1495f5322cedf883f0ccea01cfb66978560a"
+    },
+    {
+      "id": "wyr_super_gross_028",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7a23e4a94a8572bc2f87d14eac625262066f13ce0e21527b2d74a8a4c7e7f480"
+    },
+    {
+      "id": "wyr_super_gross_029",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c5c48aa641cad3c49346e4840be8230bac3dac7c1c063c452912651131496613"
+    },
+    {
+      "id": "wyr_super_gross_030",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "a0cd31c8e79e5ad684a9633ab7a68b76207fce65d0275b9104bd83d21b4cc793"
+    },
+    {
+      "id": "wyr_super_gross_031",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4f79f016adb9fb48e13b9f6290573f5e3263d50d5bf51bd9633a9c5c641959da"
+    },
+    {
+      "id": "wyr_super_gross_032",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "768904bee56c4ae46276b8f316cc7de875b367f9985222d6532d7ca1041bcef5"
+    },
+    {
+      "id": "wyr_super_gross_033",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "db8a95df4e7d5ab30cb18461b954c65118fc2f8e95fff46a16185d046116659e"
+    },
+    {
+      "id": "wyr_super_gross_034",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "7cb9bebf850c49167171cf69e0e491955485ed1af3d9854cc55942a93337b66f"
+    },
+    {
+      "id": "wyr_super_gross_035",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "247e5ce239ee5e6272ec1bd2f44a0d2f6b4be786eccd85d5af40b97d977d5dd9"
+    },
+    {
+      "id": "wyr_super_gross_036",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "87998c5e03b986b09564ac6a0711f5248b2d6b1da9a0780e6fff422f46ad9830"
+    },
+    {
+      "id": "wyr_super_gross_037",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f19f56aeca21f3750274b3a4a8e2b8a0d32fee10f7dadafc1d80ff85eeb8e9e7"
+    },
+    {
+      "id": "wyr_super_gross_038",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "1477c05a4ce8d7a9b4c4fd929917edd9de795c6545b41c83ea1136fda0aa72e9"
+    },
+    {
+      "id": "wyr_super_gross_039",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "95dfe416b556fbfee7c2b820c380d093f7159209b18f315ec22d35821f847c5e"
+    },
+    {
+      "id": "wyr_super_gross_040",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "ab03690764be532942256510391b4fb17703d8aeec8b7ac9094cdd4aa7c2e28d"
+    },
+    {
+      "id": "wyr_super_gross_041",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "50e59a1f77e823bc11fe4bd6a308493dccfd8101c0b864610ed87e1089a428c2"
+    },
+    {
+      "id": "wyr_super_gross_042",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "3861b1ecbd1584186a7e4f85f7e36a66cf9fe2b6cbc8c6fdd92ba46be0499509"
+    },
+    {
+      "id": "wyr_super_gross_043",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d442f5c8acd600789cd2e2730f60a4acf24737f3588e7475669e6ab8dd417160"
+    },
+    {
+      "id": "wyr_super_gross_044",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "724f464785779e36f0628cb035317d16ae980f31a7a34ef5bd96c7bdec944b1c"
+    },
+    {
+      "id": "wyr_super_gross_045",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "86c7dc91d53106ca07d934b51450a052844564bc5c8d5467b6eeb836da8af1b2"
+    },
+    {
+      "id": "wyr_super_gross_046",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f12181a87ae665769bba87ec23e0ca790eea48e71902ea44ce4146bc1e093e02"
+    },
+    {
+      "id": "wyr_super_gross_047",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "06dfe575f6264ce25a51851eeaa49a28c52b422f9e2b5415dee64e9c81b9ce15"
+    },
+    {
+      "id": "wyr_super_gross_048",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "0c996d31acd11eab639d9f917ee91ed852c64ccdcfb0d83986597591e772f5a0"
+    },
+    {
+      "id": "wyr_super_gross_049",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "15086f8c14b31422cd711ac0a1403d1251b0c419f40e260cfe8b796e8d73a8fb"
+    },
+    {
+      "id": "wyr_super_gross_050",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "13fe06eed446df962b93440a3674199a381e99bfcaedee0bdd682ecb4c7b24ed"
+    },
+    {
+      "id": "wyr_super_gross_051",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f1e0ac35d296e4c3b23c1b387942a7a976aabf63b3a76423192f6d7e15b91f11"
+    },
+    {
+      "id": "wyr_super_gross_052",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "bb4f415d4466f0f5234b4a0844bbacac437fef0ab00dd022c3b5d172132a7d3a"
+    },
+    {
+      "id": "wyr_super_gross_053",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "16ee659f75b4e2680eb6807e47b294c1b49bd48141f6b3aeb1eefee34b080238"
+    },
+    {
+      "id": "wyr_super_gross_054",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c67d32220fd70546f50f3d650bddbaba9678efca67c323b858d6f236a812e37c"
+    },
+    {
+      "id": "wyr_super_gross_055",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "966c75783dcfa06f4e9694c890f8c170e4f635e74cbda80d5bdea3100dde331b"
+    },
+    {
+      "id": "wyr_super_gross_056",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "220a20709ed9ef6224df16ac93dd7c808d73141f34089a13f42907bf76e662b0"
+    },
+    {
+      "id": "wyr_super_gross_057",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e82db9f8ef399bb6c7af0bd39c9767d29f23305693155aa82c5c81889b2614b8"
+    },
+    {
+      "id": "wyr_super_gross_058",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "71529bfd53fc3a2e45d0384e08357621a8982d8725556da5101af686ba5e5fda"
+    },
+    {
+      "id": "wyr_super_gross_059",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "875f7b7aa2fbd0cc318a20ed64af91c5fe682adb1b9245d577b8e2ac944c82b7"
+    },
+    {
+      "id": "wyr_super_gross_060",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "56993ad0c96db9339d6900781254e1eff1bdadcc4e9c9722994d0b883fb91597"
+    },
+    {
+      "id": "wyr_super_gross_061",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "c71872e3afb57e10f9d4e971dc1bc65dd48fa493a6f2a375f4f0d468c775bbcb"
+    },
+    {
+      "id": "wyr_super_gross_062",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "268e0c4caa03771722e9e26977d62f6f13e5fce68a5487c6be722990cf7cf288"
+    },
+    {
+      "id": "wyr_super_gross_063",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "99a8e7241342a498b50e19ab3ef6fd092b074dff5642705696302dca98c68187"
+    },
+    {
+      "id": "wyr_super_gross_064",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "d75b44a78fc793da0b034fe2470d9a6d6d53baf764b9ea8ab50fa6446468f410"
+    },
+    {
+      "id": "wyr_super_gross_065",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "fecd38c67959b4b22f27c5fe0bfa53a56d9b6274ecafd67763126e4e997b1db7"
+    },
+    {
+      "id": "wyr_super_gross_066",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "506a54950f6db916f328287866c8a6b937c6d0789e3c851312275054049c7674"
+    },
+    {
+      "id": "wyr_super_gross_067",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4f16eeb894e60ff23e35f193b13df1266141afd3c147cbf6abcd7a3c1467727d"
+    },
+    {
+      "id": "wyr_super_gross_068",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "8bca2422b4c2d50438d5e8647618ea0c92edff8c10ef436ed4e13cdb3ee72e6d"
+    },
+    {
+      "id": "wyr_super_gross_069",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "efa5b53dcc74c686ce358498a7a47a30496c0fb1c1c2e4e700bb71e542f429b7"
+    },
+    {
+      "id": "wyr_super_gross_070",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "aa8423ca39d50d6fa52f8355992e123b231493e66919ef022bd8354d5b1a5c1e"
+    },
+    {
+      "id": "wyr_super_gross_071",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "f2a6d4d908bf6250e3c43f5558596118af7794c3dc5a03c39d539d1d97ffac0d"
+    },
+    {
+      "id": "wyr_super_gross_072",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "bc4a03e784d12fc9536578ad8659b529db43bb76ff2fd7eddf6a03cfd6125371"
+    },
+    {
+      "id": "wyr_super_gross_073",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "4870ce63a92b816785cdd03636151ab6ba5409e1ec8566c75b6e89ce67a018cf"
+    },
+    {
+      "id": "wyr_super_gross_074",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "19413deb26cecca873347937366c7ade6e39924564c6371dbc2e8c07dfde4678"
+    },
+    {
+      "id": "wyr_super_gross_075",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "79274b0ebe32b019948175db6edbfbbb113a24fff0faf054c9b177613edfd525"
+    },
+    {
+      "id": "wyr_super_gross_076",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "995ea3199a30ffaac5de7935ae5d350f7fa342a64c25fd9db0022b60f6df8435"
+    },
+    {
+      "id": "wyr_super_gross_077",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "e2f15f71f405b4b3746e6780422a8fcb44bd73bead2082b11a24ab3435090569"
+    },
+    {
+      "id": "wyr_super_gross_078",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "201ccf91795a0d93fde9624a4dbf2e40a5a8e79d7afbb6266e832ff15c1bc304"
+    },
+    {
+      "id": "wyr_super_gross_079",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "92866d6a55aeb5d561d0fdf6fc33d8385ebbc7563c58aa520f3a26f77ad3f2af"
+    },
+    {
+      "id": "wyr_super_gross_080",
+      "categoryId": "super_gross",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-07-26",
+      "safetyReview": "passed",
+      "textSha256": "91921eddc75a7a5bcde5e714da7e58fdb6455cfa9a5825d8ce028aebede2d815"
+    }
+  ]
+}

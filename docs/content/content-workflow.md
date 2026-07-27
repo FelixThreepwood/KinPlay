@@ -8,7 +8,7 @@ Use local JSON assets first. No backend, runtime AI, account system, remote conf
 
 - Schema: `content/kinplay-content.schema.json`
 - Seed pack target: `content/seed/kinplay_seed_v1.json`
-- Android asset target after scaffold: `app/src/main/assets/content/kinplay_seed_v1.json`
+- Android runtime asset: `app/src/main/assets/kinplay_seed_v1.json`
 
 Until the Android app scaffold exists, content work happens under `content/` and is copied into Android assets during scaffold/integration.
 
@@ -57,9 +57,8 @@ python -m json.tool content/kinplay-content.schema.json >/dev/null
 python -m json.tool content/seed/kinplay_seed_v1.json >/dev/null
 ```
 
-## Copy-to-app step after scaffold
+## Copy-to-app step
 
 ```bash
-mkdir -p app/src/main/assets/content
-cp content/seed/kinplay_seed_v1.json app/src/main/assets/content/kinplay_seed_v1.json
+cp content/seed/kinplay_seed_v1.json app/src/main/assets/kinplay_seed_v1.json
 ```

@@ -1,0 +1,1640 @@
+{
+  "schemaVersion": 1,
+  "libraryId": "would_you_rather_v1",
+  "title": "Would You Rather",
+  "locale": "en-US",
+  "origin": {
+    "type": "original_kinplay_editorial_work",
+    "statement": "Original KinPlay editorial work; no external prompt collection was used or copied."
+  },
+  "categories": [
+    {
+      "id": "cute_silly",
+      "title": "Cute & Silly",
+      "order": 1,
+      "prompts": [
+        {
+          "id": "wyr_cute_silly_001",
+          "text": "Would you rather wear a cape covered in tiny bells or wear boots that squeak hello?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_002",
+          "text": "Would you rather wear a cape covered in tiny bells or wear a crown made of paper daisies?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_003",
+          "text": "Would you rather wear a cape covered in tiny bells or wear socks with dancing stripes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_004",
+          "text": "Would you rather wear a cape covered in tiny bells or wear a belt with three soft pompoms?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_005",
+          "text": "Would you rather wear a hat shaped as a sleepy moon or wear boots that squeak hello?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_006",
+          "text": "Would you rather wear a hat shaped as a sleepy moon or wear a crown made of paper daisies?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_007",
+          "text": "Would you rather wear a hat shaped as a sleepy moon or wear socks with dancing stripes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_008",
+          "text": "Would you rather wear a hat shaped as a sleepy moon or wear a belt with three soft pompoms?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_009",
+          "text": "Would you rather wear mittens with wiggly ribbons or wear boots that squeak hello?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_010",
+          "text": "Would you rather wear mittens with wiggly ribbons or wear a crown made of paper daisies?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_011",
+          "text": "Would you rather wear mittens with wiggly ribbons or wear socks with dancing stripes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_012",
+          "text": "Would you rather wear mittens with wiggly ribbons or wear a belt with three soft pompoms?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_013",
+          "text": "Would you rather wear a jacket dotted with felt stars or wear boots that squeak hello?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_014",
+          "text": "Would you rather wear a jacket dotted with felt stars or wear a crown made of paper daisies?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_015",
+          "text": "Would you rather wear a jacket dotted with felt stars or wear socks with dancing stripes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_016",
+          "text": "Would you rather wear a jacket dotted with felt stars or wear a belt with three soft pompoms?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_017",
+          "text": "Would you rather wear a scarf that curls into spirals or wear boots that squeak hello?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_018",
+          "text": "Would you rather wear a scarf that curls into spirals or wear a crown made of paper daisies?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_019",
+          "text": "Would you rather wear a scarf that curls into spirals or wear socks with dancing stripes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_020",
+          "text": "Would you rather wear a scarf that curls into spirals or wear a belt with three soft pompoms?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_021",
+          "text": "Would you rather ride to breakfast in a bubble wagon or bounce to the kitchen on a marshmallow seat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_022",
+          "text": "Would you rather ride to breakfast in a bubble wagon or roll to the library in a button car?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_023",
+          "text": "Would you rather ride to breakfast in a bubble wagon or tiptoe to the porch on springy slippers?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_024",
+          "text": "Would you rather ride to breakfast in a bubble wagon or drift to the table in a blanket boat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_025",
+          "text": "Would you rather float to lunch on a cloud pillow or bounce to the kitchen on a marshmallow seat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_026",
+          "text": "Would you rather float to lunch on a cloud pillow or roll to the library in a button car?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_027",
+          "text": "Would you rather float to lunch on a cloud pillow or tiptoe to the porch on springy slippers?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_028",
+          "text": "Would you rather float to lunch on a cloud pillow or drift to the table in a blanket boat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_029",
+          "text": "Would you rather scoot to the park on a giant leaf or bounce to the kitchen on a marshmallow seat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_030",
+          "text": "Would you rather scoot to the park on a giant leaf or roll to the library in a button car?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_031",
+          "text": "Would you rather scoot to the park on a giant leaf or tiptoe to the porch on springy slippers?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_032",
+          "text": "Would you rather scoot to the park on a giant leaf or drift to the table in a blanket boat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_033",
+          "text": "Would you rather travel to story time in a teacup cart or bounce to the kitchen on a marshmallow seat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_034",
+          "text": "Would you rather travel to story time in a teacup cart or roll to the library in a button car?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_035",
+          "text": "Would you rather travel to story time in a teacup cart or tiptoe to the porch on springy slippers?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_036",
+          "text": "Would you rather travel to story time in a teacup cart or drift to the table in a blanket boat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_037",
+          "text": "Would you rather glide to the garden on a paper airplane or bounce to the kitchen on a marshmallow seat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_038",
+          "text": "Would you rather glide to the garden on a paper airplane or roll to the library in a button car?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_039",
+          "text": "Would you rather glide to the garden on a paper airplane or tiptoe to the porch on springy slippers?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_040",
+          "text": "Would you rather glide to the garden on a paper airplane or drift to the table in a blanket boat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_041",
+          "text": "Would you rather make every sneeze release pretend confetti or make every hop leave a chalk rainbow?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_042",
+          "text": "Would you rather make every sneeze release pretend confetti or make every whisper sound as a kazoo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_043",
+          "text": "Would you rather make every sneeze release pretend confetti or make every spin scatter paper hearts?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_044",
+          "text": "Would you rather make every sneeze release pretend confetti or make every nod make a toy bell jingle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_045",
+          "text": "Would you rather make every hiccup play a tiny drumbeat or make every hop leave a chalk rainbow?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_046",
+          "text": "Would you rather make every hiccup play a tiny drumbeat or make every whisper sound as a kazoo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_047",
+          "text": "Would you rather make every hiccup play a tiny drumbeat or make every spin scatter paper hearts?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_048",
+          "text": "Would you rather make every hiccup play a tiny drumbeat or make every nod make a toy bell jingle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_049",
+          "text": "Would you rather make every clap create a floating star or make every hop leave a chalk rainbow?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_050",
+          "text": "Would you rather make every clap create a floating star or make every whisper sound as a kazoo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_051",
+          "text": "Would you rather make every clap create a floating star or make every spin scatter paper hearts?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_052",
+          "text": "Would you rather make every clap create a floating star or make every nod make a toy bell jingle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_053",
+          "text": "Would you rather make every yawn ring a gentle chime or make every hop leave a chalk rainbow?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_054",
+          "text": "Would you rather make every yawn ring a gentle chime or make every whisper sound as a kazoo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_055",
+          "text": "Would you rather make every yawn ring a gentle chime or make every spin scatter paper hearts?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_056",
+          "text": "Would you rather make every yawn ring a gentle chime or make every nod make a toy bell jingle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_057",
+          "text": "Would you rather make every wink switch your shoelace colors or make every hop leave a chalk rainbow?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_058",
+          "text": "Would you rather make every wink switch your shoelace colors or make every whisper sound as a kazoo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_059",
+          "text": "Would you rather make every wink switch your shoelace colors or make every spin scatter paper hearts?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_060",
+          "text": "Would you rather make every wink switch your shoelace colors or make every nod make a toy bell jingle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_061",
+          "text": "Would you rather have a teacup that tells short jokes or have a blanket that hums at bedtime?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_062",
+          "text": "Would you rather have a teacup that tells short jokes or have a spoon that bows before breakfast?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_063",
+          "text": "Would you rather have a teacup that tells short jokes or have a chair that politely applauds?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_064",
+          "text": "Would you rather have a teacup that tells short jokes or have a button that whispers kind compliments?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_065",
+          "text": "Would you rather have a pillow that sings quiet songs or have a blanket that hums at bedtime?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_066",
+          "text": "Would you rather have a pillow that sings quiet songs or have a spoon that bows before breakfast?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_067",
+          "text": "Would you rather have a pillow that sings quiet songs or have a chair that politely applauds?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_068",
+          "text": "Would you rather have a pillow that sings quiet songs or have a button that whispers kind compliments?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_069",
+          "text": "Would you rather have a backpack that giggles at doors or have a blanket that hums at bedtime?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_070",
+          "text": "Would you rather have a backpack that giggles at doors or have a spoon that bows before breakfast?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_071",
+          "text": "Would you rather have a backpack that giggles at doors or have a chair that politely applauds?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_072",
+          "text": "Would you rather have a backpack that giggles at doors or have a button that whispers kind compliments?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_073",
+          "text": "Would you rather have a lamp that waves good morning or have a blanket that hums at bedtime?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_074",
+          "text": "Would you rather have a lamp that waves good morning or have a spoon that bows before breakfast?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_075",
+          "text": "Would you rather have a lamp that waves good morning or have a chair that politely applauds?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_076",
+          "text": "Would you rather have a lamp that waves good morning or have a button that whispers kind compliments?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_077",
+          "text": "Would you rather have a pencil that draws tiny crowns or have a blanket that hums at bedtime?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_078",
+          "text": "Would you rather have a pencil that draws tiny crowns or have a spoon that bows before breakfast?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_079",
+          "text": "Would you rather have a pencil that draws tiny crowns or have a chair that politely applauds?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_080",
+          "text": "Would you rather have a pencil that draws tiny crowns or have a button that whispers kind compliments?",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "id": "animals",
+      "title": "Animals",
+      "order": 2,
+      "prompts": [
+        {
+          "id": "wyr_animals_001",
+          "text": "Would you rather waddle beside a penguin for one morning or prance beside a pony across soft grass?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_002",
+          "text": "Would you rather waddle beside a penguin for one morning or paddle beside a duck around a calm pond?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_003",
+          "text": "Would you rather waddle beside a penguin for one morning or scurry beside a mouse through a cardboard maze?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_004",
+          "text": "Would you rather waddle beside a penguin for one morning or leap beside a dolphin through pretend waves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_005",
+          "text": "Would you rather hop beside a rabbit through a meadow or prance beside a pony across soft grass?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_006",
+          "text": "Would you rather hop beside a rabbit through a meadow or paddle beside a duck around a calm pond?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_007",
+          "text": "Would you rather hop beside a rabbit through a meadow or scurry beside a mouse through a cardboard maze?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_008",
+          "text": "Would you rather hop beside a rabbit through a meadow or leap beside a dolphin through pretend waves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_009",
+          "text": "Would you rather stomp beside an elephant along a wide path or prance beside a pony across soft grass?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_010",
+          "text": "Would you rather stomp beside an elephant along a wide path or paddle beside a duck around a calm pond?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_011",
+          "text": "Would you rather stomp beside an elephant along a wide path or scurry beside a mouse through a cardboard maze?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_012",
+          "text": "Would you rather stomp beside an elephant along a wide path or leap beside a dolphin through pretend waves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_013",
+          "text": "Would you rather swing beside a monkey across low pretend vines or prance beside a pony across soft grass?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_014",
+          "text": "Would you rather swing beside a monkey across low pretend vines or paddle beside a duck around a calm pond?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_015",
+          "text": "Would you rather swing beside a monkey across low pretend vines or scurry beside a mouse through a cardboard maze?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_016",
+          "text": "Would you rather swing beside a monkey across low pretend vines or leap beside a dolphin through pretend waves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_017",
+          "text": "Would you rather shuffle beside a turtle around a garden or prance beside a pony across soft grass?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_018",
+          "text": "Would you rather shuffle beside a turtle around a garden or paddle beside a duck around a calm pond?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_019",
+          "text": "Would you rather shuffle beside a turtle around a garden or scurry beside a mouse through a cardboard maze?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_020",
+          "text": "Would you rather shuffle beside a turtle around a garden or leap beside a dolphin through pretend waves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_021",
+          "text": "Would you rather ask an owl to teach you one night call or ask a wolf to teach you one gentle howl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_022",
+          "text": "Would you rather ask an owl to teach you one night call or ask a robin to teach you one morning tune?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_023",
+          "text": "Would you rather ask an owl to teach you one night call or ask a seal to teach you one clapping beat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_024",
+          "text": "Would you rather ask an owl to teach you one night call or ask a bee to teach you one buzzing melody?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_025",
+          "text": "Would you rather ask a parrot to teach you one cheerful greeting or ask a wolf to teach you one gentle howl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_026",
+          "text": "Would you rather ask a parrot to teach you one cheerful greeting or ask a robin to teach you one morning tune?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_027",
+          "text": "Would you rather ask a parrot to teach you one cheerful greeting or ask a seal to teach you one clapping beat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_028",
+          "text": "Would you rather ask a parrot to teach you one cheerful greeting or ask a bee to teach you one buzzing melody?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_029",
+          "text": "Would you rather ask a whale to teach you one ocean song or ask a wolf to teach you one gentle howl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_030",
+          "text": "Would you rather ask a whale to teach you one ocean song or ask a robin to teach you one morning tune?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_031",
+          "text": "Would you rather ask a whale to teach you one ocean song or ask a seal to teach you one clapping beat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_032",
+          "text": "Would you rather ask a whale to teach you one ocean song or ask a bee to teach you one buzzing melody?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_033",
+          "text": "Would you rather ask a cricket to teach you one evening rhythm or ask a wolf to teach you one gentle howl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_034",
+          "text": "Would you rather ask a cricket to teach you one evening rhythm or ask a robin to teach you one morning tune?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_035",
+          "text": "Would you rather ask a cricket to teach you one evening rhythm or ask a seal to teach you one clapping beat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_036",
+          "text": "Would you rather ask a cricket to teach you one evening rhythm or ask a bee to teach you one buzzing melody?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_037",
+          "text": "Would you rather ask a frog to teach you one pond chorus or ask a wolf to teach you one gentle howl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_038",
+          "text": "Would you rather ask a frog to teach you one pond chorus or ask a robin to teach you one morning tune?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_039",
+          "text": "Would you rather ask a frog to teach you one pond chorus or ask a seal to teach you one clapping beat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_040",
+          "text": "Would you rather ask a frog to teach you one pond chorus or ask a bee to teach you one buzzing melody?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_041",
+          "text": "Would you rather visit a beaver lodge beside a quiet stream or visit an otter play spot by smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_042",
+          "text": "Would you rather visit a beaver lodge beside a quiet stream or visit a rabbit garden under clover?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_043",
+          "text": "Would you rather visit a beaver lodge beside a quiet stream or visit a panda nap corner in bamboo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_044",
+          "text": "Would you rather visit a beaver lodge beside a quiet stream or visit a gecko hideout among bright leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_045",
+          "text": "Would you rather visit a fox den under snowy trees or visit an otter play spot by smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_046",
+          "text": "Would you rather visit a fox den under snowy trees or visit a rabbit garden under clover?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_047",
+          "text": "Would you rather visit a fox den under snowy trees or visit a panda nap corner in bamboo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_048",
+          "text": "Would you rather visit a fox den under snowy trees or visit a gecko hideout among bright leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_049",
+          "text": "Would you rather visit a meerkat burrow near warm sand or visit an otter play spot by smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_050",
+          "text": "Would you rather visit a meerkat burrow near warm sand or visit a rabbit garden under clover?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_051",
+          "text": "Would you rather visit a meerkat burrow near warm sand or visit a panda nap corner in bamboo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_052",
+          "text": "Would you rather visit a meerkat burrow near warm sand or visit a gecko hideout among bright leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_053",
+          "text": "Would you rather visit a puffin nest above the sea or visit an otter play spot by smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_054",
+          "text": "Would you rather visit a puffin nest above the sea or visit a rabbit garden under clover?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_055",
+          "text": "Would you rather visit a puffin nest above the sea or visit a panda nap corner in bamboo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_056",
+          "text": "Would you rather visit a puffin nest above the sea or visit a gecko hideout among bright leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_057",
+          "text": "Would you rather visit a koala resting place in tall branches or visit an otter play spot by smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_058",
+          "text": "Would you rather visit a koala resting place in tall branches or visit a rabbit garden under clover?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_059",
+          "text": "Would you rather visit a koala resting place in tall branches or visit a panda nap corner in bamboo?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_060",
+          "text": "Would you rather visit a koala resting place in tall branches or visit a gecko hideout among bright leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_061",
+          "text": "Would you rather have a dog help find every missing mitten or have a crow help collect colorful leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_062",
+          "text": "Would you rather have a dog help find every missing mitten or have an otter help stack smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_063",
+          "text": "Would you rather have a dog help find every missing mitten or have a squirrel help organize pretend acorns?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_064",
+          "text": "Would you rather have a dog help find every missing mitten or have a llama help deliver friendly notes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_065",
+          "text": "Would you rather have a cat help choose the coziest reading spot or have a crow help collect colorful leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_066",
+          "text": "Would you rather have a cat help choose the coziest reading spot or have an otter help stack smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_067",
+          "text": "Would you rather have a cat help choose the coziest reading spot or have a squirrel help organize pretend acorns?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_068",
+          "text": "Would you rather have a cat help choose the coziest reading spot or have a llama help deliver friendly notes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_069",
+          "text": "Would you rather have an elephant help carry picnic blankets or have a crow help collect colorful leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_070",
+          "text": "Would you rather have an elephant help carry picnic blankets or have an otter help stack smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_071",
+          "text": "Would you rather have an elephant help carry picnic blankets or have a squirrel help organize pretend acorns?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_072",
+          "text": "Would you rather have an elephant help carry picnic blankets or have a llama help deliver friendly notes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_073",
+          "text": "Would you rather have a raccoon help sort shiny craft supplies or have a crow help collect colorful leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_074",
+          "text": "Would you rather have a raccoon help sort shiny craft supplies or have an otter help stack smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_075",
+          "text": "Would you rather have a raccoon help sort shiny craft supplies or have a squirrel help organize pretend acorns?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_076",
+          "text": "Would you rather have a raccoon help sort shiny craft supplies or have a llama help deliver friendly notes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_077",
+          "text": "Would you rather have a goat help test a tiny obstacle trail or have a crow help collect colorful leaves?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_078",
+          "text": "Would you rather have a goat help test a tiny obstacle trail or have an otter help stack smooth stones?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_079",
+          "text": "Would you rather have a goat help test a tiny obstacle trail or have a squirrel help organize pretend acorns?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_080",
+          "text": "Would you rather have a goat help test a tiny obstacle trail or have a llama help deliver friendly notes?",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "id": "gross",
+      "title": "Gross",
+      "order": 3,
+      "prompts": [
+        {
+          "id": "wyr_gross_001",
+          "text": "Would you rather wear squishy seaweed mittens for ten minutes or wear soggy cereal socks during a march?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_002",
+          "text": "Would you rather wear squishy seaweed mittens for ten minutes or wear muddy pudding boots during a pretend hike?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_003",
+          "text": "Would you rather wear squishy seaweed mittens for ten minutes or wear slippery noodle earmuffs during story time?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_004",
+          "text": "Would you rather wear squishy seaweed mittens for ten minutes or wear bumpy tapioca gloves during a drawing game?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_005",
+          "text": "Would you rather wear sticky marshmallow slippers for one minute or wear soggy cereal socks during a march?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_006",
+          "text": "Would you rather wear sticky marshmallow slippers for one minute or wear muddy pudding boots during a pretend hike?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_007",
+          "text": "Would you rather wear sticky marshmallow slippers for one minute or wear slippery noodle earmuffs during story time?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_008",
+          "text": "Would you rather wear sticky marshmallow slippers for one minute or wear bumpy tapioca gloves during a drawing game?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_009",
+          "text": "Would you rather wear a damp sponge hat during a silly song or wear soggy cereal socks during a march?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_010",
+          "text": "Would you rather wear a damp sponge hat during a silly song or wear muddy pudding boots during a pretend hike?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_011",
+          "text": "Would you rather wear a damp sponge hat during a silly song or wear slippery noodle earmuffs during story time?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_012",
+          "text": "Would you rather wear a damp sponge hat during a silly song or wear bumpy tapioca gloves during a drawing game?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_013",
+          "text": "Would you rather wear lumpy oatmeal sleeves during a dance or wear soggy cereal socks during a march?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_014",
+          "text": "Would you rather wear lumpy oatmeal sleeves during a dance or wear muddy pudding boots during a pretend hike?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_015",
+          "text": "Would you rather wear lumpy oatmeal sleeves during a dance or wear slippery noodle earmuffs during story time?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_016",
+          "text": "Would you rather wear lumpy oatmeal sleeves during a dance or wear bumpy tapioca gloves during a drawing game?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_017",
+          "text": "Would you rather wear gooey jelly wristbands during a parade or wear soggy cereal socks during a march?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_018",
+          "text": "Would you rather wear gooey jelly wristbands during a parade or wear muddy pudding boots during a pretend hike?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_019",
+          "text": "Would you rather wear gooey jelly wristbands during a parade or wear slippery noodle earmuffs during story time?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_020",
+          "text": "Would you rather wear gooey jelly wristbands during a parade or wear bumpy tapioca gloves during a drawing game?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_021",
+          "text": "Would you rather touch cool pretend slime with one finger or touch a tray of cold noodles with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_022",
+          "text": "Would you rather touch cool pretend slime with one finger or touch a cup of lumpy pudding with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_023",
+          "text": "Would you rather touch cool pretend slime with one finger or touch a pile of wet paper strips with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_024",
+          "text": "Would you rather touch cool pretend slime with one finger or touch a mound of sticky play dough with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_025",
+          "text": "Would you rather touch a bowl of squishy peeled grapes with one finger or touch a tray of cold noodles with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_026",
+          "text": "Would you rather touch a bowl of squishy peeled grapes with one finger or touch a cup of lumpy pudding with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_027",
+          "text": "Would you rather touch a bowl of squishy peeled grapes with one finger or touch a pile of wet paper strips with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_028",
+          "text": "Would you rather touch a bowl of squishy peeled grapes with one finger or touch a mound of sticky play dough with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_029",
+          "text": "Would you rather touch a damp ball of yarn with one finger or touch a tray of cold noodles with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_030",
+          "text": "Would you rather touch a damp ball of yarn with one finger or touch a cup of lumpy pudding with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_031",
+          "text": "Would you rather touch a damp ball of yarn with one finger or touch a pile of wet paper strips with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_032",
+          "text": "Would you rather touch a damp ball of yarn with one finger or touch a mound of sticky play dough with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_033",
+          "text": "Would you rather touch smooth jelly cubes with one finger or touch a tray of cold noodles with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_034",
+          "text": "Would you rather touch smooth jelly cubes with one finger or touch a cup of lumpy pudding with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_035",
+          "text": "Would you rather touch smooth jelly cubes with one finger or touch a pile of wet paper strips with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_036",
+          "text": "Would you rather touch smooth jelly cubes with one finger or touch a mound of sticky play dough with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_037",
+          "text": "Would you rather touch a wobbly sponge tower with one finger or touch a tray of cold noodles with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_038",
+          "text": "Would you rather touch a wobbly sponge tower with one finger or touch a cup of lumpy pudding with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_039",
+          "text": "Would you rather touch a wobbly sponge tower with one finger or touch a pile of wet paper strips with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_040",
+          "text": "Would you rather touch a wobbly sponge tower with one finger or touch a mound of sticky play dough with one finger?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_041",
+          "text": "Would you rather walk through a pretend swamp of green jelly or walk through a pretend garden of damp sponges?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_042",
+          "text": "Would you rather walk through a pretend swamp of green jelly or walk through a pretend maze of mushy peas?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_043",
+          "text": "Would you rather walk through a pretend swamp of green jelly or walk through a pretend forest of floppy seaweed?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_044",
+          "text": "Would you rather walk through a pretend swamp of green jelly or walk through a pretend room of squishy oatmeal?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_045",
+          "text": "Would you rather walk through a pretend tunnel of soggy cereal or walk through a pretend garden of damp sponges?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_046",
+          "text": "Would you rather walk through a pretend tunnel of soggy cereal or walk through a pretend maze of mushy peas?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_047",
+          "text": "Would you rather walk through a pretend tunnel of soggy cereal or walk through a pretend forest of floppy seaweed?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_048",
+          "text": "Would you rather walk through a pretend tunnel of soggy cereal or walk through a pretend room of squishy oatmeal?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_049",
+          "text": "Would you rather walk through a pretend field of sticky noodles or walk through a pretend garden of damp sponges?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_050",
+          "text": "Would you rather walk through a pretend field of sticky noodles or walk through a pretend maze of mushy peas?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_051",
+          "text": "Would you rather walk through a pretend field of sticky noodles or walk through a pretend forest of floppy seaweed?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_052",
+          "text": "Would you rather walk through a pretend field of sticky noodles or walk through a pretend room of squishy oatmeal?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_053",
+          "text": "Would you rather walk through a pretend cave of wobbly pudding or walk through a pretend garden of damp sponges?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_054",
+          "text": "Would you rather walk through a pretend cave of wobbly pudding or walk through a pretend maze of mushy peas?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_055",
+          "text": "Would you rather walk through a pretend cave of wobbly pudding or walk through a pretend forest of floppy seaweed?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_056",
+          "text": "Would you rather walk through a pretend cave of wobbly pudding or walk through a pretend room of squishy oatmeal?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_057",
+          "text": "Would you rather walk through a pretend creek of purple slime or walk through a pretend garden of damp sponges?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_058",
+          "text": "Would you rather walk through a pretend creek of purple slime or walk through a pretend maze of mushy peas?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_059",
+          "text": "Would you rather walk through a pretend creek of purple slime or walk through a pretend forest of floppy seaweed?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_060",
+          "text": "Would you rather walk through a pretend creek of purple slime or walk through a pretend room of squishy oatmeal?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_061",
+          "text": "Would you rather clean pretend goo from a toy spaceship or clean soggy cereal from a pretend treasure chest?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_062",
+          "text": "Would you rather clean pretend goo from a toy spaceship or clean squishy mud from a toy dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_063",
+          "text": "Would you rather clean pretend goo from a toy spaceship or clean lumpy pudding from a mixing bowl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_064",
+          "text": "Would you rather clean pretend goo from a toy spaceship or clean wet noodles from a pretend robot?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_065",
+          "text": "Would you rather clean sticky jam spots from a cardboard castle or clean soggy cereal from a pretend treasure chest?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_066",
+          "text": "Would you rather clean sticky jam spots from a cardboard castle or clean squishy mud from a toy dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_067",
+          "text": "Would you rather clean sticky jam spots from a cardboard castle or clean lumpy pudding from a mixing bowl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_068",
+          "text": "Would you rather clean sticky jam spots from a cardboard castle or clean wet noodles from a pretend robot?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_069",
+          "text": "Would you rather clean damp crumbs from a picnic mat or clean soggy cereal from a pretend treasure chest?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_070",
+          "text": "Would you rather clean damp crumbs from a picnic mat or clean squishy mud from a toy dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_071",
+          "text": "Would you rather clean damp crumbs from a picnic mat or clean lumpy pudding from a mixing bowl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_072",
+          "text": "Would you rather clean damp crumbs from a picnic mat or clean wet noodles from a pretend robot?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_073",
+          "text": "Would you rather clean wobbly jelly from a play kitchen or clean soggy cereal from a pretend treasure chest?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_074",
+          "text": "Would you rather clean wobbly jelly from a play kitchen or clean squishy mud from a toy dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_075",
+          "text": "Would you rather clean wobbly jelly from a play kitchen or clean lumpy pudding from a mixing bowl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_076",
+          "text": "Would you rather clean wobbly jelly from a play kitchen or clean wet noodles from a pretend robot?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_077",
+          "text": "Would you rather clean slimy soap bubbles from a toy boat or clean soggy cereal from a pretend treasure chest?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_078",
+          "text": "Would you rather clean slimy soap bubbles from a toy boat or clean squishy mud from a toy dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_079",
+          "text": "Would you rather clean slimy soap bubbles from a toy boat or clean lumpy pudding from a mixing bowl?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_gross_080",
+          "text": "Would you rather clean slimy soap bubbles from a toy boat or clean wet noodles from a pretend robot?",
+          "status": "approved"
+        }
+      ]
+    },
+    {
+      "id": "super_gross",
+      "title": "Super Gross",
+      "order": 4,
+      "prompts": [
+        {
+          "id": "wyr_super_gross_001",
+          "text": "Would you rather have every burp sound as a tiny trumpet or have every fart sound as a duck quack?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_002",
+          "text": "Would you rather have every burp sound as a tiny trumpet or have every burp sound as a creaky door?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_003",
+          "text": "Would you rather have every burp sound as a tiny trumpet or have every fart make a paper flag wave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_004",
+          "text": "Would you rather have every burp sound as a tiny trumpet or have every burp echo through a pretend cave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_005",
+          "text": "Would you rather have every fart sound as a squeaky violin or have every fart sound as a duck quack?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_006",
+          "text": "Would you rather have every fart sound as a squeaky violin or have every burp sound as a creaky door?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_007",
+          "text": "Would you rather have every fart sound as a squeaky violin or have every fart make a paper flag wave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_008",
+          "text": "Would you rather have every fart sound as a squeaky violin or have every burp echo through a pretend cave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_009",
+          "text": "Would you rather have every burp create one pretend bubble or have every fart sound as a duck quack?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_010",
+          "text": "Would you rather have every burp create one pretend bubble or have every burp sound as a creaky door?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_011",
+          "text": "Would you rather have every burp create one pretend bubble or have every fart make a paper flag wave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_012",
+          "text": "Would you rather have every burp create one pretend bubble or have every burp echo through a pretend cave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_013",
+          "text": "Would you rather have every fart make a toy bell ring or have every fart sound as a duck quack?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_014",
+          "text": "Would you rather have every fart make a toy bell ring or have every burp sound as a creaky door?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_015",
+          "text": "Would you rather have every fart make a toy bell ring or have every fart make a paper flag wave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_016",
+          "text": "Would you rather have every fart make a toy bell ring or have every burp echo through a pretend cave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_017",
+          "text": "Would you rather have every burp play one drumbeat or have every fart sound as a duck quack?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_018",
+          "text": "Would you rather have every burp play one drumbeat or have every burp sound as a creaky door?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_019",
+          "text": "Would you rather have every burp play one drumbeat or have every fart make a paper flag wave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_020",
+          "text": "Would you rather have every burp play one drumbeat or have every burp echo through a pretend cave?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_021",
+          "text": "Would you rather find a glittery booger on a toy dragon or find a wiggly booger on a pretend telescope?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_022",
+          "text": "Would you rather find a glittery booger on a toy dragon or find a purple booger on a stuffed dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_023",
+          "text": "Would you rather find a glittery booger on a toy dragon or find a shiny booger on a toy steering wheel?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_024",
+          "text": "Would you rather find a glittery booger on a toy dragon or find a striped booger on a paper castle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_025",
+          "text": "Would you rather find a green booger on a pretend crown or find a wiggly booger on a pretend telescope?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_026",
+          "text": "Would you rather find a green booger on a pretend crown or find a purple booger on a stuffed dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_027",
+          "text": "Would you rather find a green booger on a pretend crown or find a shiny booger on a toy steering wheel?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_028",
+          "text": "Would you rather find a green booger on a pretend crown or find a striped booger on a paper castle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_029",
+          "text": "Would you rather find a tiny booger stuck to a rubber duck or find a wiggly booger on a pretend telescope?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_030",
+          "text": "Would you rather find a tiny booger stuck to a rubber duck or find a purple booger on a stuffed dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_031",
+          "text": "Would you rather find a tiny booger stuck to a rubber duck or find a shiny booger on a toy steering wheel?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_032",
+          "text": "Would you rather find a tiny booger stuck to a rubber duck or find a striped booger on a paper castle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_033",
+          "text": "Would you rather find a sparkly booger on a cardboard robot or find a wiggly booger on a pretend telescope?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_034",
+          "text": "Would you rather find a sparkly booger on a cardboard robot or find a purple booger on a stuffed dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_035",
+          "text": "Would you rather find a sparkly booger on a cardboard robot or find a shiny booger on a toy steering wheel?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_036",
+          "text": "Would you rather find a sparkly booger on a cardboard robot or find a striped booger on a paper castle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_037",
+          "text": "Would you rather find a blue booger on a toy pirate hat or find a wiggly booger on a pretend telescope?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_038",
+          "text": "Would you rather find a blue booger on a toy pirate hat or find a purple booger on a stuffed dinosaur?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_039",
+          "text": "Would you rather find a blue booger on a toy pirate hat or find a shiny booger on a toy steering wheel?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_040",
+          "text": "Would you rather find a blue booger on a toy pirate hat or find a striped booger on a paper castle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_041",
+          "text": "Would you rather sort a basket of stinky socks by color or match stinky socks into pairs while humming?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_042",
+          "text": "Would you rather sort a basket of stinky socks by color or build a stinky sock tower with clothespins?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_043",
+          "text": "Would you rather sort a basket of stinky socks by color or name a stinky sock after an imaginary planet?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_044",
+          "text": "Would you rather sort a basket of stinky socks by color or draw a picture of the stinkiest sock ever?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_045",
+          "text": "Would you rather carry one stinky sock with kitchen tongs or match stinky socks into pairs while humming?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_046",
+          "text": "Would you rather carry one stinky sock with kitchen tongs or build a stinky sock tower with clothespins?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_047",
+          "text": "Would you rather carry one stinky sock with kitchen tongs or name a stinky sock after an imaginary planet?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_048",
+          "text": "Would you rather carry one stinky sock with kitchen tongs or draw a picture of the stinkiest sock ever?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_049",
+          "text": "Would you rather make a stinky sock puppet sing or match stinky socks into pairs while humming?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_050",
+          "text": "Would you rather make a stinky sock puppet sing or build a stinky sock tower with clothespins?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_051",
+          "text": "Would you rather make a stinky sock puppet sing or name a stinky sock after an imaginary planet?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_052",
+          "text": "Would you rather make a stinky sock puppet sing or draw a picture of the stinkiest sock ever?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_053",
+          "text": "Would you rather hide a stinky sock inside a pretend treasure box or match stinky socks into pairs while humming?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_054",
+          "text": "Would you rather hide a stinky sock inside a pretend treasure box or build a stinky sock tower with clothespins?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_055",
+          "text": "Would you rather hide a stinky sock inside a pretend treasure box or name a stinky sock after an imaginary planet?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_056",
+          "text": "Would you rather hide a stinky sock inside a pretend treasure box or draw a picture of the stinkiest sock ever?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_057",
+          "text": "Would you rather wave a stinky sock as a silly finish flag or match stinky socks into pairs while humming?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_058",
+          "text": "Would you rather wave a stinky sock as a silly finish flag or build a stinky sock tower with clothespins?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_059",
+          "text": "Would you rather wave a stinky sock as a silly finish flag or name a stinky sock after an imaginary planet?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_060",
+          "text": "Would you rather wave a stinky sock as a silly finish flag or draw a picture of the stinkiest sock ever?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_061",
+          "text": "Would you rather cheer for a burping toy frog across a table or help a farting toy duck win a slow parade?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_062",
+          "text": "Would you rather cheer for a burping toy frog across a table or give a booger monster a silly paper hat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_063",
+          "text": "Would you rather cheer for a burping toy frog across a table or send a stinky sock on a pretend moon mission?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_064",
+          "text": "Would you rather cheer for a burping toy frog across a table or make a burping toy penguin tell a joke?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_065",
+          "text": "Would you rather teach a farting toy bear a quiet dance or help a farting toy duck win a slow parade?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_066",
+          "text": "Would you rather teach a farting toy bear a quiet dance or give a booger monster a silly paper hat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_067",
+          "text": "Would you rather teach a farting toy bear a quiet dance or send a stinky sock on a pretend moon mission?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_068",
+          "text": "Would you rather teach a farting toy bear a quiet dance or make a burping toy penguin tell a joke?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_069",
+          "text": "Would you rather follow a booger trail in a pretend mystery or help a farting toy duck win a slow parade?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_070",
+          "text": "Would you rather follow a booger trail in a pretend mystery or give a booger monster a silly paper hat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_071",
+          "text": "Would you rather follow a booger trail in a pretend mystery or send a stinky sock on a pretend moon mission?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_072",
+          "text": "Would you rather follow a booger trail in a pretend mystery or make a burping toy penguin tell a joke?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_073",
+          "text": "Would you rather guide a stinky sock through a cardboard maze or help a farting toy duck win a slow parade?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_074",
+          "text": "Would you rather guide a stinky sock through a cardboard maze or give a booger monster a silly paper hat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_075",
+          "text": "Would you rather guide a stinky sock through a cardboard maze or send a stinky sock on a pretend moon mission?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_076",
+          "text": "Would you rather guide a stinky sock through a cardboard maze or make a burping toy penguin tell a joke?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_077",
+          "text": "Would you rather help a burping toy robot finish a song or help a farting toy duck win a slow parade?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_078",
+          "text": "Would you rather help a burping toy robot finish a song or give a booger monster a silly paper hat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_079",
+          "text": "Would you rather help a burping toy robot finish a song or send a stinky sock on a pretend moon mission?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_super_gross_080",
+          "text": "Would you rather help a burping toy robot finish a song or make a burping toy penguin tell a joke?",
+          "status": "approved"
+        }
+      ]
+    }
+  ]
+}

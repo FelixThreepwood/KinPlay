@@ -2,4 +2,6 @@
 <resources>
     <color name="kinplay_seed">#4F6F52</color>
     <color name="kinplay_sun">#F9D77E</color>
+    <color name="launcher_teal">#056763</color>
+    <color name="launcher_sunshine">#F7D162</color>
 </resources>

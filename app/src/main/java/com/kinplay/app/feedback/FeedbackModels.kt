@@ -5,6 +5,7 @@ import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.Base64
+import java.util.Locale
 
 enum class FeedbackType(val label: String, val wireName: String) {
     BUG("Bug", "bug"),
@@ -20,6 +21,13 @@ enum class FeedbackImpact(val label: String, val wireName: String) {
     MINOR("Minor", "minor"),
 }
 
+enum class FeedbackLifecycleState(val label: String) {
+    UNSENT("Unsent"),
+    HANDED_OFF("Email handed off"),
+    ADDRESSED("Addressed"),
+    COMPLETED("Completed"),
+}
+
 data class FeedbackNote(
     val id: String,
     val type: FeedbackType,
@@ -32,8 +40,122 @@ data class FeedbackNote(
     val contentTitle: String?,
     val createdAtEpochMillis: Long,
     val timezoneId: String,
+    val createdInVersionName: String = "",
+    val createdInVersionCode: Int = 0,
+    val lifecycleState: FeedbackLifecycleState = FeedbackLifecycleState.UNSENT,
+    val handedOffAtEpochMillis: Long? = null,
+    val addressedAtEpochMillis: Long? = null,
+    val addressedInVersionName: String? = null,
+    val addressedInVersionCode: Int? = null,
+    val completedAtEpochMillis: Long? = null,
 ) {
     fun isValid(): Boolean = comment.isNotBlank()
+}
+
+data class FeedbackCounts(
+    val unsent: Int,
+    val sinceRevision: Int,
+)
+
+private val feedbackNewestFirst = compareByDescending<FeedbackNote> { it.createdAtEpochMillis }
+    .thenBy { it.id }
+
+fun activeFeedbackNotes(notes: List<FeedbackNote>): List<FeedbackNote> = notes
+    .filter { it.lifecycleState == FeedbackLifecycleState.UNSENT }
+    .sortedWith(feedbackNewestFirst)
+
+fun archivedFeedbackNotes(notes: List<FeedbackNote>): List<FeedbackNote> = notes
+    .filter { it.lifecycleState != FeedbackLifecycleState.UNSENT }
+    .sortedWith(feedbackNewestFirst)
+
+fun feedbackCounts(notes: List<FeedbackNote>, currentVersionCode: Int): FeedbackCounts = FeedbackCounts(
+    unsent = notes.count { it.lifecycleState == FeedbackLifecycleState.UNSENT },
+    sinceRevision = notes.count { it.createdInVersionCode == currentVersionCode },
+)
+
+fun feedbackSaveStatusMessage(notes: List<FeedbackNote>, wasEdit: Boolean): String {
+    val action = if (wasEdit) "Updated" else "Saved"
+    return "$action locally. ${activeFeedbackNotes(notes).size} unsent."
+}
+
+/**
+ * Lifecycle is deliberately forward-only: UNSENT -> HANDED_OFF -> ADDRESSED -> COMPLETED,
+ * with HANDED_OFF -> COMPLETED also allowed by the archive UI. Repeating a transition is a
+ * no-op so the timestamp and version recorded by the first valid transition remain authoritative.
+ * Invalid source states are likewise returned unchanged.
+ */
+fun markFeedbackNotesHandedOff(
+    notes: List<FeedbackNote>,
+    noteIds: Set<String>,
+    handedOffAtEpochMillis: Long,
+): List<FeedbackNote> = notes.map { note ->
+    if (note.id in noteIds && note.lifecycleState == FeedbackLifecycleState.UNSENT) {
+        note.copy(
+            lifecycleState = FeedbackLifecycleState.HANDED_OFF,
+            handedOffAtEpochMillis = handedOffAtEpochMillis,
+        )
+    } else {
+        note
+    }
+}
+
+fun markFeedbackNoteAddressed(
+    note: FeedbackNote,
+    addressedAtEpochMillis: Long,
+    addressedInVersionName: String,
+    addressedInVersionCode: Int,
+): FeedbackNote = if (note.lifecycleState == FeedbackLifecycleState.HANDED_OFF) {
+    note.copy(
+        lifecycleState = FeedbackLifecycleState.ADDRESSED,
+        addressedAtEpochMillis = addressedAtEpochMillis,
+        addressedInVersionName = addressedInVersionName,
+        addressedInVersionCode = addressedInVersionCode,
+    )
+} else {
+    note
+}
+
+fun markFeedbackNoteCompleted(note: FeedbackNote, completedAtEpochMillis: Long): FeedbackNote =
+    if (
+        note.lifecycleState == FeedbackLifecycleState.HANDED_OFF ||
+        note.lifecycleState == FeedbackLifecycleState.ADDRESSED
+    ) {
+        note.copy(
+            lifecycleState = FeedbackLifecycleState.COMPLETED,
+            completedAtEpochMillis = completedAtEpochMillis,
+        )
+    } else {
+        note
+    }
+
+data class ConfirmedFeedbackHandoff(
+    val notes: List<FeedbackNote>,
+    val selectedNoteIds: Set<String>,
+    val editingNoteId: String?,
+    val clearComposeForm: Boolean,
+)
+
+/** Applies a handoff only after the tester explicitly confirms that the external send occurred. */
+fun confirmFeedbackHandoff(
+    notes: List<FeedbackNote>,
+    pendingNoteIds: Set<String>,
+    selectedNoteIds: Set<String>,
+    editingNoteId: String?,
+    handedOffAtEpochMillis: Long,
+): ConfirmedFeedbackHandoff {
+    val confirmedIds = notes.asSequence()
+        .filter { it.id in pendingNoteIds && it.lifecycleState == FeedbackLifecycleState.UNSENT }
+        .map { it.id }
+        .toSet()
+    val updated = markFeedbackNotesHandedOff(notes, confirmedIds, handedOffAtEpochMillis)
+    val sendableIds = activeFeedbackNotes(updated).mapTo(mutableSetOf()) { it.id }
+    val retainedEditingId = editingNoteId?.takeIf { editableFeedbackNote(updated, it) != null }
+    return ConfirmedFeedbackHandoff(
+        notes = updated,
+        selectedNoteIds = selectedNoteIds.intersect(sendableIds),
+        editingNoteId = retainedEditingId,
+        clearComposeForm = editingNoteId != null && retainedEditingId == null,
+    )
 }
 
 data class FeedbackBuildContext(
@@ -61,11 +183,16 @@ fun selectFeedbackNotesForImmediateSend(
     selectedNoteIds: Set<String>,
     justSavedNoteId: String?,
 ): List<FeedbackNote> = notes.filter { note ->
-    note.id in selectedNoteIds || note.id == justSavedNoteId
+    note.lifecycleState == FeedbackLifecycleState.UNSENT &&
+        (note.id in selectedNoteIds || note.id == justSavedNoteId)
 }
 
+fun editableFeedbackNote(notes: List<FeedbackNote>, noteId: String): FeedbackNote? =
+    notes.firstOrNull { it.id == noteId && it.lifecycleState == FeedbackLifecycleState.UNSENT }
+
 object FeedbackCodec {
-    private const val FieldCount = 12
+    private const val LegacyFieldCount = 12
+    private const val CurrentFieldCount = 20
 
     fun encode(notes: List<FeedbackNote>): String = notes.joinToString("\n") { note ->
         listOf(
@@ -80,19 +207,39 @@ object FeedbackCodec {
             note.contentTitle.orEmpty(),
             note.createdAtEpochMillis.toString(),
             note.timezoneId,
-            "2",
+            note.createdInVersionName,
+            note.createdInVersionCode.toString(),
+            note.lifecycleState.name,
+            note.handedOffAtEpochMillis?.toString().orEmpty(),
+            note.addressedAtEpochMillis?.toString().orEmpty(),
+            note.addressedInVersionName.orEmpty(),
+            note.addressedInVersionCode?.toString().orEmpty(),
+            note.completedAtEpochMillis?.toString().orEmpty(),
+            "3",
         ).joinToString(".") { encodeField(it) }
     }
 
-    fun decode(encoded: String): List<FeedbackNote> = encoded
+    fun decode(
+        encoded: String,
+        legacyVersionName: String = "",
+        legacyVersionCode: Int = 0,
+    ): List<FeedbackNote> = encoded
         .lineSequence()
         .filter { it.isNotBlank() }
-        .mapNotNull(::decodeNote)
+        .mapNotNull { decodeNote(it, legacyVersionName, legacyVersionCode) }
         .toList()
 
-    private fun decodeNote(line: String): FeedbackNote? = runCatching {
+    private fun decodeNote(
+        line: String,
+        legacyVersionName: String,
+        legacyVersionCode: Int,
+    ): FeedbackNote? = runCatching {
         val fields = line.split('.').map(::decodeField)
-        require(fields.size == FieldCount && fields[11] == "2")
+        require(
+            (fields.size == LegacyFieldCount && fields[11] == "2") ||
+                (fields.size == CurrentFieldCount && fields[19] == "3"),
+        )
+        val isLegacy = fields.size == LegacyFieldCount
         FeedbackNote(
             id = fields[0],
             type = FeedbackType.valueOf(fields[1]),
@@ -105,6 +252,18 @@ object FeedbackCodec {
             contentTitle = fields[8].ifBlank { null },
             createdAtEpochMillis = fields[9].toLong(),
             timezoneId = fields[10],
+            createdInVersionName = if (isLegacy) legacyVersionName else fields[11],
+            createdInVersionCode = if (isLegacy) legacyVersionCode else fields[12].toInt(),
+            lifecycleState = if (isLegacy) {
+                FeedbackLifecycleState.UNSENT
+            } else {
+                FeedbackLifecycleState.valueOf(fields[13])
+            },
+            handedOffAtEpochMillis = if (isLegacy) null else fields[14].toLongOrNull(),
+            addressedAtEpochMillis = if (isLegacy) null else fields[15].toLongOrNull(),
+            addressedInVersionName = if (isLegacy) null else fields[16].ifBlank { null },
+            addressedInVersionCode = if (isLegacy) null else fields[17].toIntOrNull(),
+            completedAtEpochMillis = if (isLegacy) null else fields[18].toLongOrNull(),
         )
     }.getOrNull()
 
@@ -116,6 +275,37 @@ object FeedbackCodec {
         Base64.getUrlDecoder().decode(value),
         StandardCharsets.UTF_8,
     )
+}
+
+private val feedbackUiTimestampFormatter = DateTimeFormatter.ofPattern(
+    "MMM d, yyyy, h:mm a z",
+    Locale.US,
+)
+
+private fun formatFeedbackTimestamp(epochMillis: Long, timezoneId: String): String {
+    val zone = runCatching { ZoneId.of(timezoneId) }.getOrDefault(ZoneId.of("UTC"))
+    return feedbackUiTimestampFormatter.format(Instant.ofEpochMilli(epochMillis).atZone(zone))
+}
+
+fun formatFeedbackCreationMetadata(note: FeedbackNote): String =
+    "Created ${formatFeedbackTimestamp(note.createdAtEpochMillis, note.timezoneId)}"
+
+fun formatFeedbackResolutionMetadata(note: FeedbackNote): String = when (note.lifecycleState) {
+    FeedbackLifecycleState.ADDRESSED -> {
+        val version = note.addressedInVersionName?.let { name ->
+            note.addressedInVersionCode?.let { code -> "$name ($code)" } ?: name
+        } ?: "unknown version"
+        val date = note.addressedAtEpochMillis?.let { formatFeedbackTimestamp(it, note.timezoneId) }
+            ?: "unknown date"
+        "Addressed in $version on $date"
+    }
+    FeedbackLifecycleState.HANDED_OFF -> note.handedOffAtEpochMillis?.let {
+        "Email handed off ${formatFeedbackTimestamp(it, note.timezoneId)}"
+    } ?: "Email handed off"
+    FeedbackLifecycleState.COMPLETED -> note.completedAtEpochMillis?.let {
+        "Completed ${formatFeedbackTimestamp(it, note.timezoneId)}"
+    } ?: "Completed"
+    FeedbackLifecycleState.UNSENT -> "Unsent"
 }
 
 object FeedbackEmailFormatter {

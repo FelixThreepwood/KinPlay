@@ -9,6 +9,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.nio.file.Files
 import java.nio.file.Path
+import javax.xml.parsers.DocumentBuilderFactory
 
 class ContentRevisionInvariantTest {
     private val root: JsonObject by lazy {
@@ -22,6 +23,28 @@ class ContentRevisionInvariantTest {
 
     private val activeItems: List<JsonObject>
         get() = items.filter { it.string("status") == "active" }
+
+    @Test
+    fun launcherAliasesAreExportedButMainActivityCannotBeLaunchedDirectly() {
+        val manifest = repositoryRoot().resolve("app/src/main/AndroidManifest.xml").toFile()
+        val factory = DocumentBuilderFactory.newInstance().apply { isNamespaceAware = true }
+        val document = factory.newDocumentBuilder().parse(manifest)
+        val androidNamespace = "http://schemas.android.com/apk/res/android"
+        val activities = document.getElementsByTagName("activity")
+        val mainActivity = (0 until activities.length)
+            .map { activities.item(it) }
+            .single { it.attributes.getNamedItemNS(androidNamespace, "name").nodeValue == ".MainActivity" }
+        val aliases = document.getElementsByTagName("activity-alias")
+
+        assertEquals("false", mainActivity.attributes.getNamedItemNS(androidNamespace, "exported").nodeValue)
+        assertEquals(2, aliases.length)
+        (0 until aliases.length).forEach { index ->
+            assertEquals(
+                "true",
+                aliases.item(index).attributes.getNamedItemNS(androidNamespace, "exported").nodeValue,
+            )
+        }
+    }
 
     @Test
     fun realSeedAndAndroidAssetAreByteIdentical() {

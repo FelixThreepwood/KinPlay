@@ -40,7 +40,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Color
+
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -52,7 +52,18 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.kinplay.app.feedback.FeedbackCaptureContext
 import com.kinplay.app.feedback.FeedbackOverlay
+import com.kinplay.app.lock.ChildHandoffLockContainer
+import com.kinplay.app.settings.AndroidLauncherIconGateway
+import com.kinplay.app.settings.AppSettings
+import com.kinplay.app.settings.AppSettingsRepository
+import com.kinplay.app.settings.LauncherIconSwitchResult
+import com.kinplay.app.settings.LauncherIconSwitcher
+import com.kinplay.app.settings.SettingsScreen
+import com.kinplay.app.settings.SharedPreferencesSettingsKeyValueStore
+import com.kinplay.app.ui.KinPlayTheme
+import com.kinplay.app.wyr.WouldYouRatherRoute
 import org.json.JSONObject
 import kotlin.random.Random
 
@@ -68,6 +79,10 @@ const val HOME_DESCRIPTOR = "Ready-to-use family games & activities"
 const val HOME_INSTRUCTION_SECTION_ENABLED = false
 const val BROWSE_LIBRARY_LABEL = "Browse All Games & Activities"
 const val MAD_LIBS_COLLECTION_ID = "mad_libs_collection"
+const val WOULD_YOU_RATHER_ITEM_ID = "would_you_rather_silly_family"
+const val WOULD_YOU_RATHER_ROUTE = "would_you_rather"
+fun isWouldYouRatherItem(itemId: String): Boolean = itemId == WOULD_YOU_RATHER_ITEM_ID
+
 private val FAMILIAR_QUIET_TITLES = listOf("I Spy", "Charades", "Would You Rather", "Animal Guessing", "Alphabet Story")
 
 fun contentListBackLabel(isMadLibsSubmenu: Boolean = false): String =
@@ -79,37 +94,35 @@ private object Routes {
     const val PickGame = "pick_game"
     const val CalmDown = "calm_down"
     const val AboutSafety = "about_safety"
+    const val Settings = "settings"
     const val MadLibsCollection = "mad_libs_collection"
+    const val WouldYouRather = WOULD_YOU_RATHER_ROUTE
     const val Category = "category/{categoryId}"
     const val Detail = "detail/{itemId}"
     fun category(categoryId: String) = "category/$categoryId"
     fun detail(itemId: String) = "detail/$itemId"
 }
 
-private val Ink = Color(0xFF1F2A24)
-private val MutedInk = Color(0xFF637067)
-private val Canvas = Color(0xFFF7F2E8)
-private val SurfaceWarm = Color(0xFFFFFCF4)
-private val SurfaceLeaf = Color(0xFFE7F0E4)
-private val Forest = Color(0xFF2F5D45)
-private val ForestDark = Color(0xFF193A2C)
-private val Gold = Color(0xFFE3A62F)
-
 @Composable
 fun KinPlayApp() {
-    MaterialTheme(
-        colorScheme = MaterialTheme.colorScheme.copy(
-            primary = Forest,
-            onPrimary = Color.White,
-            secondary = Gold,
-            tertiary = ForestDark,
-            surface = SurfaceWarm,
-            background = Canvas,
-            onSurface = Ink,
-        ),
-    ) {
+    val context = LocalContext.current.applicationContext
+    val settingsRepository = remember(context) {
+        AppSettingsRepository(SharedPreferencesSettingsKeyValueStore(context))
+    }
+    val launcherIconSwitcher = remember(context) {
+        LauncherIconSwitcher(AndroidLauncherIconGateway(context))
+    }
+    var appSettings by remember { mutableStateOf(settingsRepository.load()) }
+    fun persistSettings(changed: AppSettings) {
+        appSettings = changed
+        settingsRepository.save(changed)
+    }
+    LaunchedEffect(launcherIconSwitcher, appSettings.launcherIcon) {
+        launcherIconSwitcher.switchTo(appSettings.launcherIcon)
+    }
+
+    KinPlayTheme(appSettings.colorTheme) {
         Surface(modifier = Modifier.fillMaxSize()) {
-            val context = LocalContext.current
             val contentPack = rememberContentPack()
             var favoriteIds by remember { mutableStateOf(loadIdSet(context, "favorite_ids")) }
             var recentIds by remember { mutableStateOf(loadIdList(context, "recent_ids")) }
@@ -129,6 +142,26 @@ fun KinPlayApp() {
                     composable(Routes.PickGame) { ContentListScreen("All Games & Activities", contentPack.gameLibraryItems(), favoriteIds, navController) }
                     composable(Routes.CalmDown) { ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController) }
                     composable(Routes.AboutSafety) { AboutSafetyScreen(navController) }
+                    composable(Routes.Settings) {
+                        SettingsScreen(
+                            settings = appSettings,
+                            onSettingsChange = ::persistSettings,
+                            onLauncherIconChange = { launcherIcon ->
+                                launcherIconSwitcher.switchTo(launcherIcon).also { result ->
+                                    if (result != LauncherIconSwitchResult.FAILED_SAFE) {
+                                        persistSettings(appSettings.copy(launcherIcon = launcherIcon))
+                                    }
+                                }
+                            },
+                            onBack = { navController.popBackStack() },
+                        )
+                    }
+                    composable(Routes.WouldYouRather) {
+                        WouldYouRatherRoute(
+                            gameTimer = appSettings.gameTimer,
+                            onExit = { navController.popBackStack() },
+                        )
+                    }
                     composable(Routes.MadLibsCollection) {
                         ContentListScreen(
                             title = "Mad Libs",
@@ -157,30 +190,38 @@ fun KinPlayApp() {
                     ) { entry ->
                         val itemId = entry.arguments?.getString("itemId").orEmpty()
                         ActivityDetailScreen(
+                            itemId = itemId,
                             item = contentPack.activeItemById(itemId),
                             isFavorite = itemId in favoriteIds,
                             onToggleFavorite = { persistFavorites(favoriteIds.toggleFavorite(itemId)) },
                             onMarkPlayed = { persistRecent(recentIds.withRecentFirst(itemId)) },
+                            settings = appSettings,
                             navController = navController,
                         )
                     }
                 }
                 if (BuildConfig.FEEDBACK_ENABLED) {
                     val backStackEntry by navController.currentBackStackEntryAsState()
-                    val itemId = backStackEntry?.arguments?.getString("itemId")
-                    val categoryId = backStackEntry?.arguments?.getString("categoryId")
-                    val currentItem = itemId?.let(contentPack::activeItemById)
-                    val route = when {
-                        itemId != null -> "detail/$itemId"
-                        categoryId != null -> "category/$categoryId"
-                        else -> backStackEntry?.destination?.route ?: Routes.Home
+                    // Keep game/play lanes free of controls that must not bypass child handoff lock.
+                    if (
+                        backStackEntry?.destination?.route != Routes.WouldYouRather &&
+                        backStackEntry?.destination?.route != Routes.Detail
+                    ) {
+                        val itemId = backStackEntry?.arguments?.getString("itemId")
+                        val categoryId = backStackEntry?.arguments?.getString("categoryId")
+                        val currentItem = itemId?.let(contentPack::activeItemById)
+                        val route = when {
+                            itemId != null -> "detail/$itemId"
+                            categoryId != null -> "category/$categoryId"
+                            else -> backStackEntry?.destination?.route ?: Routes.Home
+                        }
+                        FeedbackOverlay(
+                            context = context,
+                            screen = route,
+                            contentId = currentItem?.id,
+                            contentTitle = currentItem?.title,
+                        )
                     }
-                    FeedbackOverlay(
-                        context = context,
-                        screen = route,
-                        contentId = currentItem?.id,
-                        contentTitle = currentItem?.title,
-                    )
                 }
             }
         }
@@ -212,10 +253,13 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                         horizontalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
                         Text("KinPlay", fontWeight = FontWeight.Bold)
-                        Text(HOME_DESCRIPTOR, style = MaterialTheme.typography.bodySmall, color = MutedInk, maxLines = 1)
+                        Text(HOME_DESCRIPTOR, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1)
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = Canvas, titleContentColor = Ink),
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.background,
+                    titleContentColor = MaterialTheme.colorScheme.onBackground,
+                ),
             )
         },
     ) { innerPadding ->
@@ -234,6 +278,7 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
             SectionTitle("More ways to start", "Offline, parent-led choices for ages 2–8")
             HomeButton("Pick For Me", "Choose a ready-to-use local activity") { navController.navigate(Routes.QuickPlay) }
             HomeButton(BROWSE_LIBRARY_LABEL, "See the full library, including story activities") { navController.navigate(Routes.PickGame) }
+            HomeButton("Settings", "Timers, activity duration, and color theme") { navController.navigate(Routes.Settings) }
             HomeButton("About / Safety", "Parent-led safety and privacy notes") { navController.navigate(Routes.AboutSafety) }
         }
     }
@@ -246,7 +291,7 @@ fun QuickCategoryGrid(onSelect: (QuickCategory) -> Unit) {
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 categoryRow.forEach { category ->
                     Card(
-                        colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
                         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
                         shape = RoundedCornerShape(18.dp),
                         modifier = Modifier
@@ -258,8 +303,8 @@ fun QuickCategoryGrid(onSelect: (QuickCategory) -> Unit) {
                             modifier = Modifier.fillMaxSize().padding(12.dp),
                             verticalArrangement = Arrangement.SpaceBetween,
                         ) {
-                            Text(category.label, fontWeight = FontWeight.Bold, color = Ink)
-                            Text("${category.placeCue}  ›", style = MaterialTheme.typography.bodySmall, color = Forest)
+                            Text(category.label, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                            Text("${category.placeCue}  ›", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
                         }
                     }
                 }
@@ -273,7 +318,7 @@ fun PageColumn(modifier: Modifier = Modifier, content: @Composable ColumnScope.(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(Canvas)
+            .background(MaterialTheme.colorScheme.background)
             .verticalScroll(rememberScrollState())
             .padding(start = 18.dp, end = 18.dp, top = 16.dp, bottom = 96.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -284,16 +329,16 @@ fun PageColumn(modifier: Modifier = Modifier, content: @Composable ColumnScope.(
 @Composable
 fun HeroPanel(contentPack: ContentPack) {
     Card(
-        colors = CardDefaults.cardColors(containerColor = ForestDark),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary),
         elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
         shape = RoundedCornerShape(28.dp),
         modifier = Modifier.fillMaxWidth(),
     ) {
         Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            Text("KinPlay", style = MaterialTheme.typography.headlineLarge, color = Color.White, fontWeight = FontWeight.Bold)
+            Text("KinPlay", style = MaterialTheme.typography.headlineLarge, color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold)
             Text(
                 "Professional, offline-first family play for parent-led moments: quick games, calm resets, creative prompts, and read-aloud silliness.",
-                color = Color(0xFFE7EFE8),
+                color = MaterialTheme.colorScheme.onPrimary,
             )
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 StatPill("${contentPack.gameLibraryItems().size}", "games")
@@ -307,34 +352,40 @@ fun HeroPanel(contentPack: ContentPack) {
 @Composable
 fun SectionTitle(title: String, subtitle: String? = null) {
     Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-        Text(title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Ink)
+        Text(title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
         if (subtitle != null) {
-            Text(subtitle, style = MaterialTheme.typography.bodySmall, color = MutedInk)
+            Text(subtitle, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }
 
 @Composable
 fun StatPill(value: String, label: String) {
-    Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF406E55)), shape = RoundedCornerShape(16.dp)) {
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+            contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
+        ),
+        shape = RoundedCornerShape(16.dp),
+    ) {
         Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(value, color = Color.White, fontWeight = FontWeight.Bold)
-            Text(label, color = Color(0xFFD7E7D9), style = MaterialTheme.typography.bodySmall)
+            Text(value, fontWeight = FontWeight.Bold)
+            Text(label, style = MaterialTheme.typography.bodySmall)
         }
     }
 }
 
 @Composable
 fun DetailPill(text: String) {
-    Card(colors = CardDefaults.cardColors(containerColor = SurfaceLeaf), shape = RoundedCornerShape(14.dp)) {
-        Text(text, modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp), style = MaterialTheme.typography.bodySmall, color = ForestDark, fontWeight = FontWeight.Bold)
+    Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer), shape = RoundedCornerShape(14.dp)) {
+        Text(text, modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSecondaryContainer, fontWeight = FontWeight.Bold)
     }
 }
 
 @Composable
 fun HomeButton(title: String, subtitle: String, onClick: () -> Unit) {
     Card(
-        colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(22.dp),
         modifier = Modifier.fillMaxWidth().clickable(onClick = onClick),
@@ -345,20 +396,20 @@ fun HomeButton(title: String, subtitle: String, onClick: () -> Unit) {
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
-                Text(title, fontWeight = FontWeight.Bold, color = Ink)
-                Text(subtitle, style = MaterialTheme.typography.bodySmall, color = MutedInk)
+                Text(title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                Text(subtitle, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
-            Text("›", style = MaterialTheme.typography.headlineSmall, color = Forest, fontWeight = FontWeight.Bold)
+            Text("›", style = MaterialTheme.typography.headlineSmall, color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
         }
     }
 }
 
 @Composable
 fun SeedCard(contentPack: ContentPack) {
-    Card(colors = CardDefaults.cardColors(containerColor = SurfaceLeaf), modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
+    Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer), modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Text("Local seed pack", fontWeight = FontWeight.Bold, color = ForestDark)
-            Text(contentPack.title, color = Ink)
+            Text("Local seed pack", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSecondaryContainer)
+            Text(contentPack.title, color = MaterialTheme.colorScheme.onSurface)
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 DetailPill("${contentPack.gameLibraryItems().size} games")
                 DetailPill("${QuickCategory.defaultGrid.size} quick lists")
@@ -381,7 +432,7 @@ fun QuickPlayScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentId
                 Text("No eligible Quick Play item found yet.")
             } else {
                 ContentCard(quickPick, favoriteIds, navController)
-                Button(onClick = { navController.navigate(Routes.detail(quickPick.id)) }) { Text("Start this activity") }
+                Button(onClick = { navController.openItem(quickPick) }) { Text("Start this activity") }
             }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
         }
@@ -418,7 +469,7 @@ fun ContentCard(
     val title = "${if (item.id in favoriteIds) "★ " else ""}${item.title}"
     var expanded by rememberSaveable(item.id) { mutableStateOf(CONTENT_CARD_DEFAULT_EXPANDED) }
     Card(
-        colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(22.dp),
         modifier = Modifier.fillMaxWidth().clickable { expanded = !expanded },
@@ -428,14 +479,14 @@ fun ContentCard(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Text(title, fontWeight = FontWeight.Bold, color = Ink, modifier = Modifier.weight(1f))
-                Text(if (expanded) "⌃" else "⌄", color = Forest, fontWeight = FontWeight.Bold)
+                Text(title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface, modifier = Modifier.weight(1f))
+                Text(if (expanded) "⌃" else "⌄", color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
             }
             item.participantFitLabel()?.let { label ->
-                Text(label, style = MaterialTheme.typography.bodySmall, color = ForestDark, fontWeight = FontWeight.Bold)
+                Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSecondaryContainer, fontWeight = FontWeight.Bold)
             }
             item.collapsedCardPreviewLines().forEach { previewLine ->
-                Text(previewLine, style = MaterialTheme.typography.bodySmall, color = MutedInk)
+                Text(previewLine, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             if (expanded) {
                 CompactCardDetails(item, navController)
@@ -452,7 +503,7 @@ fun CompactCardDetails(item: KinPlayItem, navController: NavController) {
         verticalAlignment = Alignment.Top,
     ) {
         Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
-            Text(item.summary, style = MaterialTheme.typography.bodySmall, color = Ink)
+            Text(item.summary, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface)
             Text(item.setupBurdenLabel(), style = MaterialTheme.typography.bodySmall)
             if (item.type == "mad_libs") {
                 Text("Mad Libs fields: ${item.madLibsFields.size}", style = MaterialTheme.typography.bodySmall)
@@ -464,59 +515,107 @@ fun CompactCardDetails(item: KinPlayItem, navController: NavController) {
         ) {
             DetailPill("${item.durationMinutes} min")
             DetailPill(item.displayAgeRange())
-            Text(item.energyLevel, style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.End, color = MutedInk)
+            Text(item.energyLevel, style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.End, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Button(onClick = { navController.openItem(item) }) { Text("Open") }
         }
     }
+}
+
+fun activityDetailFeedbackCapture(
+    feedbackEnabled: Boolean,
+    isLocked: Boolean,
+    itemId: String,
+    item: KinPlayItem?,
+): FeedbackCaptureContext? {
+    if (!feedbackEnabled || isLocked) return null
+    val resolvedItemId = itemId.ifBlank { item?.id.orEmpty() }
+    return FeedbackCaptureContext(
+        screen = "detail/$resolvedItemId",
+        contentId = resolvedItemId.ifBlank { null },
+        contentTitle = item?.title,
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ActivityDetailScreen(
     item: KinPlayItem?,
+    itemId: String = item?.id.orEmpty(),
     isFavorite: Boolean,
     onToggleFavorite: () -> Unit,
     onMarkPlayed: () -> Unit,
+    settings: AppSettings,
     navController: NavController,
 ) {
-    Scaffold(topBar = { TopAppBar(title = { Text(item?.title ?: "Activity") }) }) { innerPadding ->
-        PageColumn(Modifier.padding(innerPadding)) {
-            if (item == null) {
-                Text("Activity not found.")
-            } else {
-                Text(item.title, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = Ink)
-                Text(item.summary, color = MutedInk)
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    DetailPill(item.displayAgeRange())
-                    DetailPill("${item.durationMinutes} min")
-                    DetailPill(item.energyLevel)
+    val context = LocalContext.current.applicationContext
+    ChildHandoffLockContainer { isLocked ->
+        Box(modifier = Modifier.fillMaxSize()) {
+            Scaffold(topBar = { TopAppBar(title = { Text(item?.title ?: "Activity") }) }) { innerPadding ->
+                PageColumn(Modifier.padding(innerPadding)) {
+                    if (item == null) {
+                        Text("Activity not found.")
+                    } else {
+                        Text(item.title, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                        Text(item.summary, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Card(
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                            ),
+                            modifier = Modifier.fillMaxWidth(),
+                        ) {
+                            Text(
+                                "Your play plan: ${settings.activityDuration.label} activity • ${settings.gameTimer.label} rounds",
+                                modifier = Modifier.padding(14.dp),
+                                fontWeight = FontWeight.Bold,
+                            )
+                        }
+                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            DetailPill(item.displayAgeRange())
+                            DetailPill("Typical: ${item.durationMinutes} min")
+                            DetailPill(item.energyLevel)
+                        }
+                        item.participantFitLabel()?.let { DetailPill(it) }
+                        item.detailSections().forEach { section ->
+                            SectionList(section.title, section.lines)
+                        }
+                        if (item.parentNotes.isNotBlank()) {
+                            Text("Parent note", fontWeight = FontWeight.Bold)
+                            Text(item.parentNotes)
+                        }
+                        if (item.type == "mad_libs") {
+                            MadLibPlayPanel(item, enabled = !isLocked)
+                        }
+                        Button(onClick = onMarkPlayed, enabled = !isLocked) { Text("Mark played") }
+                        OutlinedButton(onClick = onToggleFavorite, enabled = !isLocked) { Text(if (isFavorite) "Remove favorite" else "Add favorite") }
+                        Text("Safety tags: ${item.safetyTags.joinToString { it.displayTagLabel() }}")
+                    }
+                    OutlinedButton(onClick = { navController.popBackStack() }, enabled = !isLocked) { Text("Back") }
                 }
-                item.participantFitLabel()?.let { DetailPill(it) }
-                item.detailSections().forEach { section ->
-                    SectionList(section.title, section.lines)
-                }
-                if (item.parentNotes.isNotBlank()) {
-                    Text("Parent note", fontWeight = FontWeight.Bold)
-                    Text(item.parentNotes)
-                }
-                if (item.type == "mad_libs") {
-                    MadLibPlayPanel(item)
-                }
-                Button(onClick = onMarkPlayed) { Text("Mark played") }
-                OutlinedButton(onClick = onToggleFavorite) { Text(if (isFavorite) "Remove favorite" else "Add favorite") }
-                Text("Safety tags: ${item.safetyTags.joinToString { it.displayTagLabel() }}")
             }
-            OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back") }
+            activityDetailFeedbackCapture(
+                feedbackEnabled = BuildConfig.FEEDBACK_ENABLED,
+                isLocked = isLocked,
+                itemId = itemId,
+                item = item,
+            )?.let { capture ->
+                FeedbackOverlay(
+                    context = context,
+                    screen = capture.screen,
+                    contentId = capture.contentId,
+                    contentTitle = capture.contentTitle,
+                )
+            }
         }
     }
 }
 
 @Composable
 fun InfoPanel(title: String, body: String) {
-    Card(colors = CardDefaults.cardColors(containerColor = SurfaceWarm), shape = RoundedCornerShape(20.dp), modifier = Modifier.fillMaxWidth()) {
+    Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), shape = RoundedCornerShape(20.dp), modifier = Modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Text(title, fontWeight = FontWeight.Bold, color = Ink)
-            Text(body, color = MutedInk)
+            Text(title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+            Text(body, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }
@@ -530,7 +629,7 @@ fun SectionList(title: String, values: List<String>) {
 }
 
 @Composable
-fun MadLibPlayPanel(story: KinPlayItem) {
+fun MadLibPlayPanel(story: KinPlayItem, enabled: Boolean = true) {
     val answers = story.madLibsFields.associate { field ->
         field.key to rememberSaveable(story.id, field.key) { mutableStateOf("") }
     }
@@ -547,13 +646,14 @@ fun MadLibPlayPanel(story: KinPlayItem) {
             placeholder = { Text(field.example) },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
+            enabled = enabled,
         )
     }
     val answerValues = answers.mapValues { it.value.value }
     val allFilled = story.madLibsFields.all { answerValues[it.key].orEmpty().isNotBlank() }
-    Button(onClick = { revealed = true }, enabled = allFilled) { Text("Reveal story") }
+    Button(onClick = { revealed = true }, enabled = allFilled && enabled) { Text("Reveal story") }
     if (revealed && allFilled) {
-        Card(colors = CardDefaults.cardColors(containerColor = SurfaceLeaf), modifier = Modifier.fillMaxWidth()) {
+        Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer), modifier = Modifier.fillMaxWidth()) {
             Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text("Your story", fontWeight = FontWeight.Bold)
                 Text(story.renderMadLib(answerValues))
@@ -571,6 +671,8 @@ fun AboutSafetyScreen(navController: NavController) {
             Text("KinPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.")
             Text("MVP privacy", fontWeight = FontWeight.Bold)
             Text("No accounts, analytics, ads, purchases, camera, microphone, contacts, location, or other sensitive Android permissions are requested.")
+            Text("Child handoff lock limits", fontWeight = FontWeight.Bold)
+            Text("The 3-second child handoff lock prevents accidental controls, Back, and exits inside KinPlay. It is not kiosk mode and cannot block Android system navigation, notifications, power controls, or another person leaving the app. KinPlay does not request device-owner, accessibility, or intrusive permissions.")
             Text("Content source", fontWeight = FontWeight.Bold)
             Text("The app ships seed content as a local JSON asset and does not need network access for the MVP flow.")
             Button(onClick = { navController.popBackStack() }) { Text("Back home") }
@@ -790,8 +892,15 @@ private fun madLibsCollectionItem(stories: List<KinPlayItem>) = KinPlayItem(
     participantSuitability = ParticipantSuitability.BOTH,
 )
 
+fun itemDestination(item: KinPlayItem): String =
+    when {
+        item.isMadLibsCollection() -> Routes.MadLibsCollection
+        isWouldYouRatherItem(item.id) -> Routes.WouldYouRather
+        else -> Routes.detail(item.id)
+    }
+
 private fun NavController.openItem(item: KinPlayItem) {
-    navigate(if (item.isMadLibsCollection()) Routes.MadLibsCollection else Routes.detail(item.id))
+    navigate(itemDestination(item))
 }
 
 fun String.displayTagLabel(): String =

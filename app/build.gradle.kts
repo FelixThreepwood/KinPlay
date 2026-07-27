@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-val appVersionName = "0.4.0-beta1"
+val appVersionName = "0.5.0-beta1"
 val isVersionedBeta = appVersionName.contains("-beta", ignoreCase = true)
 
 android {
@@ -15,8 +15,9 @@ android {
         applicationId = "com.kinplay.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 4
+        versionCode = 5
         versionName = appVersionName
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -66,6 +67,10 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     testImplementation("com.google.code.gson:gson:2.13.1")
     testImplementation("org.json:json:20240303")
+    // Exercises the checked-in Draft 2020-12 schema rather than approximating it in test code.
+    testImplementation("com.networknt:json-schema-validator:1.5.9")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
 
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")

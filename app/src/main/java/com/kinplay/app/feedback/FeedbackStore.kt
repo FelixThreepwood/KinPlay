@@ -14,12 +14,20 @@ import java.util.UUID
 
 const val FEEDBACK_RECIPIENT = "FelixThreepwood@gmail.com"
 
+/** Legacy v2 payloads do not record their creation build, so migration must preserve it as unknown. */
+internal fun decodeStoredFeedback(encoded: String): List<FeedbackNote> = FeedbackCodec.decode(encoded)
+
 class FeedbackStore(context: Context) {
     private val preferences = context.getSharedPreferences("kinplay_feedback", Context.MODE_PRIVATE)
 
-    fun load(): List<FeedbackNote> = FeedbackCodec.decode(
-        preferences.getString(KEY_PENDING_NOTES, "").orEmpty(),
-    ).sortedBy { it.createdAtEpochMillis }
+    fun load(): List<FeedbackNote> {
+        val encoded = preferences.getString(KEY_PENDING_NOTES, "").orEmpty()
+        val notes = decodeStoredFeedback(encoded)
+        // Rewrite the previous v2 payload after a successful read so lifecycle and revision
+        // metadata become durable without dropping locally captured beta notes.
+        if (notes.isNotEmpty() && encoded != FeedbackCodec.encode(notes)) save(notes)
+        return notes
+    }
 
     fun save(notes: List<FeedbackNote>) {
         preferences.edit { putString(KEY_PENDING_NOTES, FeedbackCodec.encode(notes)) }
@@ -64,6 +72,8 @@ fun createFeedbackNote(
     contentTitle = contentTitle,
     createdAtEpochMillis = System.currentTimeMillis(),
     timezoneId = ZoneId.systemDefault().id,
+    createdInVersionName = BuildConfig.VERSION_NAME,
+    createdInVersionCode = BuildConfig.VERSION_CODE,
 )
 
 fun buildFeedbackMailtoUriString(recipient: String, subject: String, body: String): String =
@@ -89,13 +99,14 @@ private fun percentEncode(value: String): String = buildString {
 }
 
 fun handOffFeedbackEmail(context: Context, notes: List<FeedbackNote>, batchId: String): Boolean {
-    if (notes.isEmpty()) return false
+    val unsentNotes = notes.filter { it.lifecycleState == FeedbackLifecycleState.UNSENT }
+    if (unsentNotes.isEmpty()) return false
     val build = currentFeedbackBuildContext()
     val uri = Uri.parse(
         buildFeedbackMailtoUriString(
             recipient = FEEDBACK_RECIPIENT,
             subject = FeedbackEmailFormatter.subject(build.versionName, build.versionCode, batchId),
-            body = FeedbackEmailFormatter.formatBatch(notes, build, batchId),
+            body = FeedbackEmailFormatter.formatBatch(unsentNotes, build, batchId),
         ),
     )
     return try {
@@ -108,7 +119,11 @@ fun handOffFeedbackEmail(context: Context, notes: List<FeedbackNote>, batchId: S
 
 fun copyFeedbackBatch(context: Context, notes: List<FeedbackNote>, batchId: String) {
     val build = currentFeedbackBuildContext()
-    val body = FeedbackEmailFormatter.formatBatch(notes, build, batchId)
+    val body = FeedbackEmailFormatter.formatBatch(
+        notes.filter { it.lifecycleState == FeedbackLifecycleState.UNSENT },
+        build,
+        batchId,
+    )
     val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     clipboard.setPrimaryClip(ClipData.newPlainText("KinPlay feedback", body))
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-25T19:22:25-07:00",
-  "nextItemNumber": 11,
+  "updatedAt": "2026-07-26T12:23:18-07:00",
+  "nextItemNumber": 21,
   "batches": [
     {
       "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
@@ -62,6 +62,109 @@
       "childIdentifyingInformationRemoved": false,
       "privacyReview": "No child-identifying information was present in the sanitized project record. Generic references to children and family were normalized.",
       "duplicateHandling": "Four source note IDs were exact replays from the earlier batch. They were linked to existing items and did not increase occurrence counts."
+    },
+    {
+      "batchId": "KP-BATCH-80C9BC3B-1D1A-4482-86C1-F56144896C56",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.4.0-beta1",
+        "versionCode": 4
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-07-26T00:07:52-07:00",
+      "sourceNoteCount": 13,
+      "uniqueNewSourceNoteCount": 5,
+      "canonicalItemCount": 20,
+      "existingCanonicalItemCount": 10,
+      "newCanonicalItemCount": 10,
+      "replayedSourceNoteCount": 8,
+      "replayedSourceNoteIds": [
+        "KP-NOTE-D759FF56-977B-4C96-A0D5-B581132B8BF5",
+        "KP-NOTE-110948F7-99FE-40E5-A990-5EDE9DFD60B2",
+        "KP-NOTE-39377C47-9245-4B37-BB42-FDF889B5DA33",
+        "KP-NOTE-3B05B013-BD41-408C-82C5-8C908F15D1A1",
+        "KP-NOTE-AA2C17B1-8FA2-44EA-80BB-D2DFD4379AEF",
+        "KP-NOTE-09B10E03-CB5C-4C41-B2F8-E024775D1628",
+        "KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C",
+        "KP-NOTE-B3C04782-B438-4B0E-876D-3A87A15C8D37"
+      ],
+      "canonicalItemIds": [
+        "KPF-0001",
+        "KPF-0002",
+        "KPF-0003",
+        "KPF-0004",
+        "KPF-0005",
+        "KPF-0006",
+        "KPF-0007",
+        "KPF-0008",
+        "KPF-0009",
+        "KPF-0010",
+        "KPF-0011",
+        "KPF-0012",
+        "KPF-0013",
+        "KPF-0014",
+        "KPF-0015",
+        "KPF-0016",
+        "KPF-0017",
+        "KPF-0018",
+        "KPF-0019",
+        "KPF-0020"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-D759FF56-977B-4C96-A0D5-B581132B8BF5": [
+          "KPF-0001",
+          "KPF-0002"
+        ],
+        "KP-NOTE-110948F7-99FE-40E5-A990-5EDE9DFD60B2": [
+          "KPF-0001"
+        ],
+        "KP-NOTE-39377C47-9245-4B37-BB42-FDF889B5DA33": [
+          "KPF-0003"
+        ],
+        "KP-NOTE-3B05B013-BD41-408C-82C5-8C908F15D1A1": [
+          "KPF-0004"
+        ],
+        "KP-NOTE-AA2C17B1-8FA2-44EA-80BB-D2DFD4379AEF": [
+          "KPF-0005"
+        ],
+        "KP-NOTE-09B10E03-CB5C-4C41-B2F8-E024775D1628": [
+          "KPF-0006"
+        ],
+        "KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C": [
+          "KPF-0007",
+          "KPF-0008",
+          "KPF-0009"
+        ],
+        "KP-NOTE-B3C04782-B438-4B0E-876D-3A87A15C8D37": [
+          "KPF-0010"
+        ],
+        "KP-NOTE-81C31412-FE6B-4984-9564-3EFF703F7AD4": [
+          "KPF-0003",
+          "KPF-0011",
+          "KPF-0012"
+        ],
+        "KP-NOTE-C480FEC6-4DB8-4E5E-8A42-20D8D7283A42": [
+          "KPF-0013",
+          "KPF-0014",
+          "KPF-0015"
+        ],
+        "KP-NOTE-0F552AA3-6508-4C02-9488-4C63A6571477": [
+          "KPF-0016"
+        ],
+        "KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F": [
+          "KPF-0017",
+          "KPF-0018"
+        ],
+        "KP-NOTE-1B5F8F8F-0D75-444C-821A-A2B435704E1E": [
+          "KPF-0019",
+          "KPF-0020"
+        ]
+      },
+      "childIdentifyingInformationRemoved": false,
+      "privacyReview": "No child-identifying information was present in the sanitized project record. Generic references to children and family were normalized.",
+      "duplicateHandling": "Eight source note IDs were exact replays from earlier batches and did not increase occurrence counts. One new note independently reinforced KPF-0003, increasing that item from one occurrence to two. Distinct requirements within new notes were split into separately testable canonical items."
     }
   ],
   "items": [
@@ -123,19 +226,22 @@
       ],
       "priority": "backlog",
       "affectedBuilds": [
-        "0.3.0-beta1 (3)"
+        "0.3.0-beta1 (3)",
+        "0.4.0-beta1 (4)"
       ],
       "screen": "category/quiet_games",
       "normalizedFinding": "Add a gross-humor Would You Rather variation using absurd bodily or food concepts while excluding crass or inappropriate material.",
       "expectedBehavior": "Would You Rather offers a clearly labeled, reviewed, child-appropriate gross-humor prompt set.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-39377C47-9245-4B37-BB42-FDF889B5DA33"
+        "KP-NOTE-39377C47-9245-4B37-BB42-FDF889B5DA33",
+        "KP-NOTE-81C31412-FE6B-4984-9564-3EFF703F7AD4"
       ],
       "reproductionStatus": "not_applicable_content_request",
       "implementationStatus": "complete",
       "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "duplicateMergeRationale": "Two unique notes independently request a child-appropriate gross-humor category. The newer note expands the desired taxonomy and volume; broader library and interaction requirements are tracked separately in KPF-0011 and KPF-0012."
     },
     {
       "id": "KPF-0004",
@@ -315,6 +421,317 @@
       "implementationStatus": "complete",
       "retestBuild": "0.4.0-beta1 (4)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest"
+    },
+    {
+      "id": "KPF-0011",
+      "title": "Add a full-screen Would You Rather play mode",
+      "type": [
+        "interaction_design",
+        "usability"
+      ],
+      "priority": "backlog",
+      "screen": "category/dinner_table",
+      "normalizedFinding": "Start Would You Rather in a distraction-minimized full-screen play space with four category choices. After selection, animate one prompt into view within about two seconds, keep it visible until a tap advances, fade between prompts, and provide a persistent exit control to the category screen.",
+      "expectedBehavior": "A family can start, advance, and exit a readable prompt session with one-tap progression and no unnecessary controls.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-81C31412-FE6B-4984-9564-3EFF703F7AD4"
+      ],
+      "reproductionStatus": "interaction_specification_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Would You Rather now opens a dedicated distraction-minimized full-screen route with four ordered category choices, a 450 ms prompt fade, tap-only advancement, a persistent Exit control back to the originating category, and child-handoff lock integration.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0003",
+        "KPF-0012"
+      ]
+    },
+    {
+      "id": "KPF-0012",
+      "title": "Build a reviewed four-category Would You Rather library",
+      "type": [
+        "content_request",
+        "content_safety",
+        "content_sourcing"
+      ],
+      "priority": "backlog",
+      "screen": "category/dinner_table",
+      "normalizedFinding": "Provide 80 original or properly licensed, refined prompts in each of four categories: Cute & Silly, Animals, Gross, and Super Gross. Present prompts in randomized order while remembering recent presentations to reduce repetition. Keep all content child-appropriate; Gross may be odd or awkward, while Super Gross may use mild bodily humor without crass or crude material.",
+      "expectedBehavior": "Each category contains 80 distinct reviewed prompts, randomization avoids obvious repeats, and sourcing records confirm that shipped text is original or licensed rather than copied from curated collections.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-81C31412-FE6B-4984-9564-3EFF703F7AD4"
+      ],
+      "reproductionStatus": "content_and_safety_review_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "The shipped local library contains exactly 80 approved original prompts in each of Cute & Silly, Animals, Gross, and Super Gross; schema/parser, provenance hashes, child-safety review, duplicate checks, and persisted per-category shuffled bags prevent repeats within a cycle and across restoration boundaries.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0003",
+        "KPF-0011"
+      ]
+    },
+    {
+      "id": "KPF-0013",
+      "title": "Separate active and archived feedback notes",
+      "type": [
+        "feedback_workflow",
+        "information_architecture"
+      ],
+      "priority": "should_fix_soon",
+      "screen": "feedback",
+      "normalizedFinding": "Sort active feedback newest-first and move notes that were submitted, transmitted, addressed, or otherwise completed into an archive available from the feedback interface.",
+      "expectedBehavior": "The main feedback list contains current actionable notes in reverse chronological order; archived notes remain accessible without cluttering the active list or being resent unintentionally.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-C480FEC6-4DB8-4E5E-8A42-20D8D7283A42"
+      ],
+      "reproductionStatus": "workflow_review_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Feedback now separates newest-first unsent notes from a visible archive of handed-off, addressed, and completed notes; archived notes are excluded from editing, selection, email batches, and bulk deletion of unsent notes.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0014",
+        "KPF-0015"
+      ]
+    },
+    {
+      "id": "KPF-0014",
+      "title": "Show feedback creation and resolution metadata",
+      "type": [
+        "feedback_workflow",
+        "metadata",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "screen": "feedback",
+      "normalizedFinding": "Display each note's creation date and time. For addressed notes, also display the app version in which it was addressed and the address date.",
+      "expectedBehavior": "Active and archived notes expose enough timestamp and version context to determine when they were created and, when applicable, resolved.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-C480FEC6-4DB8-4E5E-8A42-20D8D7283A42"
+      ],
+      "reproductionStatus": "data_model_and_ui_review_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Persisted feedback records now retain creation timestamp, timezone, and creation build; active and archived cards display creation date/time, while addressed records also display the addressing version and date and completed or handed-off records display their lifecycle timestamp.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0013",
+        "KPF-0015"
+      ]
+    },
+    {
+      "id": "KPF-0015",
+      "title": "Distinguish unsent and since-revision feedback counts",
+      "type": [
+        "feedback_workflow",
+        "state_management",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "screen": "feedback",
+      "normalizedFinding": "Show separate counts for notes created since the last email handoff and all notes created since the last app revision. Counters and state transitions must prevent previously submitted notes from being included accidentally in a later batch.",
+      "expectedBehavior": "The tester can distinguish unsent notes from the broader since-revision total, and repeated submissions are avoided through explicit persisted state.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-C480FEC6-4DB8-4E5E-8A42-20D8D7283A42"
+      ],
+      "reproductionStatus": "state_transition_specification_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "The feedback UI independently reports unsent notes and notes created in the current version; only unsent selected notes are sendable, and opening the email app does not archive them until the tester explicitly confirms that Send was completed, preventing accidental resend of archived notes.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0013",
+        "KPF-0014"
+      ]
+    },
+    {
+      "id": "KPF-0016",
+      "title": "Increase color differentiation among interface layers",
+      "type": [
+        "visual_design",
+        "accessibility"
+      ],
+      "priority": "backlog",
+      "screen": "category/dinner_table",
+      "normalizedFinding": "Use more distinct colors for the app background, cards, controls, and other components while preserving a coherent palette.",
+      "expectedBehavior": "Major interface layers are easy to distinguish through color and still satisfy text and control contrast requirements across supported themes.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-0F552AA3-6508-4C02-9488-4C63A6571477"
+      ],
+      "reproductionStatus": "visual_and_accessibility_review_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Forest, Ocean, and Berry themes now use distinct background, surface, surface-variant, primary, secondary-container, and tertiary-container layers; automated palette tests assert readable text/control contrast and measurable background-to-card separation across every supported theme.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true
+    },
+    {
+      "id": "KPF-0017",
+      "title": "Add settings for timers, durations, and color themes",
+      "type": [
+        "settings",
+        "feature_request",
+        "visual_customization"
+      ],
+      "priority": "should_fix_soon",
+      "screen": "settings",
+      "normalizedFinding": "Provide a settings area for game timers, activity durations, and app color themes.",
+      "expectedBehavior": "A tester can review and change supported timing and theme preferences from one stable settings destination, with choices persisted across launches.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F"
+      ],
+      "reproductionStatus": "product_and_data_model_specification_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "A stable Settings destination now offers finite game-timer, activity-duration, and Forest/Ocean/Berry theme choices; each choice is stored under a versioned key, survives recreation and relaunch, and the timer/theme selections are applied to the play and app surfaces.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0016",
+        "KPF-0020"
+      ]
+    },
+    {
+      "id": "KPF-0018",
+      "title": "Add a deliberate child handoff lock mode",
+      "type": [
+        "feature_request",
+        "interaction_safety",
+        "platform_feasibility"
+      ],
+      "priority": "should_fix_soon",
+      "screen": "game_play",
+      "normalizedFinding": "Provide a visible lock control that requires a three-second hold to lock or unlock and displays hold progress. While active, the mode should prevent accidental in-app navigation or game exit when the device is handed to a young participant.",
+      "expectedBehavior": "Lock state is unmistakable, activation and release require a deliberate hold, progress is visible, and accidental app controls or back navigation are guarded within Android platform limits. System-level escape restrictions require a feasibility and safety review.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F"
+      ],
+      "reproductionStatus": "android_platform_and_safety_review_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Game and activity play surfaces now expose a visible three-second hold-to-lock/unlock control with progress, lock-state announcement, keyboard and accessibility activation countdown, and an overlay that blocks in-app controls and Back while preserving the recovery control; Android system controls intentionally remain available.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0017"
+      ]
+    },
+    {
+      "id": "KPF-0019",
+      "title": "Create an original KinPlay launcher icon through Gemini",
+      "type": [
+        "brand_design",
+        "visual_asset",
+        "trademark_review"
+      ],
+      "priority": "should_fix_soon",
+      "screen": "launcher_and_home",
+      "normalizedFinding": "Create a clean, minimal KinPlay icon through the required Google Gemini Nano Banana visual process. Explore simple play and curved smile or directional cues, balanced proportions, and teal, emerald, or pale-yellow color directions while maintaining an original identity that does not imitate third-party logos.",
+      "expectedBehavior": "The approved icon is original, recognizable at launcher sizes, technically valid for Android adaptive-icon use, and preserved as an untouched Gemini master with documented derivatives.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-1B5F8F8F-0D75-444C-821A-A2B435704E1E"
+      ],
+      "reproductionStatus": "gemini_visual_brief_and_trademark_review_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Two original Gemini-generated KinPlay icon masters passed visual QA and are preserved byte-for-byte with provider/model, prompt purpose, SHA-256 hashes, palette, derivative paths, and originality/trademark-review notes; Android adaptive-icon resources ship the approved abstract play/smile emblem.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0020"
+      ]
+    },
+    {
+      "id": "KPF-0020",
+      "title": "Allow selection among supported launcher-icon colors",
+      "type": [
+        "settings",
+        "launcher_customization",
+        "platform_feasibility"
+      ],
+      "priority": "should_fix_soon",
+      "screen": "settings",
+      "normalizedFinding": "Offer a palette of supported colors in settings and apply the selected color to the Android home-screen launcher icon where the platform and launcher permit it.",
+      "expectedBehavior": "The tester can select from a documented finite palette, the chosen predeclared launcher variant is applied reliably, and unsupported launcher behavior is handled without breaking app launch or upgrades.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-1B5F8F8F-0D75-444C-821A-A2B435704E1E"
+      ],
+      "reproductionStatus": "android_launcher_feasibility_review_required",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.4.0-beta1 (4)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.5.0-beta1 (5)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Settings offers the finite Teal and Sunshine launcher variants backed by predeclared activity aliases; switching enables the target before disabling the previous alias, persists only successful selections, and restores a launchable fallback on failure, while documenting device-launcher cache and refresh variability.",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0017",
+        "KPF-0019"
+      ]
     }
   ]
 }

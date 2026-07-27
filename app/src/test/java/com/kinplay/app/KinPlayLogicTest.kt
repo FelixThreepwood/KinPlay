@@ -1,5 +1,6 @@
 package com.kinplay.app
 
+import com.kinplay.app.feedback.FeedbackCaptureContext
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -90,6 +91,49 @@ class KinPlayLogicTest {
     @Test
     fun gameCardsAreCollapsedByDefault() {
         assertFalse(CONTENT_CARD_DEFAULT_EXPANDED)
+    }
+
+    @Test
+    fun wouldYouRatherSeedItemResolvesToTheDedicatedRouteInsteadOfGenericDetail() {
+        val seedItem = activeQuick.copy(id = WOULD_YOU_RATHER_ITEM_ID, title = "Would You Rather")
+
+        assertEquals(WOULD_YOU_RATHER_ROUTE, itemDestination(seedItem))
+        assertEquals("detail/${activeQuick.id}", itemDestination(activeQuick))
+    }
+
+    @Test
+    fun activityDetailFeedbackIsAvailableOnlyWhenUnlockedAndKeepsItemContext() {
+        assertEquals(
+            FeedbackCaptureContext(
+                screen = "detail/${activeQuick.id}",
+                contentId = activeQuick.id,
+                contentTitle = activeQuick.title,
+            ),
+            activityDetailFeedbackCapture(
+                feedbackEnabled = true,
+                isLocked = false,
+                itemId = activeQuick.id,
+                item = activeQuick,
+            ),
+        )
+        assertEquals(
+            null,
+            activityDetailFeedbackCapture(
+                feedbackEnabled = true,
+                isLocked = true,
+                itemId = activeQuick.id,
+                item = activeQuick,
+            ),
+        )
+        assertEquals(
+            null,
+            activityDetailFeedbackCapture(
+                feedbackEnabled = false,
+                isLocked = false,
+                itemId = activeQuick.id,
+                item = activeQuick,
+            ),
+        )
     }
 
     @Test

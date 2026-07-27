@@ -3,19 +3,37 @@
     <application
         android:allowBackup="false"
         android:fullBackupContent="false"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher_teal"
         android:label="KinPlay"
-        android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.KinPlay">
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KinPlay" />
+        <activity-alias
+            android:name=".LauncherTeal"
+            android:enabled="true"
             android:exported="true"
-            android:theme="@style/Theme.KinPlay">
+            android:icon="@mipmap/ic_launcher_teal"
+            android:label="KinPlay"
+            android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity-alias>
+        <activity-alias
+            android:name=".LauncherSunshine"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_sunshine"
+            android:label="KinPlay"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
     </application>
 </manifest>

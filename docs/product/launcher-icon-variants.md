@@ -1,0 +1,9 @@
+# Launcher icon variants (KPF-0019 / KPF-0020)
+
+KinPlay ships exactly two predeclared launcher variants: **Teal** (the safe default) and **Sunshine**. The approved Gemini JPEG masters are stored byte-for-byte in `app/src/main/res/drawable-nodpi/`; provenance, hashes, representative colors, and QA status are recorded in `docs/assets/launcher-icon-assets.json`. The adaptive-icon XML files only describe Android runtime presentation and do not rewrite the masters.
+
+Android does not provide an API to recolor arbitrary launcher icons. Settings therefore switches between predeclared `activity-alias` components. The requested alias is enabled before the old alias is disabled, package-manager exceptions are contained, and a partial failure attempts to restore the previously launchable alias. A preference is persisted only after a successful or already-applied switch, independently of timer, activity-duration, and app-theme keys. On later launches the persisted choice is reconciled idempotently.
+
+A successful switch leaves exactly one launcher alias enabled. Teal is enabled in the manifest by default, so fresh installs and upgrades retain a safe launchable entry without adding permissions. Launcher icon refresh timing and cache invalidation are controlled by the device launcher: a new icon may appear immediately, after returning home, or only after the launcher refreshes its cache. KinPlay cannot guarantee or force that refresh.
+
+The original abstract emblem has no words, people, or identified existing brand marks and passed the project visual QA review. This is not a substitute for formal legal trademark clearance; conduct a trademark search before broad commercial launch if required. Rejected and emerald-draft assets are not shipped.

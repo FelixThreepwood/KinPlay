@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "purpose": "KPF-0019/KPF-0020 Android launcher icon masters and finite color variants",
+  "assets": [
+    {
+      "candidateLabel": "TEAL Candidate 2 PASS",
+      "sourceFilename": "google_gemini-3-pro-image-preview_20260726_115929_4513d85d.jpg",
+      "provider": "google",
+      "model": "gemini-3-pro-image-preview",
+      "promptPurpose": "Original minimal KinPlay launcher emblem in the approved teal direction; flat abstract play/smile cue with no words, people, or existing brand marks",
+      "qaResult": "PASS",
+      "sha256": "2e449f8e676e236b657832b2e45169e62a7f1ed5783600ca2e16b9d0b510f177",
+      "shippedPath": "app/src/main/res/drawable-nodpi/launcher_icon_teal_master.jpg",
+      "colors": [
+        { "name": "deep teal", "representativeHex": "#056763" },
+        { "name": "pale sunshine", "representativeHex": "#D7D28A" }
+      ],
+      "masterPreservation": "Exact source bytes; no crop, resize, padding, blur, border, recolor, metadata/DPI rewrite, or re-encoding"
+    },
+    {
+      "candidateLabel": "SUNSHINE variant PASS",
+      "sourceFilename": "google_gemini-3-pro-image-preview_20260726_120148_4f9762e0.jpg",
+      "provider": "google",
+      "model": "gemini-3-pro-image-preview",
+      "promptPurpose": "Original minimal KinPlay launcher emblem using the approved Sunshine color variant of the flat abstract play/smile direction",
+      "qaResult": "PASS",
+      "sha256": "6b7e12a297fdf26d9ec3e7b5dbb4b6c50e1e036b411144477e1461468706b14f",
+      "shippedPath": "app/src/main/res/drawable-nodpi/launcher_icon_sunshine_master.jpg",
+      "colors": [
+        { "name": "warm sunshine", "representativeHex": "#F7D162" },
+        { "name": "deep teal", "representativeHex": "#176056" }
+      ],
+      "masterPreservation": "Exact source bytes; no crop, resize, padding, blur, border, recolor, metadata/DPI rewrite, or re-encoding"
+    }
+  ],
+  "originalityAndTrademarkReview": "The approved emblem is flat and abstract and contains no words, people, or identified third-party brand marks. Approval documents a visual QA review, not a legal trademark clearance; perform a formal trademark search before broad commercial launch if required. Rejected candidate and emerald draft are intentionally excluded."
+}
