@@ -2,7 +2,7 @@
 
 Sanitized product-test records. Incoming comments are evidence, not authorization to change application code.
 
-Last updated: 2026-07-26T12:23:18-07:00
+Last updated: 2026-07-27T17:31:51-07:00
 
 Source note IDs are unique occurrence keys. An exact note replay in a later batch is linked to the existing item and does not increase its occurrence count.
 
@@ -98,19 +98,22 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0006 — Minimize and compact the home screen
 
-- Status: fixed-awaiting-retest
+- Status: accepted
 - Type: Usability / information architecture
 - Priority: Should fix soon
 - Affected build: 0.3.0-beta1 (3)
 - Capture screen: `home`
-- Occurrence count: 1
+- Occurrence count: 3
 - Source note: `KP-NOTE-09B10E03-CB5C-4C41-B2F8-E024775D1628`
 - Normalized finding: Keep KinPlay at the upper-left, place a concise one-line descriptor beside it, remove the “What fits now” instructional section, and move the six-category grid upward. Defer richer graphics and animated characters to later development.
 - Expected behavior: The first screen presents identity, purpose, and category choices with minimal copy and no unnecessary vertical gap.
 - Reproduction: Visual review required against the affected build.
-- Implementation status: complete
+- Implementation status: revision-required
 - Retest build: 0.4.0-beta1 (4)
-- Verification result: automated_checks_passed_pending_family_device_retest
+- Verification result: tester_feedback_requires_revision
+- Additional source note: `KP-NOTE-8BA66EEA-98BB-4FFA-B1C5-68973A6FDF04`
+- Additional source note: `KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80`
+- Latest 0.5.0 feedback: 0.5.0 feedback says Home still contains unnecessary copy and text-heavy controls, so the compact-home acceptance criterion needs revision.
 
 ## KPF-0007 — Show suitable-place cues on category cards
 
@@ -130,35 +133,39 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0008 — Label Quality Time activities by group suitability
 
-- Status: fixed-awaiting-retest
+- Status: accepted
 - Type: Content metadata / usability
 - Priority: Should fix soon
 - Affected build: 0.3.0-beta1 (3)
 - Capture screen: `home`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C`
 - Normalized finding: Mark the Quality Time category and each activity as intended for one-on-one play, group play, or both.
 - Expected behavior: A parent can identify participant fit before opening or starting an activity.
 - Reproduction: Content review required against the affected build.
-- Implementation status: complete
+- Implementation status: revision-required
 - Retest build: 0.4.0-beta1 (4)
-- Verification result: automated_checks_passed_pending_family_device_retest
+- Verification result: tester_feedback_requires_revision
+- Additional source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
+- Latest 0.5.0 feedback: 0.5.0 feedback broadens participant-suitability labels to game cards generally and requests right-aligned compact descriptors.
 
 ## KPF-0009 — Include activities as well as games
 
-- Status: fixed-awaiting-retest
+- Status: accepted
 - Type: Product scope / content request
 - Priority: Should fix soon
 - Affected build: 0.3.0-beta1 (3)
 - Capture screen: `home`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C`
 - Normalized finding: Treat suitable activities as first-class content alongside games, including drawing, coloring, and painting.
 - Expected behavior: Discovery and category language accommodate both games and activities that support family engagement and children’s creativity.
 - Reproduction: Product-copy and content review required.
-- Implementation status: complete
+- Implementation status: revision-required
 - Retest build: 0.4.0-beta1 (4)
-- Verification result: automated_checks_passed_pending_family_device_retest
+- Verification result: tester_feedback_requires_revision
+- Additional source note: `KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80`
+- Latest 0.5.0 feedback: 0.5.0 feedback reinforces games-and-activities terminology through the requested “All games and activities” navigation label.
 
 ## KPF-0010 — Make low-cognitive-load parent support a product requirement
 
@@ -306,39 +313,41 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0018 — Add a deliberate child handoff lock mode
 
-- Status: fixed-awaiting-retest
+- Status: accepted
 - Type: feature request / interaction safety / platform feasibility
 - Priority: Should fix soon
 - Affected build: 0.4.0-beta1 (4)
 - Capture screen: `game_play`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F`
 - Normalized finding: Provide a visible lock control that requires a three-second hold to lock or unlock and displays hold progress. While active, the mode should prevent accidental in-app navigation or game exit when the device is handed to a young participant.
 - Expected behavior: Lock state is unmistakable, activation and release require a deliberate hold, progress is visible, and accidental app controls or back navigation are guarded within Android platform limits. System-level escape restrictions require a feasibility and safety review.
 - Reproduction: Android platform and safety review required. Related: `KPF-0017`.
 - Implementation evidence: Game and activity play surfaces now expose a visible three-second hold-to-lock/unlock control with progress, lock-state announcement, keyboard and accessibility activation countdown, and an overlay that blocks in-app controls and Back while preserving the recovery control; Android system controls intentionally remain available.
-- Implementation status: complete
+- Implementation status: revision-required
 - Retest build: 0.5.0-beta1 (5)
-- Verification result: automated_checks_passed_pending_family_device_retest
-
+- Verification result: tester_feedback_requires_revision
+- Additional source note: `KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9`
+- Latest 0.5.0 feedback: Physical-device feedback requires revised lock/key icon states, nonobscuring locked content, tap-triggered guidance, and per-game eligibility.
 
 ## KPF-0019 — Create an original KinPlay launcher icon through Gemini
 
-- Status: fixed-awaiting-retest
+- Status: accepted
 - Type: Brand design / visual asset / trademark review
 - Priority: Should fix soon
 - Affected build: 0.4.0-beta1 (4)
 - Capture screen: `launcher_and_home`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-1B5F8F8F-0D75-444C-821A-A2B435704E1E`
 - Normalized finding: Create a clean, minimal KinPlay icon through the required Google Gemini Nano Banana visual process. Explore simple play and curved smile or directional cues, balanced proportions, and teal, emerald, or pale-yellow color directions while maintaining an original identity that does not imitate third-party logos.
 - Expected behavior: The approved icon is original, recognizable at launcher sizes, technically valid for Android adaptive-icon use, and preserved as an untouched Gemini master with documented derivatives.
 - Reproduction: Gemini visual brief and trademark review required. Related: `KPF-0020`.
 - Implementation evidence: Two original Gemini-generated KinPlay icon masters passed visual QA and are preserved byte-for-byte with provider/model, prompt purpose, SHA-256 hashes, palette, derivative paths, and originality/trademark-review notes; Android adaptive-icon resources ship the approved abstract play/smile emblem.
-- Implementation status: complete
+- Implementation status: revision-required
 - Retest build: 0.5.0-beta1 (5)
-- Verification result: automated_checks_passed_pending_family_device_retest
-
+- Verification result: tester_feedback_requires_revision
+- Additional source note: `KP-NOTE-707C0296-5231-4583-9EDB-D541887E1E11`
+- Latest 0.5.0 feedback: Physical-device icon review found the abstract/cropped letterform unclear. Preserve the approved rounded curves while making at least 80% of K and most of P visibly recognizable.
 
 ## KPF-0020 — Allow selection among supported launcher-icon colors
 
@@ -356,3 +365,289 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Implementation status: complete
 - Retest build: 0.5.0-beta1 (5)
 - Verification result: automated_checks_passed_pending_family_device_retest
+
+## Intake: KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4
+
+- Received: 2026-07-27T17:31:51-07:00
+- Affected build: 0.5.0-beta1 (5)
+- Source notes: 12 new unique note IDs
+- Existing items reopened: KPF-0006, KPF-0008, KPF-0009, KPF-0018, KPF-0019
+- New items: KPF-0021–KPF-0037
+- Privacy: No child-identifying information was present; generic family-role references were normalized.
+- Code authorization: Intake and triage only; no application code change is authorized by this batch.
+
+## KPF-0021 — Use compact two-column hierarchy on game cards
+
+- Status: accepted
+- Type: Usability / Layout / Information architecture
+- Priority: Backlog
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
+- Normalized finding: Use available width on both sides of the screen. Keep the primary title and content left-aligned while placing compact descriptors in a right-aligned second column or trailing area on the same row.
+- Expected behavior: Collapsed and expanded game cards use horizontal space efficiently without crowding, clipping, or obscuring primary labels.
+- Reproduction/triage: Visual and responsive layout review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0008`, `KPF-0022`
+
+## KPF-0022 — Show a concise description on every collapsed game card
+
+- Status: accepted
+- Type: Usability / Content copy / Discovery
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
+- Normalized finding: Every collapsed game card should show the recognizable game name plus one concise description of the activity. Examples include “Guessing game for objects in the room” for I Spy and “Create a wacky story starting each new word with the next letter of the alphabet” for Alphabet Story.
+- Expected behavior: A tester can understand the core activity without expanding the card, while the collapsed card remains compact.
+- Reproduction/triage: Content inventory and visual review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0001`, `KPF-0021`
+
+## KPF-0023 — Remove negative parent-state framing from user-visible copy
+
+- Status: accepted
+- Type: Content copy / Product tone / Usability
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `detail/quiet_color_hunt`
+- Occurrence count: 1
+- Source note: `KP-NOTE-8F46F2BF-A0E4-4ED4-A0CD-F3B3F4E26771`
+- Normalized finding: Do not tell or imply to the user that they are tired or not creative. In I Spy, replace the instruction that references being tired with a neutral “Clues and suggestions” heading followed by the supplied clues.
+- Expected behavior: All user-visible content offers ready-made help in neutral, supportive language without characterizing the parent negatively.
+- Reproduction/triage: Copy inventory review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0010`
+
+## KPF-0024 — Use compact lock and key emoji controls for handoff lock state
+
+- Status: accepted
+- Type: Interaction design / Visual design / Accessibility
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `game_play`
+- Occurrence count: 1
+- Source note: `KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9`
+- Normalized finding: Place a compact circular control at the right side of eligible play screens. Show 🔒 when unlocked and available to lock; after locking, show 🔑 to indicate the three-second unlock action.
+- Expected behavior: The compact control communicates both current state and the available three-second action, with an accessible text label independent of the emoji.
+- Reproduction/triage: Visual state and accessibility review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0018`, `KPF-0025`, `KPF-0026`
+
+## KPF-0025 — Keep locked content clear and show unlock guidance only after a tap
+
+- Status: accepted
+- Type: Interaction design / Usability / State management
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `game_play`
+- Occurrence count: 1
+- Source note: `KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9`
+- Normalized finding: While handoff lock is active, keep game content clear and visible and remove the persistent locked notification. If the locked screen is tapped, temporarily show “Hold key for 3 seconds to unlock.”
+- Expected behavior: Lock blocks unintended interaction without obscuring content; guidance appears only in response to an attempted tap and does not become permanent clutter.
+- Reproduction/triage: Interaction and accessibility specification required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0018`, `KPF-0024`
+
+## KPF-0026 — Limit handoff lock to selected child-interaction games
+
+- Status: accepted
+- Type: Feature scope / Content metadata / Usability
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `game_play`
+- Occurrence count: 1
+- Source note: `KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9`
+- Normalized finding: Show the handoff lock only for activities in which a child is expected to interact with or read from the phone directly, such as Charades and Would You Rather. Most games should not show it.
+- Expected behavior: Each game has reviewed lock eligibility, and noneligible detail or play screens do not display the lock control.
+- Reproduction/triage: Content inventory and eligibility review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0018`
+
+## KPF-0027 — Replace the text feedback control with a compact note emoji button
+
+- Status: accepted
+- Type: Interaction design / Visual design / Accessibility
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `detail/quiet_color_hunt`
+- Occurrence count: 1
+- Source note: `KP-NOTE-F1847D47-12F5-4B28-ACD9-4E7F48B372A8`
+- Normalized finding: Replace the text feedback button on game detail surfaces with a tight circular 📝 control.
+- Expected behavior: The compact control opens the same feedback flow, has an accessible label, and remains easy to identify and tap.
+- Reproduction/triage: Visual and accessibility review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+
+## KPF-0028 — Default Would You Rather play to landscape orientation
+
+- Status: accepted
+- Type: Orientation / Interaction design / Android platform
+- Priority: Backlog
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `would_you_rather_play`
+- Occurrence count: 1
+- Source note: `KP-NOTE-A732BE90-95FD-4C5A-9297-1A289CE99388`
+- Normalized finding: Would You Rather should enter its play experience in landscape orientation by default.
+- Expected behavior: Starting Would You Rather presents a stable landscape play surface and returns cleanly to the prior app orientation on exit, subject to Android accessibility and device-rotation review.
+- Reproduction/triage: Android orientation and accessibility review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0011`
+
+## KPF-0029 — Add a Start action and timed session flow to most game details
+
+- Status: accepted
+- Type: Interaction design / Session state / Settings
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `game_detail`
+- Occurrence count: 1
+- Source note: `KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52`
+- Normalized finding: For most games, place a Start action near the top of the detail page and begin an interactive session using the configured default duration.
+- Expected behavior: Eligible game detail pages clearly separate reading from starting, and Start launches a consistent session using current defaults.
+- Reproduction/triage: Game inventory and session model specification required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0017`, `KPF-0030`
+
+## KPF-0030 — Add default rounds and per-game duration and round overrides
+
+- Status: accepted
+- Type: Settings / Session configuration / Feature request
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `settings_and_game_detail`
+- Occurrence count: 1
+- Source note: `KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52`
+- Normalized finding: Add a default number of rounds to Settings. On each eligible game detail page, allow the tester to choose session duration and number of rounds without silently changing the global defaults.
+- Expected behavior: Defaults persist across launches, each eligible game can override duration and rounds for the next session, and the applied values are visible before Start.
+- Reproduction/triage: Settings precedence and session model specification required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0017`, `KPF-0029`
+
+## KPF-0031 — Adopt collapsed card, expanded card, and details page as canonical game-view terms
+
+- Status: accepted
+- Type: Product vocabulary / Information architecture
+- Priority: Backlog
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `game_discovery`
+- Occurrence count: 1
+- Source note: `KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52`
+- Normalized finding: Use three canonical view names in product records and specifications: collapsed card view, expanded card view, and details page.
+- Expected behavior: Requirements, tests, and future feedback can refer unambiguously to one of the three game representations.
+- Reproduction/triage: Documentation and ui state mapping required.
+- Decision: accepted product vocabulary
+- Implementation status: not-started
+
+## KPF-0032 — Remove safety labels and instructional safety copy from the normal interactive interface
+
+- Status: new
+- Type: Content copy / Information architecture / Safety review
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `all_content_surfaces`
+- Occurrence count: 1
+- Source note: `KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E`
+- Normalized finding: The tester requests that safety tags, safety references, and safety instructional content not be shown throughout normal end-user play surfaces, while safety remains intrinsic to content design and implementation.
+- Expected behavior: The interface avoids repetitive safety labeling, but any warning required to prevent foreseeable harm or satisfy legal, platform, or product obligations remains available through a reviewed nonintrusive design.
+- Reproduction/triage: Product safety and legal review required.
+- Decision: needs product safety review
+- Implementation status: not-started
+- Related items: `KPF-0005`, `KPF-0036`
+- Triage note: This request must not be implemented as an unconditional global deletion. Review every warning and activity before removing or relocating safety information.
+
+## KPF-0033 — Remove nonessential descriptive copy from Home and content surfaces
+
+- Status: accepted
+- Type: Content copy / Usability / Minimalism
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note: `KP-NOTE-8BA66EEA-98BB-4FFA-B1C5-68973A6FDF04`
+- Normalized finding: Remove nonessential statements, including the Home subtitle “Offline parent-led choices for ages 2–8,” and audit the rest of the app for similarly unnecessary explanatory copy.
+- Expected behavior: Home prioritizes actions and recognizable labels; retained copy has a clear decision, accessibility, legal, or instructional purpose.
+- Reproduction/triage: Copy inventory and product review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0006`
+
+## KPF-0034 — Replace text-heavy Home shortcuts with compact graphical controls
+
+- Status: accepted
+- Type: Visual design / Interaction design / Minimalism
+- Priority: Backlog
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note: `KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80`
+- Normalized finding: Use more graphical controls on Home instead of plain text boxes. Remove subtext from every “More ways to start” control and represent Settings with a compact gear icon.
+- Expected behavior: Home shortcuts are compact, recognizable, accessible, and do not depend on decorative subtext.
+- Reproduction/triage: Gemini visual brief and accessibility review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0006`, `KPF-0035`, `KPF-0036`
+
+## KPF-0035 — Shorten Home shortcut labels
+
+- Status: accepted
+- Type: Content copy / Navigation / Usability
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note: `KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80`
+- Normalized finding: Rename “Pick for me” to “Random game” and rename the browse shortcut to “All games and activities.”
+- Expected behavior: The two shortcut labels are concise, accurately describe their destinations, and remain consistent across Home, navigation, tests, and accessibility labels.
+- Reproduction/triage: Navigation copy inventory required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0009`, `KPF-0034`
+
+## KPF-0036 — Add a top-right application menu on Home
+
+- Status: accepted
+- Type: Navigation / Information architecture / Feature request
+- Priority: Should fix soon
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note: `KP-NOTE-EE140225-4007-4170-8BC4-4BE68C4DAFB3`
+- Normalized finding: Place a conventional three-line menu control at the upper-right of Home. Its menu should provide Settings, Account, About the app, and Safety and Privacy destinations.
+- Expected behavior: The menu is accessible, compact, and each listed destination either opens a complete screen or is explicitly staged behind an approved product decision; duplicate Settings entry points are resolved intentionally.
+- Reproduction/triage: Navigation architecture and account scope review required.
+- Decision: accepted for future revision
+- Implementation status: not-started
+- Related items: `KPF-0032`, `KPF-0034`
+- Triage note: The Settings gear request and Settings menu entry may coexist or be consolidated; product navigation review must choose deliberately.
+
+## KPF-0037 — Fix the Send now feedback crash regression
+
+- Status: fixed-awaiting-retest
+- Type: Bug / Feedback workflow / Regression
+- Priority: Must fix
+- Affected build: 0.5.0-beta1 (5)
+- Capture screen: `feedback_send`
+- Occurrence count: 1
+- Source note: `KP-NOTE-CB7B8AAA-69FC-4DD7-B2FA-2A800E70645D`
+- Normalized finding: On 0.5.0-beta1 (5), tapping “Send now” in Feedback causes Android to report that KinPlay keeps stopping. The tester reports that the same handoff worked in 0.4.0-beta1 (4).
+- Expected behavior: Tapping “Send now” with a valid feedback selection opens the intended email handoff without crashing, preserves unsent data if handoff cannot start, and handles missing or incompatible email applications safely.
+- Reproduction/triage: Source/data-flow reproduction confirmed that `KinPlayApp` passes an application context to the feedback overlay and the handoff called `startActivity` without `FLAG_ACTIVITY_NEW_TASK`; no physical crash trace was available because no Android target was connected.
+- Decision: must fix before next beta
+- Implementation evidence: The email handoff now follows wrapped contexts to detect an Activity, adds `FLAG_ACTIVITY_NEW_TASK` only when no Activity exists, safely returns failure for runtime launcher errors, keeps unsent notes unchanged, and preserves the Copy fallback. Robolectric production-path regressions cover wrapped Activity, application context, missing/incompatible-launch failure, cycle safety, mailto intent identity, and unsent-only payload behavior.
+- Implementation status: complete
+- Retest build: 0.6.0-beta1 (6), pending final B18 packaging
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Severity: Blocker
+- Related items: `KPF-0013`, `KPF-0015`

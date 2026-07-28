@@ -1,15 +1,18 @@
 package com.kinplay.app.feedback
 
-import android.content.ActivityNotFoundException
+import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import androidx.core.content.edit
 import com.kinplay.app.BuildConfig
 import java.time.ZoneId
+import java.util.Collections
+import java.util.IdentityHashMap
 import java.util.UUID
 
 const val FEEDBACK_RECIPIENT = "FelixThreepwood@gmail.com"
@@ -98,6 +101,16 @@ private fun percentEncode(value: String): String = buildString {
     }
 }
 
+private fun Context.hasActivityInBaseChain(): Boolean {
+    val visited = Collections.newSetFromMap(IdentityHashMap<Context, Boolean>())
+    var current: Context? = this
+    while (current != null && visited.add(current)) {
+        if (current is Activity) return true
+        current = (current as? ContextWrapper)?.baseContext
+    }
+    return false
+}
+
 fun handOffFeedbackEmail(context: Context, notes: List<FeedbackNote>, batchId: String): Boolean {
     val unsentNotes = notes.filter { it.lifecycleState == FeedbackLifecycleState.UNSENT }
     if (unsentNotes.isEmpty()) return false
@@ -109,10 +122,13 @@ fun handOffFeedbackEmail(context: Context, notes: List<FeedbackNote>, batchId: S
             body = FeedbackEmailFormatter.formatBatch(unsentNotes, build, batchId),
         ),
     )
+    val intent = Intent(Intent.ACTION_SENDTO, uri).apply {
+        if (!context.hasActivityInBaseChain()) addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    }
     return try {
-        context.startActivity(Intent(Intent.ACTION_SENDTO, uri))
+        context.startActivity(intent)
         true
-    } catch (_: ActivityNotFoundException) {
+    } catch (_: RuntimeException) {
         false
     }
 }

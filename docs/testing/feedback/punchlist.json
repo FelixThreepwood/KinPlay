@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-26T12:23:18-07:00",
-  "nextItemNumber": 21,
+  "updatedAt": "2026-07-27T17:31:51-07:00",
+  "nextItemNumber": 38,
   "batches": [
     {
       "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
@@ -165,6 +165,128 @@
       "childIdentifyingInformationRemoved": false,
       "privacyReview": "No child-identifying information was present in the sanitized project record. Generic references to children and family were normalized.",
       "duplicateHandling": "Eight source note IDs were exact replays from earlier batches and did not increase occurrence counts. One new note independently reinforced KPF-0003, increasing that item from one occurrence to two. Distinct requirements within new notes were split into separately testable canonical items."
+    },
+    {
+      "batchId": "KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.5.0-beta1",
+        "versionCode": 5
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-07-27T17:31:51-07:00",
+      "sourceNoteCount": 12,
+      "uniqueNewSourceNoteCount": 12,
+      "canonicalItemCount": 22,
+      "existingCanonicalItemCount": 5,
+      "newCanonicalItemCount": 17,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "existingCanonicalItemIds": [
+        "KPF-0006",
+        "KPF-0008",
+        "KPF-0009",
+        "KPF-0018",
+        "KPF-0019"
+      ],
+      "newCanonicalItemIds": [
+        "KPF-0021",
+        "KPF-0022",
+        "KPF-0023",
+        "KPF-0024",
+        "KPF-0025",
+        "KPF-0026",
+        "KPF-0027",
+        "KPF-0028",
+        "KPF-0029",
+        "KPF-0030",
+        "KPF-0031",
+        "KPF-0032",
+        "KPF-0033",
+        "KPF-0034",
+        "KPF-0035",
+        "KPF-0036",
+        "KPF-0037"
+      ],
+      "canonicalItemIds": [
+        "KPF-0006",
+        "KPF-0008",
+        "KPF-0009",
+        "KPF-0018",
+        "KPF-0019",
+        "KPF-0021",
+        "KPF-0022",
+        "KPF-0023",
+        "KPF-0024",
+        "KPF-0025",
+        "KPF-0026",
+        "KPF-0027",
+        "KPF-0028",
+        "KPF-0029",
+        "KPF-0030",
+        "KPF-0031",
+        "KPF-0032",
+        "KPF-0033",
+        "KPF-0034",
+        "KPF-0035",
+        "KPF-0036",
+        "KPF-0037"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-707C0296-5231-4583-9EDB-D541887E1E11": [
+          "KPF-0019"
+        ],
+        "KP-NOTE-6B822319-7029-40D5-B19C-022257842493": [
+          "KPF-0008",
+          "KPF-0021",
+          "KPF-0022"
+        ],
+        "KP-NOTE-8F46F2BF-A0E4-4ED4-A0CD-F3B3F4E26771": [
+          "KPF-0023"
+        ],
+        "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9": [
+          "KPF-0018",
+          "KPF-0024",
+          "KPF-0025",
+          "KPF-0026"
+        ],
+        "KP-NOTE-F1847D47-12F5-4B28-ACD9-4E7F48B372A8": [
+          "KPF-0027"
+        ],
+        "KP-NOTE-A732BE90-95FD-4C5A-9297-1A289CE99388": [
+          "KPF-0028"
+        ],
+        "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52": [
+          "KPF-0029",
+          "KPF-0030",
+          "KPF-0031"
+        ],
+        "KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E": [
+          "KPF-0032"
+        ],
+        "KP-NOTE-8BA66EEA-98BB-4FFA-B1C5-68973A6FDF04": [
+          "KPF-0006",
+          "KPF-0033"
+        ],
+        "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80": [
+          "KPF-0006",
+          "KPF-0009",
+          "KPF-0034",
+          "KPF-0035"
+        ],
+        "KP-NOTE-EE140225-4007-4170-8BC4-4BE68C4DAFB3": [
+          "KPF-0036"
+        ],
+        "KP-NOTE-CB7B8AAA-69FC-4DD7-B2FA-2A800E70645D": [
+          "KPF-0037"
+        ]
+      },
+      "childIdentifyingInformationRemoved": false,
+      "privacyReview": "No child-identifying information was present. Generic references to parents and children were normalized in sanitized project records.",
+      "duplicateHandling": "All 12 source note IDs were new. Five existing canonical items received unique new evidence and their occurrence counts increased once per supporting note. Seventeen separately testable canonical items were created.",
+      "subjectHandling": "The manually created email subject was accepted because the payload contained a valid format marker, unique batch ID, package, build, and 12 unique note IDs."
     }
   ],
   "items": [
@@ -298,26 +420,31 @@
     {
       "id": "KPF-0006",
       "title": "Minimize and compact the home screen",
-      "status": "fixed_awaiting_retest",
+      "status": "accepted",
       "type": [
         "usability",
         "information_architecture"
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.3.0-beta1 (3)"
+        "0.3.0-beta1 (3)",
+        "0.5.0-beta1 (5)"
       ],
       "screen": "home",
       "normalizedFinding": "Keep KinPlay at the upper-left, place a concise one-line descriptor beside it, remove the What fits now instructional section, and move the six-category grid upward. Defer richer graphics and animated characters to later development.",
       "expectedBehavior": "The first screen presents identity, purpose, and category choices with minimal copy and no unnecessary vertical gap.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 3,
       "sourceNoteIds": [
-        "KP-NOTE-09B10E03-CB5C-4C41-B2F8-E024775D1628"
+        "KP-NOTE-09B10E03-CB5C-4C41-B2F8-E024775D1628",
+        "KP-NOTE-8BA66EEA-98BB-4FFA-B1C5-68973A6FDF04",
+        "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
       ],
       "reproductionStatus": "visual_review_required",
-      "implementationStatus": "complete",
+      "implementationStatus": "revision_required",
       "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+      "verificationResult": "tester_feedback_requires_revision",
+      "lastObservedBuild": "0.5.0-beta1 (5)",
+      "latestObservation": "0.5.0 feedback says Home still contains unnecessary copy and text-heavy controls, so the compact-home acceptance criterion needs revision."
     },
     {
       "id": "KPF-0007",
@@ -346,50 +473,58 @@
     {
       "id": "KPF-0008",
       "title": "Label Quality Time activities by group suitability",
-      "status": "fixed_awaiting_retest",
+      "status": "accepted",
       "type": [
         "content_metadata",
         "usability"
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.3.0-beta1 (3)"
+        "0.3.0-beta1 (3)",
+        "0.5.0-beta1 (5)"
       ],
       "screen": "home",
       "normalizedFinding": "Mark the Quality Time category and each activity as intended for one-on-one play, group play, or both.",
       "expectedBehavior": "A parent can identify participant fit before opening or starting an activity.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C"
+        "KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C",
+        "KP-NOTE-6B822319-7029-40D5-B19C-022257842493"
       ],
       "reproductionStatus": "content_review_required",
-      "implementationStatus": "complete",
+      "implementationStatus": "revision_required",
       "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+      "verificationResult": "tester_feedback_requires_revision",
+      "lastObservedBuild": "0.5.0-beta1 (5)",
+      "latestObservation": "0.5.0 feedback broadens participant-suitability labels to game cards generally and requests right-aligned compact descriptors."
     },
     {
       "id": "KPF-0009",
       "title": "Include activities as well as games",
-      "status": "fixed_awaiting_retest",
+      "status": "accepted",
       "type": [
         "product_scope",
         "content_request"
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.3.0-beta1 (3)"
+        "0.3.0-beta1 (3)",
+        "0.5.0-beta1 (5)"
       ],
       "screen": "home",
       "normalizedFinding": "Treat suitable activities as first-class content alongside games, including drawing, coloring, and painting.",
       "expectedBehavior": "Discovery and category language accommodate both games and activities that support family engagement and children’s creativity.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C"
+        "KP-NOTE-961D7088-D634-4A4A-89B2-6F57771E399C",
+        "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
       ],
       "reproductionStatus": "product_copy_and_content_review_required",
-      "implementationStatus": "complete",
+      "implementationStatus": "revision_required",
       "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+      "verificationResult": "tester_feedback_requires_revision",
+      "lastObservedBuild": "0.5.0-beta1 (5)",
+      "latestObservation": "0.5.0 feedback reinforces games-and-activities terminology through the requested “All games and activities” navigation label."
     },
     {
       "id": "KPF-0010",
@@ -651,24 +786,28 @@
       "screen": "game_play",
       "normalizedFinding": "Provide a visible lock control that requires a three-second hold to lock or unlock and displays hold progress. While active, the mode should prevent accidental in-app navigation or game exit when the device is handed to a young participant.",
       "expectedBehavior": "Lock state is unmistakable, activation and release require a deliberate hold, progress is visible, and accidental app controls or back navigation are guarded within Android platform limits. System-level escape restrictions require a feasibility and safety review.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F"
+        "KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F",
+        "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9"
       ],
       "reproductionStatus": "android_platform_and_safety_review_required",
-      "status": "fixed_awaiting_retest",
+      "status": "accepted",
       "affectedBuilds": [
-        "0.4.0-beta1 (4)"
+        "0.4.0-beta1 (4)",
+        "0.5.0-beta1 (5)"
       ],
-      "implementationStatus": "complete",
+      "implementationStatus": "revision_required",
       "retestBuild": "0.5.0-beta1 (5)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "verificationResult": "tester_feedback_requires_revision",
       "implementationEvidence": "Game and activity play surfaces now expose a visible three-second hold-to-lock/unlock control with progress, lock-state announcement, keyboard and accessibility activation countdown, and an overlay that blocks in-app controls and Back while preserving the recovery control; Android system controls intentionally remain available.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0017"
-      ]
+      ],
+      "lastObservedBuild": "0.5.0-beta1 (5)",
+      "latestObservation": "Physical-device feedback requires revised lock/key icon states, nonobscuring locked content, tap-triggered guidance, and per-game eligibility."
     },
     {
       "id": "KPF-0019",
@@ -682,24 +821,28 @@
       "screen": "launcher_and_home",
       "normalizedFinding": "Create a clean, minimal KinPlay icon through the required Google Gemini Nano Banana visual process. Explore simple play and curved smile or directional cues, balanced proportions, and teal, emerald, or pale-yellow color directions while maintaining an original identity that does not imitate third-party logos.",
       "expectedBehavior": "The approved icon is original, recognizable at launcher sizes, technically valid for Android adaptive-icon use, and preserved as an untouched Gemini master with documented derivatives.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-1B5F8F8F-0D75-444C-821A-A2B435704E1E"
+        "KP-NOTE-1B5F8F8F-0D75-444C-821A-A2B435704E1E",
+        "KP-NOTE-707C0296-5231-4583-9EDB-D541887E1E11"
       ],
       "reproductionStatus": "gemini_visual_brief_and_trademark_review_required",
-      "status": "fixed_awaiting_retest",
+      "status": "accepted",
       "affectedBuilds": [
-        "0.4.0-beta1 (4)"
+        "0.4.0-beta1 (4)",
+        "0.5.0-beta1 (5)"
       ],
-      "implementationStatus": "complete",
+      "implementationStatus": "revision_required",
       "retestBuild": "0.5.0-beta1 (5)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "verificationResult": "tester_feedback_requires_revision",
       "implementationEvidence": "Two original Gemini-generated KinPlay icon masters passed visual QA and are preserved byte-for-byte with provider/model, prompt purpose, SHA-256 hashes, palette, derivative paths, and originality/trademark-review notes; Android adaptive-icon resources ship the approved abstract play/smile emblem.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0020"
-      ]
+      ],
+      "lastObservedBuild": "0.5.0-beta1 (5)",
+      "latestObservation": "Physical-device icon review found the abstract/cropped letterform unclear. Preserve the approved rounded curves while making at least 80% of K and most of P visibly recognizable."
     },
     {
       "id": "KPF-0020",
@@ -732,6 +875,494 @@
         "KPF-0017",
         "KPF-0019"
       ]
+    },
+    {
+      "id": "KPF-0021",
+      "title": "Use compact two-column hierarchy on game cards",
+      "status": "accepted",
+      "type": [
+        "usability",
+        "layout",
+        "information_architecture"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "pick_game",
+      "normalizedFinding": "Use available width on both sides of the screen. Keep the primary title and content left-aligned while placing compact descriptors in a right-aligned second column or trailing area on the same row.",
+      "expectedBehavior": "Collapsed and expanded game cards use horizontal space efficiently without crowding, clipping, or obscuring primary labels.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-6B822319-7029-40D5-B19C-022257842493"
+      ],
+      "reproductionStatus": "visual_and_responsive_layout_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0008",
+        "KPF-0022"
+      ]
+    },
+    {
+      "id": "KPF-0022",
+      "title": "Show a concise description on every collapsed game card",
+      "status": "accepted",
+      "type": [
+        "usability",
+        "content_copy",
+        "discovery"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "pick_game",
+      "normalizedFinding": "Every collapsed game card should show the recognizable game name plus one concise description of the activity. Examples include “Guessing game for objects in the room” for I Spy and “Create a wacky story starting each new word with the next letter of the alphabet” for Alphabet Story.",
+      "expectedBehavior": "A tester can understand the core activity without expanding the card, while the collapsed card remains compact.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-6B822319-7029-40D5-B19C-022257842493"
+      ],
+      "reproductionStatus": "content_inventory_and_visual_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0001",
+        "KPF-0021"
+      ]
+    },
+    {
+      "id": "KPF-0023",
+      "title": "Remove negative parent-state framing from user-visible copy",
+      "status": "accepted",
+      "type": [
+        "content_copy",
+        "product_tone",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "detail/quiet_color_hunt",
+      "normalizedFinding": "Do not tell or imply to the user that they are tired or not creative. In I Spy, replace the instruction that references being tired with a neutral “Clues and suggestions” heading followed by the supplied clues.",
+      "expectedBehavior": "All user-visible content offers ready-made help in neutral, supportive language without characterizing the parent negatively.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-8F46F2BF-A0E4-4ED4-A0CD-F3B3F4E26771"
+      ],
+      "reproductionStatus": "copy_inventory_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0010"
+      ]
+    },
+    {
+      "id": "KPF-0024",
+      "title": "Use compact lock and key emoji controls for handoff lock state",
+      "status": "accepted",
+      "type": [
+        "interaction_design",
+        "visual_design",
+        "accessibility"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "game_play",
+      "normalizedFinding": "Place a compact circular control at the right side of eligible play screens. Show 🔒 when unlocked and available to lock; after locking, show 🔑 to indicate the three-second unlock action.",
+      "expectedBehavior": "The compact control communicates both current state and the available three-second action, with an accessible text label independent of the emoji.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9"
+      ],
+      "reproductionStatus": "visual_state_and_accessibility_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0018",
+        "KPF-0025",
+        "KPF-0026"
+      ]
+    },
+    {
+      "id": "KPF-0025",
+      "title": "Keep locked content clear and show unlock guidance only after a tap",
+      "status": "accepted",
+      "type": [
+        "interaction_design",
+        "usability",
+        "state_management"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "game_play",
+      "normalizedFinding": "While handoff lock is active, keep game content clear and visible and remove the persistent locked notification. If the locked screen is tapped, temporarily show “Hold key for 3 seconds to unlock.”",
+      "expectedBehavior": "Lock blocks unintended interaction without obscuring content; guidance appears only in response to an attempted tap and does not become permanent clutter.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9"
+      ],
+      "reproductionStatus": "interaction_and_accessibility_specification_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0018",
+        "KPF-0024"
+      ]
+    },
+    {
+      "id": "KPF-0026",
+      "title": "Limit handoff lock to selected child-interaction games",
+      "status": "accepted",
+      "type": [
+        "feature_scope",
+        "content_metadata",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "game_play",
+      "normalizedFinding": "Show the handoff lock only for activities in which a child is expected to interact with or read from the phone directly, such as Charades and Would You Rather. Most games should not show it.",
+      "expectedBehavior": "Each game has reviewed lock eligibility, and noneligible detail or play screens do not display the lock control.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9"
+      ],
+      "reproductionStatus": "content_inventory_and_eligibility_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0018"
+      ]
+    },
+    {
+      "id": "KPF-0027",
+      "title": "Replace the text feedback control with a compact note emoji button",
+      "status": "accepted",
+      "type": [
+        "interaction_design",
+        "visual_design",
+        "accessibility"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "detail/quiet_color_hunt",
+      "normalizedFinding": "Replace the text feedback button on game detail surfaces with a tight circular 📝 control.",
+      "expectedBehavior": "The compact control opens the same feedback flow, has an accessible label, and remains easy to identify and tap.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-F1847D47-12F5-4B28-ACD9-4E7F48B372A8"
+      ],
+      "reproductionStatus": "visual_and_accessibility_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true
+    },
+    {
+      "id": "KPF-0028",
+      "title": "Default Would You Rather play to landscape orientation",
+      "status": "accepted",
+      "type": [
+        "orientation",
+        "interaction_design",
+        "android_platform"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "would_you_rather_play",
+      "normalizedFinding": "Would You Rather should enter its play experience in landscape orientation by default.",
+      "expectedBehavior": "Starting Would You Rather presents a stable landscape play surface and returns cleanly to the prior app orientation on exit, subject to Android accessibility and device-rotation review.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-A732BE90-95FD-4C5A-9297-1A289CE99388"
+      ],
+      "reproductionStatus": "android_orientation_and_accessibility_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0011"
+      ]
+    },
+    {
+      "id": "KPF-0029",
+      "title": "Add a Start action and timed session flow to most game details",
+      "status": "accepted",
+      "type": [
+        "interaction_design",
+        "session_state",
+        "settings"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "game_detail",
+      "normalizedFinding": "For most games, place a Start action near the top of the detail page and begin an interactive session using the configured default duration.",
+      "expectedBehavior": "Eligible game detail pages clearly separate reading from starting, and Start launches a consistent session using current defaults.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52"
+      ],
+      "reproductionStatus": "game_inventory_and_session_model_specification_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0017",
+        "KPF-0030"
+      ]
+    },
+    {
+      "id": "KPF-0030",
+      "title": "Add default rounds and per-game duration and round overrides",
+      "status": "accepted",
+      "type": [
+        "settings",
+        "session_configuration",
+        "feature_request"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "settings_and_game_detail",
+      "normalizedFinding": "Add a default number of rounds to Settings. On each eligible game detail page, allow the tester to choose session duration and number of rounds without silently changing the global defaults.",
+      "expectedBehavior": "Defaults persist across launches, each eligible game can override duration and rounds for the next session, and the applied values are visible before Start.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52"
+      ],
+      "reproductionStatus": "settings_precedence_and_session_model_specification_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0017",
+        "KPF-0029"
+      ]
+    },
+    {
+      "id": "KPF-0031",
+      "title": "Adopt collapsed card, expanded card, and details page as canonical game-view terms",
+      "status": "accepted",
+      "type": [
+        "product_vocabulary",
+        "information_architecture"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "game_discovery",
+      "normalizedFinding": "Use three canonical view names in product records and specifications: collapsed card view, expanded card view, and details page.",
+      "expectedBehavior": "Requirements, tests, and future feedback can refer unambiguously to one of the three game representations.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52"
+      ],
+      "reproductionStatus": "documentation_and_ui_state_mapping_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_product_vocabulary",
+      "authorizationRequired": true
+    },
+    {
+      "id": "KPF-0032",
+      "title": "Remove safety labels and instructional safety copy from the normal interactive interface",
+      "status": "new",
+      "type": [
+        "content_copy",
+        "information_architecture",
+        "safety_review"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "all_content_surfaces",
+      "normalizedFinding": "The tester requests that safety tags, safety references, and safety instructional content not be shown throughout normal end-user play surfaces, while safety remains intrinsic to content design and implementation.",
+      "expectedBehavior": "The interface avoids repetitive safety labeling, but any warning required to prevent foreseeable harm or satisfy legal, platform, or product obligations remains available through a reviewed nonintrusive design.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E"
+      ],
+      "reproductionStatus": "product_safety_and_legal_review_required",
+      "implementationStatus": "not_started",
+      "decision": "needs_product_safety_review",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0005",
+        "KPF-0036"
+      ],
+      "triageNotes": "This request must not be implemented as an unconditional global deletion. Review every warning and activity before removing or relocating safety information."
+    },
+    {
+      "id": "KPF-0033",
+      "title": "Remove nonessential descriptive copy from Home and content surfaces",
+      "status": "accepted",
+      "type": [
+        "content_copy",
+        "usability",
+        "minimalism"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Remove nonessential statements, including the Home subtitle “Offline parent-led choices for ages 2–8,” and audit the rest of the app for similarly unnecessary explanatory copy.",
+      "expectedBehavior": "Home prioritizes actions and recognizable labels; retained copy has a clear decision, accessibility, legal, or instructional purpose.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-8BA66EEA-98BB-4FFA-B1C5-68973A6FDF04"
+      ],
+      "reproductionStatus": "copy_inventory_and_product_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0006"
+      ]
+    },
+    {
+      "id": "KPF-0034",
+      "title": "Replace text-heavy Home shortcuts with compact graphical controls",
+      "status": "accepted",
+      "type": [
+        "visual_design",
+        "interaction_design",
+        "minimalism"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Use more graphical controls on Home instead of plain text boxes. Remove subtext from every “More ways to start” control and represent Settings with a compact gear icon.",
+      "expectedBehavior": "Home shortcuts are compact, recognizable, accessible, and do not depend on decorative subtext.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
+      ],
+      "reproductionStatus": "gemini_visual_brief_and_accessibility_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0006",
+        "KPF-0035",
+        "KPF-0036"
+      ]
+    },
+    {
+      "id": "KPF-0035",
+      "title": "Shorten Home shortcut labels",
+      "status": "accepted",
+      "type": [
+        "content_copy",
+        "navigation",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Rename “Pick for me” to “Random game” and rename the browse shortcut to “All games and activities.”",
+      "expectedBehavior": "The two shortcut labels are concise, accurately describe their destinations, and remain consistent across Home, navigation, tests, and accessibility labels.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
+      ],
+      "reproductionStatus": "navigation_copy_inventory_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0009",
+        "KPF-0034"
+      ]
+    },
+    {
+      "id": "KPF-0036",
+      "title": "Add a top-right application menu on Home",
+      "status": "accepted",
+      "type": [
+        "navigation",
+        "information_architecture",
+        "feature_request"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Place a conventional three-line menu control at the upper-right of Home. Its menu should provide Settings, Account, About the app, and Safety and Privacy destinations.",
+      "expectedBehavior": "The menu is accessible, compact, and each listed destination either opens a complete screen or is explicitly staged behind an approved product decision; duplicate Settings entry points are resolved intentionally.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-EE140225-4007-4170-8BC4-4BE68C4DAFB3"
+      ],
+      "reproductionStatus": "navigation_architecture_and_account_scope_review_required",
+      "implementationStatus": "not_started",
+      "decision": "accepted_for_future_revision",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0032",
+        "KPF-0034"
+      ],
+      "triageNotes": "The Settings gear request and Settings menu entry may coexist or be consolidated; product navigation review must choose deliberately."
+    },
+    {
+      "id": "KPF-0037",
+      "title": "Fix the Send now feedback crash regression",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "bug",
+        "feedback_workflow",
+        "regression"
+      ],
+      "priority": "must_fix",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "screen": "feedback_send",
+      "normalizedFinding": "On 0.5.0-beta1 (5), tapping “Send now” in Feedback causes Android to report that KinPlay keeps stopping. The tester reports that the same handoff worked in 0.4.0-beta1 (4).",
+      "expectedBehavior": "Tapping “Send now” with a valid feedback selection opens the intended email handoff without crashing, preserves unsent data if handoff cannot start, and handles missing or incompatible email applications safely.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-CB7B8AAA-69FC-4DD7-B2FA-2A800E70645D"
+      ],
+      "reproductionStatus": "source_data_flow_reproduced_no_connected_android_target",
+      "implementationStatus": "complete",
+      "implementationEvidence": "Application-context email handoff now adds FLAG_ACTIVITY_NEW_TASK when no Activity exists in the wrapped context chain, safely returns false for runtime launcher failures, preserves unsent notes and Copy fallback behavior, and is covered by Robolectric production-path regressions for wrapped Activity, application context, cyclic wrappers, mailto identity, unsent-only payloads, and launch failure.",
+      "retestBuild": "0.6.0-beta1 (6), pending final B18 packaging",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "decision": "must_fix_before_next_beta",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0013",
+        "KPF-0015"
+      ],
+      "severity": "blocker"
     }
   ]
 }
