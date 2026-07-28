@@ -56,10 +56,11 @@ class SafetyWarningPresentationTest {
             .assertIsDisplayed()
         compose.onNodeWithText("Setup: Adult supervises and clears a flat room away from stairs", substring = true)
             .assertIsDisplayed()
-        compose.onNodeWithText(safetyItem.summary).assertDoesNotExist()
+        compose.onNodeWithText(safetyItem.summary).assertIsDisplayed()
 
         compose.onNodeWithText(safetyItem.title).performClick()
         compose.onNodeWithText(safetyItem.summary).assertIsDisplayed()
+        compose.onNodeWithText("Open").assertIsDisplayed()
 
         compose.setContent {
             KinPlayTheme(AppColorTheme.FOREST) {

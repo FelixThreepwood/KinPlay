@@ -339,8 +339,10 @@ class ProtectedSafetyWarningsRegressionTest {
         assertTrue(item("washable_painting_shapes").collapsedCardPreviewLines().any { it.contains("washable non-toxic children’s paint") })
         assertTrue(item("sock_skating_rink").collapsedCardPreviewLines().any { it.startsWith("Setup: Use only a smooth, clear floor area") })
 
-        // Expanded cards retain summary/setup bindings; details retain complete structured warnings.
-        assertTrue(item("indoor_pillow_marco_polo").summary.contains("safe eyes-open"))
+        // The shared collapsed/expanded row leads with summary and retains setup; details retain complete warnings.
+        val pillow = item("indoor_pillow_marco_polo")
+        assertEquals(pillow.summary, pillow.collapsedCardPreviewLines().first())
+        assertTrue(pillow.collapsedCardPreviewLines().any { it.contains("Adult supervises and clears a flat room") })
         assertTrue(item("couch_cushion_quest").detailSections().single { it.title == "Setup" }.lines[0].contains("within easy reach"))
         assertTrue(item("race_like_an_animal").detailSections().single { it.title == "Steps" }.lines[1].contains("without sprinting"))
         assertTrue(item("hallway_balance_beam").detailSections().single { it.title == "Replay variations" }.lines[0].contains("parent approves"))
@@ -348,8 +350,6 @@ class ProtectedSafetyWarningsRegressionTest {
         val main = readText(root.resolve("app/src/main/java/com/kinplay/app/MainActivity.kt"))
         listOf(
             "item.collapsedCardPreviewLines().forEach",
-            "Text(item.summary",
-            "Text(item.setupBurdenLabel()",
             "item.detailSections().forEach",
             "Text(item.parentNotes)",
             "Safety tags: ${'$'}{item.safetyTags.joinToString { it.displayTagLabel() }}",

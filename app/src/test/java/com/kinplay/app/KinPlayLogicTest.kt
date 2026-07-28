@@ -301,14 +301,14 @@ class KinPlayLogicTest {
     }
 
     @Test
-    fun collapsedCardPreviewShowsMaterialsAndSetupFromFirstSetupStep() {
+    fun collapsedCardPreviewShowsSummaryMaterialsAndSetupFromFirstSetupStep() {
         val item = activeQuick.copy(
             materials = listOf("paper", "washable crayons"),
             setupSteps = listOf("Clear a small table.", "Put the crayons in the middle."),
         )
 
         assertEquals(
-            listOf("Needs: paper, washable crayons", "Setup: Clear a small table."),
+            listOf("Ready", "Needs: paper, washable crayons", "Setup: Clear a small table."),
             item.collapsedCardPreviewLines(),
         )
     }
@@ -316,7 +316,7 @@ class KinPlayLogicTest {
     @Test
     fun collapsedCardPreviewHandlesMissingSetupSafely() {
         assertEquals(
-            listOf("No materials", "Setup: No setup needed"),
+            listOf("Ready", "No materials", "Setup: No setup needed"),
             activeQuick.copy(setupSteps = emptyList()).collapsedCardPreviewLines(),
         )
     }

@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
@@ -42,6 +43,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
 
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -81,6 +83,8 @@ const val BROWSE_LIBRARY_LABEL = "Browse All Games & Activities"
 const val MAD_LIBS_COLLECTION_ID = "mad_libs_collection"
 const val WOULD_YOU_RATHER_ITEM_ID = "would_you_rather_silly_family"
 const val WOULD_YOU_RATHER_ROUTE = "would_you_rather"
+private val CONTENT_CARD_TWO_COLUMN_MIN_WIDTH = 280.dp
+private const val CONTENT_CARD_STACKED_FONT_SCALE = 1.5f
 fun isWouldYouRatherItem(itemId: String): Boolean = itemId == WOULD_YOU_RATHER_ITEM_ID
 
 private val FAMILIAR_QUIET_TITLES = listOf("I Spy", "Charades", "Would You Rather", "Animal Guessing", "Alphabet Story")
@@ -474,51 +478,148 @@ fun ContentCard(
         shape = RoundedCornerShape(22.dp),
         modifier = Modifier.fillMaxWidth().clickable { expanded = !expanded },
     ) {
-        Column(modifier = Modifier.padding(horizontal = 14.dp, vertical = 11.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        CompactCardDetails(
+            item = item,
+            title = title,
+            expanded = expanded,
+            navController = navController,
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 11.dp),
+        )
+    }
+}
+
+@Composable
+fun CompactCardDetails(
+    item: KinPlayItem,
+    navController: NavController,
+    modifier: Modifier = Modifier,
+    title: String = item.title,
+    expanded: Boolean = true,
+) {
+    BoxWithConstraints(modifier = modifier.fillMaxWidth()) {
+        val useStackedFallback =
+            maxWidth < CONTENT_CARD_TWO_COLUMN_MIN_WIDTH ||
+                LocalDensity.current.fontScale >= CONTENT_CARD_STACKED_FONT_SCALE
+
+        if (useStackedFallback) {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                CompactCardPrimaryContent(item = item, title = title, expanded = expanded)
+                CompactCardTrailingContent(
+                    item = item,
+                    expanded = expanded,
+                    navController = navController,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
+        } else {
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalAlignment = Alignment.Top,
             ) {
-                Text(title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface, modifier = Modifier.weight(1f))
-                Text(if (expanded) "⌃" else "⌄", color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
-            }
-            item.participantFitLabel()?.let { label ->
-                Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSecondaryContainer, fontWeight = FontWeight.Bold)
-            }
-            item.collapsedCardPreviewLines().forEach { previewLine ->
-                Text(previewLine, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
-            if (expanded) {
-                CompactCardDetails(item, navController)
+                CompactCardPrimaryContent(
+                    item = item,
+                    title = title,
+                    expanded = expanded,
+                    modifier = Modifier.weight(1f),
+                )
+                CompactCardTrailingContent(
+                    item = item,
+                    expanded = expanded,
+                    navController = navController,
+                    modifier = Modifier.fillMaxWidth(0.42f),
+                )
             }
         }
     }
 }
 
 @Composable
-fun CompactCardDetails(item: KinPlayItem, navController: NavController) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
-        verticalAlignment = Alignment.Top,
-    ) {
-        Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
-            Text(item.summary, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface)
-            Text(item.setupBurdenLabel(), style = MaterialTheme.typography.bodySmall)
-            if (item.type == "mad_libs") {
-                Text("Mad Libs fields: ${item.madLibsFields.size}", style = MaterialTheme.typography.bodySmall)
-            }
-        }
-        Column(
-            horizontalAlignment = Alignment.End,
-            verticalArrangement = Arrangement.spacedBy(3.dp),
+private fun CompactCardPrimaryContent(
+    item: KinPlayItem,
+    title: String,
+    expanded: Boolean,
+    modifier: Modifier = Modifier,
+) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
         ) {
-            DetailPill("${item.durationMinutes} min")
-            DetailPill(item.displayAgeRange())
-            Text(item.energyLevel, style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.End, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(
+                text = title,
+                modifier = Modifier.weight(1f),
+                color = MaterialTheme.colorScheme.onSurface,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Start,
+            )
+            Text(
+                text = if (expanded) "⌃" else "⌄",
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = FontWeight.Bold,
+            )
+        }
+        item.collapsedCardPreviewLines().forEachIndexed { index, previewLine ->
+            Text(
+                text = previewLine,
+                modifier = Modifier.fillMaxWidth(),
+                style = MaterialTheme.typography.bodySmall,
+                color = if (index == 0) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Start,
+            )
+        }
+        if (expanded && item.type == "mad_libs") {
+            Text(
+                text = "Mad Libs fields: ${item.madLibsFields.size}",
+                modifier = Modifier.fillMaxWidth(),
+                style = MaterialTheme.typography.bodySmall,
+                textAlign = TextAlign.Start,
+            )
+        }
+    }
+}
+
+@Composable
+private fun CompactCardTrailingContent(
+    item: KinPlayItem,
+    expanded: Boolean,
+    navController: NavController,
+    modifier: Modifier = Modifier,
+) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.End,
+        verticalArrangement = Arrangement.spacedBy(3.dp),
+    ) {
+        item.participantFitLabel()?.let { CompactCardDescriptor(it) }
+        CompactCardDescriptor("${item.durationMinutes} min")
+        CompactCardDescriptor(item.displayAgeRange())
+        if (expanded) {
+            Text(
+                text = item.energyLevel,
+                modifier = Modifier.fillMaxWidth(),
+                style = MaterialTheme.typography.bodySmall,
+                textAlign = TextAlign.End,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
             Button(onClick = { navController.openItem(item) }) { Text("Open") }
         }
     }
+}
+
+@Composable
+private fun CompactCardDescriptor(label: String) {
+    Text(
+        text = label,
+        modifier = Modifier.fillMaxWidth(),
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSecondaryContainer,
+        fontWeight = FontWeight.Bold,
+        textAlign = TextAlign.End,
+    )
 }
 
 fun activityDetailFeedbackCapture(
@@ -882,7 +983,7 @@ fun KinPlayItem.setupPreviewLabel(maxCharacters: Int = 84): String {
 }
 
 fun KinPlayItem.collapsedCardPreviewLines(): List<String> =
-    listOf(setupBurdenLabel(), setupPreviewLabel())
+    listOf(summary, setupBurdenLabel(), setupPreviewLabel())
 
 fun KinPlayItem.isMadLibsCollection(): Boolean = id == MAD_LIBS_COLLECTION_ID
 
