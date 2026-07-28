@@ -5,7 +5,7 @@ Target release: `0.6.0-beta1`
 Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 Final branch: `main`
 Baseline commit: `2e1b7899e02fdd2391855ea7cd09f3404b3a18c1`
-Last updated: `2026-07-28T04:34:59-07:00`
+Last updated: `2026-07-28T05:41:10-07:00`
 
 ## Durable status
 
@@ -13,7 +13,7 @@ Last updated: `2026-07-28T04:34:59-07:00`
 |---|---|---|---|---|---|
 | B0 | KPF-0037 | complete | Root cause reproduced by source/data flow; focused Robolectric handoff tests passed; full rerun JVM suite 125/125; intake validator valid for all 12 notes/22 mapped KPFs; `git diff --check`; independent spec PASS; independent quality APPROVED after wrapper-context correction. No connected Android target. | `48e93fed4541d0c4ae1902b21073fc1f837c62db` | Physical email-app/device retest remains required. |
 | B1 | KPF-0031; KPF-0032 partial | complete | Normative three-view vocabulary contract; exhaustive 587-entry fail-safe matrix (540 content/37 Kotlin/10 tags; 154 protected retain/relocate only); `ProtectedSafetyWarningsRegressionTest` 11/11; full rerun JVM suite passed; Android warning-presentation instrumentation sources compile; `git diff --check`; independent safety/spec PASS after four review/correction cycles. | `d5e372b0fbc79581519886855889e6e586e6f6df` | No connected Android target; B8/B9 must implement matrix decisions without protected-warning deletion. |
-| B2 | KPF-0008 partial; KPF-0022 | pending | — | — | — |
+| B2 | KPF-0008 partial; KPF-0022 foundation | complete | Strict TDD regressions cover all 53 active summaries/suitability values, active and Quality Time draft parser rules, nine shipped Mad Libs mechanics, review exports, and seed parity; focused suite passed; full rerun JVM suite 147/147; `assembleDebug`; schema/canonical/runtime/APK parity validator; `git diff --check`; independent spec PASS after correcting Mad Libs descriptions and draft parser parity; independent quality/security APPROVED. No connected Android target. | `52703e3e3881bb122acf741adce55b855d2d898c` | B3 must render the new summaries and trailing suitability descriptors before either KPF reaches user-visible closure. |
 | B3 | KPF-0021; KPF-0008 closure | pending | — | — | — |
 | B4 | KPF-0006 partial; KPF-0009; KPF-0035 | pending | — | — | — |
 | B5 | KPF-0033; KPF-0006 closure | pending | — | — | — |
@@ -35,9 +35,9 @@ Last updated: `2026-07-28T04:34:59-07:00`
 
 - Canonical KPF total: 22.
 - Implementation-complete with automated evidence: 2/22 (`KPF-0031`, `KPF-0037`).
-- Pending implementation: KPF-0006, KPF-0008, KPF-0009, KPF-0018, KPF-0019, KPF-0021 through KPF-0030, and KPF-0032 through KPF-0036.
+- Pending user-visible closure: KPF-0006, KPF-0008, KPF-0009, KPF-0018, KPF-0019, KPF-0021 through KPF-0030, and KPF-0032 through KPF-0036. KPF-0022 content foundation is validated, but its collapsed-card rendering dependency remains in B3.
 - KPF-0020 is excluded from this intake batch.
-- Earliest incomplete batch: B2.
+- Earliest incomplete batch: B3.
 
 ## Preserved intake state
 
@@ -51,4 +51,6 @@ The pre-existing intake edits in `PUNCHLIST.md`, `RETEST_LOG.md`, and `punchlist
 - `adb devices -l` reported no attached device or emulator. No device handoff or instrumentation test is claimed.
 - No APK build, push, merge, or publication has occurred yet.
 - B1 complete: KPF-0031 vocabulary contract and the KPF-0032 fail-safe prerequisite passed independent safety/spec review. `uiDeletionAuthorized` remains false.
-- Next batch: B2 — KPF-0008 participant-label scope and KPF-0022 collapsed-card descriptions.
+- B2 complete: every active card now has reviewed participant-suitability metadata and a concise, mechanically useful summary; schema/runtime draft semantics agree; both seeds, review exports, and the KPF-0032 matrix remain synchronized. The nine Mad Libs summaries explicitly describe choosing words and reading the resulting story.
+- B2 validation: focused metadata tests passed; the full rerun JVM suite passed 147/147; `assembleDebug` and packaged JSON validation passed with canonical/runtime/APK byte parity. Independent spec review passed after two findings were corrected, and independent quality/security review approved the final diff.
+- Next batch: B3 — responsive collapsed/expanded card implementation and user-visible KPF-0008/KPF-0022 closure.
