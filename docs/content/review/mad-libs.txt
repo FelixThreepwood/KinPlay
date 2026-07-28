@@ -9,7 +9,7 @@
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
-- Summary: A silly space breakfast story.
+- Summary: Choose words to create and read a silly space breakfast story.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: A name (person_name, e.g. Zigzag), An adjective (adjective, e.g. wiggly), A food (food, e.g. pancakes), An animal (animal, e.g. llama), A funny sound (sound, e.g. boing)
@@ -25,7 +25,7 @@
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
-- Summary: A dragon tries to help with chores.
+- Summary: Choose words to create and read a silly story about a dragon helping with chores.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: A color (color, e.g. purple), An object (object, e.g. sock), An action word (verb, e.g. twirl), A number (number, e.g. seven)
@@ -41,7 +41,7 @@
 - Age: 6–8
 - Duration: 10 min
 - Energy: calm
-- Summary: A royal announcement from a pretend castle.
+- Summary: Choose words to create and read a silly story about a royal announcement from a pretend castle.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: A place (place, e.g. backyard), An adjective (adjective, e.g. sparkly), A noun (noun, e.g. crown), An animal (animal, e.g. frog)
@@ -57,7 +57,7 @@
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
-- Summary: A sleepy parade gets very silly.
+- Summary: Choose words to create and read a silly story about a sleepy parade.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: A name (person_name, e.g. Moonbeam), A color (color, e.g. blue), An animal (animal, e.g. penguin), A funny sound (sound, e.g. whoosh)
@@ -73,7 +73,7 @@
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
-- Summary: A robot bakes pretend cookies with a surprise.
+- Summary: Choose words to create and read a silly story about a robot baking pretend cookies with a surprise.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: An adjective (adjective, e.g. bouncy), A food (food, e.g. cookies), A number (number, e.g. nine), An object (object, e.g. spoon)
@@ -89,7 +89,7 @@
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
-- Summary: A bus drives under the sea at bedtime.
+- Summary: Choose words to create and read a silly story about a bus driving under the sea at bedtime.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: An animal (animal, e.g. turtle), A place (place, e.g. pillow fort), A color (color, e.g. green), A sound (sound, e.g. bubble-pop)
@@ -105,7 +105,7 @@
 - Age: 6–8
 - Duration: 10 min
 - Energy: calm
-- Summary: A castle feast needs a strange solution.
+- Summary: Choose words to create and read a silly story about a castle feast needing a strange solution.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: A noun (noun, e.g. crown), An adjective (adjective, e.g. crunchy), A food (food, e.g. pizza), An action word (verb, e.g. wiggle)
@@ -121,7 +121,7 @@
 - Age: 6–8
 - Duration: 10 min
 - Energy: calm
-- Summary: Pets compete in a zero-gravity show.
+- Summary: Choose words to create and read a silly story about pets competing in a zero-gravity show.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: A name (person_name, e.g. Sparkplug), An animal (animal, e.g. hamster), An adverb (adverb, e.g. slowly), A sound (sound, e.g. plink)
@@ -137,7 +137,7 @@
 - Age: 4–8
 - Duration: 8 min
 - Energy: calm
-- Summary: A dragon train delivers breakfast.
+- Summary: Choose words to create and read a silly story about a dragon train delivering breakfast.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: A color (color, e.g. orange), A food (food, e.g. waffles), A place (place, e.g. kitchen), A number (number, e.g. three)

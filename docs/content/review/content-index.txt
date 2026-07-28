@@ -3,13 +3,13 @@
 - Animal Mirror Parade [activity] — Age 2+, 8 min — Take turns leading silly animal movements while everyone mirrors the leader. — Participant fit: both
 - Couch Cushion Quest [activity] — Age 4+, 10 min — A tiny indoor scavenger hunt using safe household clues. — Participant fit: both
 - Alphabet Story [activity] — Age 4+, 12 min — Build a ready-to-start family story with the next letter of the alphabet. — Participant fit: group
-- Freeze Dance Statues [activity] — Age 2+, 7 min — Dance, freeze, and pose as funny statues.
+- Freeze Dance Statues [activity] — Age 2+, 7 min — Dance, freeze, and pose as funny statues. — Participant fit: both
 - Pillow Boat Adventure [activity] — Age 2+, 10 min — Pretend pillows are boats crossing a living-room sea. — Participant fit: both
 - Calm Cloud Breaths [activity] — Age 2+, 3 min — A short breathing reset using imaginary clouds. — Participant fit: both
-- I Spy [activity] — Age 2+, 5 min — Play the familiar I Spy guessing game with ready-made color and shape rounds.
-- Moon Pancake Mission [mad_libs] — Age 4+, 8 min — A silly space breakfast story. — Participant fit: both
-- Dragon Laundry Day [mad_libs] — Age 4+, 8 min — A dragon tries to help with chores. — Participant fit: both
-- Backyard Castle News [mad_libs] — Age 6+, 10 min — A royal announcement from a pretend castle. — Participant fit: both
+- I Spy [activity] — Age 2+, 5 min — Play the familiar I Spy guessing game with ready-made color and shape rounds. — Participant fit: both
+- Moon Pancake Mission [mad_libs] — Age 4+, 8 min — Choose words to create and read a silly space breakfast story. — Participant fit: both
+- Dragon Laundry Day [mad_libs] — Age 4+, 8 min — Choose words to create and read a silly story about a dragon helping with chores. — Participant fit: both
+- Backyard Castle News [mad_libs] — Age 6+, 10 min — Choose words to create and read a silly story about a royal announcement from a pretend castle. — Participant fit: both
 - If Toys Could Talk [prompt] — Age 2+, 5 min — Imagine what a favorite toy would say. — Participant fit: both
 - Tiny Kindness Plan [prompt] — Age 4+, 4 min — Think of one small kind thing to do today. — Participant fit: both
 - Charades [activity] — Age 2+, 8 min — Play familiar charades with ready-to-act animal, activity, and sports ideas. — Participant fit: group
@@ -22,7 +22,7 @@
 - Shape Detective [activity] — Age 2+, 6 min — Search the room for circles, squares, and triangles. — Participant fit: both
 - Pirate Map Steps [activity] — Age 4+, 12 min — Follow a tiny pretend map using steps and turns. — Participant fit: both
 - Whisper Zoo [activity] — Age 2+, 7 min — Create a quiet zoo using animal whispers and gentle poses. — Participant fit: both
-- Rainbow Sort Sprint [activity] — Age 4+, 10 min — Sort safe toys or blocks by color in a short timed challenge.
+- Rainbow Sort Sprint [activity] — Age 4+, 10 min — Sort safe toys or blocks by color in a short timed challenge. — Participant fit: both
 - Family News Desk [activity] — Age 6+, 10 min — Report happy family news from a pretend desk. — Participant fit: group
 - Five Senses Tour [activity] — Age 4+, 6 min — Notice safe sights, sounds, and textures in the room. — Participant fit: both
 - Cleanup Countdown Game [activity] — Age 2+, 5 min — Turn a tiny cleanup into a cooperative mission. — Participant fit: both
@@ -42,14 +42,14 @@
 - Three Word Story [prompt] — Age 6+, 6 min — Make a story from only three chosen words. — Participant fit: group
 - Thank-You Detective [prompt] — Age 4+, 4 min — Notice someone to thank today. — Participant fit: both
 - Silly Invention Pitch [prompt] — Age 6+, 7 min — Pitch a harmless invention for family life. — Participant fit: both
-- Wizard Pajama Parade [mad_libs] — Age 4+, 8 min — A sleepy parade gets very silly. — Participant fit: both
-- Robot Cookie Factory [mad_libs] — Age 4+, 8 min — A robot bakes pretend cookies with a surprise. — Participant fit: both
-- Undersea Bedtime Bus [mad_libs] — Age 4+, 8 min — A bus drives under the sea at bedtime. — Participant fit: both
-- Castle Pizza Problem [mad_libs] — Age 6+, 10 min — A castle feast needs a strange solution. — Participant fit: both
-- Space Pet Show [mad_libs] — Age 6+, 10 min — Pets compete in a zero-gravity show. — Participant fit: both
-- Breakfast Dragon Train [mad_libs] — Age 4+, 8 min — A dragon train delivers breakfast. — Participant fit: both
+- Wizard Pajama Parade [mad_libs] — Age 4+, 8 min — Choose words to create and read a silly story about a sleepy parade. — Participant fit: both
+- Robot Cookie Factory [mad_libs] — Age 4+, 8 min — Choose words to create and read a silly story about a robot baking pretend cookies with a surprise. — Participant fit: both
+- Undersea Bedtime Bus [mad_libs] — Age 4+, 8 min — Choose words to create and read a silly story about a bus driving under the sea at bedtime. — Participant fit: both
+- Castle Pizza Problem [mad_libs] — Age 6+, 10 min — Choose words to create and read a silly story about a castle feast needing a strange solution. — Participant fit: both
+- Space Pet Show [mad_libs] — Age 6+, 10 min — Choose words to create and read a silly story about pets competing in a zero-gravity show. — Participant fit: both
+- Breakfast Dragon Train [mad_libs] — Age 4+, 8 min — Choose words to create and read a silly story about a dragon train delivering breakfast. — Participant fit: both
 - Animal Guessing [activity] — Age 2+, 6 min — Guess a ready-to-use animal by asking familiar yes-or-no questions. — Participant fit: both
-- Race Like an Animal [activity] — Age 2+, 8 min — Cross a short course like an animal in a safe, flat, clear area.
+- Race Like an Animal [activity] — Age 2+, 8 min — Cross a short course like an animal in a safe, flat, clear area. — Participant fit: both
 - Pillow Marco Polo: Eyes-Open Islands [activity] — Age 2+, 6 min — A safe eyes-open call-and-response walk using pillows only as island boundary markers. — Participant fit: both
 - Washable Coloring Together [activity] — Age 2+, 10 min — Share a simple coloring page with washable, non-toxic art tools and adult supervision. — Participant fit: both
 - Washable Painting Shapes [activity] — Age 2+, 15 min — Paint ready-made shapes with washable, non-toxic paint, protected surfaces, and adult supervision. — Participant fit: both

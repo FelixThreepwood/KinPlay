@@ -751,10 +751,20 @@ data class KinPlayItem(
         fun fromJson(json: JSONObject): KinPlayItem {
             val madLibs = json.optJSONObject("madLibs")
             val fields = madLibs?.optJSONArray("fields")
+            val status = json.getString("status")
+            val quickCategories = json.stringList("quickCategories")
+            val participantSuitabilityWireValue = json.optString("participantSuitability", "")
+            val participantSuitability = ParticipantSuitability.fromWireValue(participantSuitabilityWireValue)
+            require(participantSuitabilityWireValue.isBlank() || participantSuitability != null) {
+                "Unknown participantSuitability '$participantSuitabilityWireValue' for ${json.getString("id")}"
+            }
+            require((status != "active" && "quality_time" !in quickCategories) || participantSuitability != null) {
+                "Active or Quality Time item ${json.getString("id")} requires participantSuitability"
+            }
             return KinPlayItem(
                 id = json.getString("id"),
                 type = json.getString("type"),
-                status = json.getString("status"),
+                status = status,
                 title = json.getString("title"),
                 summary = json.getString("summary"),
                 modes = json.stringList("modes"),
@@ -762,7 +772,7 @@ data class KinPlayItem(
                 maxAge = json.getInt("maxAge"),
                 durationMinutes = json.getInt("durationMinutes"),
                 energyLevel = json.getString("energyLevel"),
-                quickCategories = json.stringList("quickCategories"),
+                quickCategories = quickCategories,
                 materials = json.stringList("materials"),
                 safetyTags = json.stringList("safetyTags"),
                 setupSteps = json.stringList("setupSteps"),
@@ -774,7 +784,7 @@ data class KinPlayItem(
                 madLibsFields = if (fields == null) emptyList() else List(fields.length()) { MadLibField.fromJson(fields.getJSONObject(it)) },
                 madLibsTemplate = madLibs?.optString("template", "").orEmpty(),
                 readAloudNote = madLibs?.optString("readAloudNote", "").orEmpty(),
-                participantSuitability = ParticipantSuitability.fromWireValue(json.optString("participantSuitability", "")),
+                participantSuitability = participantSuitability,
             )
         }
     }

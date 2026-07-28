@@ -185,7 +185,8 @@
       "quickCategories": [
         "outdoor_adventures",
         "get_energy_out"
-      ]
+      ],
+      "participantSuitability": "both"
     },
     {
       "id": "pillow_boat_adventure",
@@ -319,14 +320,15 @@
         "dinner_table",
         "outdoor_adventures",
         "brain_games"
-      ]
+      ],
+      "participantSuitability": "both"
     },
     {
       "id": "moon_pancake_mission",
       "type": "mad_libs",
       "status": "active",
       "title": "Moon Pancake Mission",
-      "summary": "A silly space breakfast story.",
+      "summary": "Choose words to create and read a silly space breakfast story.",
       "modes": [
         "mad_libs"
       ],
@@ -394,7 +396,7 @@
       "type": "mad_libs",
       "status": "active",
       "title": "Dragon Laundry Day",
-      "summary": "A dragon tries to help with chores.",
+      "summary": "Choose words to create and read a silly story about a dragon helping with chores.",
       "modes": [
         "mad_libs"
       ],
@@ -456,7 +458,7 @@
       "type": "mad_libs",
       "status": "active",
       "title": "Backyard Castle News",
-      "summary": "A royal announcement from a pretend castle.",
+      "summary": "Choose words to create and read a silly story about a royal announcement from a pretend castle.",
       "modes": [
         "mad_libs"
       ],
@@ -1129,7 +1131,8 @@
         "outdoor_adventures",
         "get_energy_out",
         "brain_games"
-      ]
+      ],
+      "participantSuitability": "both"
     },
     {
       "id": "family_news_desk",
@@ -1949,7 +1952,7 @@
       "type": "mad_libs",
       "status": "active",
       "title": "Wizard Pajama Parade",
-      "summary": "A sleepy parade gets very silly.",
+      "summary": "Choose words to create and read a silly story about a sleepy parade.",
       "modes": [
         "mad_libs"
       ],
@@ -2011,7 +2014,7 @@
       "type": "mad_libs",
       "status": "active",
       "title": "Robot Cookie Factory",
-      "summary": "A robot bakes pretend cookies with a surprise.",
+      "summary": "Choose words to create and read a silly story about a robot baking pretend cookies with a surprise.",
       "modes": [
         "mad_libs"
       ],
@@ -2073,7 +2076,7 @@
       "type": "mad_libs",
       "status": "active",
       "title": "Undersea Bedtime Bus",
-      "summary": "A bus drives under the sea at bedtime.",
+      "summary": "Choose words to create and read a silly story about a bus driving under the sea at bedtime.",
       "modes": [
         "mad_libs"
       ],
@@ -2135,7 +2138,7 @@
       "type": "mad_libs",
       "status": "active",
       "title": "Castle Pizza Problem",
-      "summary": "A castle feast needs a strange solution.",
+      "summary": "Choose words to create and read a silly story about a castle feast needing a strange solution.",
       "modes": [
         "mad_libs"
       ],
@@ -2196,7 +2199,7 @@
       "type": "mad_libs",
       "status": "active",
       "title": "Space Pet Show",
-      "summary": "Pets compete in a zero-gravity show.",
+      "summary": "Choose words to create and read a silly story about pets competing in a zero-gravity show.",
       "modes": [
         "mad_libs"
       ],
@@ -2257,7 +2260,7 @@
       "type": "mad_libs",
       "status": "active",
       "title": "Breakfast Dragon Train",
-      "summary": "A dragon train delivers breakfast.",
+      "summary": "Choose words to create and read a silly story about a dragon train delivering breakfast.",
       "modes": [
         "mad_libs"
       ],
@@ -2402,7 +2405,8 @@
       "quickCategories": [
         "get_energy_out",
         "outdoor_adventures"
-      ]
+      ],
+      "participantSuitability": "both"
     },
     {
       "id": "indoor_pillow_marco_polo",

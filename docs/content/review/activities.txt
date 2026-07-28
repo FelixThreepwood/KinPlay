@@ -56,6 +56,7 @@
 - Type: activity
 - Modes: quick_play, pick_a_game
 - Quick categories: outdoor_adventures, get_energy_out
+- Participant suitability: both
 - Age: 2–8
 - Duration: 7 min
 - Energy: high
@@ -106,6 +107,7 @@
 - Type: activity
 - Modes: calm_down, pick_a_game
 - Quick categories: quiet_games, dinner_table, outdoor_adventures, brain_games
+- Participant suitability: both
 - Age: 2–8
 - Duration: 5 min
 - Energy: calm
@@ -275,6 +277,7 @@
 - Type: activity
 - Modes: pick_a_game
 - Quick categories: outdoor_adventures, get_energy_out, brain_games
+- Participant suitability: both
 - Age: 4–8
 - Duration: 10 min
 - Energy: medium
@@ -529,6 +532,7 @@
 - Type: activity
 - Modes: quick_play, pick_a_game
 - Quick categories: get_energy_out, outdoor_adventures
+- Participant suitability: both
 - Age: 2–8
 - Duration: 8 min
 - Energy: high

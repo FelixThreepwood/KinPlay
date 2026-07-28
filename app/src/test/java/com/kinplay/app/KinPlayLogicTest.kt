@@ -347,6 +347,7 @@ class KinPlayLogicTest {
                   "status": "active",
                   "title": "Test Story",
                   "summary": "A parser regression story.",
+                  "participantSuitability": "both",
                   "modes": ["mad_libs"],
                   "minAge": 4,
                   "maxAge": 8,
