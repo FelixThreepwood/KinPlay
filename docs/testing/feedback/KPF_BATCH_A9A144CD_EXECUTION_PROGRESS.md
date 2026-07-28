@@ -5,14 +5,14 @@ Target release: `0.6.0-beta1`
 Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 Final branch: `main`
 Baseline commit: `2e1b7899e02fdd2391855ea7cd09f3404b3a18c1`
-Last updated: `2026-07-28T04:08:56-07:00`
+Last updated: `2026-07-28T04:34:59-07:00`
 
 ## Durable status
 
 | Batch | KPF allocation | Status | Validation / review evidence | Commit | Blockers |
 |---|---|---|---|---|---|
 | B0 | KPF-0037 | complete | Root cause reproduced by source/data flow; focused Robolectric handoff tests passed; full rerun JVM suite 125/125; intake validator valid for all 12 notes/22 mapped KPFs; `git diff --check`; independent spec PASS; independent quality APPROVED after wrapper-context correction. No connected Android target. | `48e93fed4541d0c4ae1902b21073fc1f837c62db` | Physical email-app/device retest remains required. |
-| B1 | KPF-0031; KPF-0032 partial | complete | Normative three-view vocabulary contract; exhaustive 587-entry fail-safe matrix (540 content/37 Kotlin/10 tags; 154 protected retain/relocate only); `ProtectedSafetyWarningsRegressionTest` 11/11; full rerun JVM suite passed; Android warning-presentation instrumentation sources compile; `git diff --check`; independent safety/spec PASS after four review/correction cycles. | pending checkpoint commit | No connected Android target; B8/B9 must implement matrix decisions without protected-warning deletion. |
+| B1 | KPF-0031; KPF-0032 partial | complete | Normative three-view vocabulary contract; exhaustive 587-entry fail-safe matrix (540 content/37 Kotlin/10 tags; 154 protected retain/relocate only); `ProtectedSafetyWarningsRegressionTest` 11/11; full rerun JVM suite passed; Android warning-presentation instrumentation sources compile; `git diff --check`; independent safety/spec PASS after four review/correction cycles. | `d5e372b0fbc79581519886855889e6e586e6f6df` | No connected Android target; B8/B9 must implement matrix decisions without protected-warning deletion. |
 | B2 | KPF-0008 partial; KPF-0022 | pending | — | — | — |
 | B3 | KPF-0021; KPF-0008 closure | pending | — | — | — |
 | B4 | KPF-0006 partial; KPF-0009; KPF-0035 | pending | — | — | — |
