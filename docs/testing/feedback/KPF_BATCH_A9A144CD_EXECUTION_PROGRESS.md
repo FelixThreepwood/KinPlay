@@ -5,7 +5,7 @@ Target release: `0.6.0-beta1`
 Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 Final branch: `main`
 Baseline commit: `2e1b7899e02fdd2391855ea7cd09f3404b3a18c1`
-Last updated: `2026-07-28T06:06:15-07:00`
+Last updated: `2026-07-28T06:59:14-07:00`
 
 ## Durable status
 
@@ -15,7 +15,7 @@ Last updated: `2026-07-28T06:06:15-07:00`
 | B1 | KPF-0031; KPF-0032 partial | complete | Normative three-view vocabulary contract; exhaustive 587-entry fail-safe matrix (540 content/37 Kotlin/10 tags; 154 protected retain/relocate only); `ProtectedSafetyWarningsRegressionTest` 11/11; full rerun JVM suite passed; Android warning-presentation instrumentation sources compile; `git diff --check`; independent safety/spec PASS after four review/correction cycles. | `d5e372b0fbc79581519886855889e6e586e6f6df` | No connected Android target; B8/B9 must implement matrix decisions without protected-warning deletion. |
 | B2 | KPF-0008 partial; KPF-0022 foundation | complete | Strict TDD regressions cover all 53 active summaries/suitability values, active and Quality Time draft parser rules, nine shipped Mad Libs mechanics, review exports, and seed parity; focused suite passed; full rerun JVM suite 147/147; `assembleDebug`; schema/canonical/runtime/APK parity validator; `git diff --check`; independent spec PASS after correcting Mad Libs descriptions and draft parser parity; independent quality/security APPROVED. No connected Android target. | `52703e3e3881bb122acf741adce55b855d2d898c` | B3 must render the new summaries and trailing suitability descriptors before either KPF reaches user-visible closure. |
 | B3 | KPF-0021; KPF-0008 and KPF-0022 closure | complete | Shared collapsed/expanded card hierarchy shows left-aligned title/summary/materials/setup and right-aligned participant/duration/age descriptors; narrow-width and font-scale 1.5+ fallback preserves all content; favorite, expansion, energy, Mad Lib field count, and Open remain available. Focused JVM tests and full rerun suite 150/150 passed; `assembleDebug`; Android instrumentation sources compiled; `git diff --check`; independent spec PASS and independent quality/security APPROVED. | `73524a6214a1c2f45e8b27fc6858f3953bb338c9` | No connected Android target; runtime narrow-width, large-font, and card-navigation instrumentation remains pending. |
-| B4 | KPF-0006 partial; KPF-0009; KPF-0035 | pending | — | — | — |
+| B4 | KPF-0006 partial; KPF-0009; KPF-0035 | complete | Exact `Random game` and `All games and activities` vocabulary is shared by Home, destinations, accessibility click labels, product documentation, and device-test documentation; full rerun JVM suite 151/151; Android instrumentation sources compiled; `assembleDebug`; `lintDebug`; `git diff --check`; independent spec PASS and independent quality/security APPROVED. No connected Android target. | `ac175317dba1447ad9f8a92506d879bca8da4e78` | B5 must close KPF-0006 compactness and copy reduction; B8/B9 retains authority over the safety-classified Random-game subtitle. |
 | B5 | KPF-0033; KPF-0006 closure | pending | — | — | — |
 | B6 | KPF-0034 | pending | — | — | — |
 | B7 | KPF-0036 | pending | — | — | — |
@@ -34,10 +34,10 @@ Last updated: `2026-07-28T06:06:15-07:00`
 ## Scope accounting
 
 - Canonical KPF total: 22.
-- Implementation-complete with automated evidence: 5/22 (`KPF-0008`, `KPF-0021`, `KPF-0022`, `KPF-0031`, `KPF-0037`).
-- Pending user-visible closure: KPF-0006, KPF-0009, KPF-0018, KPF-0019, KPF-0023 through KPF-0030, and KPF-0032 through KPF-0036.
+- Implementation-complete with automated evidence: 6/22 (`KPF-0008`, `KPF-0009`, `KPF-0021`, `KPF-0022`, `KPF-0031`, `KPF-0037`).
+- Pending user-visible closure: KPF-0006, KPF-0018, KPF-0019, KPF-0023 through KPF-0030, and KPF-0032 through KPF-0036.
 - KPF-0020 is excluded from this intake batch.
-- Earliest incomplete batch: B4.
+- Earliest incomplete batch: B5.
 
 ## Preserved intake state
 
@@ -55,4 +55,6 @@ The pre-existing intake edits in `PUNCHLIST.md`, `RETEST_LOG.md`, and `punchlist
 - B2 validation: focused metadata tests passed; the full rerun JVM suite passed 147/147; `assembleDebug` and packaged JSON validation passed with canonical/runtime/APK byte parity. Independent spec review passed after two findings were corrected, and independent quality/security review approved the final diff.
 - B3 complete: one responsive hierarchy now governs collapsed and expanded cards. Collapsed cards expose the reviewed summary and participant/duration/age descriptors before opening; expansion preserves all prior actions and warning-bearing previews. A stacked fallback protects narrow and large-font layouts.
 - B3 validation: focused and full JVM tests passed 150/150; debug APK assembly and Android instrumentation compilation passed; independent spec and quality/security reviews approved. Instrumentation was not executed because `adb devices -l` showed no target.
-- Next batch: B4 — Home vocabulary, games-and-activities terminology, and shortened shortcut labels.
+- B4 complete: Home and its matching destinations now use exact `Random game` and `All games and activities` labels; games-and-activities terminology is normalized across affected product and testing documentation; accessible click labels match visible labels. The safety-classified Random-game subtitle remains unchanged for the approved B8/B9 safety pass.
+- B4 validation: focused assertions and the full rerun JVM suite passed 151/151; Android instrumentation sources, debug assembly, and lint passed; `git diff --check` passed; independent specification review passed and independent quality/security review approved. Instrumentation was not executed because `adb devices -l` showed no target.
+- Next batch: B5 — Home copy reduction and compactness closure.
