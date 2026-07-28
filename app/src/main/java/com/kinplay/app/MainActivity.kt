@@ -903,11 +903,22 @@ private fun NavController.openItem(item: KinPlayItem) {
     navigate(itemDestination(item))
 }
 
-fun String.displayTagLabel(): String =
-    split('_')
+fun String.displayTagLabel(): String = when (this) {
+    "parent_supervision" -> "Parent supervision"
+    "movement" -> "Movement"
+    "quiet" -> "Quiet"
+    "no_materials" -> "No materials"
+    "small_objects" -> "Small objects"
+    "food_optional" -> "Food optional"
+    "outdoor_optional" -> "Outdoor optional"
+    "reading_help" -> "Reading help"
+    "sibling_friendly" -> "Sibling friendly"
+    "calming" -> "Calming"
+    else -> split('_')
         .filter { it.isNotBlank() }
         .joinToString(" ") { it.lowercase() }
         .replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+}
 
 fun KinPlayItem.detailSections(): List<DetailSection> = buildList {
     add(DetailSection("Materials", listOf(if (materials.isEmpty()) "No materials needed." else materials.joinToString())))

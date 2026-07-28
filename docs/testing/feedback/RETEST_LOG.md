@@ -1,6 +1,6 @@
 # KinPlay Feedback Retest Log
 
-Last updated: 2026-07-28T02:02:10-07:00
+Last updated: 2026-07-28T04:08:56-07:00
 
 Current revision under retest: **0.5.0-beta1 (5)** for `KPF-0011`–`KPF-0020`. The earlier `KPF-0001`–`KPF-0010` cohort retains its recorded retest build **0.4.0-beta1 (4)**.
 
@@ -67,8 +67,8 @@ Affected build: **0.5.0-beta1 (5)**. These are triage records only; no applicati
 | KPF-0028 | accepted | Android orientation lifecycle and accessibility review. |
 | KPF-0029 | accepted | Game inventory and interactive-session model specification. |
 | KPF-0030 | accepted | Default-versus-override precedence and persistence tests. |
-| KPF-0031 | accepted product vocabulary | Map the three terms to actual interface states and tests. |
-| KPF-0032 | new—safety review required | Item-by-item product, safety, and legal review before any removal. |
+| KPF-0031 | fixed-awaiting-retest | In 0.6.0-beta1 (6), confirm requirements and tester reports can distinguish the collapsed card, expanded card, and details page and that each name matches the visible state/navigation behavior. The normative contract and automated state anchors passed. |
+| KPF-0032 | accepted—revision underway | Independent fail-safe review passed the exhaustive decision matrix. B8/B9 must implement only the approved per-entry decisions; no protected-warning deletion is authorized. The presentation instrumentation test compiles but awaits a connected Android target. |
 | KPF-0033 | accepted | Home and app-wide nonessential-copy inventory. |
 | KPF-0034 | accepted | Gemini visual brief, graphical-control design, and accessibility review. |
 | KPF-0035 | accepted | Navigation-copy inventory and destination consistency checks. |

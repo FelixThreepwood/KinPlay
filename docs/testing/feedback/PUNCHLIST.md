@@ -537,7 +537,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0031 — Adopt collapsed card, expanded card, and details page as canonical game-view terms
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Product vocabulary / Information architecture
 - Priority: Backlog
 - Affected build: 0.5.0-beta1 (5)
@@ -546,13 +546,15 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Source note: `KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52`
 - Normalized finding: Use three canonical view names in product records and specifications: collapsed card view, expanded card view, and details page.
 - Expected behavior: Requirements, tests, and future feedback can refer unambiguously to one of the three game representations.
-- Reproduction/triage: Documentation and ui state mapping required.
+- Reproduction/triage: Complete. The normative vocabulary contract maps all three terms to their Kotlin, state, navigation, and visible-content boundaries.
 - Decision: accepted product vocabulary
-- Implementation status: not-started
+- Implementation status: complete
+- Retest build: 0.6.0-beta1 (6)
+- Verification: Vocabulary contract, state anchors, focused logic tests, full JVM unit suite, and independent safety/spec review passed; physical-device terminology/UI confirmation remains pending.
 
 ## KPF-0032 — Remove safety labels and instructional safety copy from the normal interactive interface
 
-- Status: new
+- Status: accepted
 - Type: Content copy / Information architecture / Safety review
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -561,11 +563,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Source note: `KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E`
 - Normalized finding: The tester requests that safety tags, safety references, and safety instructional content not be shown throughout normal end-user play surfaces, while safety remains intrinsic to content design and implementation.
 - Expected behavior: The interface avoids repetitive safety labeling, but any warning required to prevent foreseeable harm or satisfy legal, platform, or product obligations remains available through a reviewed nonintrusive design.
-- Reproduction/triage: Product safety and legal review required.
-- Decision: needs product safety review
-- Implementation status: not-started
+- Reproduction/triage: Item-by-item fail-safe safety/spec review complete; implementation remains allocated across B8 and B9.
+- Decision: implement only matrix-approved retain/relocate/collapse/remove decisions; no protected-warning deletion authorized
+- Implementation status: in-progress
 - Related items: `KPF-0005`, `KPF-0036`
-- Triage note: This request must not be implemented as an unconditional global deletion. Review every warning and activity before removing or relocating safety information.
+- Triage note: Independent review passed the 587-entry decision matrix (540 content, 37 Kotlin, 10 safety-tag entries). All 154 protected entries are retain/relocate only, `uiDeletionAuthorized` is false, and connected-device execution of the compiled warning-presentation instrumentation test remains pending.
 
 ## KPF-0033 — Remove nonessential descriptive copy from Home and content surfaces
 

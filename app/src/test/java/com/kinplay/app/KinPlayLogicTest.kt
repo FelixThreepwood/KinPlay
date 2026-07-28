@@ -176,9 +176,22 @@ class KinPlayLogicTest {
     }
 
     @Test
-    fun displaySafetyTagHumanizesSnakeCaseTags() {
-        assertEquals("Parent supervision", "parent_supervision".displayTagLabel())
-        assertEquals("No materials", "no_materials".displayTagLabel())
+    fun displaySafetyTagUsesStableLabelsForEverySchemaTagAndKeepsTheFallback() {
+        val labels = mapOf(
+            "parent_supervision" to "Parent supervision",
+            "movement" to "Movement",
+            "quiet" to "Quiet",
+            "no_materials" to "No materials",
+            "small_objects" to "Small objects",
+            "food_optional" to "Food optional",
+            "outdoor_optional" to "Outdoor optional",
+            "reading_help" to "Reading help",
+            "sibling_friendly" to "Sibling friendly",
+            "calming" to "Calming",
+        )
+
+        labels.forEach { (tag, label) -> assertEquals(label, tag.displayTagLabel()) }
+        assertEquals("Future tag", "future_tag".displayTagLabel())
     }
 
     @Test

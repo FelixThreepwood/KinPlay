@@ -1163,7 +1163,7 @@
     {
       "id": "KPF-0031",
       "title": "Adopt collapsed card, expanded card, and details page as canonical game-view terms",
-      "status": "accepted",
+      "status": "fixed-awaiting-retest",
       "type": [
         "product_vocabulary",
         "information_architecture"
@@ -1179,15 +1179,17 @@
       "sourceNoteIds": [
         "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52"
       ],
-      "reproductionStatus": "documentation_and_ui_state_mapping_required",
-      "implementationStatus": "not_started",
+      "reproductionStatus": "documentation_and_ui_state_mapping_complete",
+      "implementationStatus": "complete",
       "decision": "accepted_product_vocabulary",
-      "authorizationRequired": true
+      "authorizationRequired": true,
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_contract_and_tests_passed_pending_physical_device_retest"
     },
     {
       "id": "KPF-0032",
       "title": "Remove safety labels and instructional safety copy from the normal interactive interface",
-      "status": "new",
+      "status": "accepted",
       "type": [
         "content_copy",
         "information_architecture",
@@ -1204,15 +1206,16 @@
       "sourceNoteIds": [
         "KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E"
       ],
-      "reproductionStatus": "product_safety_and_legal_review_required",
-      "implementationStatus": "not_started",
-      "decision": "needs_product_safety_review",
+      "reproductionStatus": "item_by_item_safety_spec_review_complete_implementation_pending",
+      "implementationStatus": "in_progress",
+      "decision": "implement_only_matrix_approved_decisions_no_protected_warning_deletion_authorized",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0005",
         "KPF-0036"
       ],
-      "triageNotes": "This request must not be implemented as an unconditional global deletion. Review every warning and activity before removing or relocating safety information."
+      "triageNotes": "Independent review passed the 587-entry decision matrix: 540 content, 37 Kotlin, and 10 safety-tag entries. All 154 protected entries are retain or relocate only, uiDeletionAuthorized remains false, and connected-device execution of the compiled warning-presentation instrumentation test remains pending.",
+      "safetyReview": "independent_fail_safe_matrix_review_passed_b8_b9_implementation_pending"
     },
     {
       "id": "KPF-0033",

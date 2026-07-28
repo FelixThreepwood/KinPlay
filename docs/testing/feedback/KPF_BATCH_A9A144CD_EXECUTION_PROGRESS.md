@@ -5,14 +5,14 @@ Target release: `0.6.0-beta1`
 Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 Final branch: `main`
 Baseline commit: `2e1b7899e02fdd2391855ea7cd09f3404b3a18c1`
-Last updated: `2026-07-28T02:08:16-07:00`
+Last updated: `2026-07-28T04:08:56-07:00`
 
 ## Durable status
 
 | Batch | KPF allocation | Status | Validation / review evidence | Commit | Blockers |
 |---|---|---|---|---|---|
-| B0 | KPF-0037 | complete | Root cause reproduced by source/data flow; focused Robolectric handoff tests passed; full rerun JVM suite 125/125; intake validator valid for all 12 notes/22 mapped KPFs; `git diff --check`; independent spec PASS; independent quality APPROVED after wrapper-context correction. No connected Android target. | pending checkpoint commit | Physical email-app/device retest remains required. |
-| B1 | KPF-0031; KPF-0032 partial | pending | — | — | — |
+| B0 | KPF-0037 | complete | Root cause reproduced by source/data flow; focused Robolectric handoff tests passed; full rerun JVM suite 125/125; intake validator valid for all 12 notes/22 mapped KPFs; `git diff --check`; independent spec PASS; independent quality APPROVED after wrapper-context correction. No connected Android target. | `48e93fed4541d0c4ae1902b21073fc1f837c62db` | Physical email-app/device retest remains required. |
+| B1 | KPF-0031; KPF-0032 partial | complete | Normative three-view vocabulary contract; exhaustive 587-entry fail-safe matrix (540 content/37 Kotlin/10 tags; 154 protected retain/relocate only); `ProtectedSafetyWarningsRegressionTest` 11/11; full rerun JVM suite passed; Android warning-presentation instrumentation sources compile; `git diff --check`; independent safety/spec PASS after four review/correction cycles. | pending checkpoint commit | No connected Android target; B8/B9 must implement matrix decisions without protected-warning deletion. |
 | B2 | KPF-0008 partial; KPF-0022 | pending | — | — | — |
 | B3 | KPF-0021; KPF-0008 closure | pending | — | — | — |
 | B4 | KPF-0006 partial; KPF-0009; KPF-0035 | pending | — | — | — |
@@ -34,10 +34,10 @@ Last updated: `2026-07-28T02:08:16-07:00`
 ## Scope accounting
 
 - Canonical KPF total: 22.
-- Implementation-complete with automated evidence: 1/22 (`KPF-0037`).
-- Pending implementation: KPF-0006, KPF-0008, KPF-0009, KPF-0018, KPF-0019, and KPF-0021 through KPF-0036.
+- Implementation-complete with automated evidence: 2/22 (`KPF-0031`, `KPF-0037`).
+- Pending implementation: KPF-0006, KPF-0008, KPF-0009, KPF-0018, KPF-0019, KPF-0021 through KPF-0030, and KPF-0032 through KPF-0036.
 - KPF-0020 is excluded from this intake batch.
-- Earliest incomplete batch: B1.
+- Earliest incomplete batch: B2.
 
 ## Preserved intake state
 
@@ -50,4 +50,5 @@ The pre-existing intake edits in `PUNCHLIST.md`, `RETEST_LOG.md`, and `punchlist
 - B0 validation: focused Robolectric handoff tests and the full rerun JVM suite (125/125) passed. The feedback-intake validator confirmed 12 unique raw notes, 22 mapped canonical items, occurrence invariants, and Markdown/registry agreement. Independent spec review passed. Independent quality review requested wrapped-Activity handling and stronger production-path tests; the fixes were re-reviewed and approved.
 - `adb devices -l` reported no attached device or emulator. No device handoff or instrumentation test is claimed.
 - No APK build, push, merge, or publication has occurred yet.
-- Next batch: B1 — vocabulary contract and safety decision matrix.
+- B1 complete: KPF-0031 vocabulary contract and the KPF-0032 fail-safe prerequisite passed independent safety/spec review. `uiDeletionAuthorized` remains false.
+- Next batch: B2 — KPF-0008 participant-label scope and KPF-0022 collapsed-card descriptions.
