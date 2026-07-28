@@ -44,6 +44,7 @@ import androidx.compose.ui.Alignment
 
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -77,9 +78,10 @@ class MainActivity : ComponentActivity() {
 }
 
 const val CONTENT_CARD_DEFAULT_EXPANDED = false
-const val HOME_DESCRIPTOR = "Ready-to-use family games & activities"
+const val HOME_DESCRIPTOR = "Ready-to-use family games and activities"
 const val HOME_INSTRUCTION_SECTION_ENABLED = false
-const val BROWSE_LIBRARY_LABEL = "Browse All Games & Activities"
+const val RANDOM_GAME_LABEL = "Random game"
+const val ALL_GAMES_AND_ACTIVITIES_LABEL = "All games and activities"
 const val MAD_LIBS_COLLECTION_ID = "mad_libs_collection"
 const val WOULD_YOU_RATHER_ITEM_ID = "would_you_rather_silly_family"
 const val WOULD_YOU_RATHER_ROUTE = "would_you_rather"
@@ -143,7 +145,7 @@ fun KinPlayApp() {
                 NavHost(navController = navController, startDestination = Routes.Home) {
                     composable(Routes.Home) { HomeScreen(contentPack, favoriteIds, recentIds, navController) }
                     composable(Routes.QuickPlay) { QuickPlayScreen(contentPack, favoriteIds, recentIds, navController) }
-                    composable(Routes.PickGame) { ContentListScreen("All Games & Activities", contentPack.gameLibraryItems(), favoriteIds, navController) }
+                    composable(Routes.PickGame) { ContentListScreen(ALL_GAMES_AND_ACTIVITIES_LABEL, contentPack.gameLibraryItems(), favoriteIds, navController) }
                     composable(Routes.CalmDown) { ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController) }
                     composable(Routes.AboutSafety) { AboutSafetyScreen(navController) }
                     composable(Routes.Settings) {
@@ -182,7 +184,7 @@ fun KinPlayApp() {
                         val categoryId = entry.arguments?.getString("categoryId").orEmpty()
                         val category = QuickCategory.fromId(categoryId)
                         ContentListScreen(
-                            title = category?.label ?: "Games & Activities",
+                            title = category?.label ?: ALL_GAMES_AND_ACTIVITIES_LABEL,
                             items = contentPack.itemsForQuickCategory(categoryId),
                             favoriteIds = favoriteIds,
                             navController = navController,
@@ -280,8 +282,8 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                 recentItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
             }
             SectionTitle("More ways to start", "Offline, parent-led choices for ages 2–8")
-            HomeButton("Pick For Me", "Choose a ready-to-use local activity") { navController.navigate(Routes.QuickPlay) }
-            HomeButton(BROWSE_LIBRARY_LABEL, "See the full library, including story activities") { navController.navigate(Routes.PickGame) }
+            HomeButton(RANDOM_GAME_LABEL, "Choose a ready-to-use game or activity") { navController.navigate(Routes.QuickPlay) }
+            HomeButton(ALL_GAMES_AND_ACTIVITIES_LABEL, "See every game and activity, including story activities") { navController.navigate(Routes.PickGame) }
             HomeButton("Settings", "Timers, activity duration, and color theme") { navController.navigate(Routes.Settings) }
             HomeButton("About / Safety", "Parent-led safety and privacy notes") { navController.navigate(Routes.AboutSafety) }
         }
@@ -341,11 +343,11 @@ fun HeroPanel(contentPack: ContentPack) {
         Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
             Text("KinPlay", style = MaterialTheme.typography.headlineLarge, color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold)
             Text(
-                "Professional, offline-first family play for parent-led moments: quick games, calm resets, creative prompts, and read-aloud silliness.",
+                "Professional, offline-first family play for parent-led moments: quick games and activities, calm resets, creative prompts, and read-aloud silliness.",
                 color = MaterialTheme.colorScheme.onPrimary,
             )
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                StatPill("${contentPack.gameLibraryItems().size}", "games")
+                StatPill("${contentPack.gameLibraryItems().size}", "games and activities")
                 StatPill("${QuickCategory.defaultGrid.size}", "quick lists")
                 StatPill("100%", "offline")
             }
@@ -392,7 +394,11 @@ fun HomeButton(title: String, subtitle: String, onClick: () -> Unit) {
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(22.dp),
-        modifier = Modifier.fillMaxWidth().clickable(onClick = onClick),
+        modifier = Modifier.fillMaxWidth().clickable(
+            onClickLabel = title,
+            role = Role.Button,
+            onClick = onClick,
+        ),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 14.dp),
@@ -415,7 +421,7 @@ fun SeedCard(contentPack: ContentPack) {
             Text("Local seed pack", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSecondaryContainer)
             Text(contentPack.title, color = MaterialTheme.colorScheme.onSurface)
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                DetailPill("${contentPack.gameLibraryItems().size} games")
+                DetailPill("${contentPack.gameLibraryItems().size} games and activities")
                 DetailPill("${QuickCategory.defaultGrid.size} quick lists")
             }
         }
@@ -428,15 +434,15 @@ fun QuickPlayScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentId
     val quickPick = remember(contentPack.items, recentIds) {
         contentPack.items.pickForModeAvoidingRecent("quick_play", recentIds)
     }
-    Scaffold(topBar = { TopAppBar(title = { Text("Quick Play") }) }) { innerPadding ->
+    Scaffold(topBar = { TopAppBar(title = { Text(RANDOM_GAME_LABEL) }) }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
-            Text("Quick Play", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+            Text(RANDOM_GAME_LABEL, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
             Text("A short, safe, local-content activity selected without network access.")
             if (quickPick == null) {
-                Text("No eligible Quick Play item found yet.")
+                Text("No eligible game or activity found yet.")
             } else {
                 ContentCard(quickPick, favoriteIds, navController)
-                Button(onClick = { navController.openItem(quickPick) }) { Text("Start this activity") }
+                Button(onClick = { navController.openItem(quickPick) }) { Text("Start this game or activity") }
             }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
         }

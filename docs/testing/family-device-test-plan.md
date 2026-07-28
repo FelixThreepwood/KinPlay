@@ -18,8 +18,8 @@ Validate the KinPlay MVP on physical Android devices with 5-10 family/parent tes
 - Parent-led sessions with children roughly ages 2-8.
 - MVP flows:
   - Home
-  - Quick Play
-  - Pick a Game
+  - Random game
+  - All games and activities
   - Mad Libs
   - Calm Down
   - About / Safety
@@ -78,8 +78,8 @@ Run this once per device before asking for family use.
 5. Turn on airplane mode.
 6. Relaunch KinPlay.
 7. Open each primary home option:
-   - Quick Play
-   - Pick a Game
+   - Random game
+   - All games and activities
    - Mad Libs
    - Calm Down
    - About / Safety
@@ -159,8 +159,8 @@ Categories:
 
 - Install confusion.
 - Home navigation confusion.
-- Quick Play expectation mismatch.
-- Pick a Game browsing confusion.
+- Random game expectation mismatch.
+- All games and activities browsing confusion.
 - Mad Libs input/reveal confusion.
 - Calm Down purpose confusion.
 - Activity instruction confusion.
@@ -216,7 +216,7 @@ Use one row per tester session.
 
 | Tester ID | Session # | Date/window | Device ID | Child age band | Mode used | Completed? | Repeat-use score | Confusion category | Confusion severity | More-content request | Safety/trust concern | Quote or note | Follow-up action |
 |---|---:|---|---|---|---|---|---:|---|---|---|---|---|---|
-| T01 | 1 |  |  | age_4_5 | Quick Play |  |  |  |  |  |  |  |  |
+| T01 | 1 |  |  | age_4_5 | Random game |  |  |  |  |  |  |  |  |
 | T01 | 2 |  |  | age_4_5 | Calm Down |  |  |  |  |  |  |  |  |
 
 Data hygiene:
@@ -248,7 +248,7 @@ Ask after each tester has used the app.
 
 - If you had only 5 minutes before dinner/bedtime/leaving the house, would you open KinPlay?
 - Which mode should be the default first button?
-- Did Quick Play feel helpful or too random?
+- Did Random game feel helpful or too random?
 - Would filters by age, time, materials, energy, or mood matter?
 - What content would make this useful every week?
 

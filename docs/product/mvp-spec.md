@@ -16,13 +16,13 @@ KinPlay is an Android app for guided family play with young children. The MVP sh
 
 ## MVP modes
 
-1. Quick Play
+1. Random game
    - Parent taps Start.
    - App selects a suitable card using session selection rules.
    - Best for immediate family use.
 
-2. Pick a Game
-   - Parent browses activity cards by category.
+2. All games and activities
+   - Parent browses game and activity cards by category.
    - Filters: age range, duration, energy level, materials, mode.
 
 3. Mad Libs
@@ -118,7 +118,7 @@ MVP must avoid content requiring:
 
 ## Session selection rules
 
-Quick Play selects one eligible card using these rules:
+Random game selects one eligible card using these rules:
 
 1. Include only active seed content.
 2. Match selected mode if the parent chose one; otherwise allow all MVP modes.
@@ -135,8 +135,8 @@ The MVP can implement these rules locally with deterministic fallback: if filter
 
 1. Home
    - App name
-   - Quick Play button
-   - Pick a Game button
+   - Random game button
+   - All games and activities button
    - Mad Libs button
    - Calm Down button
 
@@ -165,7 +165,7 @@ The MVP spec is satisfied when:
 - The app builds a debug APK locally.
 - The APK can be copied to `/mnt/cyberforgex-torrents/KinPlay/apk-drops`.
 - The app launches on a physical Android device after manual transfer.
-- Home screen exposes Quick Play, Pick a Game, Mad Libs, and Calm Down.
+- Home screen exposes Random game, All games and activities, Mad Libs, and Calm Down.
 - Content loads from local JSON assets.
 - An unfamiliar or tired parent can choose a ready-to-use item and start it within 30 seconds without outside explanation.
 - Every choice shows its setup/material burden before play, including an explicit `none` state when no materials are needed.
@@ -175,6 +175,6 @@ The MVP spec is satisfied when:
   - 3 Mad Libs templates
   - 2 calm-down cards
   - 2 prompt cards
-- Quick Play chooses a card without network access.
+- Random game chooses a card without network access.
 - Mad Libs collects fields and renders a completed story.
 - No account, analytics, ads, in-app purchases, camera, microphone, contacts, or location permission is requested.

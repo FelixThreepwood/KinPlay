@@ -247,7 +247,7 @@ Owner: design/release
 
 Tasks:
 
-- Create phone screenshots for Home, Quick Play, Pick a Game, Mad Libs, Calm Down, and About/Safety.
+- Create phone screenshots for Home, Random game, All games and activities, Mad Libs, Calm Down, and About/Safety.
 - Create a feature graphic if Play Console requires it for the chosen release path.
 - Ensure screenshots show real app UI and do not imply features not present.
 

@@ -265,10 +265,15 @@ class KinPlayLogicTest {
 
     @Test
     fun kpf0006HomeRevisionUsesCompactOneLineDescriptorWithoutInstructionSection() {
-        assertTrue(HOME_DESCRIPTOR.isNotBlank())
+        assertEquals("Ready-to-use family games and activities", HOME_DESCRIPTOR)
         assertFalse(HOME_DESCRIPTOR.contains('\n'))
         assertFalse(HOME_INSTRUCTION_SECTION_ENABLED)
-        assertEquals("Browse All Games & Activities", BROWSE_LIBRARY_LABEL)
+    }
+
+    @Test
+    fun kpf0009AndKpf0035UseExactGamesAndActivitiesShortcutVocabulary() {
+        assertEquals("Random game", RANDOM_GAME_LABEL)
+        assertEquals("All games and activities", ALL_GAMES_AND_ACTIVITIES_LABEL)
     }
 
     @Test
