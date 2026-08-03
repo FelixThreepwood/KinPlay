@@ -8,6 +8,7 @@
       "id": "animal_mirror_parade",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Animal Mirror Parade",
       "summary": "Take turns leading silly animal movements while everyone mirrors the leader.",
       "modes": [
@@ -52,6 +53,7 @@
       "id": "couch_cushion_quest",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Couch Cushion Quest",
       "summary": "A tiny indoor scavenger hunt using safe household clues.",
       "modes": [
@@ -100,6 +102,7 @@
       "id": "story_spark_circle",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Alphabet Story",
       "summary": "Build a ready-to-start family story with the next letter of the alphabet.",
       "modes": [
@@ -149,6 +152,7 @@
       "id": "freeze_dance_statues",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Freeze Dance Statues",
       "summary": "Dance, freeze, and pose as funny statues.",
       "modes": [
@@ -192,6 +196,7 @@
       "id": "pillow_boat_adventure",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Pillow Boat Adventure",
       "summary": "Pretend pillows are boats crossing a living-room sea.",
       "modes": [
@@ -237,6 +242,7 @@
       "id": "calm_cloud_breaths",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Calm Cloud Breaths",
       "summary": "A short breathing reset using imaginary clouds.",
       "modes": [
@@ -280,6 +286,7 @@
       "id": "quiet_color_hunt",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "I Spy",
       "summary": "Play the familiar I Spy guessing game with ready-made color and shape rounds.",
       "modes": [
@@ -301,7 +308,7 @@
         "sibling_friendly"
       ],
       "setupSteps": [
-        "Choose one safe object everyone can see; use the ready-made clues below if you are tired."
+        "Choose one safe object everyone can see; use the ready-made clues below."
       ],
       "playSteps": [
         "The adult starts: “I spy with my little eye something blue.”",
@@ -327,6 +334,7 @@
       "id": "moon_pancake_mission",
       "type": "mad_libs",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Moon Pancake Mission",
       "summary": "Choose words to create and read a silly space breakfast story.",
       "modes": [
@@ -395,6 +403,7 @@
       "id": "dragon_laundry_day",
       "type": "mad_libs",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Dragon Laundry Day",
       "summary": "Choose words to create and read a silly story about a dragon helping with chores.",
       "modes": [
@@ -457,6 +466,7 @@
       "id": "backyard_castle_news",
       "type": "mad_libs",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Backyard Castle News",
       "summary": "Choose words to create and read a silly story about a royal announcement from a pretend castle.",
       "modes": [
@@ -518,6 +528,7 @@
       "id": "if_toys_could_talk",
       "type": "prompt",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "If Toys Could Talk",
       "summary": "Imagine what a favorite toy would say.",
       "modes": [
@@ -554,6 +565,7 @@
       "id": "tiny_kindness_plan",
       "type": "prompt",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Tiny Kindness Plan",
       "summary": "Think of one small kind thing to do today.",
       "modes": [
@@ -593,6 +605,7 @@
       "id": "family_charades_animals",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": true,
       "title": "Charades",
       "summary": "Play familiar charades with ready-to-act animal, activity, and sports ideas.",
       "modes": [
@@ -639,6 +652,7 @@
       "id": "would_you_rather_silly_family",
       "type": "prompt",
       "status": "active",
+      "childHandoffLockEligible": true,
       "title": "Would You Rather",
       "summary": "Choose between ready-to-read, harmless silly options and explain why.",
       "modes": [
@@ -683,6 +697,7 @@
       "id": "timed_drawing_tiny_monster",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Timed Drawing: Tiny Monster",
       "summary": "Draw a friendly tiny monster before the timer ends.",
       "modes": [
@@ -728,6 +743,7 @@
       "id": "sock_skating_rink",
       "type": "activity",
       "status": "draft",
+      "childHandoffLockEligible": false,
       "title": "Sock Skating Rink",
       "summary": "Slide carefully on socks across a pretend tiny rink.",
       "modes": [
@@ -770,6 +786,7 @@
       "id": "stuffed_animal_rescue",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Stuffed Animal Rescue",
       "summary": "Rescue plush friends from safe spots around the room.",
       "modes": [
@@ -815,6 +832,7 @@
       "id": "kitchen_band_rehearsal",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Kitchen Band Rehearsal",
       "summary": "Make a gentle rhythm band with safe household items.",
       "modes": [
@@ -861,6 +879,7 @@
       "id": "blanket_fort_post_office",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Blanket Fort Post Office",
       "summary": "Deliver pretend mail between cozy stations.",
       "modes": [
@@ -910,6 +929,7 @@
       "id": "teddy_bear_doctor",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Teddy Bear Doctor",
       "summary": "Run a pretend checkup for stuffed animals.",
       "modes": [
@@ -956,6 +976,7 @@
       "id": "shape_detective",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Shape Detective",
       "summary": "Search the room for circles, squares, and triangles.",
       "modes": [
@@ -1001,6 +1022,7 @@
       "id": "pirate_map_steps",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Pirate Map Steps",
       "summary": "Follow a tiny pretend map using steps and turns.",
       "modes": [
@@ -1049,6 +1071,7 @@
       "id": "whisper_zoo",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Whisper Zoo",
       "summary": "Create a quiet zoo using animal whispers and gentle poses.",
       "modes": [
@@ -1093,6 +1116,7 @@
       "id": "rainbow_sort_sprint",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Rainbow Sort Sprint",
       "summary": "Sort safe toys or blocks by color in a short timed challenge.",
       "modes": [
@@ -1138,6 +1162,7 @@
       "id": "family_news_desk",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Family News Desk",
       "summary": "Report happy family news from a pretend desk.",
       "modes": [
@@ -1182,6 +1207,7 @@
       "id": "five_senses_tour",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Five Senses Tour",
       "summary": "Notice safe sights, sounds, and textures in the room.",
       "modes": [
@@ -1229,6 +1255,7 @@
       "id": "cleanup_countdown_game",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Cleanup Countdown Game",
       "summary": "Turn a tiny cleanup into a cooperative mission.",
       "modes": [
@@ -1272,6 +1299,7 @@
       "id": "paper_airplane_weather",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Paper Airplane Weather",
       "summary": "Test paper airplanes through gentle pretend weather.",
       "modes": [
@@ -1318,6 +1346,7 @@
       "id": "copycat_clap_code",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Copycat Clap Code",
       "summary": "Repeat three supplied clap patterns from easy to tricky.",
       "modes": [
@@ -1365,6 +1394,7 @@
       "id": "backyard_micro_safari",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Backyard Micro Safari",
       "summary": "Look for tiny outdoor details with parent supervision.",
       "modes": [
@@ -1407,6 +1437,7 @@
       "id": "chair_train_station",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Chair Train Station",
       "summary": "Make chairs into a pretend train and announce stops.",
       "modes": [
@@ -1450,6 +1481,7 @@
       "id": "memory_tray_peek",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Memory Tray Peek",
       "summary": "Look at safe objects, hide them, and remember what changed.",
       "modes": [
@@ -1500,6 +1532,7 @@
       "id": "emotion_weather_report",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Emotion Weather Report",
       "summary": "Describe feelings as weather and choose a next step.",
       "modes": [
@@ -1545,6 +1578,7 @@
       "id": "tiny_tower_engineers",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Tiny Tower Engineers",
       "summary": "Build a small stable tower and test gentle changes.",
       "modes": [
@@ -1589,6 +1623,7 @@
       "id": "family_recipe_pretend",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Family Recipe Pretend",
       "summary": "Perform a complete silly no-cook Rainbow Dragon Soup recipe out loud.",
       "modes": [
@@ -1636,6 +1671,7 @@
       "id": "hallway_balance_beam",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Hallway Balance Beam",
       "summary": "Walk a pretend balance line with careful slow steps.",
       "modes": [
@@ -1681,6 +1717,7 @@
       "id": "quiet_library_helper",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Quiet Library Helper",
       "summary": "Sort books or toys into tiny groups with whisper voices.",
       "modes": [
@@ -1727,6 +1764,7 @@
       "id": "best_part_today",
       "type": "prompt",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Best Part Today",
       "summary": "Share one good moment from the day.",
       "modes": [
@@ -1765,6 +1803,7 @@
       "id": "superpower_for_helping",
       "type": "prompt",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Helping Superpower",
       "summary": "Invent a superpower that helps someone.",
       "modes": [
@@ -1802,6 +1841,7 @@
       "id": "kind_robot_instructions",
       "type": "prompt",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Kind Robot Instructions",
       "summary": "Give a robot kind, silly instructions.",
       "modes": [
@@ -1839,6 +1879,7 @@
       "id": "three_word_story",
       "type": "prompt",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Three Word Story",
       "summary": "Make a story from only three chosen words.",
       "modes": [
@@ -1877,6 +1918,7 @@
       "id": "thank_you_detective",
       "type": "prompt",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Thank-You Detective",
       "summary": "Notice someone to thank today.",
       "modes": [
@@ -1915,6 +1957,7 @@
       "id": "silly_invention_pitch",
       "type": "prompt",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Silly Invention Pitch",
       "summary": "Pitch a harmless invention for family life.",
       "modes": [
@@ -1951,6 +1994,7 @@
       "id": "wizard_pajama_parade",
       "type": "mad_libs",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Wizard Pajama Parade",
       "summary": "Choose words to create and read a silly story about a sleepy parade.",
       "modes": [
@@ -2013,6 +2057,7 @@
       "id": "robot_cookie_factory",
       "type": "mad_libs",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Robot Cookie Factory",
       "summary": "Choose words to create and read a silly story about a robot baking pretend cookies with a surprise.",
       "modes": [
@@ -2075,6 +2120,7 @@
       "id": "undersea_bedtime_bus",
       "type": "mad_libs",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Undersea Bedtime Bus",
       "summary": "Choose words to create and read a silly story about a bus driving under the sea at bedtime.",
       "modes": [
@@ -2137,6 +2183,7 @@
       "id": "castle_pizza_problem",
       "type": "mad_libs",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Castle Pizza Problem",
       "summary": "Choose words to create and read a silly story about a castle feast needing a strange solution.",
       "modes": [
@@ -2198,6 +2245,7 @@
       "id": "space_pet_show",
       "type": "mad_libs",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Space Pet Show",
       "summary": "Choose words to create and read a silly story about pets competing in a zero-gravity show.",
       "modes": [
@@ -2259,6 +2307,7 @@
       "id": "breakfast_dragon_train",
       "type": "mad_libs",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Breakfast Dragon Train",
       "summary": "Choose words to create and read a silly story about a dragon train delivering breakfast.",
       "modes": [
@@ -2321,6 +2370,7 @@
       "id": "animal_guessing_yes_no",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Animal Guessing",
       "summary": "Guess a ready-to-use animal by asking familiar yes-or-no questions.",
       "modes": [
@@ -2366,6 +2416,7 @@
       "id": "race_like_an_animal",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Race Like an Animal",
       "summary": "Cross a short course like an animal in a safe, flat, clear area.",
       "modes": [
@@ -2412,6 +2463,7 @@
       "id": "indoor_pillow_marco_polo",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Pillow Marco Polo: Eyes-Open Islands",
       "summary": "A safe eyes-open call-and-response walk using pillows only as island boundary markers.",
       "modes": [
@@ -2459,6 +2511,7 @@
       "id": "washable_coloring_together",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Washable Coloring Together",
       "summary": "Share a simple coloring page with washable, non-toxic art tools and adult supervision.",
       "modes": [
@@ -2509,6 +2562,7 @@
       "id": "washable_painting_shapes",
       "type": "activity",
       "status": "active",
+      "childHandoffLockEligible": false,
       "title": "Washable Painting Shapes",
       "summary": "Paint ready-made shapes with washable, non-toxic paint, protected surfaces, and adult supervision.",
       "modes": [

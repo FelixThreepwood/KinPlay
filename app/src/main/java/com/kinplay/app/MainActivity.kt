@@ -16,17 +16,24 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -44,9 +51,13 @@ import androidx.compose.ui.Alignment
 
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavType
@@ -59,12 +70,20 @@ import com.kinplay.app.feedback.FeedbackCaptureContext
 import com.kinplay.app.feedback.FeedbackOverlay
 import com.kinplay.app.lock.ChildHandoffLockContainer
 import com.kinplay.app.settings.AndroidLauncherIconGateway
+import com.kinplay.app.settings.ActivityDuration
 import com.kinplay.app.settings.AppSettings
 import com.kinplay.app.settings.AppSettingsRepository
 import com.kinplay.app.settings.LauncherIconSwitchResult
 import com.kinplay.app.settings.LauncherIconSwitcher
+import com.kinplay.app.settings.SessionConfigurationOverride
+import com.kinplay.app.settings.SessionRounds
 import com.kinplay.app.settings.SettingsScreen
 import com.kinplay.app.settings.SharedPreferencesSettingsKeyValueStore
+import com.kinplay.app.settings.resolveNextSessionConfiguration
+import com.kinplay.app.settings.sessionDefaults
+import com.kinplay.app.session.TimedSession
+import com.kinplay.app.session.isTimedSessionEligible
+import com.kinplay.app.session.startTimedSession
 import com.kinplay.app.ui.KinPlayTheme
 import com.kinplay.app.wyr.WouldYouRatherRoute
 import org.json.JSONObject
@@ -78,7 +97,7 @@ class MainActivity : ComponentActivity() {
 }
 
 const val CONTENT_CARD_DEFAULT_EXPANDED = false
-const val HOME_DESCRIPTOR = "Ready-to-use family games and activities"
+const val HOME_DESCRIPTOR = "Family play"
 const val HOME_INSTRUCTION_SECTION_ENABLED = false
 const val RANDOM_GAME_LABEL = "Random game"
 const val ALL_GAMES_AND_ACTIVITIES_LABEL = "All games and activities"
@@ -99,7 +118,9 @@ private object Routes {
     const val QuickPlay = "quick_play"
     const val PickGame = "pick_game"
     const val CalmDown = "calm_down"
-    const val AboutSafety = "about_safety"
+    const val Account = "account"
+    const val AboutApp = "about_app"
+    const val SafetyPrivacy = "safety_privacy"
     const val Settings = "settings"
     const val MadLibsCollection = "mad_libs_collection"
     const val WouldYouRather = WOULD_YOU_RATHER_ROUTE
@@ -108,6 +129,21 @@ private object Routes {
     fun category(categoryId: String) = "category/$categoryId"
     fun detail(itemId: String) = "detail/$itemId"
 }
+
+data class HomeShortcut(
+    val icon: String,
+    val title: String,
+    val description: String,
+    val route: String,
+    val tag: String,
+)
+
+val HOME_SHORTCUTS = listOf(
+    HomeShortcut("↻", RANDOM_GAME_LABEL, "Choose a ready-to-use game or activity", Routes.QuickPlay, "random_game"),
+    HomeShortcut("▦", ALL_GAMES_AND_ACTIVITIES_LABEL, "See every game and activity, including story activities", Routes.PickGame, "all_games_and_activities"),
+    HomeShortcut("⚙", "Settings", "Timers, activity duration, and color theme", Routes.Settings, "settings"),
+    HomeShortcut("ⓘ", "Safety and privacy", "Parent-led safety and privacy notes", Routes.SafetyPrivacy, "about_safety"),
+)
 
 @Composable
 fun KinPlayApp() {
@@ -132,6 +168,21 @@ fun KinPlayApp() {
             val contentPack = rememberContentPack()
             var favoriteIds by remember { mutableStateOf(loadIdSet(context, "favorite_ids")) }
             var recentIds by remember { mutableStateOf(loadIdList(context, "recent_ids")) }
+            fun persistSessionOverride(gameId: String, override: SessionConfigurationOverride?) {
+                if (override == null) {
+                    settingsRepository.clearNextSessionOverride(gameId)
+                } else {
+                    settingsRepository.saveNextSessionOverride(gameId, override)
+                }
+                appSettings = settingsRepository.load()
+            }
+            fun startSession(gameId: String): TimedSession? {
+                val item = contentPack.activeItemById(gameId) ?: return null
+                if (!item.isTimedSessionEligible()) return null
+                val session = startTimedSession(gameId, settingsRepository)
+                appSettings = settingsRepository.load()
+                return session
+            }
             fun persistFavorites(ids: Set<String>) {
                 favoriteIds = ids
                 saveIdSet(context, "favorite_ids", ids)
@@ -147,7 +198,9 @@ fun KinPlayApp() {
                     composable(Routes.QuickPlay) { QuickPlayScreen(contentPack, favoriteIds, recentIds, navController) }
                     composable(Routes.PickGame) { ContentListScreen(ALL_GAMES_AND_ACTIVITIES_LABEL, contentPack.gameLibraryItems(), favoriteIds, navController) }
                     composable(Routes.CalmDown) { ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController) }
-                    composable(Routes.AboutSafety) { AboutSafetyScreen(navController) }
+                    composable(Routes.Account) { AccountScreen(navController) }
+                    composable(Routes.AboutApp) { AboutAppScreen(navController) }
+                    composable(Routes.SafetyPrivacy) { SafetyPrivacyScreen(contentPack, navController) }
                     composable(Routes.Settings) {
                         SettingsScreen(
                             settings = appSettings,
@@ -165,6 +218,9 @@ fun KinPlayApp() {
                     composable(Routes.WouldYouRather) {
                         WouldYouRatherRoute(
                             gameTimer = appSettings.gameTimer,
+                            showChildHandoffLock = shouldShowChildHandoffLock(
+                                contentPack.activeItemById(WOULD_YOU_RATHER_ITEM_ID),
+                            ),
                             onExit = { navController.popBackStack() },
                         )
                     }
@@ -203,6 +259,8 @@ fun KinPlayApp() {
                             onMarkPlayed = { persistRecent(recentIds.withRecentFirst(itemId)) },
                             settings = appSettings,
                             navController = navController,
+                            onSaveSessionOverride = ::persistSessionOverride,
+                            onStartSession = ::startSession,
                         )
                     }
                 }
@@ -250,6 +308,7 @@ fun rememberContentPack(): ContentPack {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: List<String>, navController: NavController) {
+    var appMenuExpanded by rememberSaveable { mutableStateOf(false) }
     Scaffold(
         topBar = {
             TopAppBar(
@@ -262,6 +321,53 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                         Text(HOME_DESCRIPTOR, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1)
                     }
                 },
+                actions = {
+                    Box {
+                        IconButton(
+                            onClick = { appMenuExpanded = true },
+                            modifier = Modifier.testTag("app-menu-button"),
+                        ) {
+                            Text(
+                                text = "☰",
+                                modifier = Modifier.semantics { contentDescription = "Open app menu" },
+                                color = MaterialTheme.colorScheme.onBackground,
+                            )
+                        }
+                        DropdownMenu(
+                            expanded = appMenuExpanded,
+                            onDismissRequest = { appMenuExpanded = false },
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text("Settings") },
+                                onClick = {
+                                    appMenuExpanded = false
+                                    navController.navigate(Routes.Settings)
+                                },
+                            )
+                            DropdownMenuItem(
+                                text = { Text("Account") },
+                                onClick = {
+                                    appMenuExpanded = false
+                                    navController.navigate(Routes.Account)
+                                },
+                            )
+                            DropdownMenuItem(
+                                text = { Text("About the app") },
+                                onClick = {
+                                    appMenuExpanded = false
+                                    navController.navigate(Routes.AboutApp)
+                                },
+                            )
+                            DropdownMenuItem(
+                                text = { Text("Safety and privacy") },
+                                onClick = {
+                                    appMenuExpanded = false
+                                    navController.navigate(Routes.SafetyPrivacy)
+                                },
+                            )
+                        }
+                    }
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background,
                     titleContentColor = MaterialTheme.colorScheme.onBackground,
@@ -269,48 +375,74 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
             )
         },
     ) { innerPadding ->
-        PageColumn(Modifier.padding(innerPadding)) {
+        PageColumn(Modifier.padding(innerPadding).testTag("home-viewport")) {
             QuickCategoryGrid { category -> navController.navigate(Routes.category(category.id)) }
             val favoriteItems = contentPack.favoriteItems(favoriteIds)
             val recentItems = contentPack.recentItems(recentIds)
             if (favoriteItems.isNotEmpty()) {
-                SectionTitle("Favorites", "Saved picks for faster family starts")
+                SectionTitle("Favorites")
                 favoriteItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
             }
             if (recentItems.isNotEmpty()) {
-                SectionTitle("Recently played", "Return to what already worked")
+                SectionTitle("Recently played")
                 recentItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
             }
-            SectionTitle("More ways to start", "Offline, parent-led choices for ages 2–8")
-            HomeButton(RANDOM_GAME_LABEL, "Choose a ready-to-use game or activity") { navController.navigate(Routes.QuickPlay) }
-            HomeButton(ALL_GAMES_AND_ACTIVITIES_LABEL, "See every game and activity, including story activities") { navController.navigate(Routes.PickGame) }
-            HomeButton("Settings", "Timers, activity duration, and color theme") { navController.navigate(Routes.Settings) }
-            HomeButton("About / Safety", "Parent-led safety and privacy notes") { navController.navigate(Routes.AboutSafety) }
+            HOME_SHORTCUTS.forEach { shortcut ->
+                HomeButton(shortcut, "home-action-${shortcut.tag}") { navController.navigate(shortcut.route) }
+            }
         }
+    }
+}
+
+@Preview(name = "Home compact phone", widthDp = 320, heightDp = 640, showBackground = true)
+@Preview(name = "Home representative wide", widthDp = 600, heightDp = 640, showBackground = true)
+@Preview(name = "Home large text", widthDp = 320, heightDp = 640, fontScale = 1.5f, showBackground = true)
+@Composable
+private fun HomePreview() {
+    KinPlayTheme(com.kinplay.app.settings.AppColorTheme.FOREST) {
+        HomeScreen(
+            contentPack = ContentPack(),
+            favoriteIds = emptySet(),
+            recentIds = emptyList(),
+            navController = rememberNavController(),
+        )
     }
 }
 
 @Composable
 fun QuickCategoryGrid(onSelect: (QuickCategory) -> Unit) {
-    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        QuickCategory.defaultGrid.chunked(2).forEach { categoryRow ->
-            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                categoryRow.forEach { category ->
-                    Card(
-                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-                        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
-                        shape = RoundedCornerShape(18.dp),
-                        modifier = Modifier
-                            .weight(1f)
-                            .height(88.dp)
-                            .clickable { onSelect(category) },
-                    ) {
-                        Column(
-                            modifier = Modifier.fillMaxSize().padding(12.dp),
-                            verticalArrangement = Arrangement.SpaceBetween,
+    BoxWithConstraints {
+        val fontScale = LocalDensity.current.fontScale
+        val cardHeight = when {
+            fontScale >= 1.5f -> 136.dp
+            maxWidth < 360.dp -> 108.dp
+            else -> 88.dp
+        }
+        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            QuickCategory.defaultGrid.chunked(2).forEach { categoryRow ->
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    categoryRow.forEach { category ->
+                        Card(
+                            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                            elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
+                            shape = RoundedCornerShape(18.dp),
+                            modifier = Modifier
+                                .weight(1f)
+                                .heightIn(min = cardHeight)
+                                .testTag("home-category-${category.id}")
+                                .clickable(
+                                    onClickLabel = category.label,
+                                    role = Role.Button,
+                                    onClick = { onSelect(category) },
+                                ),
                         ) {
-                            Text(category.label, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
-                            Text("${category.placeCue}  ›", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
+                            Column(
+                                modifier = Modifier.fillMaxSize().padding(12.dp),
+                                verticalArrangement = Arrangement.SpaceBetween,
+                            ) {
+                                Text(category.label, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                                Text("${category.placeCue}  ›", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
+                            }
                         }
                     }
                 }
@@ -389,25 +521,34 @@ fun DetailPill(text: String) {
 }
 
 @Composable
-fun HomeButton(title: String, subtitle: String, onClick: () -> Unit) {
+fun HomeButton(shortcut: HomeShortcut, testTag: String, onClick: () -> Unit) {
     Card(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(22.dp),
-        modifier = Modifier.fillMaxWidth().clickable(
-            onClickLabel = title,
-            role = Role.Button,
-            onClick = onClick,
-        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(min = 48.dp)
+            .testTag(testTag)
+            .clickable(
+                onClickLabel = "${shortcut.title}: ${shortcut.description}",
+                role = Role.Button,
+                onClick = onClick,
+            ),
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 14.dp),
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 10.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
+            Text(
+                text = shortcut.icon,
+                style = MaterialTheme.typography.headlineSmall,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.testTag("${testTag}-icon"),
+            )
             Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
-                Text(title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
-                Text(subtitle, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(shortcut.title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
             }
             Text("›", style = MaterialTheme.typography.headlineSmall, color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
         }
@@ -460,7 +601,6 @@ fun ContentListScreen(
 ) {
     Scaffold(topBar = { TopAppBar(title = { Text(title) }) }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
-            SectionTitle(title, "${items.size} offline local cards")
             if (items.isEmpty()) {
                 Text("No matching local content found.")
             }
@@ -653,67 +793,249 @@ fun ActivityDetailScreen(
     onMarkPlayed: () -> Unit,
     settings: AppSettings,
     navController: NavController,
+    onSaveSessionOverride: (String, SessionConfigurationOverride?) -> Unit = { _, _ -> },
+    onStartSession: (String) -> TimedSession? = { null },
+) {
+    if (shouldShowChildHandoffLock(item)) {
+        ChildHandoffLockContainer { isLocked ->
+            ActivityDetailSurface(
+                item = item,
+                itemId = itemId,
+                isFavorite = isFavorite,
+                onToggleFavorite = onToggleFavorite,
+                onMarkPlayed = onMarkPlayed,
+                settings = settings,
+                navController = navController,
+                isLocked = isLocked,
+                onSaveSessionOverride = onSaveSessionOverride,
+                onStartSession = onStartSession,
+            )
+        }
+    } else {
+        ActivityDetailSurface(
+            item = item,
+            itemId = itemId,
+            isFavorite = isFavorite,
+            onToggleFavorite = onToggleFavorite,
+            onMarkPlayed = onMarkPlayed,
+            settings = settings,
+            navController = navController,
+            isLocked = false,
+            onSaveSessionOverride = onSaveSessionOverride,
+            onStartSession = onStartSession,
+        )
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun ActivityDetailSurface(
+    item: KinPlayItem?,
+    itemId: String,
+    isFavorite: Boolean,
+    onToggleFavorite: () -> Unit,
+    onMarkPlayed: () -> Unit,
+    settings: AppSettings,
+    navController: NavController,
+    isLocked: Boolean,
+    onSaveSessionOverride: (String, SessionConfigurationOverride?) -> Unit,
+    onStartSession: (String) -> TimedSession?,
 ) {
     val context = LocalContext.current.applicationContext
-    ChildHandoffLockContainer { isLocked ->
-        Box(modifier = Modifier.fillMaxSize()) {
-            Scaffold(topBar = { TopAppBar(title = { Text(item?.title ?: "Activity") }) }) { innerPadding ->
-                PageColumn(Modifier.padding(innerPadding)) {
-                    if (item == null) {
-                        Text("Activity not found.")
-                    } else {
-                        Text(item.title, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
-                        Text(item.summary, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        Card(
-                            colors = CardDefaults.cardColors(
-                                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                            ),
-                            modifier = Modifier.fillMaxWidth(),
-                        ) {
-                            Text(
-                                "Your play plan: ${settings.activityDuration.label} activity • ${settings.gameTimer.label} rounds",
-                                modifier = Modifier.padding(14.dp),
-                                fontWeight = FontWeight.Bold,
-                            )
-                        }
-                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            DetailPill(item.displayAgeRange())
-                            DetailPill("Typical: ${item.durationMinutes} min")
-                            DetailPill(item.energyLevel)
-                        }
-                        item.participantFitLabel()?.let { DetailPill(it) }
-                        item.detailSections().forEach { section ->
-                            SectionList(section.title, section.lines)
-                        }
-                        if (item.parentNotes.isNotBlank()) {
-                            Text("Parent note", fontWeight = FontWeight.Bold)
-                            Text(item.parentNotes)
-                        }
-                        if (item.type == "mad_libs") {
-                            MadLibPlayPanel(item, enabled = !isLocked)
-                        }
-                        Button(onClick = onMarkPlayed, enabled = !isLocked) { Text("Mark played") }
-                        OutlinedButton(onClick = onToggleFavorite, enabled = !isLocked) { Text(if (isFavorite) "Remove favorite" else "Add favorite") }
-                        Text("Safety tags: ${item.safetyTags.joinToString { it.displayTagLabel() }}")
+    var startMessage by rememberSaveable(itemId) { mutableStateOf<String?>(null) }
+    val resolvedSession = item
+        ?.takeIf(KinPlayItem::isTimedSessionEligible)
+        ?.let { settings.resolveNextSessionConfiguration(it.id) }
+    Box(modifier = Modifier.fillMaxSize()) {
+        Scaffold(topBar = { TopAppBar(title = { Text(item?.title ?: "Activity") }) }) { innerPadding ->
+            PageColumn(Modifier.padding(innerPadding)) {
+                if (item == null) {
+                    Text("Activity not found.")
+                } else {
+                    Text(item.summary, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    if (item.isTimedSessionEligible()) {
+                        SessionConfigurationControls(
+                            itemId = item.id,
+                            settings = settings,
+                            enabled = !isLocked,
+                            onSaveSessionOverride = onSaveSessionOverride,
+                            onStartSession = { gameId ->
+                                startMessage = onStartSession(gameId)?.let { session ->
+                                    "Session ready: ${session.configuration.duration.label} • ${session.configuration.rounds.label}"
+                                } ?: "Session could not start."
+                            },
+                        )
                     }
-                    OutlinedButton(onClick = { navController.popBackStack() }, enabled = !isLocked) { Text("Back") }
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.primaryContainer,
+                            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                        ),
+                        modifier = Modifier.fillMaxWidth(),
+                    ) {
+                        val playPlan = resolvedSession ?: settings.sessionDefaults()
+                        Text(
+                            "Your play plan: ${playPlan.duration.label} activity • ${playPlan.rounds.label} • ${settings.gameTimer.label} per turn",
+                            modifier = Modifier.padding(14.dp),
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
+                    startMessage?.let { message ->
+                        Text(
+                            message,
+                            modifier = Modifier.testTag("session-started"),
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        DetailPill(item.displayAgeRange())
+                        DetailPill("Typical: ${item.durationMinutes} min")
+                        DetailPill(item.energyLevel)
+                    }
+                    item.participantFitLabel()?.let { DetailPill(it) }
+                    item.detailSections().forEach { section ->
+                        SectionList(section.title, section.lines)
+                    }
+                    if (item.parentNotes.isNotBlank()) {
+                        Text("Parent note", fontWeight = FontWeight.Bold)
+                        Text(item.parentNotes)
+                    }
+                    if (item.type == "mad_libs") {
+                        MadLibPlayPanel(item, enabled = !isLocked)
+                    }
+                    Button(onClick = onMarkPlayed, enabled = !isLocked) { Text("Mark played") }
+                    OutlinedButton(onClick = onToggleFavorite, enabled = !isLocked) { Text(if (isFavorite) "Remove favorite" else "Add favorite") }
                 }
-            }
-            activityDetailFeedbackCapture(
-                feedbackEnabled = BuildConfig.FEEDBACK_ENABLED,
-                isLocked = isLocked,
-                itemId = itemId,
-                item = item,
-            )?.let { capture ->
-                FeedbackOverlay(
-                    context = context,
-                    screen = capture.screen,
-                    contentId = capture.contentId,
-                    contentTitle = capture.contentTitle,
-                )
+                OutlinedButton(onClick = { navController.popBackStack() }, enabled = !isLocked) { Text("Back") }
             }
         }
+        activityDetailFeedbackCapture(
+            feedbackEnabled = BuildConfig.FEEDBACK_ENABLED,
+            isLocked = isLocked,
+            itemId = itemId,
+            item = item,
+        )?.let { capture ->
+            FeedbackOverlay(
+                context = context,
+                screen = capture.screen,
+                contentId = capture.contentId,
+                contentTitle = capture.contentTitle,
+            )
+        }
+    }
+}
+
+@Composable
+fun SessionConfigurationControls(
+    itemId: String,
+    settings: AppSettings,
+    enabled: Boolean = true,
+    onSaveSessionOverride: (String, SessionConfigurationOverride?) -> Unit,
+    onStartSession: (String) -> Unit,
+) {
+    val currentOverride = settings.nextSessionOverrides[itemId]
+    val resolved = settings.resolveNextSessionConfiguration(itemId)
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("session-configuration"),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+        shape = RoundedCornerShape(18.dp),
+    ) {
+        Column(
+            modifier = Modifier
+                .padding(14.dp)
+                .selectableGroup(),
+            verticalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
+            Text("Timed session", fontWeight = FontWeight.Bold)
+            Text(
+                "Choose values for this next session. Settings defaults stay unchanged.",
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = MaterialTheme.typography.bodySmall,
+            )
+            Text(
+                "Applied session: ${resolved.duration.label} • ${resolved.rounds.label}",
+                modifier = Modifier.testTag("session-applied"),
+                fontWeight = FontWeight.Bold,
+            )
+            Text("Session duration", fontWeight = FontWeight.Bold)
+            ActivityDuration.entries.forEach { option ->
+                SessionChoiceRow(
+                    label = option.label,
+                    selected = resolved.duration == option,
+                    testTag = "session-duration-${option.wireValue}",
+                    enabled = enabled,
+                    onClick = {
+                        onSaveSessionOverride(
+                            itemId,
+                            SessionConfigurationOverride(duration = option, rounds = currentOverride?.rounds),
+                        )
+                    },
+                )
+            }
+            Text("Session rounds", fontWeight = FontWeight.Bold)
+            SessionRounds.entries.forEach { option ->
+                SessionChoiceRow(
+                    label = option.label,
+                    selected = resolved.rounds == option,
+                    testTag = "session-rounds-${option.wireValue}",
+                    enabled = enabled,
+                    onClick = {
+                        onSaveSessionOverride(
+                            itemId,
+                            SessionConfigurationOverride(duration = currentOverride?.duration, rounds = option),
+                        )
+                    },
+                )
+            }
+            if (currentOverride != null) {
+                OutlinedButton(
+                    onClick = { onSaveSessionOverride(itemId, null) },
+                    enabled = enabled,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .testTag("session-reset-button"),
+                ) {
+                    Text("Use Settings defaults")
+                }
+            }
+            Button(
+                onClick = { onStartSession(itemId) },
+                enabled = enabled,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("session-start-button"),
+            ) {
+                Text("Start session")
+            }
+        }
+    }
+}
+
+@Composable
+private fun SessionChoiceRow(
+    label: String,
+    selected: Boolean,
+    testTag: String,
+    enabled: Boolean,
+    onClick: () -> Unit,
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag(testTag)
+            .selectable(
+                selected = selected,
+                enabled = enabled,
+                role = Role.RadioButton,
+                onClick = onClick,
+            )
+            .padding(horizontal = 8.dp, vertical = 3.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        RadioButton(selected = selected, onClick = null, enabled = enabled)
+        Text(label, modifier = Modifier.padding(start = 6.dp))
     }
 }
 
@@ -771,19 +1093,67 @@ fun MadLibPlayPanel(story: KinPlayItem, enabled: Boolean = true) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AboutSafetyScreen(navController: NavController) {
-    Scaffold(topBar = { TopAppBar(title = { Text("About / Safety") }) }) { innerPadding ->
-        PageColumn(Modifier.padding(innerPadding)) {
-            Text("Parent-led by design", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-            Text("KinPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.")
+fun AccountScreen(navController: NavController) {
+    DestinationScreen(title = "Account", navController = navController) {
+        Text("No account system is included in this MVP.", fontWeight = FontWeight.Bold)
+        Text("Settings and feedback stay on this device. Account features are staged for a future product decision.")
+    }
+}
+
+@Composable
+fun AboutAppScreen(navController: NavController) {
+    DestinationScreen(title = "About the app", navController = navController) {
+        Text("KinPlay", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+        Text("Offline-first family play for parent-led moments.")
+        Text("Version ${BuildConfig.VERSION_NAME}")
+    }
+}
+
+@Composable
+fun SafetyPrivacyScreen(contentPack: ContentPack, navController: NavController) {
+    DestinationScreen(title = "Safety and privacy", navController = navController) {
+        Text("Parent-led by design", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+        Text("KinPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.")
             Text("MVP privacy", fontWeight = FontWeight.Bold)
             Text("No accounts, analytics, ads, purchases, camera, microphone, contacts, location, or other sensitive Android permissions are requested.")
             Text("Child handoff lock limits", fontWeight = FontWeight.Bold)
             Text("The 3-second child handoff lock prevents accidental controls, Back, and exits inside KinPlay. It is not kiosk mode and cannot block Android system navigation, notifications, power controls, or another person leaving the app. KinPlay does not request device-owner, accessibility, or intrusive permissions.")
             Text("Content source", fontWeight = FontWeight.Bold)
             Text("The app ships seed content as a local JSON asset and does not need network access for the MVP flow.")
-            Button(onClick = { navController.popBackStack() }) { Text("Back home") }
-        }
+            Text("Reviewed content safety", fontWeight = FontWeight.Bold)
+            contentPack.activeItems()
+                .map(::reviewedSafetyTagSummary)
+                .distinct()
+                .take(3)
+                .forEach { summary -> Text(summary) }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun DestinationScreen(
+    title: String,
+    navController: NavController,
+    content: @Composable ColumnScope.() -> Unit,
+) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(title) },
+                navigationIcon = {
+                    Text(
+                        text = "‹ Back",
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier
+                            .clickable(onClick = { navController.popBackStack() })
+                            .padding(16.dp),
+                    )
+                },
+            )
+        },
+    ) { innerPadding ->
+        PageColumn(Modifier.padding(innerPadding), content = content)
     }
 }
 
@@ -847,6 +1217,7 @@ data class KinPlayItem(
     val madLibsTemplate: String = "",
     val readAloudNote: String = "",
     val participantSuitability: ParticipantSuitability? = null,
+    val childHandoffLockEligible: Boolean = false,
 ) {
     fun renderMadLib(answers: Map<String, String>): String {
         var result = madLibsTemplate
@@ -868,6 +1239,7 @@ data class KinPlayItem(
             require((status != "active" && "quality_time" !in quickCategories) || participantSuitability != null) {
                 "Active or Quality Time item ${json.getString("id")} requires participantSuitability"
             }
+            val childHandoffLockEligible = json.optBoolean("childHandoffLockEligible", false)
             return KinPlayItem(
                 id = json.getString("id"),
                 type = json.getString("type"),
@@ -892,6 +1264,7 @@ data class KinPlayItem(
                 madLibsTemplate = madLibs?.optString("template", "").orEmpty(),
                 readAloudNote = madLibs?.optString("readAloudNote", "").orEmpty(),
                 participantSuitability = participantSuitability,
+                childHandoffLockEligible = childHandoffLockEligible,
             )
         }
     }
@@ -944,6 +1317,8 @@ enum class QuickCategory(val id: String, val label: String, val placeCue: String
 
 fun List<KinPlayItem>.activeContent(): List<KinPlayItem> = filter { it.status == "active" }
 
+fun shouldShowChildHandoffLock(item: KinPlayItem?): Boolean = item?.childHandoffLockEligible == true
+
 fun List<KinPlayItem>.itemsForMode(mode: String): List<KinPlayItem> = activeContent().filter { mode in it.modes }
 
 fun List<KinPlayItem>.itemsForQuickCategory(categoryId: String): List<KinPlayItem> =
@@ -977,7 +1352,8 @@ fun KinPlayItem.setupBurdenLabel(): String =
 
 fun KinPlayItem.setupPreviewLabel(maxCharacters: Int = 84): String {
     val prefix = "Setup: "
-    val firstStep = setupSteps.firstOrNull { it.isNotBlank() }?.trim() ?: return "${prefix}No setup needed"
+    if (id == "quiet_color_hunt") return "Clues and suggestions: Choose one safe object everyone can see."
+    val firstStep = displaySetupSteps().firstOrNull { it.isNotBlank() }?.trim() ?: return "${prefix}No setup needed"
     val availableCharacters = (maxCharacters - prefix.length).coerceAtLeast(1)
     if (firstStep.length <= availableCharacters) return prefix + firstStep
     if (availableCharacters == 1) return prefix + "…"
@@ -990,6 +1366,9 @@ fun KinPlayItem.setupPreviewLabel(maxCharacters: Int = 84): String {
 
 fun KinPlayItem.collapsedCardPreviewLines(): List<String> =
     listOf(summary, setupBurdenLabel(), setupPreviewLabel())
+
+fun KinPlayItem.displaySetupSteps(): List<String> =
+    if (id == "quiet_color_hunt") listOf("Choose one safe object everyone can see.") else setupSteps
 
 fun KinPlayItem.isMadLibsCollection(): Boolean = id == MAD_LIBS_COLLECTION_ID
 
@@ -1037,10 +1416,17 @@ fun String.displayTagLabel(): String = when (this) {
         .replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
 }
 
+fun reviewedSafetyTagSummary(item: KinPlayItem): String =
+    "Safety tags: ${item.safetyTags.joinToString { it.displayTagLabel() }}"
+
 fun KinPlayItem.detailSections(): List<DetailSection> = buildList {
     add(DetailSection("Materials", listOf(if (materials.isEmpty()) "No materials needed." else materials.joinToString())))
-    if (setupSteps.isNotEmpty()) add(DetailSection("Setup", setupSteps))
-    if (playSteps.isNotEmpty()) add(DetailSection("Steps", playSteps))
+    if (displaySetupSteps().isNotEmpty()) add(DetailSection("Setup", displaySetupSteps()))
+    if (id == "quiet_color_hunt") {
+        if (playSteps.isNotEmpty()) add(DetailSection("Clues and suggestions", playSteps))
+    } else if (playSteps.isNotEmpty()) {
+        add(DetailSection("Steps", playSteps))
+    }
     if (promptText.isNotBlank()) add(DetailSection("Prompt", listOf(promptText)))
     if (followUps.isNotEmpty()) add(DetailSection("Follow-up questions", followUps))
     if (readAloudNote.isNotBlank()) add(DetailSection("Read-aloud note", listOf(readAloudNote)))

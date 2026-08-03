@@ -108,9 +108,9 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Normalized finding: Keep KinPlay at the upper-left, place a concise one-line descriptor beside it, remove the “What fits now” instructional section, and move the six-category grid upward. Defer richer graphics and animated characters to later development.
 - Expected behavior: The first screen presents identity, purpose, and category choices with minimal copy and no unnecessary vertical gap.
 - Reproduction: Visual review required against the affected build.
-- Implementation status: revision-required
-- Retest build: 0.4.0-beta1 (4)
-- Verification result: tester_feedback_requires_revision
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
 - Additional source note: `KP-NOTE-8BA66EEA-98BB-4FFA-B1C5-68973A6FDF04`
 - Additional source note: `KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80`
 - Latest 0.5.0 feedback: 0.5.0 feedback says Home still contains unnecessary copy and text-heavy controls, so the compact-home acceptance criterion needs revision.
@@ -324,11 +324,12 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: Lock state is unmistakable, activation and release require a deliberate hold, progress is visible, and accidental app controls or back navigation are guarded within Android platform limits. System-level escape restrictions require a feasibility and safety review.
 - Reproduction: Android platform and safety review required. Related: `KPF-0017`.
 - Implementation evidence: Game and activity play surfaces now expose a visible three-second hold-to-lock/unlock control with progress, lock-state announcement, keyboard and accessibility activation countdown, and an overlay that blocks in-app controls and Back while preserving the recovery control; Android system controls intentionally remain available.
-- Implementation status: revision-required
-- Retest build: 0.5.0-beta1 (5)
-- Verification result: tester_feedback_requires_revision
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
 - Additional source note: `KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9`
 - Latest 0.5.0 feedback: Physical-device feedback requires revised lock/key icon states, nonobscuring locked content, tap-triggered guidance, and per-game eligibility.
+- B11 implementation evidence: Eligible play surfaces retain clear content while the lock blocks in-app controls and Back; the lock control remains available for recovery; guidance appears only after a blocked tap and expires after three seconds. Android behavior-test source compilation passed; no connected device was available for execution.
 
 ## KPF-0019 — Create an original KinPlay launcher icon through Gemini
 
@@ -421,7 +422,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: All user-visible content offers ready-made help in neutral, supportive language without characterizing the parent negatively.
 - Reproduction/triage: Copy inventory review required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Replaced the I Spy parent-state wording in both seed assets and the review export; the rendered setup preview and detail section use the neutral `Clues and suggestions` heading.
 - Related items: `KPF-0010`
 
 ## KPF-0024 — Use compact lock and key emoji controls for handoff lock state
@@ -437,7 +441,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: The compact control communicates both current state and the available three-second action, with an accessible text label independent of the emoji.
 - Reproduction/triage: Visual state and accessibility review required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: The handoff control uses compact circular 🔒/🔑 states with independent accessible action and progress semantics.
 - Related items: `KPF-0018`, `KPF-0025`, `KPF-0026`
 
 ## KPF-0025 — Keep locked content clear and show unlock guidance only after a tap
@@ -453,7 +460,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: Lock blocks unintended interaction without obscuring content; guidance appears only in response to an attempted tap and does not become permanent clutter.
 - Reproduction/triage: Interaction and accessibility specification required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Locked content remains visible and input-blocked; a blocked tap alone reveals temporary `Hold key for 3 seconds to unlock` guidance.
 - Related items: `KPF-0018`, `KPF-0024`
 
 ## KPF-0026 — Limit handoff lock to selected child-interaction games
@@ -469,7 +479,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: Each game has reviewed lock eligibility, and noneligible detail or play screens do not display the lock control.
 - Reproduction/triage: Content inventory and eligibility review required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Added an explicit reviewed eligibility decision for all 53 active seed items. Only Charades and Would You Rather show the lock; all other active content remains lock-free. Detail and Would You Rather routes consume the parsed decision.
 - Related items: `KPF-0018`
 
 ## KPF-0027 — Replace the text feedback control with a compact note emoji button
@@ -485,7 +498,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: The compact control opens the same feedback flow, has an accessible label, and remains easy to identify and tap.
 - Reproduction/triage: Visual and accessibility review required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Replaced the expanded text feedback launcher with a compact 📝 floating control while retaining the existing capture, send, and copy flow and an accessible unsent-count label.
 
 ## KPF-0028 — Default Would You Rather play to landscape orientation
 
@@ -516,7 +532,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: Eligible game detail pages clearly separate reading from starting, and Start launches a consistent session using current defaults.
 - Reproduction/triage: Game inventory and session model specification required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: partial; B14 adds the eligible-details Start foundation and resolves the immutable timed-session configuration without changing global settings. B15 remains responsible for the interactive timer, round progress, completion, and exit surface.
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: B14 automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Active ordinary `pick_a_game` activities expose a visible `Start session` control near the top of the details page, show the applied duration/round values, and construct a one-shot `TimedSession` from per-game overrides or global defaults. Prompt, story, draft, and calm-only content remains reading-oriented until its session eligibility is reviewed.
 - Related items: `KPF-0017`, `KPF-0030`
 
 ## KPF-0030 — Add default rounds and per-game duration and round overrides
@@ -532,7 +551,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: Defaults persist across launches, each eligible game can override duration and rounds for the next session, and the applied values are visible before Start.
 - Reproduction/triage: Settings precedence and session model specification required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; B14 adds eligible details-page duration and round controls with independent per-game next-session overrides, reset-to-defaults behavior, and visible applied values.
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Settings defaults remain persisted globally; details-page selectors persist only the selected game's override, and the Start foundation consumes that override once without mutating global duration or round defaults. JVM session tests, the details-page contract test, Android-test source compilation, debug assembly, lint, and the checkpoint validator passed. No Android target was connected.
 - Related items: `KPF-0017`, `KPF-0029`
 
 ## KPF-0031 — Adopt collapsed card, expanded card, and details page as canonical game-view terms
@@ -565,7 +587,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: The interface avoids repetitive safety labeling, but any warning required to prevent foreseeable harm or satisfy legal, platform, or product obligations remains available through a reviewed nonintrusive design.
 - Reproduction/triage: Item-by-item fail-safe safety/spec review complete; implementation remains allocated across B8 and B9.
 - Decision: implement only matrix-approved retain/relocate/collapse/remove decisions; no protected-warning deletion authorized
-- Implementation status: in-progress
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Removed normal detail safety-tag rendering, retained reviewed warning-bearing content and privacy/lock boundaries, exposed reviewed safety summaries through Safety and privacy, and synchronized the neutral I Spy copy with the fail-safe matrix. No protected warning was deleted.
 - Related items: `KPF-0005`, `KPF-0036`
 - Triage note: Independent review passed the 587-entry decision matrix (540 content, 37 Kotlin, 10 safety-tag entries). All 154 protected entries are retain/relocate only, `uiDeletionAuthorized` is false, and connected-device execution of the compiled warning-presentation instrumentation test remains pending.
 
@@ -582,7 +607,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: Home prioritizes actions and recognizable labels; retained copy has a clear decision, accessibility, legal, or instructional purpose.
 - Reproduction/triage: Copy inventory and product review required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Removed the reported Home subtitle and repeated list/detail headings while retaining action labels, accessibility text, safety/privacy notices, and activity instructions. Added source-level copy-absence and responsive Home coverage.
 - Related items: `KPF-0006`
 
 ## KPF-0034 — Replace text-heavy Home shortcuts with compact graphical controls
@@ -598,7 +626,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: Home shortcuts are compact, recognizable, accessible, and do not depend on decorative subtext.
 - Reproduction/triage: Gemini visual brief and accessibility review required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Home shortcuts now use compact graphical cues, readable labels, semantic click labels, minimum touch targets, and no rendered shortcut subtext; native symbols were used instead of a custom raster asset.
 - Related items: `KPF-0006`, `KPF-0035`, `KPF-0036`
 
 ## KPF-0035 — Shorten Home shortcut labels
@@ -614,7 +645,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: The two shortcut labels are concise, accurately describe their destinations, and remain consistent across Home, navigation, tests, and accessibility labels.
 - Reproduction/triage: Navigation copy inventory required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Home and its destinations use the exact `Random game` and `All games and activities` labels with matching navigation and accessibility labels.
 - Related items: `KPF-0009`, `KPF-0034`
 
 ## KPF-0036 — Add a top-right application menu on Home
@@ -630,7 +664,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: The menu is accessible, compact, and each listed destination either opens a complete screen or is explicitly staged behind an approved product decision; duplicate Settings entry points are resolved intentionally.
 - Reproduction/triage: Navigation architecture and account scope review required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: The upper-right three-line menu routes to Settings, staged Account, About the app, and Safety and privacy; duplicate Settings entry points remain intentionally available and the Account screen states that no account system exists in this MVP.
 - Related items: `KPF-0032`, `KPF-0034`
 - Triage note: The Settings gear request and Settings menu entry may coexist or be consolidated; product navigation review must choose deliberately.
 

@@ -1,6 +1,6 @@
 # KinPlay Feedback Retest Log
 
-Last updated: 2026-07-28T04:08:56-07:00
+Last updated: 2026-08-03T06:56:47Z
 
 Current revision under retest: **0.5.0-beta1 (5)** for `KPF-0011`–`KPF-0020`. The earlier `KPF-0001`–`KPF-0010` cohort retains its recorded retest build **0.4.0-beta1 (4)**.
 
@@ -15,7 +15,7 @@ The Android instrumentation test sources compiled successfully, but they were **
 | KPF-0003 | fixed-awaiting-retest | 0.4.0-beta1 (4) | Open Would You Rather, find the `Gross & Silly` section, and read at least four pairs aloud; confirm they feel mild and child-appropriate. |
 | KPF-0004 | fixed-awaiting-retest | 0.4.0-beta1 (4) | Find Race Like an Animal in Get the Energy Out and Outdoor; confirm the kangaroo, cheetah, rabbit, frog, safe-area, and walking/low-impact directions work in practice. |
 | KPF-0005 | fixed-awaiting-retest | 0.4.0-beta1 (4) | Run Pillow Marco Polo: Eyes-Open Islands with adult supervision. Verify eyes stay open, everyone walks, the caller is stationary, pillows remain boundary/island markers, hazards are cleared, and play stops before it becomes chaotic. Confirm nobody throws, face-covers with, piles, or jumps on pillows. |
-| KPF-0006 | accepted—revision required | 0.5.0-beta1 (5) | Retest failed/incomplete: Home still contains unnecessary copy and text-heavy controls. Re-evaluate after the next authorized revision. |
+| KPF-0006 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Home now has a concise one-line descriptor, no instructional gap, and compact responsive category controls; perform physical visual retest at phone, wide, and large-text sizes. |
 | KPF-0007 | fixed-awaiting-retest | 0.4.0-beta1 (4) | Confirm each Home category card shows useful place cues rather than an inventory count, including waiting-room and backyard/living-room examples where appropriate. |
 | KPF-0008 | accepted—revision required | 0.5.0-beta1 (5) | Participant labels need broader card coverage and compact right-aligned placement; re-evaluate after revision. |
 | KPF-0009 | accepted—revision required | 0.5.0-beta1 (5) | The requested “All games and activities” label reinforces this scope; re-evaluate navigation terminology after revision. |
@@ -27,7 +27,7 @@ The Android instrumentation test sources compiled successfully, but they were **
 | KPF-0015 | fixed-awaiting-retest | 0.5.0-beta1 (5) | Confirm the unsent and created-this-revision counts change independently. Open an email handoff, return without sending, and choose “No, keep unsent”; then send and use the explicit “Yes, mark sent” confirmation. Verify only the confirmed notes archive and cannot be resent. |
 | KPF-0016 | fixed-awaiting-retest | 0.5.0-beta1 (5) | Review backgrounds, cards, controls, and text in Forest, Ocean, and Berry on supported phone/tablet displays, including large text and an accessibility contrast review; confirm layers remain visually distinct and readable. |
 | KPF-0017 | fixed-awaiting-retest | 0.5.0-beta1 (5) | Change game timer, activity duration, and theme; verify immediate behavior and the Current plan summary, then force-stop/relaunch and confirm all choices persist and remain understandable. |
-| KPF-0018 | accepted—revision required | 0.5.0-beta1 (5) | Device feedback requires revised lock/key states, nonobscuring content, tap-triggered guidance, and selective game eligibility. |
+| KPF-0018 | fixed-awaiting-retest | 0.6.0-beta1 (6) | B10/B11 implement reviewed per-game eligibility, revised lock/key states, clear locked content, tap-triggered temporary unlock guidance, and in-app Back/control guarding. Physical touch, accessibility, and recovery retest remains required. |
 | KPF-0019 | accepted—revision required | 0.5.0-beta1 (5) | Device review found the icon letterform unclear; retain the rounded styling while making K and P substantially visible. |
 | KPF-0020 | fixed-awaiting-retest | 0.5.0-beta1 (5) | Switch repeatedly between Teal and Sunshine and relaunch the app after each selection. Confirm one launchable icon remains and the preference persists. Record launcher refresh variability: the icon may update immediately, after returning Home, or only after launcher cache refresh; delayed refresh alone is not an app failure. |
 
@@ -47,7 +47,7 @@ When a retest fails, leave the item awaiting retest and add a new sanitized obse
 
 ## New intake awaiting revision — KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4
 
-Affected build: **0.5.0-beta1 (5)**. These are triage records only; no application code changed.
+- Affected build: **0.5.0-beta1 (5)**. B5–B14 implementation is now recorded against **0.6.0-beta1 (6)**; remaining intake rows are triage records until their batches complete.
 
 - Reopened after tester feedback: `KPF-0006`, `KPF-0008`, `KPF-0009`, `KPF-0018`, `KPF-0019`.
 - Newly accepted or queued: `KPF-0021`–`KPF-0037`.
@@ -55,22 +55,22 @@ Affected build: **0.5.0-beta1 (5)**. These are triage records only; no applicati
 - Safety-sensitive product decision: `KPF-0032` must receive item-by-item product, safety, and legal review; it is not authorization for unconditional removal of warnings.
 - The manual subject-format mismatch did not prevent intake because the payload identifiers and note IDs were valid and unique.
 
-| New item | Triage state | Next validation |
-|---|---|---|
-| KPF-0021 | accepted | Responsive compact two-column card-layout review. |
-| KPF-0022 | accepted | Collapsed-card description inventory and visual review. |
-| KPF-0023 | accepted | Full user-visible copy audit for negative parent-state wording. |
-| KPF-0024 | accepted | Lock/key state, placement, touch target, and accessibility review. |
-| KPF-0025 | accepted | Locked-state tap behavior and temporary guidance review. |
-| KPF-0026 | accepted | Per-game handoff-lock eligibility inventory. |
-| KPF-0027 | accepted | Feedback emoji control behavior and accessibility review. |
-| KPF-0028 | accepted | Android orientation lifecycle and accessibility review. |
-| KPF-0029 | accepted | Game inventory and interactive-session model specification. |
-| KPF-0030 | accepted | Default-versus-override precedence and persistence tests. |
-| KPF-0031 | fixed-awaiting-retest | In 0.6.0-beta1 (6), confirm requirements and tester reports can distinguish the collapsed card, expanded card, and details page and that each name matches the visible state/navigation behavior. The normative contract and automated state anchors passed. |
-| KPF-0032 | accepted—revision underway | Independent fail-safe review passed the exhaustive decision matrix. B8/B9 must implement only the approved per-entry decisions; no protected-warning deletion is authorized. The presentation instrumentation test compiles but awaits a connected Android target. |
-| KPF-0033 | accepted | Home and app-wide nonessential-copy inventory. |
-| KPF-0034 | accepted | Gemini visual brief, graphical-control design, and accessibility review. |
-| KPF-0035 | accepted | Navigation-copy inventory and destination consistency checks. |
-| KPF-0036 | accepted | Menu architecture, account scope, and duplicate Settings-entry decision. |
-| KPF-0037 | fixed-awaiting-retest | In 0.6.0-beta1 (6), create and select an unsent note, tap Send now, and confirm the email app opens without KinPlay stopping. Repeat with no compatible email handler if practical; confirm the note remains unsent and Copy selected remains available. Source/data-flow reproduction and Robolectric production-path tests passed; no physical Android target was connected. |
+| New item | Triage state | Retest build | Next validation |
+|---|---|---|---|
+| KPF-0021 | accepted | — | Responsive compact two-column card-layout review. |
+| KPF-0022 | accepted | — | Collapsed-card description inventory and visual review. |
+| KPF-0023 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm I Spy uses neutral `Clues and suggestions` wording and no parent-state characterization. |
+| KPF-0024 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm the eligible lock control shows 🔒 while unlocked and 🔑 while locked, with an understandable screen-reader label and three-second progress. |
+| KPF-0025 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Lock a play surface, confirm content remains clear and controls are blocked, then tap the surface and confirm temporary `Hold key for 3 seconds to unlock` guidance. |
+| KPF-0026 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm only Charades and Would You Rather show the handoff-lock control; inspect representative noneligible detail screens and confirm the control is absent. The 53-item eligibility matrix and route/helper tests passed. |
+| KPF-0027 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm the compact 📝 control opens the existing feedback flow, remains easy to tap, and announces its unsent-note count. |
+| KPF-0028 | accepted | — | Android orientation lifecycle and accessibility review. |
+| KPF-0029 | accepted—B14 foundation | 0.6.0-beta1 (6) | Confirm eligible details pages show Start near the top and the applied values before starting; B15 must add the interactive timer, round progress, completion, and exit behavior. |
+| KPF-0030 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Change the global duration and default rounds, then choose different duration/round values on an eligible details page. Confirm the applied values appear before Start, the global Settings values remain unchanged, and the one-shot override is consumed on Start. |
+| KPF-0031 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm requirements and tester reports can distinguish the collapsed card, expanded card, and details page and that each name matches the visible state/navigation behavior. The normative contract and automated state anchors passed. |
+| KPF-0032 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm normal detail surfaces omit repetitive safety labels while protected activity warnings, privacy boundaries, and Safety and privacy content remain available. The fail-safe matrix and automated warning tests passed; no connected Android target was available. |
+| KPF-0033 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm the removed Home/list/detail repetition is absent while action, accessibility, privacy, safety, and instructional copy remains understandable. |
+| KPF-0034 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm Home shortcuts use compact graphical cues and readable labels without shortcut subtext, including the Settings gear cue; native symbols were used for this beta. |
+| KPF-0035 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm Home and destination labels read exactly `Random game` and `All games and activities`, including accessibility announcements. |
+| KPF-0036 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Open the upper-right three-line menu and verify Settings, Account, About the app, and Safety and privacy destinations; confirm the staged Account message and intentional duplicate Settings entry. |
+| KPF-0037 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Create and select an unsent note, tap Send now, and confirm the email app opens without KinPlay stopping. Repeat with no compatible email handler if practical; confirm the note remains unsent and Copy selected remains available. Source/data-flow reproduction and Robolectric production-path tests passed; no physical Android target was connected. |

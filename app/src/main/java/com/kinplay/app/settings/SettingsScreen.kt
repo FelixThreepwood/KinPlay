@@ -91,6 +91,15 @@ fun SettingsScreen(
                 onSelect = { onSettingsChange(settings.copy(activityDuration = it)) },
             )
             PreferenceSection(
+                title = "Default rounds",
+                summary = "How many rounds a new timed session starts with",
+                options = SessionRounds.entries,
+                selected = settings.defaultRounds,
+                label = SessionRounds::label,
+                tag = { "setting-rounds-${it.wireValue}" },
+                onSelect = { onSettingsChange(settings.copy(defaultRounds = it)) },
+            )
+            PreferenceSection(
                 title = "App color theme",
                 summary = "Accessible native colors for backgrounds, cards, and controls",
                 options = AppColorTheme.entries,
@@ -133,7 +142,7 @@ fun SettingsScreen(
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 Text(
-                    "Current plan: ${settings.gameTimer.label} rounds • ${settings.activityDuration.label} activities • ${settings.colorTheme.label} theme",
+                    "Current plan: ${settings.defaultRounds.label} • ${settings.gameTimer.label} per turn • ${settings.activityDuration.label} activities • ${settings.colorTheme.label} theme",
                     modifier = Modifier.padding(16.dp).testTag("settings-current-plan"),
                     fontWeight = FontWeight.Bold,
                 )

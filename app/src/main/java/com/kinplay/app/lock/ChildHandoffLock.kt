@@ -1,7 +1,6 @@
 package com.kinplay.app.lock
 
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.background
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
@@ -12,10 +11,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -53,7 +53,14 @@ import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+
+private const val LOCK_ACTIVE_SEMANTICS = "Child handoff lock active. KinPlay controls are blocked. Android system controls remain available."
+private const val LOCK_ACTIVE_BODY = "In-app controls and Back are blocked. Android system controls are still available."
+private const val LOCKED_CONTROL_TEXT = "LOCKED • Hold 3s to unlock"
+private const val UNLOCKED_CONTROL_TEXT = "Hold 3s for child handoff"
+private const val LOCK_BOUNDARY_TEXT = "In-app lock only"
 
 private val ChildHandoffLockStateSaver = Saver<MutableState<ChildHandoffLockState>, Boolean>(
     save = { it.value.isLocked },
@@ -73,12 +80,22 @@ fun ChildHandoffLockContainer(
         mutableStateOf(ChildHandoffLockState())
     }
     var lockState by stateHolder
+    var showUnlockGuidance by rememberSaveable { mutableStateOf(false) }
     fun updateState(update: (ChildHandoffLockState) -> ChildHandoffLockState) {
         lockState = update(lockState)
     }
 
     BackHandler(enabled = !lockState.allows(InAppAction.BACK)) {
         // Deliberately consume in-app back while locked.
+    }
+
+    LaunchedEffect(lockState.isLocked, showUnlockGuidance) {
+        if (!lockState.isLocked) {
+            showUnlockGuidance = false
+        } else if (showUnlockGuidance) {
+            delay(3_000L)
+            showUnlockGuidance = false
+        }
     }
 
     Box(modifier = modifier.fillMaxSize()) {
@@ -93,37 +110,27 @@ fun ChildHandoffLockContainer(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.scrim.copy(alpha = 0.58f))
-                    .pointerInput(Unit) {
-                        awaitPointerEventScope {
-                            while (true) {
-                                awaitPointerEvent().changes.forEach { it.consume() }
-                            }
-                        }
+                    .pointerInput(lockState.isLocked) {
+                        detectTapGestures(onTap = { showUnlockGuidance = true })
                     }
                     .semantics {
-                        contentDescription = "Child handoff lock active. KinPlay controls are blocked. Android system controls remain available."
+                        contentDescription = "$LOCK_ACTIVE_SEMANTICS $LOCK_ACTIVE_BODY Tap for unlock guidance."
                         stateDescription = "Locked"
                     }
                     .testTag("child-lock-blocker"),
-                contentAlignment = Alignment.Center,
             ) {
-                Card(
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.tertiaryContainer,
-                        contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
-                    ),
-                    shape = RoundedCornerShape(24.dp),
-                    modifier = Modifier.padding(28.dp),
-                ) {
-                    Column(
-                        modifier = Modifier.padding(20.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                if (showUnlockGuidance) {
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                            contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
+                        ),
+                        shape = RoundedCornerShape(16.dp),
+                        modifier = Modifier.align(Alignment.TopCenter).padding(top = 24.dp),
                     ) {
-                        Text("CHILD HANDOFF LOCKED", fontWeight = FontWeight.Black, textAlign = TextAlign.Center)
                         Text(
-                            "In-app controls and Back are blocked. Android system controls are still available.",
+                            "Hold key for 3 seconds to unlock",
+                            modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -192,15 +199,15 @@ private fun HoldToToggleLock(
             contentColor = if (state.isLocked) MaterialTheme.colorScheme.onTertiaryContainer else MaterialTheme.colorScheme.onPrimaryContainer,
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
-        shape = RoundedCornerShape(20.dp),
+        shape = CircleShape,
         modifier = modifier
-            .widthIn(min = 160.dp)
+            .widthIn(min = 72.dp)
             .heightIn(min = 72.dp)
             .testTag("child-lock-control")
             .semantics(mergeDescendants = true) {
                 role = Role.Button
                 contentDescription = "Child handoff lock control. Hold for 3 seconds to $action, or activate to start the accessible 3-second countdown."
-                stateDescription = announcedState
+                stateDescription = if (state.holdStartedAtMillis != null) announcedState else if (state.isLocked) LOCKED_CONTROL_TEXT else UNLOCKED_CONTROL_TEXT
                 progressBarRangeInfo = ProgressBarRangeInfo(progress, 0f..1f)
                 liveRegion = LiveRegionMode.Polite
                 onClick(label = "Start 3-second countdown to $action child handoff lock") {
@@ -230,22 +237,23 @@ private fun HoldToToggleLock(
             },
     ) {
         Column(
-            modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp),
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 8.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(5.dp),
+            verticalArrangement = Arrangement.spacedBy(2.dp),
         ) {
             Text(
-                if (state.isLocked) "LOCKED • Hold 3s to unlock" else "Hold 3s for child handoff",
+                if (state.isLocked) "🔑" else "🔒",
+                style = androidx.compose.material3.MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Black,
                 textAlign = TextAlign.Center,
             )
-            LinearProgressIndicator(
+            CircularProgressIndicator(
                 progress = { progress },
-                modifier = Modifier.fillMaxWidth(),
-                trackColor = MaterialTheme.colorScheme.surfaceVariant,
+                modifier = Modifier.widthIn(min = 28.dp).heightIn(min = 28.dp),
+                strokeWidth = 3.dp,
             )
             Text(
-                if (state.holdStartedAtMillis != null) "$elapsedSeconds of 3 seconds" else "In-app lock only",
+                if (state.holdStartedAtMillis != null) "$elapsedSeconds of 3 seconds" else LOCK_BOUNDARY_TEXT,
                 modifier = Modifier.testTag("child-lock-progress"),
                 style = MaterialTheme.typography.labelSmall,
             )

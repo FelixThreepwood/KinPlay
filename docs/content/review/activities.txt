@@ -114,7 +114,7 @@
 - Summary: Play the familiar I Spy guessing game with ready-made color and shape rounds.
 - Materials: none
 - Safety tags: quiet, no_materials, calming, sibling_friendly
-- Setup: Choose one safe object everyone can see; use the ready-made clues below if you are tired.
+- Setup: Choose one safe object everyone can see; use the ready-made clues below.
 - Play steps: The adult starts: “I spy with my little eye something blue.” / Players point or guess until someone finds a blue object. / Continue with something round, something soft, something red, and something tiny but visible. / Let the next player choose one of those same clues or name a new visible object.
 - Parent note: Keep every object visible and use pointing instead of fetching in waiting rooms.
 - Variations: Color round: blue, red, yellow, green, then purple. / Shape round: circle, square, triangle, rectangle, then star. / Quiet round: everyone points instead of calling out.

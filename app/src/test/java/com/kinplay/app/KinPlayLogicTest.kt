@@ -265,7 +265,7 @@ class KinPlayLogicTest {
 
     @Test
     fun kpf0006HomeRevisionUsesCompactOneLineDescriptorWithoutInstructionSection() {
-        assertEquals("Ready-to-use family games and activities", HOME_DESCRIPTOR)
+        assertEquals("Family play", HOME_DESCRIPTOR)
         assertFalse(HOME_DESCRIPTOR.contains('\n'))
         assertFalse(HOME_INSTRUCTION_SECTION_ENABLED)
     }

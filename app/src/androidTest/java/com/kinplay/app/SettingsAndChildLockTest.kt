@@ -34,15 +34,17 @@ class SettingsAndChildLockTest {
         compose.onNodeWithTag("setting-launcher-icon-sunshine").performScrollTo().assertIsDisplayed()
         compose.onNodeWithTag("setting-timer-90_seconds").performScrollTo().performClick()
         compose.onNodeWithTag("setting-duration-20_minutes").performScrollTo().performClick()
+        compose.onNodeWithTag("setting-rounds-5").performScrollTo().performClick()
         compose.onNodeWithTag("setting-theme-ocean").performScrollTo().performClick()
 
         compose.activityRule.scenario.recreate()
 
         compose.onNodeWithTag("setting-timer-90_seconds").performScrollTo().assertIsSelected()
         compose.onNodeWithTag("setting-duration-20_minutes").performScrollTo().assertIsSelected()
+        compose.onNodeWithTag("setting-rounds-5").performScrollTo().assertIsSelected()
         compose.onNodeWithTag("setting-theme-ocean").performScrollTo().assertIsSelected()
         compose.onNodeWithText(
-            "Current plan: 90 seconds rounds • 20 minutes activities • Ocean theme",
+            "Current plan: 5 rounds • 90 seconds per turn • 20 minutes activities • Ocean theme",
         ).performScrollTo().assertIsDisplayed()
     }
 

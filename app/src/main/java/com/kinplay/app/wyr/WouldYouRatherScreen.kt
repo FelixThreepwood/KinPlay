@@ -40,6 +40,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kinplay.app.lock.ChildHandoffLockContainer
+import com.kinplay.app.orientation.LandscapeWhileVisible
 import com.kinplay.app.settings.GameTimer
 
 private const val STATE_PREFERENCES = "would_you_rather_progress"
@@ -68,47 +69,55 @@ class SharedPreferencesWouldYouRatherStateStorage(context: Context) : WouldYouRa
 
 /** Loads the checked-in reviewed library and owns the process-local session. */
 @Composable
-fun WouldYouRatherRoute(gameTimer: GameTimer = GameTimer.ONE_MINUTE, onExit: () -> Unit) {
-    val context = LocalContext.current.applicationContext
-    val loaded = remember(context) {
-        runCatching {
-            val json = context.assets.open("would_you_rather_v1.json").bufferedReader().use { it.readText() }
-            val library = WouldYouRatherLibraryParser.parse(json)
-            val storage = SharedPreferencesWouldYouRatherStateStorage(context)
-            library to WouldYouRatherSession(
-                library = library,
-                store = WouldYouRatherStore(storage),
-                seed = storage.installationSeed(),
-            )
+fun WouldYouRatherRoute(
+    gameTimer: GameTimer = GameTimer.ONE_MINUTE,
+    showChildHandoffLock: Boolean = true,
+    onExit: () -> Unit,
+) {
+    LandscapeWhileVisible {
+            val context = LocalContext.current.applicationContext
+            val loaded = remember(context) {
+                runCatching {
+                    val json = context.assets.open("would_you_rather_v1.json").bufferedReader().use { it.readText() }
+                    val library = WouldYouRatherLibraryParser.parse(json)
+                    val storage = SharedPreferencesWouldYouRatherStateStorage(context)
+                    library to WouldYouRatherSession(
+                        library = library,
+                        store = WouldYouRatherStore(storage),
+                        seed = storage.installationSeed(),
+                    )
+                }
+            }
+            val loadedSession = loaded.getOrNull()
+            if (loadedSession == null) {
+                WouldYouRatherLoadError(onExit)
+            } else {
+                val (_, session) = loadedSession
+                var selectedCategoryId by rememberSaveable { mutableStateOf<String?>(null) }
+                var promptId by rememberSaveable { mutableStateOf<String?>(null) }
+                val selectedCategory = session.categories.firstOrNull { it.id == selectedCategoryId }
+                val prompt = selectedCategory?.prompts?.firstOrNull { it.id == promptId }
+
+                WouldYouRatherPlayScreen(
+                    categories = session.categories,
+                    selectedCategory = selectedCategory,
+                    prompt = prompt,
+                    onSelectCategory = { category ->
+                        selectedCategoryId = category.id
+                        promptId = session.nextPrompt(category.id).id
+                    },
+                    onAdvance = {
+                        selectedCategory?.let { category ->
+                            promptId = session.nextPrompt(category.id).id
+                        }
+                    },
+                    gameTimer = gameTimer,
+                    showChildHandoffLock = showChildHandoffLock,
+                    onExit = onExit,
+                )
+            }
         }
     }
-    val (library, session) = loaded.getOrNull() ?: run {
-        WouldYouRatherLoadError(onExit)
-        return
-    }
-
-    var selectedCategoryId by rememberSaveable { mutableStateOf<String?>(null) }
-    var promptId by rememberSaveable { mutableStateOf<String?>(null) }
-    val selectedCategory = selectedCategoryId?.let(library::category)
-    val prompt = selectedCategory?.prompts?.firstOrNull { it.id == promptId }
-
-    WouldYouRatherPlayScreen(
-        categories = session.categories,
-        selectedCategory = selectedCategory,
-        prompt = prompt,
-        onSelectCategory = { category ->
-            selectedCategoryId = category.id
-            promptId = session.nextPrompt(category.id).id
-        },
-        onAdvance = {
-            selectedCategory?.let { category ->
-                promptId = session.nextPrompt(category.id).id
-            }
-        },
-        gameTimer = gameTimer,
-        onExit = onExit,
-    )
-}
 
 /**
  * Distraction-minimized full-screen play surface. It is stateless so the exact
@@ -123,38 +132,75 @@ fun WouldYouRatherPlayScreen(
     onAdvance: () -> Unit,
     onExit: () -> Unit,
     gameTimer: GameTimer = GameTimer.ONE_MINUTE,
+    showChildHandoffLock: Boolean = true,
 ) {
-    ChildHandoffLockContainer { isLocked ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
-                .statusBarsPadding()
-                .navigationBarsPadding(),
-        ) {
-            if (selectedCategory == null || prompt == null) {
-                CategoryChoices(
-                    categories = categories,
-                    onSelectCategory = { if (!isLocked) onSelectCategory(it) },
-                )
-            } else {
-                PromptSurface(
-                    category = selectedCategory,
-                    prompt = prompt,
-                    gameTimer = gameTimer,
-                    onAdvance = { if (!isLocked) onAdvance() },
-                )
-            }
+    if (showChildHandoffLock) {
+        ChildHandoffLockContainer { isLocked ->
+            WouldYouRatherSurface(
+                categories = categories,
+                selectedCategory = selectedCategory,
+                prompt = prompt,
+                onSelectCategory = onSelectCategory,
+                onAdvance = onAdvance,
+                onExit = onExit,
+                gameTimer = gameTimer,
+                isLocked = isLocked,
+            )
+        }
+    } else {
+        WouldYouRatherSurface(
+            categories = categories,
+            selectedCategory = selectedCategory,
+            prompt = prompt,
+            onSelectCategory = onSelectCategory,
+            onAdvance = onAdvance,
+            onExit = onExit,
+            gameTimer = gameTimer,
+            isLocked = false,
+        )
+    }
+}
 
-            OutlinedButton(
-                onClick = onExit,
-                enabled = !isLocked,
-                modifier = Modifier
-                    .align(Alignment.TopEnd)
-                    .padding(16.dp),
-            ) {
-                Text("Exit", fontWeight = FontWeight.Bold)
-            }
+@Composable
+private fun WouldYouRatherSurface(
+    categories: List<WouldYouRatherCategory>,
+    selectedCategory: WouldYouRatherCategory?,
+    prompt: WouldYouRatherPrompt?,
+    onSelectCategory: (WouldYouRatherCategory) -> Unit,
+    onAdvance: () -> Unit,
+    onExit: () -> Unit,
+    gameTimer: GameTimer,
+    isLocked: Boolean,
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
+            .statusBarsPadding()
+            .navigationBarsPadding(),
+    ) {
+        if (selectedCategory == null || prompt == null) {
+            CategoryChoices(
+                categories = categories,
+                onSelectCategory = { if (!isLocked) onSelectCategory(it) },
+            )
+        } else {
+            PromptSurface(
+                category = selectedCategory,
+                prompt = prompt,
+                gameTimer = gameTimer,
+                onAdvance = { if (!isLocked) onAdvance() },
+            )
+        }
+
+        OutlinedButton(
+            onClick = onExit,
+            enabled = !isLocked,
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(16.dp),
+        ) {
+            Text("Exit", fontWeight = FontWeight.Bold)
         }
     }
 }

@@ -883,7 +883,7 @@
       "sourcePath": "items[quiet_color_hunt].setupSteps[0]",
       "itemId": "quiet_color_hunt",
       "field": "setupSteps",
-      "expectedText": "Choose one safe object everyone can see; use the ready-made clues below if you are tired.",
+      "expectedText": "Choose one safe object everyone can see; use the ready-made clues below.",
       "decision": "retain",
       "rationale": "Foreseeable-harm precaution or supervision constraint; retain at its point of use unless independent review approves an equally prominent relocation.",
       "protected": true,

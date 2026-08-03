@@ -440,9 +440,9 @@
         "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
       ],
       "reproductionStatus": "visual_review_required",
-      "implementationStatus": "revision_required",
-      "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "tester_feedback_requires_revision",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
       "lastObservedBuild": "0.5.0-beta1 (5)",
       "latestObservation": "0.5.0 feedback says Home still contains unnecessary copy and text-heavy controls, so the compact-home acceptance criterion needs revision."
     },
@@ -797,17 +797,17 @@
         "0.4.0-beta1 (4)",
         "0.5.0-beta1 (5)"
       ],
-      "implementationStatus": "revision_required",
-      "retestBuild": "0.5.0-beta1 (5)",
-      "verificationResult": "tester_feedback_requires_revision",
-      "implementationEvidence": "Game and activity play surfaces now expose a visible three-second hold-to-lock/unlock control with progress, lock-state announcement, keyboard and accessibility activation countdown, and an overlay that blocks in-app controls and Back while preserving the recovery control; Android system controls intentionally remain available.",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Game and activity play surfaces expose reviewed per-game three-second hold-to-lock/unlock controls with progress, lock/key state announcements, keyboard and accessibility activation countdown, clear locked content, tap-triggered temporary guidance, and an overlay that blocks in-app controls and Back while preserving the recovery control; Android system controls intentionally remain available.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0017"
       ],
-      "lastObservedBuild": "0.5.0-beta1 (5)",
-      "latestObservation": "Physical-device feedback requires revised lock/key icon states, nonobscuring locked content, tap-triggered guidance, and per-game eligibility."
+      "lastObservedBuild": "0.6.0-beta1 (6)",
+      "latestObservation": "B10/B11 automated checks passed; physical touch, accessibility, and recovery retest remains required."
     },
     {
       "id": "KPF-0019",
@@ -897,7 +897,11 @@
         "KP-NOTE-6B822319-7029-40D5-B19C-022257842493"
       ],
       "reproductionStatus": "visual_and_responsive_layout_review_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Collapsed and expanded cards now share the reviewed compact hierarchy with left-aligned title/summary/materials/setup content and right-aligned participant, duration, and age descriptors, with narrow-width and large-font fallbacks.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -926,7 +930,11 @@
         "KP-NOTE-6B822319-7029-40D5-B19C-022257842493"
       ],
       "reproductionStatus": "content_inventory_and_visual_review_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Every collapsed game card exposes a concise reviewed activity summary before expansion, while preserving materials/setup previews and the existing actions.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -955,7 +963,14 @@
         "KP-NOTE-8F46F2BF-A0E4-4ED4-A0CD-F3B3F4E26771"
       ],
       "reproductionStatus": "copy_inventory_review_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Replaced the I Spy parent-state wording in both seed assets and the review export; the rendered setup preview and detail section use the neutral Clues and suggestions heading.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -983,7 +998,14 @@
         "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9"
       ],
       "reproductionStatus": "visual_state_and_accessibility_review_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "The lock control exposes compact lock/key emoji states, a semantic state/action label, and visible three-second progress while preserving the existing handoff-lock behavior.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1013,7 +1035,14 @@
         "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9"
       ],
       "reproductionStatus": "interaction_and_accessibility_specification_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Locked content remains visible and actionable controls are disabled; unlock guidance appears only after a tap and the lock recovery action remains available.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1042,7 +1071,14 @@
         "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9"
       ],
       "reproductionStatus": "content_inventory_and_eligibility_review_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "All 53 active seed items carry explicit childHandoffLockEligible metadata. Only family_charades_animals and would_you_rather_silly_family are eligible, and detail/Would You Rather routes consume the parsed decision.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1070,7 +1106,14 @@
         "KP-NOTE-F1847D47-12F5-4B28-ACD9-4E7F48B372A8"
       ],
       "reproductionStatus": "visual_and_accessibility_review_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "affectedBuilds": [
+        "0.5.0-beta1 (5)"
+      ],
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "The compact note control remains wired to the existing feedback flow, exposes an accessible label, and preserves the unsent-note count contract.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true
     },
@@ -1123,7 +1166,10 @@
         "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52"
       ],
       "reproductionStatus": "game_inventory_and_session_model_specification_required",
-      "implementationStatus": "not_started",
+      "implementationStatus": "partial_b14_start_foundation",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "b14_automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Active ordinary pick_a_game activities expose a visible Start session control near the top of the details page, show applied duration and round values, and construct an immutable one-shot TimedSession from per-game overrides or global defaults. B15 remains responsible for the interactive timer and completion surface.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1152,7 +1198,11 @@
         "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52"
       ],
       "reproductionStatus": "settings_precedence_and_session_model_specification_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Settings defaults remain globally persisted; eligible details-page selectors save only the selected game's next-session duration and round override, display the resolved values before Start, and provide reset-to-defaults. Starting consumes the override once without mutating global settings.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1207,7 +1257,11 @@
         "KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E"
       ],
       "reproductionStatus": "item_by_item_safety_spec_review_complete_implementation_pending",
-      "implementationStatus": "in_progress",
+      "status": "fixed_awaiting_retest",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "The approved safety matrix is synchronized with runtime content: repetitive normal-surface labels are removed while protected warnings and Safety and privacy access remain available. No protected warning deletion was authorized.",
       "decision": "implement_only_matrix_approved_decisions_no_protected_warning_deletion_authorized",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1238,7 +1292,10 @@
         "KP-NOTE-8BA66EEA-98BB-4FFA-B1C5-68973A6FDF04"
       ],
       "reproductionStatus": "copy_inventory_and_product_review_required",
-      "implementationStatus": "not_started",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Removed the reported Home subtitle and repeated list/detail headings while retaining action labels, accessibility text, safety/privacy notices, and activity instructions. Added source-level copy-absence and responsive Home coverage.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1266,7 +1323,11 @@
         "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
       ],
       "reproductionStatus": "gemini_visual_brief_and_accessibility_review_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Home shortcuts use compact native graphical cues with readable labels and semantic click labels; shortcut subtext was removed and the Settings action uses a gear cue without generating a custom raster asset.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1296,7 +1357,11 @@
         "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
       ],
       "reproductionStatus": "navigation_copy_inventory_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Home, destination screens, accessibility labels, and affected testing/product documentation use the exact Random game and All games and activities vocabulary.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1325,7 +1390,11 @@
         "KP-NOTE-EE140225-4007-4170-8BC4-4BE68C4DAFB3"
       ],
       "reproductionStatus": "navigation_architecture_and_account_scope_review_required",
-      "implementationStatus": "not_started",
+      "status": "fixed_awaiting_retest",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "The upper-right menu exposes Settings, staged Account, About the app, and Safety and privacy destinations; the intentional duplicate Settings entry is documented and covered by navigation contract tests.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [

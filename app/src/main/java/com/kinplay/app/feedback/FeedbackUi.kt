@@ -21,8 +21,8 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
@@ -44,6 +44,8 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.kinplay.app.BuildConfig
@@ -211,23 +213,23 @@ fun FeedbackOverlay(
     }
 
     Box(modifier = modifier.fillMaxSize()) {
-        ExtendedFloatingActionButton(
+        FloatingActionButton(
             onClick = ::openSheet,
             modifier = Modifier
                 .align(Alignment.BottomStart)
                 .navigationBarsPadding()
                 .padding(start = 16.dp, bottom = 16.dp)
-                .testTag("feedback-control"),
+                .testTag("feedback-control")
+                .semantics {
+                    contentDescription = if (counts.unsent == 0) {
+                        "Open feedback"
+                    } else {
+                        "Open feedback, ${counts.unsent} unsent notes"
+                    }
+                },
             containerColor = Color(0xFFE3A62F),
             contentColor = Color(0xFF193A2C),
-            text = {
-                Text(
-                    if (counts.unsent == 0) "Feedback" else "Feedback (${counts.unsent})",
-                    fontWeight = FontWeight.Bold,
-                )
-            },
-            icon = { Text("✎", fontWeight = FontWeight.Bold) },
-        )
+        ) { Text("📝", fontWeight = FontWeight.Bold) }
     }
 
     if (showHandoffConfirmation && pendingHandoffNoteIds.isNotEmpty()) {
