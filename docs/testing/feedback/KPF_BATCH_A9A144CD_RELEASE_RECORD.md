@@ -1,7 +1,7 @@
 # KinPlay Batch A9A144CD release record
 
 Status: BLOCKED_PENDING_GOOGLE_DRIVE_AUTH
-Last updated: 2026-08-03T20:40:34Z
+Last updated: 2026-08-03T22:30:57Z
 Batch: `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`
 Target release: `0.6.0-beta1`
 
@@ -62,4 +62,4 @@ All 22 canonical items linked to this batch are implementation-complete with aut
 
 ## Blocking condition
 
-The configured Google OAuth token at the Hermes profile expired/revoked and refresh returned `invalid_grant`. The Google client dependencies were supplied through `uv` for diagnosis, but Drive upload requires fresh user consent. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Resume B18 after reauthentication, upload to the exact folder, download the returned object, compare its size and SHA-256 to the local APK, then merge/push `main` and replace this blocked record with the completed release record.
+The configured Google OAuth token at the Hermes profile expired/revoked and refresh returned `invalid_grant`. The Google client dependencies were supplied through `uv` for diagnosis. A fresh consent URL was generated and opened in Firefox; Google presents a signed-out account chooser, so the account holder must complete interactive sign-in and consent. A localhost:1 callback listener is ready to capture the redirect without exposing it in chat. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Resume B18 after reauthentication, upload to the exact folder, download the returned object, compare its size and SHA-256 to the local APK, then merge/push `main` and replace this blocked record with the completed release record.
