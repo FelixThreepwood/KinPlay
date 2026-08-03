@@ -1,7 +1,7 @@
 # KinPlay Batch A9A144CD release record
 
 Status: BLOCKED_PENDING_GOOGLE_DRIVE_AUTH
-Last updated: 2026-08-03T23:40:19Z
+Last updated: 2026-08-03T23:41:30Z
 Batch: `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`
 Target release: `0.6.0-beta1`
 
@@ -23,7 +23,7 @@ Target release: `0.6.0-beta1`
 
 - Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 - Validated source checkpoint: `6f35f071b49b2662764de57519e466f3f47aee5f`
-- Feature branch remote verification: `origin/feat/kinplay-0.6.0-beta1-feedback` resolves to `d58458ec9b124771d056becacda8ab75ba4b9c13`.
+- Feature branch remote verification: `origin/feat/kinplay-0.6.0-beta1-feedback` resolves to `4e00c29f3b6379300d0c54df395e049e75e9d9c0`.
 - Final branch: `main` has not yet been merged or pushed because the required dual-destination publication is blocked.
 
 ## Validation evidence
