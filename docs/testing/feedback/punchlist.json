@@ -420,7 +420,7 @@
     {
       "id": "KPF-0006",
       "title": "Minimize and compact the home screen",
-      "status": "accepted",
+      "status": "fixed_awaiting_retest",
       "type": [
         "usability",
         "information_architecture"
@@ -473,7 +473,7 @@
     {
       "id": "KPF-0008",
       "title": "Label Quality Time activities by group suitability",
-      "status": "accepted",
+      "status": "fixed_awaiting_retest",
       "type": [
         "content_metadata",
         "usability"
@@ -481,7 +481,8 @@
       "priority": "should_fix_soon",
       "affectedBuilds": [
         "0.3.0-beta1 (3)",
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)"
       ],
       "screen": "home",
       "normalizedFinding": "Mark the Quality Time category and each activity as intended for one-on-one play, group play, or both.",
@@ -492,16 +493,17 @@
         "KP-NOTE-6B822319-7029-40D5-B19C-022257842493"
       ],
       "reproductionStatus": "content_review_required",
-      "implementationStatus": "revision_required",
-      "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "tester_feedback_requires_revision",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "All active cards now carry reviewed participant-suitability metadata, and collapsed and expanded cards render the compact participant descriptor before opening.",
       "lastObservedBuild": "0.5.0-beta1 (5)",
       "latestObservation": "0.5.0 feedback broadens participant-suitability labels to game cards generally and requests right-aligned compact descriptors."
     },
     {
       "id": "KPF-0009",
       "title": "Include activities as well as games",
-      "status": "accepted",
+      "status": "fixed_awaiting_retest",
       "type": [
         "product_scope",
         "content_request"
@@ -509,7 +511,8 @@
       "priority": "should_fix_soon",
       "affectedBuilds": [
         "0.3.0-beta1 (3)",
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)"
       ],
       "screen": "home",
       "normalizedFinding": "Treat suitable activities as first-class content alongside games, including drawing, coloring, and painting.",
@@ -520,9 +523,10 @@
         "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
       ],
       "reproductionStatus": "product_copy_and_content_review_required",
-      "implementationStatus": "revision_required",
-      "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "tester_feedback_requires_revision",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Home, destinations, documentation, and accessibility labels use the canonical games-and-activities vocabulary while active activity content remains available alongside games.",
       "lastObservedBuild": "0.5.0-beta1 (5)",
       "latestObservation": "0.5.0 feedback reinforces games-and-activities terminology through the requested “All games and activities” navigation label."
     },
@@ -792,10 +796,11 @@
         "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9"
       ],
       "reproductionStatus": "android_platform_and_safety_review_required",
-      "status": "accepted",
+      "status": "fixed_awaiting_retest",
       "affectedBuilds": [
         "0.4.0-beta1 (4)",
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)"
       ],
       "implementationStatus": "complete",
       "retestBuild": "0.6.0-beta1 (6)",
@@ -827,22 +832,23 @@
         "KP-NOTE-707C0296-5231-4583-9EDB-D541887E1E11"
       ],
       "reproductionStatus": "gemini_visual_brief_and_trademark_review_required",
-      "status": "accepted",
+      "status": "fixed_awaiting_retest",
       "affectedBuilds": [
         "0.4.0-beta1 (4)",
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)"
       ],
-      "implementationStatus": "revision_required",
-      "retestBuild": "0.5.0-beta1 (5)",
-      "verificationResult": "tester_feedback_requires_revision",
-      "implementationEvidence": "Two original Gemini-generated KinPlay icon masters passed visual QA and are preserved byte-for-byte with provider/model, prompt purpose, SHA-256 hashes, palette, derivative paths, and originality/trademark-review notes; Android adaptive-icon resources ship the approved abstract play/smile emblem.",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Candidate 1A Teal and Candidate 1C Sunshine were generated through the required Google Gemini Nano Banana path, preserved byte-for-byte with prompt provenance and SHA-256 hashes, independently visually approved for legible rounded K/P forms, safe adaptive margins, flat two-color treatment, launcher-scale readability, and no visible third-party imitation, then integrated into the Android launcher masters and existing adaptive-icon resources. Candidate 1B remains preserved as rejected after weaker separation at launcher scale.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0020"
       ],
-      "lastObservedBuild": "0.5.0-beta1 (5)",
-      "latestObservation": "Physical-device icon review found the abstract/cropped letterform unclear. Preserve the approved rounded curves while making at least 80% of K and most of P visibly recognizable."
+      "lastObservedBuild": "0.6.0-beta1 (6)",
+      "latestObservation": "The 0.6.0-beta1 masters preserve rounded curves while making at least 80% of K and most of P visibly recognizable; physical launcher confirmation remains required."
     },
     {
       "id": "KPF-0020",
@@ -879,7 +885,6 @@
     {
       "id": "KPF-0021",
       "title": "Use compact two-column hierarchy on game cards",
-      "status": "accepted",
       "type": [
         "usability",
         "layout",
@@ -912,7 +917,6 @@
     {
       "id": "KPF-0022",
       "title": "Show a concise description on every collapsed game card",
-      "status": "accepted",
       "type": [
         "usability",
         "content_copy",
@@ -945,7 +949,6 @@
     {
       "id": "KPF-0023",
       "title": "Remove negative parent-state framing from user-visible copy",
-      "status": "accepted",
       "type": [
         "content_copy",
         "product_tone",
@@ -964,9 +967,6 @@
       ],
       "reproductionStatus": "copy_inventory_review_required",
       "status": "fixed_awaiting_retest",
-      "affectedBuilds": [
-        "0.5.0-beta1 (5)"
-      ],
       "implementationStatus": "complete",
       "retestBuild": "0.6.0-beta1 (6)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
@@ -980,7 +980,6 @@
     {
       "id": "KPF-0024",
       "title": "Use compact lock and key emoji controls for handoff lock state",
-      "status": "accepted",
       "type": [
         "interaction_design",
         "visual_design",
@@ -999,9 +998,6 @@
       ],
       "reproductionStatus": "visual_state_and_accessibility_review_required",
       "status": "fixed_awaiting_retest",
-      "affectedBuilds": [
-        "0.5.0-beta1 (5)"
-      ],
       "implementationStatus": "complete",
       "retestBuild": "0.6.0-beta1 (6)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
@@ -1017,7 +1013,6 @@
     {
       "id": "KPF-0025",
       "title": "Keep locked content clear and show unlock guidance only after a tap",
-      "status": "accepted",
       "type": [
         "interaction_design",
         "usability",
@@ -1036,9 +1031,6 @@
       ],
       "reproductionStatus": "interaction_and_accessibility_specification_required",
       "status": "fixed_awaiting_retest",
-      "affectedBuilds": [
-        "0.5.0-beta1 (5)"
-      ],
       "implementationStatus": "complete",
       "retestBuild": "0.6.0-beta1 (6)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
@@ -1053,7 +1045,6 @@
     {
       "id": "KPF-0026",
       "title": "Limit handoff lock to selected child-interaction games",
-      "status": "accepted",
       "type": [
         "feature_scope",
         "content_metadata",
@@ -1072,9 +1063,6 @@
       ],
       "reproductionStatus": "content_inventory_and_eligibility_review_required",
       "status": "fixed_awaiting_retest",
-      "affectedBuilds": [
-        "0.5.0-beta1 (5)"
-      ],
       "implementationStatus": "complete",
       "retestBuild": "0.6.0-beta1 (6)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
@@ -1088,7 +1076,6 @@
     {
       "id": "KPF-0027",
       "title": "Replace the text feedback control with a compact note emoji button",
-      "status": "accepted",
       "type": [
         "interaction_design",
         "visual_design",
@@ -1107,9 +1094,6 @@
       ],
       "reproductionStatus": "visual_and_accessibility_review_required",
       "status": "fixed_awaiting_retest",
-      "affectedBuilds": [
-        "0.5.0-beta1 (5)"
-      ],
       "implementationStatus": "complete",
       "retestBuild": "0.6.0-beta1 (6)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
@@ -1120,7 +1104,7 @@
     {
       "id": "KPF-0028",
       "title": "Default Would You Rather play to landscape orientation",
-      "status": "accepted",
+      "status": "fixed_awaiting_retest",
       "type": [
         "orientation",
         "interaction_design",
@@ -1128,7 +1112,8 @@
       ],
       "priority": "backlog",
       "affectedBuilds": [
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)"
       ],
       "screen": "would_you_rather_play",
       "normalizedFinding": "Would You Rather should enter its play experience in landscape orientation by default.",
@@ -1138,7 +1123,10 @@
         "KP-NOTE-A732BE90-95FD-4C5A-9297-1A289CE99388"
       ],
       "reproductionStatus": "android_orientation_and_accessibility_review_required",
-      "implementationStatus": "not_started",
+      "implementationStatus": "complete",
+      "retestBuild": "0.6.0-beta1 (6)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "The route-scoped orientation controller enters landscape for Would You Rather play, preserves prior orientation, skips forcing in multi-window, and defers restoration safely across configuration recreation.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1148,7 +1136,7 @@
     {
       "id": "KPF-0029",
       "title": "Add a Start action and timed session flow to most game details",
-      "status": "accepted",
+      "status": "fixed-awaiting-retest",
       "type": [
         "interaction_design",
         "session_state",
@@ -1165,11 +1153,11 @@
       "sourceNoteIds": [
         "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52"
       ],
-      "reproductionStatus": "game_inventory_and_session_model_specification_required",
-      "implementationStatus": "partial_b14_start_foundation",
+      "reproductionStatus": "game_inventory_and_session_model_specification_complete_android_interactive_session_retest_required",
+      "implementationStatus": "complete",
       "retestBuild": "0.6.0-beta1 (6)",
-      "verificationResult": "b14_automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Active ordinary pick_a_game activities expose a visible Start session control near the top of the details page, show applied duration and round values, and construct an immutable one-shot TimedSession from per-game overrides or global defaults. B15 remains responsible for the interactive timer and completion surface.",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Active ordinary pick_a_game activities expose a visible Start session control near the top of the details page, show applied duration and round values, and navigate with an immutable one-shot TimedSession. The timed-session surface persists round, timer, and completion state through recreation, advances automatically when a round timer expires, supports explicit round completion and exit, and uses the reviewed child-handoff lock for eligible games. Prompt, story, draft, and calm-only content remains reading-oriented until its session eligibility is reviewed.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1180,7 +1168,6 @@
     {
       "id": "KPF-0030",
       "title": "Add default rounds and per-game duration and round overrides",
-      "status": "accepted",
       "type": [
         "settings",
         "session_configuration",
@@ -1239,7 +1226,6 @@
     {
       "id": "KPF-0032",
       "title": "Remove safety labels and instructional safety copy from the normal interactive interface",
-      "status": "accepted",
       "type": [
         "content_copy",
         "information_architecture",
@@ -1274,7 +1260,7 @@
     {
       "id": "KPF-0033",
       "title": "Remove nonessential descriptive copy from Home and content surfaces",
-      "status": "accepted",
+      "status": "fixed_awaiting_retest",
       "type": [
         "content_copy",
         "usability",
@@ -1305,7 +1291,6 @@
     {
       "id": "KPF-0034",
       "title": "Replace text-heavy Home shortcuts with compact graphical controls",
-      "status": "accepted",
       "type": [
         "visual_design",
         "interaction_design",
@@ -1339,7 +1324,6 @@
     {
       "id": "KPF-0035",
       "title": "Shorten Home shortcut labels",
-      "status": "accepted",
       "type": [
         "content_copy",
         "navigation",
@@ -1372,7 +1356,6 @@
     {
       "id": "KPF-0036",
       "title": "Add a top-right application menu on Home",
-      "status": "accepted",
       "type": [
         "navigation",
         "information_architecture",
@@ -1426,7 +1409,7 @@
       "reproductionStatus": "source_data_flow_reproduced_no_connected_android_target",
       "implementationStatus": "complete",
       "implementationEvidence": "Application-context email handoff now adds FLAG_ACTIVITY_NEW_TASK when no Activity exists in the wrapped context chain, safely returns false for runtime launcher failures, preserves unsent notes and Copy fallback behavior, and is covered by Robolectric production-path regressions for wrapped Activity, application context, cyclic wrappers, mailto identity, unsent-only payloads, and launch failure.",
-      "retestBuild": "0.6.0-beta1 (6), pending final B18 packaging",
+      "retestBuild": "0.6.0-beta1 (6)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
       "decision": "must_fix_before_next_beta",
       "authorizationRequired": true,

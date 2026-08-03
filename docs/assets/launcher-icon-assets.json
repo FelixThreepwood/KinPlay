@@ -3,35 +3,35 @@
   "purpose": "KPF-0019/KPF-0020 Android launcher icon masters and finite color variants",
   "assets": [
     {
-      "candidateLabel": "TEAL Candidate 2 PASS",
-      "sourceFilename": "google_gemini-3-pro-image-preview_20260726_115929_4513d85d.jpg",
+      "candidateLabel": "KPF-0019 Candidate 1A PASS",
+      "sourceFilename": "KPF-0019_Candidate-1A_Teal-Master.jpg",
       "provider": "google",
       "model": "gemini-3-pro-image-preview",
-      "promptPurpose": "Original minimal KinPlay launcher emblem in the approved teal direction; flat abstract play/smile cue with no words, people, or existing brand marks",
+      "promptPurpose": "Original minimal KinPlay launcher emblem with a clearly legible rounded K and P lettermark in the approved Teal direction; no words, people, or existing brand marks",
       "qaResult": "PASS",
-      "sha256": "2e449f8e676e236b657832b2e45169e62a7f1ed5783600ca2e16b9d0b510f177",
+      "sha256": "d2d83adde2909da14f24dbd89c75b24f75ae9d5a961ae4a93ee139a90fe375aa",
       "shippedPath": "app/src/main/res/drawable-nodpi/launcher_icon_teal_master.jpg",
       "colors": [
         { "name": "deep teal", "representativeHex": "#056763" },
-        { "name": "pale sunshine", "representativeHex": "#D7D28A" }
+        { "name": "warm sunshine", "representativeHex": "#F7D162" }
       ],
       "masterPreservation": "Exact source bytes; no crop, resize, padding, blur, border, recolor, metadata/DPI rewrite, or re-encoding"
     },
     {
-      "candidateLabel": "SUNSHINE variant PASS",
-      "sourceFilename": "google_gemini-3-pro-image-preview_20260726_120148_4f9762e0.jpg",
+      "candidateLabel": "KPF-0019 Candidate 1C PASS",
+      "sourceFilename": "KPF-0019_Candidate-1C_Sunshine-Master.jpg",
       "provider": "google",
       "model": "gemini-3-pro-image-preview",
-      "promptPurpose": "Original minimal KinPlay launcher emblem using the approved Sunshine color variant of the flat abstract play/smile direction",
+      "promptPurpose": "Original minimal KinPlay launcher emblem with a clearly legible rounded K and P lettermark in the approved Sunshine direction; no words, people, or existing brand marks",
       "qaResult": "PASS",
-      "sha256": "6b7e12a297fdf26d9ec3e7b5dbb4b6c50e1e036b411144477e1461468706b14f",
+      "sha256": "cc4f917b0cbf8324aad8961c17a0296fd14bdff228f21164e32a12f36415d91a",
       "shippedPath": "app/src/main/res/drawable-nodpi/launcher_icon_sunshine_master.jpg",
       "colors": [
         { "name": "warm sunshine", "representativeHex": "#F7D162" },
-        { "name": "deep teal", "representativeHex": "#176056" }
+        { "name": "deep teal", "representativeHex": "#056763" }
       ],
       "masterPreservation": "Exact source bytes; no crop, resize, padding, blur, border, recolor, metadata/DPI rewrite, or re-encoding"
     }
   ],
-  "originalityAndTrademarkReview": "The approved emblem is flat and abstract and contains no words, people, or identified third-party brand marks. Approval documents a visual QA review, not a legal trademark clearance; perform a formal trademark search before broad commercial launch if required. Rejected candidate and emerald draft are intentionally excluded."
+  "originalityAndTrademarkReview": "The approved K/P lettermark masters are flat and original in the project visual QA review, with no words, people, or identified third-party brand marks. Approval documents a visual QA review, not a legal trademark clearance; perform a formal trademark search before broad commercial launch if required. Candidate 1B and all prior abstract/emerald drafts are intentionally excluded from shipped resources."
 }

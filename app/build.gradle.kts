@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-val appVersionName = "0.5.0-beta1"
+val appVersionName = "0.6.0-beta1"
 val isVersionedBeta = appVersionName.contains("-beta", ignoreCase = true)
 
 android {
@@ -15,7 +15,7 @@ android {
         applicationId = "com.kinplay.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 5
+        versionCode = 6
         versionName = appVersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 

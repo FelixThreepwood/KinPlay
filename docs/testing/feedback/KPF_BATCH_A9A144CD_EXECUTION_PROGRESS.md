@@ -5,7 +5,7 @@ Target release: `0.6.0-beta1`
 Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 Final branch: `main`
 Baseline commit: `2e1b7899e02fdd2391855ea7cd09f3404b3a18c1`
-- Last updated: `2026-08-02T23:56:47-07:00`
+- Last updated: `2026-08-03T06:03:17-07:00`
 
 ## Durable status
 
@@ -26,18 +26,18 @@ Baseline commit: `2e1b7899e02fdd2391855ea7cd09f3404b3a18c1`
 | B12 | KPF-0028 | complete | Route-scoped orientation controller tests passed for save/restore, multi-window, and configuration recreation; Would You Rather route uses the controller; full JVM suite 178/178, Android test-source compilation, debug assembly, lint, packaged-content validation, and `git diff --check` passed. No connected Android target for manual orientation/instrumentation. | checkpoint pending | Physical orientation and accessibility retest remains required. |
 | B13 | KPF-0030 partial | complete | Strict TDD session-configuration tests passed for 3/5/7-round defaults, 5/10/20-minute global duration, malformed/invalid stored values, partial override precedence, game isolation, persistence across repository recreation, and one-shot consumption; Settings exposes the persisted default-round choice; session configuration specification recorded; full JVM suite 178/178, Android test-source compilation, debug assembly, lint, packaged-content validation, and `git diff --check` passed. | checkpoint pending | B14 must add eligible details-page duration/round controls and close KPF-0030. |
 | B14 | KPF-0030 closure; KPF-0029 partial | complete | `SessionLaunchTest` 3/3; details-page contract test; full JVM rerun 181/181; Android-test source compilation; debug assembly; `lintDebug`; packaged content/schema/parity checkpoint; `git diff --check`; no connected Android target. | checkpoint pending | B15 must add the interactive timed-session surface and completion behavior for KPF-0029. |
-| B15 | KPF-0029 closure | pending | — | — | — |
-| B16 | KPF-0019 Gemini master and approval | pending | — | — | — |
-| B17 | KPF-0019 Android integration | pending | — | — | — |
+| B15 | KPF-0029 closure | complete | `TimedSessionProgressTest` 4/4; `TimedSessionScreenTest` Android source compiled; full JVM rerun 186/186; debug APK assembly; lint; packaged content/schema/parity checkpoint; `git diff --check`; no connected Android target. | checkpoint pending | Physical timer, round, completion, exit, and eligible lock retest remains required. |
+| B16 | KPF-0019 Gemini master and approval | complete | Candidate 1A Teal and Candidate 1C Sunshine were generated/preserved through the Google Gemini Nano Banana path; exact prompt provenance and SHA-256 records retained; independent visual QA passed K/P legibility, rounded curves, safe margins, flat two-color treatment, launcher-scale readability, and originality screen; Candidate 1B rejected and preserved. | checkpoint pending | No formal trademark clearance; physical launcher retest remains required. |
+| B17 | KPF-0019 Android integration | complete | Approved masters integrated byte-for-byte into `drawable-nodpi`; existing adaptive-icon XML and finite Teal/Sunshine activity aliases remain launchable; asset manifest/product docs synchronized; full checkpoint passed: JVM tests 186/186, Android test-source compilation, debug assembly, lint, packaged-content validation, and `git diff --check`. | checkpoint pending | No connected Android target; physical launcher and cache-refresh retest remains required. |
 | B18 | Full release and dual publication | pending | — | — | — |
 
 ## Scope accounting
 
 - Canonical KPF total: 22.
-- Implementation-complete with automated evidence: 20/22 (`KPF-0006`, `KPF-0008`, `KPF-0009`, `KPF-0018`, `KPF-0021`, `KPF-0022`, `KPF-0023`, `KPF-0024`, `KPF-0025`, `KPF-0026`, `KPF-0027`, `KPF-0028`, `KPF-0030`, `KPF-0031`, `KPF-0032`, `KPF-0033`, `KPF-0034`, `KPF-0035`, `KPF-0036`, `KPF-0037`).
-- Pending user-visible closure: KPF-0019 and KPF-0029.
+- Implementation-complete with automated evidence: 22/22 (`KPF-0006`, `KPF-0008`, `KPF-0009`, `KPF-0018`, `KPF-0019`, `KPF-0021`, `KPF-0022`, `KPF-0023`, `KPF-0024`, `KPF-0025`, `KPF-0026`, `KPF-0027`, `KPF-0028`, `KPF-0029`, `KPF-0030`, `KPF-0031`, `KPF-0032`, `KPF-0033`, `KPF-0034`, `KPF-0035`, `KPF-0036`, `KPF-0037`).
+- Pending user-visible closure: physical/family-device retest for implemented behavior, including the approved KPF-0019 launcher masters.
 - KPF-0020 is excluded from this intake batch.
-- Earliest incomplete batch: B15.
+- Earliest incomplete batch: B18.
 
 ## Preserved intake state
 
@@ -65,4 +65,7 @@ The pre-existing intake edits in `PUNCHLIST.md`, `RETEST_LOG.md`, and `punchlist
 - B12 complete: `RouteOrientationController` saves the prior requested orientation once, requests landscape only while the Would You Rather route is visible, skips orientation forcing in multi-window, and postpones restoration across configuration recreation. Focused controller tests and the complete checkpoint passed; no emulator/device was connected for manual orientation or instrumentation execution.
 - B13 complete: `SessionRounds` provides persisted 3-, 5-, and 7-round defaults; existing 5-, 10-, and 20-minute activity durations remain the global duration choices; JSON-backed next-session overrides resolve per field and per game, survive repository recreation, and are consumed once without mutating global defaults. Settings exposes the default-round choice, and `KPF_0030_SESSION_CONFIGURATION_SPEC.md` records the precedence and validation contract.
 - B14 complete: Active ordinary `pick_a_game` activities now expose details-page duration and round selectors, visible applied values, reset-to-global-defaults, and a Start foundation. `TimedSession` construction consumes only the selected game's one-shot override and leaves global settings unchanged. Prompt, story, draft, and calm-only content remains outside the timed-session surface pending reviewed eligibility. Full checkpoint validation passed; no Android target was connected.
-- Next batch: B15 — Interactive timed-session rollout and completion behavior.
+- B15 complete: Active ordinary `pick_a_game` activities now navigate from the details-page Start control into a route-scoped timed-session surface. `TimedSessionProgress` owns countdown ticks, explicit round completion, automatic round rollover, final completion, and stable remaining-time formatting. The surface renders the selected activity's reviewed setup/play content, persists round/timer/completion state with `rememberSaveable`, supports exit/back-to-details, and uses the reviewed child-handoff lock for eligible games. `TimedSessionProgressTest` passed 4/4; the Android `TimedSessionScreenTest` source compiled; the full JVM suite passed 186/186; debug assembly, lint, packaged content/schema/APK parity, and `git diff --check` passed. No Android target was connected, so physical timer, completion, exit, accessibility, and lock retest remains pending.
+- B16 complete: Candidate 1A (Teal) and Candidate 1C (Sunshine) are preserved untouched with prompts, hashes, and provider/model provenance. Independent visual QA approved both for legible rounded K/P forms, safe adaptive margins, flat two-color treatment, launcher-scale readability, and no visible third-party imitation; Candidate 1B remains rejected. No formal trademark clearance is implied.
+- B17 complete: The approved Candidate 1A and 1C bytes now back the Teal and Sunshine launcher masters. Existing adaptive-icon XML resources and finite alias switching remain compatible; product and asset manifests record the new hashes and selected candidates. The full offline checkpoint passed with 186/186 JVM tests, Android test-source compilation, debug assembly, lint, packaged-content validation, and `git diff --check`. No Android target was connected, so physical launcher, cache-refresh, and accessibility retest remains pending.
+- Next batch: B18 — full regression, final beta packaging, GitHub publication, and dual APK distribution.

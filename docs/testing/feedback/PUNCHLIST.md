@@ -98,7 +98,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0006 — Minimize and compact the home screen
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Usability / information architecture
 - Priority: Should fix soon
 - Affected build: 0.3.0-beta1 (3)
@@ -133,7 +133,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0008 — Label Quality Time activities by group suitability
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Content metadata / usability
 - Priority: Should fix soon
 - Affected build: 0.3.0-beta1 (3)
@@ -143,15 +143,16 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Normalized finding: Mark the Quality Time category and each activity as intended for one-on-one play, group play, or both.
 - Expected behavior: A parent can identify participant fit before opening or starting an activity.
 - Reproduction: Content review required against the affected build.
-- Implementation status: revision-required
-- Retest build: 0.4.0-beta1 (4)
-- Verification result: tester_feedback_requires_revision
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: All active cards now expose reviewed participant-suitability metadata, and the collapsed and expanded card hierarchy renders the compact participant descriptor before opening.
 - Additional source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
 - Latest 0.5.0 feedback: 0.5.0 feedback broadens participant-suitability labels to game cards generally and requests right-aligned compact descriptors.
 
 ## KPF-0009 — Include activities as well as games
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Product scope / content request
 - Priority: Should fix soon
 - Affected build: 0.3.0-beta1 (3)
@@ -161,9 +162,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Normalized finding: Treat suitable activities as first-class content alongside games, including drawing, coloring, and painting.
 - Expected behavior: Discovery and category language accommodate both games and activities that support family engagement and children’s creativity.
 - Reproduction: Product-copy and content review required.
-- Implementation status: revision-required
-- Retest build: 0.4.0-beta1 (4)
-- Verification result: tester_feedback_requires_revision
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Home, destinations, documentation, and accessibility labels use the canonical games-and-activities vocabulary; active activity content remains available alongside games.
 - Additional source note: `KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80`
 - Latest 0.5.0 feedback: 0.5.0 feedback reinforces games-and-activities terminology through the requested “All games and activities” navigation label.
 
@@ -313,7 +315,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0018 — Add a deliberate child handoff lock mode
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: feature request / interaction safety / platform feasibility
 - Priority: Should fix soon
 - Affected build: 0.4.0-beta1 (4)
@@ -333,7 +335,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0019 — Create an original KinPlay launcher icon through Gemini
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Brand design / visual asset / trademark review
 - Priority: Should fix soon
 - Affected build: 0.4.0-beta1 (4)
@@ -343,12 +345,12 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Normalized finding: Create a clean, minimal KinPlay icon through the required Google Gemini Nano Banana visual process. Explore simple play and curved smile or directional cues, balanced proportions, and teal, emerald, or pale-yellow color directions while maintaining an original identity that does not imitate third-party logos.
 - Expected behavior: The approved icon is original, recognizable at launcher sizes, technically valid for Android adaptive-icon use, and preserved as an untouched Gemini master with documented derivatives.
 - Reproduction: Gemini visual brief and trademark review required. Related: `KPF-0020`.
-- Implementation evidence: Two original Gemini-generated KinPlay icon masters passed visual QA and are preserved byte-for-byte with provider/model, prompt purpose, SHA-256 hashes, palette, derivative paths, and originality/trademark-review notes; Android adaptive-icon resources ship the approved abstract play/smile emblem.
-- Implementation status: revision-required
-- Retest build: 0.5.0-beta1 (5)
-- Verification result: tester_feedback_requires_revision
+- Implementation evidence: Candidate 1A (Teal) and Candidate 1C (Sunshine) were generated through the required Google Gemini Nano Banana path, preserved byte-for-byte with prompt provenance and SHA-256 hashes, independently visually approved for legible rounded K/P forms, safe adaptive margins, flat two-color treatment, launcher-scale readability, and no visible third-party imitation, then integrated into the Android launcher masters and existing adaptive-icon resources. Candidate 1B remains preserved as rejected after weaker separation at launcher scale.
+- Implementation status: complete
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
 - Additional source note: `KP-NOTE-707C0296-5231-4583-9EDB-D541887E1E11`
-- Latest 0.5.0 feedback: Physical-device icon review found the abstract/cropped letterform unclear. Preserve the approved rounded curves while making at least 80% of K and most of P visibly recognizable.
+- Latest 0.5.0 feedback: Physical-device icon review found the abstract/cropped letterform unclear. The 0.6.0-beta1 masters preserve rounded curves while making at least 80% of K and most of P visibly recognizable; physical launcher confirmation remains required.
 
 ## KPF-0020 — Allow selection among supported launcher-icon colors
 
@@ -379,7 +381,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0021 — Use compact two-column hierarchy on game cards
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Usability / Layout / Information architecture
 - Priority: Backlog
 - Affected build: 0.5.0-beta1 (5)
@@ -388,14 +390,17 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
 - Normalized finding: Use available width on both sides of the screen. Keep the primary title and content left-aligned while placing compact descriptors in a right-aligned second column or trailing area on the same row.
 - Expected behavior: Collapsed and expanded game cards use horizontal space efficiently without crowding, clipping, or obscuring primary labels.
-- Reproduction/triage: Visual and responsive layout review required.
+- Reproduction/triage: Visual and responsive layout review required; automated narrow-width and large-font checks passed.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Collapsed and expanded cards share a compact hierarchy with left-aligned primary content and right-aligned participant, duration, and age descriptors, with a stacked fallback for constrained widths.
 - Related items: `KPF-0008`, `KPF-0022`
 
 ## KPF-0022 — Show a concise description on every collapsed game card
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Usability / Content copy / Discovery
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -404,14 +409,17 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
 - Normalized finding: Every collapsed game card should show the recognizable game name plus one concise description of the activity. Examples include “Guessing game for objects in the room” for I Spy and “Create a wacky story starting each new word with the next letter of the alphabet” for Alphabet Story.
 - Expected behavior: A tester can understand the core activity without expanding the card, while the collapsed card remains compact.
-- Reproduction/triage: Content inventory and visual review required.
+- Reproduction/triage: Content inventory and visual review required; all active summaries and card rendering tests passed.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Every collapsed game card exposes a concise reviewed activity summary before expansion while retaining material/setup previews and existing actions.
 - Related items: `KPF-0001`, `KPF-0021`
 
 ## KPF-0023 — Remove negative parent-state framing from user-visible copy
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Content copy / Product tone / Usability
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -430,7 +438,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0024 — Use compact lock and key emoji controls for handoff lock state
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Interaction design / Visual design / Accessibility
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -449,7 +457,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0025 — Keep locked content clear and show unlock guidance only after a tap
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Interaction design / Usability / State management
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -468,7 +476,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0026 — Limit handoff lock to selected child-interaction games
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Feature scope / Content metadata / Usability
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -487,7 +495,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0027 — Replace the text feedback control with a compact note emoji button
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Interaction design / Visual design / Accessibility
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -505,7 +513,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0028 — Default Would You Rather play to landscape orientation
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Orientation / Interaction design / Android platform
 - Priority: Backlog
 - Affected build: 0.5.0-beta1 (5)
@@ -516,12 +524,15 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: Starting Would You Rather presents a stable landscape play surface and returns cleanly to the prior app orientation on exit, subject to Android accessibility and device-rotation review.
 - Reproduction/triage: Android orientation and accessibility review required.
 - Decision: accepted for future revision
-- Implementation status: not-started
+- Implementation status: complete; awaiting physical retest
+- Retest build: 0.6.0-beta1 (6)
+- Verification result: automated_checks_passed_pending_family_device_retest
+- Implementation evidence: A route-scoped orientation controller enters landscape for Would You Rather play, preserves the prior orientation, skips forcing in multi-window, and defers restoration safely across configuration recreation.
 - Related items: `KPF-0011`
 
 ## KPF-0029 — Add a Start action and timed session flow to most game details
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Interaction design / Session state / Settings
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -530,17 +541,17 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Source note: `KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52`
 - Normalized finding: For most games, place a Start action near the top of the detail page and begin an interactive session using the configured default duration.
 - Expected behavior: Eligible game detail pages clearly separate reading from starting, and Start launches a consistent session using current defaults.
-- Reproduction/triage: Game inventory and session model specification required.
+- Reproduction/triage: Game inventory and session model specification complete; Android interactive-session retest remains required.
 - Decision: accepted for future revision
-- Implementation status: partial; B14 adds the eligible-details Start foundation and resolves the immutable timed-session configuration without changing global settings. B15 remains responsible for the interactive timer, round progress, completion, and exit surface.
+- Implementation status: complete; B14 established the eligible-details Start foundation and B15 adds the interactive timer, round progress, completion, and exit surface.
 - Retest build: 0.6.0-beta1 (6)
-- Verification result: B14 automated_checks_passed_pending_family_device_retest
-- Implementation evidence: Active ordinary `pick_a_game` activities expose a visible `Start session` control near the top of the details page, show the applied duration/round values, and construct a one-shot `TimedSession` from per-game overrides or global defaults. Prompt, story, draft, and calm-only content remains reading-oriented until its session eligibility is reviewed.
+- Verification result: b15_automated_checks_passed_pending_family_device_retest
+- Implementation evidence: Active ordinary `pick_a_game` activities expose a visible `Start session` control near the top of the details page, show the applied duration/round values, and navigate with an immutable one-shot `TimedSession`. The timed-session surface persists round, timer, and completion state through recreation, advances automatically when a round timer expires, supports explicit round completion and exit, and uses the reviewed child-handoff lock for eligible games. Prompt, story, draft, and calm-only content remains reading-oriented until its session eligibility is reviewed.
 - Related items: `KPF-0017`, `KPF-0030`
 
 ## KPF-0030 — Add default rounds and per-game duration and round overrides
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Settings / Session configuration / Feature request
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -576,7 +587,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0032 — Remove safety labels and instructional safety copy from the normal interactive interface
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Content copy / Information architecture / Safety review
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -596,7 +607,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0033 — Remove nonessential descriptive copy from Home and content surfaces
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Content copy / Usability / Minimalism
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -615,7 +626,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0034 — Replace text-heavy Home shortcuts with compact graphical controls
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Visual design / Interaction design / Minimalism
 - Priority: Backlog
 - Affected build: 0.5.0-beta1 (5)
@@ -634,7 +645,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0035 — Shorten Home shortcut labels
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Content copy / Navigation / Usability
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -653,7 +664,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 
 ## KPF-0036 — Add a top-right application menu on Home
 
-- Status: accepted
+- Status: fixed-awaiting-retest
 - Type: Navigation / Information architecture / Feature request
 - Priority: Should fix soon
 - Affected build: 0.5.0-beta1 (5)
@@ -686,7 +697,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Decision: must fix before next beta
 - Implementation evidence: The email handoff now follows wrapped contexts to detect an Activity, adds `FLAG_ACTIVITY_NEW_TASK` only when no Activity exists, safely returns failure for runtime launcher errors, keeps unsent notes unchanged, and preserves the Copy fallback. Robolectric production-path regressions cover wrapped Activity, application context, missing/incompatible-launch failure, cycle safety, mailto intent identity, and unsent-only payload behavior.
 - Implementation status: complete
-- Retest build: 0.6.0-beta1 (6), pending final B18 packaging
+- Retest build: 0.6.0-beta1 (6)
 - Verification result: automated_checks_passed_pending_family_device_retest
 - Severity: Blocker
 - Related items: `KPF-0013`, `KPF-0015`

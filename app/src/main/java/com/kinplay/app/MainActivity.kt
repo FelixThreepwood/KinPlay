@@ -76,16 +76,21 @@ import com.kinplay.app.settings.AppSettingsRepository
 import com.kinplay.app.settings.LauncherIconSwitchResult
 import com.kinplay.app.settings.LauncherIconSwitcher
 import com.kinplay.app.settings.SessionConfigurationOverride
+import com.kinplay.app.settings.SessionConfiguration
 import com.kinplay.app.settings.SessionRounds
 import com.kinplay.app.settings.SettingsScreen
 import com.kinplay.app.settings.SharedPreferencesSettingsKeyValueStore
 import com.kinplay.app.settings.resolveNextSessionConfiguration
 import com.kinplay.app.settings.sessionDefaults
 import com.kinplay.app.session.TimedSession
+import com.kinplay.app.session.TimedSessionProgress
+import com.kinplay.app.session.TimedSessionStatus
 import com.kinplay.app.session.isTimedSessionEligible
+import com.kinplay.app.session.remainingTimeLabel
 import com.kinplay.app.session.startTimedSession
 import com.kinplay.app.ui.KinPlayTheme
 import com.kinplay.app.wyr.WouldYouRatherRoute
+import kotlinx.coroutines.delay
 import org.json.JSONObject
 import kotlin.random.Random
 
@@ -122,12 +127,15 @@ private object Routes {
     const val AboutApp = "about_app"
     const val SafetyPrivacy = "safety_privacy"
     const val Settings = "settings"
+    const val TimedSession = "timed_session/{gameId}/{duration}/{rounds}"
     const val MadLibsCollection = "mad_libs_collection"
     const val WouldYouRather = WOULD_YOU_RATHER_ROUTE
     const val Category = "category/{categoryId}"
     const val Detail = "detail/{itemId}"
     fun category(categoryId: String) = "category/$categoryId"
     fun detail(itemId: String) = "detail/$itemId"
+    fun timedSession(session: TimedSession) =
+        "timed_session/${session.gameId}/${session.configuration.duration.wireValue}/${session.configuration.rounds.wireValue}"
 }
 
 data class HomeShortcut(
@@ -215,6 +223,31 @@ fun KinPlayApp() {
                             onBack = { navController.popBackStack() },
                         )
                     }
+                    composable(
+                        Routes.TimedSession,
+                        arguments = listOf(
+                            navArgument("gameId") { type = NavType.StringType },
+                            navArgument("duration") { type = NavType.StringType },
+                            navArgument("rounds") { type = NavType.StringType },
+                        ),
+                    ) { entry ->
+                        val gameId = entry.arguments?.getString("gameId").orEmpty()
+                        val duration = ActivityDuration.fromWireValue(entry.arguments?.getString("duration"))
+                        val rounds = SessionRounds.fromWireValue(entry.arguments?.getString("rounds"))
+                        val item = contentPack.activeItemById(gameId)
+                        if (item == null || duration == null || rounds == null || !item.isTimedSessionEligible()) {
+                            TimedSessionLoadError(onExit = { navController.popBackStack() })
+                        } else {
+                            TimedSessionScreen(
+                                item = item,
+                                session = TimedSession(
+                                    gameId = gameId,
+                                    configuration = SessionConfiguration(duration, rounds),
+                                ),
+                                onExit = { navController.popBackStack() },
+                            )
+                        }
+                    }
                     composable(Routes.WouldYouRather) {
                         WouldYouRatherRoute(
                             gameTimer = appSettings.gameTimer,
@@ -261,6 +294,7 @@ fun KinPlayApp() {
                             navController = navController,
                             onSaveSessionOverride = ::persistSessionOverride,
                             onStartSession = ::startSession,
+                            onOpenTimedSession = { session -> navController.navigate(Routes.timedSession(session)) },
                         )
                     }
                 }
@@ -795,6 +829,7 @@ fun ActivityDetailScreen(
     navController: NavController,
     onSaveSessionOverride: (String, SessionConfigurationOverride?) -> Unit = { _, _ -> },
     onStartSession: (String) -> TimedSession? = { null },
+    onOpenTimedSession: (TimedSession) -> Unit = {},
 ) {
     if (shouldShowChildHandoffLock(item)) {
         ChildHandoffLockContainer { isLocked ->
@@ -809,6 +844,7 @@ fun ActivityDetailScreen(
                 isLocked = isLocked,
                 onSaveSessionOverride = onSaveSessionOverride,
                 onStartSession = onStartSession,
+                onOpenTimedSession = onOpenTimedSession,
             )
         }
     } else {
@@ -823,6 +859,7 @@ fun ActivityDetailScreen(
             isLocked = false,
             onSaveSessionOverride = onSaveSessionOverride,
             onStartSession = onStartSession,
+            onOpenTimedSession = onOpenTimedSession,
         )
     }
 }
@@ -840,9 +877,9 @@ private fun ActivityDetailSurface(
     isLocked: Boolean,
     onSaveSessionOverride: (String, SessionConfigurationOverride?) -> Unit,
     onStartSession: (String) -> TimedSession?,
+    onOpenTimedSession: (TimedSession) -> Unit,
 ) {
     val context = LocalContext.current.applicationContext
-    var startMessage by rememberSaveable(itemId) { mutableStateOf<String?>(null) }
     val resolvedSession = item
         ?.takeIf(KinPlayItem::isTimedSessionEligible)
         ?.let { settings.resolveNextSessionConfiguration(it.id) }
@@ -860,9 +897,10 @@ private fun ActivityDetailSurface(
                             enabled = !isLocked,
                             onSaveSessionOverride = onSaveSessionOverride,
                             onStartSession = { gameId ->
-                                startMessage = onStartSession(gameId)?.let { session ->
-                                    "Session ready: ${session.configuration.duration.label} • ${session.configuration.rounds.label}"
-                                } ?: "Session could not start."
+                                onStartSession(gameId)?.let { session ->
+                                    onMarkPlayed()
+                                    onOpenTimedSession(session)
+                                }
                             },
                         )
                     }
@@ -880,13 +918,7 @@ private fun ActivityDetailSurface(
                             fontWeight = FontWeight.Bold,
                         )
                     }
-                    startMessage?.let { message ->
-                        Text(
-                            message,
-                            modifier = Modifier.testTag("session-started"),
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
+
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         DetailPill(item.displayAgeRange())
                         DetailPill("Typical: ${item.durationMinutes} min")
@@ -921,6 +953,151 @@ private fun ActivityDetailSurface(
                 contentId = capture.contentId,
                 contentTitle = capture.contentTitle,
             )
+        }
+    }
+}
+
+@Composable
+fun TimedSessionScreen(
+    item: KinPlayItem,
+    session: TimedSession,
+    onExit: () -> Unit,
+) {
+    if (shouldShowChildHandoffLock(item)) {
+        ChildHandoffLockContainer { isLocked ->
+            TimedSessionSurface(item, session, isLocked, onExit)
+        }
+    } else {
+        TimedSessionSurface(item, session, isLocked = false, onExit = onExit)
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun TimedSessionSurface(
+    item: KinPlayItem,
+    session: TimedSession,
+    isLocked: Boolean,
+    onExit: () -> Unit,
+) {
+    val configuration = session.configuration
+    val initialProgress = remember(session.gameId, configuration) {
+        TimedSessionProgress.initial(configuration)
+    }
+    var round by rememberSaveable(session.gameId, configuration.rounds.wireValue) {
+        mutableStateOf(initialProgress.round)
+    }
+    var remainingSeconds by rememberSaveable(session.gameId, configuration.duration.wireValue) {
+        mutableStateOf(initialProgress.remainingSeconds)
+    }
+    var statusName by rememberSaveable(session.gameId, configuration.rounds.wireValue) {
+        mutableStateOf(initialProgress.status.name)
+    }
+    val isComplete = statusName == TimedSessionStatus.COMPLETE.name
+
+    LaunchedEffect(session.gameId, configuration) {
+        while (statusName == TimedSessionStatus.ACTIVE.name) {
+            delay(1_000L)
+            val next = TimedSessionProgress(
+                round = round,
+                remainingSeconds = remainingSeconds,
+                status = TimedSessionStatus.valueOf(statusName),
+            ).tick(configuration)
+            round = next.round
+            remainingSeconds = next.remainingSeconds
+            statusName = next.status.name
+        }
+    }
+
+    fun finishRound() {
+        val next = TimedSessionProgress(
+            round = round,
+            remainingSeconds = remainingSeconds,
+            status = TimedSessionStatus.valueOf(statusName),
+        ).completeRound(configuration)
+        round = next.round
+        remainingSeconds = next.remainingSeconds
+        statusName = next.status.name
+    }
+
+    Scaffold(
+        topBar = { TopAppBar(title = { Text("Timed session") }) },
+    ) { innerPadding ->
+        PageColumn(Modifier.padding(innerPadding).testTag("timed-session-surface")) {
+            Text(item.title, fontWeight = FontWeight.Bold)
+            Text(item.summary, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Card(
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    Text(
+                        "Round $round of ${configuration.rounds.count}",
+                        modifier = Modifier.testTag("timed-session-round"),
+                        fontWeight = FontWeight.Bold,
+                    )
+                    Text(
+                        TimedSessionProgress(round, remainingSeconds, TimedSessionStatus.valueOf(statusName))
+                            .remainingTimeLabel(),
+                        modifier = Modifier.testTag("timed-session-timer"),
+                        style = MaterialTheme.typography.displaySmall,
+                        fontWeight = FontWeight.Bold,
+                    )
+                    Text("${configuration.duration.label} per round")
+                }
+            }
+            item.detailSections().forEach { section ->
+                SectionList(section.title, section.lines)
+            }
+            if (isComplete) {
+                Card(
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
+                    modifier = Modifier.fillMaxWidth().testTag("timed-session-complete"),
+                ) {
+                    Column(
+                        modifier = Modifier.padding(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        Text("Session complete", fontWeight = FontWeight.Bold)
+                        Text("You finished all ${configuration.rounds.count} rounds.")
+                        Button(onClick = onExit, enabled = !isLocked) {
+                            Text("Back to details")
+                        }
+                    }
+                }
+            } else {
+                Button(
+                    onClick = ::finishRound,
+                    enabled = !isLocked,
+                    modifier = Modifier.fillMaxWidth().testTag("timed-session-finish-round"),
+                ) {
+                    Text("Finish round")
+                }
+                OutlinedButton(
+                    onClick = onExit,
+                    enabled = !isLocked,
+                    modifier = Modifier.fillMaxWidth().testTag("timed-session-exit"),
+                ) {
+                    Text("Exit session")
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun TimedSessionLoadError(onExit: () -> Unit) {
+    Column(
+        modifier = Modifier.fillMaxSize().padding(28.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text("This timed session is not available.", textAlign = TextAlign.Center)
+        OutlinedButton(onClick = onExit, modifier = Modifier.padding(top = 16.dp)) {
+            Text("Back")
         }
     }
 }
