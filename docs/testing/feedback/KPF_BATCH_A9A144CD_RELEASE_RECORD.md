@@ -1,7 +1,7 @@
 # KinPlay Batch A9A144CD release record
 
 Status: BLOCKED_PENDING_GOOGLE_DRIVE_AUTH
-Last updated: 2026-08-03T23:48:52Z
+Last updated: 2026-08-03T23:50:41Z
 Batch: `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`
 Target release: `0.6.0-beta1`
 
@@ -23,8 +23,8 @@ Target release: `0.6.0-beta1`
 
 - Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 - Validated source checkpoint: `6f35f071b49b2662764de57519e466f3f47aee5f`
-- Feature branch remote verification: `origin/feat/kinplay-0.6.0-beta1-feedback` resolves to `3a90c6636c924bd5dcd5aba388b07d76024fd70f`.
-- Final branch: `main` is fast-forwarded to `3a90c6636c924bd5dcd5aba388b07d76024fd70f` and pushed to `origin/main`; dual-destination publication remains blocked only by Google OAuth reauthentication.
+- Feature branch remote verification: `origin/feat/kinplay-0.6.0-beta1-feedback` resolves to `c2a49116129c0088b136818d213ac46b0e5617d3`.
+- Final branch: `main` is fast-forwarded to `c2a49116129c0088b136818d213ac46b0e5617d3` and pushed to `origin/main`; dual-destination publication remains blocked only by Google OAuth reauthentication.
 
 ## Validation evidence
 
@@ -62,4 +62,4 @@ All 22 canonical items linked to this batch are implementation-complete with aut
 
 ## Blocking condition
 
-The configured Google OAuth token at the Hermes profile expired/revoked and refresh returned `invalid_grant`. The Google client dependencies were supplied through `uv` for diagnosis. A second fresh consent flow was generated and opened in Firefox at 2026-08-03T23:30Z; Google still presents a signed-out account chooser, so the account holder must complete interactive sign-in and consent. A localhost:1 callback listener is running to capture the redirect without exposing it in chat. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main` commit `3a90c6636c924bd5dcd5aba388b07d76024fd70f`. Resume B18 after reauthentication, upload to the exact folder, download the returned object, and compare its size and SHA-256 to the local APK before replacing this blocked record with the completed release record.
+The configured Google OAuth token at the Hermes profile expired/revoked and refresh returned `invalid_grant`. The Google client dependencies were supplied through `uv` for diagnosis. A second fresh consent flow was generated and opened in Firefox at 2026-08-03T23:30Z; Google still presents a signed-out account chooser, so the account holder must complete interactive sign-in and consent. A localhost:1 callback listener is running to capture the redirect without exposing it in chat. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main` commit `c2a49116129c0088b136818d213ac46b0e5617d3`. Resume B18 after reauthentication, upload to the exact folder, download the returned object, and compare its size and SHA-256 to the local APK before replacing this blocked record with the completed release record.
