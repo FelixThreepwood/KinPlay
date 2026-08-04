@@ -1,7 +1,7 @@
 # KinPlay Batch A9A144CD release record
 
 Status: BLOCKED_PENDING_GOOGLE_DRIVE_AUTH
-Last updated: 2026-08-04T19:40:21Z
+Last updated: 2026-08-04T20:16:33Z
 Batch: `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`
 Target release: `0.6.0-beta1`
 
@@ -63,4 +63,4 @@ All 22 canonical items linked to this batch are implementation-complete with aut
 
 ## Blocking condition
 
-The configured Google OAuth token at the Hermes profile expired/revoked; a fresh `uv`-backed setup check at 2026-08-04T16:32:04Z returned `TOKEN_REVOKED` with `invalid_grant`. A fresh consent URL was opened in the desktop browser at 2026-08-04T16:36:20Z, and a state-checked local callback bridge is listening on `127.0.0.1:1` with status `waiting_for_callback`. The bridge will exchange only a matching redirect without exposing it in chat, then run the verification-first publisher. Google still requires the account holder's interactive sign-in and consent; the agent entered no credentials. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main`; resume B18 after reauthentication, upload to the exact folder, download the returned object, and compare its size and SHA-256 to the local APK before replacing this blocked record with the completed release record.
+The configured Google OAuth token at the Hermes profile expired/revoked; a fresh `uv`-backed setup check returned `TOKEN_REVOKED` with `invalid_grant`. A new consent URL was opened in the desktop browser at 2026-08-04T20:14:52Z; Google is showing the account chooser with the stored account signed out, and a state-checked local callback bridge is listening on `127.0.0.1:1` with status `waiting_for_callback`. The bridge will exchange only a matching redirect without exposing it in chat, then run the verification-first publisher. Google still requires the account holder's interactive sign-in and consent; the agent entered no credentials. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main`; resume B18 after reauthentication, upload to the exact folder, download the returned object, and compare its size and SHA-256 to the local APK before replacing this blocked record with the completed release record.
