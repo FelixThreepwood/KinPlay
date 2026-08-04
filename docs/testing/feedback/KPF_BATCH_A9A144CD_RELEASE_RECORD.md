@@ -33,7 +33,7 @@ Passed:
 - `kinplay_offline_validate.py --mode quick`
 - `kinplay_offline_validate.py --mode checkpoint`
 - `kinplay_offline_validate.py --mode release`
-- Fresh 2026-08-04 release validator passed at 19:37:24Z; log: `/home/phantomatic/.hermes/logs/kinplay-validation/20260804-123433-release.log`
+- Fresh 2026-08-04 release validator passed at 20:21:19Z; log: `/home/phantomatic/.hermes/logs/kinplay-validation/20260804-131802-release.log`
 - Explicit `./gradlew --no-daemon testDebugUnitTest --rerun-tasks`
 - Full JVM suite: 186/186
 - Android instrumentation test-source compilation
