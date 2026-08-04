@@ -1,7 +1,7 @@
 # KinPlay Batch A9A144CD release record
 
 Status: BLOCKED_PENDING_GOOGLE_DRIVE_AUTH
-Last updated: 2026-08-04T16:40:16Z
+Last updated: 2026-08-04T19:40:21Z
 Batch: `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`
 Target release: `0.6.0-beta1`
 
@@ -10,8 +10,8 @@ Target release: `0.6.0-beta1`
 - Package: `com.kinplay.app`
 - Version name: `0.6.0-beta1`
 - Version code: `6`
-- APK filename: `20260803_KinPlay_v0.6.0-beta1_MVP.apk`
-- Local APK: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260803_KinPlay_v0.6.0-beta1_MVP.apk`
+- APK filename: `20260804_KinPlay_v0.6.0-beta1_MVP.apk`
+- Local APK: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260804_KinPlay_v0.6.0-beta1_MVP.apk`
 - Size: `11,674,099` bytes
 - SHA-256: `069dadf06a5d79d1a485694219cfd799169f26cab126cf359ae10bca72f13ae8`
 - Previous local root APK: `20260727_KinPlay_v0.5.0-beta1_MVP.apk`
@@ -33,7 +33,7 @@ Passed:
 - `kinplay_offline_validate.py --mode quick`
 - `kinplay_offline_validate.py --mode checkpoint`
 - `kinplay_offline_validate.py --mode release`
-- Fresh 2026-08-04 release validator passed at 16:35:05Z; log: `/home/phantomatic/.hermes/logs/kinplay-validation/20260804-093208-release.log`
+- Fresh 2026-08-04 release validator passed at 19:37:24Z; log: `/home/phantomatic/.hermes/logs/kinplay-validation/20260804-123433-release.log`
 - Explicit `./gradlew --no-daemon testDebugUnitTest --rerun-tasks`
 - Full JVM suite: 186/186
 - Android instrumentation test-source compilation
