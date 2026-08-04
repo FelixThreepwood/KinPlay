@@ -1,7 +1,7 @@
 # KinPlay Batch A9A144CD release record
 
 Status: BLOCKED_PENDING_GOOGLE_DRIVE_AUTH
-Last updated: 2026-08-04T13:58:53Z
+Last updated: 2026-08-04T15:16:45Z
 Batch: `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`
 Target release: `0.6.0-beta1`
 
@@ -33,7 +33,7 @@ Passed:
 - `kinplay_offline_validate.py --mode quick`
 - `kinplay_offline_validate.py --mode checkpoint`
 - `kinplay_offline_validate.py --mode release`
-- Fresh 2026-08-04 release validator passed at 13:58:53Z; log: `/home/phantomatic/.hermes/logs/kinplay-validation/20260804-065453-release.log`
+- Fresh 2026-08-04 release validator passed at 15:16:45Z; log: `/home/phantomatic/.hermes/logs/kinplay-validation/20260804-081326-release.log`
 - Explicit `./gradlew --no-daemon testDebugUnitTest --rerun-tasks`
 - Full JVM suite: 186/186
 - Android instrumentation test-source compilation
@@ -63,4 +63,4 @@ All 22 canonical items linked to this batch are implementation-complete with aut
 
 ## Blocking condition
 
-The configured Google OAuth token at the Hermes profile expired/revoked; a fresh `uv`-backed setup check returned `TOKEN_REVOKED` with `invalid_grant`. A fresh consent flow is open in Firefox at Google's account chooser, where the listed account is signed out; a state-checked local callback listener is bound on `127.0.0.1:1` with status `waiting_for_callback` and will exchange only a matching redirect without exposing it in chat. Google still requires the account holder's interactive sign-in and consent. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main`; resume B18 after reauthentication, upload to the exact folder, download the returned object, and compare its size and SHA-256 to the local APK before replacing this blocked record with the completed release record.
+The configured Google OAuth token at the Hermes profile expired/revoked; a fresh `uv`-backed setup check returned `TOKEN_REVOKED` with `invalid_grant`. A fresh consent flow is open in Firefox at Google's account chooser, where the listed account is signed out; a state-checked local callback listener is bound on `127.0.0.1:1` with status `waiting_for_callback`, and a private post-auth publisher is waiting for the matching redirect. The publisher will exchange only a matching redirect without exposing it in chat. Google still requires the account holder's interactive sign-in and consent. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main`; resume B18 after reauthentication, upload to the exact folder, download the returned object, and compare its size and SHA-256 to the local APK before replacing this blocked record with the completed release record.
