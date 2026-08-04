@@ -1,7 +1,7 @@
 # KinPlay Batch A9A144CD release record
 
 Status: BLOCKED_PENDING_GOOGLE_DRIVE_AUTH
-Last updated: 2026-08-04T12:16:27Z
+Last updated: 2026-08-04T12:44:24Z
 Batch: `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`
 Target release: `0.6.0-beta1`
 
@@ -33,6 +33,7 @@ Passed:
 - `kinplay_offline_validate.py --mode quick`
 - `kinplay_offline_validate.py --mode checkpoint`
 - `kinplay_offline_validate.py --mode release`
+- Fresh 2026-08-04 checkpoint and release validator runs passed; logs: `/home/phantomatic/.hermes/logs/kinplay-validation/20260804-053348-checkpoint.log` and `/home/phantomatic/.hermes/logs/kinplay-validation/20260804-053937-release.log`
 - Explicit `./gradlew --no-daemon testDebugUnitTest --rerun-tasks`
 - Full JVM suite: 186/186
 - Android instrumentation test-source compilation
@@ -62,4 +63,4 @@ All 22 canonical items linked to this batch are implementation-complete with aut
 
 ## Blocking condition
 
-The configured Google OAuth token at the Hermes profile expired/revoked and refresh returned `invalid_grant`. The Google client dependencies were supplied through `uv` for diagnosis. A fresh consent flow was generated and opened in Firefox during the current resume attempt; a state-checked localhost:1 callback listener is bound to capture and exchange only a matching redirect without exposing it in chat. Google still requires the account holder's interactive sign-in and consent. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main` commit `c2a49116129c0088b136818d213ac46b0e5617d3`. Resume B18 after reauthentication, upload to the exact folder, download the returned object, and compare its size and SHA-256 to the local APK before replacing this blocked record with the completed release record.
+The configured Google OAuth token at the Hermes profile expired/revoked and refresh returned `invalid_grant`. The Google client dependencies were supplied through `uv` for diagnosis. A fresh consent flow is open in Firefox on the Google sign-in page; a state-checked local callback listener is bound on `127.0.0.1:1` and `::1:1` to capture and exchange only a matching redirect without exposing it in chat. Google still requires the account holder's interactive sign-in and consent. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main` commit `316eae276f4879c992d12222823325ab326e0272`. Resume B18 after reauthentication, upload to the exact folder, download the returned object, and compare its size and SHA-256 to the local APK before replacing this blocked record with the completed release record.
