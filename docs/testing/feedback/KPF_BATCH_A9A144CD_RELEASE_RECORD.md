@@ -23,8 +23,8 @@ Target release: `0.6.0-beta1`
 
 - Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 - Validated source checkpoint: `6f35f071b49b2662764de57519e466f3f47aee5f`
-- Feature branch remote verification: `origin/feat/kinplay-0.6.0-beta1-feedback` resolves to `c2a49116129c0088b136818d213ac46b0e5617d3`.
-- Final branch: `main` is fast-forwarded to `c2a49116129c0088b136818d213ac46b0e5617d3` and pushed to `origin/main`; dual-destination publication remains blocked only by Google OAuth reauthentication.
+- Feature branch remote verification: `origin/feat/kinplay-0.6.0-beta1-feedback` resolves to `76d0b846e6d367de89b82c1bbbc8cabbaeba2252`.
+- Final branch: `main` is pushed to `origin/main` at the current documentation checkpoint `709a9df31b1dcd1f68b897e9944ac5d4e687f856`; dual-destination publication remains blocked only by Google OAuth reauthentication.
 
 ## Validation evidence
 
