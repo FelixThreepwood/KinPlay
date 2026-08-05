@@ -37,7 +37,7 @@ Baseline commit: `2e1b7899e02fdd2391855ea7cd09f3404b3a18c1`
 - Implementation-complete with automated evidence: 22/22 (`KPF-0006`, `KPF-0008`, `KPF-0009`, `KPF-0018`, `KPF-0019`, `KPF-0021`, `KPF-0022`, `KPF-0023`, `KPF-0024`, `KPF-0025`, `KPF-0026`, `KPF-0027`, `KPF-0028`, `KPF-0029`, `KPF-0030`, `KPF-0031`, `KPF-0032`, `KPF-0033`, `KPF-0034`, `KPF-0035`, `KPF-0036`, `KPF-0037`).
 - Pending user-visible closure: physical/family-device retest for implemented behavior, including the approved KPF-0019 launcher masters.
 - KPF-0020 is excluded from this intake batch.
-- Earliest incomplete batch: B18.
+- Earliest incomplete batch: none. All B0–B18 gates are complete; pending work is the project-owner physical-device/family retest.
 
 ## Preserved intake state
 
