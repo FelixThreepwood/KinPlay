@@ -1,7 +1,7 @@
 # KinPlay Batch A9A144CD release record
 
 Status: BLOCKED_PENDING_GOOGLE_DRIVE_AUTH
-Last updated: 2026-08-05T00:20:04Z
+Last updated: 2026-08-05T00:59:04Z
 Batch: `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`
 Target release: `0.6.0-beta1`
 
@@ -63,4 +63,4 @@ All 22 canonical items linked to this batch are implementation-complete with aut
 
 ## Blocking condition
 
-The configured Google OAuth token at the Hermes profile expired/revoked; a fresh `uv`-backed setup check returned `TOKEN_REVOKED` with `invalid_grant`. A fresh PKCE consent session remains open in Firefox. The state-checked local callback bridge is listening on `127.0.0.1:1` with status `waiting_for_callback`, and the verification-first publisher is running. Google still requires the account holder to enter authentication and complete consent; the agent entered no credentials. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main`; after the matching callback arrives, the publisher will upload to the exact folder, download the returned object, compare its size and SHA-256 to the local APK, then trash superseded cloud APKs only after verification.
+The configured Google OAuth token at the Hermes profile expired/revoked; the supported `uv`-backed setup check returned `TOKEN_REVOKED` with `invalid_grant`. A fresh PKCE consent session was generated and opened in Firefox at 2026-08-05T00:59:04Z. The state-checked local callback bridge is listening on `127.0.0.1:1` with status `waiting_for_callback`, and the verification-first publisher is running. Google still requires the account holder to enter authentication and complete consent; the agent entered no credentials. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main`; after the matching callback arrives, the publisher will upload to the exact folder, download the returned object, compare its size and SHA-256 to the local APK, then trash superseded cloud APKs only after verification.
