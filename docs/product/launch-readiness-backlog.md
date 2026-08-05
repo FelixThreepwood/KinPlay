@@ -511,6 +511,12 @@ Acceptance criteria:
 - Monetization requires: product decision, policy review, Play Billing implementation if applicable, privacy/Data safety update, and listing copy update.
 - Public launch requires: resolved launch blockers, final screenshots/listing, policy consistency, support contact, and release checklist.
 
+## Offline preparation checkpoint
+
+As of 2026-08-05, the repository contains a launch-readiness packet under `docs/launch/` covering the current privacy-policy draft, source-grounded SDK/data inventory, content and safety QA, closed-testing protocol, privacy-safe feedback form, and release/rollback checklist. These documents advance the offline gates without claiming Play Console submission, legal approval, public hosting, or physical-device validation.
+
+The current beta baseline is `0.6.0-beta1` (version code `6`). The next external gate remains the project-owner family/device retest. The current MVP decisions remain no accounts, no analytics, no crash-reporting SDK, no ads, no purchases, no cloud sync, and no new runtime permissions.
+
 ## Suggested immediate next tasks
 
 1. Run the family device test plan and produce LCH-001.

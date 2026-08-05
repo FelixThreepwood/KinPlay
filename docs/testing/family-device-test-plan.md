@@ -13,7 +13,7 @@ Validate the KinPlay MVP on physical Android devices with 5-10 family/parent tes
 
 ### In scope
 
-- Debug APK installed from `/mnt/cyberforgex-torrents/KinPlay/apk-drops/KinPlay-mvp-debug.apk`.
+- Current private-beta APK installed from `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260804_KinPlay_v0.6.0-beta1_MVP.apk` (verify the current release record before each handoff).
 - Physical Android phones and tablets available to the user/testers.
 - Parent-led sessions with children roughly ages 2-8.
 - MVP flows:
