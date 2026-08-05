@@ -1,7 +1,7 @@
 # KinPlay Batch A9A144CD release record
 
-Status: BLOCKED_PENDING_GOOGLE_DRIVE_AUTH
-Last updated: 2026-08-05T00:59:04Z
+Status: RELEASED_TO_SHARED_AND_GOOGLE_DRIVE
+Last updated: 2026-08-05T01:31:22Z
 Batch: `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`
 Target release: `0.6.0-beta1`
 
@@ -16,15 +16,26 @@ Target release: `0.6.0-beta1`
 - SHA-256: `069dadf06a5d79d1a485694219cfd799169f26cab126cf359ae10bca72f13ae8`
 - Previous local root APK: `20260727_KinPlay_v0.5.0-beta1_MVP.apk`
 - Previous local root archive: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/beta-testing/20260727_KinPlay_v0.5.0-beta1_MVP.apk`
-- Google Drive target folder ID: `1JISfojmmxDuLKhx5XZ91at1lEi0TwWxk`
-- Google Drive file ID/link: not available; publication is blocked at the account password step of OAuth reauthentication.
+- Google Drive target folder ID: `12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp`
+- Google Drive file ID/link: `1yj5w7xo-5okqRUiMDmHl-fL0MGERP_m3` / https://drive.google.com/file/d/1yj5w7xo-5okqRUiMDmHl-fL0MGERP_m3/view?usp=drivesdk
+
+## Verified dual publication
+
+- Google Workspace authentication: `AUTHENTICATED`; token refresh is operational.
+- Google Drive object name: `20260804_KinPlay_v0.6.0-beta1_MVP.apk`
+- Google Drive object size: `11,674,099` bytes
+- Google Drive object parent: `12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp`
+- Downloaded Drive object SHA-256: `069dadf06a5d79d1a485694219cfd799169f26cab126cf359ae10bca72f13ae8`
+- Local APK SHA-256: `069dadf06a5d79d1a485694219cfd799169f26cab126cf359ae10bca72f13ae8`
+- Final active APK count in the Drive folder: exactly one.
+- Superseded cloud APK `20260727_KinPlay_v0.5.0-beta1_MVP.apk` was moved to Drive trash only after new-object verification.
 
 ## Source publication checkpoint
 
 - Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 - Validated source checkpoint: `6f35f071b49b2662764de57519e466f3f47aee5f`
 - Feature branch remote verification: `origin/feat/kinplay-0.6.0-beta1-feedback` resolves to `76d0b846e6d367de89b82c1bbbc8cabbaeba2252`.
-- Final branch: `main` is pushed to `origin/main` at current documentation checkpoint `b5d50d01a75ae6b2fc0f606bc6e7af7e07c1972f` and contains the verified source-publication checkpoint plus later durable B18 documentation checkpoints; dual-destination publication remains blocked only by Google OAuth reauthentication.
+- Final branch: `main` is pushed to `origin/main` at durable documentation checkpoint `4851c205ed905a78df9995b46e62dc9513d7023c` and contains the verified source-publication checkpoint; dual-destination publication is now verified.
 
 ## Validation evidence
 
@@ -61,6 +72,6 @@ All 22 canonical items linked to this batch are implementation-complete with aut
 
 `KPF-0020` is excluded from this batch.
 
-## Blocking condition
+## Completion status
 
-The configured Google OAuth token at the Hermes profile expired/revoked; the supported `uv`-backed setup check returned `TOKEN_REVOKED` with `invalid_grant`. A fresh PKCE consent session was generated and opened in Firefox at 2026-08-05T00:59:04Z. The state-checked local callback bridge is listening on `127.0.0.1:1` with status `waiting_for_callback`, and the verification-first publisher is running. Google still requires the account holder to enter authentication and complete consent; the agent entered no credentials. No Drive upload, download verification, or cloud trash operation has been claimed or performed. Source publication is complete and verified at `origin/main`; after the matching callback arrives, the publisher will upload to the exact folder, download the returned object, compare its size and SHA-256 to the local APK, then trash superseded cloud APKs only after verification.
+B18 dual publication is complete and independently verified. The only remaining project limitation is physical-device/family retesting, which is performed by the project owner. No Android device or emulator was available to this environment, so no device-test pass is claimed.
