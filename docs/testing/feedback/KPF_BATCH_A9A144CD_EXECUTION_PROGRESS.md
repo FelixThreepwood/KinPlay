@@ -5,7 +5,7 @@ Target release: `0.6.0-beta1`
 Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 Final branch: `main`
 Baseline commit: `2e1b7899e02fdd2391855ea7cd09f3404b3a18c1`
-- Last updated: `2026-08-05T01:31:22Z`
+- Last updated: `2026-08-05T01:40:50Z`
 
 ## Durable status
 
