@@ -35,7 +35,7 @@ Target release: `0.6.0-beta1`
 - Implementation branch: `feat/kinplay-0.6.0-beta1-feedback`
 - Validated source checkpoint: `6f35f071b49b2662764de57519e466f3f47aee5f`
 - Feature branch remote verification: `origin/feat/kinplay-0.6.0-beta1-feedback` resolves to `76d0b846e6d367de89b82c1bbbc8cabbaeba2252`.
-- Final branch: `main` is pushed to `origin/main` at durable documentation checkpoint `4851c205ed905a78df9995b46e62dc9513d7023c` and contains the verified source-publication checkpoint; dual-destination publication is now verified.
+- Final branch: `main` is pushed to `origin/main` at final documentation checkpoint `7612cb38f9d28b8410ecdb0e320060688da2af9b` and contains the verified source-publication checkpoint; dual-destination publication is now verified.
 
 ## Validation evidence
 
