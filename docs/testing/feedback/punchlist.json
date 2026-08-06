@@ -556,6 +556,18 @@
         "validatorStatus": "passed",
         "gradleGate": "testDebugUnitTest lintDebug assembleDebug passed",
         "canonicalRuntimeParity": "passed"
+      },
+      "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+      "remotePublication": {
+        "folderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "fileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "name": "20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "link": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "bytes": 21613823,
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "remoteReadback": "passed_byte_exact",
+        "activeApkCount": 1,
+        "supersededBeta2": "reversibly_trashed"
       }
     }
   ],
@@ -733,7 +745,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -1046,7 +1062,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -1092,7 +1112,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -1245,7 +1269,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -1293,7 +1321,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       }
     },
     {
@@ -2366,7 +2398,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2405,7 +2441,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2447,7 +2487,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2492,7 +2536,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2534,7 +2582,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2576,7 +2628,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2618,7 +2674,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2661,7 +2721,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2703,7 +2767,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2746,7 +2814,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
@@ -2785,7 +2857,11 @@
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)"
+        "version": "0.6.0-beta3 (8)",
+        "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
+        "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
+        "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
     }

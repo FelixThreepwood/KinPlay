@@ -122,6 +122,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Home descriptor is Kid Friendly Family Fun; browse actions render before favorites and recently played content; the instructional section remains disabled.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0007 — Show suitable-place cues on category cards
 
@@ -307,6 +308,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Forest, Ocean, Berry, Sunshine, and Tropical palettes provide separated accessible interface layers.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0017 — Add settings for timers, durations, and color themes
 
@@ -330,6 +332,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Settings persists timer, activity duration, round, theme, launcher, and session preferences through the existing versioned repository.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0018 — Add a deliberate child handoff lock mode
 
@@ -423,6 +426,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Cards retain a compact responsive two-column expanded hierarchy with a stacked narrow/large-text fallback.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0022 — Show a concise description on every collapsed game card
 
@@ -450,6 +454,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Collapsed cards expose the reviewed title and one-sentence description only.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0023 — Remove negative parent-state framing from user-visible copy
 
@@ -1103,6 +1108,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: All app-bar pages expose an accessible right-aligned top Back action; Android system Back remains available.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0054 — Hide empty Materials sections on details pages
 
@@ -1124,6 +1130,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Materials sections render only when the reviewed materials list is nonempty.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0055 — Remove nonessential metadata from game instruction pages
 
@@ -1146,6 +1153,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Instruction surfaces no longer render age, typical duration, energy/activity type, or participant-suitability metadata.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0056 — Restrict collapsed cards to name and one-sentence description at every level
 
@@ -1168,6 +1176,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Collapsed cards at all discovery levels show only title, one-sentence description, and required favorite/expand controls; descriptors appear after expansion.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0057 — Use minimum-age-only labels on game cards
 
@@ -1190,6 +1199,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Card age labels use the reviewed minimum only, such as Ages 2+ and Ages 6+.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0058 — Place Home browse actions above recently played games
 
@@ -1211,6 +1221,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Home renders Random game and All games and activities before favorites and recently played content.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0059 — Use a compact horizontal layout for Settings timing sections
 
@@ -1232,6 +1243,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Settings timing options use horizontal rows at supported widths with narrow and large-text stacked fallback.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0060 — Add two vibrant bright color themes
 
@@ -1254,6 +1266,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Sunshine and Tropical are persisted, selectable, bright themes with automated contrast/separation coverage.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0061 — Rename the Home descriptor to Kid Friendly Family Fun
 
@@ -1276,6 +1289,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Home descriptor is Kid Friendly Family Fun in the app surface and the batch release records.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0062 — Provide hierarchical search for games and activities
 
@@ -1298,6 +1312,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Search is available from Home and discovery hierarchy pages and indexes titles, descriptions, and instructions.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
 
 ## KPF-0063 — Add favorite toggles and a favorites list to game cards
 
@@ -1319,3 +1334,4 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Latest implementation evidence: Cards expose accessible Star/StarBorder toggles; favorite state persists and the Favorites destination reflects additions/removals.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+- Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.

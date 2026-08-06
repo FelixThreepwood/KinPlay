@@ -193,3 +193,16 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 - APK inspection: package `com.kinplay.app`, min SDK 26, target SDK 35, only AndroidX dynamic receiver permission, v2 signature valid.
 - Canonical/runtime content parity: passed.
 - Closure state: all 16 items are `fixed-awaiting-retest`; physical Pixel 8 Pro / Android 16 validation remains open.
+
+## 2026-08-06 — KP-BATCH-26606A7F beta3 publication verification
+
+- Source commit: `3aa866b7525632681c728be98279fb9521cd21f7`; `origin/main` matched this SHA.
+- Drive folder: `12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp`
+- Published object: `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`
+- Link: https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk
+- Remote name: `20260806_KinPlay_v0.6.0-beta3_MVP.apk`
+- Remote size: `21613823` bytes
+- Remote SHA-256: `6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22`
+- Remote download comparison: byte-exact pass.
+- Final folder inventory: exactly one active APK; beta2 was moved to reversible trash after verification.
+- Physical retest remains open on Google Pixel 8 Pro / Android 16 / SDK 36.
