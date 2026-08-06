@@ -1,6 +1,6 @@
 # KinPlay Feedback Retest Log
 
-Last updated: 2026-08-06T03:06:47Z
+Last updated: 2026-08-06T07:35:34Z
 
 Current revision under retest: **0.6.0-beta2 (7)** for the implemented items in batch `KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B`; prior cohorts retain their historical retest builds. Earlier cohorts retain their recorded retest builds unless a row below names 0.6.0-beta1 (6); KPF-0020 remains on 0.5.0-beta1 (5) because it is excluded from this batch.
 
@@ -147,3 +147,49 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 - Drive object: `1tm7P1Wlo4SiqHesMubR67ciRV29a5efP`
 - Remote read-back: passed exact size and SHA-256 comparison; final folder inventory contains one active APK.
 - Device status remains open: no Pixel 8 Pro or emulator was connected for physical interaction, visual, accessibility, or audio retest.
+
+## New intake awaiting triage — KP-BATCH-26606A7F-956F-4699-AE68-328FFA369FBC
+
+- Affected build: **0.6.0-beta2 (7)**. This batch is intake-only and has no retest build.
+- Source notes: 11 new unique note IDs; no replayed IDs.
+- Existing canonical items touched: `KPF-0006`, `KPF-0016`, `KPF-0017`, `KPF-0021`, `KPF-0022`.
+- New canonical items: `KPF-0053`–`KPF-0063`.
+- Privacy: Project records contain no child names, contact details, images, birthdates, or precise locations.
+- Code authorization: No application code change was authorized or made.
+
+| New item | Triage state | Next validation |
+|---|---|---|
+| KPF-0053 | new | Resolve app-bar/system Back placement and verify consistent right-aligned navigation with accessibility. |
+| KPF-0054 | new | Verify empty-material activities omit the label, section, placeholder, and reserved space. |
+| KPF-0055 | new | Review instruction pages for metadata removal while retaining necessary safety and play-critical content. |
+| KPF-0056 | new | Verify every card level shows only name and one sentence until expansion/opening. |
+| KPF-0057 | new | Verify every age label uses only the reviewed minimum age and no maximum. |
+| KPF-0058 | new | Verify Home reading/focus order places Random game and All games and activities above recents. |
+| KPF-0059 | new | Verify horizontal Settings duration options plus narrow-width and large-text fallbacks. |
+| KPF-0060 | new | Approve two bright themes and verify contrast, persistence, and application behavior. |
+| KPF-0061 | new | Check the approved Home descriptor across visible copy, labels, and review exports. |
+| KPF-0062 | new | Define search scope/indexing and verify results preserve hierarchy and back-stack context. |
+| KPF-0063 | new | Define persistence and verify favorite toggle, unfavorite, list, accessibility, and migration behavior. |
+
+## 2026-08-06 — KP-BATCH-26606A7F beta3 implementation
+
+- Batch: `KP-BATCH-26606A7F-956F-4699-AE68-328FFA369FBC`
+- Implementation build: `0.6.0-beta3` (version code `8`)
+- Scope: 16 canonical items, including existing items KPF-0006, KPF-0016, KPF-0017, KPF-0021, and KPF-0022 plus KPF-0053 through KPF-0063.
+- Direct authorization: The active user request authorized implementation; the intake payload remains preserved as sanitized product-test data.
+- Implemented behavior: consistent right-aligned top Back actions, empty-material suppression, instruction metadata removal, title/description-only collapsed cards, minimum-age labels, Home browse ordering and copy, compact Settings rows, Sunshine/Tropical themes, hierarchical local search, and persistent Favorites.
+- Canonical/runtime content: no JSON content mutation was required; byte parity remains a release gate. Review exports were updated to minimum-age-only wording.
+- Automated status at record update: unit suite passed; release validator and APK verification remain required before final release closure.
+- Physical retest: Pixel 8 Pro on Android 16 / SDK 36 remains open until a device or emulator is available.
+
+## 2026-08-06 — KP-BATCH-26606A7F beta3 automated release verification
+
+- Build: `0.6.0-beta3` (8)
+- Artifact: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk`
+- Size: `21613823` bytes
+- SHA-256: `6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22`
+- Independent validator: passed; log `/home/phantomatic/.hermes/logs/kinplay-validation/20260806-011805-release.log`
+- Fresh Gradle gate: `testDebugUnitTest lintDebug assembleDebug` passed after the final detail-screen cleanup.
+- APK inspection: package `com.kinplay.app`, min SDK 26, target SDK 35, only AndroidX dynamic receiver permission, v2 signature valid.
+- Canonical/runtime content parity: passed.
+- Closure state: all 16 items are `fixed-awaiting-retest`; physical Pixel 8 Pro / Android 16 validation remains open.

@@ -56,6 +56,24 @@ fun accessiblePalette(theme: AppColorTheme): AccessiblePalette = when (theme) {
         secondaryContainer = argb(0xFFF6E09C), onSecondaryContainer = argb(0xFF261D00),
         tertiaryContainer = argb(0xFFD5EAD7), onTertiaryContainer = argb(0xFF112C18),
     )
+    AppColorTheme.SUNSHINE -> AccessiblePalette(
+        background = argb(0xFFFFE082), onBackground = argb(0xFF3A2800),
+        surface = argb(0xFFFFFBF2), onSurface = argb(0xFF2E2100),
+        surfaceVariant = argb(0xFFFFD77A), onSurfaceVariant = argb(0xFF3A2800),
+        primary = argb(0xFF9A4D00), onPrimary = argb(0xFFFFFFFF),
+        primaryContainer = argb(0xFFFFC56B), onPrimaryContainer = argb(0xFF341500),
+        secondaryContainer = argb(0xFFBFE7FF), onSecondaryContainer = argb(0xFF00233A),
+        tertiaryContainer = argb(0xFFFFC4E1), onTertiaryContainer = argb(0xFF3D0822),
+    )
+    AppColorTheme.TROPICAL -> AccessiblePalette(
+        background = argb(0xFFAEEED8), onBackground = argb(0xFF002B24),
+        surface = argb(0xFFF7FFFB), onSurface = argb(0xFF00251F),
+        surfaceVariant = argb(0xFF7FE3C3), onSurfaceVariant = argb(0xFF00362C),
+        primary = argb(0xFF006B5B), onPrimary = argb(0xFFFFFFFF),
+        primaryContainer = argb(0xFF64E4C3), onPrimaryContainer = argb(0xFF002018),
+        secondaryContainer = argb(0xFFFFB5C8), onSecondaryContainer = argb(0xFF420019),
+        tertiaryContainer = argb(0xFFFFD18A), onTertiaryContainer = argb(0xFF382000),
+    )
 }
 
 @Composable

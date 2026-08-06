@@ -332,24 +332,30 @@ class ProtectedSafetyWarningsRegressionTest {
         val pack = ContentPack.fromJson(JSONObject(readText(root.resolve("content/seed/kinplay_seed_v1.json"))))
         fun item(id: String) = pack.items.single { it.id == id }
 
-        // Collapsed cards bind these pure helpers: safety-bearing materials and first setup remain reachable.
-        assertTrue(item("rainbow_sort_sprint").collapsedCardPreviewLines().any { it.contains("safe toys or blocks") })
-        assertTrue(item("memory_tray_peek").collapsedCardPreviewLines().any { it.contains("safe household objects") })
-        assertTrue(item("washable_coloring_together").collapsedCardPreviewLines().any { it.contains("washable non-toxic crayons or markers") })
-        assertTrue(item("washable_painting_shapes").collapsedCardPreviewLines().any { it.contains("washable non-toxic children’s paint") })
-        assertTrue(item("sock_skating_rink").collapsedCardPreviewLines().any { it.startsWith("Setup: Use only a smooth, clear floor area") })
+        // Collapsed cards intentionally expose only the reviewed one-sentence description.
+        assertTrue(item("rainbow_sort_sprint").collapsedCardPreviewLines().single().isNotBlank())
+        assertTrue(item("memory_tray_peek").collapsedCardPreviewLines().single().isNotBlank())
+        assertTrue(item("washable_coloring_together").collapsedCardPreviewLines().single().isNotBlank())
+        assertTrue(item("washable_painting_shapes").collapsedCardPreviewLines().single().isNotBlank())
+        assertTrue(item("sock_skating_rink").collapsedCardPreviewLines().single().isNotBlank())
 
-        // The shared collapsed/expanded row leads with summary and retains setup; details retain complete warnings.
+        // Details retain complete warnings and setup content.
+        assertTrue(item("rainbow_sort_sprint").detailSections().single { it.title == "Materials" }.lines[0].contains("safe toys or blocks"))
+        assertTrue(item("memory_tray_peek").detailSections().single { it.title == "Materials" }.lines[0].contains("safe household objects"))
+        assertTrue(item("washable_coloring_together").detailSections().single { it.title == "Materials" }.lines[0].contains("washable non-toxic crayons or markers"))
+        assertTrue(item("washable_painting_shapes").detailSections().single { it.title == "Materials" }.lines[0].contains("washable non-toxic children’s paint"))
+        assertTrue(item("sock_skating_rink").detailSections().single { it.title == "Setup" }.lines[0].startsWith("Use only a smooth, clear floor area"))
+
         val pillow = item("indoor_pillow_marco_polo")
-        assertEquals(pillow.summary, pillow.collapsedCardPreviewLines().first())
-        assertTrue(pillow.collapsedCardPreviewLines().any { it.contains("Adult supervises and clears a flat room") })
+        assertEquals(listOf(pillow.collapsedCardDescriptionText()), pillow.collapsedCardPreviewLines())
+        assertTrue(pillow.setupSteps.first().contains("Adult supervises and clears a flat room"))
         assertTrue(item("couch_cushion_quest").detailSections().single { it.title == "Setup" }.lines[0].contains("within easy reach"))
         assertTrue(item("race_like_an_animal").detailSections().single { it.title == "Steps" }.lines[1].contains("without sprinting"))
         assertTrue(item("hallway_balance_beam").detailSections().single { it.title == "Replay variations" }.lines[0].contains("parent approves"))
 
         val main = readText(root.resolve("app/src/main/java/com/kinplay/app/MainActivity.kt"))
         listOf(
-            "item.collapsedCardPreviewLines().forEach",
+            "item.collapsedCardDescriptionAnnotated()",
             "item.detailSections().forEach",
             "Text(item.parentNotes)",
             "Safety tags: ${'$'}{item.safetyTags.joinToString { it.displayTagLabel() }}",

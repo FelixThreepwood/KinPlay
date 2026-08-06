@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-06T03:22:38Z",
-  "nextItemNumber": 53,
+  "updatedAt": "2026-08-06T08:28:20Z",
+  "nextItemNumber": 64,
   "batches": [
     {
       "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
@@ -435,6 +435,128 @@
         "publishedAt": "2026-08-06T03:22:38Z"
       },
       "publicationStatus": "published_and_remote_verified"
+    },
+    {
+      "batchId": "KP-BATCH-26606A7F-956F-4699-AE68-328FFA369FBC",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.6.0-beta2",
+        "versionCode": 7
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-08-06T00:35:34-07:00",
+      "sourceNoteCount": 11,
+      "uniqueNewSourceNoteCount": 11,
+      "canonicalItemCount": 16,
+      "existingCanonicalItemCount": 5,
+      "newCanonicalItemCount": 11,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "existingCanonicalItemIds": [
+        "KPF-0006",
+        "KPF-0016",
+        "KPF-0017",
+        "KPF-0021",
+        "KPF-0022"
+      ],
+      "newCanonicalItemIds": [
+        "KPF-0053",
+        "KPF-0054",
+        "KPF-0055",
+        "KPF-0056",
+        "KPF-0057",
+        "KPF-0058",
+        "KPF-0059",
+        "KPF-0060",
+        "KPF-0061",
+        "KPF-0062",
+        "KPF-0063"
+      ],
+      "canonicalItemIds": [
+        "KPF-0006",
+        "KPF-0016",
+        "KPF-0017",
+        "KPF-0021",
+        "KPF-0022",
+        "KPF-0053",
+        "KPF-0054",
+        "KPF-0055",
+        "KPF-0056",
+        "KPF-0057",
+        "KPF-0058",
+        "KPF-0059",
+        "KPF-0060",
+        "KPF-0061",
+        "KPF-0062",
+        "KPF-0063"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-08D3DB8C-F55E-438A-877F-7683717F1D38": [
+          "KPF-0053"
+        ],
+        "KP-NOTE-851DE16F-2E0D-4B6F-8FBA-91DBA131C649": [
+          "KPF-0054"
+        ],
+        "KP-NOTE-3D0F19F5-849D-40AB-88A8-5C5A7B63E4FB": [
+          "KPF-0055"
+        ],
+        "KP-NOTE-2ED08796-D644-4446-93FC-4BBC50DE1EF0": [
+          "KPF-0022",
+          "KPF-0056"
+        ],
+        "KP-NOTE-07295843-9697-48E5-8B8E-02813D34554C": [
+          "KPF-0021",
+          "KPF-0057"
+        ],
+        "KP-NOTE-5C67464E-BA76-4E0A-AEF5-F39C2B5FBCE9": [
+          "KPF-0006",
+          "KPF-0058"
+        ],
+        "KP-NOTE-A6DA9B34-B53F-4C28-84C8-A52BC35BF97E": [
+          "KPF-0017",
+          "KPF-0059"
+        ],
+        "KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B": [
+          "KPF-0016",
+          "KPF-0017",
+          "KPF-0060"
+        ],
+        "KP-NOTE-03AE0EF2-D2C7-4BD7-B860-81238110EA88": [
+          "KPF-0006",
+          "KPF-0061"
+        ],
+        "KP-NOTE-8428B5CB-0052-480A-809C-2A3BD4D395C1": [
+          "KPF-0062"
+        ],
+        "KP-NOTE-A2A74C8D-4C2D-497D-8692-CD52BDC961A5": [
+          "KPF-0063"
+        ]
+      },
+      "childIdentifyingInformationRemoved": false,
+      "privacyReview": "No child-identifying information was present in the sanitized project records; names, contact details, images, birthdates, and precise locations were not written.",
+      "duplicateHandling": "All 11 source note IDs are new. Five existing canonical items received unique supporting evidence without changing implementation status, and 11 separately testable canonical items were created. Page-state, card-state, settings-layout, copy, search, and favorites requirements remain separate where their validation differs.",
+      "subjectHandling": "The subject uses 0.6.0-beta2+7; the body identity and source-note IDs are valid, so intake is accepted and the subject form is recorded as an exception.",
+      "codeChangeAuthorization": "Intake and triage only; no application code change is authorized by this batch.",
+      "implementationBuild": {
+        "versionName": "0.6.0-beta3",
+        "versionCode": 8
+      },
+      "implementationAuthorization": "Direct user request in the active Discord session authorized implementation despite the intake payload remaining an intake/triage record.",
+      "implementationScope": "Implemented the 16 canonical items as a beta3 revision. Canonical/runtime content JSON remained byte-identical; review exports were synchronized to minimum-age-only wording.",
+      "implementationStatus": "complete_pending_physical_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "validator": "/home/phantomatic/.hermes/logs/kinplay-validation/20260806-011805-release.log",
+        "validatorStatus": "passed",
+        "gradleGate": "testDebugUnitTest lintDebug assembleDebug passed",
+        "canonicalRuntimeParity": "passed"
+      }
     }
   ],
   "items": [
@@ -583,23 +705,37 @@
       "priority": "should_fix_soon",
       "affectedBuilds": [
         "0.3.0-beta1 (3)",
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
       ],
       "screen": "home",
       "normalizedFinding": "Keep KinPlay at the upper-left, place a concise one-line descriptor beside it, remove the What fits now instructional section, and move the six-category grid upward. Defer richer graphics and animated characters to later development.",
       "expectedBehavior": "The first screen presents identity, purpose, and category choices with minimal copy and no unnecessary vertical gap.",
-      "occurrenceCount": 3,
+      "occurrenceCount": 5,
       "sourceNoteIds": [
         "KP-NOTE-09B10E03-CB5C-4C41-B2F8-E024775D1628",
         "KP-NOTE-8BA66EEA-98BB-4FFA-B1C5-68973A6FDF04",
-        "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
+        "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80",
+        "KP-NOTE-5C67464E-BA76-4E0A-AEF5-F39C2B5FBCE9",
+        "KP-NOTE-03AE0EF2-D2C7-4BD7-B860-81238110EA88"
       ],
       "reproductionStatus": "visual_review_required",
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta1 (6)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
       "lastObservedBuild": "0.5.0-beta1 (5)",
-      "latestObservation": "0.5.0 feedback says Home still contains unnecessary copy and text-heavy controls, so the compact-home acceptance criterion needs revision."
+      "latestObservation": "The 0.6.0-beta2 feedback requests moving primary Home browse actions above recents and renaming the Home descriptor to Kid Friendly Family Fun; the separate requirements are tracked in KPF-0058 and KPF-0061.",
+      "implementationEvidence": "Home descriptor is Kid Friendly Family Fun; browse actions render before favorites and recently played content; the instructional section remains disabled.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
     {
       "id": "KPF-0007",
@@ -885,21 +1021,34 @@
       "screen": "category/dinner_table",
       "normalizedFinding": "Use more distinct colors for the app background, cards, controls, and other components while preserving a coherent palette.",
       "expectedBehavior": "Major interface layers are easy to distinguish through color and still satisfy text and control contrast requirements across supported themes.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-0F552AA3-6508-4C02-9488-4C63A6571477"
+        "KP-NOTE-0F552AA3-6508-4C02-9488-4C63A6571477",
+        "KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B"
       ],
       "reproductionStatus": "visual_and_accessibility_review_required",
       "status": "fixed_awaiting_retest",
       "affectedBuilds": [
-        "0.4.0-beta1 (4)"
+        "0.4.0-beta1 (4)",
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
       ],
       "implementationStatus": "complete",
-      "retestBuild": "0.5.0-beta1 (5)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Forest, Ocean, and Berry themes now use distinct background, surface, surface-variant, primary, secondary-container, and tertiary-container layers; automated palette tests assert readable text/control contrast and measurable background-to-card separation across every supported theme.",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "implementationEvidence": "Forest, Ocean, Berry, Sunshine, and Tropical palettes provide separated accessible interface layers.",
       "decision": "accepted_for_future_revision",
-      "authorizationRequired": true
+      "authorizationRequired": true,
+      "latestObservation": "The 0.6.0-beta2 feedback requests two additional bright, vibrant, non-pastel themes; the specific theme request is tracked in KPF-0060.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
     {
       "id": "KPF-0017",
@@ -913,25 +1062,39 @@
       "screen": "settings",
       "normalizedFinding": "Provide a settings area for game timers, activity durations, and app color themes.",
       "expectedBehavior": "A tester can review and change supported timing and theme preferences from one stable settings destination, with choices persisted across launches.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 3,
       "sourceNoteIds": [
-        "KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F"
+        "KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F",
+        "KP-NOTE-A6DA9B34-B53F-4C28-84C8-A52BC35BF97E",
+        "KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B"
       ],
       "reproductionStatus": "product_and_data_model_specification_required",
       "status": "fixed_awaiting_retest",
       "affectedBuilds": [
-        "0.4.0-beta1 (4)"
+        "0.4.0-beta1 (4)",
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
       ],
       "implementationStatus": "complete",
-      "retestBuild": "0.5.0-beta1 (5)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "A stable Settings destination now offers finite game-timer, activity-duration, and Forest/Ocean/Berry theme choices; each choice is stored under a versioned key, survives recreation and relaunch, and the timer/theme selections are applied to the play and app surfaces.",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "implementationEvidence": "Settings persists timer, activity duration, round, theme, launcher, and session preferences through the existing versioned repository.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0016",
         "KPF-0020"
-      ]
+      ],
+      "latestObservation": "The 0.6.0-beta2 feedback requests a compact horizontal Settings timing layout and two additional themes; the refinements are tracked in KPF-0059 and KPF-0060.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
     {
       "id": "KPF-0018",
@@ -1051,27 +1214,40 @@
       ],
       "priority": "backlog",
       "affectedBuilds": [
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
       ],
       "screen": "pick_game",
       "normalizedFinding": "Use available width on both sides of the screen. Keep the primary title and content left-aligned while placing compact descriptors in a right-aligned second column or trailing area on the same row.",
       "expectedBehavior": "Collapsed and expanded game cards use horizontal space efficiently without crowding, clipping, or obscuring primary labels.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-6B822319-7029-40D5-B19C-022257842493"
+        "KP-NOTE-6B822319-7029-40D5-B19C-022257842493",
+        "KP-NOTE-07295843-9697-48E5-8B8E-02813D34554C"
       ],
       "reproductionStatus": "visual_and_responsive_layout_review_required",
       "status": "fixed_awaiting_retest",
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta1 (6)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Collapsed and expanded cards now share the reviewed compact hierarchy with left-aligned title/summary/materials/setup content and right-aligned participant, duration, and age descriptors, with narrow-width and large-font fallbacks.",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "implementationEvidence": "Cards retain a compact responsive two-column expanded hierarchy with a stacked narrow/large-text fallback.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0008",
         "KPF-0022"
-      ]
+      ],
+      "latestObservation": "The 0.6.0-beta2 feedback requests lower-bound-only age labels on cards; the specific copy rule is tracked in KPF-0057.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
     },
     {
       "id": "KPF-0022",
@@ -1085,31 +1261,40 @@
       "affectedBuilds": [
         "0.5.0-beta1 (5)",
         "0.6.0-beta1 (6)",
-        "0.6.0-beta2 (7)"
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
       ],
       "screen": "pick_game",
       "normalizedFinding": "Every collapsed game card should show the recognizable game name plus one concise description of the activity. Examples include “Guessing game for objects in the room” for I Spy and “Create a wacky story starting each new word with the next letter of the alphabet” for Alphabet Story.",
       "expectedBehavior": "A tester can understand the core activity without expanding the card, while the collapsed card remains compact.",
-      "occurrenceCount": 2,
+      "occurrenceCount": 3,
       "sourceNoteIds": [
         "KP-NOTE-6B822319-7029-40D5-B19C-022257842493",
-        "KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E"
+        "KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E",
+        "KP-NOTE-2ED08796-D644-4446-93FC-4BBC50DE1EF0"
       ],
       "reproductionStatus": "content_inventory_and_visual_review_required",
       "status": "fixed_awaiting_retest",
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta2 (7)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Collapsed cards now expose reviewed brief descriptions and bold emphasis while retaining expanded detail content. Content and card contract tests passed.",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "implementationEvidence": "Collapsed cards expose the reviewed title and one-sentence description only.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0001",
         "KPF-0021"
       ],
-      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts.",
-      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
-      "latestVerificationAt": "2026-08-06T03:06:47Z"
+      "latestObservation": "The 0.6.0-beta2 feedback broadens collapsed-card minimalism to every level and removes metadata, materials, and instructions from the collapsed state; the cross-level rule is tracked in KPF-0056.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestVerificationAt": "2026-08-06T08:28:20Z",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      }
     },
     {
       "id": "KPF-0023",
@@ -2141,6 +2326,468 @@
       "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
       "latestVerificationAt": "2026-08-06T03:06:47Z",
       "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0053",
+      "title": "Standardize top-right navigation controls across pages",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "navigation",
+        "interaction_design",
+        "accessibility"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "all_pages",
+      "normalizedFinding": "Keep or move page navigation controls, including Back, into a consistent top navigation area and align them to the right on every page.",
+      "expectedBehavior": "Every page exposes a consistent accessible top navigation control; right alignment is applied consistently where approved, system Back remains available, and controls do not collide with titles or other actions.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-08D3DB8C-F55E-438A-877F-7683717F1D38"
+      ],
+      "reproductionStatus": "navigation_layout_and_platform_convention_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_product_decision_required",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0018",
+        "KPF-0036"
+      ],
+      "triageNotes": "The keep/move wording is interpreted as a placement request, not a removal request. Confirm treatment of Android system Back and whether right alignment applies to all navigation controls or only app-bar actions.",
+      "implementationEvidence": "All app-bar pages expose an accessible right-aligned top Back action; Android system Back remains available.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0054",
+      "title": "Hide empty Materials sections on details pages",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_visibility",
+        "conditional_rendering",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "detail/*",
+      "normalizedFinding": "When an activity has no materials, omit the Materials label, section, placeholder text, and reserved layout space.",
+      "expectedBehavior": "Details pages show a Materials section only when at least one reviewed material exists; nonempty lists remain clear and accessible.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-851DE16F-2E0D-4B6F-8FBA-91DBA131C649"
+      ],
+      "reproductionStatus": "content_inventory_and_conditional_rendering_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "triageNotes": "This is a conditional details-page visibility rule; it is separate from collapsed-card minimalism and active-session content reduction.",
+      "implementationEvidence": "Materials sections render only when the reviewed materials list is nonempty.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0055",
+      "title": "Remove nonessential metadata from game instruction pages",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_visibility",
+        "content_copy",
+        "information_architecture"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "detail/instructions/*",
+      "normalizedFinding": "Instruction pages should not show age range, typical duration, activity type, or one-on-one/group suitability metadata.",
+      "expectedBehavior": "Instruction pages focus on play instructions and required safety or accessibility content; nonessential metadata is omitted consistently across games.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3D0F19F5-849D-40AB-88A8-5C5A7B63E4FB"
+      ],
+      "reproductionStatus": "content_inventory_and_safety_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0032"
+      ],
+      "triageNotes": "Required safety, legal, accessibility, and play-critical information remains subject to item-by-item review; this record covers nonessential metadata only.",
+      "implementationEvidence": "Instruction surfaces no longer render age, typical duration, energy/activity type, or participant-suitability metadata.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0056",
+      "title": "Restrict collapsed cards to name and one-sentence description at every level",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_visibility",
+        "usability",
+        "information_architecture"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "game_type/{groupId}",
+      "normalizedFinding": "At Level 0, Level 1, Level 2, and any future card level, collapsed cards show only the game name and one-sentence description.",
+      "expectedBehavior": "Duration, age, participant suitability, materials, and instructions appear only after expansion or opening; no secondary metadata or reserved sections appear in the collapsed state.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-2ED08796-D644-4446-93FC-4BBC50DE1EF0"
+      ],
+      "reproductionStatus": "cross_level_card_content_inventory_and_visual_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0021",
+        "KPF-0022",
+        "KPF-0040",
+        "KPF-0042"
+      ],
+      "triageNotes": "This is broader and stricter than the prior Level 1 minimal-card note, so it remains a separate canonical item while strengthening KPF-0022.",
+      "implementationEvidence": "Collapsed cards at all discovery levels show only title, one-sentence description, and required favorite/expand controls; descriptors appear after expansion.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0057",
+      "title": "Use minimum-age-only labels on game cards",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_copy",
+        "accessibility",
+        "visual_design"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "game_type/{groupId}",
+      "normalizedFinding": "Replace age ranges with lower-bound-only labels such as Ages 2+ or Ages 6+; do not display a maximum age.",
+      "expectedBehavior": "Every card age label exposes only the reviewed minimum recommended age in consistent accessible copy; absent or unreviewed values are not fabricated.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-07295843-9697-48E5-8B8E-02813D34554C"
+      ],
+      "reproductionStatus": "content_inventory_copy_and_accessibility_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0021"
+      ],
+      "triageNotes": "This changes age-label semantics while leaving the underlying reviewed minimum-age data subject to content review.",
+      "implementationEvidence": "Card age labels use the reviewed minimum only, such as Ages 2+ and Ages 6+.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0058",
+      "title": "Place Home browse actions above recently played games",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "home_layout",
+        "navigation",
+        "information_architecture"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "On Home Level 0, place Random game and All games and activities before the recently played games list.",
+      "expectedBehavior": "Primary browse and start actions appear before recents in reading and focus order, while recently played games remain available below.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-5C67464E-BA76-4E0A-AEF5-F39C2B5FBCE9"
+      ],
+      "reproductionStatus": "home_layout_and_focus_order_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0006",
+        "KPF-0035"
+      ],
+      "implementationEvidence": "Home renders Random game and All games and activities before favorites and recently played content.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0059",
+      "title": "Use a compact horizontal layout for Settings timing sections",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "settings",
+        "visual_design",
+        "responsive_layout"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "settings",
+      "normalizedFinding": "Reorganize game timer, activity duration, and related Settings sections for compact horizontal presentation; list the three default duration options in one row when space permits.",
+      "expectedBehavior": "Settings uses a readable horizontal row for finite duration options at supported widths, with an accessible wrap or stack fallback for narrow screens and large text.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-A6DA9B34-B53F-4C28-84C8-A52BC35BF97E"
+      ],
+      "reproductionStatus": "settings_layout_and_responsive_accessibility_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0017",
+        "KPF-0030"
+      ],
+      "implementationEvidence": "Settings timing options use horizontal rows at supported widths with narrow and large-text stacked fallback.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0060",
+      "title": "Add two vibrant bright color themes",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "visual_design",
+        "settings",
+        "theme"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "settings",
+      "normalizedFinding": "Add two additional bright, vibrant themes that are deliberately distinct from pastel or soft palettes.",
+      "expectedBehavior": "The theme picker offers two reviewed high-saturation options with readable contrast and complete persistence and application behavior.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B"
+      ],
+      "reproductionStatus": "theme_palette_contrast_and_persistence_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0016",
+        "KPF-0017"
+      ],
+      "triageNotes": "No themes or visual assets were generated during intake.",
+      "implementationEvidence": "Sunshine and Tropical are persisted, selectable, bright themes with automated contrast/separation coverage.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0061",
+      "title": "Rename the Home descriptor to Kid Friendly Family Fun",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_copy",
+        "home_layout"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Replace the Home or Level 0 title descriptor Family play with Kid Friendly Family Fun.",
+      "expectedBehavior": "The approved phrase appears consistently on the Home surface and in applicable accessibility labels, navigation metadata, and review exports.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-03AE0EF2-D2C7-4BD7-B860-81238110EA88"
+      ],
+      "reproductionStatus": "home_copy_inventory_and_accessibility_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0006",
+        "KPF-0033"
+      ],
+      "triageNotes": "This is a copy request only; no source or content file was changed.",
+      "implementationEvidence": "Home descriptor is Kid Friendly Family Fun in the app surface and the batch release records.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0062",
+      "title": "Provide hierarchical search for games and activities",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "feature_request",
+        "search",
+        "navigation"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "pick_game / game_discovery",
+      "normalizedFinding": "Make search accessible from most hierarchical discovery pages and search game and activity titles, descriptions, and instructions.",
+      "expectedBehavior": "A tester can invoke search from supported levels, receive relevant results from the indexed fields, and open results without losing hierarchy or back-stack context.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-8428B5CB-0052-480A-809C-2A3BD4D395C1"
+      ],
+      "reproductionStatus": "search_scope_index_and_navigation_design_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_product_decision_required",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0040",
+        "KPF-0041"
+      ],
+      "triageNotes": "Search scope, instruction indexing, and result navigation need product and content-model review; no search was performed during intake.",
+      "implementationEvidence": "Search is available from Home and discovery hierarchy pages and indexes titles, descriptions, and instructions.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0063",
+      "title": "Add favorite toggles and a favorites list to game cards",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "feature_request",
+        "state_management",
+        "navigation"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta2 (7)",
+        "0.6.0-beta3 (8)"
+      ],
+      "screen": "game_type/{groupId}",
+      "normalizedFinding": "Show an initially empty star on every game card; tapping it toggles the favorite state and adds or removes the game from a favorites list.",
+      "expectedBehavior": "Favorite state is persisted, accessible, reversible, visible on each card, and reflected by the favorites destination without duplicating or losing games.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-A2A74C8D-4C2D-497D-8692-CD52BDC961A5"
+      ],
+      "reproductionStatus": "favorite_state_persistence_and_navigation_design_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_product_decision_required",
+      "authorizationRequired": true,
+      "triageNotes": "This is a new persistent collection capability; no favorite state was created or changed during intake.",
+      "implementationEvidence": "Cards expose accessible Star/StarBorder toggles; favorite state persists and the Favorites destination reflects additions/removals.",
+      "implementationAuthorization": "Direct user request in the active Discord session.",
+      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
+      "retestBuild": "0.6.0-beta3 (8)",
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
+        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
+        "bytes": 21613823,
+        "version": "0.6.0-beta3 (8)"
+      },
+      "latestVerificationAt": "2026-08-06T08:28:20Z"
     }
   ]
 }

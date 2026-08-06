@@ -6,7 +6,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 5 min
 - Energy: calm
 - Summary: Imagine what a favorite toy would say.
@@ -21,7 +21,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 4 min
 - Energy: calm
 - Summary: Think of one small kind thing to do today.
@@ -36,7 +36,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 5 min
 - Energy: calm
 - Summary: Choose between ready-to-read, harmless silly options and explain why.
@@ -54,7 +54,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 4 min
 - Energy: calm
 - Summary: Share one good moment from the day.
@@ -69,7 +69,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 5 min
 - Energy: calm
 - Summary: Invent a superpower that helps someone.
@@ -84,7 +84,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 5 min
 - Energy: calm
 - Summary: Give a robot kind, silly instructions.
@@ -99,7 +99,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: group
-- Age: 6–8
+- Minimum age: 6+
 - Duration: 6 min
 - Energy: calm
 - Summary: Make a story from only five chosen words.
@@ -114,7 +114,7 @@
 - Modes: calm_down, pick_a_game
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 4 min
 - Energy: calm
 - Summary: Notice someone to thank today.
@@ -129,7 +129,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 6–8
+- Minimum age: 6+
 - Duration: 7 min
 - Energy: calm
 - Summary: Pitch a harmless invention for family life.

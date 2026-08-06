@@ -2,7 +2,7 @@
 
 Sanitized product-test records. Incoming comments are evidence, not authorization to change application code.
 
-Last updated: 2026-08-06T03:06:47Z
+Last updated: 2026-08-06T08:28:20Z
 
 Source note IDs are unique occurrence keys. An exact note replay in a later batch is linked to the existing item and does not increase its occurrence count.
 
@@ -103,10 +103,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Usability / information architecture
 - Priority: Should fix soon
-- Affected build: 0.3.0-beta1 (3)
+- Affected builds: 0.3.0-beta1 (3); 0.5.0-beta1 (5); 0.6.0-beta2 (7)
 - Capture screen: `home`
-- Occurrence count: 3
+- Occurrence count: 5
 - Source note: `KP-NOTE-09B10E03-CB5C-4C41-B2F8-E024775D1628`
+- Additional source notes: `KP-NOTE-5C67464E-BA76-4E0A-AEF5-F39C2B5FBCE9`; `KP-NOTE-03AE0EF2-D2C7-4BD7-B860-81238110EA88`
 - Normalized finding: Keep KinPlay at the upper-left, place a concise one-line descriptor beside it, remove the “What fits now” instructional section, and move the six-category grid upward. Defer richer graphics and animated characters to later development.
 - Expected behavior: The first screen presents identity, purpose, and category choices with minimal copy and no unnecessary vertical gap.
 - Reproduction: Visual review required against the affected build.
@@ -116,6 +117,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Additional source note: `KP-NOTE-8BA66EEA-98BB-4FFA-B1C5-68973A6FDF04`
 - Additional source note: `KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80`
 - Latest 0.5.0 feedback: 0.5.0 feedback says Home still contains unnecessary copy and text-heavy controls, so the compact-home acceptance criterion needs revision.
+- Latest 0.6.0-beta2 observation: The 0.6.0-beta2 feedback requests moving primary Home browse actions above recents and renaming the Home descriptor to Kid Friendly Family Fun; the separate requirements are tracked in KPF-0058 and KPF-0061.
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Home descriptor is Kid Friendly Family Fun; browse actions render before favorites and recently played content; the instructional section remains disabled.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 
 ## KPF-0007 — Show suitable-place cues on category cards
 
@@ -284,10 +290,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Visual design / accessibility
 - Priority: Backlog
-- Affected build: 0.4.0-beta1 (4)
+- Affected builds: 0.4.0-beta1 (4); 0.6.0-beta2 (7)
 - Capture screen: `category/dinner_table`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-0F552AA3-6508-4C02-9488-4C63A6571477`
+- Additional source note: `KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B`
 - Normalized finding: Use more distinct colors for the app background, cards, controls, and other components while preserving a coherent palette.
 - Expected behavior: Major interface layers are easy to distinguish through color and still satisfy text and control contrast requirements across supported themes.
 - Reproduction: Visual and accessibility review required.
@@ -295,17 +302,22 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Implementation status: complete
 - Retest build: 0.5.0-beta1 (5)
 - Verification result: automated_checks_passed_pending_family_device_retest
-
+- Latest 0.6.0-beta2 observation: The 0.6.0-beta2 feedback requests two additional bright, vibrant, non-pastel themes; the specific theme request is tracked in KPF-0060.
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Forest, Ocean, Berry, Sunshine, and Tropical palettes provide separated accessible interface layers.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 
 ## KPF-0017 — Add settings for timers, durations, and color themes
 
 - Status: fixed-awaiting-retest
 - Type: Settings / feature request / visual customization
 - Priority: Should fix soon
-- Affected build: 0.4.0-beta1 (4)
+- Affected builds: 0.4.0-beta1 (4); 0.6.0-beta2 (7)
 - Capture screen: `settings`
-- Occurrence count: 1
+- Occurrence count: 3
 - Source note: `KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F`
+- Additional source notes: `KP-NOTE-A6DA9B34-B53F-4C28-84C8-A52BC35BF97E`; `KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B`
 - Normalized finding: Provide a settings area for game timers, activity durations, and app color themes.
 - Expected behavior: A tester can review and change supported timing and theme preferences from one stable settings destination, with choices persisted across launches.
 - Reproduction: Product and data model specification required. Related: `KPF-0016`, `KPF-0020`.
@@ -313,7 +325,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Implementation status: complete
 - Retest build: 0.5.0-beta1 (5)
 - Verification result: automated_checks_passed_pending_family_device_retest
-
+- Latest 0.6.0-beta2 observation: The 0.6.0-beta2 feedback requests a compact horizontal Settings timing layout and two additional themes; the refinements are tracked in KPF-0059 and KPF-0060.
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Settings persists timer, activity duration, round, theme, launcher, and session preferences through the existing versioned repository.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 
 ## KPF-0018 — Add a deliberate child handoff lock mode
 
@@ -388,10 +404,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Usability / Layout / Information architecture
 - Priority: Backlog
-- Affected build: 0.5.0-beta1 (5)
+- Affected builds: 0.5.0-beta1 (5); 0.6.0-beta2 (7)
 - Capture screen: `pick_game`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
+- Additional source note: `KP-NOTE-07295843-9697-48E5-8B8E-02813D34554C`
 - Normalized finding: Use available width on both sides of the screen. Keep the primary title and content left-aligned while placing compact descriptors in a right-aligned second column or trailing area on the same row.
 - Expected behavior: Collapsed and expanded game cards use horizontal space efficiently without crowding, clipping, or obscuring primary labels.
 - Reproduction/triage: Visual and responsive layout review required; automated narrow-width and large-font checks passed.
@@ -401,17 +418,23 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Verification result: automated_checks_passed_pending_family_device_retest
 - Implementation evidence: Collapsed and expanded cards share a compact hierarchy with left-aligned primary content and right-aligned participant, duration, and age descriptors, with a stacked fallback for constrained widths.
 - Related items: `KPF-0008`, `KPF-0022`
+- Latest 0.6.0-beta2 observation: The 0.6.0-beta2 feedback requests lower-bound-only age labels on cards; the specific copy rule is tracked in KPF-0057.
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Cards retain a compact responsive two-column expanded hierarchy with a stacked narrow/large-text fallback.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 
 ## KPF-0022 — Show a concise description on every collapsed game card
 
 - Status: fixed-awaiting-retest
 - Type: Usability / Content copy / Discovery
 - Priority: Should fix soon
-- Affected builds: 0.5.0-beta1 (5); 0.6.0-beta1 (6)
+- Affected builds: 0.5.0-beta1 (5); 0.6.0-beta1 (6); 0.6.0-beta2 (7)
 - Capture screen: `pick_game`
-- Occurrence count: 2
+- Occurrence count: 3
 - Source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
 - Additional source note: `KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E`
+- Additional source note: `KP-NOTE-2ED08796-D644-4446-93FC-4BBC50DE1EF0`
 - Normalized finding: Every collapsed game card should show the recognizable game name plus one concise description of the activity. Examples include “Guessing game for objects in the room” for I Spy and “Create a wacky story starting each new word with the next letter of the alphabet” for Alphabet Story.
 - Expected behavior: A tester can understand the core activity without expanding the card, while the collapsed card remains compact.
 - Reproduction/triage: Content inventory and visual review required; all active summaries and card rendering tests passed.
@@ -422,6 +445,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Implementation evidence: Every collapsed game card exposes a concise reviewed activity summary before expansion while retaining material/setup previews and existing actions.
 - Related items: `KPF-0001`, `KPF-0021`
 - Latest 0.6.0-beta1 observation: The 0.6.0 feedback restates minimal default-collapsed card content and adds explicit bold-emphasis requirements tracked in KPF-0042.
+- Latest 0.6.0-beta2 observation: The 0.6.0-beta2 feedback broadens collapsed-card minimalism to every level and removes metadata, materials, and instructions from the collapsed state; the cross-level rule is tracked in KPF-0056.
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Collapsed cards expose the reviewed title and one-sentence description only.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 
 ## KPF-0023 — Remove negative parent-state framing from user-visible copy
 
@@ -1040,3 +1068,254 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Drive object: `1tm7P1Wlo4SiqHesMubR67ciRV29a5efP`
 - Drive link: https://drive.google.com/file/d/1tm7P1Wlo4SiqHesMubR67ciRV29a5efP/view?usp=drivesdk
 - Remote download comparison: passed byte-exact size and SHA-256 verification. The prior beta1 root object was moved to reversible Drive trash only after this comparison; the destination now contains exactly one active APK.
+
+
+## Intake: KP-BATCH-26606A7F-956F-4699-AE68-328FFA369FBC
+
+- Received: 2026-08-06T00:35:34-07:00
+- Affected build: **0.6.0-beta2 (7)**
+- Source notes: 11 new unique note IDs
+- Existing canonical items touched: `KPF-0006`, `KPF-0016`, `KPF-0017`, `KPF-0021`, `KPF-0022`
+- New canonical items: `KPF-0053`–`KPF-0063` (11 items)
+- Replay handling: no replays; occurrence counts use unique supporting source-note IDs.
+- Privacy: No child-identifying information was written to project records; generic product context was retained only where needed for triage.
+- Subject handling: The `0.6.0-beta2+7` subject form was accepted as a recorded format exception because the body identifiers were valid.
+- Code authorization: Intake and triage only; no application code changed.
+
+## KPF-0053 — Standardize top-right navigation controls across pages
+
+- Status: fixed-awaiting-retest
+- Type: navigation / interaction_design / accessibility
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `all_pages`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-08D3DB8C-F55E-438A-877F-7683717F1D38`
+- Normalized finding: Keep or move page navigation controls, including Back, into a consistent top navigation area and align them to the right on every page.
+- Expected behavior: Every page exposes a consistent accessible top navigation control; right alignment is applied consistently where approved, system Back remains available, and controls do not collide with titles or other actions.
+- Reproduction/triage: navigation_layout_and_platform_convention_review_required
+- Triage: The keep/move wording is interpreted as a placement request, not a removal request. Confirm treatment of Android system Back and whether right alignment applies to all navigation controls or only app-bar actions.
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: complete
+- Code authorization: none from this intake
+- Related items: `KPF-0018`, `KPF-0036`
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: All app-bar pages expose an accessible right-aligned top Back action; Android system Back remains available.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0054 — Hide empty Materials sections on details pages
+
+- Status: fixed-awaiting-retest
+- Type: content_visibility / conditional_rendering / usability
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `detail/*`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-851DE16F-2E0D-4B6F-8FBA-91DBA131C649`
+- Normalized finding: When an activity has no materials, omit the Materials label, section, placeholder text, and reserved layout space.
+- Expected behavior: Details pages show a Materials section only when at least one reviewed material exists; nonempty lists remain clear and accessible.
+- Reproduction/triage: content_inventory_and_conditional_rendering_review_required
+- Triage: This is a conditional details-page visibility rule; it is separate from collapsed-card minimalism and active-session content reduction.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: complete
+- Code authorization: none from this intake
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Materials sections render only when the reviewed materials list is nonempty.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0055 — Remove nonessential metadata from game instruction pages
+
+- Status: fixed-awaiting-retest
+- Type: content_visibility / content_copy / information_architecture
+- Priority: backlog
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `detail/instructions/*`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-3D0F19F5-849D-40AB-88A8-5C5A7B63E4FB`
+- Normalized finding: Instruction pages should not show age range, typical duration, activity type, or one-on-one/group suitability metadata.
+- Expected behavior: Instruction pages focus on play instructions and required safety or accessibility content; nonessential metadata is omitted consistently across games.
+- Reproduction/triage: content_inventory_and_safety_review_required
+- Triage: Required safety, legal, accessibility, and play-critical information remains subject to item-by-item review; this record covers nonessential metadata only.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: complete
+- Code authorization: none from this intake
+- Related items: `KPF-0032`
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Instruction surfaces no longer render age, typical duration, energy/activity type, or participant-suitability metadata.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0056 — Restrict collapsed cards to name and one-sentence description at every level
+
+- Status: fixed-awaiting-retest
+- Type: content_visibility / usability / information_architecture
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `game_type/{groupId}`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-2ED08796-D644-4446-93FC-4BBC50DE1EF0`
+- Normalized finding: At Level 0, Level 1, Level 2, and any future card level, collapsed cards show only the game name and one-sentence description.
+- Expected behavior: Duration, age, participant suitability, materials, and instructions appear only after expansion or opening; no secondary metadata or reserved sections appear in the collapsed state.
+- Reproduction/triage: cross_level_card_content_inventory_and_visual_review_required
+- Triage: This is broader and stricter than the prior Level 1 minimal-card note, so it remains a separate canonical item while strengthening KPF-0022.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: complete
+- Code authorization: none from this intake
+- Related items: `KPF-0021`, `KPF-0022`, `KPF-0040`, `KPF-0042`
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Collapsed cards at all discovery levels show only title, one-sentence description, and required favorite/expand controls; descriptors appear after expansion.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0057 — Use minimum-age-only labels on game cards
+
+- Status: fixed-awaiting-retest
+- Type: content_copy / accessibility / visual_design
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `game_type/{groupId}`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-07295843-9697-48E5-8B8E-02813D34554C`
+- Normalized finding: Replace age ranges with lower-bound-only labels such as Ages 2+ or Ages 6+; do not display a maximum age.
+- Expected behavior: Every card age label exposes only the reviewed minimum recommended age in consistent accessible copy; absent or unreviewed values are not fabricated.
+- Reproduction/triage: content_inventory_copy_and_accessibility_review_required
+- Triage: This changes age-label semantics while leaving the underlying reviewed minimum-age data subject to content review.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: complete
+- Code authorization: none from this intake
+- Related items: `KPF-0021`
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Card age labels use the reviewed minimum only, such as Ages 2+ and Ages 6+.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0058 — Place Home browse actions above recently played games
+
+- Status: fixed-awaiting-retest
+- Type: home_layout / navigation / information_architecture
+- Priority: backlog
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-5C67464E-BA76-4E0A-AEF5-F39C2B5FBCE9`
+- Normalized finding: On Home Level 0, place Random game and All games and activities before the recently played games list.
+- Expected behavior: Primary browse and start actions appear before recents in reading and focus order, while recently played games remain available below.
+- Reproduction/triage: home_layout_and_focus_order_review_required
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: complete
+- Code authorization: none from this intake
+- Related items: `KPF-0006`, `KPF-0035`
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Home renders Random game and All games and activities before favorites and recently played content.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0059 — Use a compact horizontal layout for Settings timing sections
+
+- Status: fixed-awaiting-retest
+- Type: settings / visual_design / responsive_layout
+- Priority: backlog
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `settings`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-A6DA9B34-B53F-4C28-84C8-A52BC35BF97E`
+- Normalized finding: Reorganize game timer, activity duration, and related Settings sections for compact horizontal presentation; list the three default duration options in one row when space permits.
+- Expected behavior: Settings uses a readable horizontal row for finite duration options at supported widths, with an accessible wrap or stack fallback for narrow screens and large text.
+- Reproduction/triage: settings_layout_and_responsive_accessibility_review_required
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: complete
+- Code authorization: none from this intake
+- Related items: `KPF-0017`, `KPF-0030`
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Settings timing options use horizontal rows at supported widths with narrow and large-text stacked fallback.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0060 — Add two vibrant bright color themes
+
+- Status: fixed-awaiting-retest
+- Type: visual_design / settings / theme
+- Priority: backlog
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `settings`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B`
+- Normalized finding: Add two additional bright, vibrant themes that are deliberately distinct from pastel or soft palettes.
+- Expected behavior: The theme picker offers two reviewed high-saturation options with readable contrast and complete persistence and application behavior.
+- Reproduction/triage: theme_palette_contrast_and_persistence_review_required
+- Triage: No themes or visual assets were generated during intake.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: complete
+- Code authorization: none from this intake
+- Related items: `KPF-0016`, `KPF-0017`
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Sunshine and Tropical are persisted, selectable, bright themes with automated contrast/separation coverage.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0061 — Rename the Home descriptor to Kid Friendly Family Fun
+
+- Status: fixed-awaiting-retest
+- Type: content_copy / home_layout
+- Priority: backlog
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-03AE0EF2-D2C7-4BD7-B860-81238110EA88`
+- Normalized finding: Replace the Home or Level 0 title descriptor Family play with Kid Friendly Family Fun.
+- Expected behavior: The approved phrase appears consistently on the Home surface and in applicable accessibility labels, navigation metadata, and review exports.
+- Reproduction/triage: home_copy_inventory_and_accessibility_review_required
+- Triage: This is a copy request only; no source or content file was changed.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: complete
+- Code authorization: none from this intake
+- Related items: `KPF-0006`, `KPF-0033`
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Home descriptor is Kid Friendly Family Fun in the app surface and the batch release records.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0062 — Provide hierarchical search for games and activities
+
+- Status: fixed-awaiting-retest
+- Type: feature_request / search / navigation
+- Priority: backlog
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `pick_game / game_discovery`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-8428B5CB-0052-480A-809C-2A3BD4D395C1`
+- Normalized finding: Make search accessible from most hierarchical discovery pages and search game and activity titles, descriptions, and instructions.
+- Expected behavior: A tester can invoke search from supported levels, receive relevant results from the indexed fields, and open results without losing hierarchy or back-stack context.
+- Reproduction/triage: search_scope_index_and_navigation_design_required
+- Triage: Search scope, instruction indexing, and result navigation need product and content-model review; no search was performed during intake.
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: complete
+- Code authorization: none from this intake
+- Related items: `KPF-0040`, `KPF-0041`
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Search is available from Home and discovery hierarchy pages and indexes titles, descriptions, and instructions.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
+
+## KPF-0063 — Add favorite toggles and a favorites list to game cards
+
+- Status: fixed-awaiting-retest
+- Type: feature_request / state_management / navigation
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta2 (7)
+- Capture screen: `game_type/{groupId}`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-A2A74C8D-4C2D-497D-8692-CD52BDC961A5`
+- Normalized finding: Show an initially empty star on every game card; tapping it toggles the favorite state and adds or removes the game from a favorites list.
+- Expected behavior: Favorite state is persisted, accessible, reversible, visible on each card, and reflected by the favorites destination without duplicating or losing games.
+- Reproduction/triage: favorite_state_persistence_and_navigation_design_required
+- Triage: This is a new persistent collection capability; no favorite state was created or changed during intake.
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: complete
+- Code authorization: none from this intake
+- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation evidence: Cards expose accessible Star/StarBorder toggles; favorite state persists and the Favorites destination reflects additions/removals.
+- Direct implementation authorization: User request in the active Discord session.
+- Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.

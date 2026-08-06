@@ -167,12 +167,12 @@ class KinPlayLogicTest {
     }
 
     @Test
-    fun displayAgeRangeUsesMaximumAgeWhenPresent() {
+    fun displayAgeRangeUsesMinimumAgeOnly() {
         val toddlerItem = activeQuick.copy(minAge = 2, maxAge = 5)
         val exactAgeItem = activeQuick.copy(minAge = 6, maxAge = 6)
 
-        assertEquals("Ages 2–5", toddlerItem.displayAgeRange())
-        assertEquals("Age 6", exactAgeItem.displayAgeRange())
+        assertEquals("Ages 2+", toddlerItem.displayAgeRange())
+        assertEquals("Ages 6+", exactAgeItem.displayAgeRange())
     }
 
     @Test
@@ -265,7 +265,7 @@ class KinPlayLogicTest {
 
     @Test
     fun kpf0006HomeRevisionUsesCompactOneLineDescriptorWithoutInstructionSection() {
-        assertEquals("Family play", HOME_DESCRIPTOR)
+        assertEquals("Kid Friendly Family Fun", HOME_DESCRIPTOR)
         assertFalse(HOME_DESCRIPTOR.contains('\n'))
         assertFalse(HOME_INSTRUCTION_SECTION_ENABLED)
     }
@@ -313,7 +313,7 @@ class KinPlayLogicTest {
         )
 
         assertEquals(
-            listOf("Ready", "Needs: paper, washable crayons", "Setup: Clear a small table."),
+            listOf("Ready"),
             item.collapsedCardPreviewLines(),
         )
     }
@@ -321,7 +321,7 @@ class KinPlayLogicTest {
     @Test
     fun collapsedCardPreviewHandlesMissingSetupSafely() {
         assertEquals(
-            listOf("Ready", "No materials", "Setup: No setup needed"),
+            listOf("Ready"),
             activeQuick.copy(setupSteps = emptyList()).collapsedCardPreviewLines(),
         )
     }

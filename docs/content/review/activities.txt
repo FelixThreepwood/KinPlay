@@ -6,7 +6,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: outdoor_adventures, get_energy_out, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 8 min
 - Energy: medium
 - Summary: Take turns leading silly animal movements while everyone mirrors the leader.
@@ -22,7 +22,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: outdoor_adventures, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 10 min
 - Energy: low
 - Summary: A tiny indoor scavenger hunt using safe household clues.
@@ -38,7 +38,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: group
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 12 min
 - Energy: calm
 - Summary: Build a ready-to-start family story with the next letter of the alphabet.
@@ -54,7 +54,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: outdoor_adventures, get_energy_out
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 7 min
 - Energy: high
 - Summary: Dance, freeze, and pose as funny statues.
@@ -70,7 +70,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: get_energy_out, quality_time
 - Participant suitability: both
-- Age: 2–5
+- Minimum age: 2+
 - Duration: 10 min
 - Energy: medium
 - Summary: Pretend pillows are boats crossing a living-room sea.
@@ -86,7 +86,7 @@
 - Modes: calm_down
 - Quick categories: quiet_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 3 min
 - Energy: calm
 - Summary: A short breathing reset using imaginary clouds.
@@ -102,7 +102,7 @@
 - Modes: calm_down, pick_a_game
 - Quick categories: quiet_games, dinner_table, outdoor_adventures, brain_games
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 5 min
 - Energy: calm
 - Summary: Play the familiar I Spy guessing game with ready-made color and shape rounds.
@@ -120,7 +120,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: quiet_games, outdoor_adventures, get_energy_out, quality_time
 - Participant suitability: group
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 8 min
 - Energy: medium
 - Summary: Play familiar charades with ready-to-act animal, activity, and sports ideas.
@@ -136,7 +136,7 @@
 - Modes: pick_a_game
 - Quick categories: brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 10 min
 - Energy: low
 - Summary: Draw a friendly tiny monster before the timer ends.
@@ -152,7 +152,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: outdoor_adventures, get_energy_out, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 9 min
 - Energy: medium
 - Summary: Rescue plush friends from safe spots around the room.
@@ -168,7 +168,7 @@
 - Modes: pick_a_game
 - Quick categories: get_energy_out, quality_time
 - Participant suitability: group
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 12 min
 - Energy: medium
 - Summary: Make a gentle rhythm band with safe household items.
@@ -184,7 +184,7 @@
 - Modes: pick_a_game
 - Quick categories: quality_time
 - Participant suitability: group
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 15 min
 - Energy: low
 - Summary: Deliver pretend mail between cozy stations.
@@ -200,7 +200,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 10 min
 - Energy: calm
 - Summary: Run a pretend checkup for stuffed animals.
@@ -216,7 +216,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, brain_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 6 min
 - Energy: calm
 - Summary: Search the room for circles, squares, and triangles.
@@ -232,7 +232,7 @@
 - Modes: pick_a_game
 - Quick categories: outdoor_adventures, get_energy_out, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 12 min
 - Energy: medium
 - Summary: Follow a tiny pretend map using steps and turns.
@@ -248,7 +248,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 7 min
 - Energy: calm
 - Summary: Create a quiet zoo using animal whispers and gentle poses.
@@ -264,7 +264,7 @@
 - Modes: pick_a_game
 - Quick categories: outdoor_adventures, get_energy_out, brain_games
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 10 min
 - Energy: medium
 - Summary: Sort safe toys or blocks by color in a short timed challenge.
@@ -280,7 +280,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: group
-- Age: 6–8
+- Minimum age: 6+
 - Duration: 10 min
 - Energy: calm
 - Summary: Report happy family news from a pretend desk.
@@ -296,7 +296,7 @@
 - Modes: calm_down, pick_a_game
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 6 min
 - Energy: calm
 - Summary: Notice safe sights, sounds, and textures in the room.
@@ -312,7 +312,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: outdoor_adventures, get_energy_out, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 5 min
 - Energy: medium
 - Summary: Turn a tiny cleanup into a cooperative mission.
@@ -328,7 +328,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: arts_and_making, outdoor_adventures, quality_time
 - Participant suitability: both
-- Age: 6–8
+- Minimum age: 6+
 - Duration: 15 min
 - Energy: medium
 - Summary: Make paper airplanes together and fly them through pretend weather.
@@ -349,7 +349,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 6 min
 - Energy: calm
 - Summary: Repeat three supplied clap patterns from easy to tricky.
@@ -365,7 +365,7 @@
 - Modes: pick_a_game
 - Quick categories: outdoor_adventures, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 15 min
 - Energy: low
 - Summary: Look for tiny outdoor details with parent supervision.
@@ -381,7 +381,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 10 min
 - Energy: low
 - Summary: Make chairs into a pretend train and announce stops.
@@ -397,7 +397,7 @@
 - Modes: pick_a_game, calm_down
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 8 min
 - Energy: calm
 - Summary: Look at safe objects, hide them, and remember what changed.
@@ -413,7 +413,7 @@
 - Modes: calm_down
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: one_on_one
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 5 min
 - Energy: calm
 - Summary: Describe feelings as weather and choose a next step.
@@ -429,7 +429,7 @@
 - Modes: pick_a_game
 - Quick categories: brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 12 min
 - Energy: low
 - Summary: Build a small stable tower and test gentle changes.
@@ -445,7 +445,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 7 min
 - Energy: calm
 - Summary: Perform a complete silly no-cook Rainbow Dragon Soup recipe out loud.
@@ -461,7 +461,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: outdoor_adventures, get_energy_out, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 6 min
 - Energy: low
 - Summary: Walk a pretend balance line with careful slow steps.
@@ -477,7 +477,7 @@
 - Modes: calm_down, pick_a_game
 - Quick categories: quiet_games, brain_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 8 min
 - Energy: calm
 - Summary: Sort books or toys into tiny groups with whisper voices.
@@ -493,7 +493,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, brain_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 6 min
 - Energy: calm
 - Summary: Guess a ready-to-use animal by asking familiar yes-or-no questions.
@@ -511,7 +511,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: get_energy_out, outdoor_adventures
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 8 min
 - Energy: high
 - Summary: Cross a short course like an animal in a safe, flat, clear area.
@@ -527,7 +527,7 @@
 - Modes: quick_play, pick_a_game
 - Quick categories: get_energy_out, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 6 min
 - Energy: medium
 - Summary: A safe eyes-open call-and-response walk using pillows only as island boundary markers.
@@ -543,7 +543,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: quiet_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 10 min
 - Energy: calm
 - Summary: Share a simple coloring page with washable, non-toxic art tools and adult supervision.
@@ -559,7 +559,7 @@
 - Modes: pick_a_game, calm_down
 - Quick categories: quiet_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 15 min
 - Energy: calm
 - Summary: Paint ready-made shapes with washable, non-toxic paint, protected surfaces, and adult supervision.
@@ -575,7 +575,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: brain_and_movement, brain_games, quality_time
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 6 min
 - Energy: low
 - Summary: Copy gentle cross-body movements to wake up coordination and attention.
@@ -594,7 +594,7 @@
 - Modes: quick_play, pick_a_game, calm_down
 - Quick categories: brain_and_movement, brain_games, get_energy_out
 - Participant suitability: both
-- Age: 2–8
+- Minimum age: 2+
 - Duration: 7 min
 - Energy: medium
 - Summary: Practice simple opposite-side taps, claps, and freeze balances together.

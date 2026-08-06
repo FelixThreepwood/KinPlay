@@ -23,22 +23,15 @@ class CardHierarchyPresentationTest {
     )
 
     @Test
-    fun collapsedPresentationLeadsWithSummaryAndKeepsMaterialsAndSetupPreview() {
-        assertEquals(
-            listOf(
-                item.summary,
-                "Needs: paper clues",
-                "Setup: Hide three paper clues where everyone can reach them.",
-            ),
-            item.collapsedCardPreviewLines(),
-        )
+    fun collapsedPresentationShowsOnlyOneSentence() {
+        assertEquals(listOf(item.summary), item.collapsedCardPreviewLines())
     }
 
     @Test
     fun trailingDescriptorInputsRemainCompactCompleteAndOrdered() {
         assertEquals("Works 1:1 or with a group", item.participantFitLabel())
         assertEquals("9 min", "${item.durationMinutes} min")
-        assertEquals("Ages 3–8", item.displayAgeRange())
+        assertEquals("Ages 3+", item.displayAgeRange())
     }
 
     @Test

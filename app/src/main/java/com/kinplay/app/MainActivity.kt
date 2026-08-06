@@ -25,13 +25,17 @@ import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.GridView
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -118,7 +122,7 @@ class MainActivity : ComponentActivity() {
 }
 
 const val CONTENT_CARD_DEFAULT_EXPANDED = false
-const val HOME_DESCRIPTOR = "Family play"
+const val HOME_DESCRIPTOR = "Kid Friendly Family Fun"
 const val HOME_INSTRUCTION_SECTION_ENABLED = false
 const val RANDOM_GAME_LABEL = "Random game"
 const val ALL_GAMES_AND_ACTIVITIES_LABEL = "All games and activities"
@@ -144,6 +148,8 @@ private object Routes {
     const val AboutApp = "about_app"
     const val SafetyPrivacy = "safety_privacy"
     const val Settings = "settings"
+    const val Search = "search"
+    const val Favorites = "favorites"
     const val TimedSession = "timed_session/{gameId}/{duration}/{rounds}"
     const val MadLibsCollection = "mad_libs_collection"
     const val WouldYouRather = WOULD_YOU_RATHER_ROUTE
@@ -211,6 +217,9 @@ fun KinPlayApp() {
                 favoriteIds = ids
                 saveIdSet(context, "favorite_ids", ids)
             }
+            fun toggleFavorite(itemId: String) {
+                persistFavorites(favoriteIds.toggleFavorite(itemId))
+            }
             fun persistRecent(ids: List<String>) {
                 recentIds = ids
                 saveIdList(context, "recent_ids", ids)
@@ -218,8 +227,12 @@ fun KinPlayApp() {
             val navController = rememberNavController()
             Box(modifier = Modifier.fillMaxSize()) {
                 NavHost(navController = navController, startDestination = Routes.Home) {
-                    composable(Routes.Home) { HomeScreen(contentPack, favoriteIds, recentIds, navController) }
-                    composable(Routes.QuickPlay) { QuickPlayScreen(contentPack, favoriteIds, recentIds, navController) }
+                    composable(Routes.Home) {
+                        HomeScreen(contentPack, favoriteIds, recentIds, navController, ::toggleFavorite)
+                    }
+                    composable(Routes.QuickPlay) {
+                        QuickPlayScreen(contentPack, favoriteIds, recentIds, navController, ::toggleFavorite)
+                    }
                     composable(Routes.PickGame) { GameTypeListScreen(navController) }
                     composable(
                         Routes.GameType,
@@ -231,9 +244,12 @@ fun KinPlayApp() {
                             items = contentPack.itemsForGameType(groupId),
                             favoriteIds = favoriteIds,
                             navController = navController,
+                            onToggleFavorite = ::toggleFavorite,
                         )
                     }
-                    composable(Routes.CalmDown) { ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController) }
+                    composable(Routes.CalmDown) {
+                        ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController, onToggleFavorite = ::toggleFavorite)
+                    }
                     composable(Routes.Account) { AccountScreen(navController) }
                     composable(Routes.AboutApp) { AboutAppScreen(navController) }
                     composable(Routes.SafetyPrivacy) { SafetyPrivacyScreen(contentPack, navController) }
@@ -291,8 +307,15 @@ fun KinPlayApp() {
                             items = contentPack.madLibs(),
                             favoriteIds = favoriteIds,
                             navController = navController,
+                            onToggleFavorite = ::toggleFavorite,
                             backLabel = contentListBackLabel(isMadLibsSubmenu = true),
                         )
+                    }
+                    composable(Routes.Search) {
+                        SearchScreen(contentPack, favoriteIds, navController, ::toggleFavorite)
+                    }
+                    composable(Routes.Favorites) {
+                        FavoritesScreen(contentPack, favoriteIds, navController, ::toggleFavorite)
                     }
                     composable(
                         Routes.Category,
@@ -305,6 +328,7 @@ fun KinPlayApp() {
                             items = contentPack.itemsForQuickCategory(categoryId),
                             favoriteIds = favoriteIds,
                             navController = navController,
+                            onToggleFavorite = ::toggleFavorite,
                         )
                     }
                     composable(
@@ -369,7 +393,13 @@ fun rememberContentPack(): ContentPack {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: List<String>, navController: NavController) {
+fun HomeScreen(
+    contentPack: ContentPack,
+    favoriteIds: Set<String>,
+    recentIds: List<String>,
+    navController: NavController,
+    onToggleFavorite: (String) -> Unit = {},
+) {
     var appMenuExpanded by rememberSaveable { mutableStateOf(false) }
     Scaffold(
         topBar = {
@@ -384,6 +414,12 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                     }
                 },
                 actions = {
+                    IconButton(
+                        onClick = { navController.navigate(Routes.Search) },
+                        modifier = Modifier.testTag("home-search-button"),
+                    ) {
+                        Icon(Icons.Default.Search, contentDescription = "Search games and activities")
+                    }
                     Box {
                         IconButton(
                             onClick = { appMenuExpanded = true },
@@ -399,6 +435,14 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                             expanded = appMenuExpanded,
                             onDismissRequest = { appMenuExpanded = false },
                         ) {
+                            DropdownMenuItem(
+                                leadingIcon = { Icon(Icons.Default.Star, contentDescription = null) },
+                                text = { Text("Favorites") },
+                                onClick = {
+                                    appMenuExpanded = false
+                                    navController.navigate(Routes.Favorites)
+                                },
+                            )
                             DropdownMenuItem(
                                 leadingIcon = { Icon(Icons.Default.Settings, contentDescription = null) },
                                 text = { Text("Settings") },
@@ -443,18 +487,22 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
     ) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding).testTag("home-viewport")) {
             QuickCategoryGrid { category -> navController.navigate(Routes.category(category.id)) }
+            HOME_SHORTCUTS.forEach { shortcut ->
+                HomeButton(shortcut, "home-action-${shortcut.tag}") { navController.navigate(shortcut.route) }
+            }
             val favoriteItems = contentPack.favoriteItems(favoriteIds)
             val recentItems = contentPack.recentItems(recentIds)
             if (favoriteItems.isNotEmpty()) {
                 SectionTitle("Favorites")
-                favoriteItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
+                favoriteItems.take(3).forEach { item ->
+                    ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
+                }
             }
             if (recentItems.isNotEmpty()) {
                 SectionTitle("Recently played")
-                recentItems.take(3).forEach { item -> ContentCard(item, favoriteIds, navController) }
-            }
-            HOME_SHORTCUTS.forEach { shortcut ->
-                HomeButton(shortcut, "home-action-${shortcut.tag}") { navController.navigate(shortcut.route) }
+                recentItems.take(3).forEach { item ->
+                    ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
+                }
             }
         }
     }
@@ -647,18 +695,29 @@ fun SeedCard(contentPack: ContentPack) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun QuickPlayScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: List<String>, navController: NavController) {
+fun QuickPlayScreen(
+    contentPack: ContentPack,
+    favoriteIds: Set<String>,
+    recentIds: List<String>,
+    navController: NavController,
+    onToggleFavorite: (String) -> Unit = {},
+) {
     val quickPick = remember(contentPack.items, recentIds) {
         contentPack.items.pickForModeAvoidingRecent("quick_play", recentIds)
     }
-    Scaffold(topBar = { TopAppBar(title = { Text(RANDOM_GAME_LABEL) }) }) { innerPadding ->
+    Scaffold(topBar = {
+        TopAppBar(
+            title = { Text(RANDOM_GAME_LABEL) },
+            actions = { SearchTopBarAction(navController); BackTopBarAction { navController.popBackStack() } },
+        )
+    }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
             Text(RANDOM_GAME_LABEL, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
             Text("A short, safe, local-content activity selected without network access.")
             if (quickPick == null) {
                 Text("No eligible game or activity found yet.")
             } else {
-                ContentCard(quickPick, favoriteIds, navController)
+                ContentCard(quickPick, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(quickPick.id) })
                 Button(onClick = { navController.openItem(quickPick) }) { Text("Start this game or activity") }
             }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
@@ -669,7 +728,7 @@ fun QuickPlayScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentId
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GameTypeListScreen(navController: NavController) {
-    DestinationScreen(title = ALL_GAMES_AND_ACTIVITIES_LABEL, navController = navController) {
+    DestinationScreen(title = ALL_GAMES_AND_ACTIVITIES_LABEL, navController = navController, showSearch = true) {
         Text(
             "Choose a game type first, then pick an activity.",
             color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -707,8 +766,9 @@ fun GameTypeDetailScreen(
     items: List<KinPlayItem>,
     favoriteIds: Set<String>,
     navController: NavController,
+    onToggleFavorite: (String) -> Unit = {},
 ) {
-    DestinationScreen(title = group?.label ?: ALL_GAMES_AND_ACTIVITIES_LABEL, navController = navController) {
+    DestinationScreen(title = group?.label ?: ALL_GAMES_AND_ACTIVITIES_LABEL, navController = navController, showSearch = true) {
         if (group == null) {
             Text("This game type is not available.")
         } else {
@@ -716,7 +776,9 @@ fun GameTypeDetailScreen(
             if (items.isEmpty()) {
                 Text("No matching local content found.")
             }
-            items.forEach { item -> ContentCard(item, favoriteIds, navController) }
+            items.forEach { item ->
+                ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
+            }
         }
     }
 }
@@ -728,15 +790,87 @@ fun ContentListScreen(
     items: List<KinPlayItem>,
     favoriteIds: Set<String>,
     navController: NavController,
+    onToggleFavorite: (String) -> Unit = {},
     backLabel: String = contentListBackLabel(),
 ) {
-    Scaffold(topBar = { TopAppBar(title = { Text(title) }) }) { innerPadding ->
+    Scaffold(topBar = { TopAppBar(title = { Text(title) }, actions = { SearchTopBarAction(navController); BackTopBarAction { navController.popBackStack() } }) }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
             if (items.isEmpty()) {
                 Text("No matching local content found.")
             }
-            items.forEach { item -> ContentCard(item, favoriteIds, navController) }
+            items.forEach { item ->
+                ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
+            }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text(backLabel) }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SearchScreen(
+    contentPack: ContentPack,
+    favoriteIds: Set<String>,
+    navController: NavController,
+    onToggleFavorite: (String) -> Unit,
+) {
+    var query by rememberSaveable { mutableStateOf("") }
+    val results = remember(query, contentPack.items) { contentPack.searchItems(query) }
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Search") },
+                actions = { BackTopBarAction { navController.popBackStack() } },
+            )
+        },
+    ) { innerPadding ->
+        PageColumn(Modifier.padding(innerPadding).testTag("search-screen")) {
+            OutlinedTextField(
+                value = query,
+                onValueChange = { query = it },
+                modifier = Modifier.fillMaxWidth().testTag("search-field"),
+                label = { Text("Search games and activities") },
+                singleLine = true,
+            )
+            if (query.isBlank()) {
+                Text("Search names, descriptions, and instructions.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+            } else if (results.isEmpty()) {
+                Text("No matching local content found.")
+            } else {
+                SectionTitle("Search results", "${results.size} matching activities")
+                results.forEach { item ->
+                    ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FavoritesScreen(
+    contentPack: ContentPack,
+    favoriteIds: Set<String>,
+    navController: NavController,
+    onToggleFavorite: (String) -> Unit,
+) {
+    val favorites = contentPack.favoriteItems(favoriteIds)
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Favorites") },
+                actions = { BackTopBarAction { navController.popBackStack() } },
+            )
+        },
+    ) { innerPadding ->
+        PageColumn(Modifier.padding(innerPadding).testTag("favorites-screen")) {
+            if (favorites.isEmpty()) {
+                Text("No favorites yet. Tap the star on any game card to add one.")
+            } else {
+                favorites.forEach { item ->
+                    ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
+                }
+            }
         }
     }
 }
@@ -746,8 +880,8 @@ fun ContentCard(
     item: KinPlayItem,
     favoriteIds: Set<String>,
     navController: NavController,
+    onToggleFavorite: () -> Unit = {},
 ) {
-    val title = "${if (item.id in favoriteIds) "★ " else ""}${item.title}"
     var expanded by rememberSaveable(item.id) { mutableStateOf(CONTENT_CARD_DEFAULT_EXPANDED) }
     Card(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -757,9 +891,11 @@ fun ContentCard(
     ) {
         CompactCardDetails(
             item = item,
-            title = title,
+            title = item.title,
             expanded = expanded,
             navController = navController,
+            isFavorite = item.id in favoriteIds,
+            onToggleFavorite = onToggleFavorite,
             modifier = Modifier.padding(horizontal = 14.dp, vertical = 11.dp),
         )
     }
@@ -772,6 +908,8 @@ fun CompactCardDetails(
     modifier: Modifier = Modifier,
     title: String = item.title,
     expanded: Boolean = true,
+    isFavorite: Boolean = false,
+    onToggleFavorite: () -> Unit = {},
 ) {
     BoxWithConstraints(modifier = modifier.fillMaxWidth()) {
         val useStackedFallback =
@@ -783,7 +921,13 @@ fun CompactCardDetails(
                 modifier = Modifier.fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                CompactCardPrimaryContent(item = item, title = title, expanded = expanded)
+                CompactCardPrimaryContent(
+                    item = item,
+                    title = title,
+                    expanded = expanded,
+                    isFavorite = isFavorite,
+                    onToggleFavorite = onToggleFavorite,
+                )
                 CompactCardTrailingContent(
                     item = item,
                     expanded = expanded,
@@ -801,6 +945,8 @@ fun CompactCardDetails(
                     item = item,
                     title = title,
                     expanded = expanded,
+                    isFavorite = isFavorite,
+                    onToggleFavorite = onToggleFavorite,
                     modifier = Modifier.weight(1f),
                 )
                 CompactCardTrailingContent(
@@ -819,6 +965,8 @@ private fun CompactCardPrimaryContent(
     item: KinPlayItem,
     title: String,
     expanded: Boolean,
+    isFavorite: Boolean,
+    onToggleFavorite: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -833,22 +981,33 @@ private fun CompactCardPrimaryContent(
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Start,
             )
+            IconButton(
+                onClick = onToggleFavorite,
+                modifier = Modifier.testTag("favorite-toggle-${item.id}"),
+            ) {
+                Icon(
+                    imageVector = if (isFavorite) Icons.Default.Star else Icons.Default.StarBorder,
+                    contentDescription = if (isFavorite) {
+                        "Remove ${item.title} from favorites"
+                    } else {
+                        "Add ${item.title} to favorites"
+                    },
+                    tint = MaterialTheme.colorScheme.primary,
+                )
+            }
             Text(
                 text = if (expanded) "⌃" else "⌄",
                 color = MaterialTheme.colorScheme.primary,
                 fontWeight = FontWeight.Bold,
             )
         }
-        item.collapsedCardPreviewLines().forEachIndexed { index, previewLine ->
-            val previewText = if (index == 0) item.collapsedCardDescriptionAnnotated() else AnnotatedString(previewLine)
-            Text(
-                text = previewText,
-                modifier = Modifier.fillMaxWidth(),
-                style = MaterialTheme.typography.bodySmall,
-                color = if (index == 0) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant,
-                textAlign = TextAlign.Start,
-            )
-        }
+        Text(
+            text = item.collapsedCardDescriptionAnnotated(),
+            modifier = Modifier.fillMaxWidth(),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurface,
+            textAlign = TextAlign.Start,
+        )
         if (expanded && item.type == "mad_libs") {
             Text(
                 text = "Mad Libs fields: ${item.madLibsFields.size}",
@@ -872,10 +1031,10 @@ private fun CompactCardTrailingContent(
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.spacedBy(3.dp),
     ) {
-        item.participantFitLabel()?.let { CompactCardDescriptor(it) }
-        CompactCardDescriptor("${item.durationMinutes} min")
-        CompactCardDescriptor(item.displayAgeRange())
         if (expanded) {
+            item.participantFitLabel()?.let { CompactCardDescriptor(it) }
+            CompactCardDescriptor("${item.durationMinutes} min")
+            CompactCardDescriptor(item.displayAgeRange())
             Text(
                 text = item.energyLevel,
                 modifier = Modifier.fillMaxWidth(),
@@ -978,11 +1137,15 @@ private fun ActivityDetailSurface(
     onOpenTimedSession: (TimedSession) -> Unit,
 ) {
     val context = LocalContext.current.applicationContext
-    val resolvedSession = item
-        ?.takeIf(KinPlayItem::isTimedSessionEligible)
-        ?.let { settings.resolveNextSessionConfiguration(it.id) }
     Box(modifier = Modifier.fillMaxSize()) {
-        Scaffold(topBar = { TopAppBar(title = { Text(item?.title ?: "Activity") }) }) { innerPadding ->
+        Scaffold(
+            topBar = {
+                TopAppBar(
+                    title = { Text(item?.title ?: "Activity") },
+                    actions = { BackTopBarAction { navController.popBackStack() } },
+                )
+            },
+        ) { innerPadding ->
             PageColumn(Modifier.padding(innerPadding)) {
                 if (item == null) {
                     Text("Activity not found.")
@@ -1010,27 +1173,6 @@ private fun ActivityDetailSurface(
                             },
                         )
                     }
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.primaryContainer,
-                            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                        ),
-                        modifier = Modifier.fillMaxWidth(),
-                    ) {
-                        val playPlan = resolvedSession ?: settings.sessionDefaults()
-                        Text(
-                            "Your play plan: ${playPlan.duration.label} activity • ${playPlan.rounds.label} • ${settings.gameTimer.label} per turn",
-                            modifier = Modifier.padding(14.dp),
-                            fontWeight = FontWeight.Bold,
-                        )
-                    }
-
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        DetailPill(item.displayAgeRange())
-                        DetailPill("Typical: ${item.durationMinutes} min")
-                        DetailPill(item.energyLevel)
-                    }
-                    item.participantFitLabel()?.let { DetailPill(it) }
                     item.detailSections().forEach { section ->
                         SectionList(section.title, section.lines)
                     }
@@ -1127,7 +1269,12 @@ private fun TimedSessionSurface(
     }
 
     Scaffold(
-        topBar = { TopAppBar(title = { Text("Timed session") }) },
+        topBar = {
+            TopAppBar(
+                title = { Text("Timed session") },
+                actions = { BackTopBarAction(onExit) },
+            )
+        },
     ) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding).testTag("timed-session-surface")) {
             Text(item.title, fontWeight = FontWeight.Bold)
@@ -1422,26 +1569,41 @@ fun SafetyPrivacyScreen(contentPack: ContentPack, navController: NavController) 
     }
 }
 
+@Composable
+private fun SearchTopBarAction(navController: NavController) {
+    IconButton(
+        onClick = { navController.navigate(Routes.Search) },
+        modifier = Modifier.testTag("top-search-button"),
+    ) {
+        Icon(Icons.Default.Search, contentDescription = "Search games and activities")
+    }
+}
+
+@Composable
+private fun BackTopBarAction(onBack: () -> Unit) {
+    IconButton(
+        onClick = onBack,
+        modifier = Modifier.testTag("top-back-button"),
+    ) {
+        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DestinationScreen(
     title: String,
     navController: NavController,
+    showSearch: Boolean = false,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text(title) },
-                navigationIcon = {
-                    Text(
-                        text = "‹ Back",
-                        color = MaterialTheme.colorScheme.primary,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .clickable(onClick = { navController.popBackStack() })
-                            .padding(16.dp),
-                    )
+                actions = {
+                    if (showSearch) SearchTopBarAction(navController)
+                    BackTopBarAction { navController.popBackStack() }
                 },
             )
         },
@@ -1458,6 +1620,11 @@ data class ContentPack(
     fun activeItemById(id: String) = activeItems().firstOrNull { it.id == id }
     fun favoriteItems(favoriteIds: Set<String>) = activeItems().filter { it.id in favoriteIds }
     fun recentItems(recentIds: List<String>) = recentIds.mapNotNull(::activeItemById)
+    fun searchItems(query: String): List<KinPlayItem> {
+        val normalized = query.trim().lowercase()
+        if (normalized.isBlank()) return emptyList()
+        return activeItems().filter { normalized in it.searchIndexText().lowercase() }
+    }
     fun activities() = activeItems().filter { it.type == "activity" }
     fun madLibs() = activeItems().filter { it.type == "mad_libs" }
     fun gameLibraryItems() = activeItems()
@@ -1669,9 +1836,23 @@ fun List<KinPlayItem>.pickForModeAvoidingRecent(
 }
 
 fun KinPlayItem.displayAgeRange(): String =
-    if (minAge == maxAge) "Age $minAge" else "Ages $minAge–$maxAge"
+    "Ages $minAge+"
 
 fun KinPlayItem.participantFitLabel(): String? = participantSuitability?.displayLabel
+
+fun KinPlayItem.searchIndexText(): String = buildString {
+    append(title).append(' ')
+    append(summary).append(' ')
+    append(collapsedDescription).append(' ')
+    append(materials.joinToString(" ")).append(' ')
+    append(setupSteps.joinToString(" ")).append(' ')
+    append(playSteps.joinToString(" ")).append(' ')
+    append(parentNotes).append(' ')
+    append(variations.joinToString(" ")).append(' ')
+    append(promptText).append(' ')
+    append(followUps.joinToString(" ")).append(' ')
+    append(readAloudNote)
+}
 
 fun KinPlayItem.setupBurdenLabel(): String =
     if (materials.isEmpty()) "No materials" else "Needs: ${materials.joinToString()}"
@@ -1716,7 +1897,7 @@ fun KinPlayItem.collapsedCardDescriptionAnnotated(): AnnotatedString {
 }
 
 fun KinPlayItem.collapsedCardPreviewLines(): List<String> =
-    listOf(collapsedCardDescriptionText(), setupBurdenLabel(), setupPreviewLabel())
+    listOf(collapsedCardDescriptionText())
 
 fun KinPlayItem.displaySetupSteps(): List<String> =
     if (id == "quiet_color_hunt") listOf("Choose one safe object everyone can see.") else setupSteps
@@ -1773,7 +1954,7 @@ fun reviewedSafetyTagSummary(item: KinPlayItem): String =
     "Safety tags: ${item.safetyTags.joinToString { it.displayTagLabel() }}"
 
 fun KinPlayItem.detailSections(): List<DetailSection> = buildList {
-    add(DetailSection("Materials", listOf(if (materials.isEmpty()) "No materials needed." else materials.joinToString())))
+    if (materials.isNotEmpty()) add(DetailSection("Materials", listOf(materials.joinToString())))
     if (displaySetupSteps().isNotEmpty()) add(DetailSection("Setup", displaySetupSteps()))
     if (id == "quiet_color_hunt") {
         if (playSteps.isNotEmpty()) add(DetailSection("Clues and suggestions", playSteps))
