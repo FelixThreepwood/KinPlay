@@ -1,0 +1,1094 @@
+{
+  "schemaVersion": 1,
+  "packId": "charades_v1",
+  "title": "KinPlay Charades",
+  "locale": "en-US",
+  "cardCount": 120,
+  "categories": [
+    "animals",
+    "activities",
+    "objects"
+  ],
+  "cards": [
+    {
+      "id": "animals_01",
+      "category": "animals",
+      "prompt": "cat",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_02",
+      "category": "animals",
+      "prompt": "dog",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_03",
+      "category": "animals",
+      "prompt": "rabbit",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_04",
+      "category": "animals",
+      "prompt": "elephant",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_05",
+      "category": "animals",
+      "prompt": "penguin",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_06",
+      "category": "animals",
+      "prompt": "frog",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_07",
+      "category": "animals",
+      "prompt": "turtle",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_08",
+      "category": "animals",
+      "prompt": "monkey",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_09",
+      "category": "animals",
+      "prompt": "lion",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_10",
+      "category": "animals",
+      "prompt": "giraffe",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_11",
+      "category": "animals",
+      "prompt": "bear",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_12",
+      "category": "animals",
+      "prompt": "panda",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_13",
+      "category": "animals",
+      "prompt": "kangaroo",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_14",
+      "category": "animals",
+      "prompt": "koala",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_15",
+      "category": "animals",
+      "prompt": "zebra",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_16",
+      "category": "animals",
+      "prompt": "horse",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_17",
+      "category": "animals",
+      "prompt": "cow",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_18",
+      "category": "animals",
+      "prompt": "pig",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_19",
+      "category": "animals",
+      "prompt": "chicken",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_20",
+      "category": "animals",
+      "prompt": "duck",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_21",
+      "category": "animals",
+      "prompt": "owl",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_22",
+      "category": "animals",
+      "prompt": "eagle",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_23",
+      "category": "animals",
+      "prompt": "parrot",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_24",
+      "category": "animals",
+      "prompt": "flamingo",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_25",
+      "category": "animals",
+      "prompt": "peacock",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_26",
+      "category": "animals",
+      "prompt": "snake",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_27",
+      "category": "animals",
+      "prompt": "alligator",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_28",
+      "category": "animals",
+      "prompt": "crocodile",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_29",
+      "category": "animals",
+      "prompt": "dolphin",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_30",
+      "category": "animals",
+      "prompt": "whale",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_31",
+      "category": "animals",
+      "prompt": "shark",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_32",
+      "category": "animals",
+      "prompt": "octopus",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_33",
+      "category": "animals",
+      "prompt": "crab",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_34",
+      "category": "animals",
+      "prompt": "butterfly",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_35",
+      "category": "animals",
+      "prompt": "bee",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_36",
+      "category": "animals",
+      "prompt": "snail",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_37",
+      "category": "animals",
+      "prompt": "squirrel",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_38",
+      "category": "animals",
+      "prompt": "mouse",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_39",
+      "category": "animals",
+      "prompt": "hedgehog",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "animals_40",
+      "category": "animals",
+      "prompt": "dinosaur",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_01",
+      "category": "activities",
+      "prompt": "brushing teeth",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_02",
+      "category": "activities",
+      "prompt": "baking cookies",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_03",
+      "category": "activities",
+      "prompt": "flying a kite",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_04",
+      "category": "activities",
+      "prompt": "reading a book",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_05",
+      "category": "activities",
+      "prompt": "swimming",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_06",
+      "category": "activities",
+      "prompt": "riding a bicycle",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_07",
+      "category": "activities",
+      "prompt": "building a sandcastle",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_08",
+      "category": "activities",
+      "prompt": "planting a flower",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_09",
+      "category": "activities",
+      "prompt": "washing a car",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_10",
+      "category": "activities",
+      "prompt": "playing catch",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_11",
+      "category": "activities",
+      "prompt": "jumping rope",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_12",
+      "category": "activities",
+      "prompt": "skipping",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_13",
+      "category": "activities",
+      "prompt": "hula hooping",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_14",
+      "category": "activities",
+      "prompt": "ice skating",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_15",
+      "category": "activities",
+      "prompt": "skiing",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_16",
+      "category": "activities",
+      "prompt": "playing soccer",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_17",
+      "category": "activities",
+      "prompt": "shooting a basketball",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_18",
+      "category": "activities",
+      "prompt": "bowling",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_19",
+      "category": "activities",
+      "prompt": "fishing",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_20",
+      "category": "activities",
+      "prompt": "climbing a tree",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_21",
+      "category": "activities",
+      "prompt": "taking a photograph",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_22",
+      "category": "activities",
+      "prompt": "painting a picture",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_23",
+      "category": "activities",
+      "prompt": "playing the piano",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_24",
+      "category": "activities",
+      "prompt": "playing the guitar",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_25",
+      "category": "activities",
+      "prompt": "singing",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_26",
+      "category": "activities",
+      "prompt": "dancing ballet",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_27",
+      "category": "activities",
+      "prompt": "doing a magic trick",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_28",
+      "category": "activities",
+      "prompt": "wrapping a present",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_29",
+      "category": "activities",
+      "prompt": "opening an umbrella",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_30",
+      "category": "activities",
+      "prompt": "blowing bubbles",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_31",
+      "category": "activities",
+      "prompt": "making a sandwich",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_32",
+      "category": "activities",
+      "prompt": "stirring soup",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_33",
+      "category": "activities",
+      "prompt": "eating spaghetti",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_34",
+      "category": "activities",
+      "prompt": "sleeping",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_35",
+      "category": "activities",
+      "prompt": "waking up",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_36",
+      "category": "activities",
+      "prompt": "looking through binoculars",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_37",
+      "category": "activities",
+      "prompt": "pretending to be a robot",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_38",
+      "category": "activities",
+      "prompt": "walking like a giant",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_39",
+      "category": "activities",
+      "prompt": "tiptoeing past a sleeping dragon",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "activities_40",
+      "category": "activities",
+      "prompt": "giving a high five",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_01",
+      "category": "objects",
+      "prompt": "backpack",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_02",
+      "category": "objects",
+      "prompt": "umbrella",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_03",
+      "category": "objects",
+      "prompt": "toothbrush",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_04",
+      "category": "objects",
+      "prompt": "balloon",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_05",
+      "category": "objects",
+      "prompt": "kite",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_06",
+      "category": "objects",
+      "prompt": "book",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_07",
+      "category": "objects",
+      "prompt": "pillow",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_08",
+      "category": "objects",
+      "prompt": "blanket",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_09",
+      "category": "objects",
+      "prompt": "bicycle",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_10",
+      "category": "objects",
+      "prompt": "skateboard",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_11",
+      "category": "objects",
+      "prompt": "baseball glove",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_12",
+      "category": "objects",
+      "prompt": "soccer ball",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_13",
+      "category": "objects",
+      "prompt": "basketball",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_14",
+      "category": "objects",
+      "prompt": "bowling ball",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_15",
+      "category": "objects",
+      "prompt": "fishing pole",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_16",
+      "category": "objects",
+      "prompt": "sunglasses",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_17",
+      "category": "objects",
+      "prompt": "rain boots",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_18",
+      "category": "objects",
+      "prompt": "winter hat",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_19",
+      "category": "objects",
+      "prompt": "scarf",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_20",
+      "category": "objects",
+      "prompt": "mitten",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_21",
+      "category": "objects",
+      "prompt": "camera",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_22",
+      "category": "objects",
+      "prompt": "binoculars",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_23",
+      "category": "objects",
+      "prompt": "flashlight",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_24",
+      "category": "objects",
+      "prompt": "treasure chest",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_25",
+      "category": "objects",
+      "prompt": "map",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_26",
+      "category": "objects",
+      "prompt": "compass",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_27",
+      "category": "objects",
+      "prompt": "key",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_28",
+      "category": "objects",
+      "prompt": "doorbell",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_29",
+      "category": "objects",
+      "prompt": "alarm clock",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_30",
+      "category": "objects",
+      "prompt": "telephone",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_31",
+      "category": "objects",
+      "prompt": "spoon",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_32",
+      "category": "objects",
+      "prompt": "fork",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_33",
+      "category": "objects",
+      "prompt": "mixing bowl",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_34",
+      "category": "objects",
+      "prompt": "sandwich",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_35",
+      "category": "objects",
+      "prompt": "ice cream cone",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_36",
+      "category": "objects",
+      "prompt": "birthday cake",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_37",
+      "category": "objects",
+      "prompt": "water bottle",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_38",
+      "category": "objects",
+      "prompt": "lunchbox",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_39",
+      "category": "objects",
+      "prompt": "stuffed animal",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    },
+    {
+      "id": "objects_40",
+      "category": "objects",
+      "prompt": "toy train",
+      "ageTags": [
+        "all_ages"
+      ],
+      "reviewed": true
+    }
+  ]
+}

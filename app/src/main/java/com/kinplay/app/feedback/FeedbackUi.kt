@@ -1,6 +1,10 @@
 package com.kinplay.app.feedback
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -69,6 +73,7 @@ fun FeedbackOverlay(
     var comment by rememberSaveable { mutableStateOf("") }
     var expectedResult by rememberSaveable { mutableStateOf("") }
     var includeTechnicalContext by rememberSaveable { mutableStateOf(true) }
+    var attachments by remember { mutableStateOf(emptyList<FeedbackAttachment>()) }
     var showExpectedResult by rememberSaveable { mutableStateOf(false) }
     var showClearConfirmation by rememberSaveable { mutableStateOf(false) }
     var showArchive by rememberSaveable { mutableStateOf(false) }
@@ -80,6 +85,24 @@ fun FeedbackOverlay(
     var draftContentId by rememberSaveable { mutableStateOf<String?>(null) }
     var draftContentTitle by rememberSaveable { mutableStateOf<String?>(null) }
     val commentFocusRequester = remember { FocusRequester() }
+    val attachmentLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.OpenMultipleDocuments(),
+    ) { selectedUris ->
+        val accepted = selectedUris.mapNotNull { uri ->
+            runCatching {
+                context.contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+            inspectFeedbackAttachment(context, uri)
+        }
+        attachments = (attachments + accepted)
+            .distinctBy(FeedbackAttachment::uri)
+            .take(MAX_FEEDBACK_ATTACHMENTS)
+        statusMessage = when {
+            accepted.isEmpty() && selectedUris.isNotEmpty() -> "No selected file met the image, PDF, plain-text, or 10 MB policy."
+            accepted.isNotEmpty() -> "${attachments.size} attachment(s) selected. Review them before sending."
+            else -> statusMessage
+        }
+    }
     val activeNotes = activeFeedbackNotes(allNotes)
     val archivedNotes = archivedFeedbackNotes(allNotes)
     val counts = feedbackCounts(allNotes, BuildConfig.VERSION_CODE)
@@ -130,6 +153,7 @@ fun FeedbackOverlay(
     fun clearForm() {
         comment = ""
         expectedResult = ""
+        attachments = emptyList()
         showExpectedResult = false
         draftScreen = null
         draftContentId = null
@@ -158,6 +182,7 @@ fun FeedbackOverlay(
                 comment = comment,
                 expectedResult = expectedResult,
                 includeTechnicalContext = includeTechnicalContext,
+                attachments = attachments,
             )
         } else {
             val capture = resolveFeedbackCaptureContext(retainedDraftContext(), currentCaptureContext())
@@ -170,6 +195,7 @@ fun FeedbackOverlay(
                 screen = capture.screen,
                 contentId = capture.contentId,
                 contentTitle = capture.contentTitle,
+                attachments = attachments,
             )
         }
         if (!note.isValid()) {
@@ -314,8 +340,32 @@ fun FeedbackOverlay(
                     onClick = { includeTechnicalContext = !includeTechnicalContext },
                     label = { Text("Include technical context") },
                 )
+                OutlinedButton(
+                    onClick = {
+                        attachmentLauncher.launch(arrayOf("image/*", "text/plain", "application/pdf"))
+                    },
+                    enabled = attachments.size < MAX_FEEDBACK_ATTACHMENTS,
+                ) { Text("Add photo or file (${attachments.size}/$MAX_FEEDBACK_ATTACHMENTS)") }
+                if (attachments.isNotEmpty()) {
+                    Text("Review selected attachments before using Send now.", fontWeight = FontWeight.Bold)
+                    attachments.forEach { attachment ->
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Text("${attachment.displayName} • ${attachment.mimeType} • ${attachment.sizeBytes} bytes")
+                            TextButton(onClick = { attachments = attachments - attachment }) { Text("Remove") }
+                        }
+                    }
+                }
                 Text(
                     "Privacy: do not include child names, photos, audio, exact birthdates, or private family details.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error,
+                )
+                Text(
+                    "Privacy: attach only an approved image, PDF, or plain-text file you reviewed. Maximum 3 files, 10 MB each; no device-wide logs or unrelated media.",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.error,
                 )
@@ -395,6 +445,7 @@ fun FeedbackOverlay(
                                 selectedImpact = note.impact
                                 comment = note.comment
                                 expectedResult = note.expectedResult
+                                attachments = note.attachments
                                 includeTechnicalContext = note.includeTechnicalContext
                                 showExpectedResult = note.expectedResult.isNotBlank()
                                 editingNoteId = note.id

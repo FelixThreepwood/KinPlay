@@ -73,7 +73,7 @@ class ContentRevisionInvariantTest {
 
     @Test
     fun kpf0001RealSeedDisplaysExactFirstSixQuietGames() {
-        val expected = listOf("I Spy", "Charades", "Would You Rather", "Animal Guessing", "Alphabet Story", "Mad Libs")
+        val expected = listOf("I Spy", "Charades", "Would You Rather", "Animal Detective", "Alphabet Story", "Mad Libs")
         expected.take(5).forEach { title ->
             assertEquals(1, activeItems.count { it.string("title") == title && it.strings("quickCategories").contains("quiet_games") })
         }

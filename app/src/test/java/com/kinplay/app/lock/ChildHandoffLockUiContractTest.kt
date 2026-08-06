@@ -23,6 +23,9 @@ class ChildHandoffLockUiContractTest {
         assertTrue(source.contains("Hold key for 3 seconds to unlock"))
         assertTrue(source.contains("onTap"))
         assertTrue(source.contains("showUnlockGuidance"))
+        assertTrue(source.contains("child-lock-countdown"))
+        assertTrue(source.contains("countdownProgress"))
+        assertTrue(source.contains("countdownSeconds"))
     }
 
     private fun repositoryRoot(): Path {

@@ -22,6 +22,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -81,6 +83,8 @@ fun ChildHandoffLockContainer(
     }
     var lockState by stateHolder
     var showUnlockGuidance by rememberSaveable { mutableStateOf(false) }
+    var countdownProgress by remember { mutableFloatStateOf(0f) }
+    var countdownSeconds by remember { mutableIntStateOf(0) }
     fun updateState(update: (ChildHandoffLockState) -> ChildHandoffLockState) {
         lockState = update(lockState)
     }
@@ -137,9 +141,21 @@ fun ChildHandoffLockContainer(
                 }
             }
         }
+        if (lockState.holdStartedAtMillis != null) {
+            LockCountdownOverlay(
+                progress = countdownProgress,
+                seconds = countdownSeconds,
+                action = if (lockState.isLocked) "unlock" else "lock",
+                modifier = Modifier.align(Alignment.Center),
+            )
+        }
         HoldToToggleLock(
             state = lockState,
             onStateUpdate = ::updateState,
+            onProgress = { progress, seconds ->
+                countdownProgress = progress
+                countdownSeconds = seconds
+            },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .padding(18.dp),
@@ -148,9 +164,46 @@ fun ChildHandoffLockContainer(
 }
 
 @Composable
+private fun LockCountdownOverlay(
+    progress: Float,
+    seconds: Int,
+    action: String,
+    modifier: Modifier = Modifier,
+) {
+    val safeProgress = progress.coerceIn(0f, 1f)
+    val safeSeconds = seconds.coerceIn(0, 3)
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+        ),
+        shape = RoundedCornerShape(22.dp),
+        modifier = modifier
+            .testTag("child-lock-countdown")
+            .semantics {
+                contentDescription = "${safeSeconds} of 3 seconds to $action"
+                stateDescription = "${safeSeconds} of 3 seconds"
+                progressBarRangeInfo = ProgressBarRangeInfo(safeProgress, 0f..1f)
+                liveRegion = LiveRegionMode.Polite
+            },
+    ) {
+        Column(
+            modifier = Modifier.padding(horizontal = 28.dp, vertical = 20.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            Text("Hold to $action", fontWeight = FontWeight.Bold)
+            CircularProgressIndicator(progress = { safeProgress })
+            Text("$safeSeconds of 3 seconds", style = MaterialTheme.typography.titleLarge)
+        }
+    }
+}
+
+@Composable
 private fun HoldToToggleLock(
     state: ChildHandoffLockState,
     onStateUpdate: ((ChildHandoffLockState) -> ChildHandoffLockState) -> Unit,
+    onProgress: (Float, Int) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var frameTimeMillis by remember { mutableLongStateOf(0L) }
@@ -160,12 +213,15 @@ private fun HoldToToggleLock(
     LaunchedEffect(holdStartedAtMillis) {
         val startedAt = holdStartedAtMillis ?: run {
             frameTimeMillis = 0L
+            onProgress(0f, 0)
             return@LaunchedEffect
         }
         frameTimeMillis = startedAt
         while (true) {
             val nowMillis = withFrameMillis { it }
             frameTimeMillis = nowMillis
+            val progress = state.progress(nowMillis)
+            onProgress(progress, (progress * 3).toInt().coerceIn(0, 3))
             if (state.shouldToggle(nowMillis)) {
                 onStateUpdate { current ->
                     if (current.holdStartedAtMillis == startedAt) current.completeHold(nowMillis) else current

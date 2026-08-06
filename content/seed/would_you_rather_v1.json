@@ -412,6 +412,76 @@
           "id": "wyr_cute_silly_080",
           "text": "Would you rather have a pencil that draws tiny crowns or have a button that whispers kind compliments?",
           "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_081",
+          "text": "Would you rather fly or be invisible?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_082",
+          "text": "Would you rather have super strength or super speed?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_083",
+          "text": "Would you rather live underwater or in space?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_084",
+          "text": "Would you rather never sleep or never eat?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_085",
+          "text": "Would you rather be always hot or always cold?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_086",
+          "text": "Would you rather eat only pizza or only ice cream?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_087",
+          "text": "Would you rather control the weather or control time?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_088",
+          "text": "Would you rather be a superhero or a wizard?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_089",
+          "text": "Would you rather never get tired or never get sick?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_090",
+          "text": "Would you rather live in a treehouse or a castle?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_091",
+          "text": "Would you rather speak every language or play every instrument?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_092",
+          "text": "Would you rather be able to teleport or stop time?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_093",
+          "text": "Would you rather have infinite candy or infinite toys?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_cute_silly_094",
+          "text": "Would you rather run on water or walk through walls?",
+          "status": "approved"
         }
       ]
     },
@@ -818,6 +888,36 @@
         {
           "id": "wyr_animals_080",
           "text": "Would you rather have a goat help test a tiny obstacle trail or have a llama help deliver friendly notes?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_081",
+          "text": "Would you rather talk to animals or read minds?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_082",
+          "text": "Would you rather have a pet dinosaur or a pet dragon?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_083",
+          "text": "Would you rather jump like a frog or swim like a fish?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_084",
+          "text": "Would you rather shrink to ant size or grow to giant size?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_085",
+          "text": "Would you rather have wings or a tail?",
+          "status": "approved"
+        },
+        {
+          "id": "wyr_animals_086",
+          "text": "Would you rather have night vision or x-ray vision?",
           "status": "approved"
         }
       ]

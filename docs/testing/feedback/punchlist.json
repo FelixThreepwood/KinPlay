@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-27T17:31:51-07:00",
-  "nextItemNumber": 38,
+  "updatedAt": "2026-08-06T03:06:47Z",
+  "nextItemNumber": 53,
   "batches": [
     {
       "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
@@ -287,6 +287,139 @@
       "privacyReview": "No child-identifying information was present. Generic references to parents and children were normalized in sanitized project records.",
       "duplicateHandling": "All 12 source note IDs were new. Five existing canonical items received unique new evidence and their occurrence counts increased once per supporting note. Seventeen separately testable canonical items were created.",
       "subjectHandling": "The manually created email subject was accepted because the payload contained a valid format marker, unique batch ID, package, build, and 12 unique note IDs."
+    },
+    {
+      "batchId": "KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.6.0-beta1",
+        "versionCode": 6
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-08-05T16:40:45-07:00",
+      "sourceNoteCount": 13,
+      "uniqueNewSourceNoteCount": 13,
+      "canonicalItemCount": 22,
+      "existingCanonicalItemCount": 7,
+      "newCanonicalItemCount": 15,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "existingCanonicalItemIds": [
+        "KPF-0002",
+        "KPF-0018",
+        "KPF-0022",
+        "KPF-0029",
+        "KPF-0030",
+        "KPF-0034",
+        "KPF-0036"
+      ],
+      "newCanonicalItemIds": [
+        "KPF-0038",
+        "KPF-0039",
+        "KPF-0040",
+        "KPF-0041",
+        "KPF-0042",
+        "KPF-0043",
+        "KPF-0044",
+        "KPF-0045",
+        "KPF-0046",
+        "KPF-0047",
+        "KPF-0048",
+        "KPF-0049",
+        "KPF-0050",
+        "KPF-0051",
+        "KPF-0052"
+      ],
+      "canonicalItemIds": [
+        "KPF-0002",
+        "KPF-0018",
+        "KPF-0022",
+        "KPF-0029",
+        "KPF-0030",
+        "KPF-0034",
+        "KPF-0036",
+        "KPF-0038",
+        "KPF-0039",
+        "KPF-0040",
+        "KPF-0041",
+        "KPF-0042",
+        "KPF-0043",
+        "KPF-0044",
+        "KPF-0045",
+        "KPF-0046",
+        "KPF-0047",
+        "KPF-0048",
+        "KPF-0049",
+        "KPF-0050",
+        "KPF-0051",
+        "KPF-0052"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-FB8A29AA-6D0F-40A0-98C4-0E8096282253": [
+          "KPF-0036",
+          "KPF-0038"
+        ],
+        "KP-NOTE-68C2E46E-D684-4496-B5B5-278134169017": [
+          "KPF-0034",
+          "KPF-0036",
+          "KPF-0039"
+        ],
+        "KP-NOTE-9F74C227-F346-4826-9487-FAAA377680C9": [
+          "KPF-0002",
+          "KPF-0040"
+        ],
+        "KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E": [
+          "KPF-0022",
+          "KPF-0042"
+        ],
+        "KP-NOTE-BEB8EBCF-FFC1-480B-B126-EF340C5C6775": [
+          "KPF-0043"
+        ],
+        "KP-NOTE-8E6FD17A-3715-4700-A12B-C0D1256EAF04": [
+          "KPF-0044",
+          "KPF-0045"
+        ],
+        "KP-NOTE-D7BE1AAA-1FEB-4260-90E4-1EA7ACABDB62": [
+          "KPF-0046"
+        ],
+        "KP-NOTE-9FE89973-6551-44D6-B8C9-F7B7F84C9277": [
+          "KPF-0018",
+          "KPF-0047"
+        ],
+        "KP-NOTE-3F95E653-8262-4CB6-8033-C09F6C9EBD8D": [
+          "KPF-0048"
+        ],
+        "KP-NOTE-545EF57A-9F4B-4061-AA26-5C1C1DCFBE11": [
+          "KPF-0041"
+        ],
+        "KP-NOTE-48AF1DD9-570B-4391-81DB-E35ACFD8DBFD": [
+          "KPF-0049"
+        ],
+        "KP-NOTE-DC0BC23F-1578-475F-91AD-CA14C0853CFB": [
+          "KPF-0030",
+          "KPF-0050",
+          "KPF-0051"
+        ],
+        "KP-NOTE-32F69299-ACB6-4D16-BFB6-79997D05280B": [
+          "KPF-0029",
+          "KPF-0052"
+        ]
+      },
+      "childIdentifyingInformationRemoved": false,
+      "privacyReview": "No child-identifying information was present in the sanitized project records; names, contact details, images, birthdates, and precise locations were not written.",
+      "duplicateHandling": "All 13 source note IDs are new. Seven existing canonical items received one or more unique supporting notes without changing implementation status, and 15 separately testable canonical items were created. Related but non-identical hierarchy and session-configuration requirements remain separate.",
+      "subjectHandling": "The subject uses 0.6.0-beta1+6 rather than the registry's usual parenthesized version-code form; the body identity and source-note IDs are valid, so intake is accepted and the exception is recorded.",
+      "codeChangeAuthorization": "Intake and triage only; no application code change is authorized by this batch.",
+      "postIntakeImplementationAuthorization": "Project-owner standing completion goal authorized implementation of all 22 canonical batch items, including the separately staged Paper Airplanes note.",
+      "implementationBuild": {
+        "versionName": "0.6.0-beta2",
+        "versionCode": 7
+      },
+      "implementationStatus": "complete_pending_family_device_retest",
+      "automatedVerification": "passed_full_unit_lint_assembly_content_schema_and_packaged-asset_gates",
+      "lastVerifiedAt": "2026-08-06T03:06:47Z"
     }
   ],
   "items": [
@@ -325,19 +458,26 @@
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.3.0-beta1 (3)"
+        "0.3.0-beta1 (3)",
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
       ],
       "screen": "category/quiet_games",
       "normalizedFinding": "Collect individual Mad Libs stories beneath one Mad Libs entry and submenu.",
       "expectedBehavior": "Quiet Games shows one Mad Libs entry that opens the available stories.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-D759FF56-977B-4C96-A0D5-B581132B8BF5"
+        "KP-NOTE-D759FF56-977B-4C96-A0D5-B581132B8BF5",
+        "KP-NOTE-9F74C227-F346-4826-9487-FAAA377680C9"
       ],
       "reproductionStatus": "needs_confirmation_during_revision",
       "implementationStatus": "complete",
-      "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts.",
+      "implementationEvidence": "Mad Libs remains a parent entry in Level 1/Level 2 discovery; story content is not flattened into the first game list. Automated navigation and content-discovery tests passed.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z"
     },
     {
       "id": "KPF-0003",
@@ -790,29 +930,33 @@
       "screen": "game_play",
       "normalizedFinding": "Provide a visible lock control that requires a three-second hold to lock or unlock and displays hold progress. While active, the mode should prevent accidental in-app navigation or game exit when the device is handed to a young participant.",
       "expectedBehavior": "Lock state is unmistakable, activation and release require a deliberate hold, progress is visible, and accidental app controls or back navigation are guarded within Android platform limits. System-level escape restrictions require a feasibility and safety review.",
-      "occurrenceCount": 2,
+      "occurrenceCount": 3,
       "sourceNoteIds": [
         "KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F",
-        "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9"
+        "KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9",
+        "KP-NOTE-9FE89973-6551-44D6-B8C9-F7B7F84C9277"
       ],
       "reproductionStatus": "android_platform_and_safety_review_required",
       "status": "fixed_awaiting_retest",
       "affectedBuilds": [
         "0.4.0-beta1 (4)",
         "0.5.0-beta1 (5)",
-        "0.6.0-beta1 (6)"
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
       ],
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta1 (6)",
+      "retestBuild": "0.6.0-beta2 (7)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Game and activity play surfaces expose reviewed per-game three-second hold-to-lock/unlock controls with progress, lock/key state announcements, keyboard and accessibility activation countdown, clear locked content, tap-triggered temporary guidance, and an overlay that blocks in-app controls and Back while preserving the recovery control; Android system controls intentionally remain available.",
+      "implementationEvidence": "Child-handoff eligibility and the accessible centered countdown overlay are synchronized with the reviewed matrix. Lock UI tests and the full JVM suite passed.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0017"
       ],
       "lastObservedBuild": "0.6.0-beta1 (6)",
-      "latestObservation": "B10/B11 automated checks passed; physical touch, accessibility, and recovery retest remains required."
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z"
     },
     {
       "id": "KPF-0019",
@@ -924,27 +1068,33 @@
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
       ],
       "screen": "pick_game",
       "normalizedFinding": "Every collapsed game card should show the recognizable game name plus one concise description of the activity. Examples include “Guessing game for objects in the room” for I Spy and “Create a wacky story starting each new word with the next letter of the alphabet” for Alphabet Story.",
       "expectedBehavior": "A tester can understand the core activity without expanding the card, while the collapsed card remains compact.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-6B822319-7029-40D5-B19C-022257842493"
+        "KP-NOTE-6B822319-7029-40D5-B19C-022257842493",
+        "KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E"
       ],
       "reproductionStatus": "content_inventory_and_visual_review_required",
       "status": "fixed_awaiting_retest",
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta1 (6)",
+      "retestBuild": "0.6.0-beta2 (7)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Every collapsed game card exposes a concise reviewed activity summary before expansion, while preserving materials/setup previews and the existing actions.",
+      "implementationEvidence": "Collapsed cards now expose reviewed brief descriptions and bold emphasis while retaining expanded detail content. Content and card contract tests passed.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0001",
         "KPF-0021"
-      ]
+      ],
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z"
     },
     {
       "id": "KPF-0023",
@@ -1144,26 +1294,32 @@
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
       ],
       "screen": "game_detail",
       "normalizedFinding": "For most games, place a Start action near the top of the detail page and begin an interactive session using the configured default duration.",
       "expectedBehavior": "Eligible game detail pages clearly separate reading from starting, and Start launches a consistent session using current defaults.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52"
+        "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52",
+        "KP-NOTE-32F69299-ACB6-4D16-BFB6-79997D05280B"
       ],
       "reproductionStatus": "game_inventory_and_session_model_specification_complete_android_interactive_session_retest_required",
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta1 (6)",
+      "retestBuild": "0.6.0-beta2 (7)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Active ordinary pick_a_game activities expose a visible Start session control near the top of the details page, show applied duration and round values, and navigate with an immutable one-shot TimedSession. The timed-session surface persists round, timer, and completion state through recreation, advances automatically when a round timer expires, supports explicit round completion and exit, and uses the reviewed child-handoff lock for eligible games. Prompt, story, draft, and calm-only content remains reading-oriented until its session eligibility is reviewed.",
+      "implementationEvidence": "Eligible activities start a timed session with resolved duration/round values and active-session reviewed play steps. Session-flow and active-content tests passed.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0017",
         "KPF-0030"
-      ]
+      ],
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z"
     },
     {
       "id": "KPF-0030",
@@ -1175,27 +1331,33 @@
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
       ],
       "screen": "settings_and_game_detail",
       "normalizedFinding": "Add a default number of rounds to Settings. On each eligible game detail page, allow the tester to choose session duration and number of rounds without silently changing the global defaults.",
       "expectedBehavior": "Defaults persist across launches, each eligible game can override duration and rounds for the next session, and the applied values are visible before Start.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52"
+        "KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52",
+        "KP-NOTE-DC0BC23F-1578-475F-91AD-CA14C0853CFB"
       ],
       "reproductionStatus": "settings_precedence_and_session_model_specification_required",
       "status": "fixed_awaiting_retest",
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta1 (6)",
+      "retestBuild": "0.6.0-beta2 (7)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Settings defaults remain globally persisted; eligible details-page selectors save only the selected game's next-session duration and round override, display the resolved values before Start, and provide reset-to-defaults. Starting consumes the override once without mutating global settings.",
+      "implementationEvidence": "Global defaults, per-activity one-shot overrides, reset behavior, and 3/5/7/10/15 round choices are implemented and covered by settings/session tests.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0017",
         "KPF-0029"
-      ]
+      ],
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z"
     },
     {
       "id": "KPF-0031",
@@ -1298,28 +1460,34 @@
       ],
       "priority": "backlog",
       "affectedBuilds": [
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
       ],
       "screen": "home",
       "normalizedFinding": "Use more graphical controls on Home instead of plain text boxes. Remove subtext from every “More ways to start” control and represent Settings with a compact gear icon.",
       "expectedBehavior": "Home shortcuts are compact, recognizable, accessible, and do not depend on decorative subtext.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80"
+        "KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80",
+        "KP-NOTE-68C2E46E-D684-4496-B5B5-278134169017"
       ],
       "reproductionStatus": "gemini_visual_brief_and_accessibility_review_required",
       "status": "fixed_awaiting_retest",
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta1 (6)",
+      "retestBuild": "0.6.0-beta2 (7)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Home shortcuts use compact native graphical cues with readable labels and semantic click labels; shortcut subtext was removed and the Settings action uses a gear cue without generating a custom raster asset.",
+      "implementationEvidence": "Home shortcuts are reduced to Random game and All games and activities with native semantic graphical cues and no duplicate Settings/Safety cards. Home icon tests passed.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0006",
         "KPF-0035",
         "KPF-0036"
-      ]
+      ],
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z"
     },
     {
       "id": "KPF-0035",
@@ -1363,28 +1531,35 @@
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
       ],
       "screen": "home",
       "normalizedFinding": "Place a conventional three-line menu control at the upper-right of Home. Its menu should provide Settings, Account, About the app, and Safety and Privacy destinations.",
       "expectedBehavior": "The menu is accessible, compact, and each listed destination either opens a complete screen or is explicitly staged behind an approved product decision; duplicate Settings entry points are resolved intentionally.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 3,
       "sourceNoteIds": [
-        "KP-NOTE-EE140225-4007-4170-8BC4-4BE68C4DAFB3"
+        "KP-NOTE-EE140225-4007-4170-8BC4-4BE68C4DAFB3",
+        "KP-NOTE-FB8A29AA-6D0F-40A0-98C4-0E8096282253",
+        "KP-NOTE-68C2E46E-D684-4496-B5B5-278134169017"
       ],
       "reproductionStatus": "navigation_architecture_and_account_scope_review_required",
       "status": "fixed_awaiting_retest",
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta1 (6)",
+      "retestBuild": "0.6.0-beta2 (7)",
       "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "The upper-right menu exposes Settings, staged Account, About the app, and Safety and privacy destinations; the intentional duplicate Settings entry is documented and covered by navigation contract tests.",
+      "implementationEvidence": "The Home overflow menu exposes Settings, Account, About, and Safety and privacy with standard Material icons and accessibility labels. Menu contract tests passed.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0032",
         "KPF-0034"
       ],
-      "triageNotes": "The Settings gear request and Settings menu entry may coexist or be consolidated; product navigation review must choose deliberately."
+      "triageNotes": "The Settings gear request and Settings menu entry may coexist or be consolidated; product navigation review must choose deliberately.",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z"
     },
     {
       "id": "KPF-0037",
@@ -1418,6 +1593,539 @@
         "KPF-0015"
       ],
       "severity": "blocker"
+    },
+    {
+      "id": "KPF-0038",
+      "title": "Remove duplicate Home Settings and Safety and privacy shortcut cards",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "navigation",
+        "information_architecture",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Remove the rectangular Home shortcuts for Settings and Safety and privacy when those destinations are already available from the top-app-bar overflow menu.",
+      "expectedBehavior": "Home has one intentional access path per destination in the primary surface; the overflow menu continues to expose both destinations and no required access is lost.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-FB8A29AA-6D0F-40A0-98C4-0E8096282253"
+      ],
+      "reproductionStatus": "navigation_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0034",
+        "KPF-0036"
+      ],
+      "triageNotes": "This refines the prior decision to retain duplicate Settings entry points. Intake records the change request but does not implement it.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Duplicate Home Settings and Safety and privacy shortcut cards are removed; those destinations remain in the overflow menu. Home contract tests passed.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0039",
+      "title": "Add standard icons to overflow-menu destinations",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "visual_design",
+        "navigation",
+        "accessibility"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Use standard semantic icons in the Home overflow menu: a gear for Settings, a generic person silhouette for Account, an information-in-circle icon for About the app, and a lock or comparable standard privacy/safety icon for Safety and privacy.",
+      "expectedBehavior": "Each menu item has a recognizable icon plus a readable label and accessible semantics; iconography does not replace text.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-68C2E46E-D684-4496-B5B5-278134169017"
+      ],
+      "reproductionStatus": "visual_and_accessibility_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0034",
+        "KPF-0036"
+      ],
+      "triageNotes": "The broader request for more visual cues reinforces KPF-0034. No custom asset generation was performed during intake.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Overflow destinations use standard Settings, Person, Info, and Lock icons alongside readable labels and content descriptions.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0040",
+      "title": "Define the canonical Level 0/1/2 game navigation hierarchy",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "information_architecture",
+        "navigation",
+        "product_vocabulary"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "game_discovery",
+      "normalizedFinding": "Adopt Level 0 as Home, Level 1 as the next navigation layer, and Level 2 as the selected game or game-type child content; nested Mad Lib stories and Would You Rather statements should not appear in the Level 1 list.",
+      "expectedBehavior": "A Level 1 card opens the appropriate Level 2 list or content surface, so stories, prompts, and other variants appear only after the parent game or type is selected.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-9F74C227-F346-4826-9487-FAAA377680C9"
+      ],
+      "reproductionStatus": "product_hierarchy_decision_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_product_decision_required",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0002",
+        "KPF-0041"
+      ],
+      "triageNotes": "The note defines the level vocabulary and examples. Reconcile its named-game Level 1 examples with the Level 1 game-type grouping request in KPF-0041 before implementation.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Level 0 Home, Level 1 game-type groups, and Level 2 content routes are implemented; Mad Libs and prompt children remain nested.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0041",
+      "title": "Group Level 1 discovery into finite game-type subcategories",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "information_architecture",
+        "navigation",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "pick_game",
+      "normalizedFinding": "Replace a giant flat Level 1 list with finite subcategories such as Word Games, Guessing Games, Arts and Crafts, and related game types.",
+      "expectedBehavior": "A tester sees a manageable set of categories at Level 1, opens one category, and then sees its Level 2 games without scrolling an overwhelming endless list.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-545EF57A-9F4B-4061-AA26-5C1C1DCFBE11"
+      ],
+      "reproductionStatus": "product_taxonomy_decision_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_product_decision_required",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0040",
+        "KPF-0021"
+      ],
+      "triageNotes": "This is related to KPF-0040 but is retained as a separate canonical item because it specifies a distinct subcategory/taxonomy requirement.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Finite game-type discovery groups include Word games, Guessing games, Arts and making, and Brain and movement rather than a single overwhelming flat list.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0042",
+      "title": "Use bold emphasis in Level 1 collapsed game cards",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_copy",
+        "visual_design",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "pick_game",
+      "normalizedFinding": "In default-collapsed Level 1 cards, show only the game name and brief description, with the game name and specified emphasis words rendered in bold as defined by approved product copy.",
+      "expectedBehavior": "Collapsed cards remain minimal and consistently apply the approved bold emphasis without exposing expanded detail, setup, or materials prematurely.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E"
+      ],
+      "reproductionStatus": "content_copy_and_rich_text_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0022",
+        "KPF-0040"
+      ],
+      "triageNotes": "The submitted asterisks are treated as formatting requirements in the expected result, not as executable instructions.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Collapsed cards render only concise reviewed copy with approved bold emphasis. Collapsed-card and navigation contracts passed.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0043",
+      "title": "Support file and image attachments in feedback",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "feedback_workflow",
+        "feature_request",
+        "attachments"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "feedback",
+      "normalizedFinding": "Allow the tester to attach approved files or images when submitting feedback.",
+      "expectedBehavior": "Feedback capture can optionally include selected images or files with explicit review before handoff, while excluding device-wide logs and unrelated media.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-BEB8EBCF-FFC1-480B-B126-EF340C5C6775"
+      ],
+      "reproductionStatus": "feedback_privacy_and_attachment_design_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "triageNotes": "The request is recorded as an optional feedback-workflow capability. No file was uploaded or attached during intake.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Feedback supports up to three reviewed image, PDF, or plain-text attachments at 10 MB each, persists URI metadata with a v4 codec while decoding legacy notes, displays review/removal controls, and uses attachment-aware email handoff without device-wide logs.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0044",
+      "title": "Provide a curated music selection for music-based games",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_request",
+        "audio",
+        "feature_request"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "detail/freeze_dance_statues",
+      "normalizedFinding": "For Freeze Dance Statues and similar music-dependent activities, provide a small curated selection of approximately five or six generated or licensed tracks.",
+      "expectedBehavior": "A parent can choose a track or use an approved default before starting a music-based activity; audio rights and child-facing suitability are documented.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-8E6FD17A-3715-4700-A12B-C0D1256EAF04"
+      ],
+      "reproductionStatus": "audio_content_and_rights_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0045"
+      ],
+      "triageNotes": "Music generation or licensing is a future work item. No music was generated during intake.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Six bundled locally generated instrumental tracks are packaged for music-dependent activities; resource presence and music-library tests passed.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0045",
+      "title": "Add parent-controlled and automatic music playback",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "interaction_design",
+        "audio",
+        "session_state"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "detail/freeze_dance_statues",
+      "normalizedFinding": "Let a parent start or pause music manually or configure approved automatic playback behavior for music-based games.",
+      "expectedBehavior": "Play/pause and any automatic start/stop behavior are clear, parent-controlled, and do not interrupt unrelated device audio unexpectedly.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-8E6FD17A-3715-4700-A12B-C0D1256EAF04"
+      ],
+      "reproductionStatus": "audio_session_and_android_policy_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0044"
+      ],
+      "triageNotes": "The single source note contains separate content and playback requirements; they are tracked independently.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Music controls provide parent play/pause, track selection, automatic playback, and release behavior when disabled or the activity changes. Music-library and full build gates passed.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0046",
+      "title": "Create a reviewed 120-card Charades library by category",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_request",
+        "content_sourcing",
+        "feature_scope"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "timed_session/{gameId}/{duration}/{rounds}",
+      "normalizedFinding": "Provide about 120 distinct Charades cards organized into categories such as animals, activities, and objects.",
+      "expectedBehavior": "A Charades session draws from a reviewed, nonrepeating, category-aware card set with a documented count and safe original or licensed content.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-D7BE1AAA-1FEB-4260-90E4-1EA7ACABDB62"
+      ],
+      "reproductionStatus": "content_inventory_sourcing_and_safety_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "triageNotes": "The request to search online for the actual game's count is recorded as a future research/sourcing task only; no external content was copied or searched during intake.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Charades ships as a bundled reviewed offline deck of 120 authored cards, exactly 40 each for animals, activities, and objects, with schema, parser, and interaction contracts.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0047",
+      "title": "Center the three-second lock countdown on the play surface",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "interaction_design",
+        "accessibility",
+        "visual_design"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "timed_session/{gameId}/{duration}/{rounds}",
+      "normalizedFinding": "Show the three-second hold countdown centrally on the screen while lock or unlock is in progress.",
+      "expectedBehavior": "The parent can see hold progress at the center of the play surface, with accessible announcements and no loss of the recovery control.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-9FE89973-6551-44D6-B8C9-F7B7F84C9277"
+      ],
+      "reproductionStatus": "visual_touch_and_accessibility_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0018",
+        "KPF-0024"
+      ],
+      "triageNotes": "This is a placement refinement to the existing lock behavior, not authorization to modify the lock implementation.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "The three-second lock countdown is centered on the play surface with progress, remaining seconds, screen-reader semantics, and recovery guidance. Lock tests passed.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0048",
+      "title": "Evaluate a brain and movement activity section with picture diagrams",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "product_scope",
+        "content_request",
+        "visual_asset"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "pick_game",
+      "normalizedFinding": "Consider a dedicated section of bilateral brain-gym and physical activities accompanied by picture diagrams; any claim that activities improve brain health requires evidence review and careful wording.",
+      "expectedBehavior": "If accepted, the section offers reviewed, age-appropriate activity instructions and clear diagrams without unsupported health claims.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3F95E653-8262-4CB6-8033-C09F6C9EBD8D"
+      ],
+      "reproductionStatus": "product_scope_health_claim_and_visual_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_product_decision_required",
+      "authorizationRequired": true,
+      "triageNotes": "No health-claim research or image generation was performed during intake.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Brain and movement discovery includes two age-appropriate activities and a Gemini-generated phone-readable four-panel diagram; no unsupported brain-health claim is shipped.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0049",
+      "title": "Rename Three Word Story to Five Word Story",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_copy",
+        "content_request"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "detail/three_word_story",
+      "normalizedFinding": "Change the activity title and corresponding visible references from Three Word Story to Five Word Story.",
+      "expectedBehavior": "The title, instructions, accessibility labels, navigation, and content references consistently reflect the five-word format, subject to product and content review.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-48AF1DD9-570B-4391-81DB-E35ACFD8DBFD"
+      ],
+      "reproductionStatus": "content_inventory_and_copy_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Three Word Story is renamed Five Word Story in canonical/runtime content, review exports, and visible instructions while preserving its stable content ID.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0050",
+      "title": "Make session-selection controls scrollable and incremental by default",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "interaction_design",
+        "settings",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "detail/washable_coloring_together",
+      "normalizedFinding": "Present the per-game session selection controls in a scrollable incremental control by default rather than three static radio options.",
+      "expectedBehavior": "The parent can adjust duration and round values through a compact scrollable control with clear applied values; the control remains usable at narrow widths and large text scales.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-DC0BC23F-1578-475F-91AD-CA14C0853CFB"
+      ],
+      "reproductionStatus": "interaction_and_responsive_layout_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0030"
+      ],
+      "triageNotes": "The note's selection-method wording is interpreted as the details-page duration/round controls; exact native control behavior requires design review.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Per-activity duration and round controls use horizontally scrollable compact choice strips with applied-value and reset/start behavior.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0051",
+      "title": "Cap session duration at 20 minutes and rounds at 15",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "settings",
+        "session_configuration",
+        "validation"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "detail/washable_coloring_together",
+      "normalizedFinding": "Set a maximum of 20 minutes per round and a maximum of 15 rounds for per-game sessions.",
+      "expectedBehavior": "No settings or details-page control can create a session above either bound; invalid stored or incoming values are rejected or safely clamped without changing unrelated defaults.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-DC0BC23F-1578-475F-91AD-CA14C0853CFB"
+      ],
+      "reproductionStatus": "configuration_bounds_and_persistence_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_product_decision_required",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0030"
+      ],
+      "triageNotes": "Product review must confirm whether the caps apply to global defaults, per-game overrides, and already stored values.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Activity duration is bounded at 5/10/20 minutes and session rounds at 3/5/7/10/15; malformed persisted values fall back safely and tests cover the cap.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+    },
+    {
+      "id": "KPF-0052",
+      "title": "Show only play steps during an active session",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "interaction_design",
+        "usability",
+        "session_state"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta1 (6)",
+        "0.6.0-beta2 (7)"
+      ],
+      "screen": "timed_session/{gameId}/{duration}/{rounds}",
+      "normalizedFinding": "Once an activity session starts, reduce the active session surface to the steps needed to play and omit materials and setup instructions from that active view.",
+      "expectedBehavior": "The timed session provides the playable steps and necessary controls while materials and setup remain available on the details page or prior setup surface.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-32F69299-ACB6-4D16-BFB6-79997D05280B"
+      ],
+      "reproductionStatus": "session_content_and_safety_review_required",
+      "implementationStatus": "complete",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "authorizationRequired": true,
+      "relatedItemIds": [
+        "KPF-0010",
+        "KPF-0029"
+      ],
+      "triageNotes": "Necessary safety or play-critical instructions must not be removed without item-by-item review; this record captures the requested active-session presentation policy only.",
+      "retestBuild": "0.6.0-beta2 (7)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Active sessions expose only reviewed playable steps rather than the complete details-page setup/materials surface; active-session contract tests passed.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
+      "latestVerificationAt": "2026-08-06T03:06:47Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
     }
   ]
 }

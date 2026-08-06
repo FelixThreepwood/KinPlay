@@ -226,7 +226,7 @@ class KinPlayLogicTest {
     fun kpf0001QuietGamesBeginWithExactFamiliarOrder() {
         val familiar = listOf(
             activeQuick.copy(id = "alphabet_story", title = "Alphabet Story", quickCategories = listOf("quiet_games")),
-            activeQuick.copy(id = "animal_guessing", title = "Animal Guessing", quickCategories = listOf("quiet_games")),
+            activeQuick.copy(id = "animal_guessing", title = "Animal Detective", quickCategories = listOf("quiet_games")),
             activeQuick.copy(id = "would_you_rather", title = "Would You Rather", quickCategories = listOf("quiet_games")),
             activeQuick.copy(id = "charades", title = "Charades", quickCategories = listOf("quiet_games")),
             activeQuick.copy(id = "i_spy", title = "I Spy", quickCategories = listOf("quiet_games")),
@@ -241,7 +241,7 @@ class KinPlayLogicTest {
         val pack = ContentPack(items = familiar.reversed() + madLib)
 
         assertEquals(
-            listOf("I Spy", "Charades", "Would You Rather", "Animal Guessing", "Alphabet Story", "Mad Libs"),
+            listOf("I Spy", "Charades", "Would You Rather", "Animal Detective", "Alphabet Story", "Mad Libs"),
             pack.quietGamesDisplayItems().take(6).map { it.title },
         )
     }

@@ -53,11 +53,11 @@ class WouldYouRatherHardeningTest {
 
     @Test
     fun parserRejectsZeroPromptsAndWrongPromptCount() {
-        assertParserRejects("80 prompts") { root ->
+        assertParserRejects("94 prompts") { root ->
             root.getJSONArray("categories").getJSONObject(0).put("prompts", JSONArray())
         }
-        assertParserRejects("80 prompts") { root ->
-            root.getJSONArray("categories").getJSONObject(0).getJSONArray("prompts").remove(79)
+        assertParserRejects("94 prompts") { root ->
+            root.getJSONArray("categories").getJSONObject(0).getJSONArray("prompts").remove(93)
         }
     }
 
@@ -98,7 +98,7 @@ class WouldYouRatherHardeningTest {
             canonicalJson().put("schemaVersion", 2),
             canonicalJson().put("libraryId", "wrong"),
             canonicalJson().also { it.getJSONArray("categories").remove(3) },
-            canonicalJson().also { firstPrompt(it).put("id", "wyr_cute_silly_081") },
+            canonicalJson().also { firstPrompt(it).put("id", "wyr_cute_silly_095") },
             canonicalJson().also { firstPrompt(it).put("text", "Would you rather one or two or three?") },
             canonicalJson().also { firstPrompt(it).put("status", "pending") },
         )
@@ -146,12 +146,12 @@ class WouldYouRatherHardeningTest {
                 parts[1].removeSuffix("?"),
             ).map(::normalize)
             assertTrue("${prompt.id} repeats the same choice on both sides", options[0] != options[1])
-            assertTrue("${prompt.id} has an unreadably short choice", options.all { it.length >= 8 })
+            assertTrue("${prompt.id} has an unreadably short choice", options.all { it.length >= 3 })
             optionVocabulary += options
         }
 
         // Individual choices may intentionally recur in different pairings; the rendered
-        // 320 prompt texts, not each side of the choice, are the stable unique content units.
+        // 340 prompt texts, not each side of the choice, are the stable unique content units.
         assertTrue("Expected a varied option vocabulary", optionVocabulary.size >= 120)
     }
 

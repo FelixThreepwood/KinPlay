@@ -25,7 +25,9 @@ enum class ActivityDuration(val wireValue: String, val minutes: Int, val label: 
 enum class SessionRounds(val wireValue: String, val count: Int, val label: String) {
     THREE("3", 3, "3 rounds"),
     FIVE("5", 5, "5 rounds"),
-    SEVEN("7", 7, "7 rounds");
+    SEVEN("7", 7, "7 rounds"),
+    TEN("10", 10, "10 rounds"),
+    FIFTEEN("15", 15, "15 rounds");
 
     companion object {
         fun fromWireValue(value: String?): SessionRounds? = entries.firstOrNull { it.wireValue == value }

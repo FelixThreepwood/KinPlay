@@ -21,6 +21,25 @@ enum class FeedbackImpact(val label: String, val wireName: String) {
     MINOR("Minor", "minor"),
 }
 
+const val MAX_FEEDBACK_ATTACHMENTS = 3
+const val MAX_FEEDBACK_ATTACHMENT_BYTES = 10L * 1024L * 1024L
+
+fun isAllowedFeedbackAttachmentMimeType(mimeType: String?): Boolean =
+    mimeType?.lowercase(Locale.US)?.let { it.startsWith("image/") || it == "text/plain" || it == "application/pdf" } == true
+
+data class FeedbackAttachment(
+    val uri: String,
+    val displayName: String,
+    val mimeType: String,
+    val sizeBytes: Long,
+) {
+    fun isWithinPolicy(): Boolean =
+        uri.isNotBlank() &&
+            displayName.isNotBlank() &&
+            isAllowedFeedbackAttachmentMimeType(mimeType) &&
+            sizeBytes in 0..MAX_FEEDBACK_ATTACHMENT_BYTES
+}
+
 enum class FeedbackLifecycleState(val label: String) {
     UNSENT("Unsent"),
     HANDED_OFF("Email handed off"),
@@ -42,6 +61,7 @@ data class FeedbackNote(
     val timezoneId: String,
     val createdInVersionName: String = "",
     val createdInVersionCode: Int = 0,
+    val attachments: List<FeedbackAttachment> = emptyList(),
     val lifecycleState: FeedbackLifecycleState = FeedbackLifecycleState.UNSENT,
     val handedOffAtEpochMillis: Long? = null,
     val addressedAtEpochMillis: Long? = null,
@@ -193,6 +213,7 @@ fun editableFeedbackNote(notes: List<FeedbackNote>, noteId: String): FeedbackNot
 object FeedbackCodec {
     private const val LegacyFieldCount = 12
     private const val CurrentFieldCount = 20
+    private const val AttachmentFieldCount = 21
 
     fun encode(notes: List<FeedbackNote>): String = notes.joinToString("\n") { note ->
         listOf(
@@ -215,7 +236,8 @@ object FeedbackCodec {
             note.addressedInVersionName.orEmpty(),
             note.addressedInVersionCode?.toString().orEmpty(),
             note.completedAtEpochMillis?.toString().orEmpty(),
-            "3",
+            encodeAttachments(note.attachments),
+            "4",
         ).joinToString(".") { encodeField(it) }
     }
 
@@ -237,9 +259,11 @@ object FeedbackCodec {
         val fields = line.split('.').map(::decodeField)
         require(
             (fields.size == LegacyFieldCount && fields[11] == "2") ||
-                (fields.size == CurrentFieldCount && fields[19] == "3"),
+                (fields.size == CurrentFieldCount && fields[19] == "3") ||
+                (fields.size == AttachmentFieldCount && fields[20] == "4"),
         )
         val isLegacy = fields.size == LegacyFieldCount
+        val hasAttachments = fields.size == AttachmentFieldCount
         FeedbackNote(
             id = fields[0],
             type = FeedbackType.valueOf(fields[1]),
@@ -254,6 +278,7 @@ object FeedbackCodec {
             timezoneId = fields[10],
             createdInVersionName = if (isLegacy) legacyVersionName else fields[11],
             createdInVersionCode = if (isLegacy) legacyVersionCode else fields[12].toInt(),
+            attachments = if (hasAttachments) decodeAttachments(fields[19]) else emptyList(),
             lifecycleState = if (isLegacy) {
                 FeedbackLifecycleState.UNSENT
             } else {
@@ -266,6 +291,37 @@ object FeedbackCodec {
             completedAtEpochMillis = if (isLegacy) null else fields[18].toLongOrNull(),
         )
     }.getOrNull()
+
+    private fun encodeAttachments(attachments: List<FeedbackAttachment>): String = attachments
+        .filter(FeedbackAttachment::isWithinPolicy)
+        .take(MAX_FEEDBACK_ATTACHMENTS)
+        .joinToString("|") { attachment ->
+            listOf(
+                attachment.uri,
+                attachment.displayName,
+                attachment.mimeType,
+                attachment.sizeBytes.toString(),
+            ).joinToString("~", transform = ::encodeField)
+        }
+
+    private fun decodeAttachments(value: String): List<FeedbackAttachment> = value
+        .split('|')
+        .asSequence()
+        .filter(String::isNotBlank)
+        .mapNotNull { encodedAttachment ->
+            runCatching {
+                val fields = encodedAttachment.split('~').map(::decodeField)
+                require(fields.size == 4)
+                FeedbackAttachment(
+                    uri = fields[0],
+                    displayName = fields[1],
+                    mimeType = fields[2],
+                    sizeBytes = fields[3].toLong(),
+                ).takeIf(FeedbackAttachment::isWithinPolicy)
+            }.getOrNull()
+        }
+        .take(MAX_FEEDBACK_ATTACHMENTS)
+        .toList()
 
     private fun encodeField(value: String): String = Base64.getUrlEncoder()
         .withoutPadding()
@@ -357,6 +413,12 @@ object FeedbackEmailFormatter {
                 appendLine(quoteUserText(note.expectedResult))
                 appendLine("--- END EXPECTED RESULT ---")
             }
+            if (note.attachments.isNotEmpty()) {
+                appendLine("Attachments: ${note.attachments.size} selected file(s); attached only after explicit tester confirmation.")
+                note.attachments.forEach { attachment ->
+                    appendLine("- Attachment: ${attachment.displayName} (${attachment.mimeType}, ${attachment.sizeBytes} bytes)")
+                }
+            }
         }
     }
 
@@ -378,12 +440,14 @@ fun editFeedbackNote(
     comment: String,
     expectedResult: String,
     includeTechnicalContext: Boolean,
+    attachments: List<FeedbackAttachment> = original.attachments,
 ): FeedbackNote = original.copy(
     type = type,
     impact = impact,
     comment = comment.trim(),
     expectedResult = expectedResult.trim(),
     includeTechnicalContext = includeTechnicalContext,
+    attachments = attachments.filter(FeedbackAttachment::isWithinPolicy).take(MAX_FEEDBACK_ATTACHMENTS),
 )
 
 fun replaceFeedbackNote(notes: List<FeedbackNote>, replacement: FeedbackNote): List<FeedbackNote> =

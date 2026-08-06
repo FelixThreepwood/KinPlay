@@ -26,7 +26,7 @@
 - Family News Desk [activity] — Age 6+, 10 min — Report happy family news from a pretend desk. — Participant fit: group
 - Five Senses Tour [activity] — Age 4+, 6 min — Notice safe sights, sounds, and textures in the room. — Participant fit: both
 - Cleanup Countdown Game [activity] — Age 2+, 5 min — Turn a tiny cleanup into a cooperative mission. — Participant fit: both
-- Paper Airplane Weather [activity] — Age 6+, 15 min — Test paper airplanes through gentle pretend weather. — Participant fit: both
+- Paper Airplanes (it's easy!) + Weather [activity] — Age 6+, 15 min — Make paper airplanes together and fly them through pretend weather. — Participant fit: both
 - Copycat Clap Code [activity] — Age 4+, 6 min — Repeat three supplied clap patterns from easy to tricky. — Participant fit: both
 - Backyard Micro Safari [activity] — Age 4+, 15 min — Look for tiny outdoor details with parent supervision. — Participant fit: both
 - Chair Train Station [activity] — Age 2+, 10 min — Make chairs into a pretend train and announce stops. — Participant fit: both
@@ -39,7 +39,7 @@
 - Best Part Today [prompt] — Age 2+, 4 min — Share one good moment from the day. — Participant fit: both
 - Helping Superpower [prompt] — Age 4+, 5 min — Invent a superpower that helps someone. — Participant fit: both
 - Kind Robot Instructions [prompt] — Age 4+, 5 min — Give a robot kind, silly instructions. — Participant fit: both
-- Three Word Story [prompt] — Age 6+, 6 min — Make a story from only three chosen words. — Participant fit: group
+- Five Word Story [prompt] — Age 6+, 6 min — Make a story from only five chosen words. — Participant fit: group
 - Thank-You Detective [prompt] — Age 4+, 4 min — Notice someone to thank today. — Participant fit: both
 - Silly Invention Pitch [prompt] — Age 6+, 7 min — Pitch a harmless invention for family life. — Participant fit: both
 - Wizard Pajama Parade [mad_libs] — Age 4+, 8 min — Choose words to create and read a silly story about a sleepy parade. — Participant fit: both
@@ -48,8 +48,10 @@
 - Castle Pizza Problem [mad_libs] — Age 6+, 10 min — Choose words to create and read a silly story about a castle feast needing a strange solution. — Participant fit: both
 - Space Pet Show [mad_libs] — Age 6+, 10 min — Choose words to create and read a silly story about pets competing in a zero-gravity show. — Participant fit: both
 - Breakfast Dragon Train [mad_libs] — Age 4+, 8 min — Choose words to create and read a silly story about a dragon train delivering breakfast. — Participant fit: both
-- Animal Guessing [activity] — Age 2+, 6 min — Guess a ready-to-use animal by asking familiar yes-or-no questions. — Participant fit: both
+- Animal Detective [activity] — Age 2+, 6 min — Guess a ready-to-use animal by asking familiar yes-or-no questions. — Participant fit: both
 - Race Like an Animal [activity] — Age 2+, 8 min — Cross a short course like an animal in a safe, flat, clear area. — Participant fit: both
 - Pillow Marco Polo: Eyes-Open Islands [activity] — Age 2+, 6 min — A safe eyes-open call-and-response walk using pillows only as island boundary markers. — Participant fit: both
 - Washable Coloring Together [activity] — Age 2+, 10 min — Share a simple coloring page with washable, non-toxic art tools and adult supervision. — Participant fit: both
 - Washable Painting Shapes [activity] — Age 2+, 15 min — Paint ready-made shapes with washable, non-toxic paint, protected surfaces, and adult supervision. — Participant fit: both
+- Bilateral Mirror Moves [activity] — Age 2+, 6 min — Copy gentle cross-body movements to wake up coordination and attention. — Participant fit: both
+- Cross-Body Move Mix [activity] — Age 2+, 7 min — Practice simple opposite-side taps, claps, and freeze balances together. — Participant fit: both

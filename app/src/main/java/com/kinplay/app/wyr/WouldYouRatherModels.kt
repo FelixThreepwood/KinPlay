@@ -52,15 +52,18 @@ object WouldYouRatherLibraryParser {
     private const val ORIGIN_TYPE = "original_kinplay_editorial_work"
     private const val ORIGIN_STATEMENT =
         "Original KinPlay editorial work; no external prompt collection was used or copied."
-    private const val PROMPTS_PER_CATEGORY = 80
-
-    private data class ExpectedCategory(val id: String, val title: String, val order: Int)
+    private data class ExpectedCategory(
+        val id: String,
+        val title: String,
+        val order: Int,
+        val promptCount: Int,
+    )
 
     private val expectedCategories = listOf(
-        ExpectedCategory("cute_silly", "Cute & Silly", 1),
-        ExpectedCategory("animals", "Animals", 2),
-        ExpectedCategory("gross", "Gross", 3),
-        ExpectedCategory("super_gross", "Super Gross", 4),
+        ExpectedCategory("cute_silly", "Cute & Silly", 1, 94),
+        ExpectedCategory("animals", "Animals", 2, 86),
+        ExpectedCategory("gross", "Gross", 3, 80),
+        ExpectedCategory("super_gross", "Super Gross", 4, 80),
     )
 
     fun parse(json: String): WouldYouRatherLibrary = try {
@@ -124,15 +127,21 @@ object WouldYouRatherLibraryParser {
         }
 
         val promptsJson = category.strictArray("prompts")
-        require(promptsJson.length() == PROMPTS_PER_CATEGORY) {
-            "Category $id must contain exactly $PROMPTS_PER_CATEGORY prompts"
+        require(promptsJson.length() == expected.promptCount) {
+            "Category $id must contain exactly ${expected.promptCount} prompts"
         }
-        val idPattern = Regex("^wyr_${Regex.escape(id)}_(00[1-9]|0[1-7][0-9]|080)$")
         val prompts = promptsJson.mapObjects { _, prompt ->
             val promptId = prompt.strictString("id", "prompt ID")
             val text = prompt.strictString("text", "prompt text")
             val statusText = prompt.strictString("status", "prompt status")
-            require(promptId.matches(idPattern)) { "Invalid prompt ID: $promptId" }
+            val promptNumber = promptId
+                .removePrefix("wyr_${expected.id}_")
+                .toIntOrNull()
+            require(
+                promptId.startsWith("wyr_${expected.id}_") &&
+                    promptNumber != null &&
+                    promptNumber in 1..expected.promptCount
+            ) { "Invalid prompt ID: $promptId" }
             validatePromptText(promptId, text)
             val status = WouldYouRatherPromptStatus.parse(statusText)
             WouldYouRatherPrompt(id = promptId, text = text, status = status)

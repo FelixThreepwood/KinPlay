@@ -16,7 +16,6 @@
 - Play steps: Choose one leader. / The leader moves like an animal while everyone copies. / Switch leaders after three animals.
 - Parent note: Use gentle movements for younger children and avoid jumping near furniture.
 - Variations: Whisper the animal for a quiet round. / Let each child invent a brand-new animal.
-
 ## Couch Cushion Quest
 - ID: `couch_cushion_quest`
 - Type: activity
@@ -33,7 +32,6 @@
 - Play steps: Read Clue 1: “Find something soft that rests on the couch.” / Read Clue 2: “Find something you wear on your foot.” / Read Clue 3: “Find something with pages that tells a story.” / Children point to or fetch each matching object; celebrate every find with a silly cheer.
 - Parent note: Keep objects visible for younger children.
 - Variations: Use colors only. / Use rhyming clues for older children.
-
 ## Alphabet Story
 - ID: `story_spark_circle`
 - Type: activity
@@ -50,7 +48,6 @@
 - Play steps: Adult reads the ready-made start: “A tiny alligator found a bright balloon.” / Continue with B: “Bouncy bears brought blueberry biscuits.” / Continue with C: “Curious cats came closer.” / Then take turns with D, E, and F; short phrases, sounds, or one word all count. / Finish the story after F, or keep going through the alphabet if everyone wants more.
 - Parent note: Offer the sample sentence or a word beginning with the next letter so no child has to invent alone.
 - Variations: Ready animal round: alligator, bear, cat, dog, elephant, frog. / Ready food round: apple, banana, carrot, doughnut, egg, fruit. / For ages 2–3, say the next letter and animal together; the child can make its sound.
-
 ## Freeze Dance Statues
 - ID: `freeze_dance_statues`
 - Type: activity
@@ -67,7 +64,6 @@
 - Play steps: Parent claps a rhythm or plays family-approved music outside the app. / Everyone dances. / When the parent says freeze, everyone becomes a statue.
 - Parent note: Keep movement gentle and stop before children get too wild.
 - Variations: Freeze as animals. / Freeze as superheroes.
-
 ## Pillow Boat Adventure
 - ID: `pillow_boat_adventure`
 - Type: activity
@@ -84,7 +80,6 @@
 - Play steps: Pretend the floor is water. / Step from boat to boat slowly. / Name friendly sea creatures you see.
 - Parent note: No jumping. Keep pillows flat and stable.
 - Variations: Make it a quiet tiptoe adventure. / Add a stuffed animal passenger.
-
 ## Calm Cloud Breaths
 - ID: `calm_cloud_breaths`
 - Type: activity
@@ -101,7 +96,6 @@
 - Play steps: Pretend to hold a fluffy cloud. / Smell the cloud slowly. / Blow it gently across the sky. / Repeat three times.
 - Parent note: Keep the tone soft and brief.
 - Variations: Use pretend flower breaths. / Use pretend cocoa breaths.
-
 ## I Spy
 - ID: `quiet_color_hunt`
 - Type: activity
@@ -112,13 +106,14 @@
 - Duration: 5 min
 - Energy: calm
 - Summary: Play the familiar I Spy guessing game with ready-made color and shape rounds.
+- Collapsed description: Pick a visible object in the room with a guessing game.
+- Bold emphasis: guessing game
 - Materials: none
 - Safety tags: quiet, no_materials, calming, sibling_friendly
 - Setup: Choose one safe object everyone can see; use the ready-made clues below.
 - Play steps: The adult starts: “I spy with my little eye something blue.” / Players point or guess until someone finds a blue object. / Continue with something round, something soft, something red, and something tiny but visible. / Let the next player choose one of those same clues or name a new visible object.
 - Parent note: Keep every object visible and use pointing instead of fetching in waiting rooms.
 - Variations: Color round: blue, red, yellow, green, then purple. / Shape round: circle, square, triangle, rectangle, then star. / Quiet round: everyone points instead of calling out.
-
 ## Charades
 - ID: `family_charades_animals`
 - Type: activity
@@ -135,7 +130,6 @@
 - Play steps: Choose a ready idea: cat, elephant, brushing teeth, stirring soup, kicking a ball, or swimming. / Act it out without words while everyone guesses. / The first guesser takes the next turn, or the adult chooses and acts together with younger children.
 - Parent note: For younger kids, whisper the animal and act together.
 - Variations: Animals: cat, elephant, frog, penguin, rabbit, or turtle. / Activities: brushing teeth, stirring soup, reading a book, sweeping, or sleeping. / Sports: kicking a ball, swimming, skating, basketball, or tennis; mime gently in place.
-
 ## Timed Drawing: Tiny Monster
 - ID: `timed_drawing_tiny_monster`
 - Type: activity
@@ -152,7 +146,6 @@
 - Play steps: Draw a friendly tiny monster. / Add one silly detail after time ends. / Let each child name their monster.
 - Parent note: No judging art quality; the goal is fast playful creativity.
 - Variations: Draw a robot, snack creature, or castle pet.
-
 ## Stuffed Animal Rescue
 - ID: `stuffed_animal_rescue`
 - Type: activity
@@ -169,7 +162,6 @@
 - Play steps: Rescue 1: Bear is stranded beside the couch. Walk over, carry Bear gently to base, and check both paws. / Rescue 2: Bunny is waiting under the table edge. Crawl only if the adult says the space is clear, bring Bunny to base, and offer a pretend carrot. / Rescue 3: Puppy is lost beside a pillow. Follow three quiet barks, bring Puppy to base, and tuck Puppy under the pillow like a blanket.
 - Parent note: Keep hiding spots visible for younger children.
 - Variations: Pointing round: point to Bear, Bunny, and Puppy in order instead of walking. / Color-clue round: rescue the brown bear, white bunny, then spotted puppy, or name the colors of your own toys.
-
 ## Kitchen Band Rehearsal
 - ID: `kitchen_band_rehearsal`
 - Type: activity
@@ -186,7 +178,6 @@
 - Play steps: Parent taps a simple beat. / Children copy the beat. / Each child gets one short solo. / End with a quiet final note.
 - Parent note: No glass, sharp tools, or loud banging.
 - Variations: Use claps only. / Play fast, slow, loud, and quiet rounds.
-
 ## Blanket Fort Post Office
 - ID: `blanket_fort_post_office`
 - Type: activity
@@ -203,7 +194,6 @@
 - Play steps: Deliver Mail 1 to the fort; the receiver reads or repeats the smile message. / Deliver Mail 2 to the second station; everyone does three silly wiggles. / Deliver Mail 3 back to the fort; offer a hug, high five, or friendly wave.
 - Parent note: Help younger children decorate or deliver the supplied notes instead of writing.
 - Variations: Picture-only round: draw a smile, three wiggly lines, and a heart on the three notes. / Quiet round: point to each picture instead of reading the note aloud.
-
 ## Teddy Bear Doctor
 - ID: `teddy_bear_doctor`
 - Type: activity
@@ -220,7 +210,6 @@
 - Play steps: Ask what the animal needs. / Check ears, paws, and heartbeat with pretend tools. / Prescribe hugs, rest, or a silly song.
 - Parent note: Keep the tone gentle and reassuring.
 - Variations: Make a waiting room. / Older kids create patient charts.
-
 ## Shape Detective
 - ID: `shape_detective`
 - Type: activity
@@ -237,7 +226,6 @@
 - Play steps: Parent names a shape. / Children point to matching objects. / Count how many shapes you found.
 - Parent note: Good for waiting or transitions.
 - Variations: Use textures instead. / Older kids combine shape plus color.
-
 ## Pirate Map Steps
 - ID: `pirate_map_steps`
 - Type: activity
@@ -254,7 +242,6 @@
 - Play steps: Start at X, then take four tiny steps to the couch. / Turn right, take three tiny steps toward the doorway, turn left, then take four tiny steps to the table. / At the table, choose the treasure you found: a golden banana, a sparkling seashell, or a tiny dragon egg.
 - Parent note: Keep routes clear and slow.
 - Variations: Use a verbal map only. / Let each child draw one stop.
-
 ## Whisper Zoo
 - ID: `whisper_zoo`
 - Type: activity
@@ -271,7 +258,6 @@
 - Play steps: Parent names a quiet animal. / Everyone makes its smallest sound. / Hold a gentle animal pose for five seconds.
 - Parent note: Useful when the room needs to stay calm.
 - Variations: Use underwater animals. / Use bedtime animals.
-
 ## Rainbow Sort Sprint
 - ID: `rainbow_sort_sprint`
 - Type: activity
@@ -288,7 +274,6 @@
 - Play steps: Pick three colors. / Sort items into color groups. / Count each group together.
 - Parent note: Avoid small items around toddlers.
 - Variations: Sort by size. / Make a quiet no-timer version.
-
 ## Family News Desk
 - ID: `family_news_desk`
 - Type: activity
@@ -305,7 +290,6 @@
 - Play steps: Parent gives a headline: Something kind happened today. / Each child reports one sentence. / End with a pretend weather report for the room.
 - Parent note: Coach shy kids with sentence starters.
 - Variations: Report from outer space. / Interview a stuffed animal.
-
 ## Five Senses Tour
 - ID: `five_senses_tour`
 - Type: activity
@@ -322,7 +306,6 @@
 - Play steps: Name five things you see. / Name four sounds or quiet spots. / Touch three safe textures. / Take one slow breath.
 - Parent note: Skip taste and smell unless a parent chooses safe options.
 - Variations: Do only three senses. / Make it a bedtime tour.
-
 ## Cleanup Countdown Game
 - ID: `cleanup_countdown_game`
 - Type: activity
@@ -339,24 +322,27 @@
 - Play steps: Parent picks five items to put away. / Count down from five together. / Celebrate when the tiny mission is complete.
 - Parent note: Keep it small so it feels successful.
 - Variations: Sort by person. / Use robot voices.
-
-## Paper Airplane Weather
+## Paper Airplanes (it's easy!) + Weather
 - ID: `paper_airplane_weather`
 - Type: activity
-- Modes: pick_a_game
-- Quick categories: outdoor_adventures, brain_games, quality_time
+- Modes: quick_play, pick_a_game
+- Quick categories: arts_and_making, outdoor_adventures, quality_time
 - Participant suitability: both
 - Age: 6–8
 - Duration: 15 min
-- Energy: low
-- Summary: Test paper airplanes through gentle pretend weather.
+- Energy: medium
+- Summary: Make paper airplanes together and fly them through pretend weather.
+- Collapsed description: Fold two simple paper airplanes and fly them through pretend weather.
+- Bold emphasis: two simple paper airplanes, pretend weather
 - Materials: paper
 - Safety tags: parent_supervision, small_objects, sibling_friendly
-- Setup: Fold the paper in half lengthwise, crease it, and unfold it. Fold both top corners to the center crease, then fold the new slanted edges to the center crease. / Fold the plane in half lengthwise with the folded edges outside. Fold each wing down so its long top edge meets the bottom folded edge, then open both wings until they are flat. / Adult clears a throwing lane away from faces, stairs, pets, and fragile items.
-- Play steps: Fly once in calm weather. / Fly once during pretend wind. / Compare which flight went farther.
-- Parent note: Throw away from faces and fragile items.
-- Variations: Use crumpled paper comets. / Make prediction tickets before each flight.
-
+- Setup: Choose one of the two models and follow its folding diagram. / Adult clears a throwing lane away from faces, stairs, pets, roads, and fragile items. / Fold each wing down so its long top edge meets the bottom folded edge, then open both wings until they are flat.
+- Play steps: Fold either the Basic (Classic) Dart or the Glide Trickster with an adult. / Fly once through pretend weather: start with calm weather. / Fly once during pretend wind, rain, or snow while keeping the lane clear. / Compare which flight went farther or glided longer.
+- Parent note: Adult handles the throwing lane and checks that the paper has no sharp folded corners aimed at faces.
+- Variations: Make a calm-weather landing target. / Use only gentle underhand flights indoors.
+- Visual assets: paper_airplane_basic_classic_dart / paper_airplane_glide_trickster
+- Paper airplane model: Basic (Classic) Dart — Long paper airplane with a pointed nose — Fold the paper in half lengthwise, crease it, and unfold it. / Fold both top corners to the center crease. / Fold the new slanted edges to the center crease. / Fold the plane in half with the folded edges outside. / Fold both wings down so their long edges meet the bottom folded edge. / Open the wings flat and check the pointed nose before flying.
+- Paper airplane model: Glide Trickster — Stable paper airplane with a blunt nose and broad wings — Fold the paper in half lengthwise, crease it, and unfold it. / Fold the top corners toward the center crease. / Fold the top point down to make a blunt nose. / Fold the new upper corners toward the center crease. / Fold the plane in half and fold broad wings down. / Open the wings slightly and check the blunt nose before flying.
 ## Copycat Clap Code
 - ID: `copycat_clap_code`
 - Type: activity
@@ -373,7 +359,6 @@
 - Play steps: Pattern 1: clap-clap-pause-clap. The adult performs it slowly, then everyone copies it twice. / Pattern 2: clap-pause-clap-clap. The adult performs it slowly, then everyone copies it twice. / Pattern 3: clap-clap-clap-pause-clap. Copy it once slowly and once at a comfortable speed.
 - Parent note: Keep patterns short for younger kids.
 - Variations: Tap knees instead. / Use whisper words between claps.
-
 ## Backyard Micro Safari
 - ID: `backyard_micro_safari`
 - Type: activity
@@ -390,7 +375,6 @@
 - Play steps: Find one leaf, one shadow, and one tiny movement. / Describe each discovery. / Leave plants and bugs undisturbed.
 - Parent note: Hands-off observing only unless parent approves.
 - Variations: Do it from a window. / Draw the best discovery afterward.
-
 ## Chair Train Station
 - ID: `chair_train_station`
 - Type: activity
@@ -407,7 +391,6 @@
 - Play steps: Everyone boards, stays seated, and makes two gentle chug sounds. / Stop 1: Teddy Bear Town. Wave to three bears and say, “Tickets, please!” / Stop 2: Dinosaur Park. Make one soft roar and point to a pretend tall dinosaur. / Stop 3: Moon Station. Move your arms as if floating, then count down 3, 2, 1 for the ride home.
 - Parent note: No climbing or standing on chairs.
 - Variations: Use floor cushions instead. / Let older kids be conductors.
-
 ## Memory Tray Peek
 - ID: `memory_tray_peek`
 - Type: activity
@@ -424,7 +407,6 @@
 - Play steps: Everyone looks for ten seconds. / Cover the tray. / Remove one object and reveal the tray. / Guess what changed.
 - Parent note: Use large objects if toddlers are nearby.
 - Variations: Start with two objects. / Older kids rearrange the tray.
-
 ## Emotion Weather Report
 - ID: `emotion_weather_report`
 - Type: activity
@@ -441,7 +423,6 @@
 - Play steps: Parent asks: what is your inside weather? / Choose sunny, cloudy, stormy, windy, or calm. / Pick one helpful action: hug, breath, water, quiet, or talk.
 - Parent note: Do not force sharing; offer choices.
 - Variations: Use colors instead of weather. / Draw the weather after talking.
-
 ## Tiny Tower Engineers
 - ID: `tiny_tower_engineers`
 - Type: activity
@@ -458,7 +439,6 @@
 - Play steps: Build the tallest tower that still stands. / Change one thing and test again. / Name the tower design.
 - Parent note: Keep pieces away from mouths.
 - Variations: Build the widest tower. / Make a team tower with one piece per turn.
-
 ## Family Recipe Pretend
 - ID: `family_recipe_pretend`
 - Type: activity
@@ -475,7 +455,6 @@
 - Play steps: Add two cloud puffs to the pretend bowl. / Add three rainbow noodles and one spoonful of moon peas. / Stir three times, whisper “sparkle, sparkle, soup,” and serve one pretend spoonful to each player.
 - Parent note: Keep food allergy talk gentle if it comes up.
 - Variations: Bedtime Moon Soup: add one moonbeam, two pillow puffs, and three sleepy stars; stir twice and whisper “good night.” / Dinosaur Crunch: add two fern leaves, three pebble crackers, and one volcano sprinkle; stomp once before serving.
-
 ## Hallway Balance Beam
 - ID: `hallway_balance_beam`
 - Type: activity
@@ -492,7 +471,6 @@
 - Play steps: Walk heel-to-toe slowly. / Freeze at the end. / Return with tiny penguin steps.
 - Parent note: No running or raised surfaces.
 - Variations: Use a tape line if parent approves. / Carry a stuffed animal safely.
-
 ## Quiet Library Helper
 - ID: `quiet_library_helper`
 - Type: activity
@@ -509,8 +487,7 @@
 - Play steps: Whisper-sort by size, color, or favorite. / Make one neat stack. / Pick one item to talk about softly.
 - Parent note: Use only a few items to avoid overwhelm.
 - Variations: Sort stuffed animals. / Create a bedtime shelf.
-
-## Animal Guessing
+## Animal Detective
 - ID: `animal_guessing_yes_no`
 - Type: activity
 - Modes: quick_play, pick_a_game, calm_down
@@ -520,13 +497,14 @@
 - Duration: 6 min
 - Energy: calm
 - Summary: Guess a ready-to-use animal by asking familiar yes-or-no questions.
+- Collapsed description: What animal am I thinking of with a guessing game?
+- Bold emphasis: guessing game
 - Materials: none
 - Safety tags: quiet, no_materials, sibling_friendly
 - Setup: Choose the first secret animal from cat, elephant, frog, penguin, rabbit, or turtle.
 - Play steps: The adult secretly chooses one animal from the list. / Players ask yes-or-no questions: “Does it have fur?”, “Can it swim?”, “Is it bigger than a chair?”, or “Does it hop?” / After three questions, each player may guess once; reveal the animal and choose another from the list.
 - Parent note: For ages 2–3, show two choices and make the animal sounds together.
 - Variations: Farm round: cow, chicken, horse, pig, sheep, or duck. / Ocean round: whale, shark, octopus, crab, turtle, or fish. / Movement round: crawl, hop, waddle, swim, stomp, or slither before guessing.
-
 ## Race Like an Animal
 - ID: `race_like_an_animal`
 - Type: activity
@@ -543,7 +521,6 @@
 - Play steps: Round 1: hop gently like a kangaroo. / Round 2: take quick small steps like a cheetah without sprinting. / Round 3: make small rabbit hops, then squat and rise like a frog without leaping forward. / Everyone finishes one round before the next begins; stop if the area becomes crowded.
 - Parent note: Use the walking/low-impact option for younger children or anyone who prefers it: walk while making the animal pose, with no hopping or running.
 - Variations: Walking safari: walk like each animal from start to finish. / Call-and-copy: the adult demonstrates one low-impact movement and everyone follows.
-
 ## Pillow Marco Polo: Eyes-Open Islands
 - ID: `indoor_pillow_marco_polo`
 - Type: activity
@@ -560,7 +537,6 @@
 - Play steps: Everyone’s eyes remain open and all players walk only. / The adult is the stationary caller beside an island and says “Marco”; walkers answer “Polo.” / The adult names a visible island color or location; walkers move toward it and stop beside, not on, the pillow. / Switch the stationary caller after three slow rounds; stop if anyone feels unsure or play becomes chaotic.
 - Parent note: Pillows are boundary/island markers only: never throw them, cover a face, pile them, or jump on them. Keep one arm of space between players.
 - Variations: One-on-one quiet round: whisper “Marco” and “Polo” while walking between two islands. / Low-impact pointing round: stay stationary and point to the named island instead of walking.
-
 ## Washable Coloring Together
 - ID: `washable_coloring_together`
 - Type: activity
@@ -577,7 +553,6 @@
 - Play steps: Each person chooses one shape and colors it. / Swap colors and add dots, stripes, or zigzags to the next shape. / Name the colors and shapes together, then display or recycle the finished page.
 - Parent note: Supervise young children; art tools stay out of mouths and are put away when finished.
 - Variations: Use only warm colors. / Take turns adding one mark to a shared rainbow.
-
 ## Washable Painting Shapes
 - ID: `washable_painting_shapes`
 - Type: activity
@@ -594,3 +569,41 @@
 - Play steps: Paint the circle with dots, the square with stripes, and the triangle with zigzags. / Trade brushes or colors and add one shape to each other’s page. / Place paintings flat to dry, close the paint, and wash hands and the protected surface together.
 - Parent note: Supervise continuously; keep paint and rinse water out of mouths and clean spills promptly.
 - Variations: Make a shape family with faces. / Use one color and mix lighter or darker shapes.
+## Bilateral Mirror Moves
+- ID: `bilateral_mirror_moves`
+- Type: activity
+- Modes: quick_play, pick_a_game, calm_down
+- Quick categories: brain_and_movement, brain_games, quality_time
+- Participant suitability: both
+- Age: 2–8
+- Duration: 6 min
+- Energy: low
+- Summary: Copy gentle cross-body movements to wake up coordination and attention.
+- Collapsed description: Copy gentle cross-body movements to wake up coordination.
+- Bold emphasis: cross-body movements
+- Materials: none
+- Safety tags: parent_supervision, movement, no_materials, sibling_friendly
+- Setup: Clear a small flat space and stand facing each other.
+- Play steps: The parent slowly raises one hand while the child mirrors it. / March in place and touch the opposite hand to each knee. / Switch leaders after four gentle movements and stop if balance feels uncertain.
+- Parent note: Keep both feet close to the floor; walking or seated versions are always acceptable.
+- Variations: Use animal motions at a slow pace. / Try the pattern while seated.
+- Visual assets: brain_movement_activities
+## Cross-Body Move Mix
+- ID: `cross_body_move_mix`
+- Type: activity
+- Modes: quick_play, pick_a_game, calm_down
+- Quick categories: brain_and_movement, brain_games, get_energy_out
+- Participant suitability: both
+- Age: 2–8
+- Duration: 7 min
+- Energy: medium
+- Summary: Practice simple opposite-side taps, claps, and freeze balances together.
+- Collapsed description: Practice opposite-side taps, claps, and freeze balances.
+- Bold emphasis: opposite-side taps
+- Materials: none
+- Safety tags: parent_supervision, movement, no_materials, sibling_friendly
+- Setup: Use a clear, non-slip floor away from stairs and sharp furniture edges.
+- Play steps: Tap the right knee with the left hand, then switch sides. / Clap a slow pattern of clap, pause, clap-clap. / Freeze in a comfortable two-foot pose or a supported balance for three counts.
+- Parent note: Adult stays nearby and offers a two-foot version for younger children or anyone who does not want to balance.
+- Variations: Use only the seated tap and clap pattern. / Let the child choose the next safe movement.
+- Visual assets: brain_movement_activities

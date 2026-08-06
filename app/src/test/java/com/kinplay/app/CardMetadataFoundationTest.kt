@@ -37,7 +37,7 @@ class CardMetadataFoundationTest {
     fun kpf0008EveryActiveRealCardHasReviewedParticipantSuitability() {
         val allowed = setOf("one_on_one", "group", "both")
 
-        assertEquals("Active-card inventory changed; review every new or removed card", 53, activeItems.size)
+        assertEquals("Active-card inventory changed; review every new or removed card", 55, activeItems.size)
         activeItems.forEach { item ->
             assertTrue("${item.string("id")} needs reviewed participantSuitability", item.has("participantSuitability"))
             assertTrue(
@@ -110,7 +110,7 @@ class CardMetadataFoundationTest {
         val genericPlaceholders = setOf("fun activity.", "fun game.", "an activity.", "a game.", "description.")
         val summaries = mutableSetOf<String>()
 
-        assertEquals("Active-card inventory changed; review every new or removed card", 53, activeItems.size)
+        assertEquals("Active-card inventory changed; review every new or removed card", 55, activeItems.size)
         activeItems.forEach { item ->
             val id = item.string("id")
             val summary = item.string("summary")

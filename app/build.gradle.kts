@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-val appVersionName = "0.6.0-beta1"
+val appVersionName = "0.6.0-beta2"
 val isVersionedBeta = appVersionName.contains("-beta", ignoreCase = true)
 
 android {
@@ -15,7 +15,7 @@ android {
         applicationId = "com.kinplay.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 6
+        versionCode = 7
         versionName = appVersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -59,6 +59,7 @@ dependencies {
 
     implementation("androidx.activity:activity-compose:1.10.1")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.core:core-ktx:1.16.0")

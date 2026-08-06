@@ -51,6 +51,13 @@ class SessionConfigurationTest {
     }
 
     @Test
+    fun sessionRoundChoicesIncludeAReviewedFifteenRoundUpperBound() {
+        assertEquals(SessionRounds.FIFTEEN, SessionRounds.fromWireValue("15"))
+        assertTrue(SessionRounds.entries.all { it.count in 1..15 })
+        assertTrue(SessionRounds.entries.any { it.count == 10 })
+    }
+
+    @Test
     fun overrideResolutionIsScopedAndDoesNotMutateGlobalDefaults() {
         val storage = InMemorySettingsKeyValueStore()
         val repository = AppSettingsRepository(storage)

@@ -59,7 +59,6 @@
         "prompts": {
           "type": "array",
           "minItems": 80,
-          "maxItems": 80,
           "uniqueItems": true
         }
       }
@@ -67,13 +66,13 @@
     "cuteSillyPrompt": {
       "allOf": [
         { "$ref": "#/$defs/promptBase" },
-        { "properties": { "id": { "pattern": "^wyr_cute_silly_(00[1-9]|0[1-7][0-9]|080)$" } } }
+        { "properties": { "id": { "pattern": "^wyr_cute_silly_(00[1-9]|0[1-8][0-9]|09[0-4])$" } } }
       ]
     },
     "animalsPrompt": {
       "allOf": [
         { "$ref": "#/$defs/promptBase" },
-        { "properties": { "id": { "pattern": "^wyr_animals_(00[1-9]|0[1-7][0-9]|080)$" } } }
+        { "properties": { "id": { "pattern": "^wyr_animals_(00[1-9]|0[1-7][0-9]|08[0-6])$" } } }
       ]
     },
     "grossPrompt": {
@@ -96,7 +95,11 @@
             "id": { "const": "cute_silly" },
             "title": { "const": "Cute & Silly" },
             "order": { "const": 1 },
-            "prompts": { "items": { "$ref": "#/$defs/cuteSillyPrompt" } }
+            "prompts": {
+              "minItems": 94,
+              "maxItems": 94,
+              "items": { "$ref": "#/$defs/cuteSillyPrompt" }
+            }
           }
         }
       ]
@@ -109,7 +112,11 @@
             "id": { "const": "animals" },
             "title": { "const": "Animals" },
             "order": { "const": 2 },
-            "prompts": { "items": { "$ref": "#/$defs/animalsPrompt" } }
+            "prompts": {
+              "minItems": 86,
+              "maxItems": 86,
+              "items": { "$ref": "#/$defs/animalsPrompt" }
+            }
           }
         }
       ]
@@ -122,7 +129,11 @@
             "id": { "const": "gross" },
             "title": { "const": "Gross" },
             "order": { "const": 3 },
-            "prompts": { "items": { "$ref": "#/$defs/grossPrompt" } }
+            "prompts": {
+              "minItems": 80,
+              "maxItems": 80,
+              "items": { "$ref": "#/$defs/grossPrompt" }
+            }
           }
         }
       ]
@@ -135,7 +146,11 @@
             "id": { "const": "super_gross" },
             "title": { "const": "Super Gross" },
             "order": { "const": 4 },
-            "prompts": { "items": { "$ref": "#/$defs/superGrossPrompt" } }
+            "prompts": {
+              "minItems": 80,
+              "maxItems": 80,
+              "items": { "$ref": "#/$defs/superGrossPrompt" }
+            }
           }
         }
       ]

@@ -13,7 +13,7 @@ class HomeApplicationMenuTest {
     fun homeAppBarExposesAnAccessibleThreeLineMenu() {
         assertTrue(mainSource.contains("app-menu-button"))
         assertTrue(mainSource.contains("Open app menu"))
-        assertTrue(mainSource.contains("☰"))
+        assertTrue(mainSource.contains("Icons.Default.Menu"))
     }
 
     @Test
@@ -24,6 +24,10 @@ class HomeApplicationMenuTest {
         assertTrue(mainSource.contains("No account system is included in this MVP"))
         assertTrue(mainSource.contains("SafetyPrivacy"))
         assertTrue(mainSource.contains("AboutApp"))
+        assertTrue(mainSource.contains("leadingIcon = { Icon(Icons.Default.Settings"))
+        assertTrue(mainSource.contains("leadingIcon = { Icon(Icons.Default.Person"))
+        assertTrue(mainSource.contains("leadingIcon = { Icon(Icons.Default.Info"))
+        assertTrue(mainSource.contains("leadingIcon = { Icon(Icons.Default.Lock"))
     }
 
     @Test

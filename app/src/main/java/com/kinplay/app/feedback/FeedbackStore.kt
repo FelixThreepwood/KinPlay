@@ -8,6 +8,7 @@ import android.content.ContextWrapper
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
+import android.provider.OpenableColumns
 import androidx.core.content.edit
 import com.kinplay.app.BuildConfig
 import java.time.ZoneId
@@ -63,6 +64,7 @@ fun createFeedbackNote(
     screen: String,
     contentId: String?,
     contentTitle: String?,
+    attachments: List<FeedbackAttachment> = emptyList(),
 ): FeedbackNote = FeedbackNote(
     id = newFeedbackNoteId(),
     type = type,
@@ -77,7 +79,36 @@ fun createFeedbackNote(
     timezoneId = ZoneId.systemDefault().id,
     createdInVersionName = BuildConfig.VERSION_NAME,
     createdInVersionCode = BuildConfig.VERSION_CODE,
+    attachments = attachments.filter(FeedbackAttachment::isWithinPolicy).take(MAX_FEEDBACK_ATTACHMENTS),
 )
+
+fun inspectFeedbackAttachment(context: Context, uri: Uri): FeedbackAttachment? {
+    val mimeType = context.contentResolver.getType(uri)?.lowercase()
+    if (!isAllowedFeedbackAttachmentMimeType(mimeType)) return null
+    var displayName: String? = null
+    var sizeBytes: Long? = null
+    context.contentResolver.query(
+        uri,
+        arrayOf(OpenableColumns.DISPLAY_NAME, OpenableColumns.SIZE),
+        null,
+        null,
+        null,
+    )?.use { cursor ->
+        if (cursor.moveToFirst()) {
+            val nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+            val sizeIndex = cursor.getColumnIndex(OpenableColumns.SIZE)
+            displayName = nameIndex.takeIf { it >= 0 }?.let(cursor::getString)
+            sizeBytes = sizeIndex.takeIf { it >= 0 && !cursor.isNull(it) }?.let(cursor::getLong)
+        }
+    }
+    val attachment = FeedbackAttachment(
+        uri = uri.toString(),
+        displayName = displayName?.takeIf(String::isNotBlank) ?: uri.lastPathSegment.orEmpty(),
+        mimeType = mimeType.orEmpty(),
+        sizeBytes = sizeBytes ?: return null,
+    )
+    return attachment.takeIf(FeedbackAttachment::isWithinPolicy)
+}
 
 fun buildFeedbackMailtoUriString(recipient: String, subject: String, body: String): String =
     "mailto:$recipient?subject=${percentEncode(subject)}&body=${percentEncode(body)}"
@@ -115,14 +146,30 @@ fun handOffFeedbackEmail(context: Context, notes: List<FeedbackNote>, batchId: S
     val unsentNotes = notes.filter { it.lifecycleState == FeedbackLifecycleState.UNSENT }
     if (unsentNotes.isEmpty()) return false
     val build = currentFeedbackBuildContext()
-    val uri = Uri.parse(
-        buildFeedbackMailtoUriString(
-            recipient = FEEDBACK_RECIPIENT,
-            subject = FeedbackEmailFormatter.subject(build.versionName, build.versionCode, batchId),
-            body = FeedbackEmailFormatter.formatBatch(unsentNotes, build, batchId),
-        ),
-    )
-    val intent = Intent(Intent.ACTION_SENDTO, uri).apply {
+    val body = FeedbackEmailFormatter.formatBatch(unsentNotes, build, batchId)
+    val attachments = unsentNotes.flatMap { it.attachments }
+        .distinctBy(FeedbackAttachment::uri)
+        .filter(FeedbackAttachment::isWithinPolicy)
+    val intent = if (attachments.isEmpty()) {
+        Intent(
+            Intent.ACTION_SENDTO,
+            Uri.parse(buildFeedbackMailtoUriString(FEEDBACK_RECIPIENT, FeedbackEmailFormatter.subject(build.versionName, build.versionCode, batchId), body)),
+        )
+    } else {
+        Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(FEEDBACK_RECIPIENT))
+            putExtra(Intent.EXTRA_SUBJECT, FeedbackEmailFormatter.subject(build.versionName, build.versionCode, batchId))
+            putExtra(Intent.EXTRA_TEXT, body)
+            putParcelableArrayListExtra(Intent.EXTRA_STREAM, ArrayList(attachments.map { Uri.parse(it.uri) }))
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            val first = attachments.first()
+            clipData = ClipData.newUri(context.contentResolver, first.displayName, Uri.parse(first.uri))
+            attachments.drop(1).forEach { attachment ->
+                clipData?.addItem(ClipData.Item(Uri.parse(attachment.uri)))
+            }
+        }
+    }.apply {
         if (!context.hasActivityInBaseChain()) addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     }
     return try {

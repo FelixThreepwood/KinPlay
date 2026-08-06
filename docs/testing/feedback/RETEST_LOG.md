@@ -1,8 +1,8 @@
 # KinPlay Feedback Retest Log
 
-Last updated: 2026-08-03T20:33:11Z
+Last updated: 2026-08-06T03:06:47Z
 
-Current revision under retest: **0.6.0-beta1 (6)** for the implemented items in batch `KP-BATCH-A9A144CD-D6AE-47E6-8C6F-4F14214377E4`. Earlier cohorts retain their recorded retest builds unless a row below names 0.6.0-beta1 (6); KPF-0020 remains on 0.5.0-beta1 (5) because it is excluded from this batch.
+Current revision under retest: **0.6.0-beta2 (7)** for the implemented items in batch `KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B`; prior cohorts retain their historical retest builds. Earlier cohorts retain their recorded retest builds unless a row below names 0.6.0-beta1 (6); KPF-0020 remains on 0.5.0-beta1 (5) because it is excluded from this batch.
 
 Automated checks pass, but every item below remains **fixed-awaiting-retest**. None is verified or closed until an anonymous family tester completes the relevant check on a physical Android device.
 
@@ -62,7 +62,7 @@ When a retest fails, leave the item awaiting retest and add a new sanitized obse
 | KPF-0023 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm I Spy uses neutral `Clues and suggestions` wording and no parent-state characterization. |
 | KPF-0024 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm the eligible lock control shows 🔒 while unlocked and 🔑 while locked, with an understandable screen-reader label and three-second progress. |
 | KPF-0025 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Lock a play surface, confirm content remains clear and controls are blocked, then tap the surface and confirm temporary `Hold key for 3 seconds to unlock` guidance. |
-| KPF-0026 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm only Charades and Would You Rather show the handoff-lock control; inspect representative noneligible detail screens and confirm the control is absent. The 53-item eligibility matrix and route/helper tests passed. |
+| KPF-0026 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm only Charades and Would You Rather show the handoff-lock control; inspect representative noneligible detail screens and confirm the control is absent. The 55-item eligibility matrix and route/helper tests passed. |
 | KPF-0027 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm the compact 📝 control opens the existing feedback flow, remains easy to tap, and announces its unsent-note count. |
 | KPF-0028 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm Would You Rather enters landscape, restores prior orientation on exit, and remains usable with accessibility and rotation behavior. |
 | KPF-0029 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Start an eligible game, confirm the applied duration and rounds, then verify the timed-session surface shows round progress and a live countdown, advances on timer expiry or Finish round, reaches Session complete after the configured rounds, exits back to details, and remains guarded by the child-handoff lock where eligible. |
@@ -74,3 +74,65 @@ When a retest fails, leave the item awaiting retest and add a new sanitized obse
 | KPF-0035 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Confirm Home and destination labels read exactly `Random game` and `All games and activities`, including accessibility announcements. |
 | KPF-0036 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Open the upper-right three-line menu and verify Settings, Account, About the app, and Safety and privacy destinations; confirm the staged Account message and intentional duplicate Settings entry. |
 | KPF-0037 | fixed-awaiting-retest | 0.6.0-beta1 (6) | Create and select an unsent note, tap Send now, and confirm the email app opens without KinPlay stopping. Repeat with no compatible email handler if practical; confirm the note remains unsent and Copy selected remains available. Source/data-flow reproduction and Robolectric production-path tests passed; no physical Android target was connected. |
+
+
+## New intake awaiting triage — KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B
+
+- Affected build: **0.6.0-beta1 (6)**. This batch is intake-only and has no retest build.
+- Source notes: 13 new unique note IDs; no replayed IDs.
+- Existing canonical items touched: `KPF-0002`, `KPF-0018`, `KPF-0022`, `KPF-0029`, `KPF-0030`, `KPF-0034`, `KPF-0036`.
+- New canonical items: `KPF-0038`–`KPF-0052`.
+- Privacy: Project records contain no child names, contact details, images, birthdates, or precise locations.
+- Code authorization: No application code change was authorized or made.
+
+| New item | Triage state | Next validation |
+|---|---|---|
+| KPF-0038 | new | Confirm duplicate Home shortcuts are removed while overflow destinations remain reachable. |
+| KPF-0039 | new | Review standard menu icons, labels, contrast, and screen-reader semantics. |
+| KPF-0040 | new | Resolve the Level 0/1/2 product hierarchy and verify Mad Lib and prompt nesting. |
+| KPF-0041 | new | Approve the Level 1 taxonomy and confirm the flat-list overload is removed. |
+| KPF-0042 | new | Confirm collapsed cards show only the approved minimal content and bold emphasis. |
+| KPF-0043 | new | Define attachment types, privacy review, size limits, and handoff behavior. |
+| KPF-0044 | new | Approve five or six music tracks, suitability review, rights, and selection behavior. |
+| KPF-0045 | new | Verify parent play/pause and automatic playback behavior on music-based sessions. |
+| KPF-0046 | new | Approve the 120-card target, categories, originality/licensing, and nonrepetition rules. |
+| KPF-0047 | new | Verify centered three-second lock countdown with touch and accessibility behavior. |
+| KPF-0048 | new | Review scope and evidence for brain-health wording before content or diagrams are made. |
+| KPF-0049 | new | Check the title, instructions, navigation, labels, and five-word mechanics for consistency. |
+| KPF-0050 | new | Approve the scrollable incremental control and verify narrow-width/large-text behavior. |
+| KPF-0051 | new | Confirm 20-minute and 15-round bounds across defaults, overrides, and stored values. |
+| KPF-0052 | new | Define which play-critical instructions remain visible during active sessions and verify safety. |
+
+
+## Beta2 automated verification — KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B
+
+- Build: **0.6.0-beta2 (7)**
+- Automated result: **passed** — full JVM unit suite, Android test-source compilation, lint, debug assembly, content/schema/parity validation, packaged-resource validation, APK metadata, and APK signature checks.
+- Physical-device result: **open** — no attached Android device or emulator; do not mark items verified or closed until family/device retest.
+
+| Item | State | Retest build | Family/device retest check |
+|---|---|---|---|
+| KPF-0002 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0018 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0022 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0029 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0030 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0034 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0036 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0038 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0039 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0040 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0041 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0042 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0043 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0044 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0045 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0046 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0047 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0048 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0049 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0050 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0051 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0052 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+
+Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implemented with two Gemini-generated instructional diagrams and remains a staged source note for the next email feedback batch.

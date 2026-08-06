@@ -21,12 +21,17 @@ class SessionSettingsScreenContractTest {
     @Test
     fun eligibleDetailsPageExposesResolvedSessionControlsAndStartAction() {
         val source = readText(projectRoot().resolve("app/src/main/java/com/kinplay/app/MainActivity.kt"))
+        val settingsSource = readText(projectRoot().resolve("app/src/main/java/com/kinplay/app/settings/AppSettings.kt"))
 
         assertTrue(source.contains("isTimedSessionEligible"))
         assertTrue(source.contains("SessionConfigurationControls"))
         assertTrue(source.contains("Start session"))
         assertTrue(source.contains("Applied session"))
         assertTrue(source.contains("onSaveSessionOverride"))
+        assertTrue(source.contains("SessionChoiceStrip"))
+        assertTrue(source.contains("horizontalScroll"))
+        assertTrue(source.contains("options = SessionRounds.entries"))
+        assertTrue(settingsSource.contains("FIFTEEN(\"15\""))
     }
 
     private fun projectRoot(): Path {

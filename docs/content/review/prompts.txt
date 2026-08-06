@@ -40,6 +40,8 @@
 - Duration: 5 min
 - Energy: calm
 - Summary: Choose between ready-to-read, harmless silly options and explain why.
+- Collapsed description: Playful either-or question game.
+- Bold emphasis: either-or
 - Materials: none
 - Safety tags: quiet, no_materials, sibling_friendly
 - Prompt: Would you rather have pancakes for shoes or spaghetti for hair for one silly day?
@@ -91,7 +93,7 @@
 - Prompt: A tiny robot wants to be helpful. What three kind jobs should it do?
 - Follow-ups: What sound does it make? / What job should it not do?
 
-## Three Word Story
+## Five Word Story
 - ID: `three_word_story`
 - Type: prompt
 - Modes: quick_play, pick_a_game, calm_down
@@ -100,10 +102,10 @@
 - Age: 6–8
 - Duration: 6 min
 - Energy: calm
-- Summary: Make a story from only three chosen words.
+- Summary: Make a story from only five chosen words.
 - Materials: none
 - Safety tags: quiet, no_materials, sibling_friendly, calming
-- Prompt: Choose three words and make the shortest story you can with all of them.
+- Prompt: Choose five words and make the shortest story you can with all of them.
 - Follow-ups: Can someone else add one sentence? / Can you make it gentler or sillier?
 
 ## Thank-You Detective

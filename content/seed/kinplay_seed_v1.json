@@ -328,7 +328,11 @@
         "outdoor_adventures",
         "brain_games"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "collapsedDescription": "Pick a visible object in the room with a guessing game.",
+      "collapsedEmphasis": [
+        "guessing game"
+      ]
     },
     {
       "id": "moon_pancake_mission",
@@ -691,7 +695,11 @@
         "Gross & Silly — Would you rather brush furry teeth or comb a very stinky sock?",
         "Gross & Silly — Would you rather hiccup “pickle” or pass a tiny squeaky toot whenever you laugh?"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "collapsedDescription": "Playful either-or question game.",
+      "collapsedEmphasis": [
+        "either-or"
+      ]
     },
     {
       "id": "timed_drawing_tiny_monster",
@@ -1300,9 +1308,10 @@
       "type": "activity",
       "status": "active",
       "childHandoffLockEligible": false,
-      "title": "Paper Airplane Weather",
-      "summary": "Test paper airplanes through gentle pretend weather.",
+      "title": "Paper Airplanes (it's easy!) + Weather",
+      "summary": "Make paper airplanes together and fly them through pretend weather.",
       "modes": [
+        "quick_play",
         "pick_a_game"
       ],
       "ageTags": [
@@ -1311,7 +1320,7 @@
       "minAge": 6,
       "maxAge": 8,
       "durationMinutes": 15,
-      "energyLevel": "low",
+      "energyLevel": "medium",
       "materials": [
         "paper"
       ],
@@ -1321,26 +1330,74 @@
         "sibling_friendly"
       ],
       "setupSteps": [
-        "Fold the paper in half lengthwise, crease it, and unfold it. Fold both top corners to the center crease, then fold the new slanted edges to the center crease.",
-        "Fold the plane in half lengthwise with the folded edges outside. Fold each wing down so its long top edge meets the bottom folded edge, then open both wings until they are flat.",
-        "Adult clears a throwing lane away from faces, stairs, pets, and fragile items."
+        "Choose one of the two models and follow its folding diagram.",
+        "Adult clears a throwing lane away from faces, stairs, pets, roads, and fragile items.",
+        "Fold each wing down so its long top edge meets the bottom folded edge, then open both wings until they are flat."
       ],
       "playSteps": [
-        "Fly once in calm weather.",
-        "Fly once during pretend wind.",
-        "Compare which flight went farther."
+        "Fold either the Basic (Classic) Dart or the Glide Trickster with an adult.",
+        "Fly once through pretend weather: start with calm weather.",
+        "Fly once during pretend wind, rain, or snow while keeping the lane clear.",
+        "Compare which flight went farther or glided longer."
       ],
-      "parentNotes": "Throw away from faces and fragile items.",
+      "parentNotes": "Adult handles the throwing lane and checks that the paper has no sharp folded corners aimed at faces.",
       "variations": [
-        "Use crumpled paper comets.",
-        "Make prediction tickets before each flight."
+        "Make a calm-weather landing target.",
+        "Use only gentle underhand flights indoors."
       ],
       "quickCategories": [
+        "arts_and_making",
         "outdoor_adventures",
-        "brain_games",
         "quality_time"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "collapsedDescription": "Fold two simple paper airplanes and fly them through pretend weather.",
+      "collapsedEmphasis": [
+        "two simple paper airplanes",
+        "pretend weather"
+      ],
+      "visualAssets": [
+        {
+          "id": "paper_airplane_basic_classic_dart",
+          "resource": "paper_airplane_basic_classic_dart",
+          "altText": "Six illustrated folding steps for the Basic Classic Dart, ending in a long pointed-nose paper airplane."
+        },
+        {
+          "id": "paper_airplane_glide_trickster",
+          "resource": "paper_airplane_glide_trickster",
+          "altText": "Six illustrated folding steps for the Glide Trickster, ending in a blunt-nose paper airplane with broad wings."
+        }
+      ],
+      "paperAirplaneModels": [
+        {
+          "id": "basic_classic_dart",
+          "name": "Basic (Classic) Dart",
+          "shapeDescription": "Long paper airplane with a pointed nose",
+          "diagramAsset": "paper_airplane_basic_classic_dart",
+          "steps": [
+            "Fold the paper in half lengthwise, crease it, and unfold it.",
+            "Fold both top corners to the center crease.",
+            "Fold the new slanted edges to the center crease.",
+            "Fold the plane in half with the folded edges outside.",
+            "Fold both wings down so their long edges meet the bottom folded edge.",
+            "Open the wings flat and check the pointed nose before flying."
+          ]
+        },
+        {
+          "id": "glide_trickster",
+          "name": "Glide Trickster",
+          "shapeDescription": "Stable paper airplane with a blunt nose and broad wings",
+          "diagramAsset": "paper_airplane_glide_trickster",
+          "steps": [
+            "Fold the paper in half lengthwise, crease it, and unfold it.",
+            "Fold the top corners toward the center crease.",
+            "Fold the top point down to make a blunt nose.",
+            "Fold the new upper corners toward the center crease.",
+            "Fold the plane in half and fold broad wings down.",
+            "Open the wings slightly and check the blunt nose before flying."
+          ]
+        }
+      ]
     },
     {
       "id": "copycat_clap_code",
@@ -1880,8 +1937,8 @@
       "type": "prompt",
       "status": "active",
       "childHandoffLockEligible": false,
-      "title": "Three Word Story",
-      "summary": "Make a story from only three chosen words.",
+      "title": "Five Word Story",
+      "summary": "Make a story from only five chosen words.",
       "modes": [
         "quick_play",
         "pick_a_game",
@@ -1901,7 +1958,7 @@
         "sibling_friendly",
         "calming"
       ],
-      "promptText": "Choose three words and make the shortest story you can with all of them.",
+      "promptText": "Choose five words and make the shortest story you can with all of them.",
       "followUps": [
         "Can someone else add one sentence?",
         "Can you make it gentler or sillier?"
@@ -2371,7 +2428,7 @@
       "type": "activity",
       "status": "active",
       "childHandoffLockEligible": false,
-      "title": "Animal Guessing",
+      "title": "Animal Detective",
       "summary": "Guess a ready-to-use animal by asking familiar yes-or-no questions.",
       "modes": [
         "quick_play",
@@ -2410,7 +2467,11 @@
         "brain_games",
         "quality_time"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "collapsedDescription": "What animal am I thinking of with a guessing game?",
+      "collapsedEmphasis": [
+        "guessing game"
+      ]
     },
     {
       "id": "race_like_an_animal",
@@ -2608,6 +2669,120 @@
         "quality_time"
       ],
       "participantSuitability": "both"
+    },
+    {
+      "id": "bilateral_mirror_moves",
+      "type": "activity",
+      "status": "active",
+      "childHandoffLockEligible": false,
+      "title": "Bilateral Mirror Moves",
+      "summary": "Copy gentle cross-body movements to wake up coordination and attention.",
+      "collapsedDescription": "Copy gentle cross-body movements to wake up coordination.",
+      "collapsedEmphasis": [
+        "cross-body movements"
+      ],
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 6,
+      "energyLevel": "low",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Clear a small flat space and stand facing each other."
+      ],
+      "playSteps": [
+        "The parent slowly raises one hand while the child mirrors it.",
+        "March in place and touch the opposite hand to each knee.",
+        "Switch leaders after four gentle movements and stop if balance feels uncertain."
+      ],
+      "parentNotes": "Keep both feet close to the floor; walking or seated versions are always acceptable.",
+      "variations": [
+        "Use animal motions at a slow pace.",
+        "Try the pattern while seated."
+      ],
+      "quickCategories": [
+        "brain_and_movement",
+        "brain_games",
+        "quality_time"
+      ],
+      "participantSuitability": "both",
+      "visualAssets": [
+        {
+          "id": "brain_movement_activities",
+          "resource": "brain_movement_activities",
+          "altText": "Four illustrated child-safe brain and movement activities: mirror march, cross-body tap, clap pattern, and freeze balance."
+        }
+      ]
+    },
+    {
+      "id": "cross_body_move_mix",
+      "type": "activity",
+      "status": "active",
+      "childHandoffLockEligible": false,
+      "title": "Cross-Body Move Mix",
+      "summary": "Practice simple opposite-side taps, claps, and freeze balances together.",
+      "collapsedDescription": "Practice opposite-side taps, claps, and freeze balances.",
+      "collapsedEmphasis": [
+        "opposite-side taps"
+      ],
+      "modes": [
+        "quick_play",
+        "pick_a_game",
+        "calm_down"
+      ],
+      "ageTags": [
+        "all_ages"
+      ],
+      "minAge": 2,
+      "maxAge": 8,
+      "durationMinutes": 7,
+      "energyLevel": "medium",
+      "materials": [],
+      "safetyTags": [
+        "parent_supervision",
+        "movement",
+        "no_materials",
+        "sibling_friendly"
+      ],
+      "setupSteps": [
+        "Use a clear, non-slip floor away from stairs and sharp furniture edges."
+      ],
+      "playSteps": [
+        "Tap the right knee with the left hand, then switch sides.",
+        "Clap a slow pattern of clap, pause, clap-clap.",
+        "Freeze in a comfortable two-foot pose or a supported balance for three counts."
+      ],
+      "parentNotes": "Adult stays nearby and offers a two-foot version for younger children or anyone who does not want to balance.",
+      "variations": [
+        "Use only the seated tap and clap pattern.",
+        "Let the child choose the next safe movement."
+      ],
+      "quickCategories": [
+        "brain_and_movement",
+        "brain_games",
+        "get_energy_out"
+      ],
+      "participantSuitability": "both",
+      "visualAssets": [
+        {
+          "id": "brain_movement_activities",
+          "resource": "brain_movement_activities",
+          "altText": "Four illustrated child-safe brain and movement activities: mirror march, cross-body tap, clap pattern, and freeze balance."
+        }
+      ]
     }
   ]
 }

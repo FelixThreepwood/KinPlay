@@ -2,7 +2,7 @@
 
 Sanitized product-test records. Incoming comments are evidence, not authorization to change application code.
 
-Last updated: 2026-07-27T17:31:51-07:00
+Last updated: 2026-08-06T03:06:47Z
 
 Source note IDs are unique occurrence keys. An exact note replay in a later batch is linked to the existing item and does not increase its occurrence count.
 
@@ -30,16 +30,18 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Information architecture
 - Priority: Should fix soon
-- Affected build: 0.3.0-beta1 (3)
+- Affected builds: 0.3.0-beta1 (3); 0.6.0-beta1 (6)
 - Capture screen: `category/quiet_games`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-D759FF56-977B-4C96-A0D5-B581132B8BF5`
+- Additional source note: `KP-NOTE-9F74C227-F346-4826-9487-FAAA377680C9`
 - Normalized finding: Individual Mad Libs stories should be collected beneath one Mad Libs entry and submenu.
 - Expected behavior: Quiet Games shows one recognizable Mad Libs entry; selecting it reveals the available stories.
 - Reproduction: Confirm current Mad Libs stories appear as separate top-level entries during the revision pass.
 - Implementation status: complete
 - Retest build: 0.4.0-beta1 (4)
 - Verification result: automated_checks_passed_pending_family_device_retest
+- Latest 0.6.0-beta1 observation: The 0.6.0 feedback explicitly places Mad Libs stories at Level 2 beneath a Level 1 Mad Libs entry; the broader hierarchy is tracked in KPF-0040.
 
 ## KPF-0003 — Add a child-appropriate Gross Would You Rather set
 
@@ -318,10 +320,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: feature request / interaction safety / platform feasibility
 - Priority: Should fix soon
-- Affected build: 0.4.0-beta1 (4)
+- Affected builds: 0.4.0-beta1 (4); 0.5.0-beta1 (5); 0.6.0-beta1 (6)
 - Capture screen: `game_play`
-- Occurrence count: 2
+- Occurrence count: 3
 - Source note: `KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F`
+- Additional source note: `KP-NOTE-9FE89973-6551-44D6-B8C9-F7B7F84C9277`
 - Normalized finding: Provide a visible lock control that requires a three-second hold to lock or unlock and displays hold progress. While active, the mode should prevent accidental in-app navigation or game exit when the device is handed to a young participant.
 - Expected behavior: Lock state is unmistakable, activation and release require a deliberate hold, progress is visible, and accidental app controls or back navigation are guarded within Android platform limits. System-level escape restrictions require a feasibility and safety review.
 - Reproduction: Android platform and safety review required. Related: `KPF-0017`.
@@ -332,6 +335,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Additional source note: `KP-NOTE-3E894705-6D41-4ACA-9299-CCB8D96658F9`
 - Latest 0.5.0 feedback: Physical-device feedback requires revised lock/key icon states, nonobscuring locked content, tap-triggered guidance, and per-game eligibility.
 - B11 implementation evidence: Eligible play surfaces retain clear content while the lock blocks in-app controls and Back; the lock control remains available for recovery; guidance appears only after a blocked tap and expires after three seconds. Android behavior-test source compilation passed; no connected device was available for execution.
+- Latest 0.6.0-beta1 observation: The 0.6.0 feedback requests that the three-second lock countdown be centered on the play surface; the placement refinement is tracked in KPF-0047.
 
 ## KPF-0019 — Create an original KinPlay launcher icon through Gemini
 
@@ -403,10 +407,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Usability / Content copy / Discovery
 - Priority: Should fix soon
-- Affected build: 0.5.0-beta1 (5)
+- Affected builds: 0.5.0-beta1 (5); 0.6.0-beta1 (6)
 - Capture screen: `pick_game`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
+- Additional source note: `KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E`
 - Normalized finding: Every collapsed game card should show the recognizable game name plus one concise description of the activity. Examples include “Guessing game for objects in the room” for I Spy and “Create a wacky story starting each new word with the next letter of the alphabet” for Alphabet Story.
 - Expected behavior: A tester can understand the core activity without expanding the card, while the collapsed card remains compact.
 - Reproduction/triage: Content inventory and visual review required; all active summaries and card rendering tests passed.
@@ -416,6 +421,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Verification result: automated_checks_passed_pending_family_device_retest
 - Implementation evidence: Every collapsed game card exposes a concise reviewed activity summary before expansion while retaining material/setup previews and existing actions.
 - Related items: `KPF-0001`, `KPF-0021`
+- Latest 0.6.0-beta1 observation: The 0.6.0 feedback restates minimal default-collapsed card content and adds explicit bold-emphasis requirements tracked in KPF-0042.
 
 ## KPF-0023 — Remove negative parent-state framing from user-visible copy
 
@@ -535,10 +541,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Interaction design / Session state / Settings
 - Priority: Should fix soon
-- Affected build: 0.5.0-beta1 (5)
+- Affected builds: 0.5.0-beta1 (5); 0.6.0-beta1 (6)
 - Capture screen: `game_detail`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52`
+- Additional source note: `KP-NOTE-32F69299-ACB6-4D16-BFB6-79997D05280B`
 - Normalized finding: For most games, place a Start action near the top of the detail page and begin an interactive session using the configured default duration.
 - Expected behavior: Eligible game detail pages clearly separate reading from starting, and Start launches a consistent session using current defaults.
 - Reproduction/triage: Game inventory and session model specification complete; Android interactive-session retest remains required.
@@ -548,16 +555,18 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Verification result: b15_automated_checks_passed_pending_family_device_retest
 - Implementation evidence: Active ordinary `pick_a_game` activities expose a visible `Start session` control near the top of the details page, show the applied duration/round values, and navigate with an immutable one-shot `TimedSession`. The timed-session surface persists round, timer, and completion state through recreation, advances automatically when a round timer expires, supports explicit round completion and exit, and uses the reviewed child-handoff lock for eligible games. Prompt, story, draft, and calm-only content remains reading-oriented until its session eligibility is reviewed.
 - Related items: `KPF-0017`, `KPF-0030`
+- Latest 0.6.0-beta1 observation: The 0.6.0 feedback requests that the active session surface show only play steps; the display-policy refinement is tracked in KPF-0052.
 
 ## KPF-0030 — Add default rounds and per-game duration and round overrides
 
 - Status: fixed-awaiting-retest
 - Type: Settings / Session configuration / Feature request
 - Priority: Should fix soon
-- Affected build: 0.5.0-beta1 (5)
+- Affected builds: 0.5.0-beta1 (5); 0.6.0-beta1 (6)
 - Capture screen: `settings_and_game_detail`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-49411202-49E2-4557-A918-BB28E68BAB52`
+- Additional source note: `KP-NOTE-DC0BC23F-1578-475F-91AD-CA14C0853CFB`
 - Normalized finding: Add a default number of rounds to Settings. On each eligible game detail page, allow the tester to choose session duration and number of rounds without silently changing the global defaults.
 - Expected behavior: Defaults persist across launches, each eligible game can override duration and rounds for the next session, and the applied values are visible before Start.
 - Reproduction/triage: Settings precedence and session model specification required.
@@ -567,6 +576,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Verification result: automated_checks_passed_pending_family_device_retest
 - Implementation evidence: Settings defaults remain persisted globally; details-page selectors persist only the selected game's override, and the Start foundation consumes that override once without mutating global duration or round defaults. JVM session tests, the details-page contract test, Android-test source compilation, debug assembly, lint, and the checkpoint validator passed. No Android target was connected.
 - Related items: `KPF-0017`, `KPF-0029`
+- Latest 0.6.0-beta1 observation: The 0.6.0 feedback requests scrollable incremental session controls and explicit duration/round bounds; those refinements are tracked in KPF-0050 and KPF-0051.
 
 ## KPF-0031 — Adopt collapsed card, expanded card, and details page as canonical game-view terms
 
@@ -629,10 +639,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Visual design / Interaction design / Minimalism
 - Priority: Backlog
-- Affected build: 0.5.0-beta1 (5)
+- Affected builds: 0.5.0-beta1 (5); 0.6.0-beta1 (6)
 - Capture screen: `home`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-EC1CCA4A-5421-4C3C-9A16-8BDE4370EE80`
+- Additional source note: `KP-NOTE-68C2E46E-D684-4496-B5B5-278134169017`
 - Normalized finding: Use more graphical controls on Home instead of plain text boxes. Remove subtext from every “More ways to start” control and represent Settings with a compact gear icon.
 - Expected behavior: Home shortcuts are compact, recognizable, accessible, and do not depend on decorative subtext.
 - Reproduction/triage: Gemini visual brief and accessibility review required.
@@ -642,6 +653,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Verification result: automated_checks_passed_pending_family_device_retest
 - Implementation evidence: Home shortcuts now use compact graphical cues, readable labels, semantic click labels, minimum touch targets, and no rendered shortcut subtext; native symbols were used instead of a custom raster asset.
 - Related items: `KPF-0006`, `KPF-0035`, `KPF-0036`
+- Latest 0.6.0-beta1 observation: The 0.6.0 feedback broadens the graphical-cue request from Home shortcuts to standard icons in the overflow menu; the specific menu icon set is tracked in KPF-0039.
 
 ## KPF-0035 — Shorten Home shortcut labels
 
@@ -667,10 +679,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Navigation / Information architecture / Feature request
 - Priority: Should fix soon
-- Affected build: 0.5.0-beta1 (5)
+- Affected builds: 0.5.0-beta1 (5); 0.6.0-beta1 (6)
 - Capture screen: `home`
-- Occurrence count: 1
+- Occurrence count: 3
 - Source note: `KP-NOTE-EE140225-4007-4170-8BC4-4BE68C4DAFB3`
+- Additional source notes: `KP-NOTE-FB8A29AA-6D0F-40A0-98C4-0E8096282253`; `KP-NOTE-68C2E46E-D684-4496-B5B5-278134169017`
 - Normalized finding: Place a conventional three-line menu control at the upper-right of Home. Its menu should provide Settings, Account, About the app, and Safety and Privacy destinations.
 - Expected behavior: The menu is accessible, compact, and each listed destination either opens a complete screen or is explicitly staged behind an approved product decision; duplicate Settings entry points are resolved intentionally.
 - Reproduction/triage: Navigation architecture and account scope review required.
@@ -681,6 +694,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Implementation evidence: The upper-right three-line menu routes to Settings, staged Account, About the app, and Safety and privacy; duplicate Settings entry points remain intentionally available and the Account screen states that no account system exists in this MVP.
 - Related items: `KPF-0032`, `KPF-0034`
 - Triage note: The Settings gear request and Settings menu entry may coexist or be consolidated; product navigation review must choose deliberately.
+- Latest 0.6.0-beta1 observation: The 0.6.0 feedback requests removing duplicate Home Settings/Safety and privacy shortcuts and adding standard icons to the overflow destinations; the refinements are tracked in KPF-0038 and KPF-0039.
 
 ## KPF-0037 — Fix the Send now feedback crash regression
 
@@ -701,3 +715,315 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Verification result: automated_checks_passed_pending_family_device_retest
 - Severity: Blocker
 - Related items: `KPF-0013`, `KPF-0015`
+
+## Intake: KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B
+
+- Received: 2026-08-05T16:40:45-07:00
+- Affected build: **0.6.0-beta1 (6)**
+- Source notes: 13 new unique note IDs
+- Existing canonical items touched: `KPF-0002`, `KPF-0018`, `KPF-0022`, `KPF-0029`, `KPF-0030`, `KPF-0034`, `KPF-0036`
+- New canonical items: `KPF-0038`–`KPF-0052` (15 items)
+- Replay handling: no replays; occurrence counts use unique supporting source-note IDs.
+- Privacy: No child-identifying information was written to project records; generic product context was retained only where needed for triage.
+- Subject handling: The `0.6.0-beta1+6` subject form was accepted as a recorded format exception because the body identifiers were valid.
+- Code authorization: Intake and triage only; no application code changed.
+
+## KPF-0038 — Remove duplicate Home Settings and Safety and privacy shortcut cards
+
+- Status: new
+- Type: navigation / information_architecture / usability
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-FB8A29AA-6D0F-40A0-98C4-0E8096282253`
+- Normalized finding: Remove the rectangular Home shortcuts for Settings and Safety and privacy when those destinations are already available from the top-app-bar overflow menu.
+- Expected behavior: Home has one intentional access path per destination in the primary surface; the overflow menu continues to expose both destinations and no required access is lost.
+- Reproduction/triage: navigation_review_required
+- Triage: This refines the prior decision to retain duplicate Settings entry points. Intake records the change request but does not implement it.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0034`, `KPF-0036`
+
+## KPF-0039 — Add standard icons to overflow-menu destinations
+
+- Status: new
+- Type: visual_design / navigation / accessibility
+- Priority: backlog
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-68C2E46E-D684-4496-B5B5-278134169017`
+- Normalized finding: Use standard semantic icons in the Home overflow menu: a gear for Settings, a generic person silhouette for Account, an information-in-circle icon for About the app, and a lock or comparable standard privacy/safety icon for Safety and privacy.
+- Expected behavior: Each menu item has a recognizable icon plus a readable label and accessible semantics; iconography does not replace text.
+- Reproduction/triage: visual_and_accessibility_review_required
+- Triage: The broader request for more visual cues reinforces KPF-0034. No custom asset generation was performed during intake.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0034`, `KPF-0036`
+
+## KPF-0040 — Define the canonical Level 0/1/2 game navigation hierarchy
+
+- Status: new
+- Type: information_architecture / navigation / product_vocabulary
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `game_discovery`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-9F74C227-F346-4826-9487-FAAA377680C9`
+- Normalized finding: Adopt Level 0 as Home, Level 1 as the next navigation layer, and Level 2 as the selected game or game-type child content; nested Mad Lib stories and Would You Rather statements should not appear in the Level 1 list.
+- Expected behavior: A Level 1 card opens the appropriate Level 2 list or content surface, so stories, prompts, and other variants appear only after the parent game or type is selected.
+- Reproduction/triage: product_hierarchy_decision_required
+- Triage: The note defines the level vocabulary and examples. Reconcile its named-game Level 1 examples with the Level 1 game-type grouping request in KPF-0041 before implementation.
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0002`, `KPF-0041`
+
+## KPF-0041 — Group Level 1 discovery into finite game-type subcategories
+
+- Status: new
+- Type: information_architecture / navigation / usability
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-545EF57A-9F4B-4061-AA26-5C1C1DCFBE11`
+- Normalized finding: Replace a giant flat Level 1 list with finite subcategories such as Word Games, Guessing Games, Arts and Crafts, and related game types.
+- Expected behavior: A tester sees a manageable set of categories at Level 1, opens one category, and then sees its Level 2 games without scrolling an overwhelming endless list.
+- Reproduction/triage: product_taxonomy_decision_required
+- Triage: This is related to KPF-0040 but is retained as a separate canonical item because it specifies a distinct subcategory/taxonomy requirement.
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0040`, `KPF-0021`
+
+## KPF-0042 — Use bold emphasis in Level 1 collapsed game cards
+
+- Status: new
+- Type: content_copy / visual_design / usability
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E`
+- Normalized finding: In default-collapsed Level 1 cards, show only the game name and brief description, with the game name and specified emphasis words rendered in bold as defined by approved product copy.
+- Expected behavior: Collapsed cards remain minimal and consistently apply the approved bold emphasis without exposing expanded detail, setup, or materials prematurely.
+- Reproduction/triage: content_copy_and_rich_text_review_required
+- Triage: The submitted asterisks are treated as formatting requirements in the expected result, not as executable instructions.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0022`, `KPF-0040`
+
+## KPF-0043 — Support file and image attachments in feedback
+
+- Status: new
+- Type: feedback_workflow / feature_request / attachments
+- Priority: backlog
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `feedback`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-BEB8EBCF-FFC1-480B-B126-EF340C5C6775`
+- Normalized finding: Allow the tester to attach approved files or images when submitting feedback.
+- Expected behavior: Feedback capture can optionally include selected images or files with explicit review before handoff, while excluding device-wide logs and unrelated media.
+- Reproduction/triage: feedback_privacy_and_attachment_design_required
+- Triage: The request is recorded as an optional feedback-workflow capability. No file was uploaded or attached during intake.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+
+## KPF-0044 — Provide a curated music selection for music-based games
+
+- Status: new
+- Type: content_request / audio / feature_request
+- Priority: backlog
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `detail/freeze_dance_statues`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-8E6FD17A-3715-4700-A12B-C0D1256EAF04`
+- Normalized finding: For Freeze Dance Statues and similar music-dependent activities, provide a small curated selection of approximately five or six generated or licensed tracks.
+- Expected behavior: A parent can choose a track or use an approved default before starting a music-based activity; audio rights and child-facing suitability are documented.
+- Reproduction/triage: audio_content_and_rights_review_required
+- Triage: Music generation or licensing is a future work item. No music was generated during intake.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0045`
+
+## KPF-0045 — Add parent-controlled and automatic music playback
+
+- Status: new
+- Type: interaction_design / audio / session_state
+- Priority: backlog
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `detail/freeze_dance_statues`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-8E6FD17A-3715-4700-A12B-C0D1256EAF04`
+- Normalized finding: Let a parent start or pause music manually or configure approved automatic playback behavior for music-based games.
+- Expected behavior: Play/pause and any automatic start/stop behavior are clear, parent-controlled, and do not interrupt unrelated device audio unexpectedly.
+- Reproduction/triage: audio_session_and_android_policy_review_required
+- Triage: The single source note contains separate content and playback requirements; they are tracked independently.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0044`
+
+## KPF-0046 — Create a reviewed 120-card Charades library by category
+
+- Status: new
+- Type: content_request / content_sourcing / feature_scope
+- Priority: backlog
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `timed_session/{gameId}/{duration}/{rounds}`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-D7BE1AAA-1FEB-4260-90E4-1EA7ACABDB62`
+- Normalized finding: Provide about 120 distinct Charades cards organized into categories such as animals, activities, and objects.
+- Expected behavior: A Charades session draws from a reviewed, nonrepeating, category-aware card set with a documented count and safe original or licensed content.
+- Reproduction/triage: content_inventory_sourcing_and_safety_review_required
+- Triage: The request to search online for the actual game's count is recorded as a future research/sourcing task only; no external content was copied or searched during intake.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+
+## KPF-0047 — Center the three-second lock countdown on the play surface
+
+- Status: new
+- Type: interaction_design / accessibility / visual_design
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `timed_session/{gameId}/{duration}/{rounds}`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-9FE89973-6551-44D6-B8C9-F7B7F84C9277`
+- Normalized finding: Show the three-second hold countdown centrally on the screen while lock or unlock is in progress.
+- Expected behavior: The parent can see hold progress at the center of the play surface, with accessible announcements and no loss of the recovery control.
+- Reproduction/triage: visual_touch_and_accessibility_review_required
+- Triage: This is a placement refinement to the existing lock behavior, not authorization to modify the lock implementation.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0018`, `KPF-0024`
+
+## KPF-0048 — Evaluate a brain and movement activity section with picture diagrams
+
+- Status: new
+- Type: product_scope / content_request / visual_asset
+- Priority: backlog
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-3F95E653-8262-4CB6-8033-C09F6C9EBD8D`
+- Normalized finding: Consider a dedicated section of bilateral brain-gym and physical activities accompanied by picture diagrams; any claim that activities improve brain health requires evidence review and careful wording.
+- Expected behavior: If accepted, the section offers reviewed, age-appropriate activity instructions and clear diagrams without unsupported health claims.
+- Reproduction/triage: product_scope_health_claim_and_visual_review_required
+- Triage: No health-claim research or image generation was performed during intake.
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: not_started
+- Code authorization: none from this intake
+
+## KPF-0049 — Rename Three Word Story to Five Word Story
+
+- Status: new
+- Type: content_copy / content_request
+- Priority: backlog
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `detail/three_word_story`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-48AF1DD9-570B-4391-81DB-E35ACFD8DBFD`
+- Normalized finding: Change the activity title and corresponding visible references from Three Word Story to Five Word Story.
+- Expected behavior: The title, instructions, accessibility labels, navigation, and content references consistently reflect the five-word format, subject to product and content review.
+- Reproduction/triage: content_inventory_and_copy_review_required
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+
+## KPF-0050 — Make session-selection controls scrollable and incremental by default
+
+- Status: new
+- Type: interaction_design / settings / usability
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `detail/washable_coloring_together`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-DC0BC23F-1578-475F-91AD-CA14C0853CFB`
+- Normalized finding: Present the per-game session selection controls in a scrollable incremental control by default rather than three static radio options.
+- Expected behavior: The parent can adjust duration and round values through a compact scrollable control with clear applied values; the control remains usable at narrow widths and large text scales.
+- Reproduction/triage: interaction_and_responsive_layout_review_required
+- Triage: The note's selection-method wording is interpreted as the details-page duration/round controls; exact native control behavior requires design review.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0030`
+
+## KPF-0051 — Cap session duration at 20 minutes and rounds at 15
+
+- Status: new
+- Type: settings / session_configuration / validation
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `detail/washable_coloring_together`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-DC0BC23F-1578-475F-91AD-CA14C0853CFB`
+- Normalized finding: Set a maximum of 20 minutes per round and a maximum of 15 rounds for per-game sessions.
+- Expected behavior: No settings or details-page control can create a session above either bound; invalid stored or incoming values are rejected or safely clamped without changing unrelated defaults.
+- Reproduction/triage: configuration_bounds_and_persistence_review_required
+- Triage: Product review must confirm whether the caps apply to global defaults, per-game overrides, and already stored values.
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0030`
+
+## KPF-0052 — Show only play steps during an active session
+
+- Status: new
+- Type: interaction_design / usability / session_state
+- Priority: should_fix_soon
+- Affected build: 0.6.0-beta1 (6)
+- Capture screen: `timed_session/{gameId}/{duration}/{rounds}`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-32F69299-ACB6-4D16-BFB6-79997D05280B`
+- Normalized finding: Once an activity session starts, reduce the active session surface to the steps needed to play and omit materials and setup instructions from that active view.
+- Expected behavior: The timed session provides the playable steps and necessary controls while materials and setup remain available on the details page or prior setup surface.
+- Reproduction/triage: session_content_and_safety_review_required
+- Triage: Necessary safety or play-critical instructions must not be removed without item-by-item review; this record captures the requested active-session presentation policy only.
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none from this intake
+- Related items: `KPF-0010`, `KPF-0029`
+
+
+## Beta2 implementation verification — KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B
+
+- Updated: **2026-08-06T03:06:47Z**
+- Implementation build: **0.6.0-beta2 (7)**
+- Scope: all 22 canonical items in the batch (`KPF-0002`, `KPF-0018`, `KPF-0022`, `KPF-0029`, `KPF-0030`, `KPF-0034`, `KPF-0036`, and `KPF-0038`–`KPF-0052`).
+- Automated status: complete. Unit tests, Android lint, debug assembly, content schemas, canonical/runtime parity, packaged-resource checks, APK metadata, and APK signature verification passed.
+- Device status: **fixed-awaiting-retest**. No Android device or emulator is attached to Hogwarts, so physical interaction, visual, launcher, accessibility-service, and audio behavior remain unverified.
+- The separately staged Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implemented and recorded in `PAPER_AIRPLANES_IMPLEMENTATION.md`; it remains staged as an intake source for the next email batch.
+
+| Item | State | Retest build | Verification state |
+|---|---|---|---|
+| KPF-0002 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0018 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0022 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0029 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0030 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0034 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0036 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0038 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0039 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0040 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0041 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0042 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0043 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0044 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0045 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0046 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0047 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0048 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0049 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0050 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0051 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+| KPF-0052 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |

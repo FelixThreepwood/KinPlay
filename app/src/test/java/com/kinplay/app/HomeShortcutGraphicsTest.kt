@@ -14,15 +14,13 @@ class HomeShortcutGraphicsTest {
     @Test
     fun homeShortcutsUseStableGraphicalCuesAndRetainReadableLabels() {
         assertEquals(
-            listOf("↻", "▦", "⚙", "ⓘ"),
+            listOf("refresh", "grid_view"),
             HOME_SHORTCUTS.map { it.icon },
         )
         assertEquals(
             listOf(
                 RANDOM_GAME_LABEL,
                 ALL_GAMES_AND_ACTIVITIES_LABEL,
-                "Settings",
-                "Safety and privacy",
             ),
             HOME_SHORTCUTS.map { it.title },
         )
@@ -32,7 +30,9 @@ class HomeShortcutGraphicsTest {
     @Test
     fun shortcutControlsRenderIconAndLabelWithoutLongSubtext() {
         val homeButtonSource = mainSource.substringAfter("fun HomeButton").substringBefore("@Composable")
-        assertTrue(mainSource.contains("text = shortcut.icon"))
+        assertTrue(mainSource.contains("HomeShortcutIcon"))
+        assertTrue(mainSource.contains("Icons.Default.Refresh"))
+        assertTrue(mainSource.contains("Icons.Default.GridView"))
         assertTrue(mainSource.contains("Text(shortcut.title"))
         assertTrue(mainSource.contains("shortcut.description"))
         assertFalse(homeButtonSource.contains("Text(subtitle"))

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "libraryId": "would_you_rather_v1",
-  "reviewedOn": "2026-07-26",
-  "reviewScope": "All 320 rendered prompts were reviewed for originality, readability, category fit, and the KinPlay child-safety exclusions.",
+  "reviewedOn": "2026-08-05",
+  "reviewScope": "All 340 rendered prompts were reviewed for originality, readability, category fit, and the KinPlay child-safety exclusions.",
   "provenance": {
     "origin": "original_kinplay_editorial_work",
     "statement": "No external prompt collection was used or copied.",
-    "method": "Original option pools and pairings were authored for KinPlay, rendered into final text, then checked for duplicates and prohibited material."
+    "method": "The original 320 prompts were authored and reviewed on 2026-07-26. Twenty additional prompts were supplied directly by the project owner on 2026-08-05, assigned to the existing category model, rendered into final text, and checked for duplicates and prohibited material."
   },
   "safetyPolicy": {
     "audience": "Family use, approximately ages 4–8 with caregiver participation.",
@@ -746,6 +746,146 @@
       "textSha256": "4eabe10c2b81924db54f18c97e470dedc11456c833afd06f434307395eaa5c0d"
     },
     {
+      "id": "wyr_cute_silly_081",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "63ec3b8bf2c57119aeec795e6ead26ea98f857703992e5e26a83a13d646f5611"
+    },
+    {
+      "id": "wyr_cute_silly_082",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "0ae735c9311521278eb2b4d436626d7db10f027b8e448573ed8753c1ac45cb31"
+    },
+    {
+      "id": "wyr_cute_silly_083",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "b247c11553645e5b6ae2507614bbc5d68c32fe3ecf9c1779e48158cbccc01335"
+    },
+    {
+      "id": "wyr_cute_silly_084",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "136887737423cf4b0bd641feffd679b7909043ed2921acf1f40ee89af47601f4"
+    },
+    {
+      "id": "wyr_cute_silly_085",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "7bd37168c41234332ac64b1ffbb3764dbbe970bd28f15c3d85ec8e632720fddf"
+    },
+    {
+      "id": "wyr_cute_silly_086",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "27dbfa393ffc2d57c23d00aa82a5cd43181b2f7226b33210ecd70f8ae913c6fb"
+    },
+    {
+      "id": "wyr_cute_silly_087",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "586ce1be5d931e43c9e2d4eaa836c1b5671b63751eb308596c2431dd5f95dd77"
+    },
+    {
+      "id": "wyr_cute_silly_088",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "f4dc1b42fa86a8ab51af391bcc4d4bb55cf0cfe5486714e476ae04822c29de4e"
+    },
+    {
+      "id": "wyr_cute_silly_089",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "ecf8f013f20ade3b401c19ca5849b6a11ed5de6195f67ebb2a2ecf33a9817268"
+    },
+    {
+      "id": "wyr_cute_silly_090",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "a4996bb690cf6e45b3e9836d70eb37cc2e804285ba4c7fa508bb8bab91ecd126"
+    },
+    {
+      "id": "wyr_cute_silly_091",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "fc37bb0f57fe14bed5a54c14a8464feb4534fc785704b25e2eda22527fa900d3"
+    },
+    {
+      "id": "wyr_cute_silly_092",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "a659afeb4d14f495ba137edabf7516119e16b1d13dd500269648552fb6050775"
+    },
+    {
+      "id": "wyr_cute_silly_093",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "f6edb51c5419c1cc828aa2701c78fab657e2c18f56cec99238017a3db5732576"
+    },
+    {
+      "id": "wyr_cute_silly_094",
+      "categoryId": "cute_silly",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "7148fa40e638b0785805f02365eba03b073c623b92a76adba4dfea0a56ce86d1"
+    },
+    {
       "id": "wyr_animals_001",
       "categoryId": "animals",
       "status": "approved",
@@ -1464,6 +1604,66 @@
       "reviewedOn": "2026-07-26",
       "safetyReview": "passed",
       "textSha256": "bbeb5cc7e4bc2925561f11c25a547bea50f5c62cb36cafd7e02250a0f5764926"
+    },
+    {
+      "id": "wyr_animals_081",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "0a206a2545d2e362f05a090b7c8192223bad1a3b996da199d98157a0c9ddb308"
+    },
+    {
+      "id": "wyr_animals_082",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "6c7ec23dbdbe03308a6f4650f43680c6e57bcef47f8a8cfa621e398f2cb2887a"
+    },
+    {
+      "id": "wyr_animals_083",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "d24f4ea10f3030ad2038adca8698c94abda88b80a1e82fc0043070c13c005168"
+    },
+    {
+      "id": "wyr_animals_084",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "41df191937bbf6d07b47afc0bc6feb258a49c5d1b524c73db995e045ac307799"
+    },
+    {
+      "id": "wyr_animals_085",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "0d682f9be959d68ac05e20d98fcd87761365e7dc29cc27ce5b57302af15e3dcd"
+    },
+    {
+      "id": "wyr_animals_086",
+      "categoryId": "animals",
+      "status": "approved",
+      "origin": "original_kinplay_editorial_work",
+      "reviewedOn": "2026-08-05",
+      "safetyReview": "passed",
+      "source": "project_owner_supplied_message_2026-08-05",
+      "textSha256": "d7a5bac26e6b45c4e2d3e42aeb8be4a4c29c73c94542f0ed24ae69418d79d167"
     },
     {
       "id": "wyr_gross_001",

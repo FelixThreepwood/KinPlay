@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -23,12 +24,22 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.GridView
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -55,8 +66,12 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -85,6 +100,7 @@ import com.kinplay.app.settings.sessionDefaults
 import com.kinplay.app.session.TimedSession
 import com.kinplay.app.session.TimedSessionProgress
 import com.kinplay.app.session.TimedSessionStatus
+import com.kinplay.app.session.activeSessionSections
 import com.kinplay.app.session.isTimedSessionEligible
 import com.kinplay.app.session.remainingTimeLabel
 import com.kinplay.app.session.startTimedSession
@@ -113,7 +129,7 @@ private val CONTENT_CARD_TWO_COLUMN_MIN_WIDTH = 280.dp
 private const val CONTENT_CARD_STACKED_FONT_SCALE = 1.5f
 fun isWouldYouRatherItem(itemId: String): Boolean = itemId == WOULD_YOU_RATHER_ITEM_ID
 
-private val FAMILIAR_QUIET_TITLES = listOf("I Spy", "Charades", "Would You Rather", "Animal Guessing", "Alphabet Story")
+private val FAMILIAR_QUIET_TITLES = listOf("I Spy", "Charades", "Would You Rather", "Animal Detective", "Alphabet Story")
 
 fun contentListBackLabel(isMadLibsSubmenu: Boolean = false): String =
     if (isMadLibsSubmenu) "Back to Quiet Games" else "Back home"
@@ -122,6 +138,7 @@ private object Routes {
     const val Home = "home"
     const val QuickPlay = "quick_play"
     const val PickGame = "pick_game"
+    const val GameType = "game_type/{groupId}"
     const val CalmDown = "calm_down"
     const val Account = "account"
     const val AboutApp = "about_app"
@@ -133,6 +150,7 @@ private object Routes {
     const val Category = "category/{categoryId}"
     const val Detail = "detail/{itemId}"
     fun category(categoryId: String) = "category/$categoryId"
+    fun gameType(groupId: String) = "game_type/$groupId"
     fun detail(itemId: String) = "detail/$itemId"
     fun timedSession(session: TimedSession) =
         "timed_session/${session.gameId}/${session.configuration.duration.wireValue}/${session.configuration.rounds.wireValue}"
@@ -147,10 +165,8 @@ data class HomeShortcut(
 )
 
 val HOME_SHORTCUTS = listOf(
-    HomeShortcut("↻", RANDOM_GAME_LABEL, "Choose a ready-to-use game or activity", Routes.QuickPlay, "random_game"),
-    HomeShortcut("▦", ALL_GAMES_AND_ACTIVITIES_LABEL, "See every game and activity, including story activities", Routes.PickGame, "all_games_and_activities"),
-    HomeShortcut("⚙", "Settings", "Timers, activity duration, and color theme", Routes.Settings, "settings"),
-    HomeShortcut("ⓘ", "Safety and privacy", "Parent-led safety and privacy notes", Routes.SafetyPrivacy, "about_safety"),
+    HomeShortcut("refresh", RANDOM_GAME_LABEL, "Choose a ready-to-use game or activity", Routes.QuickPlay, "random_game"),
+    HomeShortcut("grid_view", ALL_GAMES_AND_ACTIVITIES_LABEL, "Choose a game type, then an activity", Routes.PickGame, "all_games_and_activities"),
 )
 
 @Composable
@@ -204,7 +220,19 @@ fun KinPlayApp() {
                 NavHost(navController = navController, startDestination = Routes.Home) {
                     composable(Routes.Home) { HomeScreen(contentPack, favoriteIds, recentIds, navController) }
                     composable(Routes.QuickPlay) { QuickPlayScreen(contentPack, favoriteIds, recentIds, navController) }
-                    composable(Routes.PickGame) { ContentListScreen(ALL_GAMES_AND_ACTIVITIES_LABEL, contentPack.gameLibraryItems(), favoriteIds, navController) }
+                    composable(Routes.PickGame) { GameTypeListScreen(navController) }
+                    composable(
+                        Routes.GameType,
+                        arguments = listOf(navArgument("groupId") { type = NavType.StringType }),
+                    ) { entry ->
+                        val groupId = entry.arguments?.getString("groupId").orEmpty()
+                        GameTypeDetailScreen(
+                            group = GameTypeGroup.fromId(groupId),
+                            items = contentPack.itemsForGameType(groupId),
+                            favoriteIds = favoriteIds,
+                            navController = navController,
+                        )
+                    }
                     composable(Routes.CalmDown) { ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController) }
                     composable(Routes.Account) { AccountScreen(navController) }
                     composable(Routes.AboutApp) { AboutAppScreen(navController) }
@@ -361,10 +389,10 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                             onClick = { appMenuExpanded = true },
                             modifier = Modifier.testTag("app-menu-button"),
                         ) {
-                            Text(
-                                text = "☰",
+                            Icon(
+                                imageVector = Icons.Default.Menu,
+                                contentDescription = "Open app menu",
                                 modifier = Modifier.semantics { contentDescription = "Open app menu" },
-                                color = MaterialTheme.colorScheme.onBackground,
                             )
                         }
                         DropdownMenu(
@@ -372,6 +400,7 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                             onDismissRequest = { appMenuExpanded = false },
                         ) {
                             DropdownMenuItem(
+                                leadingIcon = { Icon(Icons.Default.Settings, contentDescription = null) },
                                 text = { Text("Settings") },
                                 onClick = {
                                     appMenuExpanded = false
@@ -379,6 +408,7 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                                 },
                             )
                             DropdownMenuItem(
+                                leadingIcon = { Icon(Icons.Default.Person, contentDescription = null) },
                                 text = { Text("Account") },
                                 onClick = {
                                     appMenuExpanded = false
@@ -386,6 +416,7 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                                 },
                             )
                             DropdownMenuItem(
+                                leadingIcon = { Icon(Icons.Default.Info, contentDescription = null) },
                                 text = { Text("About the app") },
                                 onClick = {
                                     appMenuExpanded = false
@@ -393,6 +424,7 @@ fun HomeScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentIds: Li
                                 },
                             )
                             DropdownMenuItem(
+                                leadingIcon = { Icon(Icons.Default.Lock, contentDescription = null) },
                                 text = { Text("Safety and privacy") },
                                 onClick = {
                                     appMenuExpanded = false
@@ -555,6 +587,21 @@ fun DetailPill(text: String) {
 }
 
 @Composable
+private fun HomeShortcutIcon(shortcut: HomeShortcut, testTag: String) {
+    val icon = when (shortcut.icon) {
+        "refresh" -> Icons.Default.Refresh
+        "grid_view" -> Icons.Default.GridView
+        else -> Icons.Default.Info
+    }
+    Icon(
+        imageVector = icon,
+        contentDescription = null,
+        tint = MaterialTheme.colorScheme.primary,
+        modifier = Modifier.testTag("${testTag}-icon"),
+    )
+}
+
+@Composable
 fun HomeButton(shortcut: HomeShortcut, testTag: String, onClick: () -> Unit) {
     Card(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -575,12 +622,7 @@ fun HomeButton(shortcut: HomeShortcut, testTag: String, onClick: () -> Unit) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            Text(
-                text = shortcut.icon,
-                style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.testTag("${testTag}-icon"),
-            )
+            HomeShortcutIcon(shortcut, testTag)
             Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
                 Text(shortcut.title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
             }
@@ -620,6 +662,61 @@ fun QuickPlayScreen(contentPack: ContentPack, favoriteIds: Set<String>, recentId
                 Button(onClick = { navController.openItem(quickPick) }) { Text("Start this game or activity") }
             }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun GameTypeListScreen(navController: NavController) {
+    DestinationScreen(title = ALL_GAMES_AND_ACTIVITIES_LABEL, navController = navController) {
+        Text(
+            "Choose a game type first, then pick an activity.",
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        GameTypeGroup.entries.forEach { group ->
+            Card(
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
+                shape = RoundedCornerShape(20.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("game-type-${group.id}")
+                    .clickable(
+                        onClickLabel = "Open ${group.label}",
+                        role = Role.Button,
+                        onClick = { navController.navigate(Routes.gameType(group.id)) },
+                    ),
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(5.dp),
+                ) {
+                    Text(group.label, fontWeight = FontWeight.Bold)
+                    Text(group.description, style = MaterialTheme.typography.bodySmall)
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun GameTypeDetailScreen(
+    group: GameTypeGroup?,
+    items: List<KinPlayItem>,
+    favoriteIds: Set<String>,
+    navController: NavController,
+) {
+    DestinationScreen(title = group?.label ?: ALL_GAMES_AND_ACTIVITIES_LABEL, navController = navController) {
+        if (group == null) {
+            Text("This game type is not available.")
+        } else {
+            Text(group.description, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            if (items.isEmpty()) {
+                Text("No matching local content found.")
+            }
+            items.forEach { item -> ContentCard(item, favoriteIds, navController) }
         }
     }
 }
@@ -743,8 +840,9 @@ private fun CompactCardPrimaryContent(
             )
         }
         item.collapsedCardPreviewLines().forEachIndexed { index, previewLine ->
+            val previewText = if (index == 0) item.collapsedCardDescriptionAnnotated() else AnnotatedString(previewLine)
             Text(
-                text = previewLine,
+                text = previewText,
                 modifier = Modifier.fillMaxWidth(),
                 style = MaterialTheme.typography.bodySmall,
                 color = if (index == 0) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant,
@@ -890,6 +988,14 @@ private fun ActivityDetailSurface(
                     Text("Activity not found.")
                 } else {
                     Text(item.summary, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    BundledMusicControls(item.id, enabled = !isLocked)
+                    PaperAirplaneInstructions(item, enabled = !isLocked)
+                    if (item.id == "bilateral_mirror_moves" || item.id == "cross_body_move_mix") {
+                        BrainMovementInstructions(item, enabled = !isLocked)
+                    }
+                    if (item.id == CHARADES_ITEM_ID) {
+                        CharadesCardsPanel(enabled = !isLocked)
+                    }
                     if (item.isTimedSessionEligible()) {
                         SessionConfigurationControls(
                             itemId = item.id,
@@ -1025,7 +1131,14 @@ private fun TimedSessionSurface(
     ) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding).testTag("timed-session-surface")) {
             Text(item.title, fontWeight = FontWeight.Bold)
-            Text(item.summary, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            BundledMusicControls(item.id, enabled = !isLocked)
+            PaperAirplaneInstructions(item, enabled = !isLocked)
+            if (item.id == "bilateral_mirror_moves" || item.id == "cross_body_move_mix") {
+                BrainMovementInstructions(item, enabled = !isLocked)
+            }
+            if (item.id == CHARADES_ITEM_ID) {
+                CharadesCardsPanel(enabled = !isLocked)
+            }
             Card(
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
                 modifier = Modifier.fillMaxWidth(),
@@ -1049,7 +1162,7 @@ private fun TimedSessionSurface(
                     Text("${configuration.duration.label} per round")
                 }
             }
-            item.detailSections().forEach { section ->
+            item.activeSessionSections().forEach { section ->
                 SectionList(section.title, section.lines)
             }
             if (isComplete) {
@@ -1137,35 +1250,35 @@ fun SessionConfigurationControls(
                 fontWeight = FontWeight.Bold,
             )
             Text("Session duration", fontWeight = FontWeight.Bold)
-            ActivityDuration.entries.forEach { option ->
-                SessionChoiceRow(
-                    label = option.label,
-                    selected = resolved.duration == option,
-                    testTag = "session-duration-${option.wireValue}",
-                    enabled = enabled,
-                    onClick = {
-                        onSaveSessionOverride(
-                            itemId,
-                            SessionConfigurationOverride(duration = option, rounds = currentOverride?.rounds),
-                        )
-                    },
-                )
-            }
+            SessionChoiceStrip(
+                options = ActivityDuration.entries,
+                selected = resolved.duration,
+                testTagPrefix = "session-duration",
+                label = { it.label },
+                wireValue = { it.wireValue },
+                enabled = enabled,
+                onClick = { option ->
+                    onSaveSessionOverride(
+                        itemId,
+                        SessionConfigurationOverride(duration = option, rounds = currentOverride?.rounds),
+                    )
+                },
+            )
             Text("Session rounds", fontWeight = FontWeight.Bold)
-            SessionRounds.entries.forEach { option ->
-                SessionChoiceRow(
-                    label = option.label,
-                    selected = resolved.rounds == option,
-                    testTag = "session-rounds-${option.wireValue}",
-                    enabled = enabled,
-                    onClick = {
-                        onSaveSessionOverride(
-                            itemId,
-                            SessionConfigurationOverride(duration = currentOverride?.duration, rounds = option),
-                        )
-                    },
-                )
-            }
+            SessionChoiceStrip(
+                options = SessionRounds.entries,
+                selected = resolved.rounds,
+                testTagPrefix = "session-rounds",
+                label = { it.label },
+                wireValue = { it.wireValue },
+                enabled = enabled,
+                onClick = { option ->
+                    onSaveSessionOverride(
+                        itemId,
+                        SessionConfigurationOverride(duration = currentOverride?.duration, rounds = option),
+                    )
+                },
+            )
             if (currentOverride != null) {
                 OutlinedButton(
                     onClick = { onSaveSessionOverride(itemId, null) },
@@ -1191,28 +1304,31 @@ fun SessionConfigurationControls(
 }
 
 @Composable
-private fun SessionChoiceRow(
-    label: String,
-    selected: Boolean,
-    testTag: String,
+private fun <T> SessionChoiceStrip(
+    options: List<T>,
+    selected: T,
+    testTagPrefix: String,
+    label: (T) -> String,
+    wireValue: (T) -> String,
     enabled: Boolean,
-    onClick: () -> Unit,
+    onClick: (T) -> Unit,
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .testTag(testTag)
-            .selectable(
-                selected = selected,
-                enabled = enabled,
-                role = Role.RadioButton,
-                onClick = onClick,
-            )
-            .padding(horizontal = 8.dp, vertical = 3.dp),
-        verticalAlignment = Alignment.CenterVertically,
+            .horizontalScroll(rememberScrollState())
+            .testTag("$testTagPrefix-strip"),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-        RadioButton(selected = selected, onClick = null, enabled = enabled)
-        Text(label, modifier = Modifier.padding(start = 6.dp))
+        options.forEach { option ->
+            FilterChip(
+                selected = option == selected,
+                onClick = { onClick(option) },
+                enabled = enabled,
+                label = { Text(label(option)) },
+                modifier = Modifier.testTag("$testTagPrefix-${wireValue(option)}"),
+            )
+        }
     }
 }
 
@@ -1376,6 +1492,10 @@ data class KinPlayItem(
     val status: String,
     val title: String,
     val summary: String,
+    val collapsedDescription: String = "",
+    val collapsedEmphasis: List<String> = emptyList(),
+    val visualAssets: List<ContentVisualAsset> = emptyList(),
+    val paperAirplaneModels: List<PaperAirplaneModel> = emptyList(),
     val modes: List<String>,
     val minAge: Int,
     val maxAge: Int,
@@ -1423,6 +1543,26 @@ data class KinPlayItem(
                 status = status,
                 title = json.getString("title"),
                 summary = json.getString("summary"),
+                collapsedDescription = json.optString("collapsedDescription", ""),
+                collapsedEmphasis = json.stringList("collapsedEmphasis"),
+                visualAssets = json.optJSONArray("visualAssets")?.let { array ->
+                    (0 until array.length()).map { index ->
+                        val asset = array.getJSONObject(index)
+                        ContentVisualAsset(asset.getString("id"), asset.getString("resource"), asset.getString("altText"))
+                    }
+                } ?: emptyList(),
+                paperAirplaneModels = json.optJSONArray("paperAirplaneModels")?.let { array ->
+                    (0 until array.length()).map { index ->
+                        val model = array.getJSONObject(index)
+                        PaperAirplaneModel(
+                            id = model.getString("id"),
+                            name = model.getString("name"),
+                            shapeDescription = model.getString("shapeDescription"),
+                            diagramAsset = model.getString("diagramAsset"),
+                            steps = model.stringList("steps"),
+                        )
+                    }
+                } ?: emptyList(),
                 modes = json.stringList("modes"),
                 minAge = json.getInt("minAge"),
                 maxAge = json.getInt("maxAge"),
@@ -1484,10 +1624,19 @@ enum class QuickCategory(val id: String, val label: String, val placeCue: String
     OUTDOOR_ADVENTURES("outdoor_adventures", "Outdoor Adventures", "Backyard • park"),
     GET_ENERGY_OUT("get_energy_out", "Get the Energy Out", "Living room • backyard"),
     BRAIN_GAMES("brain_games", "Brain Games", "Table • waiting room"),
-    QUALITY_TIME("quality_time", "Quality Time", "Anywhere • 1:1 or group");
+    QUALITY_TIME("quality_time", "Quality Time", "Anywhere • 1:1 or group"),
+    ARTS_AND_MAKING("arts_and_making", "Arts and making", "Table • craft space"),
+    BRAIN_AND_MOVEMENT("brain_and_movement", "Brain & movement", "Living room • clear floor");
 
     companion object {
-        val defaultGrid = entries.toList()
+        val defaultGrid = listOf(
+            QUIET_GAMES,
+            DINNER_TABLE,
+            OUTDOOR_ADVENTURES,
+            GET_ENERGY_OUT,
+            BRAIN_GAMES,
+            QUALITY_TIME,
+        )
         fun fromId(id: String): QuickCategory? = entries.firstOrNull { it.id == id }
     }
 }
@@ -1541,20 +1690,47 @@ fun KinPlayItem.setupPreviewLabel(maxCharacters: Int = 84): String {
     return prefix + shortened.trimEnd() + "…"
 }
 
+fun KinPlayItem.collapsedCardDescriptionText(): String = collapsedDescription.ifBlank { summary }
+
+fun KinPlayItem.collapsedCardDescriptionAnnotated(): AnnotatedString {
+    val text = collapsedCardDescriptionText()
+    val emphasis = collapsedEmphasis.filter { it.isNotBlank() }.sortedByDescending(String::length)
+    return buildAnnotatedString {
+        var cursor = 0
+        while (cursor < text.length) {
+            val match = emphasis
+                .mapNotNull { phrase -> text.indexOf(phrase, startIndex = cursor, ignoreCase = true).takeIf { it >= 0 }?.let { it to phrase } }
+                .minByOrNull { it.first }
+            if (match == null) {
+                append(text.substring(cursor))
+                break
+            }
+            val (start, phrase) = match
+            if (start > cursor) append(text.substring(cursor, start))
+            withStyle(SpanStyle(fontWeight = FontWeight.Bold)) {
+                append(text.substring(start, start + phrase.length))
+            }
+            cursor = start + phrase.length
+        }
+    }
+}
+
 fun KinPlayItem.collapsedCardPreviewLines(): List<String> =
-    listOf(summary, setupBurdenLabel(), setupPreviewLabel())
+    listOf(collapsedCardDescriptionText(), setupBurdenLabel(), setupPreviewLabel())
 
 fun KinPlayItem.displaySetupSteps(): List<String> =
     if (id == "quiet_color_hunt") listOf("Choose one safe object everyone can see.") else setupSteps
 
 fun KinPlayItem.isMadLibsCollection(): Boolean = id == MAD_LIBS_COLLECTION_ID
 
-private fun madLibsCollectionItem(stories: List<KinPlayItem>) = KinPlayItem(
+fun madLibsCollectionItem(stories: List<KinPlayItem>) = KinPlayItem(
     id = MAD_LIBS_COLLECTION_ID,
     type = "collection",
     status = "active",
     title = "Mad Libs",
     summary = "Open all ${stories.size} ready-to-fill silly stories.",
+    collapsedDescription = "Zany stories to fill in and read aloud.",
+    collapsedEmphasis = listOf("Zany stories"),
     modes = listOf("mad_libs"),
     minAge = stories.minOf { it.minAge },
     maxAge = stories.maxOf { it.maxAge },
