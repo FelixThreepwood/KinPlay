@@ -14,3 +14,6 @@
   - `app/src/main/res/drawable-nodpi/paper_airplane_glide_trickster.jpg` — SHA-256 `21194f5e1c503cb873a3222352d45b137996ac360bffc6237f2a77a2af75f114`
 - Verification: Paper Airplane content contract passed; main content schema and canonical/runtime parity passed; both diagram resources were present in the beta2 APK.
 - Device status: fixed-awaiting-retest because no Android device or emulator is attached to Hogwarts.
+
+- Published in beta2 APK: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta2_MVP.apk`.
+- Remote publication: Drive object `1tm7P1Wlo4SiqHesMubR67ciRV29a5efP`; downloaded remote bytes matched the local SHA-256 exactly.

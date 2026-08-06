@@ -1027,3 +1027,16 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 | KPF-0050 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
 | KPF-0051 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
 | KPF-0052 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
+
+
+## Beta2 publication evidence — KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B
+
+- Published: **2026-08-06T03:22:38Z**
+- Source commit: `204eabacb1b57e6901456b4b2aac7c4ed16e018c`
+- Local root artifact: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta2_MVP.apk`
+- Version: `0.6.0-beta2` / code `7` / package `com.kinplay.app`
+- SHA-256: `6db0b08efc5ade3b7183c6ec0de4028287574b7f230374edbf9a5f3873c5a2bb`
+- Drive folder: `12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp`
+- Drive object: `1tm7P1Wlo4SiqHesMubR67ciRV29a5efP`
+- Drive link: https://drive.google.com/file/d/1tm7P1Wlo4SiqHesMubR67ciRV29a5efP/view?usp=drivesdk
+- Remote download comparison: passed byte-exact size and SHA-256 verification. The prior beta1 root object was moved to reversible Drive trash only after this comparison; the destination now contains exactly one active APK.

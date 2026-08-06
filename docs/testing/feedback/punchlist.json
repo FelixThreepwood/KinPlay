@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-06T03:06:47Z",
+  "updatedAt": "2026-08-06T03:22:38Z",
   "nextItemNumber": 53,
   "batches": [
     {
@@ -419,7 +419,22 @@
       },
       "implementationStatus": "complete_pending_family_device_retest",
       "automatedVerification": "passed_full_unit_lint_assembly_content_schema_and_packaged-asset_gates",
-      "lastVerifiedAt": "2026-08-06T03:06:47Z"
+      "lastVerifiedAt": "2026-08-06T03:06:47Z",
+      "publishedArtifact": {
+        "versionName": "0.6.0-beta2",
+        "versionCode": 7,
+        "package": "com.kinplay.app",
+        "localRootPath": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta2_MVP.apk",
+        "localBetaTestingPath": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/beta-testing/20260806_KinPlay_v0.6.0-beta2_MVP.apk",
+        "sha256": "6db0b08efc5ade3b7183c6ec0de4028287574b7f230374edbf9a5f3873c5a2bb",
+        "bytes": 23149344,
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveFileId": "1tm7P1Wlo4SiqHesMubR67ciRV29a5efP",
+        "driveWebViewLink": "https://drive.google.com/file/d/1tm7P1Wlo4SiqHesMubR67ciRV29a5efP/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "publishedAt": "2026-08-06T03:22:38Z"
+      },
+      "publicationStatus": "published_and_remote_verified"
     }
   ],
   "items": [

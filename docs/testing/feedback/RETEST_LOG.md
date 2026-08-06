@@ -78,7 +78,7 @@ When a retest fails, leave the item awaiting retest and add a new sanitized obse
 
 ## New intake awaiting triage — KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B
 
-- Affected build: **0.6.0-beta1 (6)**. This batch is intake-only and has no retest build.
+- Intake build: **0.6.0-beta1 (6)**. Post-intake implementation and release build: **0.6.0-beta2 (7)**.
 - Source notes: 13 new unique note IDs; no replayed IDs.
 - Existing canonical items touched: `KPF-0002`, `KPF-0018`, `KPF-0022`, `KPF-0029`, `KPF-0030`, `KPF-0034`, `KPF-0036`.
 - New canonical items: `KPF-0038`–`KPF-0052`.
@@ -136,3 +136,14 @@ When a retest fails, leave the item awaiting retest and add a new sanitized obse
 | KPF-0052 | fixed-awaiting-retest | 0.6.0-beta2 (7) | Automated gates passed; physical Pixel 8 Pro / Android 16 retest remains open. |
 
 Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implemented with two Gemini-generated instructional diagrams and remains a staged source note for the next email feedback batch.
+
+
+## Beta2 publication verification — KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B
+
+- Published: **2026-08-06T03:22:38Z**
+- Source commit: `204eabacb1b57e6901456b4b2aac7c4ed16e018c`
+- APK: `20260806_KinPlay_v0.6.0-beta2_MVP.apk`
+- SHA-256: `6db0b08efc5ade3b7183c6ec0de4028287574b7f230374edbf9a5f3873c5a2bb`
+- Drive object: `1tm7P1Wlo4SiqHesMubR67ciRV29a5efP`
+- Remote read-back: passed exact size and SHA-256 comparison; final folder inventory contains one active APK.
+- Device status remains open: no Pixel 8 Pro or emulator was connected for physical interaction, visual, accessibility, or audio retest.
