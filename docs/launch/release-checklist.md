@@ -133,15 +133,22 @@ If a release is defective:
 
 | Field | Value |
 |---|---|
-| Version name/code |  |
-| Artifact filename |  |
-| SHA-256 |  |
-| Local path |  |
-| Google Drive file ID/link |  |
-| Test count |  |
-| Lint result |  |
-| APK metadata/permissions |  |
-| Signature result |  |
-| Device result |  |
-| Commit/remote SHA |  |
-| Release decision |  |
+| Version name/code | `0.6.3` / `10` |
+| Artifact filename | `20260806_KinPlay_v0.6.3_MVP.apk` |
+| SHA-256 | `f18d6e93a4c84f5876c4591254e0d31f2282ef0b1cbd50f7fb1325a829037205` |
+| Local path | `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.3_MVP.apk` |
+| Google Drive file ID/link | `1MO4JEMKc4_yxe2D0s1r9t3DLgs36HdXj` — https://drive.google.com/file/d/1MO4JEMKc4_yxe2D0s1r9t3DLgs36HdXj/view?usp=drivesdk |
+| Test count | 214 unit tests; 0 failures, 0 errors, 0 skipped; Android-test sources compiled |
+| Lint result | passed |
+| APK metadata/permissions | package `com.kinplay.app`, min SDK 26, target SDK 35; only dynamic receiver permission |
+| Signature result | v2 verified |
+| Device result | open — `adb` unavailable and no Android target connected |
+| Commit/remote SHA | `f100058f430cef43ae5a4ecb2481e69dd5bac510` / verified equal |
+| Release decision | published as iterative private/shared-drive WIP release; physical retest remains open |
+
+## 0.6.3 completion evidence
+
+- Local shared-drive root contains exactly one current APK; beta2 and beta3 were moved to `release-history` before final rename.
+- Google Drive `apk-drops` contains exactly one active APK. The prior beta3 object was moved to reversible trash only after the new object read back byte-for-byte.
+- Canonical/runtime content JSON, schema, unique IDs, APK content parity, and Tiny Monster visual-resource parity passed.
+- This is a work-in-progress private test release, not an official production or store publication.

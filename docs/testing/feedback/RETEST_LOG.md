@@ -243,7 +243,10 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 - Coverage: 19 canonical items — existing `KPF-0004`, `KPF-0010`, `KPF-0017`, `KPF-0055`, `KPF-0058`, plus `KPF-0064`–`KPF-0077` — implemented and recorded below as fixed-awaiting-physical-retest.
 - Product decisions: one shared collapsed `Activity themes` / `Game categories` drawer; familiarity-ordered Level 1 All Games with Mad Libs preserved as one collection; single-column full-width cards; timing controls retained only where central to play.
 - Automated evidence: `testDebugUnitTest`, `compileDebugAndroidTestKotlin`, `lintDebug`, `assembleDebug`, JSON schema/parity/unique-ID validation, APK metadata/permission/signature checks, Tiny Monster APK resource parity, and `git diff --check` passed.
-- APK: `com.kinplay.app`, `0.6.0-beta4` / version code `9`, `22,410,024` bytes, SHA-256 `d1914505d92c9b52a1ad63ae1f9e91da41d0ebd96ee1b1010522f64be4c3298f`; APK Signature Scheme v2 verified.
+- APK: `com.kinplay.app`, `0.6.3` / version code `10`, `22,410,024` bytes, SHA-256 `f18d6e93a4c84f5876c4591254e0d31f2282ef0b1cbd50f7fb1325a829037205`; APK Signature Scheme v2 verified.
+- Source publication: commit `f100058f430cef43ae5a4ecb2481e69dd5bac510` is pushed to `origin/main` and remote SHA matches.
+- Local distribution: the shared-drive root contains exactly one current APK; superseded beta2 and beta3 artifacts are in `release-history`.
+- Google Drive distribution: object `1MO4JEMKc4_yxe2D0s1r9t3DLgs36HdXj` is in folder `12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp`; read-back size and SHA-256 match, and the superseded beta3 object was reversibly trashed.
 - Physical retest: **open**. `adb` is not installed and no Android target is connected in Hogwarts; no device result is claimed.
 - Attachments: the three supplied worksheet references remain unchanged in the private image cache; the shipped Tiny Monster asset is an original Gemini-generated JPEG, not a copied attachment.
 

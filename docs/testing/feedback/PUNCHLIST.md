@@ -1693,3 +1693,6 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - APK verification: package `com.kinplay.app`, version `0.6.3`, code `10`, target SDK 35, APK Signature Scheme v2 verified, only AndroidX dynamic receiver permission present.
 - Content verification: canonical/runtime JSON parity, schema, unique IDs, APK JSON parity, and generated Tiny Monster resource parity passed.
 - Physical retest: open because `adb` is unavailable and no Android target is connected; no device result is claimed.
+- Source publication: commit `f100058f430cef43ae5a4ecb2481e69dd5bac510` is pushed to `origin/main` and remote SHA matches.
+- Local distribution: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.3_MVP.apk` is the sole current root APK; older beta2/beta3 APKs are archived.
+- Google Drive distribution: folder `12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp` contains exactly one active APK, object `1MO4JEMKc4_yxe2D0s1r9t3DLgs36HdXj`; download read-back checksum and size match.
