@@ -17,6 +17,15 @@ data class TimedSession(
 fun KinPlayItem.isTimedSessionEligible(): Boolean =
     status == "active" && type == "activity" && "pick_a_game" in modes
 
+/** The timer is essential only when the reviewed activity explicitly makes it central to play. */
+private val ESSENTIAL_TIMED_SESSION_IDS = setOf(
+    "timed_drawing_tiny_monster",
+    "rainbow_sort_sprint",
+    "cleanup_countdown_game",
+)
+
+fun KinPlayItem.isTimedSessionEssential(): Boolean = id in ESSENTIAL_TIMED_SESSION_IDS
+
 /** Resolve and consume only this game's one-shot override; global settings are not changed. */
 fun startTimedSession(gameId: String, repository: AppSettingsRepository): TimedSession =
     TimedSession(

@@ -103,11 +103,12 @@ fun SettingsScreen(
             )
             PreferenceSection(
                 title = "App color theme",
-                summary = "Accessible native colors for backgrounds, cards, and controls",
+                summary = "Choose a theme by name",
                 options = AppColorTheme.entries,
                 selected = settings.colorTheme,
-                label = { "${it.label} — ${it.description}" },
+                label = AppColorTheme::label,
                 tag = { "setting-theme-${it.wireValue}" },
+                verticalOptions = true,
                 onSelect = { onSettingsChange(settings.copy(colorTheme = it)) },
             )
             PreferenceSection(
@@ -161,6 +162,7 @@ private fun <T> PreferenceSection(
     selected: T,
     label: (T) -> String,
     tag: (T) -> String,
+    verticalOptions: Boolean = false,
     onSelect: (T) -> Unit,
 ) {
     Card(
@@ -184,7 +186,7 @@ private fun <T> PreferenceSection(
                 style = MaterialTheme.typography.bodySmall,
             )
             BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
-                val useHorizontalOptions = maxWidth >= 360.dp && LocalDensity.current.fontScale < 1.5f
+                val useHorizontalOptions = !verticalOptions && maxWidth >= 360.dp && LocalDensity.current.fontScale < 1.5f
                 if (useHorizontalOptions) {
                     Row(
                         modifier = Modifier

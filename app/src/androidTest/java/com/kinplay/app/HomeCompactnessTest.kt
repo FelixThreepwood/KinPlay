@@ -15,6 +15,7 @@ import androidx.compose.ui.test.assertWidthIsAtLeast
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performSemanticsAction
 import androidx.compose.ui.text.TextLayoutResult
@@ -47,7 +48,8 @@ class HomeCompactnessTest {
         val descriptorBounds = descriptor.fetchSemanticsNode().boundsInRoot
         assertTrue("Purpose must sit beside identity", descriptorBounds.left >= identityBounds.right)
 
-        val firstCategory = compose.onNodeWithTag("home-category-quiet_games").assertIsDisplayed()
+        openCategoryDrawer()
+        val firstCategory = compose.onNodeWithTag("home-category-quiet_games").performScrollTo().assertIsDisplayed()
         val firstBounds = firstCategory.fetchSemanticsNode().boundsInRoot
         val density = compose.activity.resources.displayMetrics.density
         assertTrue(
@@ -62,6 +64,7 @@ class HomeCompactnessTest {
     fun representativeWideAndLargeFontHomesKeepEveryCategoryInsideItsTouchTarget() {
         listOf(600 to 1f, 320 to 1.5f).forEach { (width, fontScale) ->
             setHome(width = width, height = 640, fontScale = fontScale)
+            openCategoryDrawer()
 
             assertDescriptorIsSingleLineAndFits()
             QuickCategory.defaultGrid.forEach { category ->
@@ -88,6 +91,7 @@ class HomeCompactnessTest {
     @Test
     fun everyVisibleHomeActionHasAtLeastA48DpTouchTarget() {
         setHome(width = 320, height = 640)
+        openCategoryDrawer()
 
         QuickCategory.defaultGrid.forEach { category ->
             compose.onNodeWithTag("home-category-${category.id}")
@@ -109,6 +113,7 @@ class HomeCompactnessTest {
         val viewport = compose.onNodeWithTag("home-viewport").fetchSemanticsNode().boundsInRoot
         QuickCategory.defaultGrid.forEach { category ->
             val bounds = compose.onNodeWithTag("home-category-${category.id}")
+                .performScrollTo()
                 .assertIsDisplayed()
                 .fetchSemanticsNode().boundsInRoot
             assertTrue("${category.label} starts outside the viewport", bounds.left >= viewport.left)
@@ -132,6 +137,10 @@ class HomeCompactnessTest {
         mutableListOf<TextLayoutResult>().also { layouts ->
             node.performSemanticsAction(SemanticsActions.GetTextLayoutResult) { action -> action(layouts) }
         }
+
+    private fun openCategoryDrawer() {
+        compose.onNodeWithTag("home-activity-themes-toggle").performClick()
+    }
 
     private fun setHome(width: Int, height: Int, fontScale: Float = 1f) {
         compose.setContent {

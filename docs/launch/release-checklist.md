@@ -1,7 +1,7 @@
 # KinPlay release and rollback checklist
 
 Status: operational draft
-Current verified beta: `0.6.0-beta1` (version code `6`)
+Current verified work-in-progress release: `0.6.3` (version code `10`)
 Package: `com.kinplay.app`
 
 Use this checklist for a private beta, closed-test upload, or store candidate. A debug APK may be used for private device testing, but it is not a production Play artifact.
@@ -18,7 +18,7 @@ Use this checklist for a private beta, closed-test upload, or store candidate. A
 ## 2. Version and build identity
 
 - [ ] Increment `versionCode` monotonically.
-- [ ] Set the beta `versionName` before the final build.
+- [ ] Set the work-in-progress `versionName` before the final build.
 - [ ] Use the dated artifact name:
 
 ```text

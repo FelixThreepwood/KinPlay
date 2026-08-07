@@ -4,6 +4,11 @@ import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
@@ -28,9 +33,16 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.GridView
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Lightbulb
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.QuestionMark
+import androidx.compose.material.icons.filled.RecordVoiceOver
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
@@ -70,6 +82,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -106,6 +119,7 @@ import com.kinplay.app.session.TimedSessionProgress
 import com.kinplay.app.session.TimedSessionStatus
 import com.kinplay.app.session.activeSessionSections
 import com.kinplay.app.session.isTimedSessionEligible
+import com.kinplay.app.session.isTimedSessionEssential
 import com.kinplay.app.session.remainingTimeLabel
 import com.kinplay.app.session.startTimedSession
 import com.kinplay.app.ui.KinPlayTheme
@@ -128,6 +142,15 @@ const val RANDOM_GAME_LABEL = "Random game"
 const val ALL_GAMES_AND_ACTIVITIES_LABEL = "All games and activities"
 const val MAD_LIBS_COLLECTION_ID = "mad_libs_collection"
 const val WOULD_YOU_RATHER_ITEM_ID = "would_you_rather_silly_family"
+
+val ALL_GAMES_FAMILIARITY_ORDER = listOf(
+    "quiet_color_hunt",
+    WOULD_YOU_RATHER_ITEM_ID,
+    MAD_LIBS_COLLECTION_ID,
+    "family_charades_animals",
+    "animal_guessing_yes_no",
+    "story_spark_circle",
+)
 const val WOULD_YOU_RATHER_ROUTE = "would_you_rather"
 private val CONTENT_CARD_TWO_COLUMN_MIN_WIDTH = 280.dp
 private const val CONTENT_CARD_STACKED_FONT_SCALE = 1.5f
@@ -172,7 +195,7 @@ data class HomeShortcut(
 
 val HOME_SHORTCUTS = listOf(
     HomeShortcut("refresh", RANDOM_GAME_LABEL, "Choose a ready-to-use game or activity", Routes.QuickPlay, "random_game"),
-    HomeShortcut("grid_view", ALL_GAMES_AND_ACTIVITIES_LABEL, "Choose a game type, then an activity", Routes.PickGame, "all_games_and_activities"),
+    HomeShortcut("grid_view", ALL_GAMES_AND_ACTIVITIES_LABEL, "Browse familiar games and activities", Routes.PickGame, "all_games_and_activities"),
 )
 
 @Composable
@@ -233,7 +256,14 @@ fun KinPlayApp() {
                     composable(Routes.QuickPlay) {
                         QuickPlayScreen(contentPack, favoriteIds, recentIds, navController, ::toggleFavorite)
                     }
-                    composable(Routes.PickGame) { GameTypeListScreen(navController) }
+                    composable(Routes.PickGame) {
+                        GameTypeListScreen(
+                            contentPack = contentPack,
+                            favoriteIds = favoriteIds,
+                            navController = navController,
+                            onToggleFavorite = ::toggleFavorite,
+                        )
+                    }
                     composable(
                         Routes.GameType,
                         arguments = listOf(navArgument("groupId") { type = NavType.StringType }),
@@ -486,10 +516,8 @@ fun HomeScreen(
         },
     ) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding).testTag("home-viewport")) {
-            QuickCategoryGrid { category -> navController.navigate(Routes.category(category.id)) }
-            HOME_SHORTCUTS.forEach { shortcut ->
-                HomeButton(shortcut, "home-action-${shortcut.tag}") { navController.navigate(shortcut.route) }
-            }
+            HomeShortcutRow(navController)
+            HomeActivityThemesDrawer { category -> navController.navigate(Routes.category(category.id)) }
             val favoriteItems = contentPack.favoriteItems(favoriteIds)
             val recentItems = contentPack.recentItems(recentIds)
             if (favoriteItems.isNotEmpty()) {
@@ -523,17 +551,89 @@ private fun HomePreview() {
     }
 }
 
+fun homeCategoryColumnCount(maxWidthDp: Int, fontScale: Float): Int =
+    if (maxWidthDp >= 360 && fontScale < 1.5f) 2 else 1
+
+@Composable
+private fun HomeShortcutRow(navController: NavController) {
+    BoxWithConstraints(modifier = Modifier.fillMaxWidth().testTag("home-primary-actions")) {
+        val columns = homeCategoryColumnCount(maxWidth.value.toInt(), LocalDensity.current.fontScale)
+        if (columns == 2) {
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                HOME_SHORTCUTS.forEach { shortcut ->
+                    HomeButton(
+                        shortcut = shortcut,
+                        testTag = "home-action-${shortcut.tag}",
+                        modifier = Modifier.weight(1f),
+                    ) { navController.navigate(shortcut.route) }
+                }
+            }
+        } else {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                HOME_SHORTCUTS.forEach { shortcut ->
+                    HomeButton(shortcut, "home-action-${shortcut.tag}") { navController.navigate(shortcut.route) }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun HomeActivityThemesDrawer(onSelect: (QuickCategory) -> Unit) {
+    var expanded by rememberSaveable { mutableStateOf(false) }
+    Card(
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
+        shape = RoundedCornerShape(22.dp),
+        modifier = Modifier.fillMaxWidth().testTag("home-activity-themes-drawer"),
+    ) {
+        Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            OutlinedButton(
+                onClick = { expanded = !expanded },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("home-activity-themes-toggle")
+                    .semantics {
+                        contentDescription = "Activity themes and Game categories"
+                        stateDescription = if (expanded) "Expanded" else "Collapsed"
+                    },
+            ) {
+                Icon(
+                    imageVector = if (expanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
+                    contentDescription = null,
+                )
+                Column(modifier = Modifier.weight(1f), horizontalAlignment = Alignment.Start) {
+                    Text("Activity themes", fontWeight = FontWeight.Bold)
+                    Text("Game categories", style = MaterialTheme.typography.bodySmall)
+                }
+            }
+            AnimatedVisibility(
+                visible = expanded,
+                enter = slideInHorizontally(initialOffsetX = { -it }) + fadeIn(),
+                exit = slideOutHorizontally(targetOffsetX = { -it }) + fadeOut(),
+            ) {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.testTag("home-game-categories-drawer")) {
+                    Text("Game categories", fontWeight = FontWeight.Bold)
+                    QuickCategoryGrid(onSelect)
+                }
+            }
+        }
+    }
+}
+
 @Composable
 fun QuickCategoryGrid(onSelect: (QuickCategory) -> Unit) {
     BoxWithConstraints {
         val fontScale = LocalDensity.current.fontScale
+        val columns = homeCategoryColumnCount(maxWidth.value.toInt(), fontScale)
         val cardHeight = when {
             fontScale >= 1.5f -> 136.dp
             maxWidth < 360.dp -> 108.dp
             else -> 88.dp
         }
+        val rows = if (columns == 2) QuickCategory.defaultGrid.chunked(2) else QuickCategory.defaultGrid.map(::listOf)
         Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            QuickCategory.defaultGrid.chunked(2).forEach { categoryRow ->
+            rows.forEach { categoryRow ->
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     categoryRow.forEach { category ->
                         Card(
@@ -559,6 +659,7 @@ fun QuickCategoryGrid(onSelect: (QuickCategory) -> Unit) {
                             }
                         }
                     }
+                    if (categoryRow.size == 1 && columns == 2) Spacer(modifier = Modifier.weight(1f))
                 }
             }
         }
@@ -650,12 +751,17 @@ private fun HomeShortcutIcon(shortcut: HomeShortcut, testTag: String) {
 }
 
 @Composable
-fun HomeButton(shortcut: HomeShortcut, testTag: String, onClick: () -> Unit) {
+fun HomeButton(
+    shortcut: HomeShortcut,
+    testTag: String,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit,
+) {
     Card(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(22.dp),
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .heightIn(min = 48.dp)
             .testTag(testTag)
@@ -702,7 +808,8 @@ fun QuickPlayScreen(
     navController: NavController,
     onToggleFavorite: (String) -> Unit = {},
 ) {
-    val quickPick = remember(contentPack.items, recentIds) {
+    var rerollNonce by rememberSaveable { mutableStateOf(0) }
+    val quickPick = remember(contentPack.items, recentIds, rerollNonce) {
         contentPack.items.pickForModeAvoidingRecent("quick_play", recentIds)
     }
     Scaffold(topBar = {
@@ -719,6 +826,13 @@ fun QuickPlayScreen(
             } else {
                 ContentCard(quickPick, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(quickPick.id) })
                 Button(onClick = { navController.openItem(quickPick) }) { Text("Start this game or activity") }
+                OutlinedButton(
+                    onClick = { rerollNonce += 1 },
+                    modifier = Modifier.testTag("random-reroll-button"),
+                ) {
+                    Icon(Icons.Default.Refresh, contentDescription = null)
+                    Text("Pick another")
+                }
             }
             OutlinedButton(onClick = { navController.popBackStack() }) { Text("Back home") }
         }
@@ -727,34 +841,20 @@ fun QuickPlayScreen(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun GameTypeListScreen(navController: NavController) {
+fun GameTypeListScreen(
+    contentPack: ContentPack,
+    favoriteIds: Set<String>,
+    navController: NavController,
+    onToggleFavorite: (String) -> Unit = {},
+) {
     DestinationScreen(title = ALL_GAMES_AND_ACTIVITIES_LABEL, navController = navController, showSearch = true) {
         Text(
-            "Choose a game type first, then pick an activity.",
+            "Level 1 games and activities are ordered from most familiar to less familiar.",
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
-        GameTypeGroup.entries.forEach { group ->
-            Card(
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-                elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
-                shape = RoundedCornerShape(20.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .testTag("game-type-${group.id}")
-                    .clickable(
-                        onClickLabel = "Open ${group.label}",
-                        role = Role.Button,
-                        onClick = { navController.navigate(Routes.gameType(group.id)) },
-                    ),
-            ) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(5.dp),
-                ) {
-                    Text(group.label, fontWeight = FontWeight.Bold)
-                    Text(group.description, style = MaterialTheme.typography.bodySmall)
-                }
-            }
+        SectionTitle("Level 1", "Recognizable games first; Mad Libs stays together as one collection.")
+        contentPack.allGamesLevelOneItems().forEach { item ->
+            ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
         }
     }
 }
@@ -911,52 +1011,23 @@ fun CompactCardDetails(
     isFavorite: Boolean = false,
     onToggleFavorite: () -> Unit = {},
 ) {
-    BoxWithConstraints(modifier = modifier.fillMaxWidth()) {
-        val useStackedFallback =
-            maxWidth < CONTENT_CARD_TWO_COLUMN_MIN_WIDTH ||
-                LocalDensity.current.fontScale >= CONTENT_CARD_STACKED_FONT_SCALE
-
-        if (useStackedFallback) {
-            Column(
-                modifier = Modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
-            ) {
-                CompactCardPrimaryContent(
-                    item = item,
-                    title = title,
-                    expanded = expanded,
-                    isFavorite = isFavorite,
-                    onToggleFavorite = onToggleFavorite,
-                )
-                CompactCardTrailingContent(
-                    item = item,
-                    expanded = expanded,
-                    navController = navController,
-                    modifier = Modifier.fillMaxWidth(),
-                )
-            }
-        } else {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
-                verticalAlignment = Alignment.Top,
-            ) {
-                CompactCardPrimaryContent(
-                    item = item,
-                    title = title,
-                    expanded = expanded,
-                    isFavorite = isFavorite,
-                    onToggleFavorite = onToggleFavorite,
-                    modifier = Modifier.weight(1f),
-                )
-                CompactCardTrailingContent(
-                    item = item,
-                    expanded = expanded,
-                    navController = navController,
-                    modifier = Modifier.fillMaxWidth(0.42f),
-                )
-            }
-        }
+    Column(
+        modifier = modifier.fillMaxWidth().testTag("content-card-single-column-${item.id}"),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        CompactCardPrimaryContent(
+            item = item,
+            title = title,
+            expanded = expanded,
+            isFavorite = isFavorite,
+            onToggleFavorite = onToggleFavorite,
+        )
+        CompactCardTrailingContent(
+            item = item,
+            expanded = expanded,
+            navController = navController,
+            modifier = Modifier.fillMaxWidth(),
+        )
     }
 }
 
@@ -1028,7 +1099,7 @@ private fun CompactCardTrailingContent(
 ) {
     Column(
         modifier = modifier,
-        horizontalAlignment = Alignment.End,
+        horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.spacedBy(3.dp),
     ) {
         if (expanded) {
@@ -1039,7 +1110,7 @@ private fun CompactCardTrailingContent(
                 text = item.energyLevel,
                 modifier = Modifier.fillMaxWidth(),
                 style = MaterialTheme.typography.bodySmall,
-                textAlign = TextAlign.End,
+                textAlign = TextAlign.Start,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             Button(onClick = { navController.openItem(item) }) { Text("Open") }
@@ -1055,7 +1126,7 @@ private fun CompactCardDescriptor(label: String) {
         style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.colorScheme.onSecondaryContainer,
         fontWeight = FontWeight.Bold,
-        textAlign = TextAlign.End,
+        textAlign = TextAlign.Start,
     )
 }
 
@@ -1159,7 +1230,10 @@ private fun ActivityDetailSurface(
                     if (item.id == CHARADES_ITEM_ID) {
                         CharadesCardsPanel(enabled = !isLocked)
                     }
-                    if (item.isTimedSessionEligible()) {
+                    if (item.id == "race_like_an_animal") {
+                        RaceAnimalWheel(enabled = !isLocked)
+                    }
+                    if (item.isTimedSessionEligible() && item.isTimedSessionEssential()) {
                         SessionConfigurationControls(
                             itemId = item.id,
                             settings = settings,
@@ -1173,6 +1247,8 @@ private fun ActivityDetailSurface(
                             },
                         )
                     }
+                    VisualInstructionGuide(item)
+                    TinyMonsterVisualGuide(item)
                     item.detailSections().forEach { section ->
                         SectionList(section.title, section.lines)
                     }
@@ -1286,6 +1362,9 @@ private fun TimedSessionSurface(
             if (item.id == CHARADES_ITEM_ID) {
                 CharadesCardsPanel(enabled = !isLocked)
             }
+            if (item.id == "race_like_an_animal") {
+                RaceAnimalWheel(enabled = !isLocked)
+            }
             Card(
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
                 modifier = Modifier.fillMaxWidth(),
@@ -1309,6 +1388,7 @@ private fun TimedSessionSurface(
                     Text("${configuration.duration.label} per round")
                 }
             }
+            VisualInstructionGuide(item)
             item.activeSessionSections().forEach { section ->
                 SectionList(section.title, section.lines)
             }
@@ -1490,10 +1570,65 @@ fun InfoPanel(title: String, body: String) {
 }
 
 @Composable
+fun VisualInstructionGuide(item: KinPlayItem) {
+    Card(
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer),
+        modifier = Modifier.fillMaxWidth().testTag("visual-instruction-guide-${item.id}"),
+        shape = RoundedCornerShape(18.dp),
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(12.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            VisualGuideStep(Icons.Default.Build, "Prepare")
+            Text("→", color = MaterialTheme.colorScheme.onTertiaryContainer)
+            VisualGuideStep(Icons.Default.PlayArrow, "Play")
+            Text("→", color = MaterialTheme.colorScheme.onTertiaryContainer)
+            VisualGuideStep(Icons.Default.Person, "Share")
+        }
+    }
+}
+
+@Composable
+private fun VisualGuideStep(icon: androidx.compose.ui.graphics.vector.ImageVector, label: String) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        Icon(icon, contentDescription = label, tint = MaterialTheme.colorScheme.onTertiaryContainer)
+        Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onTertiaryContainer)
+    }
+}
+
+private fun sectionIcon(title: String): androidx.compose.ui.graphics.vector.ImageVector = when {
+    title.contains("material", ignoreCase = true) -> Icons.Default.Build
+    title.contains("setup", ignoreCase = true) -> Icons.Default.Settings
+    title.contains("step", ignoreCase = true) || title.contains("clue", ignoreCase = true) -> Icons.Default.PlayArrow
+    title.contains("prompt", ignoreCase = true) -> Icons.Default.Lightbulb
+    title.contains("follow", ignoreCase = true) -> Icons.Default.QuestionMark
+    title.contains("read", ignoreCase = true) -> Icons.Default.RecordVoiceOver
+    else -> Icons.Default.Refresh
+}
+
+@Composable
 fun SectionList(title: String, values: List<String>) {
     if (values.isNotEmpty()) {
-        Text(title, fontWeight = FontWeight.Bold)
-        values.forEachIndexed { index, value -> Text("${index + 1}. $value") }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            Icon(sectionIcon(title), contentDescription = title, tint = MaterialTheme.colorScheme.primary)
+            Text(title, fontWeight = FontWeight.Bold)
+        }
+        values.forEachIndexed { index, value ->
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(start = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.Top,
+            ) {
+                Text("${index + 1}", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                Text(value, modifier = Modifier.weight(1f))
+            }
+        }
     }
 }
 
@@ -1629,6 +1764,16 @@ data class ContentPack(
     fun madLibs() = activeItems().filter { it.type == "mad_libs" }
     fun gameLibraryItems() = activeItems()
     fun pickGameItems() = gameLibraryItems()
+    fun allGamesLevelOneItems(): List<KinPlayItem> {
+        val collection = madLibs().takeIf { it.isNotEmpty() }?.let(::madLibsCollectionItem)
+        val candidates = activeItems().filterNot { it.type == "mad_libs" } + listOfNotNull(collection)
+        val byId = candidates.associateBy { it.id }
+        val familiar = ALL_GAMES_FAMILIARITY_ORDER.mapNotNull(byId::get)
+        val remaining = candidates
+            .filterNot { it.id in ALL_GAMES_FAMILIARITY_ORDER }
+            .sortedWith(compareBy<KinPlayItem> { it.minAge }.thenBy { it.title })
+        return familiar + remaining
+    }
     fun itemsForQuickCategory(categoryId: String) =
         if (categoryId == QuickCategory.QUIET_GAMES.id) quietGamesDisplayItems() else items.itemsForQuickCategory(categoryId)
     fun quietGamesDisplayItems(): List<KinPlayItem> {

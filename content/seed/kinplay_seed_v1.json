@@ -738,6 +738,13 @@
         "Let each child name their monster."
       ],
       "parentNotes": "No judging art quality; the goal is fast playful creativity.",
+      "visualAssets": [
+        {
+          "id": "tiny_monster_visual_guide",
+          "resource": "tiny_monster_visual_guide",
+          "altText": "Original portrait picture guide showing a friendly tiny monster and six die-based choices for bodies, eyes, mouths, arms, and legs."
+        }
+      ],
       "variations": [
         "Draw a robot, snack creature, or castle pet."
       ],

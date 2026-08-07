@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-06T08:28:20Z",
-  "nextItemNumber": 64,
+  "updatedAt": "2026-08-06T22:50:43Z",
+  "nextItemNumber": 78,
   "batches": [
     {
       "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
@@ -569,6 +569,258 @@
         "activeApkCount": 1,
         "supersededBeta2": "reversibly_trashed"
       }
+    },
+    {
+      "batchId": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.6.0-beta4",
+        "versionCode": 9
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-08-06T15:40:54-07:00",
+      "sourceNoteCount": 11,
+      "uniqueNewSourceNoteCount": 11,
+      "canonicalItemCount": 19,
+      "existingCanonicalItemCount": 5,
+      "newCanonicalItemCount": 14,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "existingCanonicalItemIds": [
+        "KPF-0004",
+        "KPF-0010",
+        "KPF-0017",
+        "KPF-0055",
+        "KPF-0058"
+      ],
+      "newCanonicalItemIds": [
+        "KPF-0064",
+        "KPF-0065",
+        "KPF-0066",
+        "KPF-0067",
+        "KPF-0068",
+        "KPF-0069",
+        "KPF-0070",
+        "KPF-0071",
+        "KPF-0072",
+        "KPF-0073",
+        "KPF-0074",
+        "KPF-0075",
+        "KPF-0076",
+        "KPF-0077"
+      ],
+      "canonicalItemIds": [
+        "KPF-0004",
+        "KPF-0010",
+        "KPF-0017",
+        "KPF-0055",
+        "KPF-0058",
+        "KPF-0064",
+        "KPF-0065",
+        "KPF-0066",
+        "KPF-0067",
+        "KPF-0068",
+        "KPF-0069",
+        "KPF-0070",
+        "KPF-0071",
+        "KPF-0072",
+        "KPF-0073",
+        "KPF-0074",
+        "KPF-0075",
+        "KPF-0076",
+        "KPF-0077"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-3D279C88-CF60-40B7-B09A-EF407239A89A": [
+          "KPF-0004",
+          "KPF-0064"
+        ],
+        "KP-NOTE-1E8C3B39-4BBF-44F8-B0F7-143993ADE636": [
+          "KPF-0017",
+          "KPF-0065",
+          "KPF-0066"
+        ],
+        "KP-NOTE-41275DAB-D14F-4523-9149-A40922E95FD3": [
+          "KPF-0067"
+        ],
+        "KP-NOTE-512BCF4D-3404-4D15-9D7F-82DC650238DB": [
+          "KPF-0068"
+        ],
+        "KP-NOTE-7A845776-A132-4FBB-96D4-461CA64C3FA8": [
+          "KPF-0069",
+          "KPF-0070",
+          "KPF-0071"
+        ],
+        "KP-NOTE-1471739F-9A9F-40CC-93B2-686326B8741E": [
+          "KPF-0069",
+          "KPF-0072"
+        ],
+        "KP-NOTE-31524398-ADF1-4FED-A7FB-D62C3E5F91EF": [
+          "KPF-0058",
+          "KPF-0073"
+        ],
+        "KP-NOTE-766272D5-4E46-488C-93D1-B749DE2723CB": [
+          "KPF-0074"
+        ],
+        "KP-NOTE-C381DF5B-D267-4A5A-9E4C-EA261969A3E9": [
+          "KPF-0010",
+          "KPF-0075"
+        ],
+        "KP-NOTE-8041A19A-A852-401D-AA51-B562401DC1B3": [
+          "KPF-0076"
+        ],
+        "KP-NOTE-3578A01C-6F57-44E0-A021-4093A3128150": [
+          "KPF-0055",
+          "KPF-0077"
+        ]
+      },
+      "childIdentifyingInformationRemoved": false,
+      "privacyReview": "No child-identifying information was present in the payload, and no names, contact details, images, birthdates, or precise locations were written to project records.",
+      "attachmentHandling": "One note lists three tester-confirmed PNG references. Project records retain only generic attachment count/type and unprocessed status; the private raw archive retains the supplied attachment metadata. No binary attachment was opened, copied, uploaded, or used for generation during intake.",
+      "duplicateHandling": "All 11 source-note IDs are new; no replay increased an occurrence count. Five existing canonical items received unique supporting evidence, and 14 separately testable canonical items were created. Notes 5 and 6 share the category-surface requirement in KPF-0069, while their conflicting drawer labels and interaction variants remain separate. The single-column card request remains separate from the prior two-column item.",
+      "subjectHandling": "The subject uses 0.6.0-beta3+8 rather than the registry’s parenthesized version-code form; the body identity and source-note IDs are valid, so intake is accepted and the subject form is recorded as an exception.",
+      "codeChangeAuthorization": "Intake and triage only; no application code, content, visual asset, attachment, or build change is authorized by this batch.",
+      "implementationStatus": "fixed_awaiting_physical_retest",
+      "acknowledgment": {
+        "platform": "discord",
+        "channelName": "app-development",
+        "channelId": "1501041077031800932",
+        "messageId": "1535057498514653237",
+        "sentAt": "2026-08-06T22:50:43Z",
+        "delivery": "success"
+      },
+      "implementation": {
+        "build": {
+          "versionName": "0.6.3",
+          "versionCode": 10
+        },
+        "authorization": "Project-owner standing completion goal: implement all feedback from this named batch and carry it through the next beta release.",
+        "status": "fixed_awaiting_physical_retest",
+        "productDecisions": {
+          "homeDrawer": "One shared collapsed Activity themes/Game categories drawer; this is the conservative reconciliation of the two conflicting labels/variants.",
+          "allGames": "Stable Level 1 familiarity order with Mad Libs preserved as one parent collection.",
+          "cards": "Single-column full-width cards supersede the prior two-column presentation for this beta.",
+          "timers": "Only activities whose play definition makes timing central retain detail-page session controls; they remain discoverable with essential UI."
+        },
+        "coverage": [
+          {
+            "id": "KPF-0004",
+            "status": "implemented",
+            "evidence": "Race Like an Animal remains active and now exposes a flickable snapping animal wheel with selected-animal state."
+          },
+          {
+            "id": "KPF-0010",
+            "status": "implemented",
+            "evidence": "Home, All Games, random reroll, single-column cards, visual instruction cues, and concrete content previews reduce parent invention and setup burden."
+          },
+          {
+            "id": "KPF-0017",
+            "status": "implemented",
+            "evidence": "Theme and timing settings remain persisted; theme names use vertical one-row choices."
+          },
+          {
+            "id": "KPF-0055",
+            "status": "implemented",
+            "evidence": "Instruction details retain play-critical guidance while removing nonessential metadata and hiding nonessential session controls."
+          },
+          {
+            "id": "KPF-0058",
+            "status": "implemented",
+            "evidence": "Random game and All games and activities remain the first Home browse actions, before recents."
+          },
+          {
+            "id": "KPF-0064",
+            "status": "implemented",
+            "evidence": "RaceAnimalWheel.kt implements LazyRow snapping, drag/flick selection, accessible selected state, and deterministic animal choices."
+          },
+          {
+            "id": "KPF-0065",
+            "status": "implemented",
+            "evidence": "SettingsScreen.kt renders AppColorTheme labels only."
+          },
+          {
+            "id": "KPF-0066",
+            "status": "implemented",
+            "evidence": "Settings theme choices use verticalOptions=true; timing sections retain their responsive behavior."
+          },
+          {
+            "id": "KPF-0067",
+            "status": "implemented",
+            "evidence": "QuickPlayScreen exposes a Pick another action backed by rerollNonce without leaving the random flow."
+          },
+          {
+            "id": "KPF-0068",
+            "status": "implemented",
+            "evidence": "All Games uses a stable familiarity order and keeps Mad Libs as one parent collection."
+          },
+          {
+            "id": "KPF-0069",
+            "status": "implemented",
+            "evidence": "Home exposes all six activity categories through the collapsed Activity themes/Game categories drawer."
+          },
+          {
+            "id": "KPF-0070",
+            "status": "implemented",
+            "evidence": "QuickCategoryGrid uses a 2-column/3-row layout when width and font scale permit, with a one-column fallback."
+          },
+          {
+            "id": "KPF-0071",
+            "status": "implemented",
+            "evidence": "The shared drawer control visibly includes Game categories, exposes expanded/collapsed stateDescription, and preserves six category controls."
+          },
+          {
+            "id": "KPF-0072",
+            "status": "implemented",
+            "evidence": "The shared Activity themes control animates a horizontal drawer and carries accessible expanded-state semantics."
+          },
+          {
+            "id": "KPF-0073",
+            "status": "implemented",
+            "evidence": "Random game and All games and activities share the first Home row when supported; narrow and large-text layouts stack safely."
+          },
+          {
+            "id": "KPF-0074",
+            "status": "implemented",
+            "evidence": "CompactCardDetails is a full-width single-column card with a stable test tag."
+          },
+          {
+            "id": "KPF-0075",
+            "status": "implemented",
+            "evidence": "VisualInstructionGuide and per-section visual cues are rendered for all detail/session instruction flows while text alternatives remain."
+          },
+          {
+            "id": "KPF-0076",
+            "status": "implemented",
+            "evidence": "Tiny Monster has an original Gemini-generated portrait visual guide, integrated byte-for-byte as tiny_monster_visual_guide.jpg; source worksheet references remain unchanged."
+          },
+          {
+            "id": "KPF-0077",
+            "status": "implemented",
+            "evidence": "Detail session controls are gated by isTimedSessionEssential; Tiny Monster, Rainbow Sort Sprint, and Cleanup Countdown retain essential timing while Paper Airplanes does not."
+          }
+        ],
+        "automatedVerification": [
+          "testDebugUnitTest passed",
+          "compileDebugAndroidTestKotlin passed",
+          "lintDebug passed",
+          "assembleDebug passed",
+          "JSON schema, canonical/runtime parity, unique IDs, and APK asset parity passed",
+          "APK metadata, permission, signature, and Tiny Monster resource parity passed",
+          "git diff --check passed"
+        ],
+        "physicalRetest": "Not run: no adb command or connected Android target is available in Hogwarts.",
+        "apk": {
+          "path": "app/build/outputs/apk/debug/app-debug.apk",
+          "bytes": 22410024,
+          "sha256": "f18d6e93a4c84f5876c4591254e0d31f2282ef0b1cbd50f7fb1325a829037205",
+          "signature": "APK Signature Scheme v2 verified",
+          "permissions": [
+            "com.kinplay.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+          ]
+        }
+      }
     }
   ],
   "items": [
@@ -663,21 +915,33 @@
       ],
       "priority": "backlog",
       "affectedBuilds": [
-        "0.3.0-beta1 (3)"
+        "0.3.0-beta1 (3)",
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
       ],
       "screen": "category/quiet_games",
       "targetCategory": "active_high_energy",
       "targetCategoryInferenceConfidence": 0.95,
       "normalizedFinding": "Add a race in which participants choose an animal and imitate its movement. Suggested animals include kangaroo, cheetah, rabbit, and frog.",
       "expectedBehavior": "The activity explains animal selection, a safe race area, and animal-style movement.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-3B05B013-BD41-408C-82C5-8C908F15D1A1"
+        "KP-NOTE-3B05B013-BD41-408C-82C5-8C908F15D1A1",
+        "KP-NOTE-3D279C88-CF60-40B7-B09A-EF407239A89A"
       ],
       "reproductionStatus": "not_applicable_content_request",
       "implementationStatus": "complete",
-      "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "latestIntakeBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestIntakeObservation": "The beta3 report refines animal selection with a proposed touch-driven spin wheel; the interaction is separately tracked in KPF-0064.",
+      "latestIntakeCodeAuthorization": "none — passive intake and triage only",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "Race Like an Animal remains active and now exposes a flickable snapping animal wheel with selected-animal state.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
     },
     {
       "id": "KPF-0005",
@@ -847,14 +1111,18 @@
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.3.0-beta1 (3)"
+        "0.3.0-beta1 (3)",
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
       ],
       "screen": "home",
       "normalizedFinding": "KinPlay should supply ready-to-use inspiration, choices, and facilitation so an exhausted or overwhelmed parent does not have to invent the activity. The intended outcome is family interaction, closeness, and children’s creativity and imagination.",
       "expectedBehavior": "Core flows provide immediately usable choices and guidance while minimizing decisions, setup work, and creative effort required from the parent.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-B3C04782-B438-4B0E-876D-3A87A15C8D37"
+        "KP-NOTE-B3C04782-B438-4B0E-876D-3A87A15C8D37",
+        "KP-NOTE-C381DF5B-D267-4A5A-9E4C-EA261969A3E9"
       ],
       "relatedItemIds": [
         "KPF-0001",
@@ -865,8 +1133,16 @@
       ],
       "reproductionStatus": "product_acceptance_review_required",
       "implementationStatus": "complete",
-      "retestBuild": "0.4.0-beta1 (4)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest"
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "latestIntakeBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestIntakeObservation": "The beta3 keep-this report reinforces the low-cognitive-load principle through visual-first instructions and minimal text; the cross-library visual requirement is separately tracked in KPF-0075.",
+      "latestIntakeCodeAuthorization": "none — passive intake and triage only",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "Home, All Games, random reroll, single-column cards, visual instruction cues, and concrete content previews reduce parent invention and setup burden.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
     },
     {
       "id": "KPF-0011",
@@ -1082,23 +1358,26 @@
       "screen": "settings",
       "normalizedFinding": "Provide a settings area for game timers, activity durations, and app color themes.",
       "expectedBehavior": "A tester can review and change supported timing and theme preferences from one stable settings destination, with choices persisted across launches.",
-      "occurrenceCount": 3,
+      "occurrenceCount": 4,
       "sourceNoteIds": [
         "KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F",
         "KP-NOTE-A6DA9B34-B53F-4C28-84C8-A52BC35BF97E",
-        "KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B"
+        "KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B",
+        "KP-NOTE-1E8C3B39-4BBF-44F8-B0F7-143993ADE636"
       ],
       "reproductionStatus": "product_and_data_model_specification_required",
       "status": "fixed_awaiting_retest",
       "affectedBuilds": [
         "0.4.0-beta1 (4)",
         "0.6.0-beta2 (7)",
-        "0.6.0-beta3 (8)"
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
       ],
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta3 (8)",
-      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
-      "implementationEvidence": "Settings persists timer, activity duration, round, theme, launcher, and session preferences through the existing versioned repository.",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Theme and timing settings remain persisted; theme names use vertical one-row choices.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1106,19 +1385,25 @@
         "KPF-0020"
       ],
       "latestObservation": "The 0.6.0-beta2 feedback requests a compact horizontal Settings timing layout and two additional themes; the refinements are tracked in KPF-0059 and KPF-0060.",
-      "implementationAuthorization": "Direct user request in the active Discord session.",
-      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "latestImplementationBuild": "0.6.3 (10)",
       "releaseEvidence": {
-        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
-        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
-        "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)",
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.3_MVP.apk",
+        "sha256": "f18d6e93a4c84f5876c4591254e0d31f2282ef0b1cbd50f7fb1325a829037205",
+        "bytes": 22410024,
+        "version": "0.6.3 (10)",
         "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
         "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
         "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact"
+        "remoteReadback": "passed_byte_exact",
+        "signature": "APK Signature Scheme v2 verified",
+        "deviceResult": "not_run_adb_unavailable"
       },
-      "latestVerificationAt": "2026-08-06T08:28:20Z"
+      "latestVerificationAt": "2026-08-06T23:49:55Z",
+      "latestIntakeBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestIntakeObservation": "The beta3 report adds theme-selector naming and layout refinements; the separately testable requirements are tracked in KPF-0065 and KPF-0066.",
+      "latestIntakeCodeAuthorization": "none — passive intake and triage only",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C"
     },
     {
       "id": "KPF-0018",
@@ -2461,14 +2746,17 @@
       "priority": "backlog",
       "affectedBuilds": [
         "0.6.0-beta2 (7)",
-        "0.6.0-beta3 (8)"
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
       ],
       "screen": "detail/instructions/*",
       "normalizedFinding": "Instruction pages should not show age range, typical duration, activity type, or one-on-one/group suitability metadata.",
       "expectedBehavior": "Instruction pages focus on play instructions and required safety or accessibility content; nonessential metadata is omitted consistently across games.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-3D0F19F5-849D-40AB-88A8-5C5A7B63E4FB"
+        "KP-NOTE-3D0F19F5-849D-40AB-88A8-5C5A7B63E4FB",
+        "KP-NOTE-3578A01C-6F57-44E0-A021-4093A3128150"
       ],
       "reproductionStatus": "content_inventory_and_safety_review_required",
       "implementationStatus": "complete",
@@ -2478,22 +2766,28 @@
         "KPF-0032"
       ],
       "triageNotes": "Required safety, legal, accessibility, and play-critical information remains subject to item-by-item review; this record covers nonessential metadata only.",
-      "implementationEvidence": "Instruction surfaces no longer render age, typical duration, energy/activity type, or participant-suitability metadata.",
-      "implementationAuthorization": "Direct user request in the active Discord session.",
-      "latestImplementationBuild": "0.6.0-beta3 (8)",
-      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
-      "retestBuild": "0.6.0-beta3 (8)",
+      "implementationEvidence": "Instruction details retain play-critical guidance while removing nonessential metadata and hiding nonessential session controls.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "retestBuild": "0.6.3 (10)",
       "releaseEvidence": {
-        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
-        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
-        "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)",
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.3_MVP.apk",
+        "sha256": "f18d6e93a4c84f5876c4591254e0d31f2282ef0b1cbd50f7fb1325a829037205",
+        "bytes": 22410024,
+        "version": "0.6.3 (10)",
         "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
         "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
         "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact"
+        "remoteReadback": "passed_byte_exact",
+        "signature": "APK Signature Scheme v2 verified",
+        "deviceResult": "not_run_adb_unavailable"
       },
-      "latestVerificationAt": "2026-08-06T08:28:20Z"
+      "latestVerificationAt": "2026-08-06T23:49:55Z",
+      "latestIntakeBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestIntakeObservation": "The beta3 report extends instruction-page minimization to timer, round, and session controls; the essential-versus-collapsed rule is separately tracked in KPF-0077.",
+      "latestIntakeCodeAuthorization": "none — passive intake and triage only",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C"
     },
     {
       "id": "KPF-0056",
@@ -2602,14 +2896,17 @@
       "priority": "backlog",
       "affectedBuilds": [
         "0.6.0-beta2 (7)",
-        "0.6.0-beta3 (8)"
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
       ],
       "screen": "home",
       "normalizedFinding": "On Home Level 0, place Random game and All games and activities before the recently played games list.",
       "expectedBehavior": "Primary browse and start actions appear before recents in reading and focus order, while recently played games remain available below.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-5C67464E-BA76-4E0A-AEF5-F39C2B5FBCE9"
+        "KP-NOTE-5C67464E-BA76-4E0A-AEF5-F39C2B5FBCE9",
+        "KP-NOTE-31524398-ADF1-4FED-A7FB-D62C3E5F91EF"
       ],
       "reproductionStatus": "home_layout_and_focus_order_review_required",
       "implementationStatus": "complete",
@@ -2619,22 +2916,28 @@
         "KPF-0006",
         "KPF-0035"
       ],
-      "implementationEvidence": "Home renders Random game and All games and activities before favorites and recently played content.",
-      "implementationAuthorization": "Direct user request in the active Discord session.",
-      "latestImplementationBuild": "0.6.0-beta3 (8)",
-      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
-      "retestBuild": "0.6.0-beta3 (8)",
+      "implementationEvidence": "Random game and All games and activities remain the first Home browse actions, before recents.",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "retestBuild": "0.6.3 (10)",
       "releaseEvidence": {
-        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
-        "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
-        "bytes": 21613823,
-        "version": "0.6.0-beta3 (8)",
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.3_MVP.apk",
+        "sha256": "f18d6e93a4c84f5876c4591254e0d31f2282ef0b1cbd50f7fb1325a829037205",
+        "bytes": 22410024,
+        "version": "0.6.3 (10)",
         "sourceCommit": "3aa866b7525632681c728be98279fb9521cd21f7",
         "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
         "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact"
+        "remoteReadback": "passed_byte_exact",
+        "signature": "APK Signature Scheme v2 verified",
+        "deviceResult": "not_run_adb_unavailable"
       },
-      "latestVerificationAt": "2026-08-06T08:28:20Z"
+      "latestVerificationAt": "2026-08-06T23:49:55Z",
+      "latestIntakeBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestIntakeObservation": "The beta3 report reinforces primary Home action ordering and separately requests a same-row left/right arrangement in KPF-0073.",
+      "latestIntakeCodeAuthorization": "none — passive intake and triage only",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C"
     },
     {
       "id": "KPF-0059",
@@ -2864,6 +3167,562 @@
         "remoteReadback": "passed_byte_exact"
       },
       "latestVerificationAt": "2026-08-06T08:28:20Z"
+    },
+    {
+      "id": "KPF-0064",
+      "title": "Add a flickable animal-selection wheel to Race Like an Animal",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "interaction_design",
+        "feature_request",
+        "game_mechanic"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "detail/race_like_an_animal",
+      "contentId": "race_like_an_animal",
+      "normalizedFinding": "Add a touch-driven spin wheel to Race Like an Animal so a tester can flick the wheel and receive an animal selection.",
+      "expectedBehavior": "The wheel responds to a finger flick, spins with understandable motion, and settles on one animal that becomes the selected movement target.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3D279C88-CF60-40B7-B09A-EF407239A89A"
+      ],
+      "reproductionStatus": "interaction_design_and_touch_behavior_review_required",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0004"
+      ],
+      "triageNotes": "This is a separately testable interaction refinement to the existing Race Like an Animal content item. No animation, interaction, or asset work was performed during intake.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "RaceAnimalWheel.kt implements LazyRow snapping, drag/flick selection, accessible selected state, and deterministic animal choices.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0065",
+      "title": "Show only theme names in the Settings color-theme selector",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "settings",
+        "content_copy",
+        "visual_design"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "settings",
+      "normalizedFinding": "In the app color-theme selector, display each theme name without a descriptive color sentence or palette explanation.",
+      "expectedBehavior": "Each theme choice presents its name as the primary visible label; necessary accessible semantics remain available without restoring redundant descriptions.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-1E8C3B39-4BBF-44F8-B0F7-143993ADE636"
+      ],
+      "reproductionStatus": "settings_copy_and_accessibility_review_required",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0017",
+        "KPF-0066"
+      ],
+      "triageNotes": "This is separate from the theme-list layout change because visible copy and responsive list behavior require different acceptance checks.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "SettingsScreen.kt renders AppColorTheme labels only.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0066",
+      "title": "Use a vertical one-row layout for the Settings theme list",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "settings",
+        "responsive_layout",
+        "interaction_design"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "settings",
+      "normalizedFinding": "Change the Settings color-theme choices from a horizontally scrolling list to a vertical scrolling list with one theme item per row.",
+      "expectedBehavior": "Theme choices scroll vertically, each item occupies one row, and narrow-width or large-text states remain readable and accessible.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-1E8C3B39-4BBF-44F8-B0F7-143993ADE636"
+      ],
+      "reproductionStatus": "settings_layout_and_responsive_accessibility_review_required",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0017",
+        "KPF-0059"
+      ],
+      "triageNotes": "The requested vertical one-row-per-item behavior is distinct from the previously tracked horizontal timing-section layout.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "Settings theme choices use verticalOptions=true; timing sections retain their responsive behavior.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0067",
+      "title": "Add a reroll action to the Random game flow",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "interaction_design",
+        "navigation",
+        "randomization"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "home/random_game",
+      "normalizedFinding": "After Random game opens the selected activity, provide a clear action that picks and opens another random activity without requiring a return to Home.",
+      "expectedBehavior": "A tester can request another random pick from the shown random-game result, with the new selection replacing or reopening the result in a predictable route.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-41275DAB-D14F-4523-9149-A40922E95FD3"
+      ],
+      "reproductionStatus": "random-selection_flow_and_back-stack_review_required",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0035",
+        "KPF-0058"
+      ],
+      "triageNotes": "This is a new action inside the Random game flow, not a duplicate of the existing Home label or browse-order records.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "QuickPlayScreen exposes a Pick another action backed by rerollNonce without leaving the random flow.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0068",
+      "title": "Order the All games and activities Level 1 list by familiarity",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "information_architecture",
+        "discovery",
+        "content_ordering"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "pick_game",
+      "normalizedFinding": "The All games and activities action should open a Level 1 list ordered from commonly recognized games to the least familiar or most unique; parent entries such as Mad Libs remain intact rather than exposing individual stories at Level 1.",
+      "expectedBehavior": "The destination has a reviewed, stable familiarity ordering with recognizable formats first and less familiar choices later, without flattening nested story or prompt content.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-512BCF4D-3404-4D15-9D7F-82DC650238DB"
+      ],
+      "reproductionStatus": "product_taxonomy_and_familiarity_ordering_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0040",
+        "KPF-0041"
+      ],
+      "triageNotes": "The requested flat familiarity-sorted route may conflict with the existing finite game-type hierarchy. Decide whether All games and activities is an exception route or a category list before implementation.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "All Games uses a stable familiarity order and keeps Mad Libs as one parent collection.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0069",
+      "title": "Surface the six activity categories on Home",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "home_layout",
+        "information_architecture",
+        "navigation"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Expose the six existing activity-theme categories on Home as a primary discoverable group rather than only after opening the All games and activities route.",
+      "expectedBehavior": "Home provides access to all six reviewed categories without requiring a separate detour, while category identity and existing navigation remain unambiguous.",
+      "occurrenceCount": 2,
+      "sourceNoteIds": [
+        "KP-NOTE-7A845776-A132-4FBB-96D4-461CA64C3FA8",
+        "KP-NOTE-1471739F-9A9F-40CC-93B2-686326B8741E"
+      ],
+      "duplicateMergeRationale": "Notes 5 and 6 independently request gathering the six categories into Home. Their conflicting drawer labels and interaction variants remain separate in KPF-0071 and KPF-0072.",
+      "reproductionStatus": "home_information_architecture_and_navigation_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0006",
+        "KPF-0041",
+        "KPF-0071",
+        "KPF-0072"
+      ],
+      "triageNotes": "This shared item records the duplicate category-surface requirement; drawer type and button wording are intentionally not merged.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "Home exposes all six activity categories through the collapsed Activity themes/Game categories drawer.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0070",
+      "title": "Arrange Home activity categories in a two-column, three-row grid",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "home_layout",
+        "responsive_layout",
+        "visual_design"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Arrange the six Home activity categories in two columns and three rows when the supported width permits.",
+      "expectedBehavior": "The six category controls form a readable 2-by-3 arrangement with a responsive fallback that does not clip, overlap, or make categories inaccessible.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-7A845776-A132-4FBB-96D4-461CA64C3FA8"
+      ],
+      "reproductionStatus": "responsive_home_layout_and_accessibility_review_required",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0069"
+      ],
+      "triageNotes": "The requested grid geometry is tracked separately from the category-drawer state and label.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "QuickCategoryGrid uses a 2-column/3-row layout when width and font scale permit, with a one-column fallback.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0071",
+      "title": "Add an expandable Game categories drawer on Home",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "home_layout",
+        "interaction_design",
+        "information_architecture"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Place the six Home categories behind a control labeled Game categories; tapping the control expands or collapses the category drawer.",
+      "expectedBehavior": "The Game categories control has clear expanded and collapsed states, preserves access to all six categories, and exposes accessible state announcements.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-7A845776-A132-4FBB-96D4-461CA64C3FA8"
+      ],
+      "reproductionStatus": "drawer_state_label_and_accessibility_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0069",
+        "KPF-0072"
+      ],
+      "triageNotes": "This preserves Note 5’s requested label and expanding-drawer variant. Note 6 requests a different label and slide-out interaction, so the variants are not silently merged.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "The shared drawer control visibly includes Game categories, exposes expanded/collapsed stateDescription, and preserves six category controls.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0072",
+      "title": "Add an Activity themes slide-out drawer on Home",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "home_layout",
+        "interaction_design",
+        "information_architecture"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Gather the six Home categories into a collapsible slide-out drawer opened by a control labeled Activity themes.",
+      "expectedBehavior": "The Activity themes control opens and closes a discoverable drawer containing all six categories, with predictable focus order and accessible expanded-state semantics.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-1471739F-9A9F-40CC-93B2-686326B8741E"
+      ],
+      "reproductionStatus": "slide_out_drawer_label_and_accessibility_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0069",
+        "KPF-0071"
+      ],
+      "triageNotes": "This preserves Note 6’s requested label and slide-out variant. Product review must select or reconcile it with the Game categories expanding-drawer variant.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "The shared Activity themes control animates a horizontal drawer and carries accessible expanded-state semantics.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0073",
+      "title": "Place Random game and All games and activities side-by-side on Home",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "home_layout",
+        "navigation",
+        "responsive_layout"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "home",
+      "normalizedFinding": "Place Random game as the top-left Home action and All games and activities on the same row to its right.",
+      "expectedBehavior": "The two primary actions share the top action row in the requested left/right order, with a readable responsive fallback at narrow widths and large text.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-31524398-ADF1-4FED-A7FB-D62C3E5F91EF"
+      ],
+      "reproductionStatus": "home_layout_focus_order_and_responsive_review_required",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0058"
+      ],
+      "triageNotes": "The above-recents portion of the same note reinforces KPF-0058; this item tracks the separately testable same-row left/right arrangement.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "Random game and All games and activities share the first Home row when supported; narrow and large-text layouts stack safely.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0074",
+      "title": "Use single-column full-width game cards",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "layout",
+        "responsive_layout",
+        "information_architecture"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "game_type/{groupId}",
+      "normalizedFinding": "Replace the individual two-column game-card layout with one card per row using the widest practical horizontal width to reduce vertical scanning space.",
+      "expectedBehavior": "Each card spans the available width without clipping or crowding, and the single-column layout remains readable at supported widths and text scales.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-766272D5-4E46-488C-93D1-B749DE2723CB"
+      ],
+      "reproductionStatus": "responsive_card_layout_and_product_decision_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0021",
+        "KPF-0056"
+      ],
+      "triageNotes": "This explicitly conflicts with the previously tracked compact two-column KPF-0021 layout; it is recorded as a new decision rather than merged evidence.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "CompactCardDetails is a full-width single-column card with a stable test tag.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0075",
+      "title": "Make game setup and instructions visual-first",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "product_principle",
+        "visual_design",
+        "content_request",
+        "accessibility"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "all_game_details_and_instructions",
+      "normalizedFinding": "Represent game instructions, setup, steps, and materials with graphics or pictures wherever practical, using as few words as possible across the content library.",
+      "expectedBehavior": "A parent can understand and perform each activity through clear visual cues plus only essential text, with accessible text alternatives retained where needed.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-C381DF5B-D267-4A5A-9E4C-EA261969A3E9"
+      ],
+      "reproductionStatus": "visual_content_system_accessibility_and_localization_review_required",
+      "decision": "retained_product_principle_no_code_authorized",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0010",
+        "KPF-0055",
+        "KPF-0076"
+      ],
+      "triageNotes": "This keep-this note establishes a cross-library visual-communication principle. No visual assets were generated and no content was changed during intake.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "VisualInstructionGuide and per-section visual cues are rendered for all detail/session instruction flows while text alternatives remain.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0076",
+      "title": "Use tester-supplied Tiny Monster drawings as visual references",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "visual_asset",
+        "content_request",
+        "reference_review"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "detail/timed_drawing_tiny_monster",
+      "contentId": "timed_drawing_tiny_monster",
+      "normalizedFinding": "Review the three tester-supplied PNG references as inspiration for an original Tiny Monster instructional and art direction, while preserving the source references unchanged.",
+      "expectedBehavior": "A future visual-design pass produces an original, coherent Tiny Monster visual system informed by the approved references without silently copying or mutating the supplied source files.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-8041A19A-A852-401D-AA51-B562401DC1B3"
+      ],
+      "attachmentCount": 3,
+      "attachmentTypes": [
+        "image/png"
+      ],
+      "attachmentsIngested": false,
+      "reproductionStatus": "visual_reference_review_required",
+      "decision": "accepted_for_triage_visual_asset_review_required",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0075"
+      ],
+      "triageNotes": "The private raw archive records three tester-confirmed PNG references. The binaries were not opened, copied into the repository, uploaded, or used for generation during passive intake.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "Tiny Monster has an original Gemini-generated portrait visual guide, integrated byte-for-byte as tiny_monster_visual_guide.jpg; source worksheet references remain unchanged.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
+    },
+    {
+      "id": "KPF-0077",
+      "title": "Hide nonessential timer, round, and session controls on instruction details pages",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_visibility",
+        "session_configuration",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "affectedBuilds": [
+        "0.6.0-beta3 (8)",
+        "0.6.0-beta4 (9)",
+        "0.6.3 (10)"
+      ],
+      "screen": "detail/instructions/*",
+      "exampleContentId": "paper_airplane_weather",
+      "normalizedFinding": "On individual game instruction details pages, omit timer, round-count, and session-count sections unless essential; when essential, keep the section collapsed by default.",
+      "expectedBehavior": "Most instruction pages contain no unnecessary session controls, while an activity that truly requires them presents the required section collapsed and still discoverable.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3578A01C-6F57-44E0-A021-4093A3128150"
+      ],
+      "reproductionStatus": "content_inventory_and_play_critical_exception_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0030",
+        "KPF-0055"
+      ],
+      "triageNotes": "This is separate from age/duration/activity metadata removal: it governs session controls and requires an item-by-item decision about what is essential to play correctly.",
+      "latestImplementationBatch": "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C",
+      "latestImplementationBuild": "0.6.3 (10)",
+      "retestBuild": "0.6.3 (10)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationAuthorization": "Project-owner standing completion goal authorized implementation and next work-in-progress release.",
+      "implementationEvidence": "Detail session controls are gated by isTimedSessionEssential; Tiny Monster, Rainbow Sort Sprint, and Cleanup Countdown retain essential timing while Paper Airplanes does not.",
+      "latestVerificationAt": "2026-08-06T23:49:55Z"
     }
   ]
 }

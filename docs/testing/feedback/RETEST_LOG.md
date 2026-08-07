@@ -1,8 +1,8 @@
 # KinPlay Feedback Retest Log
 
-Last updated: 2026-08-06T07:35:34Z
+Last updated: 2026-08-06T22:40:54Z
 
-Current revision under retest: **0.6.0-beta2 (7)** for the implemented items in batch `KP-BATCH-432C6744-035C-4F62-94C1-A1FE4B609C5B`; prior cohorts retain their historical retest builds. Earlier cohorts retain their recorded retest builds unless a row below names 0.6.0-beta1 (6); KPF-0020 remains on 0.5.0-beta1 (5) because it is excluded from this batch.
+Current revision under retest: **0.6.0-beta3 (8)** for the implemented items in batch `KP-BATCH-26606A7F-956F-4699-AE68-328FFA369FBC`; prior cohorts retain their historical retest builds. Earlier cohorts retain their recorded retest builds unless a row below names 0.6.0-beta1 (6); KPF-0020 remains on 0.5.0-beta1 (5) because it is excluded from this batch.
 
 Automated checks pass, but every item below remains **fixed-awaiting-retest**. None is verified or closed until an anonymous family tester completes the relevant check on a physical Android device.
 
@@ -206,3 +206,65 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 - Remote download comparison: byte-exact pass.
 - Final folder inventory: exactly one active APK; beta2 was moved to reversible trash after verification.
 - Physical retest remains open on Google Pixel 8 Pro / Android 16 / SDK 36.
+
+## New intake awaiting triage — KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C
+
+- Intake build: **0.6.0-beta3 (8)**. This batch is intake-only and has no retest build.
+- Source notes: 11 new unique note IDs; no replayed IDs.
+- Existing canonical items touched: `KPF-0004`, `KPF-0010`, `KPF-0017`, `KPF-0055`, `KPF-0058`.
+- New canonical items: `KPF-0064`–`KPF-0077`.
+- Privacy: No child-identifying information was written to project records.
+- Attachments: Three confirmed PNG references are recorded as unprocessed metadata only; no binary attachment was opened, copied, uploaded, or used for generation.
+- Code authorization: None — no application code, content, visual asset, attachment, or build was changed.
+- Product decisions held: reconcile the two Home drawer variants (`Game categories` expanding drawer versus `Activity themes` slide-out drawer), the All games familiarity-sorted route versus the finite category hierarchy, and the requested single-column cards versus prior two-column layout before implementation.
+- Discord acknowledgment: delivered successfully to `#app-development` (channel `1501041077031800932`), message `1535057498514653237`.
+
+| Item | Triage state | Retest build | Next validation |
+|---|---|---|---|
+| KPF-0064 | new | — | Specify flick physics, settled selection, touch/accessibility behavior, and animal-selection state. |
+| KPF-0065 | new | — | Review theme-name-only copy and accessible semantics. |
+| KPF-0066 | new | — | Review vertical one-row theme layout with narrow-width and large-text fallbacks. |
+| KPF-0067 | new | — | Specify reroll action, randomization, route/back-stack behavior, and repeat policy. |
+| KPF-0068 | new | — | Decide familiarity ordering and reconcile the All games route with Level 1 hierarchy. |
+| KPF-0069 | new | — | Approve surfacing all six categories on Home and its navigation relationship to All games and activities. |
+| KPF-0070 | new | — | Verify the 2-by-3 category arrangement and responsive fallback. |
+| KPF-0071 | new | — | Decide the Game categories expanding-drawer variant and verify state/accessibility behavior. |
+| KPF-0072 | new | — | Decide the Activity themes slide-out-drawer variant and verify state/accessibility behavior. |
+| KPF-0073 | new | — | Verify same-row left/right placement and narrow-width/large-text fallback. |
+| KPF-0074 | new | — | Resolve the conflict with KPF-0021 before selecting single-column or two-column card layout. |
+| KPF-0075 | new | — | Define the visual-first instruction system, accessibility text alternatives, and content-production scope. |
+| KPF-0076 | new | — | Review the three confirmed PNG references and approve an original Tiny Monster visual direction; no assets were generated in intake. |
+| KPF-0077 | new | — | Classify play-critical timer/round/session controls per activity and define collapsed-default behavior where essential. |
+
+## Implementation retest — KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C
+
+- Implementation build: **0.6.3 (10)**.
+- Authorization: Project-owner standing completion goal explicitly authorized implementation of all feedback in this named batch through the next work-in-progress release.
+- Coverage: 19 canonical items — existing `KPF-0004`, `KPF-0010`, `KPF-0017`, `KPF-0055`, `KPF-0058`, plus `KPF-0064`–`KPF-0077` — implemented and recorded below as fixed-awaiting-physical-retest.
+- Product decisions: one shared collapsed `Activity themes` / `Game categories` drawer; familiarity-ordered Level 1 All Games with Mad Libs preserved as one collection; single-column full-width cards; timing controls retained only where central to play.
+- Automated evidence: `testDebugUnitTest`, `compileDebugAndroidTestKotlin`, `lintDebug`, `assembleDebug`, JSON schema/parity/unique-ID validation, APK metadata/permission/signature checks, Tiny Monster APK resource parity, and `git diff --check` passed.
+- APK: `com.kinplay.app`, `0.6.0-beta4` / version code `9`, `22,410,024` bytes, SHA-256 `d1914505d92c9b52a1ad63ae1f9e91da41d0ebd96ee1b1010522f64be4c3298f`; APK Signature Scheme v2 verified.
+- Physical retest: **open**. `adb` is not installed and no Android target is connected in Hogwarts; no device result is claimed.
+- Attachments: the three supplied worksheet references remain unchanged in the private image cache; the shipped Tiny Monster asset is an original Gemini-generated JPEG, not a copied attachment.
+
+| Item | State | 0.6.3 implementation evidence |
+|---|---|---|
+| KPF-0004 | fixed-awaiting-physical-retest | Race Like an Animal remains active with the snapping animal wheel. |
+| KPF-0010 | fixed-awaiting-physical-retest | Concrete previews, reroll, single-column cards, and visual instruction cues reduce parent invention. |
+| KPF-0017 | fixed-awaiting-physical-retest | Theme names are concise and vertical; persisted settings remain. |
+| KPF-0055 | fixed-awaiting-physical-retest | Nonessential instruction metadata/session controls are omitted. |
+| KPF-0058 | fixed-awaiting-physical-retest | Primary Home actions remain above recents. |
+| KPF-0064 | fixed-awaiting-physical-retest | Flickable snapping animal wheel with selected state. |
+| KPF-0065 | fixed-awaiting-physical-retest | Theme selector uses names only. |
+| KPF-0066 | fixed-awaiting-physical-retest | Theme selector uses one vertical item per row. |
+| KPF-0067 | fixed-awaiting-physical-retest | Random flow includes Pick another. |
+| KPF-0068 | fixed-awaiting-physical-retest | All Games uses stable familiarity ordering; Mad Libs is not flattened. |
+| KPF-0069 | fixed-awaiting-physical-retest | Home exposes all six categories through the shared drawer. |
+| KPF-0070 | fixed-awaiting-physical-retest | 2-by-3 wide layout with responsive fallback. |
+| KPF-0071 | fixed-awaiting-physical-retest | Game categories terminology and state announcement are present. |
+| KPF-0072 | fixed-awaiting-physical-retest | Activity themes terminology and animated drawer are present. |
+| KPF-0073 | fixed-awaiting-physical-retest | Primary Home actions share a row where supported. |
+| KPF-0074 | fixed-awaiting-physical-retest | Cards use full-width single-column layout. |
+| KPF-0075 | fixed-awaiting-physical-retest | Visual instruction shell and per-section cues retain text alternatives. |
+| KPF-0076 | fixed-awaiting-physical-retest | Original Gemini Tiny Monster guide is integrated byte-for-byte. |
+| KPF-0077 | fixed-awaiting-physical-retest | Session controls are restricted to essential timed activities. |

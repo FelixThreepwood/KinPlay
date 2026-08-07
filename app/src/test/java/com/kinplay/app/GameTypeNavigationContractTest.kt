@@ -16,7 +16,8 @@ class GameTypeNavigationContractTest {
         assertTrue(source.contains("GameTypeDetailScreen"))
         assertTrue(source.contains("Routes.GameType"))
         assertTrue(source.contains("itemsForGameType("))
-        assertTrue(source.contains("GameTypeGroup.entries"))
+        assertTrue(source.contains("ALL_GAMES_FAMILIARITY_ORDER"))
+        assertTrue(source.contains("allGamesLevelOneItems()"))
         assertTrue(discoverySource.contains("GAME_TYPE_CARD_DEFAULT_EXPANDED"))
     }
 

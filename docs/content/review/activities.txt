@@ -144,6 +144,7 @@
 - Safety tags: parent_supervision, small_objects, sibling_friendly
 - Setup: Give each child paper and a safe drawing tool. / Set a one-minute timer outside the app or count slowly together.
 - Play steps: Draw a friendly tiny monster. / Add one silly detail after time ends. / Let each child name their monster.
+- Visual asset: `tiny_monster_visual_guide` — original portrait picture guide with a friendly tiny monster and six die-based feature-choice columns; accessible alt text is stored in the seed.
 - Parent note: No judging art quality; the goal is fast playful creativity.
 - Variations: Draw a robot, snack creature, or castle pet.
 ## Stuffed Animal Rescue

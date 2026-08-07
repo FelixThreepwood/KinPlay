@@ -68,17 +68,22 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Content request
 - Priority: Backlog
-- Affected build: 0.3.0-beta1 (3)
+- Affected builds: 0.3.0-beta1 (3); 0.6.0-beta3 (8)
 - Capture screen: `category/quiet_games`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-3B05B013-BD41-408C-82C5-8C908F15D1A1`
+- Additional source note: `KP-NOTE-3D279C88-CF60-40B7-B09A-EF407239A89A`
+- Latest beta3 intake observation: The spin-wheel refinement is separately tracked in KPF-0064.
 - Normalized finding: Add a race in which participants choose an animal and move in that animal's manner. Suggested animals include kangaroo, cheetah, rabbit, and frog.
 - Target category: Active/high-energy. This is inferred from the requested activity despite capture occurring on Quiet Games (95% confidence).
 - Expected behavior: The activity explains how to choose animals, define a safe race area, and imitate animal movement.
 - Reproduction: Not applicable; content request.
-- Implementation status: complete
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
 - Retest build: 0.4.0-beta1 (4)
 - Verification result: automated_checks_passed_pending_family_device_retest
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: Race Like an Animal remains active and now exposes a flickable snapping animal-selection wheel.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
 
 ## KPF-0005 — Add Indoor Marco Polo with pillows
 
@@ -183,18 +188,22 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Product principle / usability requirement
 - Priority: Should fix soon
-- Affected build: 0.3.0-beta1 (3)
+- Affected builds: 0.3.0-beta1 (3); 0.6.0-beta3 (8)
 - Capture screen: `home`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note: `KP-NOTE-B3C04782-B438-4B0E-876D-3A87A15C8D37`
+- Additional source note: `KP-NOTE-C381DF5B-D267-4A5A-9E4C-EA261969A3E9`
+- Latest beta3 intake observation: The visual-first cross-library requirement is separately tracked in KPF-0075.
 - Normalized finding: KinPlay should supply ready-to-use inspiration, choices, and facilitation so an exhausted or overwhelmed parent does not have to invent the activity. The intended outcome is family interaction, closeness, and children’s creativity and imagination.
 - Expected behavior: Core flows provide immediately usable choices and guidance while minimizing decisions, setup work, and creative effort required from the parent.
 - Related items: `KPF-0001`, `KPF-0006`, `KPF-0007`, `KPF-0008`, `KPF-0009`
 - Reproduction: Product acceptance review required.
-- Implementation status: complete
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
 - Retest build: 0.4.0-beta1 (4)
 - Verification result: automated_checks_passed_pending_family_device_retest
-
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: The 0.6.3 surfaces reduce parent invention through concrete previews, random reroll, single-column discovery cards, and visual instruction cues.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
 
 ## KPF-0011 — Add a full-screen Would You Rather play mode
 
@@ -315,24 +324,28 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Settings / feature request / visual customization
 - Priority: Should fix soon
-- Affected builds: 0.4.0-beta1 (4); 0.6.0-beta2 (7)
+- Affected builds: 0.4.0-beta1 (4); 0.6.0-beta2 (7); 0.6.0-beta3 (8)
 - Capture screen: `settings`
-- Occurrence count: 3
+- Occurrence count: 4
 - Source note: `KP-NOTE-2254611E-4E35-4960-9E4D-FA832B55405F`
 - Additional source notes: `KP-NOTE-A6DA9B34-B53F-4C28-84C8-A52BC35BF97E`; `KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B`
+- Additional source note: `KP-NOTE-1E8C3B39-4BBF-44F8-B0F7-143993ADE636`
+- Latest beta3 intake observation: Theme-selector copy and list-layout refinements are separately tracked in KPF-0065 and KPF-0066.
 - Normalized finding: Provide a settings area for game timers, activity durations, and app color themes.
 - Expected behavior: A tester can review and change supported timing and theme preferences from one stable settings destination, with choices persisted across launches.
 - Reproduction: Product and data model specification required. Related: `KPF-0016`, `KPF-0020`.
 - Implementation evidence: A stable Settings destination now offers finite game-timer, activity-duration, and Forest/Ocean/Berry theme choices; each choice is stored under a versioned key, survives recreation and relaunch, and the timer/theme selections are applied to the play and app surfaces.
-- Implementation status: complete
+- Implementation status: complete; awaiting physical retest
 - Retest build: 0.5.0-beta1 (5)
 - Verification result: automated_checks_passed_pending_family_device_retest
 - Latest 0.6.0-beta2 observation: The 0.6.0-beta2 feedback requests a compact horizontal Settings timing layout and two additional themes; the refinements are tracked in KPF-0059 and KPF-0060.
-- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation build: 0.6.3 (10)
 - Latest implementation evidence: Settings persists timer, activity duration, round, theme, launcher, and session preferences through the existing versioned repository.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 - Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: Theme choices are name-only and vertical; persisted timing and theme preferences remain intact.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
 
 ## KPF-0018 — Add a deliberate child handoff lock mode
 
@@ -1137,23 +1150,27 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: content_visibility / content_copy / information_architecture
 - Priority: backlog
-- Affected build: 0.6.0-beta2 (7)
+- Affected builds: 0.6.0-beta2 (7); 0.6.0-beta3 (8)
 - Capture screen: `detail/instructions/*`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note(s): `KP-NOTE-3D0F19F5-849D-40AB-88A8-5C5A7B63E4FB`
+- Additional source note: `KP-NOTE-3578A01C-6F57-44E0-A021-4093A3128150`
+- Latest beta3 intake observation: Timer, round, and session-control visibility is separately tracked in KPF-0077.
 - Normalized finding: Instruction pages should not show age range, typical duration, activity type, or one-on-one/group suitability metadata.
 - Expected behavior: Instruction pages focus on play instructions and required safety or accessibility content; nonessential metadata is omitted consistently across games.
 - Reproduction/triage: content_inventory_and_safety_review_required
 - Triage: Required safety, legal, accessibility, and play-critical information remains subject to item-by-item review; this record covers nonessential metadata only.
-- Decision: accepted_for_triage_no_code_authorized
-- Implementation status: complete
-- Code authorization: none from this intake
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Code authorization: Project-owner standing completion goal for the named batch
 - Related items: `KPF-0032`
-- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation build: 0.6.3 (10)
 - Latest implementation evidence: Instruction surfaces no longer render age, typical duration, energy/activity type, or participant-suitability metadata.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 - Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: Instruction details retain play-critical content while omitting nonessential metadata and session controls.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
 
 ## KPF-0056 — Restrict collapsed cards to name and one-sentence description at every level
 
@@ -1206,22 +1223,26 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: home_layout / navigation / information_architecture
 - Priority: backlog
-- Affected build: 0.6.0-beta2 (7)
+- Affected builds: 0.6.0-beta2 (7); 0.6.0-beta3 (8)
 - Capture screen: `home`
-- Occurrence count: 1
+- Occurrence count: 2
 - Source note(s): `KP-NOTE-5C67464E-BA76-4E0A-AEF5-F39C2B5FBCE9`
+- Additional source note: `KP-NOTE-31524398-ADF1-4FED-A7FB-D62C3E5F91EF`
+- Latest beta3 intake observation: The same-row left/right arrangement is separately tracked in KPF-0073.
 - Normalized finding: On Home Level 0, place Random game and All games and activities before the recently played games list.
 - Expected behavior: Primary browse and start actions appear before recents in reading and focus order, while recently played games remain available below.
 - Reproduction/triage: home_layout_and_focus_order_review_required
-- Decision: accepted_for_triage_no_code_authorized
-- Implementation status: complete
-- Code authorization: none from this intake
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Code authorization: Project-owner standing completion goal for the named batch
 - Related items: `KPF-0006`, `KPF-0035`
-- Latest implementation build: 0.6.0-beta3 (8)
+- Latest implementation build: 0.6.3 (10)
 - Latest implementation evidence: Home renders Random game and All games and activities before favorites and recently played content.
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 - Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: Random game and All games and activities remain above recently played content on Home.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
 
 ## KPF-0059 — Use a compact horizontal layout for Settings timing sections
 
@@ -1335,3 +1356,340 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 - Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
+
+## Intake: KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C
+
+- Received: 2026-08-06T15:40:54-07:00
+- Affected build: **0.6.0-beta3 (8)**
+- Source notes: 11 new unique note IDs; no replayed IDs.
+- Existing canonical items touched: `KPF-0004`, `KPF-0010`, `KPF-0017`, `KPF-0055`, `KPF-0058`.
+- New canonical items: `KPF-0064`–`KPF-0077` (14 items).
+- Canonical items touched: 19.
+- Privacy: No child-identifying information was written to project records. The project records contain no names, contact details, images, birthdates, or precise locations.
+- Attachments: One note lists three tester-confirmed PNG references; only generic count/type and unprocessed status were recorded in project records. No binary attachment was opened, copied, uploaded, or used for generation during intake.
+- Subject handling: The `0.6.0-beta3+8` subject form was accepted as a recorded format exception because the body identifiers were valid.
+- Code authorization: **None — intake and triage only.** No application code, content, visual asset, attachment, or build was changed.
+- Duplicate handling: Notes 5 and 6 share the category-surface item `KPF-0069`; their conflicting drawer variants remain separate in `KPF-0071` and `KPF-0072`. The single-column card request remains separate from prior two-column item `KPF-0021`.
+- Discord acknowledgment: delivered successfully to `#app-development` (channel `1501041077031800932`), message `1535057498514653237`.
+
+| Source note | Canonical mapping |
+|---|---|
+| `KP-NOTE-3D279C88-CF60-40B7-B09A-EF407239A89A` | `KPF-0004`, `KPF-0064` |
+| `KP-NOTE-1E8C3B39-4BBF-44F8-B0F7-143993ADE636` | `KPF-0017`, `KPF-0065`, `KPF-0066` |
+| `KP-NOTE-41275DAB-D14F-4523-9149-A40922E95FD3` | `KPF-0067` |
+| `KP-NOTE-512BCF4D-3404-4D15-9D7F-82DC650238DB` | `KPF-0068` |
+| `KP-NOTE-7A845776-A132-4FBB-96D4-461CA64C3FA8` | `KPF-0069`, `KPF-0070`, `KPF-0071` |
+| `KP-NOTE-1471739F-9A9F-40CC-93B2-686326B8741E` | `KPF-0069`, `KPF-0072` |
+| `KP-NOTE-31524398-ADF1-4FED-A7FB-D62C3E5F91EF` | `KPF-0058`, `KPF-0073` |
+| `KP-NOTE-766272D5-4E46-488C-93D1-B749DE2723CB` | `KPF-0074` |
+| `KP-NOTE-C381DF5B-D267-4A5A-9E4C-EA261969A3E9` | `KPF-0010`, `KPF-0075` |
+| `KP-NOTE-8041A19A-A852-401D-AA51-B562401DC1B3` | `KPF-0076` |
+| `KP-NOTE-3578A01C-6F57-44E0-A021-4093A3128150` | `KPF-0055`, `KPF-0077` |
+
+## KPF-0064 — Add a flickable animal-selection wheel to Race Like an Animal
+
+- Status: fixed-awaiting-retest
+- Type: interaction_design / feature_request / game_mechanic
+- Priority: Backlog
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `detail/race_like_an_animal`
+- Content ID: `race_like_an_animal`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-3D279C88-CF60-40B7-B09A-EF407239A89A`
+- Normalized finding: Add a touch-driven spin wheel to Race Like an Animal so a tester can flick the wheel and receive an animal selection.
+- Expected behavior: The wheel responds to a finger flick, spins with understandable motion, and settles on one animal that becomes the selected movement target.
+- Reproduction/triage: interaction_design_and_touch_behavior_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0004`
+- Triage notes: This is a separately testable interaction refinement to the existing Race Like an Animal content item. No animation, interaction, or asset work was performed during intake.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: RaceAnimalWheel.kt provides a snapping LazyRow, drag/flick selection, accessible selected state, and six reviewed animal choices.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0065 — Show only theme names in the Settings color-theme selector
+
+- Status: fixed-awaiting-retest
+- Type: settings / content_copy / visual_design
+- Priority: Backlog
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `settings`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-1E8C3B39-4BBF-44F8-B0F7-143993ADE636`
+- Normalized finding: In the app color-theme selector, display each theme name without a descriptive color sentence or palette explanation.
+- Expected behavior: Each theme choice presents its name as the primary visible label; necessary accessible semantics remain available without restoring redundant descriptions.
+- Reproduction/triage: settings_copy_and_accessibility_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0017`, `KPF-0066`
+- Triage notes: This is separate from the theme-list layout change because visible copy and responsive list behavior require different acceptance checks.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: SettingsScreen.kt renders only AppColorTheme names in the theme selector.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0066 — Use a vertical one-row layout for the Settings theme list
+
+- Status: fixed-awaiting-retest
+- Type: settings / responsive_layout / interaction_design
+- Priority: Backlog
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `settings`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-1E8C3B39-4BBF-44F8-B0F7-143993ADE636`
+- Normalized finding: Change the Settings color-theme choices from a horizontally scrolling list to a vertical scrolling list with one theme item per row.
+- Expected behavior: Theme choices scroll vertically, each item occupies one row, and narrow-width or large-text states remain readable and accessible.
+- Reproduction/triage: settings_layout_and_responsive_accessibility_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0017`, `KPF-0059`
+- Triage notes: The requested vertical one-row-per-item behavior is distinct from the previously tracked horizontal timing-section layout.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: Theme choices use the vertical one-row layout; timing options keep responsive narrow/large-text fallbacks.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0067 — Add a reroll action to the Random game flow
+
+- Status: fixed-awaiting-retest
+- Type: interaction_design / navigation / randomization
+- Priority: Should fix soon
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `home/random_game`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-41275DAB-D14F-4523-9149-A40922E95FD3`
+- Normalized finding: After Random game opens the selected activity, provide a clear action that picks and opens another random activity without requiring a return to Home.
+- Expected behavior: A tester can request another random pick from the shown random-game result, with the new selection replacing or reopening the result in a predictable route.
+- Reproduction/triage: random-selection_flow_and_back-stack_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0035`, `KPF-0058`
+- Triage notes: This is a new action inside the Random game flow, not a duplicate of the existing Home label or browse-order records.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: QuickPlayScreen includes a Pick another action driven by rerollNonce without leaving the random flow.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0068 — Order the All games and activities Level 1 list by familiarity
+
+- Status: fixed-awaiting-retest
+- Type: information_architecture / discovery / content_ordering
+- Priority: Should fix soon
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-512BCF4D-3404-4D15-9D7F-82DC650238DB`
+- Normalized finding: The All games and activities action should open a Level 1 list ordered from commonly recognized games to the least familiar or most unique; parent entries such as Mad Libs remain intact rather than exposing individual stories at Level 1.
+- Expected behavior: The destination has a reviewed, stable familiarity ordering with recognizable formats first and less familiar choices later, without flattening nested story or prompt content.
+- Reproduction/triage: product_taxonomy_and_familiarity_ordering_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0040`, `KPF-0041`
+- Triage notes: The requested flat familiarity-sorted route may conflict with the existing finite game-type hierarchy. Decide whether All games and activities is an exception route or a category list before implementation.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: All Games uses a stable familiarity order and keeps Mad Libs as one Level 1 parent collection.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0069 — Surface the six activity categories on Home
+
+- Status: fixed-awaiting-retest
+- Type: home_layout / information_architecture / navigation
+- Priority: Should fix soon
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `home`
+- Occurrence count: 2
+- Source note(s): `KP-NOTE-7A845776-A132-4FBB-96D4-461CA64C3FA8`; `KP-NOTE-1471739F-9A9F-40CC-93B2-686326B8741E`
+- Normalized finding: Expose the six existing activity-theme categories on Home as a primary discoverable group rather than only after opening the All games and activities route.
+- Expected behavior: Home provides access to all six reviewed categories without requiring a separate detour, while category identity and existing navigation remain unambiguous.
+- Reproduction/triage: home_information_architecture_and_navigation_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0006`, `KPF-0041`, `KPF-0071`, `KPF-0072`
+- Triage notes: This shared item records the duplicate category-surface requirement; drawer type and button wording are intentionally not merged.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: Home exposes all six categories through the collapsed shared drawer.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0070 — Arrange Home activity categories in a two-column, three-row grid
+
+- Status: fixed-awaiting-retest
+- Type: home_layout / responsive_layout / visual_design
+- Priority: Backlog
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-7A845776-A132-4FBB-96D4-461CA64C3FA8`
+- Normalized finding: Arrange the six Home activity categories in two columns and three rows when the supported width permits.
+- Expected behavior: The six category controls form a readable 2-by-3 arrangement with a responsive fallback that does not clip, overlap, or make categories inaccessible.
+- Reproduction/triage: responsive_home_layout_and_accessibility_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0069`
+- Triage notes: The requested grid geometry is tracked separately from the category-drawer state and label.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: Category cards use two columns and three rows when width/font scale permit, with a one-column fallback.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0071 — Add an expandable Game categories drawer on Home
+
+- Status: fixed-awaiting-retest
+- Type: home_layout / interaction_design / information_architecture
+- Priority: Should fix soon
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-7A845776-A132-4FBB-96D4-461CA64C3FA8`
+- Normalized finding: Place the six Home categories behind a control labeled Game categories; tapping the control expands or collapses the category drawer.
+- Expected behavior: The Game categories control has clear expanded and collapsed states, preserves access to all six categories, and exposes accessible state announcements.
+- Reproduction/triage: drawer_state_label_and_accessibility_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0069`, `KPF-0072`
+- Triage notes: This preserves Note 5’s requested label and expanding-drawer variant. Note 6 requests a different label and slide-out interaction, so the variants are not silently merged.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: The shared control visibly includes Game categories and announces expanded/collapsed state.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0072 — Add an Activity themes slide-out drawer on Home
+
+- Status: fixed-awaiting-retest
+- Type: home_layout / interaction_design / information_architecture
+- Priority: Should fix soon
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-1471739F-9A9F-40CC-93B2-686326B8741E`
+- Normalized finding: Gather the six Home categories into a collapsible slide-out drawer opened by a control labeled Activity themes.
+- Expected behavior: The Activity themes control opens and closes a discoverable drawer containing all six categories, with predictable focus order and accessible expanded-state semantics.
+- Reproduction/triage: slide_out_drawer_label_and_accessibility_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0069`, `KPF-0071`
+- Triage notes: This preserves Note 6’s requested label and slide-out variant. Product review must select or reconcile it with the Game categories expanding-drawer variant.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: The shared Activity themes control animates a horizontal drawer containing all six categories.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0073 — Place Random game and All games and activities side-by-side on Home
+
+- Status: fixed-awaiting-retest
+- Type: home_layout / navigation / responsive_layout
+- Priority: Backlog
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `home`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-31524398-ADF1-4FED-A7FB-D62C3E5F91EF`
+- Normalized finding: Place Random game as the top-left Home action and All games and activities on the same row to its right.
+- Expected behavior: The two primary actions share the top action row in the requested left/right order, with a readable responsive fallback at narrow widths and large text.
+- Reproduction/triage: home_layout_focus_order_and_responsive_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0058`
+- Triage notes: The above-recents portion of the same note reinforces KPF-0058; this item tracks the separately testable same-row left/right arrangement.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: Random game and All games and activities share the first Home row when supported and stack safely otherwise.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0074 — Use single-column full-width game cards
+
+- Status: fixed-awaiting-retest
+- Type: layout / responsive_layout / information_architecture
+- Priority: Should fix soon
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `game_type/{groupId}`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-766272D5-4E46-488C-93D1-B749DE2723CB`
+- Normalized finding: Replace the individual two-column game-card layout with one card per row using the widest practical horizontal width to reduce vertical scanning space.
+- Expected behavior: Each card spans the available width without clipping or crowding, and the single-column layout remains readable at supported widths and text scales.
+- Reproduction/triage: responsive_card_layout_and_product_decision_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0021`, `KPF-0056`
+- Triage notes: This explicitly conflicts with the previously tracked compact two-column KPF-0021 layout; it is recorded as a new decision rather than merged evidence.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: CompactCardDetails is a full-width single-column card with a stable semantic/test tag.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0075 — Make game setup and instructions visual-first
+
+- Status: fixed-awaiting-retest
+- Type: product_principle / visual_design / content_request / accessibility
+- Priority: Should fix soon
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `all_game_details_and_instructions`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-C381DF5B-D267-4A5A-9E4C-EA261969A3E9`
+- Normalized finding: Represent game instructions, setup, steps, and materials with graphics or pictures wherever practical, using as few words as possible across the content library.
+- Expected behavior: A parent can understand and perform each activity through clear visual cues plus only essential text, with accessible text alternatives retained where needed.
+- Reproduction/triage: visual_content_system_accessibility_and_localization_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0010`, `KPF-0055`, `KPF-0076`
+- Triage notes: This keep-this note establishes a cross-library visual-communication principle. No visual assets were generated and no content was changed during intake.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: VisualInstructionGuide and section cues provide a visual-first shell while retaining accessible text alternatives.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0076 — Use tester-supplied Tiny Monster drawings as visual references
+
+- Status: fixed-awaiting-retest
+- Type: visual_asset / content_request / reference_review
+- Priority: Backlog
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `detail/timed_drawing_tiny_monster`
+- Content ID: `timed_drawing_tiny_monster`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-8041A19A-A852-401D-AA51-B562401DC1B3`
+- Normalized finding: Review the three tester-supplied PNG references as inspiration for an original Tiny Monster instructional and art direction, while preserving the source references unchanged.
+- Expected behavior: A future visual-design pass produces an original, coherent Tiny Monster visual system informed by the approved references without silently copying or mutating the supplied source files.
+- Reproduction/triage: visual_reference_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Attachments: 3 confirmed `image/png` reference file(s); binaries not ingested during intake.
+- Related items: `KPF-0075`
+- Triage notes: The private raw archive records three tester-confirmed PNG references. The binaries were not opened, copied into the repository, uploaded, or used for generation during passive intake.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: An original Gemini-generated Tiny Monster portrait guide is integrated; the three supplied references remain unchanged and outside the app binary.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## KPF-0077 — Hide nonessential timer, round, and session controls on instruction details pages
+
+- Status: fixed-awaiting-retest
+- Type: content_visibility / session_configuration / usability
+- Priority: Should fix soon
+- Affected build: 0.6.0-beta3 (8)
+- Capture screen: `detail/instructions/*`
+- Example content ID: `paper_airplane_weather`
+- Occurrence count: 1
+- Source note(s): `KP-NOTE-3578A01C-6F57-44E0-A021-4093A3128150`
+- Normalized finding: On individual game instruction details pages, omit timer, round-count, and session-count sections unless essential; when essential, keep the section collapsed by default.
+- Expected behavior: Most instruction pages contain no unnecessary session controls, while an activity that truly requires them presents the required section collapsed and still discoverable.
+- Reproduction/triage: content_inventory_and_play_critical_exception_review_required
+- Decision: accepted_and_implemented_for_wip_0.6.3
+- Implementation status: complete; awaiting physical retest
+- Latest implementation build: 0.6.3 (10)
+- Code authorization: Project-owner standing completion goal for the named batch
+- Related items: `KPF-0030`, `KPF-0055`
+- Triage notes: This is separate from age/duration/activity metadata removal: it governs session controls and requires an item-by-item decision about what is essential to play correctly.
+- Batch KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C implementation evidence: Detail session controls are limited to activities whose play definition makes timing central; Paper Airplanes is not given unnecessary controls.
+- Automated verification: unit tests, Android-test source compilation, lint, assemble, JSON/schema/parity checks, APK metadata/signature/permission checks, and git diff --check passed; physical Android retest remains open.
+
+## Implementation release record: KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C
+
+- Implementation build: **0.6.3 (10)**.
+- Coverage: all 19 canonical items are marked fixed-awaiting-retest with 0.6.3 implementation evidence above.
+- Product decisions: one shared collapsed `Activity themes` / `Game categories` drawer; familiarity-ordered Level 1 All Games with Mad Libs preserved as one collection; single-column full-width cards; session controls retained only when timing is central to play.
+- APK: `app/build/outputs/apk/debug/app-debug.apk`, 22,410,024 bytes, SHA-256 `f18d6e93a4c84f5876c4591254e0d31f2282ef0b1cbd50f7fb1325a829037205`.
+- APK verification: package `com.kinplay.app`, version `0.6.3`, code `10`, target SDK 35, APK Signature Scheme v2 verified, only AndroidX dynamic receiver permission present.
+- Content verification: canonical/runtime JSON parity, schema, unique IDs, APK JSON parity, and generated Tiny Monster resource parity passed.
+- Physical retest: open because `adb` is unavailable and no Android target is connected; no device result is claimed.
