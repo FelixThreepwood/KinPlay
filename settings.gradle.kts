@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "KinPlay"
 include(":app")
+include(":wheel-core")
+include(":wheel-lab")

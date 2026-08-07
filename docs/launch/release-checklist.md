@@ -2,6 +2,7 @@
 
 Status: operational draft
 Current verified work-in-progress release: `0.6.3` (version code `10`)
+Current candidate under automated and physical-device validation: `0.7.0-beta1` (version code `11`); includes the reusable spinner wheel and separate `Wheel Lab` app.
 Package: `com.kinplay.app`
 
 Use this checklist for a private beta, closed-test upload, or store candidate. A debug APK may be used for private device testing, but it is not a production Play artifact.
