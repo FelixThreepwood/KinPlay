@@ -33,7 +33,7 @@ Reference used: [YouTube Shorts spinner reference](https://www.youtube.com/short
 
 ## Build identity
 
-- KinPlay: `0.7.0-beta1` / version code `11` / package `com.kinplay.app`.
+- KidPlay: `0.7.0-beta2` / version code `12` / package `com.kinplay.app`; this follow-up also changes the visible application label and default launcher artwork to Fox Heart.
 - Wheel Lab: `0.1.0` / version code `1` / package `com.kinplay.wheellab`.
 - Minimum SDK: 26; target SDK: 35.
 - No network, camera, microphone, contacts, location, storage, billing, or telemetry permission was added.
@@ -71,6 +71,20 @@ Installable, signed debug artifacts are staged outside the repository at
 Matching `.sha256` sidecar files are next to both APKs. The release APK outputs
 are unsigned (`app-release-unsigned.apk` and `wheel-lab-release-unsigned.apk`);
 they are not presented as installable release artifacts.
+
+## Latest branding follow-up
+
+The current KidPlay branding candidate is staged separately from the original
+spinner-wheel beta artifact:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `20260808_KidPlay_v0.7.0-beta2_FoxHeart_debug.apk` | 23,103,966 | `1b1e74759cb518e04f9099ad4ca151c69ac4e36a7be5d3abaf57e0d77c53976e` |
+
+The active default launcher alias uses the exact Google Gemini Nano Banana
+`08_fox_heart.jpg` master. The packaged JPEG is byte-identical to the source
+master with SHA-256 `a8dd209cd588e0f1de4c9d58668b851ab477434ad5a5f93a5217dcb109bdbd5b`.
+This is a private debug-signed beta artifact, not a production-store release.
 
 ## Physical-device checklist
 

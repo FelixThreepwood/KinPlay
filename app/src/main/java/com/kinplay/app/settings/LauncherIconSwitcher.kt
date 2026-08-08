@@ -9,8 +9,8 @@ enum class LauncherIconVariant(
 ) {
     TEAL(
         wireValue = "teal",
-        label = "Teal",
-        description = "Deep teal with a pale sunshine emblem",
+        label = "Fox Heart",
+        description = "Orange fox curled around a gold heart on deep navy",
         componentClassName = LauncherIconComponents.TEAL,
     ),
     SUNSHINE(

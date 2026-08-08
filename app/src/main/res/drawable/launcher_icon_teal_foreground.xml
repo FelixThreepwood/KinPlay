@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
     android:gravity="fill"
-    android:src="@drawable/launcher_icon_teal_master" />
+    android:src="@drawable/launcher_icon_fox_heart_master" />

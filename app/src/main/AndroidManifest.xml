@@ -4,7 +4,7 @@
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher_teal"
-        android:label="KinPlay"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.KinPlay">
         <activity
@@ -16,7 +16,7 @@
             android:enabled="true"
             android:exported="true"
             android:icon="@mipmap/ic_launcher_teal"
-            android:label="KinPlay"
+            android:label="@string/app_name"
             android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
             android:enabled="false"
             android:exported="true"
             android:icon="@mipmap/ic_launcher_sunshine"
-            android:label="KinPlay"
+            android:label="@string/app_name"
             android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3,17 +3,19 @@
   "purpose": "KPF-0019/KPF-0020 Android launcher icon masters and finite color variants",
   "assets": [
     {
-      "candidateLabel": "KPF-0019 Candidate 1A PASS",
-      "sourceFilename": "KPF-0019_Candidate-1A_Teal-Master.jpg",
+      "candidateLabel": "KidPlay icon concept 08 — Fox Heart PASS",
+      "sourceFilename": "08_fox_heart.jpg",
+      "sourcePath": "/mnt/cyberforgex-torrents/KinPlay/visual-concepts/20260807_app-icon-concepts/08_fox_heart.jpg",
       "provider": "google",
       "model": "gemini-3-pro-image-preview",
-      "promptPurpose": "Original minimal KinPlay launcher emblem with a clearly legible rounded K and P lettermark in the approved Teal direction; no words, people, or existing brand marks",
+      "promptPurpose": "Selected Google Gemini Nano Banana app-icon concept with a centered orange fox curled around a gold heart on a deep navy square background; no words or third-party brand marks",
       "qaResult": "PASS",
-      "sha256": "d2d83adde2909da14f24dbd89c75b24f75ae9d5a961ae4a93ee139a90fe375aa",
-      "shippedPath": "app/src/main/res/drawable-nodpi/launcher_icon_teal_master.jpg",
+      "sha256": "a8dd209cd588e0f1de4c9d58668b851ab477434ad5a5f93a5217dcb109bdbd5b",
+      "shippedPath": "app/src/main/res/drawable-nodpi/launcher_icon_fox_heart_master.jpg",
       "colors": [
-        { "name": "deep teal", "representativeHex": "#056763" },
-        { "name": "warm sunshine", "representativeHex": "#F7D162" }
+        { "name": "deep navy", "representativeHex": "#1D2446" },
+        { "name": "fox orange", "representativeHex": "#D9682B" },
+        { "name": "warm gold", "representativeHex": "#E8B94E" }
       ],
       "masterPreservation": "Exact source bytes; no crop, resize, padding, blur, border, recolor, metadata/DPI rewrite, or re-encoding"
     },
