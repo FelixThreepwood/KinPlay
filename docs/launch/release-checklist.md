@@ -153,3 +153,13 @@ If a release is defective:
 - Google Drive `apk-drops` contains exactly one active APK. The prior beta3 object was moved to reversible trash only after the new object read back byte-for-byte.
 - Canonical/runtime content JSON, schema, unique IDs, APK content parity, and Tiny Monster visual-resource parity passed.
 - This is a work-in-progress private test release, not an official production or store publication.
+
+## 0.7.0-beta2 KidPlay branding completion evidence
+
+- Visible application label is `KidPlay`; application ID remains `com.kinplay.app`.
+- Active default launcher master is the exact Nano Banana `08_fox_heart.jpg` source; source and packaged master SHA-256: `a8dd209cd588e0f1de4c9d58668b851ab477434ad5a5f93a5217dcb109bdbd5b`.
+- Debug APK: `20260808_KidPlay_v0.7.0-beta2_FoxHeart_debug.apk`; 23,103,966 bytes; SHA-256 `1b1e74759cb518e04f9099ad4ca151c69ac4e36a7be5d3abaf57e0d77c53976e`.
+- Source commit: `7fcfa1056cf7258162b9591929ca5056c6e06a88`; remote `main` matched after push.
+- Google Drive object: `1GrQRqy1drm-S0GouppZvwf9MBaoEZqd6`; https://drive.google.com/file/d/1GrQRqy1drm-S0GouppZvwf9MBaoEZqd6/view?usp=drivesdk
+- Drive download matched the local APK byte-for-byte.
+- Physical-device/emulator launcher-cache and install/upgrade testing remains open because no Android target was connected.

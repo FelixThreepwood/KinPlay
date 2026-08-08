@@ -26,6 +26,11 @@ The application ID remains `com.kinplay.app`, and the existing `teal` launcher w
 - APK SHA-256: `1b1e74759cb518e04f9099ad4ca151c69ac4e36a7be5d3abaf57e0d77c53976e`
 - Signature: APK Signature Scheme v2 verified
 - Permissions: only the expected AndroidX dynamic receiver permission
+- Source commit: `7fcfa1056cf7258162b9591929ca5056c6e06a88`
+- Remote branch: `main` matched the source commit after push
+- Google Drive object: `1GrQRqy1drm-S0GouppZvwf9MBaoEZqd6`
+- Google Drive link: https://drive.google.com/file/d/1GrQRqy1drm-S0GouppZvwf9MBaoEZqd6/view?usp=drivesdk
+- Drive read-back: downloaded copy matched local size and SHA-256 exactly
 
 The complete local release validator passed unit tests, Android test-source compilation, debug assembly, lint, packaged-content validation, APK badging, permission inspection, APK signature inspection, and `git diff --check`.
 
