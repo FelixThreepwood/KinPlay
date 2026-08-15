@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "libraryId": "would_you_rather_v1",
+  "purpose": "Preserve project-owner-supplied prompts for the next authorized Would You Rather content revision.",
+  "createdAt": "2026-08-14T22:35:48Z",
+  "sourceNoteId": "KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147",
+  "provenanceRules": {
+    "assistantCreated": {
+      "reviewRegistryOrigin": "original_kinplay_editorial_work",
+      "eligibleForReplacementOrRemoval": true
+    },
+    "projectOwnerSupplied": {
+      "reviewRegistrySource": "project_owner_supplied_message_2026-08-14",
+      "eligibleForReplacementOrRemoval": false,
+      "deletionProtection": "Never delete or remove these prompts when reducing the library. Only assistant-created prompts may be selected for replacement or removal."
+    }
+  },
+  "replacementSelection": {
+    "status": "staged_for_next_feedback_batch",
+    "targetCategory": "pending_content_and_safety_review",
+    "selectionRule": "Select replacement candidates only from prompts classified as assistant-created. Do not select any prompt in this manifest as a deletion or reduction candidate.",
+    "runtimeContentChanged": false
+  },
+  "prompts": [
+    {
+      "id": "owner_wyr_20260814_001",
+      "origin": "project_owner_supplied",
+      "sourceText": "would you rather sweat all the time or slobber all the time?",
+      "sha256": "b84b6d066ce9549059a8e989df16931b10958da2631c2cc40c4ecc589e0518dc",
+      "safetyReview": "pending",
+      "status": "staged"
+    },
+    {
+      "id": "owner_wyr_20260814_002",
+      "origin": "project_owner_supplied",
+      "sourceText": "would you rather eat mac and cheese with beetles or soup with worms?",
+      "sha256": "50332c66756e35914f4489e3ebcadb1cd962c3a18a9a8775b3dfe56c32250fd6",
+      "safetyReview": "pending",
+      "status": "staged"
+    },
+    {
+      "id": "owner_wyr_20260814_003",
+      "origin": "project_owner_supplied",
+      "sourceText": "would you rather have ants crawling on you or tiny lizards?",
+      "sha256": "5b25e4fe374344302fb35e134178b665fd08a6415a76a4346877d05971d03e99",
+      "safetyReview": "pending",
+      "status": "staged"
+    },
+    {
+      "id": "owner_wyr_20260814_004",
+      "origin": "project_owner_supplied",
+      "sourceText": "would you rather eat a cockroach or a worm?",
+      "sha256": "23e5513e15526b0003cbe50a02ec4a3553c3b24fdcf71c47703509bbac3383eb",
+      "safetyReview": "pending",
+      "status": "staged"
+    },
+    {
+      "id": "owner_wyr_20260814_005",
+      "origin": "project_owner_supplied",
+      "sourceText": "would you rather your bedroom smell like fish or dog poop?",
+      "sha256": "b481f374e4a1bef897a632c7deb44ff54185f6b23dc16905178c7cd653b6ea66",
+      "safetyReview": "pending",
+      "status": "staged"
+    }
+  ]
+}

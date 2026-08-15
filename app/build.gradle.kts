@@ -4,8 +4,8 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-val appVersionName = "0.7.0-beta2"
-val isVersionedBeta = appVersionName.contains("-beta", ignoreCase = true)
+val appVersionName = "0.7.0"
+val isVersionedWip = true
 
 android {
     namespace = "com.kinplay.app"
@@ -15,7 +15,7 @@ android {
         applicationId = "com.kinplay.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 12
+        versionCode = 13
         versionName = appVersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -29,7 +29,7 @@ android {
             buildConfigField("boolean", "FEEDBACK_ENABLED", "true")
         }
         release {
-            buildConfigField("boolean", "FEEDBACK_ENABLED", isVersionedBeta.toString())
+            buildConfigField("boolean", "FEEDBACK_ENABLED", isVersionedWip.toString())
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

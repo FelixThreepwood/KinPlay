@@ -1,9 +1,10 @@
-package com.kinplay.wheellab
+package com.devlab
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,31 +28,33 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.devlab.feedback.FeedbackOverlay
 import com.kinplay.wheel.SpinnerWheel
 import com.kinplay.wheel.SpinnerWheelOption
 
-class WheelLabActivity : ComponentActivity() {
+class DevLabActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { WheelLabApp() }
+        setContent { DevLabApp() }
     }
 }
 
-data class WheelLabDemo(
+data class DevLabDemo(
     val id: String,
     val title: String,
     val description: String,
     val options: List<SpinnerWheelOption>,
 )
 
-val WHEEL_LAB_DEMOS = listOf(
-    WheelLabDemo(
+val DEV_LAB_DEMOS = listOf(
+    DevLabDemo(
         id = "animals",
         title = "Animal moves",
-        description = "The KinPlay production dataset with a compact result instruction.",
+        description = "A generated animal stream with a compact result instruction.",
         options = listOf(
             SpinnerWheelOption("kangaroo", "Kangaroo", "Gentle hops or a walking pose."),
             SpinnerWheelOption("cheetah", "Cheetah", "Quick small steps without sprinting."),
@@ -61,7 +64,7 @@ val WHEEL_LAB_DEMOS = listOf(
             SpinnerWheelOption("penguin", "Penguin", "Waddle with small steps."),
         ),
     ),
-    WheelLabDemo(
+    DevLabDemo(
         id = "colors",
         title = "Color choices",
         description = "An eight-sector wheel for checking dense wedge spacing and contrast.",
@@ -76,7 +79,7 @@ val WHEEL_LAB_DEMOS = listOf(
             SpinnerWheelOption("white", "White", "Find something white."),
         ),
     ),
-    WheelLabDemo(
+    DevLabDemo(
         id = "long_labels",
         title = "Long labels",
         description = "A text-fitting and accessibility page for labels that need wrapping.",
@@ -93,58 +96,67 @@ val WHEEL_LAB_DEMOS = listOf(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WheelLabApp() {
-    var activeDemoId by rememberSaveable { mutableStateOf(WHEEL_LAB_DEMOS.first().id) }
-    val activeDemo = WHEEL_LAB_DEMOS.firstOrNull { it.id == activeDemoId } ?: WHEEL_LAB_DEMOS.first()
+fun DevLabApp() {
+    var activeDemoId by rememberSaveable { mutableStateOf(DEV_LAB_DEMOS.first().id) }
+    val activeDemo = DEV_LAB_DEMOS.firstOrNull { it.id == activeDemoId } ?: DEV_LAB_DEMOS.first()
+    val context = LocalContext.current
 
     MaterialTheme {
         Surface(modifier = Modifier.fillMaxSize()) {
-            Scaffold(
-                topBar = {
-                    TopAppBar(title = { Text("Wheel Lab") })
-                },
-            ) { innerPadding ->
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(innerPadding)
-                        .verticalScroll(rememberScrollState())
-                        .padding(16.dp)
-                        .testTag("wheel-lab-page-${activeDemo.id}"),
-                    verticalArrangement = Arrangement.spacedBy(14.dp),
-                ) {
-                    Text("Interactive spinner playground", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-                    Text("Offline test surface: tap the wheel, press Spin, press Next, and compare datasets before changing KinPlay production UI.")
-                    Row(
+            Box(modifier = Modifier.fillMaxSize()) {
+                Scaffold(
+                    topBar = {
+                        TopAppBar(title = { Text(DEV_LAB_APP_NAME) })
+                    },
+                ) { innerPadding ->
+                    Column(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .horizontalScroll(rememberScrollState())
-                            .testTag("wheel-lab-demo-picker"),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            .fillMaxSize()
+                            .padding(innerPadding)
+                            .verticalScroll(rememberScrollState())
+                            .padding(16.dp)
+                            .testTag("dev-lab-page-${activeDemo.id}"),
+                        verticalArrangement = Arrangement.spacedBy(14.dp),
                     ) {
-                        WHEEL_LAB_DEMOS.forEach { demo ->
-                            FilterChip(
-                                selected = demo.id == activeDemo.id,
-                                onClick = { activeDemoId = demo.id },
-                                label = { Text(demo.title) },
-                                modifier = Modifier.testTag("wheel-lab-demo-${demo.id}"),
-                            )
+                        Text("Interactive development playground", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+                        Text("Offline test surface: tap the reel, press Spin, and compare datasets before changing production UI.")
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .horizontalScroll(rememberScrollState())
+                                .testTag("dev-lab-demo-picker"),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        ) {
+                            DEV_LAB_DEMOS.forEach { demo ->
+                                FilterChip(
+                                    selected = demo.id == activeDemo.id,
+                                    onClick = { activeDemoId = demo.id },
+                                    label = { Text(demo.title) },
+                                    modifier = Modifier.testTag("dev-lab-demo-${demo.id}"),
+                                )
+                            }
                         }
+                        DevLabDemoPage(activeDemo)
                     }
-                    WheelLabDemoPage(activeDemo)
                 }
+                FeedbackOverlay(
+                    context = context,
+                    screen = "dev_lab/${activeDemo.id}",
+                    contentId = activeDemo.id,
+                    contentTitle = activeDemo.title,
+                )
             }
         }
     }
 }
 
 @Composable
-private fun WheelLabDemoPage(demo: WheelLabDemo) {
+private fun DevLabDemoPage(demo: DevLabDemo) {
     var selectedLabel by rememberSaveable(demo.id) { mutableStateOf(demo.options.first().label) }
     var selectedDetail by rememberSaveable(demo.id) { mutableStateOf(demo.options.first().detail) }
 
     Card(
-        modifier = Modifier.fillMaxWidth().testTag("wheel-lab-card-${demo.id}"),
+        modifier = Modifier.fillMaxWidth().testTag("dev-lab-card-${demo.id}"),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
     ) {
         Column(
@@ -153,23 +165,33 @@ private fun WheelLabDemoPage(demo: WheelLabDemo) {
         ) {
             Text(demo.title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
             Text(demo.description, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            SpinnerWheel(
-                options = demo.options,
-                testTag = "wheel-lab-wheel-${demo.id}",
-                spinButtonTestTag = "wheel-lab-spin-${demo.id}",
-                nextButtonTestTag = "wheel-lab-next-${demo.id}",
-                showNextButton = true,
-                onSelectionChanged = { selected ->
-                    selectedLabel = selected.label
-                    selectedDetail = selected.detail
-                },
-            )
+            val onSelectionChanged: (SpinnerWheelOption) -> Unit = { selected ->
+                selectedLabel = selected.label
+                selectedDetail = selected.detail
+            }
+            if (demo.id == "animals") {
+                VerticalAnimalReel(
+                    catalog = demo.options,
+                    testTag = "dev-lab-animal-reel-${demo.id}",
+                    spinButtonTestTag = "dev-lab-spin-${demo.id}",
+                    onSelectionChanged = onSelectionChanged,
+                )
+            } else {
+                SpinnerWheel(
+                    options = demo.options,
+                    testTag = "dev-lab-wheel-${demo.id}",
+                    spinButtonTestTag = "dev-lab-spin-${demo.id}",
+                    nextButtonTestTag = "dev-lab-next-${demo.id}",
+                    showNextButton = true,
+                    onSelectionChanged = onSelectionChanged,
+                )
+            }
             Text(
                 "Current choice: $selectedLabel",
-                modifier = Modifier.testTag("wheel-lab-choice-${demo.id}"),
+                modifier = Modifier.testTag("dev-lab-choice-${demo.id}"),
                 fontWeight = FontWeight.Bold,
             )
-            Text(selectedDetail, modifier = Modifier.testTag("wheel-lab-detail-${demo.id}"))
+            Text(selectedDetail, modifier = Modifier.testTag("dev-lab-detail-${demo.id}"))
         }
     }
 }

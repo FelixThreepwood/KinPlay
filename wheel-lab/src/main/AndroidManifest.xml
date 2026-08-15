@@ -3,11 +3,11 @@
     <application
         android:allowBackup="false"
         android:fullBackupContent="false"
-        android:label="Wheel Lab"
+        android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WheelLab">
+        android:theme="@style/Theme.DevLab">
         <activity
-            android:name=".WheelLabActivity"
+            android:name=".DevLabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

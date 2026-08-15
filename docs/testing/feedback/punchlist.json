@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-06T22:50:43Z",
-  "nextItemNumber": 78,
+  "updatedAt": "2026-08-14T22:35:48Z",
+  "nextItemNumber": 79,
   "batches": [
     {
       "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
@@ -848,6 +848,45 @@
           "supersededDriveObjectTrashed": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN"
         }
       }
+    },
+    {
+      "batchId": "KP-BATCH-EC3C89DA-8759-4636-9BB8-46E904E18D9A",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.7.0",
+        "versionCode": 13
+      },
+      "device": "not supplied",
+      "android": "not supplied",
+      "sdk": null,
+      "receivedAt": "2026-08-14T22:35:48Z",
+      "sourceNoteCount": 1,
+      "uniqueNewSourceNoteCount": 1,
+      "canonicalItemCount": 1,
+      "existingCanonicalItemCount": 0,
+      "newCanonicalItemCount": 1,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "existingCanonicalItemIds": [],
+      "newCanonicalItemIds": [
+        "KPF-0078"
+      ],
+      "canonicalItemIds": [
+        "KPF-0078"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147": [
+          "KPF-0078"
+        ]
+      },
+      "childIdentifyingInformationRemoved": false,
+      "privacyReview": "No child-identifying information, contact details, images, birthdates, or precise locations were written to project records.",
+      "duplicateHandling": "One new direct-owner note was staged. The five exact prompts are recorded in the owner-supplied provenance manifest; no existing prompt was replaced or removed during intake.",
+      "subjectHandling": "Not applicable — this was a direct project-owner Discord message rather than an email subject.",
+      "codeChangeAuthorization": "Intake and triage only; no application code or runtime content change is authorized by this note.",
+      "stagingStatus": "staged_for_next_feedback_batch",
+      "rawArchive": "~/.hermes/kinplay-feedback/raw/20260814_KP-BATCH-EC3C89DA-8759-4636-9BB8-46E904E18D9A.json",
+      "promptProvenanceManifest": "docs/testing/feedback/WOULD_YOU_RATHER_OWNER_REPLACEMENTS.json"
     }
   ],
   "items": [
@@ -4056,6 +4095,54 @@
         "deviceResult": "not_run_adb_unavailable",
         "verifiedAt": "2026-08-07T02:48:35Z"
       }
+    },
+    {
+      "id": "KPF-0078",
+      "title": "Stage five owner-supplied Would You Rather prompts for protected replacement",
+      "status": "new",
+      "type": [
+        "content_request",
+        "content_provenance",
+        "content_safety"
+      ],
+      "priority": "backlog",
+      "affectedBuilds": [
+        "0.7.0 (13)"
+      ],
+      "screen": "would_you_rather_play",
+      "normalizedFinding": "For the next authorized Would You Rather content revision, stage the five exact prompts supplied by the project owner and use them as replacement candidates for assistant-created prompts only. Keep owner-supplied prompts separately identified from prompts authored by the assistant.",
+      "expectedBehavior": "The next authorized revision preserves all five owner-supplied prompts in the provenance record, performs the required child-safety review before any runtime release, and removes or replaces only prompts classified as assistant-created if the library count must be reduced.",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147"
+      ],
+      "reproductionStatus": "content_provenance_and_safety_review_required",
+      "decision": "accepted_for_next_feedback_batch",
+      "implementationStatus": "not_started",
+      "codeAuthorization": "none — passive intake and triage only",
+      "relatedItemIds": [
+        "KPF-0012"
+      ],
+      "promptProvenanceManifest": "docs/testing/feedback/WOULD_YOU_RATHER_OWNER_REPLACEMENTS.json",
+      "ownerSuppliedPromptOrigin": "project_owner_supplied_message_2026-08-14",
+      "assistantCreatedPromptOrigin": "original_kinplay_editorial_work",
+      "ownerSuppliedPromptIds": [
+        "owner_wyr_20260814_001",
+        "owner_wyr_20260814_002",
+        "owner_wyr_20260814_003",
+        "owner_wyr_20260814_004",
+        "owner_wyr_20260814_005"
+      ],
+      "ownerSuppliedPrompts": [
+        "would you rather sweat all the time or slobber all the time?",
+        "would you rather eat mac and cheese with beetles or soup with worms?",
+        "would you rather have ants crawling on you or tiny lizards?",
+        "would you rather eat a cockroach or a worm?",
+        "would you rather your bedroom smell like fish or dog poop?"
+      ],
+      "replacementPolicy": "Only assistant-created prompts may be selected for replacement or removal. Owner-supplied prompts are protected from deletion or count reduction.",
+      "categoryAssignment": "pending_content_and_safety_review",
+      "triageNotes": "No runtime content was changed during intake. The ingestion and eating prompts require explicit child-safety review against the existing hazardous-ingestion boundary before any release decision."
     }
   ]
 }

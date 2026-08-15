@@ -1,6 +1,6 @@
 # KinPlay Feedback Retest Log
 
-Last updated: 2026-08-06T22:40:54Z
+Last updated: 2026-08-14T22:35:48Z
 
 Current revision under retest: **0.6.0-beta3 (8)** for the implemented items in batch `KP-BATCH-26606A7F-956F-4699-AE68-328FFA369FBC`; prior cohorts retain their historical retest builds. Earlier cohorts retain their recorded retest builds unless a row below names 0.6.0-beta1 (6); KPF-0020 remains on 0.5.0-beta1 (5) because it is excluded from this batch.
 
@@ -271,3 +271,15 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 | KPF-0075 | fixed-awaiting-physical-retest | Visual instruction shell and per-section cues retain text alternatives. |
 | KPF-0076 | fixed-awaiting-physical-retest | Original Gemini Tiny Monster guide is integrated byte-for-byte. |
 | KPF-0077 | fixed-awaiting-physical-retest | Session controls are restricted to essential timed activities. |
+
+## New intake awaiting triage — KP-BATCH-EC3C89DA-8759-4636-9BB8-46E904E18D9A
+
+- Intake build: **0.7.0 (13)**. This direct-owner note is staged for the next feedback batch and has no retest build.
+- Source note: `KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147`.
+- New canonical item: `KPF-0078`.
+- Code authorization: None — no application code or runtime content change was authorized.
+- Next validation: Confirm the five exact owner-supplied prompts remain present in the provenance manifest, complete content/safety review, and verify that any library reduction selects only assistant-created prompts.
+
+| Item | Triage state | Retest build | Next validation |
+|---|---|---|---|
+| KPF-0078 | new | — | Verify owner-supplied provenance, safety-review disposition, and protected replacement/deletion behavior. |

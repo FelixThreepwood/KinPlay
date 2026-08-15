@@ -2,7 +2,7 @@
 
 Sanitized product-test records. Incoming comments are evidence, not authorization to change application code.
 
-Last updated: 2026-08-06T08:28:20Z
+Last updated: 2026-08-14T22:35:48Z
 
 Source note IDs are unique occurrence keys. An exact note replay in a later batch is linked to the existing item and does not increase its occurrence count.
 
@@ -1696,3 +1696,42 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Source publication: commit `f100058f430cef43ae5a4ecb2481e69dd5bac510` is pushed to `origin/main` and remote SHA matches.
 - Local distribution: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.3_MVP.apk` is the sole current root APK; older beta2/beta3 APKs are archived.
 - Google Drive distribution: folder `12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp` contains exactly one active APK, object `1MO4JEMKc4_yxe2D0s1r9t3DLgs36HdXj`; download read-back checksum and size match.
+
+## Intake: KP-BATCH-EC3C89DA-8759-4636-9BB8-46E904E18D9A
+
+- Received: 2026-08-14T22:35:48Z
+- Transport: direct project-owner Discord message; no email subject was involved.
+- Affected build: **0.7.0 (13)**.
+- Source note: `KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147`
+- New canonical item: `KPF-0078`
+- Privacy: No child-identifying information, contact details, images, birthdates, or precise locations were written to project records.
+- Code authorization: Intake and triage only; no application code or runtime content change was authorized.
+- Raw archive: `~/.hermes/kinplay-feedback/raw/20260814_KP-BATCH-EC3C89DA-8759-4636-9BB8-46E904E18D9A.json`
+- Prompt provenance manifest: `docs/testing/feedback/WOULD_YOU_RATHER_OWNER_REPLACEMENTS.json`
+
+## KPF-0078 — Stage five owner-supplied Would You Rather prompts for protected replacement
+
+- Status: new
+- Type: Content request / content provenance / content safety
+- Priority: Backlog
+- Affected build: 0.7.0 (13)
+- Capture screen: `would_you_rather_play`
+- Occurrence count: 1
+- Source note: `KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147`
+- Related item: `KPF-0012`
+- Normalized finding: For the next authorized Would You Rather content revision, stage the five exact prompts supplied by the project owner and use them as replacement candidates for assistant-created prompts only. Keep owner-supplied prompts separately identified from prompts authored by the assistant.
+- Expected behavior: The next authorized revision preserves all five owner-supplied prompts in the provenance record, performs the required child-safety review before any runtime release, and removes or replaces only prompts classified as assistant-created if the library count must be reduced.
+- Owner-supplied prompts, preserved verbatim:
+  1. `would you rather sweat all the time or slobber all the time?`
+  2. `would you rather eat mac and cheese with beetles or soup with worms?`
+  3. `would you rather have ants crawling on you or tiny lizards?`
+  4. `would you rather eat a cockroach or a worm?`
+  5. `would you rather your bedroom smell like fish or dog poop?`
+- Provenance: Owner-supplied prompts use `project_owner_supplied_message_2026-08-14`; existing assistant-created prompts use `original_kinplay_editorial_work` in the Would You Rather review registry.
+- Replacement/deletion rule: Only assistant-created prompts may be selected for replacement or removal. Owner-supplied prompts are protected from deletion or count reduction.
+- Category assignment: Pending content and safety review; no category was inferred during intake.
+- Safety triage: The ingestion prompts require explicit child-safety review against the existing hazardous-ingestion boundary before any runtime release.
+- Prompt provenance manifest: `docs/testing/feedback/WOULD_YOU_RATHER_OWNER_REPLACEMENTS.json`
+- Reproduction/triage: Content provenance and safety review required.
+- Decision: Accepted for the next feedback batch; no code or runtime content change authorized.
+- Implementation status: not started

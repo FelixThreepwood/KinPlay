@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.WheelLab" parent="android:style/Theme.Material.Light.NoActionBar">
+    <style name="Theme.DevLab" parent="android:style/Theme.Material.Light.NoActionBar">
         <item name="android:fontFamily">sans</item>
         <item name="android:colorAccent">#2E7D32</item>
         <item name="android:navigationBarColor">#FFFFFF</item>
