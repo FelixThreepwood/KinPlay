@@ -246,13 +246,14 @@
       "readbackSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
       "readbackBytes": 25949602,
       "byteExact": true
-    }
+    },
+    "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f"
   },
   "openBoundaries": [
     "No connected Android device or emulator execution was recorded; physical/runtime retest remains open.",
     "No production release keystore was found; the uploaded APK is private validation scope, not a production-signed artifact.",
     "Charades category masters and metadata are packaged and parity-checked; connected visual verification of per-card presentation remains open.",
-    "The repository was not yet committed or pushed at ledger creation; the implementation source commit will be filled in after the reviewed allowlist commit."
+    "Implementation commit ef6ed79b159710241098a280c7fe596b5ba9123f is pushed to origin/main; this file records the final object evidence in the following publication commit."
   ],
-  "publicationStatus": "candidate artifact uploaded and byte-verified; implementation commit and publication-evidence commit pending"
+  "publicationStatus": "candidate artifact uploaded and byte-verified; implementation commit pushed; publication-evidence commit pending"
 }

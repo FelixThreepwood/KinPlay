@@ -2021,4 +2021,4 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Charades: all 120 cards have reviewed resource metadata and prompt-specific accessible alt text; three Gemini-generated category masters are packaged and parity-checked. Per-card presentation still requires connected runtime visual retest.
 - Would You Rather: 40 prompts per category; the 20 protected runtime owner prompts remain present and separately identified; the five newer staged examples remain in the provenance manifest and were not silently promoted.
 - Release boundary: this is a private validation APK. No production release keystore was found, and no connected Android device/emulator retest is claimed.
-- Source publication: implementation commit and final publication-evidence commit remain to be recorded.
+- Source publication: implementation commit `ef6ed79b159710241098a280c7fe596b5ba9123f` is pushed to `origin/main`; this closure appendix is finalized in the following publication-evidence commit.

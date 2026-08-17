@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-17T22:47:34Z",
+  "updatedAt": "2026-08-17T23:06:11Z",
   "nextItemNumber": 90,
   "batches": [
     {
@@ -1882,13 +1882,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       },
       "latestIntakeBatch": "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4",
       "latestIntakeBuild": "0.7.0-beta2 (12)",
@@ -2662,13 +2664,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -3384,13 +3388,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       },
       "latestVerificationAt": "2026-08-17T22:47:34Z",
       "latestIntakeBatch": "KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E",
@@ -3556,13 +3562,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       },
       "latestVerificationAt": "2026-08-17T22:47:34Z",
       "latestIntakeBatch": "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4",
@@ -4482,13 +4490,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -4548,13 +4558,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -4614,13 +4626,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -4681,13 +4695,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -4747,13 +4763,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -4820,13 +4838,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -4891,13 +4911,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -4958,13 +4980,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -5023,13 +5047,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -5089,13 +5115,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     },
     {
@@ -5155,13 +5183,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       },
       "safetyDecision": "Conservative non-crass WIP boundary retained; no age-targeting relaxation is claimed without a separate product/safety approval."
     },
@@ -5224,13 +5254,15 @@
         "version": "0.7.0",
         "versionCode": 13,
         "package": "com.kinplay.app",
-        "sourceCommit": "pending-implementation-commit",
+        "sourceCommit": "ef6ed79b159710241098a280c7fe596b5ba9123f",
         "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
         "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
         "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
-        "remoteReadback": "passed_byte_exact",
+        "remoteReadback": "passed_byte_exact; source commit pushed and remote SHA verified",
         "physicalRetest": "open",
-        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found",
+        "remoteBranch": "origin/main",
+        "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
     }
   ]
