@@ -10,6 +10,7 @@
 - Duration: 5 min
 - Energy: calm
 - Summary: Imagine what a favorite toy would say.
+- Format group: story_circle
 - Materials: none
 - Safety tags: quiet, no_materials, sibling_friendly
 - Prompt: Pick a toy nearby. If it could talk for one minute, what would it ask your family?
@@ -103,6 +104,7 @@
 - Duration: 6 min
 - Energy: calm
 - Summary: Make a story from only five chosen words.
+- Format group: story_circle
 - Materials: none
 - Safety tags: quiet, no_materials, sibling_friendly, calming
 - Prompt: Choose five words and make the shortest story you can with all of them.
@@ -133,6 +135,7 @@
 - Duration: 7 min
 - Energy: calm
 - Summary: Pitch a harmless invention for family life.
+- Format group: story_circle
 - Materials: none
 - Safety tags: quiet, no_materials, sibling_friendly
 - Prompt: Invent something silly that would make family life more fun. What is it called?

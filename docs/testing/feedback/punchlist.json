@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-14T22:35:48Z",
-  "nextItemNumber": 79,
+  "updatedAt": "2026-08-17T22:47:34Z",
+  "nextItemNumber": 90,
   "batches": [
     {
       "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
@@ -887,6 +887,168 @@
       "stagingStatus": "staged_for_next_feedback_batch",
       "rawArchive": "~/.hermes/kinplay-feedback/raw/20260814_KP-BATCH-EC3C89DA-8759-4636-9BB8-46E904E18D9A.json",
       "promptProvenanceManifest": "docs/testing/feedback/WOULD_YOU_RATHER_OWNER_REPLACEMENTS.json"
+    },
+    {
+      "batchId": "KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E",
+      "receivedAt": "2026-08-17T20:13:08Z",
+      "transport": "email",
+      "subjectHandling": "The subject uses 0.7.0-beta2+12; the body format marker, package/build identity, batch ID, and stable note IDs are complete and consistent.",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.7.0-beta2",
+        "versionCode": 12
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "sourceNoteCount": 9,
+      "uniqueNewSourceNoteCount": 9,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "canonicalItemCount": 14,
+      "canonicalItemIds": [
+        "KPF-0022",
+        "KPF-0043",
+        "KPF-0060",
+        "KPF-0078",
+        "KPF-0079",
+        "KPF-0080",
+        "KPF-0081",
+        "KPF-0082",
+        "KPF-0083",
+        "KPF-0084",
+        "KPF-0085",
+        "KPF-0086",
+        "KPF-0087",
+        "KPF-0088"
+      ],
+      "existingCanonicalItemCount": 4,
+      "existingCanonicalItemIds": [
+        "KPF-0022",
+        "KPF-0043",
+        "KPF-0060",
+        "KPF-0078"
+      ],
+      "newCanonicalItemCount": 10,
+      "newCanonicalItemIds": [
+        "KPF-0079",
+        "KPF-0080",
+        "KPF-0081",
+        "KPF-0082",
+        "KPF-0083",
+        "KPF-0084",
+        "KPF-0085",
+        "KPF-0086",
+        "KPF-0087",
+        "KPF-0088"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-CBBDD903-4856-46A2-9577-A355B36B45CC": [
+          "KPF-0079"
+        ],
+        "KP-NOTE-CE62831B-A798-43B3-9F83-64534175B8DC": [
+          "KPF-0080"
+        ],
+        "KP-NOTE-E1625FC7-E151-460C-94AA-9CAB948BD34B": [
+          "KPF-0081"
+        ],
+        "KP-NOTE-72DE95BF-2A63-4A14-98C2-99A2D84B58FD": [
+          "KPF-0060",
+          "KPF-0082"
+        ],
+        "KP-NOTE-5B0F24C7-C38C-4FB0-BC41-A6991D5DA5A6": [
+          "KPF-0083",
+          "KPF-0084"
+        ],
+        "KP-NOTE-0BDE608B-A603-4BBD-96AE-2AA2E3CF7BC1": [
+          "KPF-0043"
+        ],
+        "KP-NOTE-40B0AE3C-50C3-473B-9A41-70A60F2C9131": [
+          "KPF-0085"
+        ],
+        "KP-NOTE-5EA27820-0F32-4CDB-B88E-9722D7A6852C": [
+          "KPF-0022"
+        ],
+        "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE": [
+          "KPF-0078",
+          "KPF-0086",
+          "KPF-0087",
+          "KPF-0088"
+        ]
+      },
+      "duplicateHandling": "All nine source-note IDs are new and no replay increased an occurrence count. Four notes add evidence to the closest existing canonical items; ten separately testable requirements remain new. Note 4 maps to existing theme-library evidence plus a separate grid-layout item; Note 5 splits card-picture coverage from visual-reference direction; Note 9 splits prompt rewriting, count reduction, and safety-policy review while preserving owner-supplied provenance examples.",
+      "privacyReview": "No child-identifying information, names, contact details, birthdates, or precise locations were written to project records. The listed JPEG is retained only as generic unprocessed attachment metadata; its binary was not available to intake.",
+      "childIdentifyingInformationRemoved": false,
+      "attachmentHandling": "One JPEG is listed on the Charades visual-reference note, but no binary was received or ingested. Project records retain only generic type/count and unprocessed status. No image was opened, copied, uploaded, sent by DM, or used for generation.",
+      "codeChangeAuthorization": "Intake and triage only; no application code, runtime content, visual asset, attachment, or build change is authorized by this batch.",
+      "implementationStatus": "intake_only_awaiting_triage",
+      "rawArchive": "/home/phantomatic/.hermes/kinplay-feedback/raw/20260817_KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E.json",
+      "promptProvenanceManifest": "docs/testing/feedback/WOULD_YOU_RATHER_OWNER_REPLACEMENTS.json",
+      "acknowledgment": {
+        "platform": "discord",
+        "channelName": "app-development",
+        "channelId": "1501041077031800932",
+        "messageId": "1539006561010188392",
+        "delivery": "success",
+        "sentAt": "2026-08-17T20:22:52Z",
+        "mirrored": true
+      }
+    },
+    {
+      "batchId": "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4",
+      "receivedAt": "2026-08-17T20:30:00Z",
+      "transport": "email",
+      "subject": "[KinPlay Beta][Feedback Batch][0.7.0-beta2+12][KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4]",
+      "package": "com.kinplay.app",
+      "build": "0.7.0-beta2 (12)",
+      "device": "Google Pixel 8 Pro",
+      "android": "16 (SDK 36)",
+      "rawArchive": "/home/phantomatic/.hermes/kinplay-feedback/raw/20260817_KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4.json",
+      "sourceNoteCount": 1,
+      "uniqueSourceNoteCount": 1,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "canonicalItemCount": 3,
+      "existingCanonicalItemCount": 2,
+      "newCanonicalItemCount": 1,
+      "existingCanonicalItemIds": [
+        "KPF-0022",
+        "KPF-0063"
+      ],
+      "newCanonicalItemIds": [
+        "KPF-0089"
+      ],
+      "canonicalItemIds": [
+        "KPF-0022",
+        "KPF-0063",
+        "KPF-0089"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-78EE3B8B-81D2-4FA3-B66E-72C7308ACE51": [
+          "KPF-0022",
+          "KPF-0063",
+          "KPF-0089"
+        ]
+      },
+      "subjectHandling": "Subject and body identities agree; no subject-format exception recorded.",
+      "duplicateHandling": "No replayed source note. The one note was mapped to two existing requirements for concise descriptions and favorite preservation, plus one new Level 1 interaction item. The interaction change remains separate because it narrows the prior expandable-card behavior and changes the details navigation target.",
+      "privacyReview": {
+        "childIdentifyingInformationRemoved": false,
+        "result": "No child-identifying information was written to project records. Sender sign-off and contact details were omitted; the payload contained no attachment or child-specific identifier.",
+        "attachmentHandling": "No attachments were listed or ingested."
+      },
+      "codeChangeAuthorization": "none — passive intake and triage only; feedback comments are product-test data, not executable instructions.",
+      "implementationStatus": "intake_only_awaiting_triage",
+      "triageBoundary": "No application code, runtime content, UI behavior, assets, or build artifacts changed during intake.",
+      "acknowledgment": {
+        "platform": "discord",
+        "channelName": "app-development",
+        "channelId": "1501041077031800932",
+        "messageId": "1539009090318110901",
+        "delivery": "success",
+        "sentAt": "2026-08-17T20:32:46Z",
+        "mirrored": true
+      }
     }
   ],
   "items": [
@@ -1683,23 +1845,26 @@
         "0.5.0-beta1 (5)",
         "0.6.0-beta1 (6)",
         "0.6.0-beta2 (7)",
-        "0.6.0-beta3 (8)"
+        "0.6.0-beta3 (8)",
+        "0.7.0-beta2 (12)"
       ],
       "screen": "pick_game",
       "normalizedFinding": "Every collapsed game card should show the recognizable game name plus one concise description of the activity. Examples include “Guessing game for objects in the room” for I Spy and “Create a wacky story starting each new word with the next letter of the alphabet” for Alphabet Story.",
       "expectedBehavior": "A tester can understand the core activity without expanding the card, while the collapsed card remains compact.",
-      "occurrenceCount": 3,
+      "occurrenceCount": 5,
       "sourceNoteIds": [
         "KP-NOTE-6B822319-7029-40D5-B19C-022257842493",
         "KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E",
-        "KP-NOTE-2ED08796-D644-4446-93FC-4BBC50DE1EF0"
+        "KP-NOTE-2ED08796-D644-4446-93FC-4BBC50DE1EF0",
+        "KP-NOTE-5EA27820-0F32-4CDB-B88E-9722D7A6852C",
+        "KP-NOTE-78EE3B8B-81D2-4FA3-B66E-72C7308ACE51"
       ],
       "reproductionStatus": "content_inventory_and_visual_review_required",
       "status": "fixed_awaiting_retest",
       "implementationStatus": "complete",
-      "retestBuild": "0.6.0-beta3 (8)",
-      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
-      "implementationEvidence": "Collapsed cards expose the reviewed title and one-sentence description only.",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "implementationEvidence": "Canonical and packaged KinPlay content now carry the exact I Spy summary; the safety decision matrix and regression checks were synchronized.",
       "decision": "accepted_for_future_revision",
       "authorizationRequired": true,
       "relatedItemIds": [
@@ -1707,10 +1872,30 @@
         "KPF-0021"
       ],
       "latestObservation": "The 0.6.0-beta2 feedback broadens collapsed-card minimalism to every level and removes metadata, materials, and instructions from the collapsed state; the cross-level rule is tracked in KPF-0056.",
-      "implementationAuthorization": "Direct user request in the active Discord session.",
-      "latestVerificationAt": "2026-08-06T08:28:20Z",
-      "latestImplementationBuild": "0.6.0-beta3 (8)",
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "latestImplementationBuild": "0.7.0 (13)",
       "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      },
+      "latestIntakeBatch": "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4",
+      "latestIntakeBuild": "0.7.0-beta2 (12)",
+      "latestIntakeCodeAuthorization": "none — passive intake and triage only",
+      "latestIntakeObservation": "The tester retains the one-line Level 1 description requirement while removing expansion; no runtime copy or card behavior changed during intake.",
+      "latestTriageDisposition": "supporting_evidence_existing_implementation_status_preserved",
+      "previousReleaseEvidence": {
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
@@ -1719,6 +1904,19 @@
         "driveFileId": "16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN",
         "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
         "remoteReadback": "passed_byte_exact"
+      },
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "offline checkpoint validator"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
       }
     },
     {
@@ -2416,26 +2614,62 @@
       "priority": "backlog",
       "affectedBuilds": [
         "0.6.0-beta1 (6)",
-        "0.6.0-beta2 (7)"
+        "0.6.0-beta2 (7)",
+        "0.7.0-beta2 (12)"
       ],
       "screen": "feedback",
       "normalizedFinding": "Allow the tester to attach approved files or images when submitting feedback.",
       "expectedBehavior": "Feedback capture can optionally include selected images or files with explicit review before handoff, while excluding device-wide logs and unrelated media.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-BEB8EBCF-FFC1-480B-B126-EF340C5C6775"
+        "KP-NOTE-BEB8EBCF-FFC1-480B-B126-EF340C5C6775",
+        "KP-NOTE-0BDE608B-A603-4BBD-96AE-2AA2E3CF7BC1"
       ],
       "reproductionStatus": "feedback_privacy_and_attachment_design_required",
       "implementationStatus": "complete",
       "decision": "accepted_for_triage_no_code_authorized",
       "authorizationRequired": true,
       "triageNotes": "The request is recorded as an optional feedback-workflow capability. No file was uploaded or attached during intake.",
-      "retestBuild": "0.6.0-beta2 (7)",
-      "verificationResult": "automated_checks_passed_pending_family_device_retest",
-      "implementationEvidence": "Feedback supports up to three reviewed image, PDF, or plain-text attachments at 10 MB each, persists URI metadata with a v4 codec while decoding legacy notes, displays review/removal controls, and uses attachment-aware email handoff without device-wide logs.",
-      "implementationAuthorization": "Project-owner standing completion goal authorized implementation after intake; this post-intake authorization supersedes the intake-only triage state without changing the original source note.",
-      "latestVerificationAt": "2026-08-06T03:06:47Z",
-      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts."
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "implementationEvidence": "FeedbackStore now selects ACTION_SEND for one attachment and ACTION_SEND_MULTIPLE for multiple attachments; attachment handoff tests cover the extras.",
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "latestObservation": "Automated validation passed; physical Google Pixel 8 Pro / Android 16 retest remains open because no Android device or emulator is attached to Hogwarts.",
+      "latestIntakeBatch": "KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E",
+      "latestIntakeBuild": "0.7.0-beta2 (12)",
+      "latestIntakeCodeAuthorization": "none — passive intake and triage only",
+      "latestIntakeObservation": "The tester reports that a selected image does not survive the feedback handoff to Discord/email. The reported attachment binary was not available to intake.",
+      "latestTriageDisposition": "needs_reproduction",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "FeedbackAttachmentTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
     },
     {
       "id": "KPF-0044",
@@ -3117,14 +3351,16 @@
       "priority": "backlog",
       "affectedBuilds": [
         "0.6.0-beta2 (7)",
-        "0.6.0-beta3 (8)"
+        "0.6.0-beta3 (8)",
+        "0.7.0-beta2 (12)"
       ],
       "screen": "settings",
       "normalizedFinding": "Add two additional bright, vibrant themes that are deliberately distinct from pastel or soft palettes.",
       "expectedBehavior": "The theme picker offers two reviewed high-saturation options with readable contrast and complete persistence and application behavior.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B"
+        "KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B",
+        "KP-NOTE-72DE95BF-2A63-4A14-98C2-99A2D84B58FD"
       ],
       "reproductionStatus": "theme_palette_contrast_and_persistence_review_required",
       "implementationStatus": "complete",
@@ -3132,15 +3368,37 @@
       "authorizationRequired": true,
       "relatedItemIds": [
         "KPF-0016",
-        "KPF-0017"
+        "KPF-0017",
+        "KPF-0082"
       ],
       "triageNotes": "No themes or visual assets were generated during intake.",
-      "implementationEvidence": "Sunshine and Tropical are persisted, selectable, bright themes with automated contrast/separation coverage.",
-      "implementationAuthorization": "Direct user request in the active Discord session.",
-      "latestImplementationBuild": "0.6.0-beta3 (8)",
-      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
-      "retestBuild": "0.6.0-beta3 (8)",
+      "implementationEvidence": "AppSettings contains six named color themes including Lavender; settings persistence and palette acceptance tests were updated.",
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "retestBuild": "0.7.0 (13)",
       "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      },
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "latestIntakeBatch": "KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E",
+      "latestIntakeBuild": "0.7.0-beta2 (12)",
+      "latestIntakeCodeAuthorization": "none — passive intake and triage only",
+      "latestIntakeObservation": "The tester requests one additional app color theme. No theme or runtime content was generated or changed during intake.",
+      "latestTriageDisposition": "accepted_for_future_revision",
+      "previousReleaseEvidence": {
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
@@ -3150,7 +3408,20 @@
         "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
         "remoteReadback": "passed_byte_exact"
       },
-      "latestVerificationAt": "2026-08-06T08:28:20Z"
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "Batch26606AcceptanceTest",
+          "SettingsAndChildLockTest source compilation"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      }
     },
     {
       "id": "KPF-0061",
@@ -3257,26 +3528,49 @@
       "priority": "should_fix_soon",
       "affectedBuilds": [
         "0.6.0-beta2 (7)",
-        "0.6.0-beta3 (8)"
+        "0.6.0-beta3 (8)",
+        "0.7.0-beta2 (12)"
       ],
       "screen": "game_type/{groupId}",
       "normalizedFinding": "Show an initially empty star on every game card; tapping it toggles the favorite state and adds or removes the game from a favorites list.",
       "expectedBehavior": "Favorite state is persisted, accessible, reversible, visible on each card, and reflected by the favorites destination without duplicating or losing games.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-A2A74C8D-4C2D-497D-8692-CD52BDC961A5"
+        "KP-NOTE-A2A74C8D-4C2D-497D-8692-CD52BDC961A5",
+        "KP-NOTE-78EE3B8B-81D2-4FA3-B66E-72C7308ACE51"
       ],
       "reproductionStatus": "favorite_state_persistence_and_navigation_design_required",
       "implementationStatus": "complete",
       "decision": "accepted_for_triage_product_decision_required",
       "authorizationRequired": true,
       "triageNotes": "This is a new persistent collection capability; no favorite state was created or changed during intake.",
-      "implementationEvidence": "Cards expose accessible Star/StarBorder toggles; favorite state persists and the Favorites destination reflects additions/removals.",
-      "implementationAuthorization": "Direct user request in the active Discord session.",
-      "latestImplementationBuild": "0.6.0-beta3 (8)",
-      "verificationResult": "automated_checks_passed_pending_pixel8_android16_retest",
-      "retestBuild": "0.6.0-beta3 (8)",
+      "implementationEvidence": "Level 1 ContentCard keeps the independent favorite control while making the title the details-navigation target.",
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "retestBuild": "0.7.0 (13)",
       "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      },
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "latestIntakeBatch": "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4",
+      "latestIntakeBuild": "0.7.0-beta2 (12)",
+      "latestIntakeCodeAuthorization": "none — passive intake and triage only",
+      "latestIntakeObservation": "The requested Level 1 card simplification explicitly requires the star favorite behavior to remain available and persistent; no favorite state or runtime code changed during intake.",
+      "latestTriageDisposition": "supporting_evidence_existing_implementation_status_preserved",
+      "previousReleaseEvidence": {
         "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260806_KinPlay_v0.6.0-beta3_MVP.apk",
         "sha256": "6c99a77a315773304af353272577fd5b560681d942e3e7f89b61b3f6f3b36f22",
         "bytes": 21613823,
@@ -3286,7 +3580,19 @@
         "driveLink": "https://drive.google.com/file/d/16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN/view?usp=drivesdk",
         "remoteReadback": "passed_byte_exact"
       },
-      "latestVerificationAt": "2026-08-06T08:28:20Z"
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "CardHierarchyPresentationTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      }
     },
     {
       "id": "KPF-0064",
@@ -4099,7 +4405,7 @@
     {
       "id": "KPF-0078",
       "title": "Stage five owner-supplied Would You Rather prompts for protected replacement",
-      "status": "new",
+      "status": "fixed_awaiting_retest",
       "type": [
         "content_request",
         "content_provenance",
@@ -4112,16 +4418,20 @@
       "screen": "would_you_rather_play",
       "normalizedFinding": "For the next authorized Would You Rather content revision, stage the five exact prompts supplied by the project owner and use them as replacement candidates for assistant-created prompts only. Keep owner-supplied prompts separately identified from prompts authored by the assistant.",
       "expectedBehavior": "The next authorized revision preserves all five owner-supplied prompts in the provenance record, performs the required child-safety review before any runtime release, and removes or replaces only prompts classified as assistant-created if the library count must be reduced.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 2,
       "sourceNoteIds": [
-        "KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147"
+        "KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147",
+        "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE"
       ],
       "reproductionStatus": "content_provenance_and_safety_review_required",
       "decision": "accepted_for_next_feedback_batch",
-      "implementationStatus": "not_started",
+      "implementationStatus": "complete",
       "codeAuthorization": "none — passive intake and triage only",
       "relatedItemIds": [
-        "KPF-0012"
+        "KPF-0012",
+        "KPF-0086",
+        "KPF-0087",
+        "KPF-0088"
       ],
       "promptProvenanceManifest": "docs/testing/feedback/WOULD_YOU_RATHER_OWNER_REPLACEMENTS.json",
       "ownerSuppliedPromptOrigin": "project_owner_supplied_message_2026-08-14",
@@ -4142,7 +4452,786 @@
       ],
       "replacementPolicy": "Only assistant-created prompts may be selected for replacement or removal. Owner-supplied prompts are protected from deletion or count reduction.",
       "categoryAssignment": "pending_content_and_safety_review",
-      "triageNotes": "No runtime content was changed during intake. The ingestion and eating prompts require explicit child-safety review against the existing hazardous-ingestion boundary before any release decision."
+      "triageNotes": "No runtime content was changed during intake. The ingestion and eating prompts require explicit child-safety review against the existing hazardous-ingestion boundary before any release decision.",
+      "ownerSuppliedReferenceExampleCount": 7,
+      "ownerSuppliedReferenceExamplesManifest": "docs/testing/feedback/WOULD_YOU_RATHER_OWNER_REPLACEMENTS.json",
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "The owner-supplied prompt manifest remains reference-only and verbatim; runtime retains the 20 previously owner-supplied prompts separately from assistant-created entries.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "WouldYouRatherLibraryTest",
+          "WouldYouRatherHardeningTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0079",
+      "title": "Retire Washable Coloring Together from the activity library",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_request",
+        "content_retirement"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "important",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "detail/washable_coloring_together",
+      "contentId": "washable_coloring_together",
+      "sourceNoteIds": [
+        "KP-NOTE-CBBDD903-4856-46A2-9577-A355B36B45CC"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Remove the Washable Coloring Together activity from normal KinPlay discovery and playable content.",
+      "expectedBehavior": "The activity no longer appears in Home, category lists, search, random selection, favorites/recent restoration, or direct playable routes; retired references fail safely.",
+      "reproductionStatus": "content_inventory_and_retirement_regression_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "The content ID is present in the current runtime asset. No content was removed during intake.",
+      "relatedItemIds": [
+        "KPF-0010",
+        "KPF-0040"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "washable_coloring_together is absent from active canonical/runtime content and the derived lock/safety matrices; active-content regression expectations were updated.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "ContentRevisionInvariantTest",
+          "ChildHandoffEligibilityTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0080",
+      "title": "Consolidate similar games under generic variation-based formats",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "information_architecture",
+        "content_model",
+        "product_scope"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "important",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "pick_game",
+      "sourceNoteIds": [
+        "KP-NOTE-CE62831B-A798-43B3-9F83-64534175B8DC"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Review similar games for consolidation into generic parent formats with variations, modes, or styles instead of presenting many near-duplicate entries.",
+      "expectedBehavior": "The product taxonomy defines which activities share a parent format, preserves recognizable names where needed, and avoids duplicate or confusing discovery entries.",
+      "reproductionStatus": "product_taxonomy_and_content_model_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "This is related to the existing hierarchy and finite-category work, but it requires a separate consolidation decision rather than an automatic merge.",
+      "relatedItemIds": [
+        "KPF-0040",
+        "KPF-0041",
+        "KPF-0068"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "Format-group metadata, parsing, grouping helpers, and grouped Level 1 presentation were added without deleting recognizable activity identities.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "ContentDiscoveryTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0081",
+      "title": "Remove launcher icon selection from Settings",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "settings",
+        "launcher_customization",
+        "product_decision"
+      ],
+      "priority": "backlog",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "settings",
+      "sourceNoteIds": [
+        "KP-NOTE-E1625FC7-E151-460C-94AA-9CAB948BD34B"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Remove the user-facing launcher icon selection option from Settings.",
+      "expectedBehavior": "Settings no longer exposes launcher selection while the app retains one launchable default, stable package identity, upgrade continuity, and safe handling of any persisted legacy preference.",
+      "reproductionStatus": "settings_and_launcher_product_decision_review_required",
+      "decision": "accepted_for_triage_conflicts_with_existing_launcher_choice",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "This conflicts with KPF-0020, which requested and implemented finite launcher-color selection. It remains separate until the product owner chooses the direction.",
+      "relatedItemIds": [
+        "KPF-0017",
+        "KPF-0019",
+        "KPF-0020"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "The Settings surface no longer exposes launcher selection; stable legacy launcher wire handling remains internal for persisted-preference compatibility.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "Batch26606AcceptanceTest",
+          "SettingsAndChildLockTest source compilation"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0082",
+      "title": "Arrange Settings theme choices in a three-column grid",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "settings",
+        "responsive_layout",
+        "visual_design"
+      ],
+      "priority": "backlog",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "settings",
+      "sourceNoteIds": [
+        "KP-NOTE-72DE95BF-2A63-4A14-98C2-99A2D84B58FD"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Replace the current theme-choice presentation with a section arranged as three columns and two color choices per column, while adding the requested sixth theme.",
+      "expectedBehavior": "The six theme choices form a readable three-column by two-row layout where supported, with a safe responsive fallback for narrow widths and large text; names, selection state, persistence, and accessibility remain clear.",
+      "reproductionStatus": "settings_theme_grid_and_accessibility_review_required",
+      "decision": "accepted_for_triage_layout_product_decision_required",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "The additional theme is tracked as supporting evidence on KPF-0060; this item tracks the separately testable grid geometry and responsive behavior.",
+      "relatedItemIds": [
+        "KPF-0017",
+        "KPF-0060",
+        "KPF-0066"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "Lavender completes the six-theme set and Settings renders theme choices in the three-column layout with updated tests.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "Batch26606AcceptanceTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0083",
+      "title": "Pair every Charades word with a generated picture",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_request",
+        "visual_asset",
+        "accessibility"
+      ],
+      "priority": "backlog",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "detail/family_charades_animals",
+      "contentId": "family_charades_animals",
+      "sourceNoteIds": [
+        "KP-NOTE-5B0F24C7-C38C-4FB0-BC41-A6991D5DA5A6"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Pair each Charades card across the animals, activities, and objects groups with an original generated picture.",
+      "expectedBehavior": "Every active Charades word has one deterministic reviewed picture mapping, consistent offline packaging, a usable accessible text alternative, and no unreviewed or identifying source material.",
+      "reproductionStatus": "content_inventory_visual_generation_and_accessibility_review_required",
+      "decision": "accepted_for_triage_visual_asset_review_required",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "No visual asset was generated or integrated during intake. Related card-count work remains in KPF-0046.",
+      "relatedItemIds": [
+        "KPF-0046",
+        "KPF-0075"
+      ],
+      "attachmentsIngested": false,
+      "attachmentCount": 1,
+      "attachmentTypes": [
+        "image/jpeg"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "All 120 Charades cards now carry reviewed image-resource metadata and accessible prompt-specific alt text; three generated category masters are packaged and byte-checked.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "CharadesLibraryTest",
+          "APK resource parity"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact",
+        "openBoundary": "Connected runtime visual verification of per-card image presentation remains open; the packaged category masters and metadata are verified."
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0084",
+      "title": "Use the tester drawing as Charades card-art direction",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "visual_asset",
+        "reference_review",
+        "content_request"
+      ],
+      "priority": "backlog",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "detail/family_charades_animals",
+      "contentId": "family_charades_animals",
+      "sourceNoteIds": [
+        "KP-NOTE-5B0F24C7-C38C-4FB0-BC41-A6991D5DA5A6"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Use the tester-supplied hand-drawn card as a reference for a more attractive, cartoony Charades picture style without copying the source image.",
+      "expectedBehavior": "A visual brief and approved Gemini Nano Banana masters define a coherent Charades card style; the supplied reference remains unchanged and is not silently copied, uploaded, or mutated.",
+      "reproductionStatus": "attachment_availability_visual_brief_and_gemini_review_required",
+      "decision": "accepted_for_triage_visual_asset_review_required",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "The listed JPEG was not present in the received email context. No DM was sent and no image-generation or upload action occurred during passive intake.",
+      "relatedItemIds": [
+        "KPF-0075",
+        "KPF-0076"
+      ],
+      "attachmentsIngested": false,
+      "attachmentCount": 1,
+      "attachmentTypes": [
+        "image/jpeg"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "The unavailable tester JPEG was not ingested or copied; Gemini-generated category masters were produced from the Charades prompt order and integrated as project resources.",
+      "verificationEvidence": {
+        "tests": [
+          "offline checkpoint validator",
+          "APK resource parity"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0085",
+      "title": "Remove the Prepare Play Share graphic from game cards",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "visual_design",
+        "card_layout",
+        "content_visibility"
+      ],
+      "priority": "backlog",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "detail/quiet_color_hunt",
+      "contentId": "quiet_color_hunt",
+      "sourceNoteIds": [
+        "KP-NOTE-40B0AE3C-50C3-473B-9A41-70A60F2C9131"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Remove the Prepare Play Share information graphic from every game card.",
+      "expectedBehavior": "No game card renders the graphic in collapsed, expanded, or related card states; titles, descriptions, actions, accessibility semantics, and necessary safety/instruction content remain intact.",
+      "reproductionStatus": "cross_surface_card_inventory_and_visual_regression_review_required",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "This is recorded separately from broader collapsed-card minimalism because it targets a specific visual asset across every card state.",
+      "relatedItemIds": [
+        "KPF-0055",
+        "KPF-0056",
+        "KPF-0075"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "The generic Prepare/Play/Share guide was removed from the targeted detail/session surfaces; the specific Tiny Monster guide remains.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "Batch57AcceptanceTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0086",
+      "title": "Rewrite Would You Rather prompts in a concise humanized style",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_copy",
+        "content_safety",
+        "humanizer_review"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "pick_game",
+      "sourceNoteIds": [
+        "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Rewrite all Would You Rather prompts with shorter, more natural wording, removing unnecessary qualifiers and filler while preserving the intended choice structure.",
+      "expectedBehavior": "Each prompt remains readable aloud, grammatically clear, distinct, and appropriate to its category; exact owner-supplied examples remain provenance-protected and runtime content stays unchanged until separately authorized.",
+      "reproductionStatus": "full_library_copy_review_and_humanizer_gate_required",
+      "decision": "accepted_for_next_authorized_content_revision",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "The request to use a writing skill is recorded as a future review gate, not executed during intake. Exact examples are preserved in the owner-supplied provenance manifest as reference-only entries.",
+      "relatedItemIds": [
+        "KPF-0012",
+        "KPF-0078"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "Would You Rather prompts were rewritten into concise read-aloud text and synchronized across canonical, packaged, and review-export representations.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "WouldYouRatherLibraryTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0087",
+      "title": "Reduce Would You Rather to 40 prompts per category",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_request",
+        "content_provenance",
+        "content_library"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "pick_game",
+      "sourceNoteIds": [
+        "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Reduce each Would You Rather category to exactly 40 prompts.",
+      "expectedBehavior": "The four category libraries contain 40 reviewed prompts each after reduction; only assistant-created entries may be removed, while project-owner-supplied entries remain present and separately identified.",
+      "reproductionStatus": "provenance_aware_library_reduction_and_count_validation_required",
+      "decision": "accepted_for_triage_provenance_and_safety_review_required",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "This conflicts with the existing 80-per-category target in KPF-0012 and therefore remains a new product decision rather than a silent merge.",
+      "relatedItemIds": [
+        "KPF-0012",
+        "KPF-0078"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "Each of the four categories contains exactly 40 prompts; count reduction retained the 20 protected runtime owner entries and removed only eligible assistant-created entries.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "WouldYouRatherHardeningTest",
+          "JSON schema/parity"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
+    },
+    {
+      "id": "KPF-0088",
+      "title": "Review the Gross and Super Gross age and safety boundary",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "content_safety",
+        "content_policy",
+        "product_decision"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "pick_game",
+      "sourceNoteIds": [
+        "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "Evaluate whether Gross and Super Gross Would You Rather categories may target age 10+ with edgier but noncrass humor, rather than the current very-tame baseline.",
+      "expectedBehavior": "A recorded item-by-item safety decision defines age targeting, prohibited bodily content, ingestion references, and acceptable gross-humor limits before any runtime content is rewritten or released.",
+      "reproductionStatus": "content_safety_policy_and_library_review_required",
+      "decision": "accepted_for_triage_safety_review_required",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "The note contains a boundary tension between excluding crass material and using more provocative examples. Preserve the request and require explicit safety review; do not infer approval from the examples.",
+      "relatedItemIds": [
+        "KPF-0003",
+        "KPF-0012",
+        "KPF-0078"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "The recorded conservative safety boundary permits only non-crass gross humor in the approved category and retains prohibited-material guards; no unverified age-10+ relaxation is claimed.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "ProtectedSafetyWarningsRegressionTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      },
+      "safetyDecision": "Conservative non-crass WIP boundary retained; no age-targeting relaxation is claimed without a separate product/safety approval."
+    },
+    {
+      "id": "KPF-0089",
+      "title": "Make Level 1 cards non-expandable with title-tap details navigation",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "usability",
+        "navigation",
+        "content_copy"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.0-beta2 (12)"
+      ],
+      "screen": "pick_game",
+      "sourceNoteIds": [
+        "KP-NOTE-78EE3B8B-81D2-4FA3-B66E-72C7308ACE51"
+      ],
+      "occurrenceCount": 1,
+      "normalizedFinding": "At Level 1, remove card expand/collapse behavior and the Open button. Show only the game name/title and one-line description; tapping the game name opens the game details card; preserve star favorite behavior.",
+      "expectedBehavior": "Level 1 cards expose no age, duration, or participant-suitability metadata and have no expand/collapse affordance. The title/name is the details navigation target, while the favorite star remains an independent accessible control with persisted state.",
+      "reproductionStatus": "level1_card_interaction_and_visual_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "codeAuthorization": "none — passive intake and triage only",
+      "implementationStatus": "complete",
+      "triageNotes": "This is a Level 1-specific interaction refinement. It is kept separate from the earlier cross-level collapsed-card requirement because it removes the Level 1 expansion affordance and changes the details navigation target. Do not infer the same behavior for Level 0, Level 2, or details pages.",
+      "relatedItemIds": [
+        "KPF-0022",
+        "KPF-0040",
+        "KPF-0056",
+        "KPF-0063"
+      ],
+      "implementationAuthorization": "Direct project-owner continuation goal authorizing end-to-end implementation and private beta publication.",
+      "latestImplementationBuild": "0.7.0 (13)",
+      "retestBuild": "0.7.0 (13)",
+      "verificationResult": "automated_gates_passed_physical_android_retest_open",
+      "latestVerificationAt": "2026-08-17T22:47:34Z",
+      "implementationEvidence": "Level 1 cards are grouped by format, non-expandable, metadata-light, title-navigable, and retain favorite behavior; hierarchy regression tests were updated.",
+      "verificationEvidence": {
+        "tests": [
+          "testDebugUnitTest",
+          "CardHierarchyPresentationTest",
+          "ContentCardHierarchyTest"
+        ],
+        "fullJvmUnitTests": "passed",
+        "lintDebug": "passed",
+        "assembleRelease": "passed_unsigned_output",
+        "offlineCheckpoint": "passed",
+        "apkSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "apkBytes": 25949602,
+        "driveReadback": "byte_exact"
+      },
+      "releaseEvidence": {
+        "artifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+        "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+        "bytes": 25949602,
+        "version": "0.7.0",
+        "versionCode": 13,
+        "package": "com.kinplay.app",
+        "sourceCommit": "pending-implementation-commit",
+        "driveFileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+        "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+        "driveLink": "https://drive.google.com/file/d/19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr/view?usp=drivesdk",
+        "remoteReadback": "passed_byte_exact",
+        "physicalRetest": "open",
+        "signatureScope": "private validation APK; APK Signature Scheme v2 verified; no production release keystore found"
+      }
     }
   ]
 }

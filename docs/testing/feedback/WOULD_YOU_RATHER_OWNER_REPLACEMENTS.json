@@ -19,7 +19,9 @@
     "status": "staged_for_next_feedback_batch",
     "targetCategory": "pending_content_and_safety_review",
     "selectionRule": "Select replacement candidates only from prompts classified as assistant-created. Do not select any prompt in this manifest as a deletion or reduction candidate.",
-    "runtimeContentChanged": false
+    "runtimeContentChanged": false,
+    "referenceExamplesRuntimeEligible": false,
+    "referenceExamplesProtected": true
   },
   "prompts": [
     {
@@ -62,5 +64,101 @@
       "safetyReview": "pending",
       "status": "staged"
     }
-  ]
+  ],
+  "sourceNoteIds": [
+    "KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147",
+    "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE"
+  ],
+  "additionalSourceNoteIds": [
+    "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE"
+  ],
+  "updatedAt": "2026-08-17T20:13:08Z",
+  "sourceNoteHandling": "The new batch examples are preserved as owner-supplied, reference-only text. They are not runtime prompts and are not eligible for deletion or count reduction.",
+  "referenceExamples": [
+    {
+      "id": "owner_wyr_20260817_example_001",
+      "sourceNoteId": "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE",
+      "origin": "project_owner_supplied",
+      "exampleType": "before",
+      "sourceText": "would you rather glide to the garden on a paper airplane or roll to the library in a button in the car.",
+      "sha256": "4eb178a60ca2793f77a56aed4dd9bdc826ffe228fea7f0c685cf870296ea91b8",
+      "runtimeEligible": false,
+      "eligibleForReplacementOrRemoval": false,
+      "safetyReview": "reference_only",
+      "status": "reference_only"
+    },
+    {
+      "id": "owner_wyr_20260817_example_002",
+      "sourceNoteId": "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE",
+      "origin": "project_owner_supplied",
+      "exampleType": "target",
+      "sourceText": "would you rather ride in a giant paper airplane or a car with buttons for Wheels.",
+      "sha256": "d4248a18a45b08b7aeb52e0f3f3ba7daf89af3c8563e0c45253162611d14a133",
+      "runtimeEligible": false,
+      "eligibleForReplacementOrRemoval": false,
+      "safetyReview": "reference_only",
+      "status": "reference_only"
+    },
+    {
+      "id": "owner_wyr_20260817_example_003",
+      "sourceNoteId": "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE",
+      "origin": "project_owner_supplied",
+      "exampleType": "target",
+      "sourceText": "would you rather ride in a giant paper airplane in the rain or ride in a car with cookies for Wheels through a milk pond.",
+      "sha256": "43596b321d8325a03c9efdd14f264665e9276331ff3b39eed5817abdb60987f2",
+      "runtimeEligible": false,
+      "eligibleForReplacementOrRemoval": false,
+      "safetyReview": "reference_only",
+      "status": "reference_only"
+    },
+    {
+      "id": "owner_wyr_20260817_example_004",
+      "sourceNoteId": "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE",
+      "origin": "project_owner_supplied",
+      "exampleType": "before",
+      "sourceText": "would you rather touch a bowl of squishy peeled grapes with one finger or touch a cup of lumpy pudding with one finger?",
+      "sha256": "6e066cffc7b8de0821064255805fa81171ebe298d250435745db2f5e0f89ba55",
+      "runtimeEligible": false,
+      "eligibleForReplacementOrRemoval": false,
+      "safetyReview": "reference_only",
+      "status": "reference_only"
+    },
+    {
+      "id": "owner_wyr_20260817_example_005",
+      "sourceNoteId": "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE",
+      "origin": "project_owner_supplied",
+      "exampleType": "target",
+      "sourceText": "would you rather put your hand in a bowl of peeled grapes or lumpy pudding?",
+      "sha256": "cd93a01c6a17a25745e8820e86bbb5264fb49e9369082f9bb0ccdc3e81f74a0a",
+      "runtimeEligible": false,
+      "eligibleForReplacementOrRemoval": false,
+      "safetyReview": "reference_only",
+      "status": "reference_only"
+    },
+    {
+      "id": "owner_wyr_20260817_example_006",
+      "sourceNoteId": "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE",
+      "origin": "project_owner_supplied",
+      "exampleType": "before",
+      "sourceText": "would you rather wear a squishy seaweed mittens for 10 minutes or wear muddy pudding boots during a pretend hike?",
+      "sha256": "374c9a79e9f3c4158d8d4e52457a2a39b29cb4d5305b4d76506c46ae48bdc0f1",
+      "runtimeEligible": false,
+      "eligibleForReplacementOrRemoval": false,
+      "safetyReview": "reference_only",
+      "status": "reference_only"
+    },
+    {
+      "id": "owner_wyr_20260817_example_007",
+      "sourceNoteId": "KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE",
+      "origin": "project_owner_supplied",
+      "exampleType": "target",
+      "sourceText": "would you rather have to hike with your boots full of moldy rotten cake or alligators eyeballs.",
+      "sha256": "3eb637489a80f5f2997318a6118be6df616d1e96c5c6330be2aba17347162b18",
+      "runtimeEligible": false,
+      "eligibleForReplacementOrRemoval": false,
+      "safetyReview": "reference_only",
+      "status": "reference_only"
+    }
+  ],
+  "referenceExampleCount": 7
 }

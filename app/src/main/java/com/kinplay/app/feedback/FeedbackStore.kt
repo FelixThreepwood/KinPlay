@@ -156,12 +156,16 @@ fun handOffFeedbackEmail(context: Context, notes: List<FeedbackNote>, batchId: S
             Uri.parse(buildFeedbackMailtoUriString(FEEDBACK_RECIPIENT, FeedbackEmailFormatter.subject(build.versionName, build.versionCode, batchId), body)),
         )
     } else {
-        Intent(Intent.ACTION_SEND).apply {
+        Intent(if (attachments.size == 1) Intent.ACTION_SEND else Intent.ACTION_SEND_MULTIPLE).apply {
             type = "text/plain"
             putExtra(Intent.EXTRA_EMAIL, arrayOf(FEEDBACK_RECIPIENT))
             putExtra(Intent.EXTRA_SUBJECT, FeedbackEmailFormatter.subject(build.versionName, build.versionCode, batchId))
             putExtra(Intent.EXTRA_TEXT, body)
-            putParcelableArrayListExtra(Intent.EXTRA_STREAM, ArrayList(attachments.map { Uri.parse(it.uri) }))
+            if (attachments.size == 1) {
+                putExtra(Intent.EXTRA_STREAM, Uri.parse(attachments.single().uri))
+            } else {
+                putParcelableArrayListExtra(Intent.EXTRA_STREAM, ArrayList(attachments.map { Uri.parse(it.uri) }))
+            }
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
             val first = attachments.first()
             clipData = ClipData.newUri(context.contentResolver, first.displayName, Uri.parse(first.uri))

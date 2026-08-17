@@ -6,6 +6,11 @@ import org.junit.Test
 
 class AppSettingsTest {
     @Test
+    fun sixNamedThemesAreAvailableForTheThreeByTwoSettingsGrid() {
+        assertEquals(6, AppColorTheme.entries.size)
+    }
+
+    @Test
     fun defaultsRemainBackwardCompatibleWhenNoKeysExist() {
         assertEquals(
             AppSettings(

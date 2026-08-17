@@ -6,7 +6,7 @@
 - Freeze Dance Statues [activity] — Ages 2+, 7 min — Dance, freeze, and pose as funny statues. — Participant fit: both
 - Pillow Boat Adventure [activity] — Ages 2+, 10 min — Pretend pillows are boats crossing a living-room sea. — Participant fit: both
 - Calm Cloud Breaths [activity] — Ages 2+, 3 min — A short breathing reset using imaginary clouds. — Participant fit: both
-- I Spy [activity] — Ages 2+, 5 min — Play the familiar I Spy guessing game with ready-made color and shape rounds. — Participant fit: both
+- I Spy [activity] — Ages 2+, 5 min — Guessing game of objects hidden in plain sight. — Participant fit: both
 - Moon Pancake Mission [mad_libs] — Ages 4+, 8 min — Choose words to create and read a silly space breakfast story. — Participant fit: both
 - Dragon Laundry Day [mad_libs] — Ages 4+, 8 min — Choose words to create and read a silly story about a dragon helping with chores. — Participant fit: both
 - Backyard Castle News [mad_libs] — Ages 6+, 10 min — Choose words to create and read a silly story about a royal announcement from a pretend castle. — Participant fit: both
@@ -51,7 +51,6 @@
 - Animal Detective [activity] — Ages 2+, 6 min — Guess a ready-to-use animal by asking familiar yes-or-no questions. — Participant fit: both
 - Race Like an Animal [activity] — Ages 2+, 8 min — Cross a short course like an animal in a safe, flat, clear area. — Participant fit: both
 - Pillow Marco Polo: Eyes-Open Islands [activity] — Ages 2+, 6 min — A safe eyes-open call-and-response walk using pillows only as island boundary markers. — Participant fit: both
-- Washable Coloring Together [activity] — Ages 2+, 10 min — Share a simple coloring page with washable, non-toxic art tools and adult supervision. — Participant fit: both
 - Washable Painting Shapes [activity] — Ages 2+, 15 min — Paint ready-made shapes with washable, non-toxic paint, protected surfaces, and adult supervision. — Participant fit: both
 - Bilateral Mirror Moves [activity] — Ages 2+, 6 min — Copy gentle cross-body movements to wake up coordination and attention. — Participant fit: both
 - Cross-Body Move Mix [activity] — Ages 2+, 7 min — Practice simple opposite-side taps, claps, and freeze balances together. — Participant fit: both

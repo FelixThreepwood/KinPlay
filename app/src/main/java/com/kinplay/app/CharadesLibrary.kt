@@ -3,8 +3,10 @@ package com.kinplay.app
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.Image
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -18,8 +20,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import org.json.JSONObject
@@ -31,6 +35,8 @@ data class CharadesCard(
     val id: String,
     val category: String,
     val prompt: String,
+    val imageResource: String,
+    val imageAltText: String,
 )
 
 data class CharadesDeck(val cards: List<CharadesCard>) {
@@ -47,6 +53,8 @@ data class CharadesDeck(val cards: List<CharadesCard>) {
                         id = card.getString("id"),
                         category = card.getString("category"),
                         prompt = card.getString("prompt"),
+                        imageResource = card.getString("imageResource"),
+                        imageAltText = card.getString("imageAltText"),
                     )
                 }
             }
@@ -54,6 +62,9 @@ data class CharadesDeck(val cards: List<CharadesCard>) {
             require(cards.map(CharadesCard::id).toSet().size == cards.size) { "Charades card IDs must be unique" }
             require(cards.groupingBy(CharadesCard::category).eachCount().values.all { it == 40 }) {
                 "Charades library must contain 40 cards per category"
+            }
+            require(cards.all { it.imageResource.isNotBlank() && it.imageAltText.length >= 10 }) {
+                "Every Charades card must have generated visual metadata"
             }
             return CharadesDeck(cards)
         }
@@ -76,13 +87,14 @@ fun CharadesCardsPanel(enabled: Boolean) {
 
     val categoryCards = deck.cardsIn(category)
     val currentCard = categoryCards.getOrNull(cardIndex % categoryCards.size.coerceAtLeast(1))
+    val imageId = currentCard?.let { context.resources.getIdentifier(it.imageResource, "drawable", context.packageName) } ?: 0
     Card(
         modifier = Modifier.fillMaxWidth().testTag("charades-library"),
         colors = CardDefaults.cardColors(containerColor = androidx.compose.material3.MaterialTheme.colorScheme.secondaryContainer),
     ) {
         Column(modifier = Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Text("Charades cards", fontWeight = FontWeight.Bold)
-            Text("120 reviewed cards: 40 animals, 40 activities, and 40 objects.")
+            Text("120 reviewed cards with a generated picture for every prompt.")
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 CHARADES_CATEGORIES.forEach { option ->
                     FilterChip(
@@ -100,6 +112,14 @@ fun CharadesCardsPanel(enabled: Boolean) {
             if (currentCard == null) {
                 Text("Charades cards are loading.")
             } else {
+                if (imageId != 0) {
+                    Image(
+                        painter = painterResource(imageId),
+                        contentDescription = currentCard.imageAltText,
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier.fillMaxWidth().aspectRatio(1.6f).testTag("charades-card-image"),
+                    )
+                }
                 Text("${currentCard.prompt.replaceFirstChar(Char::uppercase)}", fontWeight = FontWeight.Bold, modifier = Modifier.testTag("charades-card-prompt"))
                 Text("Card ${(cardIndex % categoryCards.size) + 1} of ${categoryCards.size}")
                 Button(

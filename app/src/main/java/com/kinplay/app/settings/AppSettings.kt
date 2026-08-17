@@ -59,6 +59,7 @@ enum class AppColorTheme(val wireValue: String, val label: String, val descripti
     BERRY("berry", "Berry", "Soft rose and berry"),
     SUNSHINE("sunshine", "Sunshine", "Bright, vibrant yellow and orange"),
     TROPICAL("tropical", "Tropical", "Bright, vibrant mint and coral"),
+    LAVENDER("lavender", "Lavender", "Soft lavender and deep plum"),
     ;
 
     companion object {

@@ -1,6 +1,6 @@
 # KinPlay Feedback Retest Log
 
-Last updated: 2026-08-14T22:35:48Z
+Last updated: 2026-08-17T20:30:00Z
 
 Current revision under retest: **0.6.0-beta3 (8)** for the implemented items in batch `KP-BATCH-26606A7F-956F-4699-AE68-328FFA369FBC`; prior cohorts retain their historical retest builds. Earlier cohorts retain their recorded retest builds unless a row below names 0.6.0-beta1 (6); KPF-0020 remains on 0.5.0-beta1 (5) because it is excluded from this batch.
 
@@ -283,3 +283,62 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 | Item | Triage state | Retest build | Next validation |
 |---|---|---|---|
 | KPF-0078 | new | — | Verify owner-supplied provenance, safety-review disposition, and protected replacement/deletion behavior. |
+
+
+## New intake awaiting triage — KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E
+
+- Intake build: **0.7.0-beta2 (12)**. This batch is intake-only and has no retest build.
+- Source notes: 9 new unique note IDs; no replayed IDs.
+- Existing canonical items touched: `KPF-0022`, `KPF-0043`, `KPF-0060`, `KPF-0078`.
+- New canonical items: `KPF-0079`–`KPF-0088`.
+- Privacy: No child-identifying information, contact details, images, birthdates, or precise locations were written to project records.
+- Attachments: One JPEG reference is listed as unprocessed metadata only; no binary was opened, copied, uploaded, or used for generation.
+- Code authorization: No application code, runtime content, visual asset, attachment, or build change is authorized or made by this batch.
+- Discord acknowledgment: delivered successfully to `#app-development` (channel `1501041077031800932`), message `1539006561010188392`.
+- Product decisions held: retirement of Washable Coloring Together; consolidation taxonomy; launcher-selection removal versus KPF-0020; sixth theme and 3-by-2 theme layout; Charades visual scope; Prepare Play Share graphic removal; and the Would You Rather count/safety boundary.
+
+| Item | Triage state | Retest build | Next validation |
+|---|---|---|---|
+| KPF-0022 | existing evidence; future copy revision | — | Confirm exact I Spy description across relevant card states. |
+| KPF-0043 | existing evidence; needs reproduction | — | Reproduce image handoff and verify Discord/email attachment delivery. |
+| KPF-0060 | existing evidence; future theme revision | — | Decide sixth theme and verify contrast/persistence/application. |
+| KPF-0078 | existing provenance item; extended | — | Verify all owner-supplied entries remain protected and runtime content is unchanged. |
+| KPF-0079 | new | — | Decide retirement scope and run route/list persistence checks. |
+| KPF-0080 | new | — | Define generic parent formats and variation taxonomy. |
+| KPF-0081 | new | — | Resolve launcher-setting conflict and legacy preference behavior. |
+| KPF-0082 | new | — | Verify 3-column/2-row theme layout and responsive/accessibility behavior. |
+| KPF-0083 | new | — | Define picture coverage, mapping, packaging, and text alternatives. |
+| KPF-0084 | new | — | Verify approved reference attachment path and Gemini visual brief. |
+| KPF-0085 | new | — | Inventory all game-card states and remove only the targeted graphic in a future revision. |
+| KPF-0086 | new | — | Humanizer review of the full prompt library; no runtime rewrite during intake. |
+| KPF-0087 | new | — | Reconcile 40/category with prior 80/category target and provenance rules. |
+| KPF-0088 | new | — | Complete explicit Gross/Super Gross safety review before implementation. |
+
+## KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4 — intake-only coverage
+
+- Build: 0.7.0-beta2 (12)
+- Source notes: 1 unique; 0 replayed.
+- Existing canonical items touched: KPF-0022 and KPF-0063; implementation and retest states preserved.
+- New canonical item: KPF-0089.
+- Privacy: no child-identifying information written; sign-off and contact details omitted.
+- Attachment handling: none.
+- Code authorization: No application code, runtime content, UI behavior, asset, or build change is authorized or made by this intake.
+- Discord acknowledgment: delivered successfully to `#app-development` (channel `1501041077031800932`), message `1539009090318110901`.
+
+| Canonical item | Intake disposition | Retest requirement |
+| --- | --- | --- |
+| KPF-0022 | Supporting evidence added for the one-line Level 1 description requirement. | Verify title and concise description remain visible after the Level 1 interaction revision. |
+| KPF-0063 | Supporting evidence added for favorite preservation. | Verify star state remains independent, accessible, persistent, and reversible. |
+| KPF-0089 | New; awaiting triage and implementation authorization. | Verify Level 1 has no expand/collapse or Open button, no age/duration/participant metadata, title-tap details navigation, and preserved favorite behavior on Pixel 8 Pro / Android 16. |
+
+
+## 2026-08-17 — Authorized batch implementation closure
+
+- Build under retest: **0.7.0 (13)**.
+- Batch IDs: `KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4`, `KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E`.
+- Machine ledger: `docs/testing/feedback/20260817_IMPLEMENTATION_RELEASE.json`.
+- Automated result: JVM tests, lint, release assembly, offline checkpoint, JSON/schema/parity, APK inspection, v2 signature verification, and whitespace checks passed.
+- Artifact SHA-256: `e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2`; size `25,949,602` bytes.
+- Private Drive object: `19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr`; read-back byte comparison passed.
+- Runtime/device boundary: no connected Android target was available for instrumentation or physical retest; items remain `fixed-awaiting-retest`, not `verified`.
+- Signing boundary: no production release keystore was found; this is a private validation APK.

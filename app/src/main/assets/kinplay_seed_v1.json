@@ -47,7 +47,8 @@
         "get_energy_out",
         "quality_time"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "formatGroupId": "animal_play"
     },
     {
       "id": "couch_cushion_quest",
@@ -146,7 +147,8 @@
         "brain_games",
         "quality_time"
       ],
-      "participantSuitability": "group"
+      "participantSuitability": "group",
+      "formatGroupId": "story_circle"
     },
     {
       "id": "freeze_dance_statues",
@@ -288,7 +290,7 @@
       "status": "active",
       "childHandoffLockEligible": false,
       "title": "I Spy",
-      "summary": "Play the familiar I Spy guessing game with ready-made color and shape rounds.",
+      "summary": "Guessing game of objects hidden in plain sight.",
       "modes": [
         "calm_down",
         "pick_a_game"
@@ -332,7 +334,8 @@
       "collapsedDescription": "Pick a visible object in the room with a guessing game.",
       "collapsedEmphasis": [
         "guessing game"
-      ]
+      ],
+      "formatGroupId": "notice_and_sort"
     },
     {
       "id": "moon_pancake_mission",
@@ -563,7 +566,8 @@
         "brain_games",
         "quality_time"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "formatGroupId": "story_circle"
     },
     {
       "id": "tiny_kindness_plan",
@@ -650,7 +654,8 @@
         "get_energy_out",
         "quality_time"
       ],
-      "participantSuitability": "group"
+      "participantSuitability": "group",
+      "formatGroupId": "animal_play"
     },
     {
       "id": "would_you_rather_silly_family",
@@ -841,7 +846,8 @@
         "get_energy_out",
         "quality_time"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "formatGroupId": "animal_play"
     },
     {
       "id": "kitchen_band_rehearsal",
@@ -1031,7 +1037,8 @@
         "brain_games",
         "quality_time"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "formatGroupId": "notice_and_sort"
     },
     {
       "id": "pirate_map_steps",
@@ -1125,7 +1132,8 @@
         "quiet_games",
         "quality_time"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "formatGroupId": "animal_play"
     },
     {
       "id": "rainbow_sort_sprint",
@@ -1171,7 +1179,8 @@
         "get_energy_out",
         "brain_games"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "formatGroupId": "notice_and_sort"
     },
     {
       "id": "family_news_desk",
@@ -1216,7 +1225,8 @@
         "brain_games",
         "quality_time"
       ],
-      "participantSuitability": "group"
+      "participantSuitability": "group",
+      "formatGroupId": "story_circle"
     },
     {
       "id": "five_senses_tour",
@@ -1495,7 +1505,8 @@
         "outdoor_adventures",
         "quality_time"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "formatGroupId": "notice_and_sort"
     },
     {
       "id": "chair_train_station",
@@ -1976,7 +1987,8 @@
         "brain_games",
         "quality_time"
       ],
-      "participantSuitability": "group"
+      "participantSuitability": "group",
+      "formatGroupId": "story_circle"
     },
     {
       "id": "thank_you_detective",
@@ -2052,7 +2064,8 @@
         "brain_games",
         "quality_time"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "formatGroupId": "story_circle"
     },
     {
       "id": "wizard_pajama_parade",
@@ -2478,7 +2491,8 @@
       "collapsedDescription": "What animal am I thinking of with a guessing game?",
       "collapsedEmphasis": [
         "guessing game"
-      ]
+      ],
+      "formatGroupId": "animal_play"
     },
     {
       "id": "race_like_an_animal",
@@ -2525,7 +2539,8 @@
         "get_energy_out",
         "outdoor_adventures"
       ],
-      "participantSuitability": "both"
+      "participantSuitability": "both",
+      "formatGroupId": "animal_play"
     },
     {
       "id": "indoor_pillow_marco_polo",
@@ -2571,57 +2586,6 @@
       ],
       "quickCategories": [
         "get_energy_out",
-        "quality_time"
-      ],
-      "participantSuitability": "both"
-    },
-    {
-      "id": "washable_coloring_together",
-      "type": "activity",
-      "status": "active",
-      "childHandoffLockEligible": false,
-      "title": "Washable Coloring Together",
-      "summary": "Share a simple coloring page with washable, non-toxic art tools and adult supervision.",
-      "modes": [
-        "quick_play",
-        "pick_a_game",
-        "calm_down"
-      ],
-      "ageTags": [
-        "all_ages"
-      ],
-      "minAge": 2,
-      "maxAge": 8,
-      "durationMinutes": 10,
-      "energyLevel": "calm",
-      "materials": [
-        "paper",
-        "washable non-toxic crayons or markers",
-        "table covering"
-      ],
-      "safetyTags": [
-        "parent_supervision",
-        "small_objects",
-        "quiet",
-        "calming",
-        "sibling_friendly"
-      ],
-      "setupSteps": [
-        "Adult supervises, checks that crayons or markers are labeled washable and non-toxic, and covers the work surface for protection.",
-        "Draw one large circle, square, and triangle on the paper, or use the ready pattern: circle, square, triangle, circle."
-      ],
-      "playSteps": [
-        "Each person chooses one shape and colors it.",
-        "Swap colors and add dots, stripes, or zigzags to the next shape.",
-        "Name the colors and shapes together, then display or recycle the finished page."
-      ],
-      "parentNotes": "Supervise young children; art tools stay out of mouths and are put away when finished.",
-      "variations": [
-        "Use only warm colors.",
-        "Take turns adding one mark to a shared rainbow."
-      ],
-      "quickCategories": [
-        "quiet_games",
         "quality_time"
       ],
       "participantSuitability": "both"

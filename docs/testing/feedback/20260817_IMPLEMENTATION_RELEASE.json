@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "KINPLAY-20260817-FEEDBACK-BATCHES",
+  "createdAt": "2026-08-17T22:47:34Z",
+  "scope": {
+    "batchIds": [
+      "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4",
+      "KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E"
+    ],
+    "canonicalItemIds": [
+      "KPF-0022",
+      "KPF-0043",
+      "KPF-0060",
+      "KPF-0063",
+      "KPF-0078",
+      "KPF-0079",
+      "KPF-0080",
+      "KPF-0081",
+      "KPF-0082",
+      "KPF-0083",
+      "KPF-0084",
+      "KPF-0085",
+      "KPF-0086",
+      "KPF-0087",
+      "KPF-0088",
+      "KPF-0089"
+    ],
+    "sourceNotePolicy": "normalized Hermes raw-record IDs are authoritative; private raw records remain outside the repository"
+  },
+  "identity": {
+    "package": "com.kinplay.app",
+    "versionName": "0.7.0",
+    "versionCode": 13,
+    "distribution": "private WIP validation APK; not a production-store release"
+  },
+  "coverage": [
+    {
+      "id": "KPF-0022",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "Canonical and packaged KinPlay content now carry the exact I Spy summary; the safety decision matrix and regression checks were synchronized.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "offline checkpoint validator"
+      ]
+    },
+    {
+      "id": "KPF-0043",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "FeedbackStore now selects ACTION_SEND for one attachment and ACTION_SEND_MULTIPLE for multiple attachments; attachment handoff tests cover the extras.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "FeedbackAttachmentTest"
+      ]
+    },
+    {
+      "id": "KPF-0060",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "AppSettings contains six named color themes including Lavender; settings persistence and palette acceptance tests were updated.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "Batch26606AcceptanceTest",
+        "SettingsAndChildLockTest source compilation"
+      ]
+    },
+    {
+      "id": "KPF-0063",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "Level 1 ContentCard keeps the independent favorite control while making the title the details-navigation target.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "CardHierarchyPresentationTest"
+      ]
+    },
+    {
+      "id": "KPF-0078",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "The owner-supplied prompt manifest remains reference-only and verbatim; runtime retains the 20 previously owner-supplied prompts separately from assistant-created entries.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "WouldYouRatherLibraryTest",
+        "WouldYouRatherHardeningTest"
+      ]
+    },
+    {
+      "id": "KPF-0079",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "washable_coloring_together is absent from active canonical/runtime content and the derived lock/safety matrices; active-content regression expectations were updated.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "ContentRevisionInvariantTest",
+        "ChildHandoffEligibilityTest"
+      ]
+    },
+    {
+      "id": "KPF-0080",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "Format-group metadata, parsing, grouping helpers, and grouped Level 1 presentation were added without deleting recognizable activity identities.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "ContentDiscoveryTest"
+      ]
+    },
+    {
+      "id": "KPF-0081",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "The Settings surface no longer exposes launcher selection; stable legacy launcher wire handling remains internal for persisted-preference compatibility.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "Batch26606AcceptanceTest",
+        "SettingsAndChildLockTest source compilation"
+      ]
+    },
+    {
+      "id": "KPF-0082",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "Lavender completes the six-theme set and Settings renders theme choices in the three-column layout with updated tests.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "Batch26606AcceptanceTest"
+      ]
+    },
+    {
+      "id": "KPF-0083",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "All 120 Charades cards now carry reviewed image-resource metadata and accessible prompt-specific alt text; three generated category masters are packaged and byte-checked.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "CharadesLibraryTest",
+        "APK resource parity"
+      ]
+    },
+    {
+      "id": "KPF-0084",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "The unavailable tester JPEG was not ingested or copied; Gemini-generated category masters were produced from the Charades prompt order and integrated as project resources.",
+      "focusedEvidence": [
+        "offline checkpoint validator",
+        "APK resource parity"
+      ]
+    },
+    {
+      "id": "KPF-0085",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "The generic Prepare/Play/Share guide was removed from the targeted detail/session surfaces; the specific Tiny Monster guide remains.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "Batch57AcceptanceTest"
+      ]
+    },
+    {
+      "id": "KPF-0086",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "Would You Rather prompts were rewritten into concise read-aloud text and synchronized across canonical, packaged, and review-export representations.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "WouldYouRatherLibraryTest"
+      ]
+    },
+    {
+      "id": "KPF-0087",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "Each of the four categories contains exactly 40 prompts; count reduction retained the 20 protected runtime owner entries and removed only eligible assistant-created entries.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "WouldYouRatherHardeningTest",
+        "JSON schema/parity"
+      ]
+    },
+    {
+      "id": "KPF-0088",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "The recorded conservative safety boundary permits only non-crass gross humor in the approved category and retains prohibited-material guards; no unverified age-10+ relaxation is claimed.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "ProtectedSafetyWarningsRegressionTest"
+      ]
+    },
+    {
+      "id": "KPF-0089",
+      "implementationStatus": "complete",
+      "status": "fixed-awaiting-retest",
+      "implementationEvidence": "Level 1 cards are grouped by format, non-expandable, metadata-light, title-navigable, and retain favorite behavior; hierarchy regression tests were updated.",
+      "focusedEvidence": [
+        "testDebugUnitTest",
+        "CardHierarchyPresentationTest",
+        "ContentCardHierarchyTest"
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "name": "JVM unit tests",
+      "command": "ANDROID_HOME=/home/phantomatic/Android/Sdk ANDROID_SDK_ROOT=/home/phantomatic/Android/Sdk ./gradlew testDebugUnitTest --no-daemon",
+      "result": "passed"
+    },
+    {
+      "name": "Lint",
+      "command": "... ./gradlew lintDebug --no-daemon",
+      "result": "passed"
+    },
+    {
+      "name": "Release assembly",
+      "command": "... ./gradlew assembleRelease --no-daemon",
+      "result": "passed; unsigned output"
+    },
+    {
+      "name": "Offline checkpoint",
+      "command": "python3 /home/phantomatic/.hermes/scripts/kinplay_offline_validate.py --mode checkpoint",
+      "result": "passed"
+    },
+    {
+      "name": "APK signature",
+      "command": "/home/phantomatic/Android/Sdk/build-tools/35.0.0/apksigner verify --verbose --print-certs app/build/outputs/apk/debug/app-debug.apk",
+      "result": "verified with APK Signature Scheme v2; private validation signer"
+    },
+    {
+      "name": "Canonical/runtime/APK parity",
+      "result": "passed for KinPlay seed, Would You Rather, and Charades JSON plus generated Charades resources"
+    }
+  ],
+  "artifact": {
+    "sourcePath": "/home/phantomatic/projects/app-pass-rev/KinPlay/app/build/outputs/apk/debug/app-debug.apk",
+    "mountedDrop": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk",
+    "sha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+    "bytes": 25949602,
+    "drive": {
+      "fileId": "19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr",
+      "folderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+      "name": "20260817_KinPlay_v0.7.0_feedback-complete.apk",
+      "readbackPath": "/tmp/kinplay_drive_20260817_current.apk",
+      "readbackSha256": "e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2",
+      "readbackBytes": 25949602,
+      "byteExact": true
+    }
+  },
+  "openBoundaries": [
+    "No connected Android device or emulator execution was recorded; physical/runtime retest remains open.",
+    "No production release keystore was found; the uploaded APK is private validation scope, not a production-signed artifact.",
+    "Charades category masters and metadata are packaged and parity-checked; connected visual verification of per-card presentation remains open.",
+    "The repository was not yet committed or pushed at ledger creation; the implementation source commit will be filled in after the reviewed allowlist commit."
+  ],
+  "publicationStatus": "candidate artifact uploaded and byte-verified; implementation commit and publication-evidence commit pending"
+}

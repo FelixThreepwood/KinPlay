@@ -181,7 +181,7 @@ class ContentRevisionInvariantTest {
     @Test
     fun kpf0009DrawingColoringAndPaintingAreActiveSafeActivities() {
         assertNotNull(activeItem("timed_drawing_tiny_monster"))
-        listOf("washable_coloring_together", "washable_painting_shapes").forEach { id ->
+        listOf("washable_painting_shapes").forEach { id ->
             val item = activeItem(id)
             assertEquals("activity", item.string("type"))
             val text = item.allText()

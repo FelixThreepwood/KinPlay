@@ -44,10 +44,8 @@ import androidx.compose.ui.unit.dp
 fun SettingsScreen(
     settings: AppSettings,
     onSettingsChange: (AppSettings) -> Unit,
-    onLauncherIconChange: (LauncherIconVariant) -> LauncherIconSwitchResult,
     onBack: () -> Unit,
 ) {
-    var launcherIconMessage by remember { mutableStateOf<String?>(null) }
     Scaffold(
         modifier = Modifier.testTag("settings-screen"),
         containerColor = MaterialTheme.colorScheme.background,
@@ -108,34 +106,9 @@ fun SettingsScreen(
                 selected = settings.colorTheme,
                 label = AppColorTheme::label,
                 tag = { "setting-theme-${it.wireValue}" },
-                verticalOptions = true,
+                gridColumns = 3,
                 onSelect = { onSettingsChange(settings.copy(colorTheme = it)) },
             )
-            PreferenceSection(
-                title = "Launcher icon",
-                summary = "Choose Teal or Sunshine. Home-screen refresh timing depends on your launcher.",
-                options = LauncherIconVariant.entries,
-                selected = settings.launcherIcon,
-                label = { "${it.label} — ${it.description}" },
-                tag = { "setting-launcher-icon-${it.wireValue}" },
-                onSelect = { launcherIcon ->
-                    launcherIconMessage = when (onLauncherIconChange(launcherIcon)) {
-                        LauncherIconSwitchResult.APPLIED ->
-                            "${launcherIcon.label} selected. Your launcher may take time to refresh."
-                        LauncherIconSwitchResult.ALREADY_APPLIED ->
-                            "${launcherIcon.label} is already selected."
-                        LauncherIconSwitchResult.FAILED_SAFE ->
-                            "The launcher icon could not be changed. Your previous icon remains available."
-                    }
-                },
-            )
-            launcherIconMessage?.let { message ->
-                Text(
-                    text = message,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.testTag("launcher-icon-status"),
-                )
-            }
             Card(
                 colors = CardDefaults.cardColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
@@ -163,6 +136,7 @@ private fun <T> PreferenceSection(
     label: (T) -> String,
     tag: (T) -> String,
     verticalOptions: Boolean = false,
+    gridColumns: Int? = null,
     onSelect: (T) -> Unit,
 ) {
     Card(
@@ -186,8 +160,32 @@ private fun <T> PreferenceSection(
                 style = MaterialTheme.typography.bodySmall,
             )
             BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
-                val useHorizontalOptions = !verticalOptions && maxWidth >= 360.dp && LocalDensity.current.fontScale < 1.5f
-                if (useHorizontalOptions) {
+                if (gridColumns != null) {
+                    options.chunked(gridColumns).forEach { rowOptions ->
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(4.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            rowOptions.forEach { option ->
+                                PreferenceOption(
+                                    option = option,
+                                    compact = true,
+                                    selected = selected,
+                                    label = label,
+                                    tag = tag,
+                                    onSelect = onSelect,
+                                    modifier = Modifier.weight(1f),
+                                )
+                            }
+                            repeat((gridColumns - rowOptions.size).coerceAtLeast(0)) {
+                                androidx.compose.foundation.layout.Spacer(Modifier.weight(1f))
+                            }
+                        }
+                    }
+                } else {
+                    val useHorizontalOptions = !verticalOptions && maxWidth >= 360.dp && LocalDensity.current.fontScale < 1.5f
+                    if (useHorizontalOptions) {
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -199,10 +197,11 @@ private fun <T> PreferenceSection(
                             PreferenceOption(option, true, selected, label, tag, onSelect)
                         }
                     }
-                } else {
-                    Column {
-                        options.forEach { option ->
-                            PreferenceOption(option, false, selected, label, tag, onSelect)
+                    } else {
+                        Column {
+                            options.forEach { option ->
+                                PreferenceOption(option, false, selected, label, tag, onSelect)
+                            }
                         }
                     }
                 }
@@ -219,9 +218,10 @@ private fun <T> PreferenceOption(
     label: (T) -> String,
     tag: (T) -> String,
     onSelect: (T) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     Row(
-        modifier = (if (compact) Modifier else Modifier.fillMaxWidth())
+        modifier = modifier.then(if (compact) Modifier else Modifier.fillMaxWidth())
             .testTag(tag(option))
             .selectable(
                 selected = option == selected,

@@ -287,13 +287,6 @@ fun KinPlayApp() {
                         SettingsScreen(
                             settings = appSettings,
                             onSettingsChange = ::persistSettings,
-                            onLauncherIconChange = { launcherIcon ->
-                                launcherIconSwitcher.switchTo(launcherIcon).also { result ->
-                                    if (result != LauncherIconSwitchResult.FAILED_SAFE) {
-                                        persistSettings(appSettings.copy(launcherIcon = launcherIcon))
-                                    }
-                                }
-                            },
                             onBack = { navController.popBackStack() },
                         )
                     }
@@ -853,8 +846,17 @@ fun GameTypeListScreen(
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         SectionTitle("Level 1", "Recognizable games first; Mad Libs stays together as one collection.")
-        contentPack.allGamesLevelOneItems().forEach { item ->
-            ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
+        contentPack.allGamesLevelOneItems().groupedByFormat().forEach { (formatGroup, items) ->
+            if (formatGroup != null) SectionTitle(formatGroup.label, formatGroup.description)
+            items.forEach { item ->
+                ContentCard(
+                    item = item,
+                    favoriteIds = favoriteIds,
+                    navController = navController,
+                    onToggleFavorite = { onToggleFavorite(item.id) },
+                    levelOne = true,
+                )
+            }
         }
     }
 }
@@ -981,18 +983,19 @@ fun ContentCard(
     favoriteIds: Set<String>,
     navController: NavController,
     onToggleFavorite: () -> Unit = {},
+    levelOne: Boolean = false,
 ) {
-    var expanded by rememberSaveable(item.id) { mutableStateOf(CONTENT_CARD_DEFAULT_EXPANDED) }
     Card(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(22.dp),
-        modifier = Modifier.fillMaxWidth().clickable { expanded = !expanded },
+        modifier = Modifier.fillMaxWidth(),
     ) {
         CompactCardDetails(
             item = item,
             title = item.title,
-            expanded = expanded,
+            expanded = !levelOne,
+            levelOne = levelOne,
             navController = navController,
             isFavorite = item.id in favoriteIds,
             onToggleFavorite = onToggleFavorite,
@@ -1010,6 +1013,7 @@ fun CompactCardDetails(
     expanded: Boolean = true,
     isFavorite: Boolean = false,
     onToggleFavorite: () -> Unit = {},
+    levelOne: Boolean = false,
 ) {
     Column(
         modifier = modifier.fillMaxWidth().testTag("content-card-single-column-${item.id}"),
@@ -1019,8 +1023,10 @@ fun CompactCardDetails(
             item = item,
             title = title,
             expanded = expanded,
+            levelOne = levelOne,
             isFavorite = isFavorite,
             onToggleFavorite = onToggleFavorite,
+            onOpen = { navController.openItem(item) },
         )
         CompactCardTrailingContent(
             item = item,
@@ -1036,8 +1042,10 @@ private fun CompactCardPrimaryContent(
     item: KinPlayItem,
     title: String,
     expanded: Boolean,
+    levelOne: Boolean,
     isFavorite: Boolean,
     onToggleFavorite: () -> Unit,
+    onOpen: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -1047,7 +1055,7 @@ private fun CompactCardPrimaryContent(
         ) {
             Text(
                 text = title,
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.weight(1f).then(if (levelOne) Modifier.clickable(onClick = onOpen) else Modifier),
                 color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Start,
@@ -1066,11 +1074,13 @@ private fun CompactCardPrimaryContent(
                     tint = MaterialTheme.colorScheme.primary,
                 )
             }
-            Text(
-                text = if (expanded) "⌃" else "⌄",
-                color = MaterialTheme.colorScheme.primary,
-                fontWeight = FontWeight.Bold,
-            )
+            if (!levelOne) {
+                Text(
+                    text = if (expanded) "⌃" else "⌄",
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.Bold,
+                )
+            }
         }
         Text(
             text = item.collapsedCardDescriptionAnnotated(),
@@ -1247,7 +1257,6 @@ private fun ActivityDetailSurface(
                             },
                         )
                     }
-                    VisualInstructionGuide(item)
                     TinyMonsterVisualGuide(item)
                     item.detailSections().forEach { section ->
                         SectionList(section.title, section.lines)
@@ -1388,7 +1397,6 @@ private fun TimedSessionSurface(
                     Text("${configuration.duration.label} per round")
                 }
             }
-            VisualInstructionGuide(item)
             item.activeSessionSections().forEach { section ->
                 SectionList(section.title, section.lines)
             }
@@ -1566,35 +1574,6 @@ fun InfoPanel(title: String, body: String) {
             Text(title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
             Text(body, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-    }
-}
-
-@Composable
-fun VisualInstructionGuide(item: KinPlayItem) {
-    Card(
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer),
-        modifier = Modifier.fillMaxWidth().testTag("visual-instruction-guide-${item.id}"),
-        shape = RoundedCornerShape(18.dp),
-    ) {
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(12.dp),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            VisualGuideStep(Icons.Default.Build, "Prepare")
-            Text("→", color = MaterialTheme.colorScheme.onTertiaryContainer)
-            VisualGuideStep(Icons.Default.PlayArrow, "Play")
-            Text("→", color = MaterialTheme.colorScheme.onTertiaryContainer)
-            VisualGuideStep(Icons.Default.Person, "Share")
-        }
-    }
-}
-
-@Composable
-private fun VisualGuideStep(icon: androidx.compose.ui.graphics.vector.ImageVector, label: String) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
-        Icon(icon, contentDescription = label, tint = MaterialTheme.colorScheme.onTertiaryContainer)
-        Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onTertiaryContainer)
     }
 }
 
@@ -1806,6 +1785,7 @@ data class KinPlayItem(
     val summary: String,
     val collapsedDescription: String = "",
     val collapsedEmphasis: List<String> = emptyList(),
+    val formatGroupId: String? = null,
     val visualAssets: List<ContentVisualAsset> = emptyList(),
     val paperAirplaneModels: List<PaperAirplaneModel> = emptyList(),
     val modes: List<String>,
@@ -1857,6 +1837,7 @@ data class KinPlayItem(
                 summary = json.getString("summary"),
                 collapsedDescription = json.optString("collapsedDescription", ""),
                 collapsedEmphasis = json.stringList("collapsedEmphasis"),
+                formatGroupId = json.optString("formatGroupId", "").ifBlank { null },
                 visualAssets = json.optJSONArray("visualAssets")?.let { array ->
                     (0 until array.length()).map { index ->
                         val asset = array.getJSONObject(index)

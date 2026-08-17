@@ -4,19 +4,45 @@
   "title": "KinPlay Would You Rather Library",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "libraryId", "title", "locale", "origin", "categories"],
+  "required": [
+    "schemaVersion",
+    "libraryId",
+    "title",
+    "locale",
+    "origin",
+    "categories"
+  ],
   "properties": {
-    "schemaVersion": { "type": "integer", "const": 1 },
-    "libraryId": { "type": "string", "const": "would_you_rather_v1" },
-    "title": { "type": "string", "const": "Would You Rather" },
-    "locale": { "type": "string", "const": "en-US" },
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "libraryId": {
+      "type": "string",
+      "const": "would_you_rather_v1"
+    },
+    "title": {
+      "type": "string",
+      "const": "Would You Rather"
+    },
+    "locale": {
+      "type": "string",
+      "const": "en-US"
+    },
     "origin": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "statement"],
+      "required": [
+        "type",
+        "statement"
+      ],
       "properties": {
-        "type": { "const": "original_kinplay_editorial_work" },
-        "statement": { "const": "Original KinPlay editorial work; no external prompt collection was used or copied." }
+        "type": {
+          "const": "original_kinplay_editorial_work"
+        },
+        "statement": {
+          "const": "Original KinPlay editorial work; no external prompt collection was used or copied."
+        }
       }
     },
     "categories": {
@@ -24,10 +50,18 @@
       "minItems": 4,
       "maxItems": 4,
       "prefixItems": [
-        { "$ref": "#/$defs/cuteSillyCategory" },
-        { "$ref": "#/$defs/animalsCategory" },
-        { "$ref": "#/$defs/grossCategory" },
-        { "$ref": "#/$defs/superGrossCategory" }
+        {
+          "$ref": "#/$defs/cuteSillyCategory"
+        },
+        {
+          "$ref": "#/$defs/animalsCategory"
+        },
+        {
+          "$ref": "#/$defs/grossCategory"
+        },
+        {
+          "$ref": "#/$defs/superGrossCategory"
+        }
       ],
       "items": false
     }
@@ -36,69 +70,132 @@
     "promptBase": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "text", "status"],
+      "required": [
+        "id",
+        "text",
+        "status"
+      ],
       "properties": {
-        "id": { "type": "string" },
+        "id": {
+          "type": "string"
+        },
         "text": {
           "type": "string",
           "minLength": 24,
           "maxLength": 180,
           "pattern": "^Would you rather (?:(?! or ).)+ or (?:(?! or ).)+\\?$"
         },
-        "status": { "const": "approved" }
+        "status": {
+          "const": "approved"
+        }
       }
     },
     "categoryBase": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "title", "order", "prompts"],
+      "required": [
+        "id",
+        "title",
+        "order",
+        "prompts"
+      ],
       "properties": {
-        "id": { "type": "string" },
-        "title": { "type": "string" },
-        "order": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
         "prompts": {
           "type": "array",
-          "minItems": 80,
+          "minItems": 40,
           "uniqueItems": true
         }
       }
     },
     "cuteSillyPrompt": {
       "allOf": [
-        { "$ref": "#/$defs/promptBase" },
-        { "properties": { "id": { "pattern": "^wyr_cute_silly_(00[1-9]|0[1-8][0-9]|09[0-4])$" } } }
+        {
+          "$ref": "#/$defs/promptBase"
+        },
+        {
+          "properties": {
+            "id": {
+              "pattern": "^wyr_cute_silly_(00[1-9]|0[1-8][0-9]|09[0-4])$"
+            }
+          }
+        }
       ]
     },
     "animalsPrompt": {
       "allOf": [
-        { "$ref": "#/$defs/promptBase" },
-        { "properties": { "id": { "pattern": "^wyr_animals_(00[1-9]|0[1-7][0-9]|08[0-6])$" } } }
+        {
+          "$ref": "#/$defs/promptBase"
+        },
+        {
+          "properties": {
+            "id": {
+              "pattern": "^wyr_animals_(00[1-9]|0[1-7][0-9]|08[0-6])$"
+            }
+          }
+        }
       ]
     },
     "grossPrompt": {
       "allOf": [
-        { "$ref": "#/$defs/promptBase" },
-        { "properties": { "id": { "pattern": "^wyr_gross_(00[1-9]|0[1-7][0-9]|080)$" } } }
+        {
+          "$ref": "#/$defs/promptBase"
+        },
+        {
+          "properties": {
+            "id": {
+              "pattern": "^wyr_gross_(00[1-9]|0[1-7][0-9]|080)$"
+            }
+          }
+        }
       ]
     },
     "superGrossPrompt": {
       "allOf": [
-        { "$ref": "#/$defs/promptBase" },
-        { "properties": { "id": { "pattern": "^wyr_super_gross_(00[1-9]|0[1-7][0-9]|080)$" } } }
+        {
+          "$ref": "#/$defs/promptBase"
+        },
+        {
+          "properties": {
+            "id": {
+              "pattern": "^wyr_super_gross_(00[1-9]|0[1-7][0-9]|080)$"
+            }
+          }
+        }
       ]
     },
     "cuteSillyCategory": {
       "allOf": [
-        { "$ref": "#/$defs/categoryBase" },
+        {
+          "$ref": "#/$defs/categoryBase"
+        },
         {
           "properties": {
-            "id": { "const": "cute_silly" },
-            "title": { "const": "Cute & Silly" },
-            "order": { "const": 1 },
+            "id": {
+              "const": "cute_silly"
+            },
+            "title": {
+              "const": "Cute & Silly"
+            },
+            "order": {
+              "const": 1
+            },
             "prompts": {
-              "minItems": 94,
-              "maxItems": 94,
-              "items": { "$ref": "#/$defs/cuteSillyPrompt" }
+              "minItems": 40,
+              "maxItems": 40,
+              "items": {
+                "$ref": "#/$defs/cuteSillyPrompt"
+              }
             }
           }
         }
@@ -106,16 +203,26 @@
     },
     "animalsCategory": {
       "allOf": [
-        { "$ref": "#/$defs/categoryBase" },
+        {
+          "$ref": "#/$defs/categoryBase"
+        },
         {
           "properties": {
-            "id": { "const": "animals" },
-            "title": { "const": "Animals" },
-            "order": { "const": 2 },
+            "id": {
+              "const": "animals"
+            },
+            "title": {
+              "const": "Animals"
+            },
+            "order": {
+              "const": 2
+            },
             "prompts": {
-              "minItems": 86,
-              "maxItems": 86,
-              "items": { "$ref": "#/$defs/animalsPrompt" }
+              "minItems": 40,
+              "maxItems": 40,
+              "items": {
+                "$ref": "#/$defs/animalsPrompt"
+              }
             }
           }
         }
@@ -123,16 +230,26 @@
     },
     "grossCategory": {
       "allOf": [
-        { "$ref": "#/$defs/categoryBase" },
+        {
+          "$ref": "#/$defs/categoryBase"
+        },
         {
           "properties": {
-            "id": { "const": "gross" },
-            "title": { "const": "Gross" },
-            "order": { "const": 3 },
+            "id": {
+              "const": "gross"
+            },
+            "title": {
+              "const": "Gross"
+            },
+            "order": {
+              "const": 3
+            },
             "prompts": {
-              "minItems": 80,
-              "maxItems": 80,
-              "items": { "$ref": "#/$defs/grossPrompt" }
+              "minItems": 40,
+              "maxItems": 40,
+              "items": {
+                "$ref": "#/$defs/grossPrompt"
+              }
             }
           }
         }
@@ -140,16 +257,26 @@
     },
     "superGrossCategory": {
       "allOf": [
-        { "$ref": "#/$defs/categoryBase" },
+        {
+          "$ref": "#/$defs/categoryBase"
+        },
         {
           "properties": {
-            "id": { "const": "super_gross" },
-            "title": { "const": "Super Gross" },
-            "order": { "const": 4 },
+            "id": {
+              "const": "super_gross"
+            },
+            "title": {
+              "const": "Super Gross"
+            },
+            "order": {
+              "const": 4
+            },
             "prompts": {
-              "minItems": 80,
-              "maxItems": 80,
-              "items": { "$ref": "#/$defs/superGrossPrompt" }
+              "minItems": 40,
+              "maxItems": 40,
+              "items": {
+                "$ref": "#/$defs/superGrossPrompt"
+              }
             }
           }
         }

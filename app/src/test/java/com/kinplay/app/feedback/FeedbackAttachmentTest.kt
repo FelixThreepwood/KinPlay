@@ -71,7 +71,7 @@ class FeedbackAttachmentTest {
             assertEquals(Intent.ACTION_SEND, launched.action)
             assertEquals("text/plain", launched.type)
             assertEquals(Intent.FLAG_GRANT_READ_URI_PERMISSION, launched.flags and Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            assertEquals(Uri.parse(attachment.uri), launched.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)?.single())
+            assertEquals(Uri.parse(attachment.uri), launched.getParcelableExtra<Uri>(Intent.EXTRA_STREAM))
             assertTrue(launched.getStringExtra(Intent.EXTRA_TEXT).orEmpty().contains(attachment.displayName))
         } finally {
             controller.pause().stop().destroy()

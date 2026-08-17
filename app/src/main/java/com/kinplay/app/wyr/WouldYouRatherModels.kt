@@ -60,10 +60,10 @@ object WouldYouRatherLibraryParser {
     )
 
     private val expectedCategories = listOf(
-        ExpectedCategory("cute_silly", "Cute & Silly", 1, 94),
-        ExpectedCategory("animals", "Animals", 2, 86),
-        ExpectedCategory("gross", "Gross", 3, 80),
-        ExpectedCategory("super_gross", "Super Gross", 4, 80),
+        ExpectedCategory("cute_silly", "Cute & Silly", 1, 40),
+        ExpectedCategory("animals", "Animals", 2, 40),
+        ExpectedCategory("gross", "Gross", 3, 40),
+        ExpectedCategory("super_gross", "Super Gross", 4, 40),
     )
 
     fun parse(json: String): WouldYouRatherLibrary = try {
@@ -140,7 +140,7 @@ object WouldYouRatherLibraryParser {
             require(
                 promptId.startsWith("wyr_${expected.id}_") &&
                     promptNumber != null &&
-                    promptNumber in 1..expected.promptCount
+                    promptNumber in 1..999
             ) { "Invalid prompt ID: $promptId" }
             validatePromptText(promptId, text)
             val status = WouldYouRatherPromptStatus.parse(statusText)

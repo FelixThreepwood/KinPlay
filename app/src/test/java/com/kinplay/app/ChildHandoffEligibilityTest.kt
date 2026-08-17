@@ -26,7 +26,7 @@ class ChildHandoffEligibilityTest {
         val activeItems = root.getAsJsonArray("items").map { it.asJsonObject }
             .filter { it.get("status").asString == "active" }
 
-        assertEquals(55, activeItems.size)
+        assertEquals(54, activeItems.size)
         assertTrue(activeItems.all { it.has("childHandoffLockEligible") && it.get("childHandoffLockEligible").isJsonPrimitive })
         assertEquals(
             setOf("family_charades_animals", WOULD_YOU_RATHER_ITEM_ID),

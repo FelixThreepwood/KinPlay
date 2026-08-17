@@ -56,9 +56,10 @@ class Batch26606AcceptanceTest {
 
     @Test
     fun vibrantThemesAreAvailableAlongsideExistingThemes() {
-        assertEquals(5, AppColorTheme.entries.size)
+        assertEquals(6, AppColorTheme.entries.size)
         assertTrue(AppColorTheme.entries.any { it == AppColorTheme.SUNSHINE })
         assertTrue(AppColorTheme.entries.any { it == AppColorTheme.TROPICAL })
+        assertTrue(AppColorTheme.entries.any { it == AppColorTheme.LAVENDER })
         assertTrue(AppColorTheme.SUNSHINE.description.contains("vibrant", ignoreCase = true))
         assertTrue(AppColorTheme.TROPICAL.description.contains("vibrant", ignoreCase = true))
     }

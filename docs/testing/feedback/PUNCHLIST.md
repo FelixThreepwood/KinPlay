@@ -2,7 +2,7 @@
 
 Sanitized product-test records. Incoming comments are evidence, not authorization to change application code.
 
-Last updated: 2026-08-14T22:35:48Z
+Last updated: 2026-08-17T20:30:00Z
 
 Source note IDs are unique occurrence keys. An exact note replay in a later batch is linked to the existing item and does not increase its occurrence count.
 
@@ -448,7 +448,11 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Priority: Should fix soon
 - Affected builds: 0.5.0-beta1 (5); 0.6.0-beta1 (6); 0.6.0-beta2 (7)
 - Capture screen: `pick_game`
-- Occurrence count: 3
+- Occurrence count: 5
+- Additional source note: KP-NOTE-78EE3B8B-81D2-4FA3-B66E-72C7308ACE51
+- Latest intake observation: The Level 1 request retains the one-line description requirement while removing expansion; no runtime copy or card behavior changed during intake.
+- Latest intake disposition: Supporting evidence added; existing implementation status preserved.
+- Additional source note: `KP-NOTE-5EA27820-0F32-4CDB-B88E-9722D7A6852C`
 - Source note: `KP-NOTE-6B822319-7029-40D5-B19C-022257842493`
 - Additional source note: `KP-NOTE-4BCC8385-0804-44CA-AB1C-684B812BA71E`
 - Additional source note: `KP-NOTE-2ED08796-D644-4446-93FC-4BBC50DE1EF0`
@@ -468,7 +472,9 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 - Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
-
+- Latest intake batch: `KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E` (0.7.0-beta2 (12))
+- Intake disposition: accepted_for_future_revision
+- New intake observation: The 0.7.0-beta2 intake requests the exact I Spy description `guessing game of objects hidden in plain sight.`; no runtime copy changed during intake.
 ## KPF-0023 — Remove negative parent-state framing from user-visible copy
 
 - Status: fixed-awaiting-retest
@@ -871,7 +877,8 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Priority: backlog
 - Affected build: 0.6.0-beta1 (6)
 - Capture screen: `feedback`
-- Occurrence count: 1
+- Occurrence count: 2
+- Additional source note: `KP-NOTE-0BDE608B-A603-4BBD-96AE-2AA2E3CF7BC1`
 - Source note(s): `KP-NOTE-BEB8EBCF-FFC1-480B-B126-EF340C5C6775`
 - Normalized finding: Allow the tester to attach approved files or images when submitting feedback.
 - Expected behavior: Feedback capture can optionally include selected images or files with explicit review before handoff, while excluding device-wide logs and unrelated media.
@@ -880,7 +887,9 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Decision: accepted_for_triage_no_code_authorized
 - Implementation status: not_started
 - Code authorization: none from this intake
-
+- Latest intake batch: `KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E` (0.7.0-beta2 (12))
+- Intake disposition: needs_reproduction
+- New intake observation: The 0.7.0-beta2 intake reports a selected image failing to survive the feedback handoff to Discord/email; no binary was available to intake.
 ## KPF-0044 — Provide a curated music selection for music-based games
 
 - Status: new
@@ -1273,7 +1282,8 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Priority: backlog
 - Affected build: 0.6.0-beta2 (7)
 - Capture screen: `settings`
-- Occurrence count: 1
+- Occurrence count: 2
+- Additional source note: `KP-NOTE-72DE95BF-2A63-4A14-98C2-99A2D84B58FD`
 - Source note(s): `KP-NOTE-7F9A5988-DE6A-46FF-8A2A-EE401EB5950B`
 - Normalized finding: Add two additional bright, vibrant themes that are deliberately distinct from pastel or soft palettes.
 - Expected behavior: The theme picker offers two reviewed high-saturation options with readable contrast and complete persistence and application behavior.
@@ -1288,7 +1298,9 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Direct implementation authorization: User request in the active Discord session.
 - Automated verification: beta3 unit tests, lint, assemble, APK metadata/permission/signature checks, and byte parity passed; Pixel 8 Pro / Android 16 retest remains open.
 - Distribution: beta3 published to the verified private Drive folder; object `16fa3s_Zo7R7e9kV7nmjQ_hdUlc95DRTN`, byte-exact remote read-back passed.
-
+- Latest intake batch: `KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E` (0.7.0-beta2 (12))
+- Intake disposition: accepted_for_future_revision
+- New intake observation: The 0.7.0-beta2 intake requests one additional theme; no theme or runtime content changed during intake.
 ## KPF-0061 — Rename the Home descriptor to Kid Friendly Family Fun
 
 - Status: fixed-awaiting-retest
@@ -1342,7 +1354,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Priority: should_fix_soon
 - Affected build: 0.6.0-beta2 (7)
 - Capture screen: `game_type/{groupId}`
-- Occurrence count: 1
+- Occurrence count: 2
+- Additional source note: KP-NOTE-78EE3B8B-81D2-4FA3-B66E-72C7308ACE51
+- Latest intake observation: The Level 1 redesign must preserve the star favorite behavior and persisted state; no runtime favorite state changed during intake.
+- Latest intake disposition: Supporting evidence added; existing implementation status preserved.
 - Source note(s): `KP-NOTE-A2A74C8D-4C2D-497D-8692-CD52BDC961A5`
 - Normalized finding: Show an initially empty star on every game card; tapping it toggles the favorite state and adds or removes the game from a favorites list.
 - Expected behavior: Favorite state is persisted, accessible, reversible, visible on each card, and reflected by the favorites destination without duplicating or losing games.
@@ -1716,7 +1731,8 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Priority: Backlog
 - Affected build: 0.7.0 (13)
 - Capture screen: `would_you_rather_play`
-- Occurrence count: 1
+- Occurrence count: 2
+- Additional source note: `KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE`
 - Source note: `KP-NOTE-36ABF7C6-8D34-4D79-89C8-98CC7AFE9147`
 - Related item: `KPF-0012`
 - Normalized finding: For the next authorized Would You Rather content revision, stage the five exact prompts supplied by the project owner and use them as replacement candidates for assistant-created prompts only. Keep owner-supplied prompts separately identified from prompts authored by the assistant.
@@ -1735,3 +1751,274 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Reproduction/triage: Content provenance and safety review required.
 - Decision: Accepted for the next feedback batch; no code or runtime content change authorized.
 - Implementation status: not started
+- Latest intake batch: `KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E` (0.7.0-beta2 (12))
+- Intake disposition: accepted_for_next_authorized_content_revision
+- New intake observation: The 0.7.0-beta2 intake adds a full-library rewrite/reduction request and exact reference examples; the provenance manifest preserves them separately and runtime content remains unchanged.
+
+
+## Intake: KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E
+
+- Received: 2026-08-17T20:13:08Z
+- Transport: email; subject and body identifiers matched.
+- Affected build: **0.7.0-beta2 (12)**.
+- Source notes: 9 new unique note IDs; no replayed IDs.
+- Existing canonical items touched: `KPF-0022`, `KPF-0043`, `KPF-0060`, `KPF-0078`.
+- New canonical items: `KPF-0079`–`KPF-0088`.
+- Privacy: No child-identifying information or contact details were written to project records. One listed JPEG remains unprocessed attachment metadata only.
+- Attachments: One `image/jpeg` reference was listed but its binary was not available to intake; no attachment, DM, upload, or asset-generation action occurred.
+- Code authorization: Intake and triage only; no application code, runtime content, visual asset, attachment, or build changed.
+- Discord acknowledgment: delivered successfully to `#app-development` (channel `1501041077031800932`), message `1539006561010188392`.
+- Provenance: The Would You Rather manifest preserves the exact owner-supplied reference examples separately from assistant-created runtime content.
+- Raw archive: `/home/phantomatic/.hermes/kinplay-feedback/raw/20260817_KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E.json`
+
+| Item | Triage state | Next validation |
+|---|---|---|
+| KPF-0022 | existing; future copy revision requested | Confirm the exact I Spy description on every relevant card/state without changing other concise-card rules. |
+| KPF-0043 | existing; needs reproduction | Reproduce selected-image handoff through the feedback interface and verify both Discord and email attachment paths. |
+| KPF-0060 | existing; future theme revision requested | Decide the sixth theme and verify palette contrast, persistence, and application behavior. |
+| KPF-0078 | existing; provenance extended | Verify prior and newly supplied owner examples remain protected and runtime content remains unchanged until authorization. |
+| KPF-0079 | new | Decide retirement scope and verify discovery, search, random, favorites, recents, and direct-route filtering. |
+| KPF-0080 | new | Define consolidation rules, parent formats, variations/modes, and migration behavior. |
+| KPF-0081 | new | Resolve conflict with KPF-0020 and verify a launchable default/legacy-preference path. |
+| KPF-0082 | new | Verify the three-column/two-row theme layout with narrow-width, large-text, and accessibility fallbacks. |
+| KPF-0083 | new | Define the Charades card-to-picture mapping, visual QA, packaging, and accessible text alternative. |
+| KPF-0084 | new | Obtain the reference binary through the approved attachment path, then create a Gemini visual brief and review gate. |
+| KPF-0085 | new | Inventory every game-card state and confirm the Prepare Play Share graphic is absent without removing needed semantics. |
+| KPF-0086 | new | Review the complete Would You Rather library with the Humanizer gate; do not alter runtime content during triage. |
+| KPF-0087 | new | Reconcile 40-per-category with KPF-0012 and validate provenance-aware removal eligibility. |
+| KPF-0088 | new | Record an item-by-item Gross/Super Gross safety decision before any age or tone change. |
+## KPF-0079 — Retire Washable Coloring Together from the activity library
+
+- Status: new
+- Type: content_request / content_retirement
+- Priority: Should Fix Soon
+- Impact: important
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `detail/washable_coloring_together`
+- Content ID: `washable_coloring_together`
+- Occurrence count: 1
+- Source note: `KP-NOTE-CBBDD903-4856-46A2-9577-A355B36B45CC`
+- Normalized finding: Remove the Washable Coloring Together activity from normal KinPlay discovery and playable content.
+- Expected behavior: The activity no longer appears in Home, category lists, search, random selection, favorites/recent restoration, or direct playable routes; retired references fail safely.
+- Reproduction/triage: content_inventory_and_retirement_regression_review_required
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0010`, `KPF-0040`
+- Triage notes: The content ID is present in the current runtime asset. No content was removed during intake.
+
+## KPF-0080 — Consolidate similar games under generic variation-based formats
+
+- Status: new
+- Type: information_architecture / content_model / product_scope
+- Priority: Should Fix Soon
+- Impact: important
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-CE62831B-A798-43B3-9F83-64534175B8DC`
+- Normalized finding: Review similar games for consolidation into generic parent formats with variations, modes, or styles instead of presenting many near-duplicate entries.
+- Expected behavior: The product taxonomy defines which activities share a parent format, preserves recognizable names where needed, and avoids duplicate or confusing discovery entries.
+- Reproduction/triage: product_taxonomy_and_content_model_review_required
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0040`, `KPF-0041`, `KPF-0068`
+- Triage notes: This is related to the existing hierarchy and finite-category work, but it requires a separate consolidation decision rather than an automatic merge.
+
+## KPF-0081 — Remove launcher icon selection from Settings
+
+- Status: new
+- Type: settings / launcher_customization / product_decision
+- Priority: Backlog
+- Impact: minor
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `settings`
+- Occurrence count: 1
+- Source note: `KP-NOTE-E1625FC7-E151-460C-94AA-9CAB948BD34B`
+- Normalized finding: Remove the user-facing launcher icon selection option from Settings.
+- Expected behavior: Settings no longer exposes launcher selection while the app retains one launchable default, stable package identity, upgrade continuity, and safe handling of any persisted legacy preference.
+- Reproduction/triage: settings_and_launcher_product_decision_review_required
+- Decision: accepted_for_triage_conflicts_with_existing_launcher_choice
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0017`, `KPF-0019`, `KPF-0020`
+- Triage notes: This conflicts with KPF-0020, which requested and implemented finite launcher-color selection. It remains separate until the product owner chooses the direction.
+
+## KPF-0082 — Arrange Settings theme choices in a three-column grid
+
+- Status: new
+- Type: settings / responsive_layout / visual_design
+- Priority: Backlog
+- Impact: minor
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `settings`
+- Occurrence count: 1
+- Source note: `KP-NOTE-72DE95BF-2A63-4A14-98C2-99A2D84B58FD`
+- Normalized finding: Replace the current theme-choice presentation with a section arranged as three columns and two color choices per column, while adding the requested sixth theme.
+- Expected behavior: The six theme choices form a readable three-column by two-row layout where supported, with a safe responsive fallback for narrow widths and large text; names, selection state, persistence, and accessibility remain clear.
+- Reproduction/triage: settings_theme_grid_and_accessibility_review_required
+- Decision: accepted_for_triage_layout_product_decision_required
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0017`, `KPF-0060`, `KPF-0066`
+- Triage notes: The additional theme is tracked as supporting evidence on KPF-0060; this item tracks the separately testable grid geometry and responsive behavior.
+
+## KPF-0083 — Pair every Charades word with a generated picture
+
+- Status: new
+- Type: content_request / visual_asset / accessibility
+- Priority: Backlog
+- Impact: minor
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `detail/family_charades_animals`
+- Content ID: `family_charades_animals`
+- Occurrence count: 1
+- Source note: `KP-NOTE-5B0F24C7-C38C-4FB0-BC41-A6991D5DA5A6`
+- Normalized finding: Pair each Charades card across the animals, activities, and objects groups with an original generated picture.
+- Expected behavior: Every active Charades word has one deterministic reviewed picture mapping, consistent offline packaging, a usable accessible text alternative, and no unreviewed or identifying source material.
+- Reproduction/triage: content_inventory_visual_generation_and_accessibility_review_required
+- Decision: accepted_for_triage_visual_asset_review_required
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0046`, `KPF-0075`
+- Attachments: 1 confirmed `image/jpeg` reference listed; binary not ingested.
+- Triage notes: No visual asset was generated or integrated during intake. Related card-count work remains in KPF-0046.
+
+## KPF-0084 — Use the tester drawing as Charades card-art direction
+
+- Status: new
+- Type: visual_asset / reference_review / content_request
+- Priority: Backlog
+- Impact: minor
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `detail/family_charades_animals`
+- Content ID: `family_charades_animals`
+- Occurrence count: 1
+- Source note: `KP-NOTE-5B0F24C7-C38C-4FB0-BC41-A6991D5DA5A6`
+- Normalized finding: Use the tester-supplied hand-drawn card as a reference for a more attractive, cartoony Charades picture style without copying the source image.
+- Expected behavior: A visual brief and approved Gemini Nano Banana masters define a coherent Charades card style; the supplied reference remains unchanged and is not silently copied, uploaded, or mutated.
+- Reproduction/triage: attachment_availability_visual_brief_and_gemini_review_required
+- Decision: accepted_for_triage_visual_asset_review_required
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0075`, `KPF-0076`
+- Attachments: 1 confirmed `image/jpeg` reference listed; binary not ingested.
+- Triage notes: The listed JPEG was not present in the received email context. No DM was sent and no image-generation or upload action occurred during passive intake.
+
+## KPF-0085 — Remove the Prepare Play Share graphic from game cards
+
+- Status: new
+- Type: visual_design / card_layout / content_visibility
+- Priority: Backlog
+- Impact: minor
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `detail/quiet_color_hunt`
+- Content ID: `quiet_color_hunt`
+- Occurrence count: 1
+- Source note: `KP-NOTE-40B0AE3C-50C3-473B-9A41-70A60F2C9131`
+- Normalized finding: Remove the Prepare Play Share information graphic from every game card.
+- Expected behavior: No game card renders the graphic in collapsed, expanded, or related card states; titles, descriptions, actions, accessibility semantics, and necessary safety/instruction content remain intact.
+- Reproduction/triage: cross_surface_card_inventory_and_visual_regression_review_required
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0055`, `KPF-0056`, `KPF-0075`
+- Triage notes: This is recorded separately from broader collapsed-card minimalism because it targets a specific visual asset across every card state.
+
+## KPF-0086 — Rewrite Would You Rather prompts in a concise humanized style
+
+- Status: new
+- Type: content_copy / content_safety / humanizer_review
+- Priority: Should Fix Soon
+- Impact: minor
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE`
+- Normalized finding: Rewrite all Would You Rather prompts with shorter, more natural wording, removing unnecessary qualifiers and filler while preserving the intended choice structure.
+- Expected behavior: Each prompt remains readable aloud, grammatically clear, distinct, and appropriate to its category; exact owner-supplied examples remain provenance-protected and runtime content stays unchanged until separately authorized.
+- Reproduction/triage: full_library_copy_review_and_humanizer_gate_required
+- Decision: accepted_for_next_authorized_content_revision
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0012`, `KPF-0078`
+- Triage notes: The request to use a writing skill is recorded as a future review gate, not executed during intake. Exact examples are preserved in the owner-supplied provenance manifest as reference-only entries.
+
+## KPF-0087 — Reduce Would You Rather to 40 prompts per category
+
+- Status: new
+- Type: content_request / content_provenance / content_library
+- Priority: Should Fix Soon
+- Impact: minor
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE`
+- Normalized finding: Reduce each Would You Rather category to exactly 40 prompts.
+- Expected behavior: The four category libraries contain 40 reviewed prompts each after reduction; only assistant-created entries may be removed, while project-owner-supplied entries remain present and separately identified.
+- Reproduction/triage: provenance_aware_library_reduction_and_count_validation_required
+- Decision: accepted_for_triage_provenance_and_safety_review_required
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0012`, `KPF-0078`
+- Triage notes: This conflicts with the existing 80-per-category target in KPF-0012 and therefore remains a new product decision rather than a silent merge.
+
+## KPF-0088 — Review the Gross and Super Gross age and safety boundary
+
+- Status: new
+- Type: content_safety / content_policy / product_decision
+- Priority: Should Fix Soon
+- Impact: minor
+- Affected build: 0.7.0-beta2 (12)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-AE3674BD-E47E-4DC4-8F14-60D4B51602EE`
+- Normalized finding: Evaluate whether Gross and Super Gross Would You Rather categories may target age 10+ with edgier but noncrass humor, rather than the current very-tame baseline.
+- Expected behavior: A recorded item-by-item safety decision defines age targeting, prohibited bodily content, ingestion references, and acceptable gross-humor limits before any runtime content is rewritten or released.
+- Reproduction/triage: content_safety_policy_and_library_review_required
+- Decision: accepted_for_triage_safety_review_required
+- Implementation status: not_started
+- Code authorization: none; passive intake and triage only
+- Related items: `KPF-0003`, `KPF-0012`, `KPF-0078`
+- Triage notes: The note contains a boundary tension between excluding crass material and using more provocative examples. Preserve the request and require explicit safety review; do not infer approval from the examples.
+
+## Intake batch KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4
+
+- Build: 0.7.0-beta2 (12)
+- Source notes: 1 unique; 0 replayed.
+- Canonical items touched: 3 total; 2 existing; 1 new.
+- Privacy: no child-identifying information written; sender sign-off and contact details omitted.
+- Attachment handling: no attachments listed or ingested.
+- Code authorization: intake and triage only; no application code, runtime content, UI behavior, asset, or build change.
+- Discord acknowledgment: delivered successfully to `#app-development` (channel `1501041077031800932`), message `1539009090318110901`.
+- Mapping: KP-NOTE-78EE3B8B-81D2-4FA3-B66E-72C7308ACE51 → KPF-0022, KPF-0063, KPF-0089.
+- Triage split: concise description and favorite preservation were linked to existing records; the Level 1 non-expandable/title-tap interaction was recorded as a new item because it changes the earlier card interaction scope.
+
+## KPF-0089 — Make Level 1 cards non-expandable with title-tap details navigation
+
+- Type: usability, navigation, content copy
+- Priority: should_fix_soon
+- Impact: minor
+- Screen: pick_game
+- Source note: KP-NOTE-78EE3B8B-81D2-4FA3-B66E-72C7308ACE51
+- Occurrence count: 1
+- Finding: At Level 1, remove card expand/collapse behavior and the Open button. Show only the game name/title and one-line description; tapping the game name opens the game details card; preserve star favorite behavior.
+- Expected behavior: Level 1 cards expose no age, duration, or participant-suitability metadata and have no expand/collapse affordance. The title/name is the details navigation target, while the favorite star remains an independent accessible control with persisted state.
+- Status: New; awaiting triage and implementation authorization.
+- Implementation status: Not started.
+- Scope note: Level 1 only; do not infer the same interaction for Level 0, Level 2, or details pages.
+
+## Implementation closure: KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4 + KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E
+
+- Closure record: `docs/testing/feedback/20260817_IMPLEMENTATION_RELEASE.json`
+- Implementation build: **0.7.0 (13)**; package `com.kinplay.app`.
+- The intake-only entries above are historical. This closure record supersedes their earlier `new`/`not_started` triage state for the authorized implementation pass.
+- Covered canonical items: `KPF-0022`, `KPF-0043`, `KPF-0060`, `KPF-0063`, `KPF-0078`–`KPF-0089`.
+- Automated gates: JVM unit tests, lint, release assembly, offline checkpoint, JSON/schema/parity checks, APK metadata/permission inspection, APK Signature Scheme v2 verification, and `git diff --check` passed.
+- APK: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260817_KinPlay_v0.7.0_feedback-complete.apk`; size `25,949,602` bytes; SHA-256 `e9f32ac03eb8137140c57a4a6c6dcfc09166f4a9c891a0004762c0662fc499b2`.
+- Drive: object `19Z7vDHR64_dbvs8pHDQJqMT_GypKV6yr` in folder `12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp`; downloaded read-back is byte-identical.
+- Charades: all 120 cards have reviewed resource metadata and prompt-specific accessible alt text; three Gemini-generated category masters are packaged and parity-checked. Per-card presentation still requires connected runtime visual retest.
+- Would You Rather: 40 prompts per category; the 20 protected runtime owner prompts remain present and separately identified; the five newer staged examples remain in the provenance manifest and were not silently promoted.
+- Release boundary: this is a private validation APK. No production release keystore was found, and no connected Android device/emulator retest is claimed.
+- Source publication: implementation commit and final publication-evidence commit remain to be recorded.

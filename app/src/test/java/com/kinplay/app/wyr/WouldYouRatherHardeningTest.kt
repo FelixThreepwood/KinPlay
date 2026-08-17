@@ -53,11 +53,11 @@ class WouldYouRatherHardeningTest {
 
     @Test
     fun parserRejectsZeroPromptsAndWrongPromptCount() {
-        assertParserRejects("94 prompts") { root ->
+        assertParserRejects("40 prompts") { root ->
             root.getJSONArray("categories").getJSONObject(0).put("prompts", JSONArray())
         }
-        assertParserRejects("94 prompts") { root ->
-            root.getJSONArray("categories").getJSONObject(0).getJSONArray("prompts").remove(93)
+        assertParserRejects("40 prompts") { root ->
+            root.getJSONArray("categories").getJSONObject(0).getJSONArray("prompts").remove(39)
         }
     }
 
@@ -98,7 +98,7 @@ class WouldYouRatherHardeningTest {
             canonicalJson().put("schemaVersion", 2),
             canonicalJson().put("libraryId", "wrong"),
             canonicalJson().also { it.getJSONArray("categories").remove(3) },
-            canonicalJson().also { firstPrompt(it).put("id", "wyr_cute_silly_095") },
+            canonicalJson().also { firstPrompt(it).put("id", "wyr_cute_silly_000") },
             canonicalJson().also { firstPrompt(it).put("text", "Would you rather one or two or three?") },
             canonicalJson().also { firstPrompt(it).put("status", "pending") },
         )
@@ -151,7 +151,7 @@ class WouldYouRatherHardeningTest {
         }
 
         // Individual choices may intentionally recur in different pairings; the rendered
-        // 340 prompt texts, not each side of the choice, are the stable unique content units.
+        // 160 prompt texts, not each side of the choice, are the stable unique content units.
         assertTrue("Expected a varied option vocabulary", optionVocabulary.size >= 120)
     }
 

@@ -74,6 +74,15 @@ fun accessiblePalette(theme: AppColorTheme): AccessiblePalette = when (theme) {
         secondaryContainer = argb(0xFFFFB5C8), onSecondaryContainer = argb(0xFF420019),
         tertiaryContainer = argb(0xFFFFD18A), onTertiaryContainer = argb(0xFF382000),
     )
+    AppColorTheme.LAVENDER -> AccessiblePalette(
+        background = argb(0xFFE7DDF3), onBackground = argb(0xFF241B2F),
+        surface = argb(0xFFFFFAFF), onSurface = argb(0xFF241B2F),
+        surfaceVariant = argb(0xFFE8DFF0), onSurfaceVariant = argb(0xFF44364F),
+        primary = argb(0xFF663F83), onPrimary = argb(0xFFFFFFFF),
+        primaryContainer = argb(0xFFE9CFFF), onPrimaryContainer = argb(0xFF28103D),
+        secondaryContainer = argb(0xFFFFE09B), onSecondaryContainer = argb(0xFF2A2000),
+        tertiaryContainer = argb(0xFFD4EEDC), onTertiaryContainer = argb(0xFF102D1A),
+    )
 }
 
 @Composable

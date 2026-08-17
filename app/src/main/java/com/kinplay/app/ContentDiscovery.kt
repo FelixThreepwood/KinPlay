@@ -21,6 +21,28 @@ enum class GameTypeGroup(
 
 const val GAME_TYPE_CARD_DEFAULT_EXPANDED = false
 
+data class ContentFormatGroup(
+    val id: String,
+    val label: String,
+    val description: String,
+)
+
+private val contentFormatGroups = listOf(
+    ContentFormatGroup("story_circle", "Story circle", "One story format with character, news, and word variations."),
+    ContentFormatGroup("notice_and_sort", "Notice and sort", "One observation format with color, shape, outdoor, and sorting variations."),
+    ContentFormatGroup("animal_play", "Animal play", "One animal format with movement, guessing, whisper, and rescue variations."),
+)
+
+private val contentFormatGroupsById = contentFormatGroups.associateBy(ContentFormatGroup::id)
+
+fun KinPlayItem.contentFormatGroup(): ContentFormatGroup? = formatGroupId?.let(contentFormatGroupsById::get)
+
+fun List<KinPlayItem>.groupedByFormat(): List<Pair<ContentFormatGroup?, List<KinPlayItem>>> {
+    val grouped = LinkedHashMap<String, MutableList<KinPlayItem>>()
+    for (item in this) grouped.getOrPut(item.formatGroupId ?: "__standalone__") { mutableListOf() }.add(item)
+    return grouped.map { (groupId, items) -> contentFormatGroupsById[groupId] to items }
+}
+
 fun ContentPack.discoveryItems(): List<KinPlayItem> {
     val visibleItems = activeItems().filterNot { it.type == "mad_libs" }
     val collection = madLibs().takeIf { it.isNotEmpty() }?.let(::madLibsCollectionItem)
@@ -49,7 +71,6 @@ fun KinPlayItem.discoveryGroupIds(): Set<String> = buildSet {
         ) -> add(GameTypeGroup.GUESSING_GAMES.id)
         id in setOf(
             "paper_airplane_weather",
-            "washable_coloring_together",
             "timed_drawing_tiny_monster",
             "rainbow_sort_sprint",
         ) -> add(GameTypeGroup.ARTS_AND_MAKING.id)

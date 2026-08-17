@@ -103,7 +103,6 @@ class ProtectedSafetyWarningsRegressionTest {
             "items[hallway_balance_beam].variations[0]",
             "items[rainbow_sort_sprint].materials[0]",
             "items[memory_tray_peek].materials[1]",
-            "items[washable_coloring_together].materials[1]",
             "items[washable_painting_shapes].materials[1]",
             "items[indoor_pillow_marco_polo].title",
         )
@@ -335,14 +334,12 @@ class ProtectedSafetyWarningsRegressionTest {
         // Collapsed cards intentionally expose only the reviewed one-sentence description.
         assertTrue(item("rainbow_sort_sprint").collapsedCardPreviewLines().single().isNotBlank())
         assertTrue(item("memory_tray_peek").collapsedCardPreviewLines().single().isNotBlank())
-        assertTrue(item("washable_coloring_together").collapsedCardPreviewLines().single().isNotBlank())
         assertTrue(item("washable_painting_shapes").collapsedCardPreviewLines().single().isNotBlank())
         assertTrue(item("sock_skating_rink").collapsedCardPreviewLines().single().isNotBlank())
 
         // Details retain complete warnings and setup content.
         assertTrue(item("rainbow_sort_sprint").detailSections().single { it.title == "Materials" }.lines[0].contains("safe toys or blocks"))
         assertTrue(item("memory_tray_peek").detailSections().single { it.title == "Materials" }.lines[0].contains("safe household objects"))
-        assertTrue(item("washable_coloring_together").detailSections().single { it.title == "Materials" }.lines[0].contains("washable non-toxic crayons or markers"))
         assertTrue(item("washable_painting_shapes").detailSections().single { it.title == "Materials" }.lines[0].contains("washable non-toxic children’s paint"))
         assertTrue(item("sock_skating_rink").detailSections().single { it.title == "Setup" }.lines[0].startsWith("Use only a smooth, clear floor area"))
 

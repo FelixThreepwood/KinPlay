@@ -30,8 +30,7 @@ class SettingsAndChildLockTest {
     fun settingsDestinationChangesAndPersistsFinitePreferencesAcrossRecreation() {
         compose.onNodeWithText("Settings").performScrollTo().performClick()
         compose.onNodeWithTag("settings-screen").assertIsDisplayed()
-        compose.onNodeWithTag("setting-launcher-icon-teal").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithTag("setting-launcher-icon-sunshine").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithTag("setting-theme-lavender").performScrollTo().assertIsDisplayed()
         compose.onNodeWithTag("setting-timer-90_seconds").performScrollTo().performClick()
         compose.onNodeWithTag("setting-duration-20_minutes").performScrollTo().performClick()
         compose.onNodeWithTag("setting-rounds-5").performScrollTo().performClick()

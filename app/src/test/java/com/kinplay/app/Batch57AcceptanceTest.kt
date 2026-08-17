@@ -81,9 +81,10 @@ class Batch57AcceptanceTest {
         assertTrue(source.contains("home-activity-themes-toggle"))
         assertTrue(source.contains("Game categories"))
         assertTrue(source.contains("content-card-single-column"))
-        assertTrue(source.contains("VisualInstructionGuide"))
+        assertFalse(source.contains("VisualInstructionGuide"))
+        assertTrue(source.contains("levelOne = true"))
         assertTrue(settings.contains("label = AppColorTheme::label"))
-        assertTrue(settings.contains("verticalOptions = true"))
+        assertTrue(settings.contains("gridColumns = 3"))
     }
 
     private fun repositoryRoot(): Path {

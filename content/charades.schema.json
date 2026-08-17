@@ -4,36 +4,99 @@
   "title": "KinPlay Charades Library",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "packId", "title", "locale", "cardCount", "categories", "cards"],
+  "required": [
+    "schemaVersion",
+    "packId",
+    "title",
+    "locale",
+    "cardCount",
+    "categories",
+    "cards"
+  ],
   "properties": {
-    "schemaVersion": { "type": "integer", "const": 1 },
-    "packId": { "const": "charades_v1" },
-    "title": { "type": "string", "minLength": 1 },
-    "locale": { "const": "en-US" },
-    "cardCount": { "const": 120 },
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "packId": {
+      "const": "charades_v1"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "locale": {
+      "const": "en-US"
+    },
+    "cardCount": {
+      "const": 120
+    },
     "categories": {
       "type": "array",
-      "const": ["animals", "activities", "objects"]
+      "const": [
+        "animals",
+        "activities",
+        "objects"
+      ]
     },
     "cards": {
       "type": "array",
       "minItems": 120,
       "maxItems": 120,
       "uniqueItems": true,
-      "items": { "$ref": "#/$defs/card" }
+      "items": {
+        "$ref": "#/$defs/card"
+      }
     }
   },
   "$defs": {
     "card": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "category", "prompt", "ageTags", "reviewed"],
+      "required": [
+        "id",
+        "category",
+        "prompt",
+        "ageTags",
+        "reviewed",
+        "imageResource",
+        "imageAltText"
+      ],
       "properties": {
-        "id": { "type": "string", "pattern": "^(animals|activities|objects)_[0-9]{2}$" },
-        "category": { "enum": ["animals", "activities", "objects"] },
-        "prompt": { "type": "string", "minLength": 1, "maxLength": 80 },
-        "ageTags": { "type": "array", "const": ["all_ages"] },
-        "reviewed": { "const": true }
+        "id": {
+          "type": "string",
+          "pattern": "^(animals|activities|objects)_[0-9]{2}$"
+        },
+        "category": {
+          "enum": [
+            "animals",
+            "activities",
+            "objects"
+          ]
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "ageTags": {
+          "type": "array",
+          "const": [
+            "all_ages"
+          ]
+        },
+        "reviewed": {
+          "const": true
+        },
+        "imageResource": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{2,80}$"
+        },
+        "imageAltText": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 240
+        }
       }
     }
   }

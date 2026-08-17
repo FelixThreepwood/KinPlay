@@ -32,10 +32,10 @@ class WouldYouRatherLibraryTest {
             library.categories.map { it.id to it.title },
         )
         val expectedCounts = mapOf(
-            "cute_silly" to 94,
-            "animals" to 86,
-            "gross" to 80,
-            "super_gross" to 80,
+            "cute_silly" to 40,
+            "animals" to 40,
+            "gross" to 40,
+            "super_gross" to 40,
         )
         library.categories.forEachIndexed { index, category ->
             assertEquals(index + 1, category.order)
@@ -77,13 +77,13 @@ class WouldYouRatherLibraryTest {
     }
 
     @Test
-    fun allThreeHundredFortyStableIdsAndNormalizedTextsAreUniqueAndReadyToRead() {
+    fun allReducedStableIdsAndNormalizedTextsAreUniqueAndReadyToRead() {
         val prompts = parseCanonical().categories.flatMap { it.prompts }
         val idPattern = Regex("^wyr_(cute_silly|animals|gross|super_gross)_[0-9]{3}$")
 
-        assertEquals(340, prompts.size)
-        assertEquals(340, prompts.map { it.id }.toSet().size)
-        assertEquals(340, prompts.map { normalize(it.text) }.toSet().size)
+        assertEquals(160, prompts.size)
+        assertEquals(160, prompts.map { it.id }.toSet().size)
+        assertEquals(160, prompts.map { normalize(it.text) }.toSet().size)
         prompts.forEach { prompt ->
             assertTrue("Invalid stable prompt ID ${prompt.id}", prompt.id.matches(idPattern))
             assertTrue("${prompt.id} must be ready to read", prompt.text.startsWith("Would you rather ") && prompt.text.endsWith("?"))
@@ -125,9 +125,9 @@ class WouldYouRatherLibraryTest {
         assertEquals("would_you_rather_v1", review.get("libraryId").asString)
         assertEquals("original_kinplay_editorial_work", provenance.get("origin").asString)
         assertEquals("No external prompt collection was used or copied.", provenance.get("statement").asString)
-        assertEquals("2026-08-05", review.get("reviewedOn").asString)
-        assertEquals(340, entries.size)
-        assertEquals(340, entries.map { it.get("id").asString }.toSet().size)
+        assertEquals("2026-08-17", review.get("reviewedOn").asString)
+        assertEquals(160, entries.size)
+        assertEquals(160, entries.map { it.get("id").asString }.toSet().size)
 
         val byId = entries.associateBy { it.get("id").asString }
         prompts.forEach { (categoryId, prompt) ->
@@ -135,7 +135,7 @@ class WouldYouRatherLibraryTest {
             assertEquals(categoryId, entry.get("categoryId").asString)
             assertEquals("approved", entry.get("status").asString)
             assertEquals("original_kinplay_editorial_work", entry.get("origin").asString)
-            val expectedReviewedOn = if (entry.has("source")) "2026-08-05" else "2026-07-26"
+            val expectedReviewedOn = if (entry.has("source")) "2026-08-05" else "2026-08-17"
             assertEquals(expectedReviewedOn, entry.get("reviewedOn").asString)
             assertEquals("passed", entry.get("safetyReview").asString)
             if (entry.has("source")) {

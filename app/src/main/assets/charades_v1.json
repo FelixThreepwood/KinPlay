@@ -17,7 +17,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: cat."
     },
     {
       "id": "animals_02",
@@ -26,7 +28,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: dog."
     },
     {
       "id": "animals_03",
@@ -35,7 +39,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: rabbit."
     },
     {
       "id": "animals_04",
@@ -44,7 +50,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: elephant."
     },
     {
       "id": "animals_05",
@@ -53,7 +61,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: penguin."
     },
     {
       "id": "animals_06",
@@ -62,7 +72,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: frog."
     },
     {
       "id": "animals_07",
@@ -71,7 +83,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: turtle."
     },
     {
       "id": "animals_08",
@@ -80,7 +94,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: monkey."
     },
     {
       "id": "animals_09",
@@ -89,7 +105,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: lion."
     },
     {
       "id": "animals_10",
@@ -98,7 +116,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: giraffe."
     },
     {
       "id": "animals_11",
@@ -107,7 +127,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: bear."
     },
     {
       "id": "animals_12",
@@ -116,7 +138,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: panda."
     },
     {
       "id": "animals_13",
@@ -125,7 +149,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: kangaroo."
     },
     {
       "id": "animals_14",
@@ -134,7 +160,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: koala."
     },
     {
       "id": "animals_15",
@@ -143,7 +171,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: zebra."
     },
     {
       "id": "animals_16",
@@ -152,7 +182,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: horse."
     },
     {
       "id": "animals_17",
@@ -161,7 +193,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: cow."
     },
     {
       "id": "animals_18",
@@ -170,7 +204,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: pig."
     },
     {
       "id": "animals_19",
@@ -179,7 +215,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: chicken."
     },
     {
       "id": "animals_20",
@@ -188,7 +226,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: duck."
     },
     {
       "id": "animals_21",
@@ -197,7 +237,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: owl."
     },
     {
       "id": "animals_22",
@@ -206,7 +248,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: eagle."
     },
     {
       "id": "animals_23",
@@ -215,7 +259,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: parrot."
     },
     {
       "id": "animals_24",
@@ -224,7 +270,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: flamingo."
     },
     {
       "id": "animals_25",
@@ -233,7 +281,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: peacock."
     },
     {
       "id": "animals_26",
@@ -242,7 +292,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: snake."
     },
     {
       "id": "animals_27",
@@ -251,7 +303,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: alligator."
     },
     {
       "id": "animals_28",
@@ -260,7 +314,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: crocodile."
     },
     {
       "id": "animals_29",
@@ -269,7 +325,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: dolphin."
     },
     {
       "id": "animals_30",
@@ -278,7 +336,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: whale."
     },
     {
       "id": "animals_31",
@@ -287,7 +347,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: shark."
     },
     {
       "id": "animals_32",
@@ -296,7 +358,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: octopus."
     },
     {
       "id": "animals_33",
@@ -305,7 +369,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: crab."
     },
     {
       "id": "animals_34",
@@ -314,7 +380,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: butterfly."
     },
     {
       "id": "animals_35",
@@ -323,7 +391,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: bee."
     },
     {
       "id": "animals_36",
@@ -332,7 +402,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: snail."
     },
     {
       "id": "animals_37",
@@ -341,7 +413,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: squirrel."
     },
     {
       "id": "animals_38",
@@ -350,7 +424,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: mouse."
     },
     {
       "id": "animals_39",
@@ -359,7 +435,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: hedgehog."
     },
     {
       "id": "animals_40",
@@ -368,7 +446,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_animals_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: dinosaur."
     },
     {
       "id": "activities_01",
@@ -377,7 +457,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: brushing teeth."
     },
     {
       "id": "activities_02",
@@ -386,7 +468,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: baking cookies."
     },
     {
       "id": "activities_03",
@@ -395,7 +479,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: flying a kite."
     },
     {
       "id": "activities_04",
@@ -404,7 +490,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: reading a book."
     },
     {
       "id": "activities_05",
@@ -413,7 +501,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: swimming."
     },
     {
       "id": "activities_06",
@@ -422,7 +512,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: riding a bicycle."
     },
     {
       "id": "activities_07",
@@ -431,7 +523,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: building a sandcastle."
     },
     {
       "id": "activities_08",
@@ -440,7 +534,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: planting a flower."
     },
     {
       "id": "activities_09",
@@ -449,7 +545,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: washing a car."
     },
     {
       "id": "activities_10",
@@ -458,7 +556,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: playing catch."
     },
     {
       "id": "activities_11",
@@ -467,7 +567,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: jumping rope."
     },
     {
       "id": "activities_12",
@@ -476,7 +578,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: skipping."
     },
     {
       "id": "activities_13",
@@ -485,7 +589,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: hula hooping."
     },
     {
       "id": "activities_14",
@@ -494,7 +600,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: ice skating."
     },
     {
       "id": "activities_15",
@@ -503,7 +611,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: skiing."
     },
     {
       "id": "activities_16",
@@ -512,7 +622,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: playing soccer."
     },
     {
       "id": "activities_17",
@@ -521,7 +633,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: shooting a basketball."
     },
     {
       "id": "activities_18",
@@ -530,7 +644,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: bowling."
     },
     {
       "id": "activities_19",
@@ -539,7 +655,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: fishing."
     },
     {
       "id": "activities_20",
@@ -548,7 +666,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: climbing a tree."
     },
     {
       "id": "activities_21",
@@ -557,7 +677,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: taking a photograph."
     },
     {
       "id": "activities_22",
@@ -566,7 +688,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: painting a picture."
     },
     {
       "id": "activities_23",
@@ -575,7 +699,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: playing the piano."
     },
     {
       "id": "activities_24",
@@ -584,7 +710,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: playing the guitar."
     },
     {
       "id": "activities_25",
@@ -593,7 +721,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: singing."
     },
     {
       "id": "activities_26",
@@ -602,7 +732,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: dancing ballet."
     },
     {
       "id": "activities_27",
@@ -611,7 +743,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: doing a magic trick."
     },
     {
       "id": "activities_28",
@@ -620,7 +754,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: wrapping a present."
     },
     {
       "id": "activities_29",
@@ -629,7 +765,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: opening an umbrella."
     },
     {
       "id": "activities_30",
@@ -638,7 +776,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: blowing bubbles."
     },
     {
       "id": "activities_31",
@@ -647,7 +787,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: making a sandwich."
     },
     {
       "id": "activities_32",
@@ -656,7 +798,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: stirring soup."
     },
     {
       "id": "activities_33",
@@ -665,7 +809,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: eating spaghetti."
     },
     {
       "id": "activities_34",
@@ -674,7 +820,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: sleeping."
     },
     {
       "id": "activities_35",
@@ -683,7 +831,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: waking up."
     },
     {
       "id": "activities_36",
@@ -692,7 +842,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: looking through binoculars."
     },
     {
       "id": "activities_37",
@@ -701,7 +853,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: pretending to be a robot."
     },
     {
       "id": "activities_38",
@@ -710,7 +864,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: walking like a giant."
     },
     {
       "id": "activities_39",
@@ -719,7 +875,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: tiptoeing past a sleeping dragon."
     },
     {
       "id": "activities_40",
@@ -728,7 +886,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_activities_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: giving a high five."
     },
     {
       "id": "objects_01",
@@ -737,7 +897,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: backpack."
     },
     {
       "id": "objects_02",
@@ -746,7 +908,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: umbrella."
     },
     {
       "id": "objects_03",
@@ -755,7 +919,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: toothbrush."
     },
     {
       "id": "objects_04",
@@ -764,7 +930,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: balloon."
     },
     {
       "id": "objects_05",
@@ -773,7 +941,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: kite."
     },
     {
       "id": "objects_06",
@@ -782,7 +952,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: book."
     },
     {
       "id": "objects_07",
@@ -791,7 +963,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: pillow."
     },
     {
       "id": "objects_08",
@@ -800,7 +974,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: blanket."
     },
     {
       "id": "objects_09",
@@ -809,7 +985,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: bicycle."
     },
     {
       "id": "objects_10",
@@ -818,7 +996,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: skateboard."
     },
     {
       "id": "objects_11",
@@ -827,7 +1007,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: baseball glove."
     },
     {
       "id": "objects_12",
@@ -836,7 +1018,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: soccer ball."
     },
     {
       "id": "objects_13",
@@ -845,7 +1029,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: basketball."
     },
     {
       "id": "objects_14",
@@ -854,7 +1040,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: bowling ball."
     },
     {
       "id": "objects_15",
@@ -863,7 +1051,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: fishing pole."
     },
     {
       "id": "objects_16",
@@ -872,7 +1062,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: sunglasses."
     },
     {
       "id": "objects_17",
@@ -881,7 +1073,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: rain boots."
     },
     {
       "id": "objects_18",
@@ -890,7 +1084,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: winter hat."
     },
     {
       "id": "objects_19",
@@ -899,7 +1095,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: scarf."
     },
     {
       "id": "objects_20",
@@ -908,7 +1106,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: mitten."
     },
     {
       "id": "objects_21",
@@ -917,7 +1117,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: camera."
     },
     {
       "id": "objects_22",
@@ -926,7 +1128,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: binoculars."
     },
     {
       "id": "objects_23",
@@ -935,7 +1139,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: flashlight."
     },
     {
       "id": "objects_24",
@@ -944,7 +1150,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: treasure chest."
     },
     {
       "id": "objects_25",
@@ -953,7 +1161,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: map."
     },
     {
       "id": "objects_26",
@@ -962,7 +1172,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: compass."
     },
     {
       "id": "objects_27",
@@ -971,7 +1183,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: key."
     },
     {
       "id": "objects_28",
@@ -980,7 +1194,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: doorbell."
     },
     {
       "id": "objects_29",
@@ -989,7 +1205,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: alarm clock."
     },
     {
       "id": "objects_30",
@@ -998,7 +1216,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: telephone."
     },
     {
       "id": "objects_31",
@@ -1007,7 +1227,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: spoon."
     },
     {
       "id": "objects_32",
@@ -1016,7 +1238,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: fork."
     },
     {
       "id": "objects_33",
@@ -1025,7 +1249,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: mixing bowl."
     },
     {
       "id": "objects_34",
@@ -1034,7 +1260,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: sandwich."
     },
     {
       "id": "objects_35",
@@ -1043,7 +1271,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: ice cream cone."
     },
     {
       "id": "objects_36",
@@ -1052,7 +1282,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: birthday cake."
     },
     {
       "id": "objects_37",
@@ -1061,7 +1293,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: water bottle."
     },
     {
       "id": "objects_38",
@@ -1070,7 +1304,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: lunchbox."
     },
     {
       "id": "objects_39",
@@ -1079,7 +1315,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: stuffed animal."
     },
     {
       "id": "objects_40",
@@ -1088,7 +1326,9 @@
       "ageTags": [
         "all_ages"
       ],
-      "reviewed": true
+      "reviewed": true,
+      "imageResource": "charades_objects_sheet",
+      "imageAltText": "Generated cartoon picture board for the Charades prompt: toy train."
     }
   ]
 }

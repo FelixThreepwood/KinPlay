@@ -6,13 +6,13 @@
 - Modes: mad_libs
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 8 min
 - Energy: calm
 - Summary: Choose words to create and read a silly space breakfast story.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
-- Fields: A name (person_name, e.g. Zigzag), An adjective (adjective, e.g. wiggly), A food (food, e.g. pancakes), An animal (animal, e.g. llama), A funny sound (sound, e.g. boing)
+- Fields: A name, An adjective, A food, An animal, A funny sound
 - Template: Captain {name} flew a {adjective} rocket to the moon to deliver {food}. When the hatch opened, a moon {animal} shouted {sound}! Everyone laughed and shared breakfast among the stars.
 - Read-aloud note: Read with a dramatic countdown.
 
@@ -22,13 +22,13 @@
 - Modes: mad_libs
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 8 min
 - Energy: calm
 - Summary: Choose words to create and read a silly story about a dragon helping with chores.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
-- Fields: A color (color, e.g. purple), An object (object, e.g. sock), An action word (verb, e.g. twirl), A number (number, e.g. seven)
+- Fields: A color, An object, An action word, A number
 - Template: The {color} dragon found a tiny {object} in the laundry basket. It tried to {verb} it clean, but accidentally made {number} bubbles float through the house.
 - Read-aloud note: Pause before the bubble surprise.
 
@@ -38,13 +38,13 @@
 - Modes: mad_libs
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 6–8
+- Minimum age: 6+
 - Duration: 10 min
 - Energy: calm
 - Summary: Choose words to create and read a silly story about a royal announcement from a pretend castle.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
-- Fields: A place (place, e.g. backyard), An adjective (adjective, e.g. sparkly), A noun (noun, e.g. crown), An animal (animal, e.g. frog)
+- Fields: A place, An adjective, A noun, An animal
 - Template: Breaking news from the castle of {place}: the royal {adjective} {noun} has been found by a brave {animal}. The kingdom will celebrate with extra giggles tonight.
 - Read-aloud note: Use a news announcer voice.
 
@@ -54,13 +54,13 @@
 - Modes: mad_libs
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 8 min
 - Energy: calm
 - Summary: Choose words to create and read a silly story about a sleepy parade.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
-- Fields: A name (person_name, e.g. Moonbeam), A color (color, e.g. blue), An animal (animal, e.g. penguin), A funny sound (sound, e.g. whoosh)
+- Fields: A name, A color, An animal, A funny sound
 - Template: Professor {name} announced the first {color} pajama parade. A tiny {animal} led the march and shouted {sound} every time someone yawned.
 - Read-aloud note: Read it with a sleepy announcer voice.
 
@@ -70,13 +70,13 @@
 - Modes: mad_libs
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 8 min
 - Energy: calm
 - Summary: Choose words to create and read a silly story about a robot baking pretend cookies with a surprise.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
-- Fields: An adjective (adjective, e.g. bouncy), A food (food, e.g. cookies), A number (number, e.g. nine), An object (object, e.g. spoon)
+- Fields: An adjective, A food, A number, An object
 - Template: The {adjective} robot opened a factory for {food}. It pressed one button and {number} tiny {object}s danced across the counter.
 - Read-aloud note: Pause before the dancing objects.
 
@@ -86,13 +86,13 @@
 - Modes: mad_libs
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 8 min
 - Energy: calm
 - Summary: Choose words to create and read a silly story about a bus driving under the sea at bedtime.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
-- Fields: An animal (animal, e.g. turtle), A place (place, e.g. pillow fort), A color (color, e.g. green), A sound (sound, e.g. bubble-pop)
+- Fields: An animal, A place, A color, A sound
 - Template: The bedtime bus was driven by a sleepy {animal}. It stopped at {place}, flashed its {color} lights, and whispered {sound} to the fish.
 - Read-aloud note: Use a soft bus-driver voice.
 
@@ -102,13 +102,13 @@
 - Modes: mad_libs
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 6–8
+- Minimum age: 6+
 - Duration: 10 min
 - Energy: calm
 - Summary: Choose words to create and read a silly story about a castle feast needing a strange solution.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
-- Fields: A noun (noun, e.g. crown), An adjective (adjective, e.g. crunchy), A food (food, e.g. pizza), An action word (verb, e.g. wiggle)
+- Fields: A noun, An adjective, A food, An action word
 - Template: The royal {noun} refused to eat the {adjective} {food} until everyone agreed to {verb} around the table one time.
 - Read-aloud note: Read it as a royal decree.
 
@@ -118,13 +118,13 @@
 - Modes: mad_libs
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 6–8
+- Minimum age: 6+
 - Duration: 10 min
 - Energy: calm
 - Summary: Choose words to create and read a silly story about pets competing in a zero-gravity show.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
-- Fields: A name (person_name, e.g. Sparkplug), An animal (animal, e.g. hamster), An adverb (adverb, e.g. slowly), A sound (sound, e.g. plink)
+- Fields: A name, An animal, An adverb, A sound
 - Template: Judge {name} welcomed the space {animal} show. The winner floated {adverb} through the ring and made a proud {sound}.
 - Read-aloud note: Use a game-show voice.
 
@@ -134,12 +134,12 @@
 - Modes: mad_libs
 - Quick categories: quiet_games, dinner_table, brain_games, quality_time
 - Participant suitability: both
-- Age: 4–8
+- Minimum age: 4+
 - Duration: 8 min
 - Energy: calm
 - Summary: Choose words to create and read a silly story about a dragon train delivering breakfast.
 - Materials: none
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
-- Fields: A color (color, e.g. orange), A food (food, e.g. waffles), A place (place, e.g. kitchen), A number (number, e.g. three)
+- Fields: A color, A food, A place, A number
 - Template: The {color} dragon train delivered {food} to the {place}. It rang its bell {number} times and served everyone a plate of giggles.
 - Read-aloud note: Make the train bell sound gentle.
