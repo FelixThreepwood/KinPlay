@@ -1,8 +1,11 @@
 package com.kinplay.app
 
+import androidx.activity.ComponentActivity
 import androidx.compose.ui.semantics.SemanticsActions
+
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performScrollTo
 import androidx.navigation.compose.rememberNavController
@@ -17,25 +20,26 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class HomeVocabularyTest {
     @get:Rule
-    val compose = createAndroidComposeRule<MainActivity>()
+    val compose = createAndroidComposeRule<ComponentActivity>()
 
     @Test
-    fun homeShowsExactShortcutLabelsInTheEstablishedActionSection() {
+    fun homeShowsCurrentShortcutLabelsAndRemovesSupersededVocabulary() {
         setHome()
 
-        compose.onNodeWithText("More ways to start").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText(HOME_DESCRIPTOR).assertIsDisplayed()
         compose.onNodeWithText("Random game").performScrollTo().assertIsDisplayed()
         compose.onNodeWithText("All games and activities").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText("More ways to start").assertDoesNotExist()
         compose.onNodeWithText("Pick For Me").assertDoesNotExist()
         compose.onNodeWithText("Browse All Games & Activities").assertDoesNotExist()
     }
 
     @Test
-    fun shortcutAccessibilityClickLabelsMatchVisibleLabels() {
+    fun shortcutAccessibilityClickLabelsDescribeTheVisibleAction() {
         setHome()
 
-        assertClickLabel("Random game")
-        assertClickLabel("All games and activities")
+        assertClickLabel("home-action-random_game", "Random game: Choose a ready-to-use game or activity")
+        assertClickLabel("home-action-all_games_and_activities", "All games and activities: Browse familiar games and activities")
     }
 
     private fun setHome() {
@@ -51,10 +55,10 @@ class HomeVocabularyTest {
         }
     }
 
-    private fun assertClickLabel(visibleLabel: String) {
-        val node = compose.onNodeWithText(visibleLabel).performScrollTo()
+    private fun assertClickLabel(tag: String, expectedLabel: String) {
+        val node = compose.onNodeWithTag(tag).performScrollTo()
         node.assertIsDisplayed()
         val clickAction = node.fetchSemanticsNode().config[SemanticsActions.OnClick]
-        assertEquals(visibleLabel, clickAction.label)
+        assertEquals(expectedLabel, clickAction.label)
     }
 }

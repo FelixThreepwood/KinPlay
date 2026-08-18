@@ -34,11 +34,12 @@ class HomeCopyReductionTest {
     fun compactHomeRetainsIdentityPurposeCategoriesActionsAndB6ShortcutScope() {
         listOf(
             "Text(\"KinPlay\"",
-            "Text(HOME_DESCRIPTOR",
+            "HOME_DESCRIPTOR,",
             "QuickCategoryGrid",
             "HOME_SHORTCUTS",
             "HOME_SHORTCUTS.forEach",
-            "HomeButton(shortcut",
+            "HomeButton(",
+            "shortcut = shortcut",
         ).forEach { binding ->
             assertTrue("Required Home binding changed or disappeared: $binding", mainSource.contains(binding))
         }

@@ -1,5 +1,6 @@
 package com.kinplay.app
 
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -25,7 +26,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ChildHandoffLockBehaviorTest {
     @get:Rule
-    val compose = createAndroidComposeRule<MainActivity>()
+    val compose = createAndroidComposeRule<ComponentActivity>()
 
     @Test
     fun lockedSurfaceKeepsGuidanceHiddenUntilBlockedTapThenRemovesIt() {

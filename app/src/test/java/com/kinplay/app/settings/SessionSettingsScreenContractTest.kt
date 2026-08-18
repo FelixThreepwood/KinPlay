@@ -13,9 +13,9 @@ class SessionSettingsScreenContractTest {
 
         assertTrue(source.contains("title = \"Default rounds\""))
         assertTrue(source.contains("options = SessionRounds.entries"))
-        assertTrue(source.contains("selected = settings.defaultRounds"))
-        assertTrue(source.contains("settings.copy(defaultRounds = it)"))
-        assertTrue(source.contains("settings.defaultRounds.label"))
+        assertTrue(source.contains("selected = localSettings.defaultRounds"))
+        assertTrue(source.contains("localSettings.copy(defaultRounds = it)"))
+        assertTrue(source.contains("localSettings.defaultRounds.label"))
     }
 
     @Test

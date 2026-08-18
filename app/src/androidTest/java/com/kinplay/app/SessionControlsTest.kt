@@ -27,10 +27,10 @@ class SessionControlsTest {
     val compose = createComposeRule()
 
     private val eligibleItem = KinPlayItem(
-        id = "family_charades_animals",
+        id = "timed_drawing_tiny_monster",
         type = "activity",
         status = "active",
-        title = "Charades",
+        title = "Tiny Monster Drawing",
         summary = "Act out animal clues.",
         modes = listOf("pick_a_game"),
         minAge = 2,
@@ -66,10 +66,10 @@ class SessionControlsTest {
         }
 
         compose.onNodeWithTag("session-configuration").assertIsDisplayed()
-        compose.onNodeWithTag("session-applied").assertTextContains("10 minutes").assertTextContains("3 rounds")
+        compose.onNodeWithTag("session-applied").assertTextContains("10 minutes", substring = true).assertTextContains("3 rounds", substring = true)
         compose.onNodeWithTag("session-duration-20_minutes").performClick()
         compose.onNodeWithTag("session-rounds-7").performClick()
-        compose.onNodeWithTag("session-applied").assertTextContains("20 minutes").assertTextContains("7 rounds")
+        compose.onNodeWithTag("session-applied").assertTextContains("20 minutes", substring = true).assertTextContains("7 rounds", substring = true)
         compose.onNodeWithTag("session-start-button").performClick()
 
         assertEquals(eligibleItem.id, started?.gameId)

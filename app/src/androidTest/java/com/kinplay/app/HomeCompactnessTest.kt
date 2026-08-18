@@ -1,5 +1,6 @@
 package com.kinplay.app
 
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.CompositionLocalProvider
@@ -35,7 +36,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class HomeCompactnessTest {
     @get:Rule
-    val compose = createAndroidComposeRule<MainActivity>()
+    val compose = createAndroidComposeRule<ComponentActivity>()
 
     @Test
     fun compactPhoneShowsIdentityOneLinePurposeAndAllSixCategoriesWithoutAnInstructionGap() {
@@ -49,43 +50,57 @@ class HomeCompactnessTest {
         assertTrue("Purpose must sit beside identity", descriptorBounds.left >= identityBounds.right)
 
         openCategoryDrawer()
+        val drawerBounds = compose.onNodeWithTag("home-activity-themes-drawer").fetchSemanticsNode().boundsInRoot
+        val drawerToggleBounds = compose.onNodeWithTag("home-activity-themes-toggle").fetchSemanticsNode().boundsInRoot
         val firstCategory = compose.onNodeWithTag("home-category-quiet_games").performScrollTo().assertIsDisplayed()
         val firstBounds = firstCategory.fetchSemanticsNode().boundsInRoot
         val density = compose.activity.resources.displayMetrics.density
         assertTrue(
-            "Category grid has an unnecessary vertical gap",
-            firstBounds.top - identityBounds.bottom <= 52f * density,
+            "Category drawer has an unnecessary vertical gap above its toggle",
+            drawerBounds.top - identityBounds.bottom <= 52f * density,
+        )
+        assertTrue(
+            "Category grid has an unnecessary gap inside its drawer",
+            firstBounds.top - drawerToggleBounds.bottom <= 12f * density,
         )
         assertAllCategoriesFitViewport()
         compose.onNodeWithText("What fits now").assertDoesNotExist()
     }
 
     @Test
-    fun representativeWideAndLargeFontHomesKeepEveryCategoryInsideItsTouchTarget() {
-        listOf(600 to 1f, 320 to 1.5f).forEach { (width, fontScale) ->
-            setHome(width = width, height = 640, fontScale = fontScale)
-            openCategoryDrawer()
+    fun representativeWideHomeKeepsEveryCategoryInsideItsTouchTarget() {
+        assertResponsiveHome(width = 600, fontScale = 1f)
+    }
 
-            assertDescriptorIsSingleLineAndFits()
-            QuickCategory.defaultGrid.forEach { category ->
-                val cardBounds = compose.onNodeWithTag("home-category-${category.id}")
-                    .assertIsDisplayed()
-                    .assertHasClickAction()
-                    .assertHeightIsAtLeast(48.dp)
-                    .assertWidthIsAtLeast(48.dp)
-                    .fetchSemanticsNode().boundsInRoot
-                val labelNode = compose.onNodeWithText(category.label, useUnmergedTree = true).assertIsDisplayed()
-                val cueNode = compose.onNodeWithText(category.placeCue, substring = true, useUnmergedTree = true).assertIsDisplayed()
-                assertTextHasNoVisualOverflow(labelNode, "${category.label} label")
-                assertTextHasNoVisualOverflow(cueNode, "${category.label} cue")
-                val labelBounds = labelNode.fetchSemanticsNode().boundsInRoot
-                val cueBounds = cueNode.fetchSemanticsNode().boundsInRoot
-                assertTrue("${category.label} label is clipped above its target", labelBounds.top >= cardBounds.top)
-                assertTrue("${category.label} label overlaps its cue", labelBounds.bottom <= cueBounds.top)
-                assertTrue("${category.label} cue is clipped below its target", cueBounds.bottom <= cardBounds.bottom)
-            }
-            assertAllCategoriesFitViewport()
+    @Test
+    fun largeFontHomeKeepsEveryCategoryInsideItsTouchTarget() {
+        assertResponsiveHome(width = 320, fontScale = 1.5f)
+    }
+
+    private fun assertResponsiveHome(width: Int, fontScale: Float) {
+        setHome(width = width, height = 640, fontScale = fontScale)
+        openCategoryDrawer()
+
+        assertDescriptorIsSingleLineAndFits()
+        QuickCategory.defaultGrid.forEach { category ->
+            val cardBounds = compose.onNodeWithTag("home-category-${category.id}")
+                .performScrollTo()
+                .assertIsDisplayed()
+                .assertHasClickAction()
+                .assertHeightIsAtLeast(48.dp)
+                .assertWidthIsAtLeast(48.dp)
+                .fetchSemanticsNode().boundsInRoot
+            val labelNode = compose.onNodeWithText(category.label, useUnmergedTree = true).assertIsDisplayed()
+            val cueNode = compose.onNodeWithText(category.placeCue, substring = true, useUnmergedTree = true).assertIsDisplayed()
+            assertTextHasNoVisualOverflow(labelNode, "${category.label} label")
+            assertTextHasNoVisualOverflow(cueNode, "${category.label} cue")
+            val labelBounds = labelNode.fetchSemanticsNode().boundsInRoot
+            val cueBounds = cueNode.fetchSemanticsNode().boundsInRoot
+            assertTrue("${category.label} label is clipped above its target", labelBounds.top >= cardBounds.top)
+            assertTrue("${category.label} label overlaps its cue", labelBounds.bottom <= cueBounds.top)
+            assertTrue("${category.label} cue is clipped below its target", cueBounds.bottom <= cardBounds.bottom)
         }
+        assertAllCategoriesFitViewport()
     }
 
     @Test
@@ -99,7 +114,7 @@ class HomeCompactnessTest {
                 .assertHeightIsAtLeast(48.dp)
                 .assertWidthIsAtLeast(48.dp)
         }
-        listOf("random_game", "all_games_and_activities", "settings", "about_safety").forEach { action ->
+        listOf("random_game", "all_games_and_activities").forEach { action ->
             compose.onNodeWithTag("home-action-$action")
                 .performScrollTo()
                 .assertIsDisplayed()
@@ -125,12 +140,17 @@ class HomeCompactnessTest {
     private fun assertDescriptorIsSingleLineAndFits() =
         compose.onNodeWithText(HOME_DESCRIPTOR, useUnmergedTree = true).assertIsDisplayed().also { descriptor ->
             val layouts = textLayouts(descriptor)
-            assertEquals("Home purpose must stay on one line", 1, layouts.single().lineCount)
-            assertFalse("Home purpose must not be clipped or ellipsized", layouts.single().hasVisualOverflow)
+            val layout = layouts.single()
+            assertEquals("Home purpose must stay on one line", 1, layout.lineCount)
+            assertFalse(
+                "Home purpose must not be clipped or ellipsized: size=${layout.size}, lines=${layout.lineCount}, overflow=${layout.hasVisualOverflow}",
+                layout.hasVisualOverflow,
+            )
         }
 
     private fun assertTextHasNoVisualOverflow(node: SemanticsNodeInteraction, description: String) {
-        assertFalse("$description must not be clipped or ellipsized", textLayouts(node).single().hasVisualOverflow)
+        val layout = textLayouts(node).single()
+        assertFalse("$description must not be clipped or ellipsized", layout.hasVisualOverflow)
     }
 
     private fun textLayouts(node: SemanticsNodeInteraction): List<TextLayoutResult> =

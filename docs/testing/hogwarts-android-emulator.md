@@ -7,7 +7,7 @@
 - Image: Android API 35, Google APIs, x86_64
 - Emulator: Android Emulator 37.1.11
 - Acceleration: KVM via `/dev/kvm`
-- Renderer: `lavapipe` software rendering
+- Renderer: `swiftshader_indirect` software rendering
 - Display mode: headless (`-no-window`); runtime interaction uses `adb`, screenshots, UIAutomator, and input events
 - User service: `hogwarts-android-emulator.service`
 - Service file: `/home/phantomatic/.config/systemd/user/hogwarts-android-emulator.service`

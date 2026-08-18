@@ -23,7 +23,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
+
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
@@ -87,10 +89,14 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.PlatformTextStyle
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -428,12 +434,34 @@ fun HomeScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(10.dp),
-                    ) {
-                        Text("KinPlay", fontWeight = FontWeight.Bold)
-                        Text(HOME_DESCRIPTOR, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1)
+                    BoxWithConstraints {
+                        val fontScale = LocalDensity.current.fontScale
+                        val compactTitle = maxWidth < 220.dp
+                        val titleFontSize = when {
+                            !compactTitle -> MaterialTheme.typography.titleLarge.fontSize
+                            fontScale >= 1.5f -> 12.sp
+                            else -> 16.sp
+                        }
+                        val descriptorFontSize = if (compactTitle) 7.sp else 8.sp
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(10.dp),
+                        ) {
+                            Text("KinPlay", fontSize = titleFontSize, fontWeight = FontWeight.Bold)
+                            Text(
+                                HOME_DESCRIPTOR,
+                                modifier = Modifier.weight(1f),
+                                style = TextStyle(
+                                    fontSize = descriptorFontSize,
+                                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                ),
+                                maxLines = 1,
+                                softWrap = false,
+                                overflow = TextOverflow.Clip,
+                            )
+                        }
                     }
                 },
                 actions = {
@@ -508,9 +536,9 @@ fun HomeScreen(
             )
         },
     ) { innerPadding ->
-        PageColumn(Modifier.padding(innerPadding).testTag("home-viewport")) {
-            HomeShortcutRow(navController)
+        PageColumn(Modifier.padding(innerPadding)) {
             HomeActivityThemesDrawer { category -> navController.navigate(Routes.category(category.id)) }
+            HomeShortcutRow(navController)
             val favoriteItems = contentPack.favoriteItems(favoriteIds)
             val recentItems = contentPack.recentItems(recentIds)
             if (favoriteItems.isNotEmpty()) {
@@ -545,7 +573,7 @@ private fun HomePreview() {
 }
 
 fun homeCategoryColumnCount(maxWidthDp: Int, fontScale: Float): Int =
-    if (maxWidthDp >= 360 && fontScale < 1.5f) 2 else 1
+    if (maxWidthDp >= 280 && fontScale < 1.5f) 2 else 1
 
 @Composable
 private fun HomeShortcutRow(navController: NavController) {
@@ -580,7 +608,7 @@ private fun HomeActivityThemesDrawer(onSelect: (QuickCategory) -> Unit) {
         shape = RoundedCornerShape(22.dp),
         modifier = Modifier.fillMaxWidth().testTag("home-activity-themes-drawer"),
     ) {
-        Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Column(modifier = Modifier.padding(8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             OutlinedButton(
                 onClick = { expanded = !expanded },
                 modifier = Modifier
@@ -590,23 +618,27 @@ private fun HomeActivityThemesDrawer(onSelect: (QuickCategory) -> Unit) {
                         contentDescription = "Activity themes and Game categories"
                         stateDescription = if (expanded) "Expanded" else "Collapsed"
                     },
+                contentPadding = PaddingValues(horizontal = 12.dp, vertical = 0.dp),
             ) {
                 Icon(
                     imageVector = if (expanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
                     contentDescription = null,
                 )
-                Column(modifier = Modifier.weight(1f), horizontalAlignment = Alignment.Start) {
-                    Text("Activity themes", fontWeight = FontWeight.Bold)
-                    Text("Game categories", style = MaterialTheme.typography.bodySmall)
-                }
+                Text(
+                    "Activity themes · Game categories",
+                    modifier = Modifier.weight(1f),
+                    maxLines = 1,
+                    overflow = TextOverflow.Clip,
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Bold,
+                )
             }
             AnimatedVisibility(
                 visible = expanded,
                 enter = slideInHorizontally(initialOffsetX = { -it }) + fadeIn(),
                 exit = slideOutHorizontally(targetOffsetX = { -it }) + fadeOut(),
             ) {
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.testTag("home-game-categories-drawer")) {
-                    Text("Game categories", fontWeight = FontWeight.Bold)
+                Column(verticalArrangement = Arrangement.spacedBy(4.dp), modifier = Modifier.testTag("home-game-categories-drawer")) {
                     QuickCategoryGrid(onSelect)
                 }
             }
@@ -647,8 +679,18 @@ fun QuickCategoryGrid(onSelect: (QuickCategory) -> Unit) {
                                 modifier = Modifier.fillMaxSize().padding(12.dp),
                                 verticalArrangement = Arrangement.SpaceBetween,
                             ) {
-                                Text(category.label, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
-                                Text("${category.placeCue}  ›", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
+                                Text(
+                                    category.label,
+                                    modifier = Modifier.fillMaxWidth(),
+                                    fontWeight = FontWeight.Bold,
+                                    color = MaterialTheme.colorScheme.onSurface,
+                                )
+                                Text(
+                                    "${category.placeCue}  ›",
+                                    modifier = Modifier.fillMaxWidth(),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.primary,
+                                )
                             }
                         }
                     }
@@ -1123,7 +1165,10 @@ private fun CompactCardTrailingContent(
                 textAlign = TextAlign.Start,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
-            Button(onClick = { navController.openItem(item) }) { Text("Open") }
+            Button(
+                onClick = { navController.openItem(item) },
+                modifier = Modifier.testTag("content-open-${item.id}"),
+            ) { Text("Open") }
         }
     }
 }
@@ -1264,6 +1309,14 @@ private fun ActivityDetailSurface(
                     if (item.parentNotes.isNotBlank()) {
                         Text("Parent note", fontWeight = FontWeight.Bold)
                         Text(item.parentNotes)
+                    }
+                    if (item.safetyTags.isNotEmpty()) {
+                        Text(
+                            reviewedSafetyTagSummary(item),
+                            modifier = Modifier.testTag("safety-summary"),
+                            style = MaterialTheme.typography.bodySmall,
+                            fontWeight = FontWeight.Bold,
+                        )
                     }
                     if (item.type == "mad_libs") {
                         MadLibPlayPanel(item, enabled = !isLocked)

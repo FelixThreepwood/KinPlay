@@ -42,6 +42,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -278,7 +279,10 @@ fun FeedbackOverlay(
     }
 
     if (sheetOpen) {
-        LaunchedEffect(Unit) { commentFocusRequester.requestFocus() }
+        LaunchedEffect(sheetOpen) {
+            withFrameNanos { }
+            runCatching { commentFocusRequester.requestFocus() }
+        }
         ModalBottomSheet(
             onDismissRequest = ::dismissSheet,
             sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
@@ -321,7 +325,10 @@ fun FeedbackOverlay(
                     onValueChange = { comment = it.take(2_000) },
                     label = { Text("Quick comment") },
                     supportingText = { Text("Current screen: $screen") },
-                    modifier = Modifier.fillMaxWidth().focusRequester(commentFocusRequester),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .focusRequester(commentFocusRequester)
+                        .testTag("feedback-comment-field"),
                     minLines = 3,
                 )
                 if (showExpectedResult) {

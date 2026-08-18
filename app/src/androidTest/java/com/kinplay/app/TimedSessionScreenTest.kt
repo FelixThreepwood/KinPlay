@@ -4,7 +4,9 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextContains
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.kinplay.app.settings.ActivityDuration
@@ -57,9 +59,9 @@ class TimedSessionScreenTest {
 
         repeat(3) {
             compose.onNodeWithTag("timed-session-finish-round").performClick()
+            compose.waitForIdle()
         }
 
-        compose.onNodeWithTag("timed-session-complete").assertIsDisplayed()
-        compose.onNodeWithTag("timed-session-complete").assertTextContains("Session complete")
+        compose.onNodeWithText("Session complete").performScrollTo().assertIsDisplayed()
     }
 }

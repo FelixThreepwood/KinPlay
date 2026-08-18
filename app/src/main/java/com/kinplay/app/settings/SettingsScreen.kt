@@ -28,13 +28,19 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.semantics
+
+import androidx.compose.ui.semantics.selected
+import androidx.compose.ui.semantics.role
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -46,6 +52,13 @@ fun SettingsScreen(
     onSettingsChange: (AppSettings) -> Unit,
     onBack: () -> Unit,
 ) {
+    var localSettings by remember(settings) { mutableStateOf(settings) }
+
+    fun updateSettings(changed: AppSettings) {
+        localSettings = changed
+        onSettingsChange(changed)
+    }
+
     Scaffold(
         modifier = Modifier.testTag("settings-screen"),
         containerColor = MaterialTheme.colorScheme.background,
@@ -76,38 +89,38 @@ fun SettingsScreen(
                 title = "Game timer",
                 summary = "Suggested length for a round or turn",
                 options = GameTimer.entries,
-                selected = settings.gameTimer,
+                selected = localSettings.gameTimer,
                 label = GameTimer::label,
                 tag = { "setting-timer-${it.wireValue}" },
-                onSelect = { onSettingsChange(settings.copy(gameTimer = it)) },
+                onSelect = { updateSettings(localSettings.copy(gameTimer = it)) },
             )
             PreferenceSection(
                 title = "Activity duration",
                 summary = "Your target length for family activities",
                 options = ActivityDuration.entries,
-                selected = settings.activityDuration,
+                selected = localSettings.activityDuration,
                 label = ActivityDuration::label,
                 tag = { "setting-duration-${it.wireValue}" },
-                onSelect = { onSettingsChange(settings.copy(activityDuration = it)) },
+                onSelect = { updateSettings(localSettings.copy(activityDuration = it)) },
             )
             PreferenceSection(
                 title = "Default rounds",
                 summary = "How many rounds a new timed session starts with",
                 options = SessionRounds.entries,
-                selected = settings.defaultRounds,
+                selected = localSettings.defaultRounds,
                 label = SessionRounds::label,
                 tag = { "setting-rounds-${it.wireValue}" },
-                onSelect = { onSettingsChange(settings.copy(defaultRounds = it)) },
+                onSelect = { updateSettings(localSettings.copy(defaultRounds = it)) },
             )
             PreferenceSection(
                 title = "App color theme",
                 summary = "Choose a theme by name",
                 options = AppColorTheme.entries,
-                selected = settings.colorTheme,
+                selected = localSettings.colorTheme,
                 label = AppColorTheme::label,
                 tag = { "setting-theme-${it.wireValue}" },
                 gridColumns = 3,
-                onSelect = { onSettingsChange(settings.copy(colorTheme = it)) },
+                onSelect = { updateSettings(localSettings.copy(colorTheme = it)) },
             )
             Card(
                 colors = CardDefaults.cardColors(
@@ -118,7 +131,7 @@ fun SettingsScreen(
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 Text(
-                    "Current plan: ${settings.defaultRounds.label} • ${settings.gameTimer.label} per turn • ${settings.activityDuration.label} activities • ${settings.colorTheme.label} theme",
+                    "Current plan: ${localSettings.defaultRounds.label} • ${localSettings.gameTimer.label} per turn • ${localSettings.activityDuration.label} activities • ${localSettings.colorTheme.label} theme",
                     modifier = Modifier.padding(16.dp).testTag("settings-current-plan"),
                     fontWeight = FontWeight.Bold,
                 )
@@ -139,6 +152,9 @@ private fun <T> PreferenceSection(
     gridColumns: Int? = null,
     onSelect: (T) -> Unit,
 ) {
+    val choices = options.map { option ->
+        PreferenceChoice(option, label(option), tag(option))
+    }
     Card(
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface,
@@ -161,24 +177,24 @@ private fun <T> PreferenceSection(
             )
             BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
                 if (gridColumns != null) {
-                    options.chunked(gridColumns).forEach { rowOptions ->
+                    choices.chunked(gridColumns).forEach { rowChoices ->
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(4.dp),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
-                            rowOptions.forEach { option ->
-                                PreferenceOption(
-                                    option = option,
-                                    compact = true,
-                                    selected = selected,
-                                    label = label,
-                                    tag = tag,
-                                    onSelect = onSelect,
-                                    modifier = Modifier.weight(1f),
-                                )
+                            rowChoices.forEach { choice ->
+                                key(choice.tag) {
+                                    PreferenceOption(
+                                        choice = choice,
+                                        compact = true,
+                                        selected = selected,
+                                        onSelect = onSelect,
+                                        modifier = Modifier.weight(1f),
+                                    )
+                                }
                             }
-                            repeat((gridColumns - rowOptions.size).coerceAtLeast(0)) {
+                            repeat((gridColumns - rowChoices.size).coerceAtLeast(0)) {
                                 androidx.compose.foundation.layout.Spacer(Modifier.weight(1f))
                             }
                         }
@@ -193,14 +209,18 @@ private fun <T> PreferenceSection(
                         horizontalArrangement = Arrangement.spacedBy(4.dp),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        options.forEach { option ->
-                            PreferenceOption(option, true, selected, label, tag, onSelect)
+                        choices.forEach { choice ->
+                            key(choice.tag) {
+                                PreferenceOption(choice, true, selected, onSelect)
+                            }
                         }
                     }
                     } else {
                         Column {
-                            options.forEach { option ->
-                                PreferenceOption(option, false, selected, label, tag, onSelect)
+                            choices.forEach { choice ->
+                                key(choice.tag) {
+                                    PreferenceOption(choice, false, selected, onSelect)
+                                }
                             }
                         }
                     }
@@ -210,28 +230,37 @@ private fun <T> PreferenceSection(
     }
 }
 
+private data class PreferenceChoice<T>(
+    val option: T,
+    val label: String,
+    val tag: String,
+)
+
 @Composable
 private fun <T> PreferenceOption(
-    option: T,
+    choice: PreferenceChoice<T>,
     compact: Boolean,
     selected: T,
-    label: (T) -> String,
-    tag: (T) -> String,
     onSelect: (T) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val option = remember(choice.tag) { choice.option }
+    val latestOnSelect by rememberUpdatedState(onSelect)
     Row(
         modifier = modifier.then(if (compact) Modifier else Modifier.fillMaxWidth())
-            .testTag(tag(option))
-            .selectable(
-                selected = option == selected,
-                role = Role.RadioButton,
-                onClick = { onSelect(option) },
-            )
+            .clickable { latestOnSelect(option) }
+            .semantics {
+                role = Role.RadioButton
+                this.selected = option == selected
+            }
+            .testTag(choice.tag)
             .padding(horizontal = 10.dp, vertical = 5.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        RadioButton(selected = option == selected, onClick = null)
-        Text(label(option), modifier = Modifier.padding(start = 6.dp), maxLines = 1)
+        RadioButton(
+            selected = option == selected,
+            onClick = null,
+        )
+        Text(choice.label, modifier = Modifier.padding(start = 6.dp), maxLines = 1)
     }
 }

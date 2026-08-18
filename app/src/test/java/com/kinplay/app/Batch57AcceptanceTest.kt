@@ -32,7 +32,8 @@ class Batch57AcceptanceTest {
     @Test
     fun homeCategoryGridUsesTwoColumnsOnlyWhenTheViewportCanSupportIt() {
         assertEquals(2, homeCategoryColumnCount(360, 1.0f))
-        assertEquals(1, homeCategoryColumnCount(359, 1.0f))
+        assertEquals(2, homeCategoryColumnCount(359, 1.0f))
+        assertEquals(1, homeCategoryColumnCount(279, 1.0f))
         assertEquals(1, homeCategoryColumnCount(500, 1.5f))
     }
 

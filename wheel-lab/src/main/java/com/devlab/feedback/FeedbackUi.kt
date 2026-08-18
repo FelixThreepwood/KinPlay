@@ -42,6 +42,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -278,7 +279,10 @@ fun FeedbackOverlay(
     }
 
     if (sheetOpen) {
-        LaunchedEffect(Unit) { commentFocusRequester.requestFocus() }
+        LaunchedEffect(Unit) {
+            withFrameNanos { }
+            runCatching { commentFocusRequester.requestFocus() }
+        }
         ModalBottomSheet(
             onDismissRequest = ::dismissSheet,
             sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),

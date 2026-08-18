@@ -1,9 +1,10 @@
 package com.kinplay.app
 
+import androidx.activity.ComponentActivity
+
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -17,7 +18,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class SafetyWarningPresentationTest {
     @get:Rule
-    val compose = createAndroidComposeRule<MainActivity>()
+    val compose = createAndroidComposeRule<ComponentActivity>()
 
     private val safetyItem = KinPlayItem(
         id = "indoor_pillow_marco_polo",
@@ -41,7 +42,7 @@ class SafetyWarningPresentationTest {
     )
 
     @Test
-    fun retainedWarningsAreRenderedOnCollapsedExpandedAndDetailsSurfaces() {
+    fun cardsStayMetadataLightAndDetailsRetainReviewedWarnings() {
         compose.setContent {
             KinPlayTheme(AppColorTheme.FOREST) {
                 ContentCard(
@@ -52,16 +53,17 @@ class SafetyWarningPresentationTest {
             }
         }
 
-        compose.onNodeWithText("Needs: two or three firm pillows")
-            .assertIsDisplayed()
-        compose.onNodeWithText("Setup: Adult supervises and clears a flat room away from stairs", substring = true)
-            .assertIsDisplayed()
+        compose.onNodeWithText(safetyItem.title).assertIsDisplayed()
         compose.onNodeWithText(safetyItem.summary).assertIsDisplayed()
-
-        compose.onNodeWithText(safetyItem.title).performClick()
-        compose.onNodeWithText(safetyItem.summary).assertIsDisplayed()
+        compose.onNodeWithText("Works 1:1 or with a group").assertDoesNotExist()
+        compose.onNodeWithText("Needs: two or three firm pillows").assertDoesNotExist()
+        compose.onNodeWithText("Setup: Adult supervises", substring = true).assertDoesNotExist()
         compose.onNodeWithText("Open").assertIsDisplayed()
 
+    }
+
+    @Test
+    fun detailsRetainReviewedWarnings() {
         compose.setContent {
             KinPlayTheme(AppColorTheme.FOREST) {
                 ActivityDetailScreen(

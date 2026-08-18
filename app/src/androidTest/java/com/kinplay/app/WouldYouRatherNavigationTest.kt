@@ -25,12 +25,13 @@ class WouldYouRatherNavigationTest {
 
     @Test
     fun seedItemOpensDedicatedPlayLaneAdvancesOnlyOnTapAndExitsBackToCategory() {
+        compose.onNodeWithTag("home-activity-themes-toggle").performClick()
         waitForText("At the Dinner Table")
         compose.onNodeWithText("At the Dinner Table").performClick()
 
         waitForText("Would You Rather")
         compose.onNodeWithText("Would You Rather").performScrollTo().performClick()
-        compose.onNodeWithText("Open").performScrollTo().performClick()
+        compose.onNodeWithTag("content-open-$WOULD_YOU_RATHER_ITEM_ID").performScrollTo().performClick()
 
         compose.onNodeWithText("Pick a category").assertIsDisplayed()
         compose.onNodeWithText("Animals").assertIsDisplayed()
@@ -38,6 +39,7 @@ class WouldYouRatherNavigationTest {
         val transitionStartedAt = SystemClock.elapsedRealtime()
         compose.onNodeWithText("Animals").performClick()
         compose.onNodeWithTag("wyr-prompt").assertIsDisplayed()
+        waitForPromptText()
         val transitionElapsedMillis = SystemClock.elapsedRealtime() - transitionStartedAt
         assertTrue(
             "Prompt transition took ${transitionElapsedMillis}ms; expected less than 2000ms",
@@ -50,6 +52,7 @@ class WouldYouRatherNavigationTest {
         assertEquals("Prompt changed without a tap", firstPrompt, currentPromptText())
 
         compose.onNodeWithTag("wyr-prompt").performClick()
+        waitForPromptText()
         compose.waitForIdle()
         assertNotEquals("Tap did not advance to a different prompt", firstPrompt, currentPromptText())
 
@@ -70,8 +73,14 @@ class WouldYouRatherNavigationTest {
     }
 
     private fun currentPromptText(): String {
-        val textNodes = compose.onAllNodesWithTag("wyr-prompt-text").fetchSemanticsNodes()
+        val textNodes = compose.onAllNodesWithTag("wyr-prompt-text", useUnmergedTree = true).fetchSemanticsNodes()
         assertEquals("Expected exactly one settled prompt", 1, textNodes.size)
         return textNodes.single().config[SemanticsProperties.Text].joinToString(separator = "") { it.text }
+    }
+
+    private fun waitForPromptText() {
+        compose.waitUntil(timeoutMillis = 2_000) {
+            compose.onAllNodesWithTag("wyr-prompt-text", useUnmergedTree = true).fetchSemanticsNodes().size == 1
+        }
     }
 }

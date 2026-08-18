@@ -1,12 +1,15 @@
 package com.kinplay.app
 
+import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertTextContains
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performSemanticsAction
 import androidx.compose.ui.test.performTextInput
 import androidx.navigation.compose.rememberNavController
@@ -23,7 +26,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ActivityDetailFeedbackTest {
     @get:Rule
-    val compose = createAndroidComposeRule<MainActivity>()
+    val compose = createAndroidComposeRule<ComponentActivity>()
 
     private val item = KinPlayItem(
         id = "feedback_detail_item",
@@ -36,6 +39,7 @@ class ActivityDetailFeedbackTest {
         maxAge = 8,
         durationMinutes = 5,
         energyLevel = "calm",
+        childHandoffLockEligible = true,
     )
 
     @Composable
@@ -59,8 +63,12 @@ class ActivityDetailFeedbackTest {
         compose.setContent { DetailUnderTest() }
 
         compose.onNodeWithTag("feedback-control").assertIsDisplayed().performClick()
-        compose.onNodeWithText("Quick comment").performTextInput("Detail context retained")
-        compose.onNodeWithText("Save note").performClick()
+        compose.onNodeWithTag("feedback-comment-field")
+            .performTextInput("Detail context retained")
+        compose.onNodeWithTag("feedback-comment-field").assertTextContains("Detail context retained")
+        compose.onNodeWithText("Save note").performScrollTo().performClick()
+        compose.onNodeWithTag("feedback-control").performClick()
+        compose.onNodeWithText("Unsent: 1", substring = true).performScrollTo().assertIsDisplayed()
 
         compose.runOnIdle {
             val saved = FeedbackStore(compose.activity.applicationContext).load().single()

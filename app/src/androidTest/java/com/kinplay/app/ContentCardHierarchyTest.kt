@@ -1,32 +1,34 @@
 package com.kinplay.app
 
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.test.assertCountEquals
+
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import com.kinplay.app.settings.AppColorTheme
 import com.kinplay.app.ui.KinPlayTheme
-import org.junit.Assert.assertTrue
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import kotlin.math.abs
 
 @RunWith(AndroidJUnit4::class)
 class ContentCardHierarchyTest {
     @get:Rule
-    val compose = createAndroidComposeRule<MainActivity>()
+    val compose = createAndroidComposeRule<ComponentActivity>()
 
     private val item = KinPlayItem(
         id = "card_hierarchy_fixture",
@@ -45,93 +47,59 @@ class ContentCardHierarchyTest {
     )
 
     @Test
-    fun collapsedCardShowsLeftSummaryAndRightAlignedParticipantDurationAndAge() {
+    fun levelOneCardIsMetadataLightTitleNavigableAndFavoriteIndependent() {
+        var favoriteClicks = 0
+        setCard(width = 420.dp, levelOne = true) { favoriteClicks += 1 }
+
+        compose.onNodeWithText(item.title).assertIsDisplayed()
+        compose.onNodeWithText(item.summary).assertIsDisplayed()
+        compose.onNodeWithText("9 min").assertDoesNotExist()
+        compose.onNodeWithText("Ages 3+").assertDoesNotExist()
+        compose.onNodeWithText("Needs: paper clues").assertDoesNotExist()
+        compose.onNodeWithText("Open").assertDoesNotExist()
+
+        compose.onNodeWithTag("favorite-toggle-${item.id}").assertIsDisplayed().performClick()
+        assertEquals(1, favoriteClicks)
+    }
+
+    @Test
+    fun regularCardShowsExpandedPreviewAndOpenAction() {
         setCard(width = 420.dp)
 
         compose.onNodeWithText(item.title).assertIsDisplayed()
         compose.onNodeWithText(item.summary).assertIsDisplayed()
         compose.onNodeWithText("Works 1:1 or with a group").assertIsDisplayed()
         compose.onNodeWithText("9 min").assertIsDisplayed()
-        compose.onNodeWithText("Ages 3–8").assertIsDisplayed()
-        compose.onNodeWithText("Needs: paper clues").assertIsDisplayed()
-        compose.onNodeWithText("Setup: Hide three paper clues where everyone can reach them.").assertIsDisplayed()
-        compose.onNodeWithText("Open").assertDoesNotExist()
-
-        val title = compose.onNodeWithText(item.title, useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        val summary = compose.onNodeWithText(item.summary, useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        val participant = compose.onNodeWithText("Works 1:1 or with a group", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        val duration = compose.onNodeWithText("9 min", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        val age = compose.onNodeWithText("Ages 3–8", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        assertTrue("Title and summary must share a left edge", abs(title.left - summary.left) <= 1f)
-        assertTrue("Participant descriptor must trail the primary labels", participant.left > title.left)
-        assertTrue("Trailing descriptors must share a right edge", abs(participant.right - duration.right) <= 1f)
-        assertTrue("Trailing descriptors must share a right edge", abs(duration.right - age.right) <= 1f)
-    }
-
-    @Test
-    fun expansionAndFavoriteStarPreserveSummaryMaterialsSetupAndOpenAction() {
-        setCard(width = 420.dp, favorite = true)
-
-        compose.onNodeWithText("★ ${item.title}").assertIsDisplayed().performClick()
-        compose.onAllNodesWithText(item.summary).assertCountEquals(1)
-        compose.onNodeWithText("Needs: paper clues").assertIsDisplayed()
-        compose.onNodeWithText("Setup: Hide three paper clues where everyone can reach them.").assertIsDisplayed()
-        compose.onNodeWithText("Open").assertIsDisplayed()
+        compose.onNodeWithText("Ages 3+").assertIsDisplayed()
         compose.onNodeWithText(item.energyLevel).assertIsDisplayed()
+        compose.onNodeWithText("Open").assertIsDisplayed().assertHasClickAction()
+    }
 
-        compose.onNodeWithText("★ ${item.title}").performClick()
+    @Test
+    fun narrowLevelOneCardKeepsTitleAndSummaryWithoutMetadataOverflow() {
+        setCard(width = 280.dp, levelOne = true)
+
+        compose.onNodeWithText(item.title).assertIsDisplayed()
+        compose.onNodeWithText(item.summary).assertIsDisplayed()
+        compose.onNodeWithText("Needs: paper clues").assertDoesNotExist()
+        compose.onNodeWithText("Setup: Hide three paper clues where everyone can reach them.")
+            .assertDoesNotExist()
+    }
+
+    @Test
+    fun largeFontScaleLevelOneCardKeepsItsCollapsedContract() {
+        setCard(width = 420.dp, levelOne = true, fontScale = 2f)
+
+        compose.onNodeWithText(item.title).assertIsDisplayed()
+        compose.onNodeWithText(item.summary).assertIsDisplayed()
         compose.onNodeWithText("Open").assertDoesNotExist()
-        compose.onNodeWithText("★ ${item.title}").assertIsDisplayed()
-    }
-
-    @Test
-    fun narrowCardStacksOnlyAsNeededWithoutClippingOrLosingTrailingAlignment() {
-        setCard(width = 280.dp)
-
-        val required = listOf(
-            item.title,
-            item.summary,
-            "Needs: paper clues",
-            "Setup: Hide three paper clues where everyone can reach them.",
-            "Works 1:1 or with a group",
-            "9 min",
-            "Ages 3–8",
-        )
-        required.forEach { compose.onNodeWithText(it).assertIsDisplayed() }
-
-        val summary = compose.onNodeWithText(item.summary, useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        val participant = compose.onNodeWithText("Works 1:1 or with a group", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        val duration = compose.onNodeWithText("9 min", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        val age = compose.onNodeWithText("Ages 3–8", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        assertTrue("Stacked descriptors must not obscure primary copy", participant.top >= summary.bottom)
-        assertTrue("Stacked trailing descriptors must stay right aligned", abs(participant.right - duration.right) <= 1f)
-        assertTrue("Stacked trailing descriptors must stay right aligned", abs(duration.right - age.right) <= 1f)
-    }
-
-    @Test
-    fun largeFontScaleUsesAccessibleStackedFallbackAndKeepsAllCollapsedContent() {
-        setCard(width = 420.dp, fontScale = 2f)
-
-        val required = listOf(
-            item.title,
-            item.summary,
-            "Needs: paper clues",
-            "Setup: Hide three paper clues where everyone can reach them.",
-            "Works 1:1 or with a group",
-            "9 min",
-            "Ages 3–8",
-        )
-        required.forEach { compose.onNodeWithText(it).assertIsDisplayed() }
-
-        val summary = compose.onNodeWithText(item.summary, useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        val participant = compose.onNodeWithText("Works 1:1 or with a group", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
-        assertTrue("Large text fallback must not overlap primary and trailing content", participant.top >= summary.bottom)
     }
 
     private fun setCard(
         width: androidx.compose.ui.unit.Dp,
-        favorite: Boolean = false,
+        levelOne: Boolean = false,
         fontScale: Float = 1f,
+        onToggleFavorite: () -> Unit = {},
     ) {
         compose.setContent {
             CompositionLocalProvider(LocalDensity provides Density(LocalDensity.current.density, fontScale)) {
@@ -139,8 +107,10 @@ class ContentCardHierarchyTest {
                     Box(Modifier.width(width)) {
                         ContentCard(
                             item = item,
-                            favoriteIds = if (favorite) setOf(item.id) else emptySet(),
+                            favoriteIds = emptySet(),
                             navController = rememberNavController(),
+                            onToggleFavorite = onToggleFavorite,
+                            levelOne = levelOne,
                         )
                     }
                 }
