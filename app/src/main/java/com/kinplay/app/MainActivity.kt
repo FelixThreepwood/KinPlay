@@ -1710,9 +1710,16 @@ fun AccountScreen(navController: NavController) {
 @Composable
 fun AboutAppScreen(navController: NavController) {
     DestinationScreen(title = "About the app", navController = navController) {
-        Text("KinPlay", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+        Text("KidPlay", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
         Text("Offline-first family play for parent-led moments.")
         Text("Version ${BuildConfig.VERSION_NAME}")
+        Text("Release notes", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+        KIDPLAY_RELEASE_CHANGELOG.forEach { release ->
+            Text("Version ${release.version}", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            release.changes.forEach { change ->
+                Text("${change.itemId}: ${change.summary}")
+            }
+        }
     }
 }
 

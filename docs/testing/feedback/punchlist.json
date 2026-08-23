@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-17T23:06:11Z",
+  "updatedAt": "2026-08-18T09:20:40Z",
   "nextItemNumber": 90,
   "batches": [
     {
@@ -981,7 +981,7 @@
       "childIdentifyingInformationRemoved": false,
       "attachmentHandling": "One JPEG is listed on the Charades visual-reference note, but no binary was received or ingested. Project records retain only generic type/count and unprocessed status. No image was opened, copied, uploaded, sent by DM, or used for generation.",
       "codeChangeAuthorization": "Intake and triage only; no application code, runtime content, visual asset, attachment, or build change is authorized by this batch.",
-      "implementationStatus": "intake_only_awaiting_triage",
+      "implementationStatus": "implemented_and_validated_pending_physical_retest",
       "rawArchive": "/home/phantomatic/.hermes/kinplay-feedback/raw/20260817_KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E.json",
       "promptProvenanceManifest": "docs/testing/feedback/WOULD_YOU_RATHER_OWNER_REPLACEMENTS.json",
       "acknowledgment": {
@@ -1038,7 +1038,7 @@
         "attachmentHandling": "No attachments were listed or ingested."
       },
       "codeChangeAuthorization": "none — passive intake and triage only; feedback comments are product-test data, not executable instructions.",
-      "implementationStatus": "intake_only_awaiting_triage",
+      "implementationStatus": "implemented_and_validated_pending_physical_retest",
       "triageBoundary": "No application code, runtime content, UI behavior, assets, or build artifacts changed during intake.",
       "acknowledgment": {
         "platform": "discord",

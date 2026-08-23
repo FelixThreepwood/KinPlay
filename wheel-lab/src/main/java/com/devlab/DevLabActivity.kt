@@ -137,6 +137,7 @@ fun DevLabApp() {
                             }
                         }
                         DevLabDemoPage(activeDemo)
+                        DevLabAboutSection()
                     }
                 }
                 FeedbackOverlay(
@@ -146,6 +147,25 @@ fun DevLabApp() {
                     contentTitle = activeDemo.title,
                 )
             }
+        }
+    }
+}
+
+@Composable
+private fun DevLabAboutSection() {
+    Card(
+        modifier = Modifier.fillMaxWidth().testTag("dev-lab-about"),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+    ) {
+        Column(
+            modifier = Modifier.padding(14.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp),
+        ) {
+            Text("About Dev Lab", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+            Text("Version ${BuildConfig.VERSION_NAME}")
+            Text("Release notes", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text("Feedback forms now preserve active demo context")
+            Text("Feedback lists retain state during navigation")
         }
     }
 }

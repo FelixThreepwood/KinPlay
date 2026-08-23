@@ -1,0 +1,173 @@
+{
+  "recordType": "implementation_release",
+  "recordVersion": 1,
+  "recordedAt": "2026-08-18T09:20:40Z",
+  "project": "KinPlay",
+  "sourceCommit": "b656e00c12f0aafe88667a40016cc903f79dc6c8",
+  "remote": "origin/main",
+  "branch": "main",
+  "feedbackScope": {
+    "normalizedBatchIds": [
+      "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4",
+      "KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E"
+    ],
+    "rawArchives": [
+      "/home/phantomatic/.hermes/kinplay-feedback/raw/20260817_KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4.json",
+      "/home/phantomatic/.hermes/kinplay-feedback/raw/20260817_KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E.json"
+    ],
+    "sourceNotes": {
+      "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4": {
+        "unique": 1,
+        "replayed": 0,
+        "canonicalItems": 3
+      },
+      "KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E": {
+        "unique": 9,
+        "replayed": 0,
+        "canonicalItems": 14
+      }
+    },
+    "canonicalItemIds": [
+      "KPF-0022",
+      "KPF-0043",
+      "KPF-0060",
+      "KPF-0063",
+      "KPF-0078",
+      "KPF-0079",
+      "KPF-0080",
+      "KPF-0081",
+      "KPF-0082",
+      "KPF-0083",
+      "KPF-0084",
+      "KPF-0085",
+      "KPF-0086",
+      "KPF-0087",
+      "KPF-0088",
+      "KPF-0089"
+    ]
+  },
+  "coverageAudit": {
+    "registryPath": "docs/testing/feedback/punchlist.json",
+    "registryCanonicalItems": 89,
+    "implementationComplete": 89,
+    "implementationIncomplete": 0,
+    "requestedBatchItems": 16,
+    "requestedBatchItemsImplementationComplete": 16,
+    "requestedBatchItemStatus": "fixed_awaiting_retest",
+    "physicalDeviceRetest": "open",
+    "physicalDeviceRetestReason": "The available target was a service-backed API 35 emulator; the owner’s Pixel 8 Pro / Android 16 family retest remains a separate required closure step."
+  },
+  "implementationSummary": [
+    "Home Level 1 discovery is grouped by format, metadata-light, non-expandable, favorite-preserving, and title-navigable.",
+    "Home compactness and responsive category layout were corrected without shipping diagnostic copy or probes.",
+    "Settings removes launcher-icon selection, includes Lavender, and uses a three-column theme grid with immediate persisted-choice feedback.",
+    "Feedback sharing uses ACTION_SEND for one attachment and ACTION_SEND_MULTIPLE for multiple attachments.",
+    "Feedback save/reopen flows preserve the active screen, content ID, and content title.",
+    "Would You Rather contains four reviewed categories with 40 prompts each; owner-supplied provenance remains protected.",
+    "Charades contains reviewed image metadata for all 120 cards; the unavailable original attachment was not ingested.",
+    "The retired washable_coloring_together item is absent from active KinPlay content."
+  ],
+  "validation": {
+    "jvmAndLint": {
+      "command": "./gradlew testDebugUnitTest lintDebug assembleDebug assembleDebugAndroidTest --no-daemon",
+      "result": "passed",
+      "jvmTests": "218 tests, 0 failures",
+      "lint": "passed",
+      "debugAssembly": "passed",
+      "androidTestSourceAndAssembly": "passed"
+    },
+    "connectedAndroid": {
+      "command": "./gradlew connectedDebugAndroidTest --no-daemon",
+      "result": "BUILD SUCCESSFUL",
+      "emulator": "emulator-5554 / Hogwarts_API35_Pixel7 / API 35",
+      "kinplayAppTests": "26 tests, 0 failures",
+      "devLabTests": "2 tests, 0 failures"
+    },
+    "contentAndPackageParity": {
+      "kinplay": {
+        "schema": "passed",
+        "canonicalRuntimeByteParity": "passed",
+        "apkAssetParity": "passed",
+        "activeItems": 55,
+        "canonicalSha256": "a151c2a9d3f752a1c1fab31bad555d79619382c2ebbe021950890f8c549df774"
+      },
+      "wouldYouRather": {
+        "schema": "passed",
+        "canonicalRuntimeByteParity": "passed",
+        "categories": {
+          "cute_silly": 40,
+          "animals": 40,
+          "gross": 40,
+          "super_gross": 40
+        },
+        "totalPrompts": 160,
+        "canonicalSha256": "061198a7e6795fd7f26aef2dd9b128da85aba8fec998d250e4eef0f0186d9a03"
+      },
+      "charades": {
+        "schema": "passed",
+        "canonicalRuntimeByteParity": "passed",
+        "cards": 120,
+        "cardsWithImageMetadata": 120,
+        "canonicalSha256": "69ef4d3eb3a231b89f191b3272e01e4386e7b56a1a64041f481fb7e648d5984e"
+      }
+    },
+    "artifactBuild": {
+      "command": "./gradlew assembleDebug assembleRelease --no-daemon",
+      "result": "passed",
+      "unsignedReleaseOutputs": true
+    }
+  },
+  "artifacts": [
+    {
+      "product": "KinPlay",
+      "package": "com.kinplay.app",
+      "versionName": "0.7.0",
+      "versionCode": 13,
+      "validationType": "private_validation",
+      "localPath": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260818_KinPlay_v0.7.0_feedback-verified.apk",
+      "bytes": 25949602,
+      "sha256": "ec45dc76afbb096e8d8ef7966f14e25d8f8149b202cbe06ac373325b82606b7b",
+      "signing": "Android debug signing, APK Signature Scheme v2; not production-signed",
+      "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+      "driveFileId": "1y8MkJY2QKsz85l0miRfohW5sgulRL6tL",
+      "driveLink": "https://drive.google.com/file/d/1y8MkJY2QKsz85l0miRfohW5sgulRL6tL/view?usp=drivesdk",
+      "driveReadback": {
+        "path": "/tmp/kinplay_drive_20260818.apk",
+        "bytes": 25949602,
+        "sha256": "ec45dc76afbb096e8d8ef7966f14e25d8f8149b202cbe06ac373325b82606b7b",
+        "byteIdentical": true
+      }
+    },
+    {
+      "product": "Dev Lab",
+      "package": "com.devlab",
+      "versionName": "0.2.1",
+      "versionCode": 2,
+      "validationType": "private_validation",
+      "localPath": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260818_DevLab_v0.2.1_feedback-verified.apk",
+      "bytes": 10368852,
+      "sha256": "3a5e4b077e5282bea1e5c935d0701a0f7a77ddda71e541e90a0f5ab84fdaa2f1",
+      "signing": "Android debug signing, APK Signature Scheme v2; not production-signed",
+      "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+      "driveFileId": "1ZvLTTPYxZYmXsUeec6DQctBXUUGRiIwL",
+      "driveLink": "https://drive.google.com/file/d/1ZvLTTPYxZYmXsUeec6DQctBXUUGRiIwL/view?usp=drivesdk",
+      "driveReadback": {
+        "path": "/tmp/devlab_drive_20260818.apk",
+        "bytes": 10368852,
+        "sha256": "3a5e4b077e5282bea1e5c935d0701a0f7a77ddda71e541e90a0f5ab84fdaa2f1",
+        "byteIdentical": true
+      }
+    }
+  ],
+  "releaseSigning": {
+    "status": "unavailable",
+    "unsignedReleaseBuilt": true,
+    "productionSignedArtifactClaimed": false,
+    "note": "No release keystore or release signing configuration is present; published files are signed private-validation APKs only."
+  },
+  "privacy": {
+    "childIdentifyingInformationRecorded": false,
+    "unavailableCharadesAttachmentIngested": false,
+    "credentialsRecorded": false
+  }
+}
