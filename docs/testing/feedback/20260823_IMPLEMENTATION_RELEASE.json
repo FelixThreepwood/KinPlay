@@ -1,0 +1,166 @@
+{
+  "recordType": "implementation_release",
+  "recordVersion": 2,
+  "recordedAt": "2026-08-23T06:35:44Z",
+  "project": "KidPlay",
+  "sourceCommit": "8ba8f1164a532fd43beab7aa5103d24bc53725c0",
+  "remote": "origin/main",
+  "branch": "main",
+  "feedbackScope": {
+    "recentBatchIds": [
+      "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4",
+      "KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E",
+      "KP-BATCH-EC3C89DA-8759-4636-9BB8-46E904E18D9A",
+      "KP-BATCH-57A91D51-5A25-4813-BA3A-7B23A915135C"
+    ],
+    "recentBatchCanonicalReferences": 37,
+    "recentBatchUniqueCanonicalItems": 35,
+    "registryPath": "docs/testing/feedback/punchlist.json",
+    "registryItems": 89,
+    "registryImplementationComplete": 89,
+    "registryImplementationIncomplete": 0,
+    "intakeValidators": {
+      "KP-BATCH-7423FBCE-A279-49D5-B9E5-B0DF21D74F0E": "passed",
+      "KP-BATCH-DDE149EC-5EFC-4DE2-89B0-B0592C73E6F4": "passed"
+    },
+    "physicalRetest": "open",
+    "physicalRetestReason": "The automated Android API 35 emulator gate passed, but owner Pixel 8 Pro or family-device retesting remains a separate release-closure step."
+  },
+  "releaseChanges": {
+    "kidPlay": {
+      "versionName": "0.7.2",
+      "versionCode": 15,
+      "aboutChangelog": "Includes versioned five-to-ten-word summaries for the four most recent feedback-batch scope, including the cumulative 0.7.1 and 0.7.2 revisions."
+    },
+    "devLab": {
+      "versionName": "0.2.2",
+      "versionCode": 3,
+      "aboutChangelog": "Current version and release notes are visible in the Dev Lab About section."
+    }
+  },
+  "validation": {
+    "jvmUnitTests": {
+      "kidPlayTests": 221,
+      "kidPlayFailures": 0,
+      "devLabTests": 39,
+      "devLabFailures": 0
+    },
+    "lint": "passed",
+    "debugAndAndroidTestAssembly": "passed",
+    "releaseAssembly": "passed; unsigned release outputs were signed for private validation",
+    "connectedAndroid": {
+      "emulator": "Hogwarts_API35_Pixel7 / API 35",
+      "kidPlayTests": 26,
+      "kidPlayFailures": 0,
+      "devLabTests": 2,
+      "devLabFailures": 0,
+      "note": "The first run encountered an emulator startup ANR before tests began; after emulator restart, both connected suites completed successfully."
+    },
+    "contentAndPackageParity": {
+      "kidPlayContent": {
+        "schema": "passed",
+        "canonicalRuntimeByteParity": "passed",
+        "apkAssetParity": "passed",
+        "canonicalSha256": "a151c2a9d3f752a1c1fab31bad555d79619382c2ebbe021950890f8c549df774"
+      },
+      "wouldYouRather": {
+        "schema": "passed",
+        "canonicalRuntimeByteParity": "passed",
+        "apkAssetParity": "passed",
+        "totalPrompts": 160,
+        "canonicalSha256": "061198a7e6795fd7f26aef2dd9b128da85aba8fec998d250e4eef0f0186d9a03"
+      },
+      "charades": {
+        "schema": "passed",
+        "canonicalRuntimeByteParity": "passed",
+        "apkAssetParity": "passed",
+        "cards": 120,
+        "cardsWithImageMetadata": 120,
+        "canonicalSha256": "69ef4d3eb3a231b89f191b3272e01e4386e7b56a1a64041f481fb7e648d5984e"
+      },
+      "kidPlayPackage": {
+        "applicationId": "com.kinplay.app",
+        "versionName": "0.7.2",
+        "versionCode": 15,
+        "label": "KidPlay"
+      },
+      "devLabPackage": {
+        "applicationId": "com.devlab",
+        "versionName": "0.2.2",
+        "versionCode": 3,
+        "label": "Dev Lab"
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "product": "KidPlay",
+      "package": "com.kinplay.app",
+      "versionName": "0.7.2",
+      "versionCode": 15,
+      "validationType": "private_validation",
+      "localPath": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_KidPlay_v0.7.2.apk",
+      "bytes": 19344437,
+      "sha256": "cbe2746f90304d1b0bcde2bf4a862eef59af318f529a54d4a5fa2d23cd8a720e",
+      "signing": "Android debug keystore, APK Signature Scheme v2/v3; not production-signed",
+      "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+      "driveFileId": "1fEEK8YcSFRpnPYzPvXFsAwjUnzhzFf8a",
+      "driveLink": "https://drive.google.com/file/d/1fEEK8YcSFRpnPYzPvXFsAwjUnzhzFf8a/view?usp=drivesdk",
+      "driveReadback": {
+        "bytes": 19344437,
+        "sha256": "cbe2746f90304d1b0bcde2bf4a862eef59af318f529a54d4a5fa2d23cd8a720e",
+        "byteIdentical": true
+      }
+    },
+    {
+      "product": "Dev Lab",
+      "package": "com.devlab",
+      "versionName": "0.2.2",
+      "versionCode": 3,
+      "validationType": "private_validation",
+      "localPath": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.2.apk",
+      "bytes": 6927288,
+      "sha256": "ba7240a9765785982ee221df442f90c09f416ea7baad29b5d3351484040ec2fd",
+      "signing": "Android debug keystore, APK Signature Scheme v2/v3; not production-signed",
+      "driveFolderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+      "driveFileId": "1plcs8WNEE-4HfFCl_TNy2bcrM9RHlkd7",
+      "driveLink": "https://drive.google.com/file/d/1plcs8WNEE-4HfFCl_TNy2bcrM9RHlkd7/view?usp=drivesdk",
+      "driveReadback": {
+        "bytes": 6927288,
+        "sha256": "ba7240a9765785982ee221df442f90c09f416ea7baad29b5d3351484040ec2fd",
+        "byteIdentical": true
+      }
+    }
+  ],
+  "distribution": {
+    "googleDriveRoot": {
+      "folderId": "12bINCtZHQwvh3-mIbQ2x-swPE6ACzjYp",
+      "currentApkCount": 2,
+      "currentApkNames": [
+        "20260823_DevLab_v0.2.2.apk",
+        "20260823_KidPlay_v0.7.2.apk"
+      ],
+      "archiveFolderId": "1bqeCNNXnSywOb5SQ-NsOhRFLe8K6nYXu",
+      "archiveFolderParentVerified": true,
+      "archivedDirectItemCount": 8,
+      "supersededRootApksMoved": 5
+    },
+    "localSharedDrop": {
+      "root": "/mnt/cyberforgex-torrents/KinPlay/apk-drops",
+      "currentApkCount": 2,
+      "archiveFolder": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/_archived-apk-drops",
+      "supersededApksMoved": 5,
+      "supersededChecksumSidecarsMoved": 2
+    }
+  },
+  "releaseSigning": {
+    "productionReleaseKeystore": "unavailable",
+    "productionSignedArtifactClaimed": false,
+    "note": "These are private-validation APKs for device testing, not production Play-distribution artifacts."
+  },
+  "privacy": {
+    "childIdentifyingInformationRecorded": false,
+    "unavailableCharadesAttachmentIngested": false,
+    "credentialsRecorded": false
+  }
+}
