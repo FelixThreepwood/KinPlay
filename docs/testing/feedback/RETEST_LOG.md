@@ -1,6 +1,6 @@
 # KinPlay Feedback Retest Log
 
-Last updated: 2026-08-17T20:30:00Z
+Last updated: 2026-08-23T19:35:51Z
 
 Current revision under retest: **0.6.0-beta3 (8)** for the implemented items in batch `KP-BATCH-26606A7F-956F-4699-AE68-328FFA369FBC`; prior cohorts retain their historical retest builds. Earlier cohorts retain their recorded retest builds unless a row below names 0.6.0-beta1 (6); KPF-0020 remains on 0.5.0-beta1 (5) because it is excluded from this batch.
 
@@ -344,3 +344,19 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 - Signing boundary: no production release keystore was found; this is a private validation APK.
 
 - Source commit: `ef6ed79b159710241098a280c7fe596b5ba9123f` pushed to `origin/main`; remote SHA matched.
+
+## Implementation cycle — KP-BATCH-8657ED79-DC52-4E8C-8166-4A94FA7AC4C6 + KP-BATCH-AB828E53-A85C-42B7-AD12-CC787FC292E1
+
+- Implementation build: **0.2.3 (4)** for package `com.devlab`.
+- Named implementation items: `KPF-0090` and `KPF-0091`.
+- Deferred item: `KPF-0092` (`KP-NOTE-451376C4-0F0B-410F-A6AD-1424990FE6E8`), not named in the current implementation request.
+- Automated result: full JVM tests, Android-test source compilation, connected Android tests (3/3), lint, debug assembly, package inspection, and APK Signature Scheme v2 verification passed.
+- Artifact SHA-256: `fdcd1ad2ce047b9c5bdafe32f16330f038bf4d4c06c7301cd62d6b0e9f52b537`; size `10,261,603` bytes.
+- Active artifacts: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.3.apk` and `/mnt/cyberforgex-torrents/DevLab/DevLab_v0.2.3.apk`; read-back comparison passed.
+- Runtime boundary: connected API 35 Pixel 7 AVD tests passed while the emulator used gestural navigation. Pixel 8 Pro / Android 16 three-button retest remains open.
+
+| Item | State | Retest build | Evidence / next validation |
+|---|---|---|---|
+| KPF-0090 | implemented; physical retest open | 0.2.3 (4) | `DevLabWindowContractTest`, `DevLabSystemBarsTest`, connected Android suite, lint, and APK inspection passed; retest on the configured Pixel 8 Pro / Android 16 three-button path. |
+| KPF-0091 | implemented; physical visual retest open | 0.2.3 (4) | `DevLabContractTest`, `DevLabScreenTest`, connected Android suite, lint, and APK inspection passed; visually confirm only Animal moves remains on the Pixel 8 Pro. |
+| KPF-0092 | deferred; not implemented | — | Requires a separate direct authorization before gesture behavior is changed. |

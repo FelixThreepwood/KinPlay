@@ -2,7 +2,7 @@
 
 Sanitized product-test records. Incoming comments are evidence, not authorization to change application code.
 
-Last updated: 2026-08-17T20:30:00Z
+Last updated: 2026-08-23T19:35:51Z
 
 Source note IDs are unique occurrence keys. An exact note replay in a later batch is linked to the existing item and does not increase its occurrence count.
 
@@ -2022,3 +2022,64 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Would You Rather: 40 prompts per category; the 20 protected runtime owner prompts remain present and separately identified; the five newer staged examples remain in the provenance manifest and were not silently promoted.
 - Release boundary: this is a private validation APK. No production release keystore was found, and no connected Android device/emulator retest is claimed.
 - Source publication: implementation commit `ef6ed79b159710241098a280c7fe596b5ba9123f` is pushed to `origin/main`; this closure appendix is finalized in the following publication-evidence commit.
+
+## Implementation cycle — KP-BATCH-8657ED79-DC52-4E8C-8166-4A94FA7AC4C6 + KP-BATCH-AB828E53-A85C-42B7-AD12-CC787FC292E1
+
+- Implementation build: **0.2.3 (4)**; package `com.devlab`.
+- Named source notes implemented: `KP-NOTE-93D57E58-0BCF-4228-A9B5-54082BA74718` and `KP-NOTE-42204546-D5E4-4F2C-A9E0-C6591D5DDC11`.
+- Separate source note `KP-NOTE-451376C4-0F0B-410F-A6AD-1424990FE6E8` is preserved as `KPF-0092` and remains deferred; it was not executed.
+- Canonical items implemented: `KPF-0090` and `KPF-0091`.
+- Automated evidence: full JVM tests, Android-test source compilation, connected Android tests (3/3), lint, and debug APK assembly passed.
+- APK: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.3.apk`; compatibility copy `/mnt/cyberforgex-torrents/DevLab/DevLab_v0.2.3.apk`; size `10,261,603` bytes; SHA-256 `fdcd1ad2ce047b9c5bdafe32f16330f038bf4d4c06c7301cd62d6b0e9f52b537`; read-back comparison passed.
+- Package evidence: `com.devlab`, version `0.2.3`, version code `4`; APK Signature Scheme v2 verified.
+- Runtime boundary: connected API 35 Pixel 7 AVD tests passed in gestural navigation mode. Pixel 8 Pro / Android 16 three-button navigation retest remains open; the app cannot select the device's navigation mode.
+- Current implementation acknowledgment is delivered in this `#app-development` response; no separate Discord API action was performed.
+
+## KPF-0090 — Keep Android system navigation buttons visible in Dev Lab
+
+- Status: Fixed; awaiting Pixel 8 Pro retest.
+- Type: platform_behavior / navigation / accessibility
+- Priority: should_fix_soon
+- Impact: minor
+- Affected builds: 0.2.2 (3), 0.2.3 (4)
+- Capture screen: `dev_lab/animals`
+- Content ID: `animals`
+- Occurrence count: 1
+- Source note: `KP-NOTE-42204546-D5E4-4F2C-A9E0-C6591D5DDC11`
+- Normalized finding: Keep Android's system navigation bar visible when Dev Lab launches so the triangle, circle, and square navigation controls remain available.
+- Expected behavior: Dev Lab clears fullscreen state, restores default system-bar behavior, explicitly shows system bars, and keeps content clear of the navigation-bar area. The exact triangle/circle/square presentation remains controlled by the device's navigation mode.
+- Implementation status: Complete pending Pixel 8 Pro / Android 16 three-button retest.
+- Evidence: `DevLabWindowContractTest`, `DevLabSystemBarsTest`, `DevLabScreenTest`, full JVM suite, connected Android suite, lint, and APK inspection passed.
+- Related item: `KPF-0053`.
+
+## KPF-0091 — Keep only Animal moves in Dev Lab
+
+- Status: Fixed; awaiting physical visual retest.
+- Type: dev_lab / content_visibility / product_test
+- Priority: should_fix_soon
+- Impact: minor
+- Affected builds: 0.2.2 (3), 0.2.3 (4)
+- Capture screen: `dev_lab/long_labels`
+- Content ID: `long_labels`
+- Occurrence count: 1
+- Source note: `KP-NOTE-93D57E58-0BCF-4228-A9B5-54082BA74718`
+- Normalized finding: Remove the Color choices and Long labels demos from Dev Lab while retaining Animal moves.
+- Expected behavior: Dev Lab exposes only Animal moves, including its reel, Spin control, current choice, and detail; removed demo IDs are neither rendered nor selectable.
+- Implementation status: Complete pending physical visual retest.
+- Evidence: `DevLabContractTest`, `DevLabScreenTest`, `DevLabAboutTest`, full JVM suite, connected Android suite, lint, and APK inspection passed.
+
+## KPF-0092 — Add directional gestures to the Animal moves tumbler
+
+- Status: New; deferred.
+- Type: dev_lab / interaction / gesture
+- Priority: backlog
+- Impact: minor
+- Affected build: 0.2.2 (3)
+- Capture screen: `dev_lab/animals`
+- Content ID: `animals`
+- Occurrence count: 1
+- Source note: `KP-NOTE-451376C4-0F0B-410F-A6AD-1424990FE6E8`
+- Normalized finding: Add swipe-up, swipe-down, and tap interactions to drive the Animal moves tumbler in the matching direction.
+- Expected behavior: Swipes within the animal-name graphic move the tumbler in the matching direction, and a single tap spins it.
+- Implementation status: Not started; this note was not named in the current implementation request.
+- Code authorization: None for this cycle.

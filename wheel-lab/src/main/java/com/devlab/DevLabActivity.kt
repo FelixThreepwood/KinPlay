@@ -1,15 +1,17 @@
 package com.devlab
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -32,6 +34,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.devlab.feedback.FeedbackOverlay
 import com.kinplay.wheel.SpinnerWheel
 import com.kinplay.wheel.SpinnerWheelOption
@@ -39,6 +44,12 @@ import com.kinplay.wheel.SpinnerWheelOption
 class DevLabActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, true)
+        window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        WindowCompat.getInsetsController(window, window.decorView).apply {
+            systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_DEFAULT
+            show(WindowInsetsCompat.Type.systemBars())
+        }
         setContent { DevLabApp() }
     }
 }
@@ -64,34 +75,6 @@ val DEV_LAB_DEMOS = listOf(
             SpinnerWheelOption("penguin", "Penguin", "Waddle with small steps."),
         ),
     ),
-    DevLabDemo(
-        id = "colors",
-        title = "Color choices",
-        description = "An eight-sector wheel for checking dense wedge spacing and contrast.",
-        options = listOf(
-            SpinnerWheelOption("red", "Red", "Find something red."),
-            SpinnerWheelOption("orange", "Orange", "Find something orange."),
-            SpinnerWheelOption("yellow", "Yellow", "Find something yellow."),
-            SpinnerWheelOption("green", "Green", "Find something green."),
-            SpinnerWheelOption("blue", "Blue", "Find something blue."),
-            SpinnerWheelOption("purple", "Purple", "Find something purple."),
-            SpinnerWheelOption("pink", "Pink", "Find something pink."),
-            SpinnerWheelOption("white", "White", "Find something white."),
-        ),
-    ),
-    DevLabDemo(
-        id = "long_labels",
-        title = "Long labels",
-        description = "A text-fitting and accessibility page for labels that need wrapping.",
-        options = listOf(
-            SpinnerWheelOption("pillow", "Build a pillow path", "Make a safe path with flat pillows."),
-            SpinnerWheelOption("quiet", "Tell a quiet story", "Take turns adding one gentle sentence."),
-            SpinnerWheelOption("animal", "Copy an animal movement", "Choose a safe movement and copy it."),
-            SpinnerWheelOption("color", "Find a family color", "Point to a color everyone can see."),
-            SpinnerWheelOption("clap", "Create a clap pattern", "Use a short clap-and-pause pattern."),
-            SpinnerWheelOption("stretch", "Do a gentle stretch", "Reach slowly and stop if anything hurts."),
-        ),
-    ),
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -113,6 +96,7 @@ fun DevLabApp() {
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding)
+                            .navigationBarsPadding()
                             .verticalScroll(rememberScrollState())
                             .padding(16.dp)
                             .testTag("dev-lab-page-${activeDemo.id}"),
@@ -166,6 +150,8 @@ private fun DevLabAboutSection() {
             Text("Release notes", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             Text("Feedback forms now preserve active demo context")
             Text("Feedback lists retain state during navigation")
+            Text("0.2.3: Keep Animal moves and remove extra demos")
+            Text("System navigation remains visible at launch")
         }
     }
 }

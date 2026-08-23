@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-18T09:20:40Z",
-  "nextItemNumber": 90,
+  "updatedAt": "2026-08-23T19:35:51Z",
+  "nextItemNumber": 93,
   "batches": [
     {
       "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
@@ -1048,6 +1048,137 @@
         "delivery": "success",
         "sentAt": "2026-08-17T20:32:46Z",
         "mirrored": true
+      }
+    },
+    {
+      "batchId": "KP-BATCH-8657ED79-DC52-4E8C-8166-4A94FA7AC4C6",
+      "package": "com.devlab",
+      "build": {
+        "versionName": "0.2.2",
+        "versionCode": 3
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-08-23T09:07:42-07:00",
+      "transport": "email",
+      "subject": "[Dev Lab][Feedback Batch][0.2.2+3][KP-BATCH-8657ED79-DC52-4E8C-8166-4A94FA7AC4C6]",
+      "subjectHandling": "Subject and body identities agree; no subject-format exception recorded.",
+      "sourceNoteCount": 2,
+      "uniqueNewSourceNoteCount": 2,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "canonicalItemCount": 2,
+      "canonicalItemIds": [
+        "KPF-0091",
+        "KPF-0092"
+      ],
+      "existingCanonicalItemCount": 0,
+      "existingCanonicalItemIds": [],
+      "newCanonicalItemCount": 2,
+      "newCanonicalItemIds": [
+        "KPF-0091",
+        "KPF-0092"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-93D57E58-0BCF-4228-A9B5-54082BA74718": [
+          "KPF-0091"
+        ],
+        "KP-NOTE-451376C4-0F0B-410F-A6AD-1424990FE6E8": [
+          "KPF-0092"
+        ]
+      },
+      "authorizedSourceNoteIds": [
+        "KP-NOTE-93D57E58-0BCF-4228-A9B5-54082BA74718"
+      ],
+      "deferredSourceNoteIds": [
+        "KP-NOTE-451376C4-0F0B-410F-A6AD-1424990FE6E8"
+      ],
+      "duplicateHandling": "Both source notes are unique. The named demo-removal note maps to one canonical item; the separate tumbler-scroller request maps to its own deferred item and is not merged or executed.",
+      "privacyReview": "No child-identifying information was written to project records; sender sign-off and contact details were omitted.",
+      "childIdentifyingInformationRemoved": false,
+      "rawArchive": "/home/phantomatic/.hermes/kinplay-feedback/raw/20260823_KP-BATCH-8657ED79-DC52-4E8C-8166-4A94FA7AC4C6.json",
+      "codeChangeAuthorization": "Direct current project-owner instruction on 2026-08-23 authorizes KPF-0091 only; KPF-0092 remains deferred and non-executable.",
+      "triageBoundary": "KPF-0091 is in the current implementation cycle. KPF-0092 remains unimplemented pending a separate direct authorization.",
+      "implementationStatus": "partially_implemented_one_item_deferred",
+      "implementationBuild": {
+        "versionName": "0.2.3",
+        "versionCode": 4
+      },
+      "implementationEvidence": {
+        "authorizedItem": "KPF-0091",
+        "deferredItem": "KPF-0092",
+        "apkSha256": "fdcd1ad2ce047b9c5bdafe32f16330f038bf4d4c06c7301cd62d6b0e9f52b537",
+        "apkBytes": 10261603,
+        "activeArtifacts": "byte_exact_readback_passed"
+      }
+    },
+    {
+      "batchId": "KP-BATCH-AB828E53-A85C-42B7-AD12-CC787FC292E1",
+      "package": "com.devlab",
+      "build": {
+        "versionName": "0.2.2",
+        "versionCode": 3
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-08-23T09:09:33-07:00",
+      "transport": "email",
+      "subject": "[Dev Lab][Feedback Batch][0.2.2+3][KP-BATCH-AB828E53-A85C-42B7-AD12-CC787FC292E1]",
+      "subjectHandling": "Subject and body identities agree; no subject-format exception recorded.",
+      "sourceNoteCount": 1,
+      "uniqueNewSourceNoteCount": 1,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "canonicalItemCount": 1,
+      "canonicalItemIds": [
+        "KPF-0090"
+      ],
+      "existingCanonicalItemCount": 0,
+      "existingCanonicalItemIds": [],
+      "newCanonicalItemCount": 1,
+      "newCanonicalItemIds": [
+        "KPF-0090"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-42204546-D5E4-4F2C-A9E0-C6591D5DDC11": [
+          "KPF-0090"
+        ]
+      },
+      "duplicateHandling": "The note is new and maps to one independently testable system-navigation requirement. It is related to KPF-0053 but is not merged because KPF-0053 covers in-app app-bar/system-Back placement, while this note covers Android system-navigation visibility at Dev Lab launch.",
+      "privacyReview": "No child-identifying information was written to project records; sender sign-off and contact details were omitted.",
+      "childIdentifyingInformationRemoved": false,
+      "rawArchive": "/home/phantomatic/.hermes/kinplay-feedback/raw/20260823_KP-BATCH-AB828E53-A85C-42B7-AD12-CC787FC292E1.json",
+      "codeChangeAuthorization": "Direct current project-owner instruction on 2026-08-23 authorizes implementation of KPF-0090.",
+      "triageBoundary": "The named navigation requirement was implemented. No unrelated feedback note was executed.",
+      "implementationStatus": "implemented_automated_validated_physical_retest_open",
+      "implementationBuild": {
+        "versionName": "0.2.3",
+        "versionCode": 4
+      },
+      "implementationEvidence": {
+        "focusedAndFullJvmTests": "passed",
+        "androidTestSourceCompilation": "passed",
+        "connectedAndroidTest": "3 tests passed on Hogwarts_API35_Pixel7(AVD) - 15",
+        "lintDebug": "passed",
+        "assembleDebug": "passed",
+        "package": "com.devlab",
+        "apkBytes": 10261603,
+        "apkSha256": "fdcd1ad2ce047b9c5bdafe32f16330f038bf4d4c06c7301cd62d6b0e9f52b537",
+        "signature": "APK Signature Scheme v2 verified",
+        "runtimeBoundary": "Connected API 35 emulator instrumentation passed. The emulator was in gestural navigation mode; Pixel 8 Pro/Android 16 three-button retest remains open.",
+        "canonicalArtifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.3.apk",
+        "compatibilityArtifact": "/mnt/cyberforgex-torrents/DevLab/DevLab_v0.2.3.apk",
+        "artifactReadback": "byte_exact"
+      },
+      "acknowledgment": {
+        "platform": "discord",
+        "channelName": "app-development",
+        "channelId": "1501041077031800932",
+        "messageId": "1541118130758095019",
+        "sentAt": "2026-08-23T16:13:21Z",
+        "delivery": "success"
       }
     }
   ],
@@ -5264,6 +5395,139 @@
         "remoteBranch": "origin/main",
         "remoteSha": "ef6ed79b159710241098a280c7fe596b5ba9123f"
       }
+    },
+    {
+      "id": "KPF-0090",
+      "title": "Keep Android system navigation buttons visible in Dev Lab",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "platform_behavior",
+        "navigation",
+        "accessibility"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.2.2 (3)",
+        "0.2.3 (4)"
+      ],
+      "screen": "dev_lab/animals",
+      "contentId": "animals",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-42204546-D5E4-4F2C-A9E0-C6591D5DDC11"
+      ],
+      "normalizedFinding": "Keep Android's system navigation bar visible when Dev Lab launches so the triangle, circle, and square navigation controls remain available.",
+      "expectedBehavior": "On launch, Dev Lab does not enter immersive or full-screen mode that hides Android system navigation. The triangle, circle, and square system navigation controls remain visible, reachable, and accessible on the Pixel 8 Pro/Android 16 test path, subject to the device's configured navigation mode.",
+      "reproductionStatus": "android_window_insets_and_system_navigation_review_passed_on_connected_emulator; pixel8_retest_open",
+      "decision": "accepted_and_implemented",
+      "implementationStatus": "complete_pending_pixel8_retest",
+      "codeAuthorization": "Direct current project-owner instruction on 2026-08-23 authorized implementation.",
+      "relatedItemIds": [
+        "KPF-0053"
+      ],
+      "triageNotes": "The implementation clears fullscreen state, restores default system-bar behavior, explicitly shows system bars, and applies navigation-bar padding to the Dev Lab content. Connected API 35 emulator instrumentation passed; the emulator used gestural navigation mode, so the Pixel 8 Pro/Android 16 three-button configuration remains an owner retest boundary.",
+      "implementationAuthorization": "Direct current project-owner instruction to begin work on KP-NOTE-42204546-D5E4-4F2C-A9E0-C6591D5DDC11.",
+      "latestImplementationBuild": "0.2.3 (4)",
+      "retestBuild": "0.2.3 (4)",
+      "verificationResult": "automated_and_connected_android_test_passed_physical_pixel8_retest_open",
+      "verificationEvidence": {
+        "tests": [
+          "DevLabWindowContractTest",
+          "DevLabSystemBarsTest",
+          "DevLabScreenTest"
+        ],
+        "fullJvmTests": "passed",
+        "androidTestSourceCompilation": "passed",
+        "connectedAndroidTest": "3 tests passed on Hogwarts_API35_Pixel7(AVD) - 15",
+        "lintDebug": "passed",
+        "assembleDebug": "passed",
+        "apkSha256": "fdcd1ad2ce047b9c5bdafe32f16330f038bf4d4c06c7301cd62d6b0e9f52b537",
+        "apkBytes": 10261603,
+        "signature": "APK Signature Scheme v2 verified",
+        "canonicalArtifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.3.apk",
+        "compatibilityArtifact": "/mnt/cyberforgex-torrents/DevLab/DevLab_v0.2.3.apk",
+        "artifactReadback": "byte_exact"
+      }
+    },
+    {
+      "id": "KPF-0091",
+      "title": "Keep only Animal moves in Dev Lab",
+      "status": "fixed_awaiting_retest",
+      "type": [
+        "dev_lab",
+        "content_visibility",
+        "product_test"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.2.2 (3)",
+        "0.2.3 (4)"
+      ],
+      "screen": "dev_lab/long_labels",
+      "contentId": "long_labels",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-93D57E58-0BCF-4228-A9B5-54082BA74718"
+      ],
+      "normalizedFinding": "Remove the Color choices and Long labels demos from Dev Lab while retaining the Animal moves demo.",
+      "expectedBehavior": "Dev Lab exposes only the Animal moves demo, including its reel, Spin control, current choice, and detail. The removed demo IDs are not rendered or selectable, including after restoring stale saved selection state.",
+      "reproductionStatus": "automated_and_connected_ui_test_passed; physical_visual_retest_open",
+      "decision": "accepted_and_implemented",
+      "implementationStatus": "complete_pending_physical_visual_retest",
+      "codeAuthorization": "Direct current project-owner instruction on 2026-08-23 authorized implementation.",
+      "triageNotes": "The change is isolated to the Dev Lab module. The separate tumbler-scroller note from the same raw batch is recorded as KPF-0092 and was not implemented.",
+      "implementationAuthorization": "Direct current project-owner instruction to begin work on KP-NOTE-93D57E58-0BCF-4228-A9B5-54082BA74718.",
+      "latestImplementationBuild": "0.2.3 (4)",
+      "retestBuild": "0.2.3 (4)",
+      "verificationResult": "automated_and_connected_ui_test_passed_physical_visual_retest_open",
+      "verificationEvidence": {
+        "tests": [
+          "DevLabContractTest",
+          "DevLabScreenTest",
+          "DevLabAboutTest"
+        ],
+        "fullJvmTests": "passed",
+        "androidTestSourceCompilation": "passed",
+        "connectedAndroidTest": "3 tests passed on Hogwarts_API35_Pixel7(AVD) - 15",
+        "lintDebug": "passed",
+        "assembleDebug": "passed",
+        "apkSha256": "fdcd1ad2ce047b9c5bdafe32f16330f038bf4d4c06c7301cd62d6b0e9f52b537",
+        "apkBytes": 10261603,
+        "signature": "APK Signature Scheme v2 verified",
+        "canonicalArtifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.3.apk",
+        "compatibilityArtifact": "/mnt/cyberforgex-torrents/DevLab/DevLab_v0.2.3.apk",
+        "artifactReadback": "byte_exact"
+      }
+    },
+    {
+      "id": "KPF-0092",
+      "title": "Add directional gestures to the Animal moves tumbler",
+      "status": "new",
+      "type": [
+        "dev_lab",
+        "interaction",
+        "gesture"
+      ],
+      "priority": "backlog",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.2.2 (3)"
+      ],
+      "screen": "dev_lab/animals",
+      "contentId": "animals",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-451376C4-0F0B-410F-A6AD-1424990FE6E8"
+      ],
+      "normalizedFinding": "Add swipe-up, swipe-down, and tap interactions to drive the Animal moves tumbler in the matching direction.",
+      "expectedBehavior": "A swipe up within the animal-name graphic advances the tumbler upward, a swipe down advances it downward, and a single tap spins it.",
+      "reproductionStatus": "not_implemented_deferred",
+      "decision": "deferred_pending_direct_authorization",
+      "implementationStatus": "not_started",
+      "codeAuthorization": "None — this source note was not named in the current implementation request.",
+      "triageNotes": "The note is preserved because it arrived in the same raw batch, but no code or test change was made for it. It requires a separate direct authorization before implementation."
     }
   ]
 }

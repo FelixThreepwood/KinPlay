@@ -12,13 +12,15 @@ class DevLabAboutTest {
 
     @Test
     fun devLabRevisionAndAboutChangelogAreVisible() {
-        assertTrue(buildFile.contains("versionCode = 3"))
-        assertTrue(buildFile.contains("versionName = \"0.2.2\""))
+        assertTrue(buildFile.contains("versionCode = 4"))
+        assertTrue(buildFile.contains("versionName = \"0.2.3\""))
         assertTrue(source.contains("About Dev Lab"))
         assertTrue(source.contains("Version ${'$'}{BuildConfig.VERSION_NAME}"))
         assertTrue(source.contains("Release notes"))
         assertTrue(source.contains("Feedback forms now preserve active demo context"))
         assertTrue(source.contains("Feedback lists retain state during navigation"))
+        assertTrue(source.contains("0.2.3: Keep Animal moves and remove extra demos"))
+        assertTrue(source.contains("System navigation remains visible at launch"))
     }
 
     private fun repositoryRoot(): Path {
