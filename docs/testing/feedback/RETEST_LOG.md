@@ -353,6 +353,7 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 - Automated result: full JVM tests, Android-test source compilation, connected Android tests (3/3), lint, debug assembly, package inspection, and APK Signature Scheme v2 verification passed.
 - Artifact SHA-256: `fdcd1ad2ce047b9c5bdafe32f16330f038bf4d4c06c7301cd62d6b0e9f52b537`; size `10,261,603` bytes.
 - Active artifacts: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.3.apk` and `/mnt/cyberforgex-torrents/DevLab/DevLab_v0.2.3.apk`; read-back comparison passed.
+- Source commit: `6fff3ae7910e7d05529fb09a675aa4ae51d95728` pushed to `origin/main`; remote SHA matched.
 - Runtime boundary: connected API 35 Pixel 7 AVD tests passed while the emulator used gestural navigation. Pixel 8 Pro / Android 16 three-button retest remains open.
 
 | Item | State | Retest build | Evidence / next validation |

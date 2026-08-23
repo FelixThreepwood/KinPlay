@@ -1170,7 +1170,8 @@
         "runtimeBoundary": "Connected API 35 emulator instrumentation passed. The emulator was in gestural navigation mode; Pixel 8 Pro/Android 16 three-button retest remains open.",
         "canonicalArtifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.3.apk",
         "compatibilityArtifact": "/mnt/cyberforgex-torrents/DevLab/DevLab_v0.2.3.apk",
-        "artifactReadback": "byte_exact"
+        "artifactReadback": "byte_exact",
+        "sourceCommit": "6fff3ae7910e7d05529fb09a675aa4ae51d95728"
       },
       "acknowledgment": {
         "platform": "discord",
@@ -5447,7 +5448,8 @@
         "signature": "APK Signature Scheme v2 verified",
         "canonicalArtifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.3.apk",
         "compatibilityArtifact": "/mnt/cyberforgex-torrents/DevLab/DevLab_v0.2.3.apk",
-        "artifactReadback": "byte_exact"
+        "artifactReadback": "byte_exact",
+        "sourceCommit": "6fff3ae7910e7d05529fb09a675aa4ae51d95728"
       }
     },
     {
@@ -5498,7 +5500,8 @@
         "signature": "APK Signature Scheme v2 verified",
         "canonicalArtifact": "/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260823_DevLab_v0.2.3.apk",
         "compatibilityArtifact": "/mnt/cyberforgex-torrents/DevLab/DevLab_v0.2.3.apk",
-        "artifactReadback": "byte_exact"
+        "artifactReadback": "byte_exact",
+        "sourceCommit": "6fff3ae7910e7d05529fb09a675aa4ae51d95728"
       }
     },
     {
