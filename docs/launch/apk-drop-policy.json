@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "activeDropRoot": "/mnt/cyberforgex-torrents/KinPlay/apk-drops",
+  "archiveDirectoryName": "_archived-apk-drops",
+  "registeredApps": [
+    {
+      "displayName": "KidPlay",
+      "packageName": "com.kinplay.app",
+      "versionName": "0.7.3",
+      "versionCode": 16,
+      "activeFilename": "20260824_KidPlay_v0.7.3.apk"
+    },
+    {
+      "displayName": "DevLab",
+      "packageName": "com.devlab",
+      "versionName": "0.2.3",
+      "versionCode": 4,
+      "activeFilename": "20260823_DevLab_v0.2.3.apk"
+    }
+  ],
+  "activeFilenamePattern": "^(?:\\d{8}_)?(?:KidPlay|DevLab)_v\\d+\\.\\d+\\.\\d+\\.apk$",
+  "forbiddenActiveFilenameTokens": [
+    "debug",
+    "beta",
+    "mvp",
+    "feedback",
+    "verified",
+    "complete",
+    "uploading",
+    "tmp"
+  ],
+  "rules": {
+    "activeApkCount": "exactly one APK per registered package",
+    "activeSidecars": "one .apk.sha256 sidecar per active APK; no orphan sidecars",
+    "historicalRetention": "move superseded APKs and sidecars to _archived-apk-drops; never permanently delete as routine cleanup",
+    "publicationOrder": "upload or copy, verify metadata and downloaded SHA-256, then rename/archive and re-list",
+    "driveInventory": "the live Drive active folder must contain exactly the registered active APK names and no temporary or status-labeled APKs"
+  }
+}

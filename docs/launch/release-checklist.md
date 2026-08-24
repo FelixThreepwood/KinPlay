@@ -91,35 +91,43 @@ Never claim device validation when no target is connected.
 - [ ] Verify local `HEAD` and remote branch SHA.
 - [ ] Confirm the worktree is clean.
 
-## 7. Local shared-drive publication
+## 7. Active APK-drop inventory gate
+
+- [ ] Update `docs/launch/apk-drop-policy.json` with the final expected filename, package, version name, and version code for every registered app affected by the release.
+- [ ] Run `scripts/validate-apk-drop.py --local /mnt/cyberforgex-torrents/KinPlay/apk-drops` with the Android SDK environment set.
+- [ ] Query the live Drive active folder by parent ID and run the validator against the saved JSON inventory.
+- [ ] Require exactly one active APK per registered app; checksum sidecars may accompany the APKs, but stale APKs, temporary names, and status-labeled names are blockers.
+- [ ] Preserve superseded APKs through a reversible move to `_archived-apk-drops` only after the new APK passes downloaded byte comparison.
+
+## 8. Local shared-drive publication
 
 - [ ] Confirm `/mnt/cyberforgex-torrents/KinPlay/apk-drops` is mounted and writable.
 - [ ] Copy to a hidden temporary destination name.
 - [ ] Verify size, checksum, metadata, and signature against the temporary destination.
 - [ ] Rename the completed file to its final dated name.
-- [ ] Move the superseded root MVP APK into the documented historical folder only after the new file passes verification.
-- [ ] Confirm exactly one current MVP APK remains in the root.
+- [ ] Move the superseded root APK for each affected registered app into `_archived-apk-drops` only after the new file passes verification.
+- [ ] Confirm exactly one current APK per registered app remains in the root.
 
-## 8. Google Drive publication
+## 9. Google Drive publication
 
-- [ ] Verify OAuth account and live access to the current KinPlay `apk-drops` folder.
+- [ ] Verify OAuth account and live access to the current shared `apk-drops` folder.
 - [ ] Upload the versioned APK to the exact folder.
 - [ ] Record returned file ID, name, size, parent folder, and link.
 - [ ] Download the uploaded object to a temporary path.
 - [ ] Compare downloaded SHA-256 and size with the local artifact.
-- [ ] Trash superseded cloud APKs only after the new object passes verification.
-- [ ] Re-list the folder and confirm exactly one active current APK.
+- [ ] Move superseded cloud APKs for affected registered apps into `_archived-apk-drops` only after the new object passes verification; do not permanently delete routine release evidence.
+- [ ] Re-list the folder and confirm exactly one active APK per registered app, with no temporary or status-labeled APK.
 
-The current folder is recorded in the project beta-operations reference. Verify it live before every upload; do not rely only on a copied ID.
+The current folder is recorded in the project beta-operations reference, but the live folder must be discovered before every upload; do not rely only on a copied ID.
 
-## 9. Records and notification
+## 10. Records and notification
 
 - [ ] Update the progress ledger with tests, artifact, checksum, commit, remote SHA, and blockers.
 - [ ] Update the release record with local and cloud handles.
 - [ ] Preserve the family-device limitation when no target was available.
 - [ ] Notify the project owner only after local and cloud copies pass independent checksum verification.
 
-## 10. Rollback
+## 11. Rollback
 
 If a release is defective:
 
