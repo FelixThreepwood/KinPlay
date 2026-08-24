@@ -42,6 +42,12 @@ Release target: `com.kinplay.app` **0.7.3 (16)**.
 - Signature: APK Signature Scheme v2 verified.
 - Device boundary: Android-test sources compiled; no connected Android target was available for connected instrumentation or physical retest.
 
-### Release evidence pending
+### Release evidence — published 2026-08-24
 
-- Explicit local staging, final staged-diff review, source commit/push, Google Drive upload, Drive metadata read-back, downloaded-byte SHA-256 comparison, and superseded-artifact archival remain open.
+- Local staging: `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260824_KidPlay_v0.7.3.apk`; size `25,535,866` bytes; SHA-256 `a26f5c549283eb24bd307d38fa419e0803b0f8878eb84d2fb703fedc307af664`.
+- Source commit: `cda036bcc4873b20b269812205204b3f058bbb7e`; pushed `main`, and remote SHA matched.
+- Google Drive active object: `20260824_KidPlay_v0.7.3.apk`; file ID `1xYdB7sacaDNCTjGhbARzgwt3VSdKAiK-`; URL `https://drive.google.com/file/d/1xYdB7sacaDNCTjGhbARzgwt3VSdKAiK-/view?usp=drivesdk`.
+- Drive metadata: Android APK MIME type, size `25,535,866` bytes, active `apk-drops` parent, configured account ownership, and move/delete capabilities confirmed.
+- Drive read-back: downloaded final object SHA-256 matched the local artifact exactly; `final_drive_readback_cmp=passed`.
+- Superseded `20260823_KidPlay_v0.7.2.apk` was moved to Drive `_archived-apk-drops` and the local reversible archive.
+- Device boundary: Android-test sources compiled, but no connected Android target was available for connected instrumentation or physical family retest.

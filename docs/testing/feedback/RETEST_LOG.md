@@ -393,7 +393,7 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 - Automated result: focused batch acceptance, full JVM unit suite (229 tests), Android-test source compilation, lint, debug APK assembly, schema validation, canonical/runtime byte parity, APK asset parity, package/version inspection, and APK Signature Scheme v2 verification passed.
 - Artifact: `app/build/outputs/apk/debug/app-debug.apk`; size `25,535,866` bytes; SHA-256 `a26f5c549283eb24bd307d38fa419e0803b0f8878eb84d2fb703fedc307af664`.
 - Runtime/device boundary: no connected Android target was available for connected instrumentation or physical family retest; these rows remain `fixed-awaiting-retest`, not `verified`.
-- Publication state: local staging and Google Drive upload/read-back remain pending.
+- Publication: local staging and Google Drive upload/read-back completed. Active Drive object: `20260824_KidPlay_v0.7.3.apk`, file ID `1xYdB7sacaDNCTjGhbARzgwt3VSdKAiK-`, with exact local/read-back SHA-256 parity. Superseded `20260823_KidPlay_v0.7.2.apk` was moved to `_archived-apk-drops`.
 
 | Item | State | Retest build | Evidence / next validation |
 |---|---|---|---|

@@ -2356,4 +2356,4 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Implementation build: `com.kinplay.app 0.7.3 (16)`.
 - Automated verification passed: focused batch acceptance, 229-test JVM suite, Android-test source compilation, lint with warnings/hints only, schema/parity validation, APK package/version inspection, and v2 signature verification.
 - Physical-device and connected-instrumentation retest remains open because no Android target is attached.
-- Release artifact and publication evidence are recorded in `RETEST_LOG.md` and the implementation ledger; Google Drive publication remains the final open release step.
+- Release artifact: local `/mnt/cyberforgex-torrents/KinPlay/apk-drops/20260824_KidPlay_v0.7.3.apk`; Drive `20260824_KidPlay_v0.7.3.apk` (file ID `1xYdB7sacaDNCTjGhbARzgwt3VSdKAiK-`) was uploaded and read back with exact SHA-256 parity; superseded `0.7.2` was archived locally and in Drive.
