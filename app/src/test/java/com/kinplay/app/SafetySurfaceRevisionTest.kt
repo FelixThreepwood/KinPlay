@@ -22,12 +22,17 @@ class SafetySurfaceRevisionTest {
             durationMinutes = 5,
             energyLevel = "calm",
             safetyTags = listOf("parent_supervision"),
-            setupSteps = listOf("Choose one safe object everyone can see; use the ready-made clues below if you are tired."),
-            playSteps = listOf("The adult starts: I spy with my little eye something blue."),
+            setupSteps = listOf("Choose one adult-approved object everyone can see; use the ready-made clues below."),
+            playSteps = listOf(
+                "The adult starts: I spy with my little eye something blue.",
+                "Players point or guess until someone finds a blue object.",
+                "Continue with a visible shape clue.",
+            ),
         )
 
         val preview = item.setupPreviewLabel()
-        assertTrue(preview.contains("Clues and suggestions"))
+        assertTrue(preview.startsWith("Setup:"))
+        assertTrue(item.detailSections().any { it.title == "Clues and suggestions" })
         assertFalse(preview.contains("tired", ignoreCase = true))
     }
 
@@ -52,7 +57,7 @@ class SafetySurfaceRevisionTest {
                 .map { items.getJSONObject(it) }
                 .single { it.getString("id") == "quiet_color_hunt" }
             assertEquals(
-                "Choose one safe object everyone can see; use the ready-made clues below.",
+                "Choose one adult-approved object everyone can see; use the ready-made clues below.",
                 item.getJSONArray("setupSteps").getString(0),
             )
             assertFalse(item.toString().contains("tired", ignoreCase = true))

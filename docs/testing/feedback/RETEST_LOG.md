@@ -361,3 +361,53 @@ Paper Airplanes note `KP-NOTE-27882454-9C8A-40DA-8479-F4A7851CC885` is implement
 | KPF-0090 | implemented; physical retest open | 0.2.3 (4) | `DevLabWindowContractTest`, `DevLabSystemBarsTest`, connected Android suite, lint, and APK inspection passed; retest on the configured Pixel 8 Pro / Android 16 three-button path. |
 | KPF-0091 | implemented; physical visual retest open | 0.2.3 (4) | `DevLabContractTest`, `DevLabScreenTest`, connected Android suite, lint, and APK inspection passed; visually confirm only Animal moves remains on the Pixel 8 Pro. |
 | KPF-0092 | deferred; not implemented | — | Requires a separate direct authorization before gesture behavior is changed. |
+
+## Intake batch — KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89
+
+- Intake build: **0.7.2 (15)** for package `com.kinplay.app`; no retest build exists for this passive intake.
+- Existing evidence update: `KPF-0032` received two supporting source notes; its fixed/retest status was not changed.
+- New records awaiting triage: `KPF-0093, KPF-0094, KPF-0095, KPF-0096, KPF-0097, KPF-0098, KPF-0099, KPF-0100, KPF-0101, KPF-0102, KPF-0103, KPF-0104, KPF-0105`.
+- No implementation or verification was claimed from this batch.
+- Discord acknowledgment: delivered successfully to the KinPlay `app-development` channel; message ID `1541246549961613384`.
+
+| Item | State | Retest build | Evidence / next validation |
+|---|---|---|---|
+| KPF-0093 | intake-only; triage pending | — | Resolve the conflict with the existing handoff-lock requirement before any implementation. |
+| KPF-0094 | intake-only; triage pending | — | Verify feedback access on Home, details, and active Would You Rather play without losing session state. |
+| KPF-0095 | intake-only; triage pending | — | Review About the app navigation, version ordering, dates, and release-source provenance. |
+| KPF-0096 | intake-only; triage pending | — | Choose one changelog summary word limit and validate representative release entries. |
+| KPF-0097 | intake-only; triage pending | — | Review typography, contrast, semantics, and large-font behavior on the Level 1 heading. |
+| KPF-0098 | intake-only; triage pending | — | Confirm which Level 1 explanatory copy is removable without changing taxonomy or ordering. |
+| KPF-0099 | intake-only; triage pending | — | Choose details-page versus immediate-start destination, then verify full-card hit targets and favorite isolation. |
+| KPF-0100 | intake-only; triage pending | — | Render the complete Would You Rather corpus at normal and large text sizes and verify the two-line boundary. |
+| KPF-0101 | intake-only; triage pending | — | Approve a reusable concise detail-card template while retaining essential reviewed content. |
+| KPF-0102 | intake-only; triage pending | — | Finalize and review the I Spy exemplar before applying any cross-library template. |
+| KPF-0103 | intake-only; triage pending | — | Inventory every Shape Detective route and persistence path before retirement. |
+| KPF-0104 | intake-only; triage pending | — | Review the backyard rules, object examples, three-minute default, prompts, and family-safety constraints. |
+| KPF-0105 | intake-only; triage pending | — | Specify the duration range/default and validate the vertical picker at narrow widths and large text scales. |
+
+## Implementation batch — KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89
+
+- Implementation build: **0.7.3 (16)** for package `com.kinplay.app`.
+- Direct user authorization: implementation and publication authorized on 2026-08-24; privacy, safety, and audit safeguards remain mandatory.
+- Automated result: focused batch acceptance, full JVM unit suite (229 tests), Android-test source compilation, lint, debug APK assembly, schema validation, canonical/runtime byte parity, APK asset parity, package/version inspection, and APK Signature Scheme v2 verification passed.
+- Artifact: `app/build/outputs/apk/debug/app-debug.apk`; size `25,535,866` bytes; SHA-256 `a26f5c549283eb24bd307d38fa419e0803b0f8878eb84d2fb703fedc307af664`.
+- Runtime/device boundary: no connected Android target was available for connected instrumentation or physical family retest; these rows remain `fixed-awaiting-retest`, not `verified`.
+- Publication state: local staging and Google Drive upload/read-back remain pending.
+
+| Item | State | Retest build | Evidence / next validation |
+|---|---|---|---|
+| KPF-0032 | implemented; physical retest open | 0.7.3 (16) | Safety matrix, seed parity, JVM regression coverage, lint, APK inspection, and packaged-asset parity passed; confirm normal-surface wording and protected warnings on a device. |
+| KPF-0093 | implemented; physical retest open | 0.7.3 (16) | Production lock wrappers absent from active play/detail routes; confirm navigation and accessibility behavior on a device. |
+| KPF-0094 | implemented; physical retest open | 0.7.3 (16) | Feedback host-route contract and JVM coverage passed; confirm reachability and context on device. |
+| KPF-0095 | implemented; physical retest open | 0.7.3 (16) | Dated newest-first changelog and release tests passed; inspect About on device. |
+| KPF-0096 | implemented; physical retest open | 0.7.3 (16) | Changelog word-count contract passed; inspect wrapping at large text. |
+| KPF-0097 | implemented; physical retest open | 0.7.3 (16) | Heading/card source contracts passed; inspect typography, semantics, and font scale. |
+| KPF-0098 | implemented; physical retest open | 0.7.3 (16) | Level 1 source/content contracts passed; inspect taxonomy and ordering. |
+| KPF-0099 | implemented; physical retest open | 0.7.3 (16) | Full-card click and independent favorite contracts passed; inspect touch targets. |
+| KPF-0100 | implemented; physical retest open | 0.7.3 (16) | Formatter and source contracts passed; inspect prompt wrapping at large text. |
+| KPF-0101 | implemented; physical retest open | 0.7.3 (16) | Detail-section and unnumbered-instruction tests passed; inspect all sections on device. |
+| KPF-0102 | implemented; physical retest open | 0.7.3 (16) | I Spy wording/detail contracts and seed parity passed; inspect the reviewed exemplar. |
+| KPF-0103 | implemented; physical retest open | 0.7.3 (16) | Retired-content regression covers discovery, search, random, favorites, recents, and direct resolution. |
+| KPF-0104 | implemented; physical retest open | 0.7.3 (16) | Three-minute content/session contracts and seed parity passed; inspect rules and parent prompts. |
+| KPF-0105 | implemented; physical retest open | 0.7.3 (16) | Default/override unit contracts passed; inspect vertical picker at narrow and large-text layouts. |

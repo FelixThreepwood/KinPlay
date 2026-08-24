@@ -7,12 +7,34 @@ data class ReleaseChange(
 
 data class ReleaseVersion(
     val version: String,
+    val releaseDate: String,
     val changes: List<ReleaseChange>,
 )
 
 val KIDPLAY_RELEASE_CHANGELOG = listOf(
     ReleaseVersion(
+        version = "0.7.3",
+        releaseDate = "2026-08-23",
+        changes = listOf(
+            ReleaseChange("KPF-0032", "Reduced repetitive safety copy while retaining essential warnings"),
+            ReleaseChange("KPF-0093", "Removed three-second handoff lock from game surfaces"),
+            ReleaseChange("KPF-0094", "Kept feedback available throughout every app screen"),
+            ReleaseChange("KPF-0095", "Added dated version history to About the app"),
+            ReleaseChange("KPF-0096", "Standardized concise five-to-ten-word change summaries"),
+            ReleaseChange("KPF-0097", "Styled All games heading with accessible small caps"),
+            ReleaseChange("KPF-0098", "Removed taxonomy explanations from Level 1 browsing"),
+            ReleaseChange("KPF-0099", "Made complete Level 1 cards open details"),
+            ReleaseChange("KPF-0100", "Split Would You Rather prompts across two lines"),
+            ReleaseChange("KPF-0101", "Introduced concise step-based detail section template"),
+            ReleaseChange("KPF-0102", "Rewrote I Spy with concise guided sections"),
+            ReleaseChange("KPF-0103", "Retired Shape Detective from active content discovery"),
+            ReleaseChange("KPF-0104", "Redesigned Backyard Safari around three-minute observation"),
+            ReleaseChange("KPF-0105", "Added vertical per-game duration picker for Safari"),
+        ),
+    ),
+    ReleaseVersion(
         version = "0.7.2",
+        releaseDate = "2026-08-22",
         changes = listOf(
             ReleaseChange("KPF-0022", "Kept concise descriptions visible on Level One cards"),
             ReleaseChange("KPF-0063", "Preserved favorite controls on simplified game cards"),
@@ -21,6 +43,7 @@ val KIDPLAY_RELEASE_CHANGELOG = listOf(
     ),
     ReleaseVersion(
         version = "0.7.1",
+        releaseDate = "2026-08-15",
         changes = listOf(
             ReleaseChange("KPF-0022", "Clarified every game card with concise descriptions"),
             ReleaseChange("KPF-0043", "Fixed single and multiple feedback attachment sharing"),
@@ -40,6 +63,7 @@ val KIDPLAY_RELEASE_CHANGELOG = listOf(
     ),
     ReleaseVersion(
         version = "0.6.3",
+        releaseDate = "2026-08-06",
         changes = listOf(
             ReleaseChange("KPF-0004", "Added Race Like an Animal activity"),
             ReleaseChange("KPF-0010", "Reduced setup decisions for easier family play"),

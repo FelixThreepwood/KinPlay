@@ -13,6 +13,7 @@ enum class GameTimer(val wireValue: String, val seconds: Int, val label: String)
 }
 
 enum class ActivityDuration(val wireValue: String, val minutes: Int, val label: String) {
+    THREE_MINUTES("3_minutes", 3, "3 minutes"),
     FIVE_MINUTES("5_minutes", 5, "5 minutes"),
     TEN_MINUTES("10_minutes", 10, "10 minutes"),
     TWENTY_MINUTES("20_minutes", 20, "20 minutes");
@@ -175,9 +176,12 @@ class AppSettingsRepository(private val storage: SettingsKeyValueStore) {
     fun peekNextSessionConfiguration(gameId: String): SessionConfiguration =
         load().resolveNextSessionConfiguration(gameId)
 
-    fun consumeNextSessionConfiguration(gameId: String): SessionConfiguration {
+    fun consumeNextSessionConfiguration(
+        gameId: String,
+        activityDefaultDuration: ActivityDuration? = null,
+    ): SessionConfiguration {
         val current = load()
-        val resolved = current.resolveNextSessionConfiguration(gameId)
+        val resolved = current.resolveNextSessionConfiguration(gameId, activityDefaultDuration)
         if (gameId in current.nextSessionOverrides) {
             save(current.copy(nextSessionOverrides = current.nextSessionOverrides - gameId))
         }
@@ -188,8 +192,15 @@ class AppSettingsRepository(private val storage: SettingsKeyValueStore) {
 fun AppSettings.sessionDefaults(): SessionConfiguration =
     SessionConfiguration(duration = activityDuration, rounds = defaultRounds)
 
-fun AppSettings.resolveNextSessionConfiguration(gameId: String): SessionConfiguration =
-    nextSessionOverrides[gameId]?.applyTo(sessionDefaults()) ?: sessionDefaults()
+fun AppSettings.resolveNextSessionConfiguration(
+    gameId: String,
+    activityDefaultDuration: ActivityDuration? = null,
+): SessionConfiguration =
+    nextSessionOverrides[gameId]?.applyTo(sessionDefaults())
+        ?: SessionConfiguration(
+            duration = activityDefaultDuration ?: activityDuration,
+            rounds = defaultRounds,
+        )
 
 class InMemorySettingsKeyValueStore(
     val values: MutableMap<String, String> = mutableMapOf(),

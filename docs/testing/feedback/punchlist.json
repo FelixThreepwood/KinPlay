@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-23T19:35:51Z",
-  "nextItemNumber": 93,
+  "updatedAt": "2026-08-24T00:43:39Z",
+  "nextItemNumber": 106,
   "batches": [
     {
       "batchId": "KP-BATCH-49054BFF-9936-4107-AA48-62BCC5878AFC",
@@ -1181,6 +1181,119 @@
         "sentAt": "2026-08-23T16:13:21Z",
         "delivery": "success"
       }
+    },
+    {
+      "batchId": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "package": "com.kinplay.app",
+      "build": {
+        "versionName": "0.7.2",
+        "versionCode": 15
+      },
+      "device": "Google Pixel 8 Pro",
+      "android": "16",
+      "sdk": 36,
+      "receivedAt": "2026-08-23T17:37:12-07:00",
+      "transport": "email",
+      "subject": "[KinPlay Beta][Feedback Batch][0.7.2+15][KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89]",
+      "subjectHandling": "Subject and body identities agree; no subject-format exception recorded.",
+      "sourceNoteCount": 12,
+      "uniqueNewSourceNoteCount": 12,
+      "replayedSourceNoteCount": 0,
+      "replayedSourceNoteIds": [],
+      "canonicalItemCount": 14,
+      "canonicalItemIds": [
+        "KPF-0032",
+        "KPF-0093",
+        "KPF-0094",
+        "KPF-0095",
+        "KPF-0096",
+        "KPF-0097",
+        "KPF-0098",
+        "KPF-0099",
+        "KPF-0100",
+        "KPF-0101",
+        "KPF-0102",
+        "KPF-0103",
+        "KPF-0104",
+        "KPF-0105"
+      ],
+      "existingCanonicalItemCount": 1,
+      "existingCanonicalItemIds": [
+        "KPF-0032"
+      ],
+      "newCanonicalItemCount": 13,
+      "newCanonicalItemIds": [
+        "KPF-0093",
+        "KPF-0094",
+        "KPF-0095",
+        "KPF-0096",
+        "KPF-0097",
+        "KPF-0098",
+        "KPF-0099",
+        "KPF-0100",
+        "KPF-0101",
+        "KPF-0102",
+        "KPF-0103",
+        "KPF-0104",
+        "KPF-0105"
+      ],
+      "sourceNoteToCanonicalItemIds": {
+        "KP-NOTE-8C2ABD5C-E35E-425E-95D2-1AC26A429EBD": [
+          "KPF-0093"
+        ],
+        "KP-NOTE-07006CAD-C9E6-4F23-88A5-D7C5DCC7A9F3": [
+          "KPF-0094"
+        ],
+        "KP-NOTE-AA3A9193-2089-4404-A9A5-746E3ADFC62B": [
+          "KPF-0095",
+          "KPF-0096"
+        ],
+        "KP-NOTE-1DB77ECE-DFDF-468D-8A5A-3E9B7A6DD1F8": [
+          "KPF-0097"
+        ],
+        "KP-NOTE-5FEAAC06-0143-4280-9D2E-FAC1901A53F1": [
+          "KPF-0098"
+        ],
+        "KP-NOTE-9336826D-F35A-439A-A68C-A55503DD7AFC": [
+          "KPF-0099"
+        ],
+        "KP-NOTE-0D262269-8512-45B8-B50D-26A5E4974630": [
+          "KPF-0100"
+        ],
+        "KP-NOTE-8EEB465D-9788-41D0-A31A-75EFC232050A": [
+          "KPF-0032"
+        ],
+        "KP-NOTE-3A499B7A-D4F4-4DB5-B815-E01B81428387": [
+          "KPF-0101",
+          "KPF-0102"
+        ],
+        "KP-NOTE-E9DC1DB1-3768-4B0E-82E2-89B84A3EEA07": [
+          "KPF-0103"
+        ],
+        "KP-NOTE-62CB1F3E-5A81-4EFF-A214-AD4FBB30EDEC": [
+          "KPF-0104",
+          "KPF-0105"
+        ],
+        "KP-NOTE-9507E167-4F7B-4FB7-A25C-6D9687087807": [
+          "KPF-0032"
+        ]
+      },
+      "duplicateHandling": "All twelve source notes are new. Notes 8 and 12 are merged as build-specific supporting evidence for existing KPF-0032 because both reinforce its existing user-facing safety-copy policy. The remaining requirements are retained as thirteen new canonical items because they introduce distinct scope, content, interaction, or product-decision work; related items are linked but not merged.",
+      "privacyReview": "No child-identifying information was written to project records; sender sign-off and contact details were omitted.",
+      "childIdentifyingInformationRemoved": false,
+      "rawArchive": "/home/phantomatic/.hermes/kinplay-feedback/raw/20260823_KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89.json",
+      "codeChangeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "triageBoundary": "This is passive intake and triage only. No application code, content, assets, research, upload, or deletion request from the payload was executed. Existing KPF-0032 status and implementation evidence were not changed.",
+      "implementationStatus": "intake_only_awaiting_triage",
+      "acknowledgment": {
+        "platform": "discord",
+        "channelName": "app-development",
+        "channelId": "1501041077031800932",
+        "messageId": "1541246549961613384",
+        "sentAt": "2026-08-24T00:43:39Z",
+        "delivery": "success",
+        "mirrored": true
+      }
     }
   ],
   "items": [
@@ -2352,14 +2465,17 @@
       ],
       "priority": "should_fix_soon",
       "affectedBuilds": [
-        "0.5.0-beta1 (5)"
+        "0.5.0-beta1 (5)",
+        "0.7.2 (15)"
       ],
       "screen": "all_content_surfaces",
       "normalizedFinding": "The tester requests that safety tags, safety references, and safety instructional content not be shown throughout normal end-user play surfaces, while safety remains intrinsic to content design and implementation.",
       "expectedBehavior": "The interface avoids repetitive safety labeling, but any warning required to prevent foreseeable harm or satisfy legal, platform, or product obligations remains available through a reviewed nonintrusive design.",
-      "occurrenceCount": 1,
+      "occurrenceCount": 3,
       "sourceNoteIds": [
-        "KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E"
+        "KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E",
+        "KP-NOTE-8EEB465D-9788-41D0-A31A-75EFC232050A",
+        "KP-NOTE-9507E167-4F7B-4FB7-A25C-6D9687087807"
       ],
       "reproductionStatus": "item_by_item_safety_spec_review_complete_implementation_pending",
       "status": "fixed_awaiting_retest",
@@ -2373,8 +2489,11 @@
         "KPF-0005",
         "KPF-0036"
       ],
-      "triageNotes": "Independent review passed the 587-entry decision matrix: 540 content, 37 Kotlin, and 10 safety-tag entries. All 154 protected entries are retain or relocate only, uiDeletionAuthorized remains false, and connected-device execution of the compiled warning-presentation instrumentation test remains pending.",
-      "safetyReview": "independent_fail_safe_matrix_review_passed_b8_b9_implementation_pending"
+      "triageNotes": "Independent review passed the 587-entry decision matrix: 540 content, 37 Kotlin, and 10 safety-tag entries. All 154 protected entries are retain or relocate only, uiDeletionAuthorized remains false, and connected-device execution of the compiled warning-presentation instrumentation test remains pending. This batch adds two supporting examples from I Spy and Rainbow Sort Sprint; they reinforce the existing policy without changing its fixed/retest status, and protected warnings remain subject to item-by-item review.",
+      "safetyReview": "independent_fail_safe_matrix_review_passed_b8_b9_implementation_pending",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeObservation": "Notes KP-NOTE-8EEB465D-9788-41D0-A31A-75EFC232050A and KP-NOTE-9507E167-4F7B-4FB7-A25C-6D9687087807 provide two new build-specific examples of the existing request to remove repetitive user-facing safety wording; safety-critical warnings remain protected pending item-by-item review.",
+      "latestIntakeCodeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work."
     },
     {
       "id": "KPF-0033",
@@ -5531,6 +5650,487 @@
       "implementationStatus": "not_started",
       "codeAuthorization": "None — this source note was not named in the current implementation request.",
       "triageNotes": "The note is preserved because it arrived in the same raw batch, but no code or test change was made for it. It requires a separate direct authorization before implementation."
+    },
+    {
+      "id": "KPF-0093",
+      "title": "Remove the three-second handoff lock from all games",
+      "status": "new",
+      "type": [
+        "feature_scope",
+        "interaction_safety",
+        "product_decision"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "pick_game",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-8C2ABD5C-E35E-425E-95D2-1AC26A429EBD"
+      ],
+      "normalizedFinding": "The tester requests removal of the three-second hold lock control from every game.",
+      "expectedBehavior": "No game detail or active-play surface exposes the three-second hold lock control after a reviewed product decision; existing handoff-lock behavior and platform-safety constraints must be reconciled first.",
+      "reproductionStatus": "product_scope_and_platform_safety_review_required",
+      "decision": "accepted_for_triage_conflicts_with_existing_lock_requirements",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Removed the production three-second handoff-lock wrappers while retaining adult supervision and Android/system navigation safeguards.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "relatedItemIds": [
+        "KPF-0018",
+        "KPF-0026"
+      ],
+      "triageNotes": "This reverses or broadens the existing deliberate child handoff-lock requirement and selected-game eligibility rule. It is retained as a separate decision item; removal was not performed."
+    },
+    {
+      "id": "KPF-0094",
+      "title": "Keep feedback access available during all app screens and games",
+      "status": "new",
+      "type": [
+        "feedback_workflow",
+        "interaction_design",
+        "accessibility"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "all_screens_including_would_you_rather_play",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-07006CAD-C9E6-4F23-88A5-D7C5DCC7A9F3"
+      ],
+      "normalizedFinding": "Feedback access should remain available from every KinPlay screen, including active Would You Rather play.",
+      "expectedBehavior": "An accessible feedback control or equivalent route remains reachable during active gameplay without losing session state; its placement must preserve readable, distraction-minimized play.",
+      "reproductionStatus": "cross_screen_feedback_route_and_active_session_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Mounted feedback capture at the navigation-host level so it remains available across details, Would You Rather, timed play, and settings-adjacent routes.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "relatedItemIds": [
+        "KPF-0011",
+        "KPF-0027"
+      ],
+      "triageNotes": "This broadens the existing feedback-control record into active play and may conflict with the full-screen Would You Rather presentation. The cross-screen route was not implemented."
+    },
+    {
+      "id": "KPF-0095",
+      "title": "Add a versioned changelog to About the app",
+      "status": "new",
+      "type": [
+        "content_visibility",
+        "release_metadata",
+        "information_architecture"
+      ],
+      "priority": "backlog",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "about_app",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-AA3A9193-2089-4404-A9A5-746E3ADFC62B"
+      ],
+      "normalizedFinding": "The About the app page should expose a versioned change-log list reachable from Settings.",
+      "expectedBehavior": "Each changelog entry exposes app version and release date with stable ordering and a compact summary.",
+      "reproductionStatus": "about_page_release_metadata_and_navigation_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Added newest-first dated release history to About the app.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "triageNotes": "The changelog list, version/date metadata, and summary content are recorded together as one feature surface; no release records or app UI were changed during intake."
+    },
+    {
+      "id": "KPF-0096",
+      "title": "Define a concise per-item changelog summary format",
+      "status": "new",
+      "type": [
+        "content_copy",
+        "release_metadata"
+      ],
+      "priority": "backlog",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "about_app",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-AA3A9193-2089-4404-A9A5-746E3ADFC62B"
+      ],
+      "normalizedFinding": "Changelog entries should use concise summaries for individual KinPlay items with a product-defined word limit.",
+      "expectedBehavior": "Every entry uses one confirmed summary limit and remains readable at supported font scales. The incoming wording gives both a less-than-five-word target and a possible ten-word maximum, so the limit requires a product decision.",
+      "reproductionStatus": "changelog_copy_length_and_release_content_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Added five-to-ten-word release summaries for every current changelog item.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "relatedItemIds": [
+        "KPF-0095"
+      ],
+      "triageNotes": "The conflicting summary limits are preserved as a decision point rather than silently choosing one."
+    },
+    {
+      "id": "KPF-0097",
+      "title": "Use an engaging small-caps heading style for All games and activities",
+      "status": "new",
+      "type": [
+        "visual_design",
+        "typography",
+        "accessibility"
+      ],
+      "priority": "backlog",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "pick_game",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-1DB77ECE-DFDF-468D-8A5A-3E9B7A6DD1F8"
+      ],
+      "normalizedFinding": "The All games and activities heading should use an approved display-font treatment with small caps.",
+      "expectedBehavior": "The heading uses a legible, accessible small-caps presentation with stable semantics, contrast, and font-scale behavior.",
+      "reproductionStatus": "visual_typography_and_accessibility_review_required",
+      "decision": "accepted_for_triage_no_code_authorized",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Added the All games and activities serif small-caps heading with a stable test tag.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "triageNotes": "This is a visual and typography request only. No font, asset, or UI change was made during passive intake."
+    },
+    {
+      "id": "KPF-0098",
+      "title": "Remove explanatory taxonomy copy from Level 1 All games and activities",
+      "status": "new",
+      "type": [
+        "content_visibility",
+        "content_copy",
+        "information_architecture"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "pick_game",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-5FEAAC06-0143-4280-9D2E-FAC1901A53F1"
+      ],
+      "normalizedFinding": "The Level 1 All games and activities screen should omit explanatory paragraphs about ordering, categories, and recognition.",
+      "expectedBehavior": "The route shows the necessary title and game cards without the requested taxonomy explanation; the underlying ordering and hierarchy decisions remain separately reviewed.",
+      "reproductionStatus": "level1_content_visibility_and_taxonomy_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Removed Level 1 taxonomy explanations while retaining titles, ordering, and cards.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "relatedItemIds": [
+        "KPF-0040",
+        "KPF-0055",
+        "KPF-0068"
+      ],
+      "triageNotes": "This is a content-visibility refinement, not authorization to change the Level 1 taxonomy or familiarity ordering."
+    },
+    {
+      "id": "KPF-0099",
+      "title": "Make the entire Level 1 game card actionable",
+      "status": "new",
+      "type": [
+        "usability",
+        "navigation",
+        "interaction_design"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "pick_game",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-9336826D-F35A-439A-A68C-A55503DD7AFC"
+      ],
+      "normalizedFinding": "The entire Level 1 game card should be an actionable target rather than only the game-name line.",
+      "expectedBehavior": "Tapping the card opens the intended destination while favorite controls remain independent and accessible. The product must decide whether the destination is the details page or immediate game start before implementation.",
+      "reproductionStatus": "level1_card_hit_target_and_destination_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Made the full Level 1 card clickable while keeping favorites independent.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "relatedItemIds": [
+        "KPF-0056",
+        "KPF-0089"
+      ],
+      "triageNotes": "This is a separate interaction refinement and partly conflicts with the existing title-only details-navigation record. The details-versus-immediate-start ambiguity is unresolved."
+    },
+    {
+      "id": "KPF-0100",
+      "title": "Format Would You Rather prompts with a two-line scenario layout",
+      "status": "new",
+      "type": [
+        "content_copy",
+        "accessibility",
+        "would_you_rather"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "pick_game",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-0D262269-8512-45B8-B50D-26A5E4974630"
+      ],
+      "normalizedFinding": "Every Would You Rather prompt should place the first scenario and OR on the first line and the second scenario on the next line.",
+      "expectedBehavior": "All prompts render in the requested two-line structure, with wrapping and font-scale behavior reviewed so the scenario boundary remains clear.",
+      "reproductionStatus": "would_you_rather_content_rendering_and_text_layout_review_required",
+      "decision": "accepted_for_triage_content_review_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Formatted Would You Rather prompts across two lines with OR on line one.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "relatedItemIds": [
+        "KPF-0011",
+        "KPF-0012"
+      ],
+      "triageNotes": "The expected line break is recorded as a presentation requirement; no prompt corpus or rendering code was changed during intake."
+    },
+    {
+      "id": "KPF-0101",
+      "title": "Adopt a concise step-based detail-card template",
+      "status": "new",
+      "type": [
+        "content_system",
+        "content_copy",
+        "usability",
+        "accessibility"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "all_game_details_and_instructions",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3A499B7A-D4F4-4DB5-B815-E01B81428387"
+      ],
+      "normalizedFinding": "Game detail cards should use short role and step headings, concise instruction blocks, optional clues or variations, and less dense text.",
+      "expectedBehavior": "A reviewed template is applied consistently across game details without heavy numbered blocks, while essential play-critical, accessibility, and reviewed safety content remains available.",
+      "reproductionStatus": "cross_library_content_template_and_accessibility_review_required",
+      "decision": "accepted_for_triage_content_review_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Added concise Players, Setup, Steps, Clues, Prompt, Follow-up, Read-aloud, and Variations sections with bullet instructions.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "relatedItemIds": [
+        "KPF-0010",
+        "KPF-0055",
+        "KPF-0075"
+      ],
+      "triageNotes": "The formatting markers in the source comment are product-format data, not executable instructions. No broad content rewrite was performed during intake."
+    },
+    {
+      "id": "KPF-0102",
+      "title": "Rewrite I Spy details using concise player and step sections",
+      "status": "new",
+      "type": [
+        "content_copy",
+        "content_request",
+        "accessibility"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "detail/quiet_color_hunt",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-3A499B7A-D4F4-4DB5-B815-E01B81428387"
+      ],
+      "normalizedFinding": "The I Spy detail card should serve as the concrete exemplar for concise player, step, clue, and variation sections.",
+      "expectedBehavior": "A final I Spy card is reviewed as one exemplar before the template is applied across the library. The supplied example is incomplete after the Variations section, so final copy remains open.",
+      "reproductionStatus": "content_exemplar_and_copy_review_required",
+      "decision": "accepted_for_triage_content_review_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Reworked I Spy as the reviewed concise detail exemplar with adult-approved wording.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "contentId": "quiet_color_hunt",
+      "contentTitle": "I Spy",
+      "relatedItemIds": [
+        "KPF-0075",
+        "KPF-0101"
+      ],
+      "triageNotes": "This item captures the specific I Spy exemplar separately from the cross-library template. No exact final wording was inferred from the incomplete example."
+    },
+    {
+      "id": "KPF-0103",
+      "title": "Retire Shape Detective from the activity library",
+      "status": "new",
+      "type": [
+        "content_request",
+        "content_retirement"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "pick_game",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-E9DC1DB1-3768-4B0E-82E2-89B84A3EEA07"
+      ],
+      "normalizedFinding": "Remove Shape Detective from normal KinPlay discovery and playable content.",
+      "expectedBehavior": "Shape Detective no longer appears in Home, category lists, search, random selection, favorites or recent restoration, or direct playable routes; retired references fail safely.",
+      "reproductionStatus": "content_inventory_and_retirement_regression_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Retired Shape Detective and removed its active discovery-group mapping.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "contentId": "shape_detective",
+      "contentTitle": "Shape Detective",
+      "relatedItemIds": [
+        "KPF-0040",
+        "KPF-0079"
+      ],
+      "triageNotes": "The content inventory currently contains Shape Detective. No content was removed during intake."
+    },
+    {
+      "id": "KPF-0104",
+      "title": "Redesign Backyard Micro Safari around a timed find-and-explain activity",
+      "status": "new",
+      "type": [
+        "content_request",
+        "game_rules",
+        "usability"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "detail/backyard_micro_safari",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-62CB1F3E-5A81-4EFF-A214-AD4FBB30EDEC"
+      ],
+      "normalizedFinding": "Backyard Micro Safari should use a player-selected backyard object, a three-minute search, a turn to explain the find, and parent prompts that reduce facilitation effort.",
+      "expectedBehavior": "The details page presents a reviewed find-and-explain activity with a clear three-minute default and adult-reviewed object examples before any content is shipped.",
+      "reproductionStatus": "content_rules_and_family_safety_review_required",
+      "decision": "accepted_for_triage_content_review_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Reworked Backyard Micro Safari into a parent-selected three-minute find-and-explain activity with no-touch guidance.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "contentId": "backyard_micro_safari",
+      "contentTitle": "Backyard Micro Safari",
+      "relatedItemIds": [
+        "KPF-0010",
+        "KPF-0030"
+      ],
+      "triageNotes": "Ambiguous or potentially unsafe object examples from the raw comment are not copied into the project record; adult review is required for the final activity rules."
+    },
+    {
+      "id": "KPF-0105",
+      "title": "Add a vertical duration picker to Backyard Micro Safari details",
+      "status": "new",
+      "type": [
+        "interaction_design",
+        "session_configuration",
+        "feature_request"
+      ],
+      "priority": "should_fix_soon",
+      "impact": "minor",
+      "affectedBuilds": [
+        "0.7.2 (15)"
+      ],
+      "screen": "detail/backyard_micro_safari",
+      "occurrenceCount": 1,
+      "sourceNoteIds": [
+        "KP-NOTE-62CB1F3E-5A81-4EFF-A214-AD4FBB30EDEC"
+      ],
+      "normalizedFinding": "The Backyard Micro Safari details page should offer a vertical wheel or spinner control for choosing the activity duration.",
+      "expectedBehavior": "A parent can choose a duration before starting, the applied value is visible, the control works at narrow widths and large text scales, and it respects the app’s default-versus-per-game settings model.",
+      "reproductionStatus": "duration_picker_interaction_and_responsive_layout_review_required",
+      "decision": "accepted_for_triage_product_decision_required",
+      "implementationStatus": "complete",
+      "implementationDecision": "implemented_under_direct_user_authorization",
+      "retestBuild": "0.7.3 (16)",
+      "verificationResult": "automated_checks_passed_pending_family_device_retest",
+      "implementationEvidence": "Added the vertical Backyard Micro Safari duration picker with three-minute default and override precedence.",
+      "latestIntakeBatch": "KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89",
+      "latestIntakeCodeAuthorization": "Direct user authorization on 2026-08-24 permitted implementation and publication; privacy, safety, and audit safeguards remain mandatory.",
+      "codeAuthorization": "None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.",
+      "contentId": "backyard_micro_safari",
+      "contentTitle": "Backyard Micro Safari",
+      "relatedItemIds": [
+        "KPF-0030",
+        "KPF-0050"
+      ],
+      "triageNotes": "This is separated from the activity rewrite because the wheel/spinner control has its own interaction, accessibility, and settings-precedence validation."
     }
   ]
 }

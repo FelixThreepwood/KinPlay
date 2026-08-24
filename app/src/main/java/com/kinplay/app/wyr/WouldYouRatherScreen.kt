@@ -39,7 +39,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.kinplay.app.lock.ChildHandoffLockContainer
 import com.kinplay.app.orientation.LandscapeWhileVisible
 import com.kinplay.app.settings.GameTimer
 
@@ -71,7 +70,6 @@ class SharedPreferencesWouldYouRatherStateStorage(context: Context) : WouldYouRa
 @Composable
 fun WouldYouRatherRoute(
     gameTimer: GameTimer = GameTimer.ONE_MINUTE,
-    showChildHandoffLock: Boolean = true,
     onExit: () -> Unit,
 ) {
     LandscapeWhileVisible {
@@ -112,7 +110,6 @@ fun WouldYouRatherRoute(
                         }
                     },
                     gameTimer = gameTimer,
-                    showChildHandoffLock = showChildHandoffLock,
                     onExit = onExit,
                 )
             }
@@ -132,33 +129,17 @@ fun WouldYouRatherPlayScreen(
     onAdvance: () -> Unit,
     onExit: () -> Unit,
     gameTimer: GameTimer = GameTimer.ONE_MINUTE,
-    showChildHandoffLock: Boolean = true,
 ) {
-    if (showChildHandoffLock) {
-        ChildHandoffLockContainer { isLocked ->
-            WouldYouRatherSurface(
-                categories = categories,
-                selectedCategory = selectedCategory,
-                prompt = prompt,
-                onSelectCategory = onSelectCategory,
-                onAdvance = onAdvance,
-                onExit = onExit,
-                gameTimer = gameTimer,
-                isLocked = isLocked,
-            )
-        }
-    } else {
-        WouldYouRatherSurface(
-            categories = categories,
-            selectedCategory = selectedCategory,
-            prompt = prompt,
-            onSelectCategory = onSelectCategory,
-            onAdvance = onAdvance,
-            onExit = onExit,
-            gameTimer = gameTimer,
-            isLocked = false,
-        )
-    }
+    WouldYouRatherSurface(
+        categories = categories,
+        selectedCategory = selectedCategory,
+        prompt = prompt,
+        onSelectCategory = onSelectCategory,
+        onAdvance = onAdvance,
+        onExit = onExit,
+        gameTimer = gameTimer,
+        isLocked = false,
+    )
 }
 
 @Composable
@@ -317,7 +298,7 @@ private fun PromptSurface(
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
-                        text = visiblePrompt.text,
+                        text = formatWouldYouRatherPrompt(visiblePrompt.text),
                         modifier = Modifier.testTag("wyr-prompt-text"),
                         color = MaterialTheme.colorScheme.onBackground,
                         fontSize = 30.sp,

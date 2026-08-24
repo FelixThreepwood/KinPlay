@@ -228,24 +228,6 @@
 - Parent note: Keep the tone gentle and reassuring.
 - Variations: Make a waiting room. / Older kids create patient charts.
 
-## Shape Detective
-- ID: `shape_detective`
-- Type: activity
-- Modes: quick_play, pick_a_game, calm_down
-- Quick categories: quiet_games, brain_games, quality_time
-- Participant suitability: both
-- Minimum age: 2+
-- Duration: 6 min
-- Energy: calm
-- Summary: Search the room for circles, squares, and triangles.
-- Format group: notice_and_sort
-- Materials: none
-- Safety tags: quiet, no_materials, calming, sibling_friendly
-- Setup: Pick a room with visible safe objects.
-- Play steps: Parent names a shape. / Children point to matching objects. / Count how many shapes you found.
-- Parent note: Good for waiting or transitions.
-- Variations: Use textures instead. / Older kids combine shape plus color.
-
 ## Pirate Map Steps
 - ID: `pirate_map_steps`
 - Type: activity
@@ -290,9 +272,9 @@
 - Minimum age: 4+
 - Duration: 10 min
 - Energy: medium
-- Summary: Sort safe toys or blocks by color in a short timed challenge.
+- Summary: Sort adult-approved toys or blocks by color in a short timed challenge.
 - Format group: notice_and_sort
-- Materials: safe toys or blocks
+- Materials: adult-approved toys or blocks
 - Safety tags: parent_supervision, small_objects, sibling_friendly
 - Setup: Choose items too large to swallow and clear a sorting space.
 - Play steps: Pick three colors. / Sort items into color groups. / Count each group together.
@@ -394,15 +376,15 @@
 - Quick categories: outdoor_adventures, quality_time
 - Participant suitability: both
 - Minimum age: 4+
-- Duration: 15 min
+- Duration: 3 min
 - Energy: low
-- Summary: Look for tiny outdoor details with parent supervision.
+- Summary: Choose an adult-approved outdoor object for a three-minute search, then explain what you find with parent supervision.
 - Format group: notice_and_sort
 - Materials: none
 - Safety tags: parent_supervision, outdoor_optional, sibling_friendly
-- Setup: Choose a safe yard, porch, or window view.
-- Play steps: Find one leaf, one shadow, and one tiny movement. / Describe each discovery. / Leave plants and bugs undisturbed.
-- Parent note: Hands-off observing only unless parent approves.
+- Setup: Adult review: choose an approved object and boundary before play.
+- Play steps: Search for the selected object for three minutes. / Take a turn to explain what you find. / Use parent prompts, stay within the boundary, and leave plants and bugs undisturbed.
+- Parent note: Adult review is required for object examples and the final activity rules.
 - Variations: Do it from a window. / Draw the best discovery afterward.
 
 ## Chair Train Station

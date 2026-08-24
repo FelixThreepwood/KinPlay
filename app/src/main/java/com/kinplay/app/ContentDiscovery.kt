@@ -67,7 +67,6 @@ fun KinPlayItem.discoveryGroupIds(): Set<String> = buildSet {
             "animal_guessing_yes_no",
             "family_charades_animals",
             "would_you_rather_silly_family",
-            "shape_detective",
         ) -> add(GameTypeGroup.GUESSING_GAMES.id)
         id in setOf(
             "paper_airplane_weather",

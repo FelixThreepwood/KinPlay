@@ -338,7 +338,7 @@ class ProtectedSafetyWarningsRegressionTest {
         assertTrue(item("sock_skating_rink").collapsedCardPreviewLines().single().isNotBlank())
 
         // Details retain complete warnings and setup content.
-        assertTrue(item("rainbow_sort_sprint").detailSections().single { it.title == "Materials" }.lines[0].contains("safe toys or blocks"))
+        assertTrue(item("rainbow_sort_sprint").detailSections().single { it.title == "Materials" }.lines[0].contains("adult-approved toys or blocks"))
         assertTrue(item("memory_tray_peek").detailSections().single { it.title == "Materials" }.lines[0].contains("safe household objects"))
         assertTrue(item("washable_painting_shapes").detailSections().single { it.title == "Materials" }.lines[0].contains("washable non-toxic children’s paint"))
         assertTrue(item("sock_skating_rink").detailSections().single { it.title == "Setup" }.lines[0].startsWith("Use only a smooth, clear floor area"))
@@ -348,7 +348,7 @@ class ProtectedSafetyWarningsRegressionTest {
         assertTrue(pillow.setupSteps.first().contains("Adult supervises and clears a flat room"))
         assertTrue(item("couch_cushion_quest").detailSections().single { it.title == "Setup" }.lines[0].contains("within easy reach"))
         assertTrue(item("race_like_an_animal").detailSections().single { it.title == "Steps" }.lines[1].contains("without sprinting"))
-        assertTrue(item("hallway_balance_beam").detailSections().single { it.title == "Replay variations" }.lines[0].contains("parent approves"))
+        assertTrue(item("hallway_balance_beam").detailSections().single { it.title == "Variations" }.lines[0].contains("parent approves"))
 
         val main = readText(root.resolve("app/src/main/java/com/kinplay/app/MainActivity.kt"))
         listOf(

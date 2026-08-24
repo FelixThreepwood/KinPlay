@@ -4,6 +4,18 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.util.Locale
 
+fun formatWouldYouRatherPrompt(text: String): String {
+    val normalized = text.replace(Regex("\\s+"), " ").trim()
+    val prefix = "Would you rather "
+    if (!normalized.startsWith(prefix) || !normalized.endsWith("?")) return text
+    val body = normalized.removePrefix(prefix).removeSuffix("?")
+    val boundary = Regex("\\s+or\\s+", RegexOption.IGNORE_CASE).find(body) ?: return text
+    val first = body.substring(0, boundary.range.first).trim()
+    val second = body.substring(boundary.range.last + 1).trim()
+    if (first.isBlank() || second.isBlank()) return text
+    return "$prefix$first OR\n$second?"
+}
+
 data class WouldYouRatherLibrary(
     val schemaVersion: Int,
     val libraryId: String,

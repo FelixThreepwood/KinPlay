@@ -652,10 +652,10 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Status: fixed-awaiting-retest
 - Type: Content copy / Information architecture / Safety review
 - Priority: Should fix soon
-- Affected build: 0.5.0-beta1 (5)
+- Affected builds: 0.5.0-beta1 (5), 0.7.2 (15)
 - Capture screen: `all_content_surfaces`
-- Occurrence count: 1
-- Source note: `KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E`
+- Occurrence count: 3
+- Source notes: `KP-NOTE-63E99743-64A8-4EC7-A8A7-426A9722690E`, `KP-NOTE-8EEB465D-9788-41D0-A31A-75EFC232050A`, `KP-NOTE-9507E167-4F7B-4FB7-A25C-6D9687087807`
 - Normalized finding: The tester requests that safety tags, safety references, and safety instructional content not be shown throughout normal end-user play surfaces, while safety remains intrinsic to content design and implementation.
 - Expected behavior: The interface avoids repetitive safety labeling, but any warning required to prevent foreseeable harm or satisfy legal, platform, or product obligations remains available through a reviewed nonintrusive design.
 - Reproduction/triage: Item-by-item fail-safe safety/spec review complete; implementation remains allocated across B8 and B9.
@@ -666,6 +666,7 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Implementation evidence: Removed normal detail safety-tag rendering, retained reviewed warning-bearing content and privacy/lock boundaries, exposed reviewed safety summaries through Safety and privacy, and synchronized the neutral I Spy copy with the fail-safe matrix. No protected warning was deleted.
 - Related items: `KPF-0005`, `KPF-0036`
 - Triage note: Independent review passed the 587-entry decision matrix (540 content, 37 Kotlin, 10 safety-tag entries). All 154 protected entries are retain/relocate only, `uiDeletionAuthorized` is false, and connected-device execution of the compiled warning-presentation instrumentation test remains pending.
+- Latest intake observation: Build 0.7.2 notes add I Spy and Rainbow Sort Sprint examples of the existing safety-copy policy; protected warnings remain subject to item-by-item review and this item's fixed/retest status is unchanged.
 
 ## KPF-0033 — Remove nonessential descriptive copy from Home and content surfaces
 
@@ -2084,3 +2085,275 @@ Source note IDs are unique occurrence keys. An exact note replay in a later batc
 - Expected behavior: Swipes within the animal-name graphic move the tumbler in the matching direction, and a single tap spins it.
 - Implementation status: Not started; this note was not named in the current implementation request.
 - Code authorization: None for this cycle.
+
+## Intake batch — KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89
+
+- Intake build: **0.7.2 (15)** for package `com.kinplay.app`; device: Google Pixel 8 Pro / Android 16 (SDK 36).
+- Source notes: **12 unique**, **0 replayed**.
+- Canonical items touched: **14**; existing item: `KPF-0032`; new items: `KPF-0093, KPF-0094, KPF-0095, KPF-0096, KPF-0097, KPF-0098, KPF-0099, KPF-0100, KPF-0101, KPF-0102, KPF-0103, KPF-0104, KPF-0105`.
+- Source mapping: notes 8 and 12 add supporting evidence to `KPF-0032`; notes 3, 9, and 11 each split into independently testable requirements; all other notes map to one new item.
+- Privacy: no child-identifying information, sender sign-off, or contact details were written to project records.
+- Code authorization: none. This batch is intake-only and does not authorize application, content, asset, research, upload, or deletion changes.
+- Duplicate handling: only the two safety-copy notes were merged into the existing policy item; related but distinct requirements remain separate.
+- Discord acknowledgment: delivered successfully to the KinPlay `app-development` channel; message ID `1541246549961613384`.
+
+## KPF-0093 — Remove the three-second handoff lock from all games
+
+- Status: New; awaiting triage.
+- Type: feature_scope / interaction_safety / product_decision
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-8C2ABD5C-E35E-425E-95D2-1AC26A429EBD`
+- Normalized finding: The tester requests removal of the three-second hold lock control from every game.
+- Expected behavior: No game detail or active-play surface exposes the three-second hold lock control after a reviewed product decision; existing handoff-lock behavior and platform-safety constraints must be reconciled first.
+- Reproduction/triage status: product_scope_and_platform_safety_review_required
+- Decision: accepted_for_triage_conflicts_with_existing_lock_requirements
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0018`, `KPF-0026`
+- Triage notes: This reverses or broadens the existing deliberate child handoff-lock requirement and selected-game eligibility rule. It is retained as a separate decision item; removal was not performed.
+
+## KPF-0094 — Keep feedback access available during all app screens and games
+
+- Status: New; awaiting triage.
+- Type: feedback_workflow / interaction_design / accessibility
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `all_screens_including_would_you_rather_play`
+- Occurrence count: 1
+- Source note: `KP-NOTE-07006CAD-C9E6-4F23-88A5-D7C5DCC7A9F3`
+- Normalized finding: Feedback access should remain available from every KinPlay screen, including active Would You Rather play.
+- Expected behavior: An accessible feedback control or equivalent route remains reachable during active gameplay without losing session state; its placement must preserve readable, distraction-minimized play.
+- Reproduction/triage status: cross_screen_feedback_route_and_active_session_review_required
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0011`, `KPF-0027`
+- Triage notes: This broadens the existing feedback-control record into active play and may conflict with the full-screen Would You Rather presentation. The cross-screen route was not implemented.
+
+## KPF-0095 — Add a versioned changelog to About the app
+
+- Status: New; awaiting triage.
+- Type: content_visibility / release_metadata / information_architecture
+- Priority: backlog
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `about_app`
+- Occurrence count: 1
+- Source note: `KP-NOTE-AA3A9193-2089-4404-A9A5-746E3ADFC62B`
+- Normalized finding: The About the app page should expose a versioned change-log list reachable from Settings.
+- Expected behavior: Each changelog entry exposes app version and release date with stable ordering and a compact summary.
+- Reproduction/triage status: about_page_release_metadata_and_navigation_review_required
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Triage notes: The changelog list, version/date metadata, and summary content are recorded together as one feature surface; no release records or app UI were changed during intake.
+
+## KPF-0096 — Define a concise per-item changelog summary format
+
+- Status: New; awaiting triage.
+- Type: content_copy / release_metadata
+- Priority: backlog
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `about_app`
+- Occurrence count: 1
+- Source note: `KP-NOTE-AA3A9193-2089-4404-A9A5-746E3ADFC62B`
+- Normalized finding: Changelog entries should use concise summaries for individual KinPlay items with a product-defined word limit.
+- Expected behavior: Every entry uses one confirmed summary limit and remains readable at supported font scales. The incoming wording gives both a less-than-five-word target and a possible ten-word maximum, so the limit requires a product decision.
+- Reproduction/triage status: changelog_copy_length_and_release_content_review_required
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0095`
+- Triage notes: The conflicting summary limits are preserved as a decision point rather than silently choosing one.
+
+## KPF-0097 — Use an engaging small-caps heading style for All games and activities
+
+- Status: New; awaiting triage.
+- Type: visual_design / typography / accessibility
+- Priority: backlog
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-1DB77ECE-DFDF-468D-8A5A-3E9B7A6DD1F8`
+- Normalized finding: The All games and activities heading should use an approved display-font treatment with small caps.
+- Expected behavior: The heading uses a legible, accessible small-caps presentation with stable semantics, contrast, and font-scale behavior.
+- Reproduction/triage status: visual_typography_and_accessibility_review_required
+- Decision: accepted_for_triage_no_code_authorized
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Triage notes: This is a visual and typography request only. No font, asset, or UI change was made during passive intake.
+
+## KPF-0098 — Remove explanatory taxonomy copy from Level 1 All games and activities
+
+- Status: New; awaiting triage.
+- Type: content_visibility / content_copy / information_architecture
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-5FEAAC06-0143-4280-9D2E-FAC1901A53F1`
+- Normalized finding: The Level 1 All games and activities screen should omit explanatory paragraphs about ordering, categories, and recognition.
+- Expected behavior: The route shows the necessary title and game cards without the requested taxonomy explanation; the underlying ordering and hierarchy decisions remain separately reviewed.
+- Reproduction/triage status: level1_content_visibility_and_taxonomy_review_required
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0040`, `KPF-0055`, `KPF-0068`
+- Triage notes: This is a content-visibility refinement, not authorization to change the Level 1 taxonomy or familiarity ordering.
+
+## KPF-0099 — Make the entire Level 1 game card actionable
+
+- Status: New; awaiting triage.
+- Type: usability / navigation / interaction_design
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-9336826D-F35A-439A-A68C-A55503DD7AFC`
+- Normalized finding: The entire Level 1 game card should be an actionable target rather than only the game-name line.
+- Expected behavior: Tapping the card opens the intended destination while favorite controls remain independent and accessible. The product must decide whether the destination is the details page or immediate game start before implementation.
+- Reproduction/triage status: level1_card_hit_target_and_destination_review_required
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0056`, `KPF-0089`
+- Triage notes: This is a separate interaction refinement and partly conflicts with the existing title-only details-navigation record. The details-versus-immediate-start ambiguity is unresolved.
+
+## KPF-0100 — Format Would You Rather prompts with a two-line scenario layout
+
+- Status: New; awaiting triage.
+- Type: content_copy / accessibility / would_you_rather
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `pick_game`
+- Occurrence count: 1
+- Source note: `KP-NOTE-0D262269-8512-45B8-B50D-26A5E4974630`
+- Normalized finding: Every Would You Rather prompt should place the first scenario and OR on the first line and the second scenario on the next line.
+- Expected behavior: All prompts render in the requested two-line structure, with wrapping and font-scale behavior reviewed so the scenario boundary remains clear.
+- Reproduction/triage status: would_you_rather_content_rendering_and_text_layout_review_required
+- Decision: accepted_for_triage_content_review_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0011`, `KPF-0012`
+- Triage notes: The expected line break is recorded as a presentation requirement; no prompt corpus or rendering code was changed during intake.
+
+## KPF-0101 — Adopt a concise step-based detail-card template
+
+- Status: New; awaiting triage.
+- Type: content_system / content_copy / usability / accessibility
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `all_game_details_and_instructions`
+- Occurrence count: 1
+- Source note: `KP-NOTE-3A499B7A-D4F4-4DB5-B815-E01B81428387`
+- Normalized finding: Game detail cards should use short role and step headings, concise instruction blocks, optional clues or variations, and less dense text.
+- Expected behavior: A reviewed template is applied consistently across game details without heavy numbered blocks, while essential play-critical, accessibility, and reviewed safety content remains available.
+- Reproduction/triage status: cross_library_content_template_and_accessibility_review_required
+- Decision: accepted_for_triage_content_review_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0010`, `KPF-0055`, `KPF-0075`
+- Triage notes: The formatting markers in the source comment are product-format data, not executable instructions. No broad content rewrite was performed during intake.
+
+## KPF-0102 — Rewrite I Spy details using concise player and step sections
+
+- Status: New; awaiting triage.
+- Type: content_copy / content_request / accessibility
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `detail/quiet_color_hunt`
+- Content ID: `quiet_color_hunt`
+- Content title: I Spy
+- Occurrence count: 1
+- Source note: `KP-NOTE-3A499B7A-D4F4-4DB5-B815-E01B81428387`
+- Normalized finding: The I Spy detail card should serve as the concrete exemplar for concise player, step, clue, and variation sections.
+- Expected behavior: A final I Spy card is reviewed as one exemplar before the template is applied across the library. The supplied example is incomplete after the Variations section, so final copy remains open.
+- Reproduction/triage status: content_exemplar_and_copy_review_required
+- Decision: accepted_for_triage_content_review_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0075`, `KPF-0101`
+- Triage notes: This item captures the specific I Spy exemplar separately from the cross-library template. No exact final wording was inferred from the incomplete example.
+
+## KPF-0103 — Retire Shape Detective from the activity library
+
+- Status: New; awaiting triage.
+- Type: content_request / content_retirement
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `pick_game`
+- Content ID: `shape_detective`
+- Content title: Shape Detective
+- Occurrence count: 1
+- Source note: `KP-NOTE-E9DC1DB1-3768-4B0E-82E2-89B84A3EEA07`
+- Normalized finding: Remove Shape Detective from normal KinPlay discovery and playable content.
+- Expected behavior: Shape Detective no longer appears in Home, category lists, search, random selection, favorites or recent restoration, or direct playable routes; retired references fail safely.
+- Reproduction/triage status: content_inventory_and_retirement_regression_review_required
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0040`, `KPF-0079`
+- Triage notes: The content inventory currently contains Shape Detective. No content was removed during intake.
+
+## KPF-0104 — Redesign Backyard Micro Safari around a timed find-and-explain activity
+
+- Status: New; awaiting triage.
+- Type: content_request / game_rules / usability
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `detail/backyard_micro_safari`
+- Content ID: `backyard_micro_safari`
+- Content title: Backyard Micro Safari
+- Occurrence count: 1
+- Source note: `KP-NOTE-62CB1F3E-5A81-4EFF-A214-AD4FBB30EDEC`
+- Normalized finding: Backyard Micro Safari should use a player-selected backyard object, a three-minute search, a turn to explain the find, and parent prompts that reduce facilitation effort.
+- Expected behavior: The details page presents a reviewed find-and-explain activity with a clear three-minute default and adult-reviewed object examples before any content is shipped.
+- Reproduction/triage status: content_rules_and_family_safety_review_required
+- Decision: accepted_for_triage_content_review_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0010`, `KPF-0030`
+- Triage notes: Ambiguous or potentially unsafe object examples from the raw comment are not copied into the project record; adult review is required for the final activity rules.
+
+## KPF-0105 — Add a vertical duration picker to Backyard Micro Safari details
+
+- Status: New; awaiting triage.
+- Type: interaction_design / session_configuration / feature_request
+- Priority: should_fix_soon
+- Impact: minor
+- Affected build: 0.7.2 (15)
+- Capture screen: `detail/backyard_micro_safari`
+- Content ID: `backyard_micro_safari`
+- Content title: Backyard Micro Safari
+- Occurrence count: 1
+- Source note: `KP-NOTE-62CB1F3E-5A81-4EFF-A214-AD4FBB30EDEC`
+- Normalized finding: The Backyard Micro Safari details page should offer a vertical wheel or spinner control for choosing the activity duration.
+- Expected behavior: A parent can choose a duration before starting, the applied value is visible, the control works at narrow widths and large text scales, and it respects the app’s default-versus-per-game settings model.
+- Reproduction/triage status: duration_picker_interaction_and_responsive_layout_review_required
+- Decision: accepted_for_triage_product_decision_required
+- Implementation status: Not started; intake-only.
+- Code authorization: None — passive intake and triage only; this batch authorizes no application-code, content, asset, research, upload, or deletion work.
+- Related items: `KPF-0030`, `KPF-0050`
+- Triage notes: This is separated from the activity rewrite because the wheel/spinner control has its own interaction, accessibility, and settings-precedence validation.
+## Implementation closure — KP-BATCH-F20A381B-0120-408C-A207-543DB1F1CD89
+
+- Direct user authorization on 2026-08-24 superseded the earlier passive-intake boundary for implementation and publication.
+- Implemented items: `KPF-0032`, `KPF-0093`–`KPF-0105`.
+- Implementation build: `com.kinplay.app 0.7.3 (16)`.
+- Automated verification passed: focused batch acceptance, 229-test JVM suite, Android-test source compilation, lint with warnings/hints only, schema/parity validation, APK package/version inspection, and v2 signature verification.
+- Physical-device and connected-instrumentation retest remains open because no Android target is attached.
+- Release artifact and publication evidence are recorded in `RETEST_LOG.md` and the implementation ledger; Google Drive publication remains the final open release step.

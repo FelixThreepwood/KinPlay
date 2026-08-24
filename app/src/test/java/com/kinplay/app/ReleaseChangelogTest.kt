@@ -14,8 +14,8 @@ class ReleaseChangelogTest {
 
     @Test
     fun currentReleaseUsesTheSecondCumulativeFeedbackRevision() {
-        assertTrue(buildFile.contains("val appVersionName = \"0.7.2\""))
-        assertTrue(buildFile.contains("versionCode = 15"))
+        assertEquals("0.7.3", KIDPLAY_RELEASE_CHANGELOG.first().version)
+        assertEquals("2026-08-23", KIDPLAY_RELEASE_CHANGELOG.first().releaseDate)
     }
 
     @Test

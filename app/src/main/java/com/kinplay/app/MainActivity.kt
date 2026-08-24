@@ -89,6 +89,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
@@ -106,7 +107,6 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.kinplay.app.feedback.FeedbackCaptureContext
 import com.kinplay.app.feedback.FeedbackOverlay
-import com.kinplay.app.lock.ChildHandoffLockContainer
 import com.kinplay.app.settings.AndroidLauncherIconGateway
 import com.kinplay.app.settings.ActivityDuration
 import com.kinplay.app.settings.AppSettings
@@ -127,6 +127,7 @@ import com.kinplay.app.session.activeSessionSections
 import com.kinplay.app.session.isTimedSessionEligible
 import com.kinplay.app.session.isTimedSessionEssential
 import com.kinplay.app.session.remainingTimeLabel
+import com.kinplay.app.session.sessionDefaultDuration
 import com.kinplay.app.session.startTimedSession
 import com.kinplay.app.ui.KinPlayTheme
 import com.kinplay.app.wyr.WouldYouRatherRoute
@@ -238,7 +239,7 @@ fun KinPlayApp() {
             fun startSession(gameId: String): TimedSession? {
                 val item = contentPack.activeItemById(gameId) ?: return null
                 if (!item.isTimedSessionEligible()) return null
-                val session = startTimedSession(gameId, settingsRepository)
+                val session = startTimedSession(gameId, settingsRepository, sessionDefaultDuration(item))
                 appSettings = settingsRepository.load()
                 return session
             }
@@ -324,9 +325,6 @@ fun KinPlayApp() {
                     composable(Routes.WouldYouRather) {
                         WouldYouRatherRoute(
                             gameTimer = appSettings.gameTimer,
-                            showChildHandoffLock = shouldShowChildHandoffLock(
-                                contentPack.activeItemById(WOULD_YOU_RATHER_ITEM_ID),
-                            ),
                             onExit = { navController.popBackStack() },
                         )
                     }
@@ -381,26 +379,27 @@ fun KinPlayApp() {
                 }
                 if (BuildConfig.FEEDBACK_ENABLED) {
                     val backStackEntry by navController.currentBackStackEntryAsState()
-                    // Keep game/play lanes free of controls that must not bypass child handoff lock.
-                    if (
-                        backStackEntry?.destination?.route != Routes.WouldYouRather &&
-                        backStackEntry?.destination?.route != Routes.Detail
-                    ) {
-                        val itemId = backStackEntry?.arguments?.getString("itemId")
-                        val categoryId = backStackEntry?.arguments?.getString("categoryId")
-                        val currentItem = itemId?.let(contentPack::activeItemById)
-                        val route = when {
-                            itemId != null -> "detail/$itemId"
-                            categoryId != null -> "category/$categoryId"
-                            else -> backStackEntry?.destination?.route ?: Routes.Home
-                        }
-                        FeedbackOverlay(
-                            context = context,
-                            screen = route,
-                            contentId = currentItem?.id,
-                            contentTitle = currentItem?.title,
-                        )
+                    val destinationRoute = backStackEntry?.destination?.route.orEmpty()
+                    val itemId = backStackEntry?.arguments?.getString("itemId")
+                        ?: backStackEntry?.arguments?.getString("gameId")
+                    val categoryId = backStackEntry?.arguments?.getString("categoryId")
+                    val currentItem = when {
+                        destinationRoute == Routes.WouldYouRather -> contentPack.activeItemById(WOULD_YOU_RATHER_ITEM_ID)
+                        else -> itemId?.let(contentPack::activeItemById)
                     }
+                    val feedbackRoute = when {
+                        destinationRoute == Routes.WouldYouRather -> Routes.WouldYouRather
+                        destinationRoute.startsWith("timed_session") && itemId != null -> "timed_session/$itemId"
+                        itemId != null -> "detail/$itemId"
+                        categoryId != null -> "category/$categoryId"
+                        else -> destinationRoute.ifBlank { Routes.Home }
+                    }
+                    FeedbackOverlay(
+                        context = context,
+                        screen = feedbackRoute,
+                        contentId = currentItem?.id,
+                        contentTitle = currentItem?.title,
+                    )
                 }
             }
         }
@@ -884,12 +883,18 @@ fun GameTypeListScreen(
 ) {
     DestinationScreen(title = ALL_GAMES_AND_ACTIVITIES_LABEL, navController = navController, showSearch = true) {
         Text(
-            "Level 1 games and activities are ordered from most familiar to less familiar.",
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            ALL_GAMES_AND_ACTIVITIES_LABEL,
+            modifier = Modifier.testTag("all-games-heading"),
+            style = MaterialTheme.typography.headlineMedium.copy(
+                fontFamily = FontFamily.Serif,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.sp,
+                fontFeatureSettings = "smcp",
+            ),
         )
-        SectionTitle("Level 1", "Recognizable games first; Mad Libs stays together as one collection.")
+        SectionTitle("Level 1")
         contentPack.allGamesLevelOneItems().groupedByFormat().forEach { (formatGroup, items) ->
-            if (formatGroup != null) SectionTitle(formatGroup.label, formatGroup.description)
+            if (formatGroup != null) SectionTitle(formatGroup.label)
             items.forEach { item ->
                 ContentCard(
                     item = item,
@@ -1031,7 +1036,20 @@ fun ContentCard(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(22.dp),
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("content-card-${item.id}")
+            .then(
+                if (levelOne) {
+                    Modifier.clickable(
+                        onClickLabel = item.title,
+                        role = Role.Button,
+                        onClick = { navController.openItem(item) },
+                    )
+                } else {
+                    Modifier
+                },
+            ),
     ) {
         CompactCardDetails(
             item = item,
@@ -1097,7 +1115,7 @@ private fun CompactCardPrimaryContent(
         ) {
             Text(
                 text = title,
-                modifier = Modifier.weight(1f).then(if (levelOne) Modifier.clickable(onClick = onOpen) else Modifier),
+                modifier = Modifier.weight(1f),
                 color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Start,
@@ -1214,37 +1232,19 @@ fun ActivityDetailScreen(
     onStartSession: (String) -> TimedSession? = { null },
     onOpenTimedSession: (TimedSession) -> Unit = {},
 ) {
-    if (shouldShowChildHandoffLock(item)) {
-        ChildHandoffLockContainer { isLocked ->
-            ActivityDetailSurface(
-                item = item,
-                itemId = itemId,
-                isFavorite = isFavorite,
-                onToggleFavorite = onToggleFavorite,
-                onMarkPlayed = onMarkPlayed,
-                settings = settings,
-                navController = navController,
-                isLocked = isLocked,
-                onSaveSessionOverride = onSaveSessionOverride,
-                onStartSession = onStartSession,
-                onOpenTimedSession = onOpenTimedSession,
-            )
-        }
-    } else {
-        ActivityDetailSurface(
-            item = item,
-            itemId = itemId,
-            isFavorite = isFavorite,
-            onToggleFavorite = onToggleFavorite,
-            onMarkPlayed = onMarkPlayed,
-            settings = settings,
-            navController = navController,
-            isLocked = false,
-            onSaveSessionOverride = onSaveSessionOverride,
-            onStartSession = onStartSession,
-            onOpenTimedSession = onOpenTimedSession,
-        )
-    }
+    ActivityDetailSurface(
+        item = item,
+        itemId = itemId,
+        isFavorite = isFavorite,
+        onToggleFavorite = onToggleFavorite,
+        onMarkPlayed = onMarkPlayed,
+        settings = settings,
+        navController = navController,
+        isLocked = false,
+        onSaveSessionOverride = onSaveSessionOverride,
+        onStartSession = onStartSession,
+        onOpenTimedSession = onOpenTimedSession,
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -1262,7 +1262,6 @@ private fun ActivityDetailSurface(
     onStartSession: (String) -> TimedSession?,
     onOpenTimedSession: (TimedSession) -> Unit,
 ) {
-    val context = LocalContext.current.applicationContext
     Box(modifier = Modifier.fillMaxSize()) {
         Scaffold(
             topBar = {
@@ -1292,6 +1291,7 @@ private fun ActivityDetailSurface(
                         SessionConfigurationControls(
                             itemId = item.id,
                             settings = settings,
+                            defaultDuration = sessionDefaultDuration(item),
                             enabled = !isLocked,
                             onSaveSessionOverride = onSaveSessionOverride,
                             onStartSession = { gameId ->
@@ -1310,14 +1310,6 @@ private fun ActivityDetailSurface(
                         Text("Parent note", fontWeight = FontWeight.Bold)
                         Text(item.parentNotes)
                     }
-                    if (item.safetyTags.isNotEmpty()) {
-                        Text(
-                            reviewedSafetyTagSummary(item),
-                            modifier = Modifier.testTag("safety-summary"),
-                            style = MaterialTheme.typography.bodySmall,
-                            fontWeight = FontWeight.Bold,
-                        )
-                    }
                     if (item.type == "mad_libs") {
                         MadLibPlayPanel(item, enabled = !isLocked)
                     }
@@ -1326,19 +1318,6 @@ private fun ActivityDetailSurface(
                 }
                 OutlinedButton(onClick = { navController.popBackStack() }, enabled = !isLocked) { Text("Back") }
             }
-        }
-        activityDetailFeedbackCapture(
-            feedbackEnabled = BuildConfig.FEEDBACK_ENABLED,
-            isLocked = isLocked,
-            itemId = itemId,
-            item = item,
-        )?.let { capture ->
-            FeedbackOverlay(
-                context = context,
-                screen = capture.screen,
-                contentId = capture.contentId,
-                contentTitle = capture.contentTitle,
-            )
         }
     }
 }
@@ -1349,13 +1328,7 @@ fun TimedSessionScreen(
     session: TimedSession,
     onExit: () -> Unit,
 ) {
-    if (shouldShowChildHandoffLock(item)) {
-        ChildHandoffLockContainer { isLocked ->
-            TimedSessionSurface(item, session, isLocked, onExit)
-        }
-    } else {
-        TimedSessionSurface(item, session, isLocked = false, onExit = onExit)
-    }
+    TimedSessionSurface(item, session, isLocked = false, onExit = onExit)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -1507,12 +1480,13 @@ private fun TimedSessionLoadError(onExit: () -> Unit) {
 fun SessionConfigurationControls(
     itemId: String,
     settings: AppSettings,
+    defaultDuration: ActivityDuration? = null,
     enabled: Boolean = true,
     onSaveSessionOverride: (String, SessionConfigurationOverride?) -> Unit,
     onStartSession: (String) -> Unit,
 ) {
     val currentOverride = settings.nextSessionOverrides[itemId]
-    val resolved = settings.resolveNextSessionConfiguration(itemId)
+    val resolved = settings.resolveNextSessionConfiguration(itemId, defaultDuration)
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -1538,20 +1512,37 @@ fun SessionConfigurationControls(
                 fontWeight = FontWeight.Bold,
             )
             Text("Session duration", fontWeight = FontWeight.Bold)
-            SessionChoiceStrip(
-                options = ActivityDuration.entries,
-                selected = resolved.duration,
-                testTagPrefix = "session-duration",
-                label = { it.label },
-                wireValue = { it.wireValue },
-                enabled = enabled,
-                onClick = { option ->
-                    onSaveSessionOverride(
-                        itemId,
-                        SessionConfigurationOverride(duration = option, rounds = currentOverride?.rounds),
-                    )
-                },
-            )
+            if (itemId == "backyard_micro_safari") {
+                VerticalDurationPicker(
+                    options = ActivityDuration.entries,
+                    selected = resolved.duration,
+                    testTagPrefix = "session-duration",
+                    label = { it.label },
+                    wireValue = { it.wireValue },
+                    enabled = enabled,
+                    onClick = { option ->
+                        onSaveSessionOverride(
+                            itemId,
+                            SessionConfigurationOverride(duration = option, rounds = currentOverride?.rounds),
+                        )
+                    },
+                )
+            } else {
+                SessionChoiceStrip(
+                    options = ActivityDuration.entries,
+                    selected = resolved.duration,
+                    testTagPrefix = "session-duration",
+                    label = { it.label },
+                    wireValue = { it.wireValue },
+                    enabled = enabled,
+                    onClick = { option ->
+                        onSaveSessionOverride(
+                            itemId,
+                            SessionConfigurationOverride(duration = option, rounds = currentOverride?.rounds),
+                        )
+                    },
+                )
+            }
             Text("Session rounds", fontWeight = FontWeight.Bold)
             SessionChoiceStrip(
                 options = SessionRounds.entries,
@@ -1587,6 +1578,38 @@ fun SessionConfigurationControls(
             ) {
                 Text("Start session")
             }
+        }
+    }
+}
+
+@Composable
+private fun <T> VerticalDurationPicker(
+    options: List<T>,
+    selected: T,
+    testTagPrefix: String,
+    label: (T) -> String,
+    wireValue: (T) -> String,
+    enabled: Boolean,
+    onClick: (T) -> Unit,
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(max = 220.dp)
+            .verticalScroll(rememberScrollState())
+            .testTag("$testTagPrefix-vertical"),
+        verticalArrangement = Arrangement.spacedBy(6.dp),
+    ) {
+        options.forEach { option ->
+            FilterChip(
+                selected = option == selected,
+                onClick = { onClick(option) },
+                enabled = enabled,
+                label = { Text(label(option)) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("$testTagPrefix-${wireValue(option)}"),
+            )
         }
     }
 }
@@ -1651,15 +1674,11 @@ fun SectionList(title: String, values: List<String>) {
             Icon(sectionIcon(title), contentDescription = title, tint = MaterialTheme.colorScheme.primary)
             Text(title, fontWeight = FontWeight.Bold)
         }
-        values.forEachIndexed { index, value ->
-            Row(
+        values.forEach { value ->
+            Text(
+                text = "• $value",
                 modifier = Modifier.fillMaxWidth().padding(start = 8.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalAlignment = Alignment.Top,
-            ) {
-                Text("${index + 1}", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                Text(value, modifier = Modifier.weight(1f))
-            }
+            )
         }
     }
 }
@@ -1715,7 +1734,7 @@ fun AboutAppScreen(navController: NavController) {
         Text("Version ${BuildConfig.VERSION_NAME}")
         Text("Release notes", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         KIDPLAY_RELEASE_CHANGELOG.forEach { release ->
-            Text("Version ${release.version}", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text("Version ${release.version} · ${release.releaseDate}", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             release.changes.forEach { change ->
                 Text("${change.itemId}: ${change.summary}")
             }
@@ -1730,8 +1749,8 @@ fun SafetyPrivacyScreen(contentPack: ContentPack, navController: NavController) 
         Text("KinPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.")
             Text("MVP privacy", fontWeight = FontWeight.Bold)
             Text("No accounts, analytics, ads, purchases, camera, microphone, contacts, location, or other sensitive Android permissions are requested.")
-            Text("Child handoff lock limits", fontWeight = FontWeight.Bold)
-            Text("The 3-second child handoff lock prevents accidental controls, Back, and exits inside KinPlay. It is not kiosk mode and cannot block Android system navigation, notifications, power controls, or another person leaving the app. KinPlay does not request device-owner, accessibility, or intrusive permissions.")
+            Text("Play controls", fontWeight = FontWeight.Bold)
+            Text("Controls remain available during play. Adults should supervise activities and use Android system navigation when needed.")
             Text("Content source", fontWeight = FontWeight.Bold)
             Text("The app ships seed content as a local JSON asset and does not need network access for the MVP flow.")
             Text("Reviewed content safety", fontWeight = FontWeight.Bold)
@@ -2045,7 +2064,6 @@ fun KinPlayItem.setupBurdenLabel(): String =
 
 fun KinPlayItem.setupPreviewLabel(maxCharacters: Int = 84): String {
     val prefix = "Setup: "
-    if (id == "quiet_color_hunt") return "Clues and suggestions: Choose one safe object everyone can see."
     val firstStep = displaySetupSteps().firstOrNull { it.isNotBlank() }?.trim() ?: return "${prefix}No setup needed"
     val availableCharacters = (maxCharacters - prefix.length).coerceAtLeast(1)
     if (firstStep.length <= availableCharacters) return prefix + firstStep
@@ -2085,8 +2103,7 @@ fun KinPlayItem.collapsedCardDescriptionAnnotated(): AnnotatedString {
 fun KinPlayItem.collapsedCardPreviewLines(): List<String> =
     listOf(collapsedCardDescriptionText())
 
-fun KinPlayItem.displaySetupSteps(): List<String> =
-    if (id == "quiet_color_hunt") listOf("Choose one safe object everyone can see.") else setupSteps
+fun KinPlayItem.displaySetupSteps(): List<String> = setupSteps
 
 fun KinPlayItem.isMadLibsCollection(): Boolean = id == MAD_LIBS_COLLECTION_ID
 
@@ -2140,17 +2157,24 @@ fun reviewedSafetyTagSummary(item: KinPlayItem): String =
     "Safety tags: ${item.safetyTags.joinToString { it.displayTagLabel() }}"
 
 fun KinPlayItem.detailSections(): List<DetailSection> = buildList {
+    add(DetailSection("Players", listOf(participantFitLabel() ?: "Parent-led play")))
     if (materials.isNotEmpty()) add(DetailSection("Materials", listOf(materials.joinToString())))
     if (displaySetupSteps().isNotEmpty()) add(DetailSection("Setup", displaySetupSteps()))
     if (id == "quiet_color_hunt") {
-        if (playSteps.isNotEmpty()) add(DetailSection("Clues and suggestions", playSteps))
+        if (playSteps.isNotEmpty()) {
+            val stepBoundary = minOf(2, playSteps.size)
+            add(DetailSection("Steps", playSteps.take(stepBoundary)))
+            if (playSteps.size > stepBoundary) {
+                add(DetailSection("Clues and suggestions", playSteps.drop(stepBoundary)))
+            }
+        }
     } else if (playSteps.isNotEmpty()) {
         add(DetailSection("Steps", playSteps))
     }
     if (promptText.isNotBlank()) add(DetailSection("Prompt", listOf(promptText)))
     if (followUps.isNotEmpty()) add(DetailSection("Follow-up questions", followUps))
     if (readAloudNote.isNotBlank()) add(DetailSection("Read-aloud note", listOf(readAloudNote)))
-    if (variations.isNotEmpty()) add(DetailSection("Replay variations", variations))
+    if (variations.isNotEmpty()) add(DetailSection("Variations", variations))
 }
 
 fun List<String>.withRecentFirst(id: String, limit: Int = 10): List<String> =

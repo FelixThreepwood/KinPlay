@@ -310,7 +310,7 @@
         "sibling_friendly"
       ],
       "setupSteps": [
-        "Choose one safe object everyone can see; use the ready-made clues below."
+        "Choose one adult-approved object everyone can see; use the ready-made clues below."
       ],
       "playSteps": [
         "The adult starts: “I spy with my little eye something blue.”",
@@ -996,7 +996,7 @@
     {
       "id": "shape_detective",
       "type": "activity",
-      "status": "active",
+      "status": "retired",
       "childHandoffLockEligible": false,
       "title": "Shape Detective",
       "summary": "Search the room for circles, squares, and triangles.",
@@ -1141,7 +1141,7 @@
       "status": "active",
       "childHandoffLockEligible": false,
       "title": "Rainbow Sort Sprint",
-      "summary": "Sort safe toys or blocks by color in a short timed challenge.",
+      "summary": "Sort adult-approved toys or blocks by color in a short timed challenge.",
       "modes": [
         "pick_a_game"
       ],
@@ -1154,7 +1154,7 @@
       "durationMinutes": 10,
       "energyLevel": "medium",
       "materials": [
-        "safe toys or blocks"
+        "adult-approved toys or blocks"
       ],
       "safetyTags": [
         "parent_supervision",
@@ -1470,7 +1470,7 @@
       "status": "active",
       "childHandoffLockEligible": false,
       "title": "Backyard Micro Safari",
-      "summary": "Look for tiny outdoor details with parent supervision.",
+      "summary": "Choose an adult-approved outdoor object for a three-minute search, then explain what you find with parent supervision.",
       "modes": [
         "pick_a_game"
       ],
@@ -1480,7 +1480,7 @@
       ],
       "minAge": 4,
       "maxAge": 8,
-      "durationMinutes": 15,
+      "durationMinutes": 3,
       "energyLevel": "low",
       "materials": [],
       "safetyTags": [
@@ -1489,14 +1489,14 @@
         "sibling_friendly"
       ],
       "setupSteps": [
-        "Choose a safe yard, porch, or window view."
+        "Adult review: choose an approved object and boundary before play."
       ],
       "playSteps": [
-        "Find one leaf, one shadow, and one tiny movement.",
-        "Describe each discovery.",
-        "Leave plants and bugs undisturbed."
+        "Search for the selected object for three minutes.",
+        "Take a turn to explain what you find.",
+        "Use parent prompts, stay within the boundary, and leave plants and bugs undisturbed."
       ],
-      "parentNotes": "Hands-off observing only unless parent approves.",
+      "parentNotes": "Adult review is required for object examples and the final activity rules.",
       "variations": [
         "Do it from a window.",
         "Draw the best discovery afterward."
