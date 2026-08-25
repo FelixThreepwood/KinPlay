@@ -85,7 +85,6 @@ class SafetyWarningPresentationTest {
             .performScrollTo()
             .assertIsDisplayed()
         compose.onNodeWithText("Safety tags: Parent supervision, Movement, Sibling friendly")
-            .performScrollTo()
-            .assertIsDisplayed()
+            .assertDoesNotExist()
     }
 }

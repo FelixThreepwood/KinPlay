@@ -2,7 +2,9 @@ package com.kinplay.app
 
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.semantics.SemanticsActions
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextContains
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -10,11 +12,12 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
-import androidx.compose.ui.test.performSemanticsAction
 import androidx.compose.ui.test.performTextInput
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.rememberNavController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.kinplay.app.feedback.FeedbackStore
+import com.kinplay.app.feedback.FeedbackOverlay
 import com.kinplay.app.settings.AppColorTheme
 import com.kinplay.app.settings.AppSettings
 import com.kinplay.app.ui.KinPlayTheme
@@ -44,16 +47,25 @@ class ActivityDetailFeedbackTest {
 
     @Composable
     private fun DetailUnderTest() {
+        val context = LocalContext.current.applicationContext
         KinPlayTheme(AppColorTheme.FOREST) {
-            ActivityDetailScreen(
-                item = item,
-                itemId = item.id,
-                isFavorite = false,
-                onToggleFavorite = {},
-                onMarkPlayed = {},
-                settings = AppSettings.DEFAULT,
-                navController = rememberNavController(),
-            )
+            Box(Modifier.fillMaxSize()) {
+                ActivityDetailScreen(
+                    item = item,
+                    itemId = item.id,
+                    isFavorite = false,
+                    onToggleFavorite = {},
+                    onMarkPlayed = {},
+                    settings = AppSettings.DEFAULT,
+                    navController = rememberNavController(),
+                )
+                FeedbackOverlay(
+                    context = context,
+                    screen = "detail/${item.id}",
+                    contentId = item.id,
+                    contentTitle = item.title,
+                )
+            }
         }
     }
 
@@ -79,23 +91,9 @@ class ActivityDetailFeedbackTest {
     }
 
     @Test
-    fun detailFeedbackDisappearsOnlyWhileLockIsActiveAndReturnsAfterAccessibleUnlock() {
+    fun detailFeedbackIsHostProvidedAndDetailDoesNotOwnTheRemovedLock() {
         compose.setContent { DetailUnderTest() }
-        compose.mainClock.autoAdvance = false
         compose.onNodeWithTag("feedback-control").assertIsDisplayed()
-
-        compose.onNodeWithTag("child-lock-control")
-            .performSemanticsAction(SemanticsActions.OnClick)
-        compose.mainClock.advanceTimeByFrame()
-        compose.mainClock.advanceTimeBy(3_100)
-        compose.onNodeWithTag("child-lock-blocker").assertIsDisplayed()
-        compose.onNodeWithTag("feedback-control").assertDoesNotExist()
-
-        compose.onNodeWithTag("child-lock-control")
-            .performSemanticsAction(SemanticsActions.OnClick)
-        compose.mainClock.advanceTimeByFrame()
-        compose.mainClock.advanceTimeBy(3_100)
-        compose.onNodeWithTag("child-lock-blocker").assertDoesNotExist()
-        compose.onNodeWithTag("feedback-control").assertIsDisplayed()
+        compose.onNodeWithTag("child-lock-control").assertDoesNotExist()
     }
 }
