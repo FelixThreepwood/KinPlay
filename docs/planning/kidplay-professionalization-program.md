@@ -39,6 +39,9 @@ The board, not scattered chat lists, is the source of truth for task order, owne
 - Published APK names contain app name, version, and optional date only; forbidden descriptors remain excluded.
 - Only one current APK per app remains in Google Drive and the shared APK drop; superseded artifacts are removed after read-back verification.
 - Physical-device feel, touch, orientation, TalkBack, and animation acceptance remains an owner gate when no suitable device is attached to Hogwarts.
+- Duolingo-derived interaction discipline is a protected redesign requirement: one clear task at a time, one obvious primary action, immediate specific feedback, safe correction and recovery, controlled pacing, explicit completion/next-step behavior, and resilience to rapid or repeated input.
+- The KidPlay fox is the functional guide character. Across appropriate flows, the fox introduces activities, demonstrates rules, acknowledges choices, celebrates completion, and gently redirects mistakes. Every appearance must serve a clear interaction or comprehension purpose rather than consume space decoratively.
+- Fox guidance and audio remain offline, optional, parent-appropriate, accessible without sound, compatible with mute and reduced-motion settings, and free of manipulative engagement mechanics.
 
 ## 4. Operating model
 
@@ -109,8 +112,10 @@ A card is done only when:
 ### G3 — Design system validated
 
 - `DESIGN.md` defines color, typography, spacing, shape, iconography, illustration, motion, navigation, state, responsive, and accessibility rules.
+- `DESIGN.md` defines the fox guide’s role, expression/state vocabulary, visual placement, animation, offline audio/caption behavior, interruption rules, repetition limits, accessibility alternatives, and parent controls.
+- The interaction system specifies prompt, selection, correct, incorrect, retry, transition, completion, and next-step states, including rapid-tap and duplicate-navigation protection.
 - Token contrast and semantic roles validated.
-- Dev Lab gallery covers real content, long labels, large text, narrow/wide layouts, reduced motion, empty/loading/error/success/completion states.
+- Dev Lab gallery covers real content, long labels, large text, narrow/wide layouts, reduced motion, empty/loading/error/success/completion states, and fox-guided introduction/demonstration/acknowledgment/celebration/redirection states.
 - Owner accepts the component language on a physical device.
 
 ### G4 — Vertical slice accepted
@@ -118,6 +123,7 @@ A card is done only when:
 - Complete core loop is functional in production code.
 - Automated tests, screenshot review, accessibility checks, and physical-device review pass.
 - Completion/next-step behavior is clear.
+- The fox guide is exercised across introduction, demonstration, acknowledgment, correction, completion, and next-step moments without obscuring content or blocking progress when audio or motion is disabled.
 - No regression to privacy/offline behavior.
 
 ### G5 — Full product migration accepted
@@ -195,6 +201,8 @@ Define:
 - navigation and back behavior;
 - empty, loading, error, success, completion, and next-step states;
 - motion duration/easing, sound policy, haptics policy, and reduced motion;
+- fox-guide behavior: introduction, demonstration, acknowledgment, celebration, gentle correction, placement, expression states, animation, offline audio, captions, replay, mute, repetition limits, interruption priority, and fallback behavior;
+- interaction discipline: one clear task, one obvious primary action, immediate specific feedback, correction without lost progress, controlled transition pacing, explicit completion, and safe next-step choices;
 - 48 dp minimum touch targets unless a stronger requirement applies;
 - contrast, large-text, screen-reader, focus-order, narrow-screen, tablet, foldable, and landscape behavior.
 
@@ -209,6 +217,7 @@ Create and exercise:
 - timer/session controls;
 - completion and next-step states;
 - empty/loading/error/success states;
+- fox-guide state gallery covering introduction, demonstration, acknowledgment, celebration, incorrect/incomplete redirection, muted audio, captions, reduced motion, replay, interruption, and repeated-tap stress;
 - parent/settings surfaces;
 - long-label and large-font cases;
 - 320 dp, typical phone, and expanded-width layouts;
@@ -226,7 +235,7 @@ Test the core loop through high-value entry moments:
 - We want movement.
 - We want almost no preparation.
 
-The selected slice must expose setup/material burden before play, provide complete instructions, support completion, and offer a clear next action.
+The selected slice must expose setup/material burden before play, provide complete instructions, support completion, and offer a clear next action. It must also exercise the fox as a functional guide during introduction, rule demonstration, choice acknowledgment, completion celebration, and gentle mistake redirection, while preserving an equally understandable muted/reduced-motion path.
 
 ### F. Architecture and engineering quality
 
@@ -235,6 +244,8 @@ The selected slice must expose setup/material burden before play, provide comple
 - Add previews and tests around each reusable component.
 - Maintain deterministic bundled-content validation.
 - Test back navigation, process recreation where practical, rotation, narrow/wide windows, font scaling, dark/low-light mode if present, and reduced motion.
+- Model interaction as explicit prompt, input-ready, selected, evaluating, correct, incorrect, retry, transitioning, completed, and next-step states. Reject duplicate submissions/navigation during transitions and verify recovery under rapid or repeated taps.
+- Keep bundled guide audio lifecycle-safe across navigation, backgrounding, interruption, process recreation where practical, mute, and replay. Essential instructions and feedback must never depend on audio alone.
 - Establish screenshot/golden strategy where stable and maintainable.
 - Track startup, interaction responsiveness, memory, APK size, and regressions.
 - Keep manifests and dependency/SDK inventory free of unapproved permissions or telemetry.
@@ -312,5 +323,5 @@ This request is a human gate, not a blocker for current code audit, official-sou
 - Dev Lab and verification: `docs/testing/`
 - Feedback: `docs/testing/feedback/`
 - Launch: `docs/launch/`
-- Build artifacts: `/mnt/cyberforgex-torrents/KinPlay/apk-drops`
+- Build artifacts: `/mnt/cyberforgex-ai/KinPlay/apk-drops`
 - Canonical status/dependencies: Hermes Kanban board `kinplay`
