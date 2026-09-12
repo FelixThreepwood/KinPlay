@@ -24,10 +24,10 @@ class BatchF20AcceptanceTest {
     @Test
     fun releaseTargetAndVersionedDatedChangelogAreReady() {
         val build = readText(root.resolve("app/build.gradle.kts"))
-        assertTrue(build.contains("val appVersionName = \"0.7.3\""))
-        assertTrue(build.contains("versionCode = 16"))
-        assertEquals("0.7.3", KIDPLAY_RELEASE_CHANGELOG.first().version)
-        assertEquals("2026-08-23", KIDPLAY_RELEASE_CHANGELOG.first().releaseDate)
+        assertTrue(build.contains("val appVersionName = \"0.7.4\""))
+        assertTrue(build.contains("versionCode = 17"))
+        assertEquals("0.7.4", KIDPLAY_RELEASE_CHANGELOG.first().version)
+        assertEquals("2026-09-12", KIDPLAY_RELEASE_CHANGELOG.first().releaseDate)
         assertTrue(KIDPLAY_RELEASE_CHANGELOG.all { it.releaseDate.matches(Regex("\\d{4}-\\d{2}-\\d{2}")) })
         KIDPLAY_RELEASE_CHANGELOG.flatMap { it.changes }.forEach { change ->
             val wordCount = change.summary.trim().split(Regex("\\s+")).size

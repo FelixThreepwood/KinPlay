@@ -13,6 +13,13 @@ data class ReleaseVersion(
 
 val KIDPLAY_RELEASE_CHANGELOG = listOf(
     ReleaseVersion(
+        version = "0.7.4",
+        releaseDate = "2026-09-12",
+        changes = listOf(
+            ReleaseChange("KP-PRO-037", "Integrated branding, music, and audit remediation"),
+        ),
+    ),
+    ReleaseVersion(
         version = "0.7.3",
         releaseDate = "2026-08-23",
         changes = listOf(
