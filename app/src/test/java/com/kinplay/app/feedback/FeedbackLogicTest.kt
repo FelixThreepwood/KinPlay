@@ -116,14 +116,14 @@ class FeedbackLogicTest {
     @Test
     fun subjectIdentifiesTheBuildAndBatch() {
         assertEquals(
-            "[KinPlay Beta][Feedback Batch][0.3.0-beta1+3][KP-BATCH-001]",
+            "[KidPlay Beta][Feedback Batch][0.3.0-beta1+3][KP-BATCH-001]",
             FeedbackEmailFormatter.subject("0.3.0-beta1", 3, "KP-BATCH-001"),
         )
     }
 
     @Test
     fun opaqueMailtoUriKeepsRecipientAndEncodedFields() {
-        val subject = "KinPlay feedback + beta"
+        val subject = "KidPlay feedback + beta"
         val body = "Line one\nLine two & more"
         val uri = buildFeedbackMailtoUriString(FEEDBACK_RECIPIENT, subject, body)
         val encodedSubject = uri.substringAfter("?subject=").substringBefore("&body=")

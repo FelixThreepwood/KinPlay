@@ -33,7 +33,7 @@ class HomeCopyReductionTest {
     @Test
     fun compactHomeRetainsIdentityPurposeCategoriesActionsAndB6ShortcutScope() {
         listOf(
-            "Text(\"KinPlay\"",
+            "Text(\"KidPlay\"",
             "HOME_DESCRIPTOR,",
             "QuickCategoryGrid",
             "HOME_SHORTCUTS",
@@ -59,7 +59,7 @@ class HomeCopyReductionTest {
             "item.detailSections().forEach",
             "Text(item.parentNotes)",
             "Safety tags: ${'$'}{item.safetyTags.joinToString { it.displayTagLabel() }}",
-            "KinPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.",
+            "KidPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.",
             "No accounts, analytics, ads, purchases, camera, microphone, contacts, location, or other sensitive Android permissions are requested.",
         ).forEach { protectedCopy ->
             assertTrue("Protected or functional copy changed: $protectedCopy", mainSource.contains(protectedCopy))

@@ -368,7 +368,7 @@ object FeedbackEmailFormatter {
     private val timestampFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss z")
 
     fun subject(versionName: String, versionCode: Int, batchId: String): String =
-        "[KinPlay Beta][Feedback Batch][$versionName+$versionCode][$batchId]"
+        "[KidPlay Beta][Feedback Batch][$versionName+$versionCode][$batchId]"
 
     fun formatBatch(
         notes: List<FeedbackNote>,
@@ -382,7 +382,7 @@ object FeedbackEmailFormatter {
         appendLine("- Intake and triage only; do not change application code automatically.")
         appendLine("- Strip child-identifying information before writing project records.")
         appendLine("- Merge duplicates and preserve occurrence counts.")
-        appendLine("- Acknowledge intake in the KinPlay app-development Discord channel.")
+        appendLine("- Acknowledge intake in the KidPlay app-development Discord channel.")
         appendLine()
         appendLine("Batch ID: $batchId")
         appendLine("Package: ${context.packageName}")

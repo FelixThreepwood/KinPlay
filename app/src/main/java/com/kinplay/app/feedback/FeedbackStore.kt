@@ -192,5 +192,5 @@ fun copyFeedbackBatch(context: Context, notes: List<FeedbackNote>, batchId: Stri
         batchId,
     )
     val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-    clipboard.setPrimaryClip(ClipData.newPlainText("KinPlay feedback", body))
+    clipboard.setPrimaryClip(ClipData.newPlainText("KidPlay feedback", body))
 }

@@ -58,7 +58,7 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private const val LOCK_ACTIVE_SEMANTICS = "Child handoff lock active. KinPlay controls are blocked. Android system controls remain available."
+private const val LOCK_ACTIVE_SEMANTICS = "Child handoff lock active. KidPlay controls are blocked. Android system controls remain available."
 private const val LOCK_ACTIVE_BODY = "In-app controls and Back are blocked. Android system controls are still available."
 private const val LOCKED_CONTROL_TEXT = "LOCKED • Hold 3s to unlock"
 private const val UNLOCKED_CONTROL_TEXT = "Hold 3s for child handoff"

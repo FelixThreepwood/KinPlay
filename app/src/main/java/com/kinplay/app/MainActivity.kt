@@ -447,7 +447,7 @@ fun HomeScreen(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.spacedBy(10.dp),
                         ) {
-                            Text("KinPlay", fontSize = titleFontSize, fontWeight = FontWeight.Bold)
+                            Text("KidPlay", fontSize = titleFontSize, fontWeight = FontWeight.Bold)
                             Text(
                                 HOME_DESCRIPTOR,
                                 modifier = Modifier.weight(1f),
@@ -722,7 +722,7 @@ fun HeroPanel(contentPack: ContentPack) {
         modifier = Modifier.fillMaxWidth(),
     ) {
         Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            Text("KinPlay", style = MaterialTheme.typography.headlineLarge, color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold)
+            Text("KidPlay", style = MaterialTheme.typography.headlineLarge, color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold)
             Text(
                 "Professional, offline-first family play for parent-led moments: quick games and activities, calm resets, creative prompts, and read-aloud silliness.",
                 color = MaterialTheme.colorScheme.onPrimary,
@@ -1746,7 +1746,7 @@ fun AboutAppScreen(navController: NavController) {
 fun SafetyPrivacyScreen(contentPack: ContentPack, navController: NavController) {
     DestinationScreen(title = "Safety and privacy", navController = navController) {
         Text("Parent-led by design", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-        Text("KinPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.")
+        Text("KidPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.")
             Text("MVP privacy", fontWeight = FontWeight.Bold)
             Text("No accounts, analytics, ads, purchases, camera, microphone, contacts, location, or other sensitive Android permissions are requested.")
             Text("Play controls", fontWeight = FontWeight.Bold)
@@ -1849,7 +1849,7 @@ data class ContentPack(
         fun fromJson(root: JSONObject): ContentPack {
             val array = root.getJSONArray("items")
             return ContentPack(
-                title = root.optString("title", "KinPlay Seed Pack"),
+                title = root.optString("title", "KidPlay Seed Pack"),
                 items = List(array.length()) { index -> KinPlayItem.fromJson(array.getJSONObject(index)) },
             )
         }

@@ -42,7 +42,7 @@ class HomeCompactnessTest {
     fun compactPhoneShowsIdentityOneLinePurposeAndAllSixCategoriesWithoutAnInstructionGap() {
         setHome(width = 320, height = 640)
 
-        val identity = compose.onNodeWithText("KinPlay", useUnmergedTree = true).assertIsDisplayed()
+        val identity = compose.onNodeWithText("KidPlay", useUnmergedTree = true).assertIsDisplayed()
         val descriptor = assertDescriptorIsSingleLineAndFits()
 
         val identityBounds = identity.fetchSemanticsNode().boundsInRoot

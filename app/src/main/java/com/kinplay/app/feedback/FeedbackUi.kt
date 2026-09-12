@@ -545,7 +545,7 @@ fun FeedbackOverlay(
                         }
                     }
                 }
-                OutlinedButton(onClick = ::dismissSheet, modifier = Modifier.fillMaxWidth()) { Text("Return to KinPlay") }
+                OutlinedButton(onClick = ::dismissSheet, modifier = Modifier.fillMaxWidth()) { Text("Return to KidPlay") }
             }
         }
     }
