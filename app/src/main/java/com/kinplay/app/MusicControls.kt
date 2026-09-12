@@ -39,10 +39,14 @@ fun BundledMusicControls(itemId: String, enabled: Boolean) {
     val context = LocalContext.current
     var selectedTrackId by rememberSaveable(itemId) { mutableStateOf(KINPLAY_MUSIC_TRACKS.first().id) }
     var automaticPlayback by rememberSaveable(itemId) { mutableStateOf(false) }
-    var isPlaying by rememberSaveable(itemId) { mutableStateOf(false) }
+    var isPlaying by remember(itemId) { mutableStateOf(false) }
     var menuExpanded by remember { mutableStateOf(false) }
     var player by remember(itemId) { mutableStateOf<MediaPlayer?>(null) }
     val selectedTrack = KINPLAY_MUSIC_TRACKS.first { it.id == selectedTrackId }
+    val audioAttributes = AudioAttributes.Builder()
+        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+        .setUsage(AudioAttributes.USAGE_MEDIA)
+        .build()
 
     fun releasePlayer() {
         player?.runCatching { stop() }
@@ -53,13 +57,7 @@ fun BundledMusicControls(itemId: String, enabled: Boolean) {
 
     fun startSelectedTrack() {
         releasePlayer()
-        player = MediaPlayer.create(context, selectedTrack.resourceId)?.apply {
-            setAudioAttributes(
-                AudioAttributes.Builder()
-                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                    .setUsage(AudioAttributes.USAGE_MEDIA)
-                    .build(),
-            )
+        player = MediaPlayer.create(context, selectedTrack.resourceId, audioAttributes, 0)?.apply {
             isLooping = automaticPlayback
             setOnCompletionListener { isPlaying = false }
             start()
