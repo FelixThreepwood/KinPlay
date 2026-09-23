@@ -1,0 +1,122 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#2e6b57",
+        "primary-strong": "#1f5a45",
+        "secondary": "#375b63",
+        "tertiary": "#a64535",
+        "neutral": "#f8f5ee",
+        "background": "#f8f5ee",
+        "surface": "#fffcf8",
+        "surface-raised": "#ffffff",
+        "ink": "#1c2b2a",
+        "ink-muted": "#45534f",
+        "on-primary": "#ffffff",
+        "on-secondary": "#ffffff",
+        "on-tertiary": "#ffffff",
+        "on-error": "#ffffff",
+        "primary-container": "#dcefe3",
+        "on-primary-container": "#153c2c",
+        "sky": "#8fb8c2",
+        "sky-strong": "#375b63",
+        "coral": "#d96b55",
+        "coral-container": "#f7ddd6",
+        "sun": "#e7b94c",
+        "sun-ink": "#3d2b00",
+        "error": "#b3261e",
+        "warning": "#7a5000",
+        "warning-container": "#fff0c2",
+        "info": "#285d75",
+        "info-container": "#dcecf2",
+        "on-info-container": "#163c4a",
+        "border": "#6b7b74"
+      },
+      "fontFamily": {
+        "display": [
+          "Android system sans"
+        ],
+        "headline": [
+          "Android system sans"
+        ],
+        "title": [
+          "Android system sans"
+        ],
+        "body": [
+          "Android system sans"
+        ],
+        "body-emphasis": [
+          "Android system sans"
+        ],
+        "label": [
+          "Android system sans"
+        ],
+        "metadata": [
+          "Android system sans"
+        ]
+      },
+      "fontSize": {
+        "display": [
+          "2rem",
+          {
+            "fontWeight": "700"
+          }
+        ],
+        "headline": [
+          "1.5rem",
+          {
+            "fontWeight": "700"
+          }
+        ],
+        "title": [
+          "1.25rem",
+          {
+            "fontWeight": "700"
+          }
+        ],
+        "body": [
+          "1rem",
+          {
+            "fontWeight": "400"
+          }
+        ],
+        "body-emphasis": [
+          "1rem",
+          {
+            "fontWeight": "600"
+          }
+        ],
+        "label": [
+          "0.875rem",
+          {
+            "fontWeight": "600"
+          }
+        ],
+        "metadata": [
+          "0.875rem",
+          {
+            "fontWeight": "500"
+          }
+        ]
+      },
+      "borderRadius": {
+        "xs": "8px",
+        "sm": "12px",
+        "md": "16px",
+        "lg": "20px",
+        "xl": "28px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "12px",
+        "lg": "16px",
+        "xl": "24px",
+        "2xl": "32px",
+        "3xl": "48px",
+        "4xl": "64px"
+      }
+    }
+  }
+}
