@@ -4,7 +4,7 @@
 
 This policy applies to the canonical local drop and the live Google Drive `apk-drops` folder used for private Android validation:
 
-- Local: `/mnt/cyberforgex-torrents/KinPlay/apk-drops`
+- Local: `/mnt/cyberforgex-ai/App Dev/KinPlay/apk-drops`
 - Drive: the live folder discovered by name before each publication; the current folder is `apk-drops`.
 - Archive: `_archived-apk-drops` under each drop root.
 
@@ -35,10 +35,10 @@ Before every local or Drive publication:
 2. Run the local validator. It must pass before copying or uploading:
 
    ```bash
-   ANDROID_HOME=/home/phantomatic/Android/Sdk \
-   ANDROID_SDK_ROOT=/home/phantomatic/Android/Sdk \
+   ANDROID_HOME=/home/tigger/Android/Sdk \
+   ANDROID_SDK_ROOT=/home/tigger/Android/Sdk \
    python3 scripts/validate-apk-drop.py \
-     --local /mnt/cyberforgex-torrents/KinPlay/apk-drops
+     --local "/mnt/cyberforgex-ai/App Dev/KinPlay/apk-drops"
    ```
 
    For a new release, validate the staged temporary copy with the same manifest/version checks before replacing the active name.

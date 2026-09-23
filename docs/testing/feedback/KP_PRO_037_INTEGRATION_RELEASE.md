@@ -55,10 +55,37 @@ Destination: `/mnt/cyberforgex-ai/App Dev/KinPlay/apk-drops`
 
 Connected instrumentation was attempted with `:app:connectedDebugAndroidTest`. The configured AVD was not package-manager-ready: Gradle started `0` tests and failed installation with `cmd: Can't find service: package`. The audit health bundle is `build/android-audit/kp-pro-037-current/result.json`; it records `status: not-boot-complete`, no `/dev/kvm`, and `hogwarts-android-emulator.service` inactive, dead, and disabled. No physical-device validation was performed; those checks remain reserved for LJ.
 
-## External holds
+## 2026-09-23 reconciliation
 
-- Independent reviewer: two read-only reviewer attempts timed out after 420 seconds without a JSON verdict. No independent approval is claimed; this remains a review hold.
+The source release and APK remain unchanged. This reconciliation updates only release/policy evidence; it does not edit app code, change either app version, rebuild an APK, or alter Drive objects.
+
+### Policy and local artifact
+
+- The pinned local root is `/mnt/cyberforgex-ai/App Dev/KinPlay/apk-drops`, confirmed present. `docs/launch/apk-drop-policy.json` and this policy's reproduction command now name the same path; the command quotes the path because it contains spaces.
+- The active KidPlay artifact observed locally remains `20260912_KidPlay_v0.7.4.apk`, 25,535,866 bytes, SHA-256 `a5171e637316e56ad3e8e9304764f899716a63bd9673396d9c753da674c7870c`; its checksum sidecar matches. Local inventory also contains the registered `20260823_DevLab_v0.2.3.apk` and its sidecar.
+- Reproducible local command: `ANDROID_HOME=/home/tigger/Android/Sdk ANDROID_SDK_ROOT=/home/tigger/Android/Sdk python3 scripts/validate-apk-drop.py --local "/mnt/cyberforgex-ai/App Dev/KinPlay/apk-drops"`. Result: passed, errors `[]`; the observed inventory contains exactly the two policy-registered APKs with matching package/version metadata and valid sidecars.
+- `python3 -m unittest discover -s scripts -p 'test_*.py' -v`: 13 passed. `python3 -m json.tool docs/launch/apk-drop-policy.json` and `git diff --check`: passed.
+- The APK is Android Debug-signed (APK Signature Scheme v2), not production-signed. No public-release claim is made.
+
+### Humanizer review of changed customer copy
+
+- Dedicated review session: `harry_potter`, model `gpt-5.6-sol`, provider `openai-codex`, medium reasoning; session `20260923_103016_9db612`. The session stores the complete itemized response. The CLI returned that response, then exited with status 134; the stored session was read back and confirmed.
+- The review marked these values KEEP: `KidPlay`; `KidPlay Seed Pack v1`; `[KidPlay Beta][Feedback Batch][$versionName+$versionCode][$batchId]`; `KidPlay feedback`; `Return to KidPlay`; and `Child handoff lock active. KidPlay controls are blocked. Android system controls remain available.`
+- It recommended these alternatives: `KidPlay helps adults guide short play sessions with children. Review the activity, clear the space, and supervise any movement or materials.`; `Confirm receipt in the KidPlay app-development Discord channel.`; and `Integrated branding, music, and audit fixes` (six words).
+- No shipped wording was changed in this reconciliation. The current v0.7.4 APK remains byte-identical to the recorded artifact; applying copy revisions requires a separately versioned build and publication. The review recommendations are recorded, not represented as applied or approved for this APK.
+
+### GitHub and Google Drive evidence
+
+- On 2026-09-23, live `git ls-remote origin refs/heads/main` returned `3a61329fb4325bd50a2ce4392ab2a87ff79f14e1`, matching the clean worktree base used for this documentation-only update. The final push/read-back revision is recorded in the execution record for Kanban task `t_139c8fd1`.
+- The current task handoff reports the private Drive `apk-drops` inventory as `KidPlay-0.7.4.apk` and `DevLab-0.3.0.apk`; prior current objects were moved reversibly to `_archived-apk-drops`.
+- KidPlay Drive object: ID `1A_YR6ywb7hUBZtUBZcvLT3Z4cnYEsCqN`, name `KidPlay-0.7.4.apk`, 25,535,866 bytes, SHA-256 `a5171e637316e56ad3e8e9304764f899716a63bd9673396d9c753da674c7870c`. The handoff reports a downloaded byte-read-back match. The size also matches the local artifact verified above.
+- The handoff did not provide the DevLab object ID, size, or SHA-256. This profile's Google Workspace check returned `NOT_AUTHENTICATED`, so those fields were not fetched and are not claimed here. No Drive objects were modified in this reconciliation.
+- The independent read-only review is recorded in Kanban task `t_5a362e1c`: it found no critical security or production-application logic defect, while retaining runtime/device and release-boundary holds.
+
+## Historical external state at initial publication (2026-09-12)
+
+- Independent reviewer: the first two read-only attempts timed out after 420 seconds without a JSON verdict. A later read-only review completed with a HOLD in Kanban task `t_5a362e1c`; no independent approval is claimed.
 - GitHub: `origin/main` remains `45a5cadc6b69cc29bc5f1326ac760b75cf3e89e1`; the local integration commit is not pushed because owner-authenticated GitHub access is blocked by `t_b323a45f`.
 - Google Drive: publication was not attempted because the active profile's Google Workspace check returned `NOT_AUTHENTICATED` for its profile-local token. No remote object was changed, and no Drive checksum or one-current inventory claim is made.
 
-This record intentionally separates the verified local build/drop from the unavailable independent review, GitHub push, Drive publication, connected runtime, and physical-device gates.
+The statements in this historical section describe the initial publication state only. The 2026-09-23 reconciliation above supersedes the review, GitHub, and KidPlay Drive facts where stated. Connected instrumentation, physical-device validation, production signing, and public-release readiness remain unresolved.
