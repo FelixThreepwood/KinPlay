@@ -383,22 +383,17 @@ fun KinPlayApp() {
                     val itemId = backStackEntry?.arguments?.getString("itemId")
                         ?: backStackEntry?.arguments?.getString("gameId")
                     val categoryId = backStackEntry?.arguments?.getString("categoryId")
-                    val currentItem = when {
-                        destinationRoute == Routes.WouldYouRather -> contentPack.activeItemById(WOULD_YOU_RATHER_ITEM_ID)
-                        else -> itemId?.let(contentPack::activeItemById)
-                    }
-                    val feedbackRoute = when {
-                        destinationRoute == Routes.WouldYouRather -> Routes.WouldYouRather
-                        destinationRoute.startsWith("timed_session") && itemId != null -> "timed_session/$itemId"
-                        itemId != null -> "detail/$itemId"
-                        categoryId != null -> "category/$categoryId"
-                        else -> destinationRoute.ifBlank { Routes.Home }
-                    }
+                    val feedbackContext = resolveFeedbackCaptureContext(
+                        destinationRoute = destinationRoute,
+                        itemId = itemId,
+                        categoryId = categoryId,
+                        contentPack = contentPack,
+                    )
                     FeedbackOverlay(
                         context = context,
-                        screen = feedbackRoute,
-                        contentId = currentItem?.id,
-                        contentTitle = currentItem?.title,
+                        screen = feedbackContext.screen,
+                        contentId = feedbackContext.contentId,
+                        contentTitle = feedbackContext.contentTitle,
                     )
                 }
             }
@@ -1215,6 +1210,30 @@ fun activityDetailFeedbackCapture(
         screen = "detail/$resolvedItemId",
         contentId = resolvedItemId.ifBlank { null },
         contentTitle = item?.title,
+    )
+}
+
+internal fun resolveFeedbackCaptureContext(
+    destinationRoute: String,
+    itemId: String?,
+    categoryId: String?,
+    contentPack: ContentPack,
+): FeedbackCaptureContext {
+    val currentItem = when {
+        destinationRoute == Routes.WouldYouRather -> contentPack.activeItemById(WOULD_YOU_RATHER_ITEM_ID)
+        else -> itemId?.let(contentPack::activeItemById)
+    }
+    val screen = when {
+        destinationRoute == Routes.WouldYouRather -> Routes.WouldYouRather
+        destinationRoute.startsWith("timed_session") && itemId != null -> "timed_session/$itemId"
+        itemId != null -> "detail/$itemId"
+        categoryId != null -> "category/$categoryId"
+        else -> destinationRoute.ifBlank { Routes.Home }
+    }
+    return FeedbackCaptureContext(
+        screen = screen,
+        contentId = currentItem?.id,
+        contentTitle = currentItem?.title,
     )
 }
 

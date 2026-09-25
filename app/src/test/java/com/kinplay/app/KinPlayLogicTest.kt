@@ -137,6 +137,67 @@ class KinPlayLogicTest {
     }
 
     @Test
+    fun feedbackContextForDetailRouteIncludesActiveItem() {
+        val pack = ContentPack(items = listOf(activeQuick))
+
+        assertEquals(
+            FeedbackCaptureContext(
+                screen = "detail/${activeQuick.id}",
+                contentId = activeQuick.id,
+                contentTitle = activeQuick.title,
+            ),
+            resolveFeedbackCaptureContext(
+                destinationRoute = "detail/{itemId}",
+                itemId = activeQuick.id,
+                categoryId = null,
+                contentPack = pack,
+            ),
+        )
+    }
+
+    @Test
+    fun feedbackContextForTimedSessionUsesGameIdAndTimedRoute() {
+        val pack = ContentPack(items = listOf(activeQuick))
+
+        assertEquals(
+            FeedbackCaptureContext(
+                screen = "timed_session/${activeQuick.id}",
+                contentId = activeQuick.id,
+                contentTitle = activeQuick.title,
+            ),
+            resolveFeedbackCaptureContext(
+                destinationRoute = "timed_session/{gameId}/{duration}/{rounds}",
+                itemId = activeQuick.id,
+                categoryId = null,
+                contentPack = pack,
+            ),
+        )
+    }
+
+    @Test
+    fun feedbackContextForWouldYouRatherUsesDedicatedRouteAndContent() {
+        val wouldYouRather = activeQuick.copy(
+            id = WOULD_YOU_RATHER_ITEM_ID,
+            title = "Would You Rather",
+        )
+        val pack = ContentPack(items = listOf(activeQuick, wouldYouRather))
+
+        assertEquals(
+            FeedbackCaptureContext(
+                screen = WOULD_YOU_RATHER_ROUTE,
+                contentId = wouldYouRather.id,
+                contentTitle = wouldYouRather.title,
+            ),
+            resolveFeedbackCaptureContext(
+                destinationRoute = WOULD_YOU_RATHER_ROUTE,
+                itemId = null,
+                categoryId = null,
+                contentPack = pack,
+            ),
+        )
+    }
+
+    @Test
     fun itemsForModeReturnsOnlyActiveContentForThatMode() {
         val result = listOf(activeQuick, inactiveQuick, calmPrompt).itemsForMode("quick_play")
 

@@ -48,7 +48,7 @@ class BatchF20AcceptanceTest {
         assertTrue(mainSource.contains("FeedbackOverlay("))
         assertTrue(mainSource.contains("Routes.WouldYouRather"))
         assertTrue(mainSource.contains("Routes.TimedSession"))
-        assertTrue(mainSource.contains("feedbackRoute"))
+        assertTrue(mainSource.contains("resolveFeedbackCaptureContext("))
     }
 
     @Test
