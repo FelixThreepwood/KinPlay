@@ -90,3 +90,22 @@ The source release and APK remain unchanged. This reconciliation updates only re
 - Google Drive: publication was not attempted because the active profile's Google Workspace check returned `NOT_AUTHENTICATED` for its profile-local token. No remote object was changed, and no Drive checksum or one-current inventory claim is made.
 
 The statements in this historical section describe the initial publication state only. The 2026-09-23 reconciliation above supersedes the review, GitHub, and KidPlay Drive facts where stated. Connected instrumentation, physical-device validation, production signing, and public-release readiness remain unresolved.
+
+## 2026-09-25 candidate verification and release hold
+
+This checkpoint records the fresh candidate and the limits of the release tail. It does not claim a completed release.
+
+- KidPlay remains version `0.7.4` / code `17`, with the existing six-word KP-PRO-037 summary `Integrated branding, music, and audit remediation`; no second version increment was made.
+- The feedback-route context extraction and its detail, timed-session, and Would You Rather JVM coverage were committed as `16073b3e8fce69b8144b31127b59879f780a314a`. The candidate below was assembled from the same source contents before that commit; no app-source change followed the assembly.
+- Fresh candidate: `app/build/outputs/apk/debug/20260925_KidPlay_v0.7.4.apk`, 25,535,866 bytes, SHA-256 `393caf9dca2c72a9a3005106c5952bc2b8261cba2c4d3daf5a73cedf58731333`. Its adjacent SHA-256 sidecar check returned `OK`.
+- Deterministic gates reported for this build passed: 238/238 JVM tests, Android-test source compilation, lint, debug assembly, and the local APK-drop validator; script tests passed 13/13. These checks do not clear the connected-runtime gate.
+- `:app:connectedDebugAndroidTest` failed with `DeviceException: No connected devices`; `adb devices -l` was empty and `/dev/kvm` was absent. The release status is therefore `candidate_only` / private WIP, not release-verified.
+
+### Destination read-back and policy boundary
+
+- Shared root inspected read-only: `/mnt/cyberforgex-ai/App Dev/KinPlay/apk-drops`. Its active APK inventory is exactly `20260912_KidPlay_v0.7.4.apk` and `20260823_DevLab_v0.2.3.apk`, with one APK and one checksum sidecar per registered app. The local policy validator passed with no errors.
+- The active shared KidPlay APK independently read from that root is 25,535,866 bytes, SHA-256 `a5171e637316e56ad3e8e9304764f899716a63bd9673396d9c753da674c7870c`. It is not the fresh candidate hash above. The candidate was not copied into the shared root, and no active or archived file was changed; this is not a failed upload or a candidate read-back.
+- The active profile's Google Workspace check returned `NOT_AUTHENTICATED` (no profile-local token). No live Drive listing, upload, download, rename, archive, or mutation was performed. Consequently, no Drive read-back or current one-APK inventory is claimed for this checkpoint; earlier owner-supplied Drive evidence remains historical, not a substitute for a fresh read.
+- Physical-device checks were not performed and remain explicitly reserved for LJ. They are pending.
+
+No APK destination was changed because connected instrumentation failed and Drive was inaccessible. Preserve the existing shared artifact and report the candidate as blocked from release verification until the connected gate and authorized Drive read-back can be completed.
