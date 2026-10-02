@@ -21,7 +21,6 @@ fun KinPlayItem.isTimedSessionEligible(): Boolean =
 /** The timer is essential only when the reviewed activity explicitly makes it central to play. */
 private val ESSENTIAL_TIMED_SESSION_IDS = setOf(
     "timed_drawing_tiny_monster",
-    "rainbow_sort_sprint",
     "cleanup_countdown_game",
     "backyard_micro_safari",
 )

@@ -80,25 +80,14 @@ private fun paperAirplaneResource(resource: String): Int = when (resource) {
 
 @Composable
 fun BrainMovementInstructions(item: KinPlayItem, enabled: Boolean) {
-    val asset = item.visualAssets.firstOrNull() ?: return
-    val resourceId = when (asset.resource) {
-        "brain_movement_activities" -> R.drawable.brain_movement_activities
-        else -> 0
-    }
-    if (resourceId == 0) return
+    if (item.playSteps.isEmpty()) return
     Card(
         modifier = Modifier.fillMaxWidth().testTag("brain-movement-instructions"),
         colors = CardDefaults.cardColors(containerColor = androidx.compose.material3.MaterialTheme.colorScheme.tertiaryContainer),
     ) {
         Column(modifier = Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text("Picture guide", fontWeight = FontWeight.Bold)
-            Image(
-                painter = painterResource(resourceId),
-                contentDescription = asset.altText,
-                contentScale = ContentScale.FillWidth,
-                modifier = Modifier.fillMaxWidth().semantics { contentDescription = asset.altText },
-            )
-            Text("Use the seated or two-foot version whenever balance or space is uncertain.")
+            Text("Move together", fontWeight = FontWeight.Bold)
+            Text("Try the seated version, or keep both feet on the floor if that's easier.")
         }
     }
 }

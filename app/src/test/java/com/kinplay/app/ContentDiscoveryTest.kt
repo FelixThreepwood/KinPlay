@@ -64,6 +64,21 @@ class ContentDiscoveryTest {
     }
 
     @Test
+    fun activeCrossBodyMoveRemainsInItsExistingBrainAndMovementGroups() {
+        val crossBodyMove = item(
+            id = "cross_body_move_mix",
+            quickCategories = listOf("brain_games"),
+            safetyTags = listOf("movement"),
+            energyLevel = "medium",
+        )
+
+        assertEquals(
+            setOf(GameTypeGroup.BRAIN_AND_MOVEMENT.id, GameTypeGroup.MOVE_AND_PLAY.id),
+            crossBodyMove.discoveryGroupIds(),
+        )
+    }
+
+    @Test
     fun levelOneCardsExposeOnlyNameAndBriefDescriptionBeforeOpening() {
         assertFalse(GAME_TYPE_CARD_DEFAULT_EXPANDED)
         assertTrue(GameTypeGroup.entries.all { it.description.length in 20..120 })

@@ -9,9 +9,9 @@ enum class GameTypeGroup(
     WORD_GAMES("word_games", "Word games", "Build stories, words, and silly language together."),
     GUESSING_GAMES("guessing_games", "Guessing games", "Use clues, questions, and careful noticing to guess."),
     ARTS_AND_MAKING("arts_and_making", "Arts and making", "Draw, fold, sort, and make something together."),
-    MOVE_AND_PLAY("move_and_play", "Move and play", "Use safe movement games to change the room's energy."),
+    MOVE_AND_PLAY("move_and_play", "Move and play", "Choose an active game to change the pace."),
     PRETEND_AND_STORIES("pretend_and_stories", "Pretend and stories", "Invent characters, scenes, and family stories together."),
-    BRAIN_AND_MOVEMENT("brain_and_movement", "Brain and movement", "Try gentle coordination and cross-body movement activities."),
+    BRAIN_AND_MOVEMENT("brain_and_movement", "Brain and movement", "Try coordination and cross-body movement activities."),
     ;
 
     companion object {
@@ -71,7 +71,6 @@ fun KinPlayItem.discoveryGroupIds(): Set<String> = buildSet {
         id in setOf(
             "paper_airplane_weather",
             "timed_drawing_tiny_monster",
-            "rainbow_sort_sprint",
         ) -> add(GameTypeGroup.ARTS_AND_MAKING.id)
         id in setOf("bilateral_mirror_moves", "cross_body_move_mix") -> {
             add(GameTypeGroup.BRAIN_AND_MOVEMENT.id)

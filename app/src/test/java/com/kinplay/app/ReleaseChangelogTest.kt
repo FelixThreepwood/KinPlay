@@ -14,8 +14,8 @@ class ReleaseChangelogTest {
 
     @Test
     fun currentReleaseUsesTheLatestIntegratedRelease() {
-        assertEquals("0.7.4", KIDPLAY_RELEASE_CHANGELOG.first().version)
-        assertEquals("2026-09-12", KIDPLAY_RELEASE_CHANGELOG.first().releaseDate)
+        assertEquals("0.7.5", KIDPLAY_RELEASE_CHANGELOG.first().version)
+        assertEquals("2026-09-25", KIDPLAY_RELEASE_CHANGELOG.first().releaseDate)
     }
 
     @Test
@@ -27,6 +27,7 @@ class ReleaseChangelogTest {
     @Test
     fun releaseItemsHaveVersionedFiveToTenWordSummaries() {
         val expectedByVersion = mapOf(
+            "0.7.5" to listOf("KP-PRO-062B", "KP-PRO-063B"),
             "0.7.4" to listOf("KP-PRO-037"),
             "0.6.3" to (listOf("KPF-0004", "KPF-0010", "KPF-0017", "KPF-0055", "KPF-0058") + (64..77).map { "KPF-%04d".format(it) }),
             "0.7.1" to listOf("KPF-0022", "KPF-0043", "KPF-0060", "KPF-0078") + (79..88).map { "KPF-%04d".format(it) },
@@ -36,7 +37,7 @@ class ReleaseChangelogTest {
         val changelogSource = String(Files.readAllBytes(changelogPath))
         expectedByVersion.forEach { (version, ids) ->
             val releaseBlock = changelogSource.substringAfter("version = \"$version\"").substringBefore("ReleaseVersion(")
-            val entries = Regex("ReleaseChange\\(\"((?:KPF-\\d{4}|KP-PRO-\\d{3}))\", \"([^\"]+)\"\\)")
+            val entries = Regex("ReleaseChange\\(\"((?:KPF-\\d{4}|KP-PRO-\\d{3}[A-Z]?))\", \"([^\"]+)\"\\)")
                 .findAll(releaseBlock)
                 .associate { it.groupValues[1] to it.groupValues[2] }
             assertEquals("Wrong changelog item count for $version", ids.size, entries.size)
@@ -46,6 +47,8 @@ class ReleaseChangelogTest {
                 assertTrue("Missing $id in source", changelogSource.contains(id))
             }
         }
+        assertTrue("Historical 0.7.4 KP-PRO-037 summary must remain in the source record", changelogSource.contains("KP-PRO-037"))
+        assertTrue(changelogSource.contains("Integrated branding, music, and audit remediation"))
     }
 
     private fun repositoryRoot(): Path {

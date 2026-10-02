@@ -142,4 +142,4 @@
 - Safety tags: quiet, no_materials, reading_help, sibling_friendly
 - Fields: A color, A food, A place, A number
 - Template: The {color} dragon train delivered {food} to the {place}. It rang its bell {number} times and served everyone a plate of giggles.
-- Read-aloud note: Make the train bell sound gentle.
+- Read-aloud note: Make a soft sound with the train bell.

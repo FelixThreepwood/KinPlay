@@ -1,7 +1,6 @@
 package com.kinplay.app
 
 import androidx.activity.ComponentActivity
-
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
@@ -20,55 +19,48 @@ class SafetyWarningPresentationTest {
     @get:Rule
     val compose = createAndroidComposeRule<ComponentActivity>()
 
-    private val safetyItem = KinPlayItem(
-        id = "indoor_pillow_marco_polo",
+    private val activityItem = KinPlayItem(
+        id = "quiet_color_hunt",
         type = "activity",
         status = "active",
-        title = "Pillow Marco Polo: Eyes-Open Islands",
-        summary = "A safe eyes-open call-and-response walk using pillows only as island boundary markers.",
+        title = "I Spy",
+        summary = "Play I Spy with ready-made color and shape clues.",
         modes = listOf("quick_play", "pick_a_game"),
         minAge = 2,
         maxAge = 8,
-        durationMinutes = 6,
-        energyLevel = "medium",
-        materials = listOf("two or three firm pillows"),
+        durationMinutes = 5,
+        energyLevel = "calm",
         safetyTags = listOf("parent_supervision", "movement", "sibling_friendly"),
-        setupSteps = listOf(
-            "Adult supervises and clears a flat room away from stairs, furniture edges, cords, pets, fragile objects, and other hazards.",
-            "Place two or three firm pillows flat as stationary island or boundary markers with wide walking space between them.",
-        ),
-        playSteps = listOf("Everyone’s eyes remain open and all players walk only."),
-        parentNotes = "Pillows are boundary/island markers only: never throw them, cover a face, pile them, or jump on them. Keep one arm of space between players.",
+        setupSteps = listOf("Choose one object everyone can see, then use the clues below."),
+        playSteps = listOf("The adult starts: I spy with my little eye something blue."),
+        parentNotes = "Take turns giving color and shape clues.",
     )
 
     @Test
-    fun cardsStayMetadataLightAndDetailsRetainReviewedWarnings() {
+    fun cardsShowActivityCopyWithoutClassificationLabels() {
         compose.setContent {
             KinPlayTheme(AppColorTheme.FOREST) {
                 ContentCard(
-                    item = safetyItem,
+                    item = activityItem,
                     favoriteIds = emptySet(),
                     navController = rememberNavController(),
                 )
             }
         }
 
-        compose.onNodeWithText(safetyItem.title).assertIsDisplayed()
-        compose.onNodeWithText(safetyItem.summary).assertIsDisplayed()
-        compose.onNodeWithText("Works 1:1 or with a group").assertDoesNotExist()
-        compose.onNodeWithText("Needs: two or three firm pillows").assertDoesNotExist()
-        compose.onNodeWithText("Setup: Adult supervises", substring = true).assertDoesNotExist()
+        compose.onNodeWithText(activityItem.title).assertIsDisplayed()
+        compose.onNodeWithText(activityItem.summary).assertIsDisplayed()
+        compose.onNodeWithText("Parent supervision").assertDoesNotExist()
         compose.onNodeWithText("Open").assertIsDisplayed()
-
     }
 
     @Test
-    fun detailsRetainReviewedWarnings() {
+    fun detailsShowPlainInstructionsWithoutClassificationLabels() {
         compose.setContent {
             KinPlayTheme(AppColorTheme.FOREST) {
                 ActivityDetailScreen(
-                    item = safetyItem,
-                    itemId = safetyItem.id,
+                    item = activityItem,
+                    itemId = activityItem.id,
                     isFavorite = false,
                     onToggleFavorite = {},
                     onMarkPlayed = {},
@@ -78,13 +70,14 @@ class SafetyWarningPresentationTest {
             }
         }
 
-        compose.onNodeWithText(safetyItem.setupSteps.first(), substring = true)
+        compose.onNodeWithText(activityItem.setupSteps.first(), substring = true)
             .performScrollTo()
             .assertIsDisplayed()
-        compose.onNodeWithText(safetyItem.parentNotes)
+        compose.onNodeWithText(activityItem.parentNotes)
             .performScrollTo()
             .assertIsDisplayed()
         compose.onNodeWithText("Safety tags: Parent supervision, Movement, Sibling friendly")
             .assertDoesNotExist()
+        compose.onNodeWithText("parent_supervision").assertDoesNotExist()
     }
 }

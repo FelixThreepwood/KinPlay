@@ -82,7 +82,7 @@ fun SettingsScreen(
             verticalArrangement = Arrangement.spacedBy(18.dp),
         ) {
             Text(
-                "Choose a simple play plan. Changes save on this device and apply immediately.",
+                "Choose a simple play plan. The app saves your changes and applies them right away.",
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             PreferenceSection(

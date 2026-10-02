@@ -193,13 +193,13 @@ components:
 
 ## Overview
 
-KidPlay combines the D1 Calm Illustrated Family foundation, D2 Structured Family Utility for discovery and setup, and D3 focused active-session behavior. It is designed for parent-led family play, with bundled content and local storage; no account is required. KidPlay is the working product name. The owner will decide public naming separately under A-01.
+KidPlay combines the D1 Calm Illustrated Family foundation, D2 Structured Family Utility for discovery and setup, and D3 focused active-session behavior. It is designed for family play, with bundled content stored in the app. KidPlay is the working product name. The owner will decide public naming separately under A-01.
 
 The approved design direction focuses on three family moments:
 
 1. No prep or no materials, with examples such as I Spy and Freeze Dance Statues.
 2. Together, for shared play and mixed-age participation.
-3. Move, for supervised movement with clear space and safety information.
+3. Move, for active games that get everyone moving.
 
 The expected path is:
 
@@ -207,7 +207,7 @@ The expected path is:
 
 This file sets product and implementation requirements; it does not show that the current runtime meets them. Physical-device feel, TalkBack, Switch Access, audio lifecycle, and final owner acceptance still need validation. The owner may update this contract after Dev Lab review.
 
-Show one task and one primary action at a time. Give each state immediate, specific feedback; preserve valid progress during correction; prevent accidental duplicate input; and state what happens next. The interface must remain understandable without sound. Accounts, child profiles, public sharing, ads, purchases, remote curriculum, runtime AI, and telemetry require a separate product and privacy decision.
+Show one task and one primary action at a time. Give each state immediate, specific feedback; preserve valid progress during correction; prevent accidental duplicate input; and state what happens next. The interface must remain understandable without sound. Public sharing, ads, purchases, remote curriculum, runtime AI, and telemetry require a separate product decision.
 
 ## Colors
 
@@ -245,14 +245,14 @@ Contrast rules:
 
 ## Typography
 
-Use the Android system sans family for all essential text. The system uses size, weight, line height, and spacing for hierarchy. Decorative display lettering must not carry instructions, safety content, or state meaning.
+Use the Android system sans family for all essential text. The system uses size, weight, line height, and spacing for hierarchy. Decorative display lettering must not carry instructions or state meaning.
 
 | Role | Size / weight | Line height | Use |
 |---|---|---|---|
 | Display | 32 sp / 700 | 1.2 | Product title or major moment heading. |
 | Headline | 24 sp / 700 | 1.25 | Screen heading or completion announcement. |
 | Title | 20 sp / 700 | 1.3 | Activity title, section heading, or dialog title. |
-| Body | 16 sp / 400 | 1.5 | Instructions, summaries, setup, safety, and parent notes. |
+| Body | 16 sp / 400 | 1.5 | Instructions, summaries, setup, and notes. |
 | Body emphasis | 16 sp / 600 | 1.5 | Short action or state emphasis within body text. |
 | Label | 14 sp / 600 | 1.43 | Buttons, moment labels, and control labels. |
 | Metadata | 14 sp / 500 | 1.43 | Duration, participant fit, energy, and materials. |
@@ -261,7 +261,7 @@ Rules:
 
 - Essential text is never smaller than 14 sp in the base configuration.
 - Do not use all-caps for full instructions. Short labels may use weight and spacing, but remain readable when spoken by TalkBack.
-- Keep activity instructions short. Put the action first, then the condition or safety note.
+- Keep activity instructions short. Put the action first, then any needed detail.
 - Preserve the full label at large text. Reflow, scroll, or stack; do not hide or truncate essential meaning.
 - Long titles and labels are test fixtures, not exceptional content. The component must remain usable without manual text editing.
 - Use semantic headings and a stable reading order. Visual size alone does not establish heading semantics.
@@ -286,12 +286,12 @@ Layout rules:
 - A screen has one dominant route and one obvious primary action. Secondary actions remain visually and semantically secondary.
 - At 320 dp, use one column. Do not require a horizontally scrolling chip row to discover the priority moments.
 - The three priority moments remain text-labeled. Icons and fox expressions can support them, but cannot replace the labels.
-- Content order is title, context or summary, setup burden, safety, primary action, then secondary actions unless the activity requires a verified variation.
+- Content order is title, context or summary, setup burden, primary action, then secondary actions unless the activity requires a verified variation.
 - Keep the active task visually dominant. A guide panel, illustration, or metadata block must not displace the task or hide the exit path.
 - Expanded width may use a list-detail or two-region arrangement. The reading order must remain correct when the regions collapse to one column.
-- Landscape is route-scoped for Move or another activity whose task benefits from width. Home and parent surfaces retain a safe portrait path.
+- Landscape is route-scoped for Move or another activity whose task benefits from width. Home and Settings retain a consistent portrait route.
 - Foldable posture-specific behavior is deferred until a target posture and evidence exist.
-- Preserve the selected moment and valid activity state through ordinary resize and safe Back behavior where the implementation can support it.
+- Preserve the selected moment and valid activity state through ordinary resize and Back behavior where the implementation can support it.
 
 ## Elevation & Depth
 
@@ -325,7 +325,7 @@ Use `rounded.md` for buttons and primary controls, `rounded.lg` for ready cards,
 
 ### Interaction discipline
 
-For each activity state, define one task and one primary action. Give immediate feedback, allow safe correction, control pacing, state when the activity is complete, and offer a bounded next step.
+For each activity state, define one task and one primary action. Give immediate feedback, allow correction, control pacing, state when the activity is complete, and offer a bounded next step.
 
 - `prompt`: state the task in one readable sentence and expose the available action.
 - `selection`: show the selected moment or option with text and a semantic selected state.
@@ -333,10 +333,10 @@ For each activity state, define one task and one primary action. Give immediate 
 - `incorrect`: state the problem neutrally and identify the next useful action. Do not erase valid work.
 - `retry`: keep the retry action visible and secondary to the current task. Retrying must not reset completed steps unless the activity requires a deliberate restart.
 - `transition`: settle one destination at a time. Disable or ignore duplicate submissions while navigation or completion is pending.
-- `completion`: state what finished, stop or pause activity audio safely, and expose a clear next action.
+- `completion`: state what finished, stop or pause activity audio, and expose a clear next action.
 - `next-step`: offer Repeat, another suitable activity, or return to the selected moment. Do not create an endless feed or pressure to continue.
 
-Rapid taps and repeated taps must be safe. A single gesture produces at most one submission or navigation result. The final state must not depend on the tap count, and Back or a safety action must not wait for guide animation, sound, or a settling delay.
+Rapid taps and repeated taps must stay predictable. A single gesture produces at most one submission or navigation result. The final state must not depend on the tap count, and Back must not wait for guide animation, sound, or a settling delay.
 
 ### Controls
 
@@ -360,16 +360,16 @@ Rules:
 
 ### Navigation
 
-On the first screen, show the working product identity, one ready route, the three priority moments, library access, and a clearly labeled parent/settings route. The app remains usable without network access or account setup.
+On the first screen, show the working product identity, one ready route, the three priority moments, library access, and a clearly labeled Settings route. The app remains usable without a network connection.
 
 Required route behavior:
 
-- Home opens locally and does not require a sign-in, child profile, or remote load.
-- Choosing a moment preserves the choice until the parent changes it or completes a safe route.
-- Activity detail shows title, summary, duration, participant fit, energy, materials, setup, safety, and parent notes before Start.
+- Home opens from bundled content without a remote load.
+- Choosing a moment preserves the choice until someone changes it or finishes the current route.
+- Activity detail shows title, summary, duration, participant fit, energy, materials, setup, and notes before Start.
 - Start opens one focused activity. The Back action remains stable and returns to the originating route without discarding valid selection state.
-- Parent/settings surfaces are adult-readable and separate from the child-facing active task. They do not request child identity.
-- System Back, gesture Back, and visible Back use the same safe destination. A drawer or filter surface closes before the parent route changes.
+- Settings surfaces are adult-readable and separate from the active play task. They do not request personal identity.
+- System Back, gesture Back, and visible Back use the same destination. A drawer or filter surface closes before the current route changes.
 - An invalid or missing local item states the cause and offers one meaningful recovery action, usually Back or Retry.
 - A loading state is truthful and short. A failure state does not pretend that remote content exists.
 
@@ -386,10 +386,10 @@ Every reusable surface must cover the following states. Test each state's name, 
 | Retry | Explicit retry label and what will be repeated. | Retry only the intended step. |
 | Transition | Progress or destination context when useful. | Ignore duplicate navigation and settle once. |
 | Completion | What finished, a calm acknowledgement, and next choices. | Repeat, another fit, or return. |
-| Next step | One recommended safe action plus bounded alternatives. | Never force continuation. |
+| Next step | One recommended action plus bounded alternatives. | Never force continuation. |
 | Loading | What is loading and no false success state. | Wait, Retry, or Back according to the local source. |
 | Empty | Why there is no result and one recovery action. | Clear filter, Browse, or Back. |
-| Error | Cause in plain language, semantic error, and one recovery action. | Retry, Back, or return to a safe known state. |
+| Error | Cause in plain language, semantic error, and one recovery action. | Retry, Back, or return to a known state. |
 | Offline | Local availability statement and any unavailable-content explanation. | Continue locally or Back; do not imply network recovery. |
 | Disabled | Disabled semantics and an explanation when needed. | Keep the user oriented to the enabled action. |
 
@@ -408,7 +408,7 @@ The fox is a functional guide. It appears only when it improves entry, correctio
 
 Fox expression vocabulary is limited to `neutral`, `welcoming`, `thinking`, `encouraging`, and `celebrating`. The expression must agree with the text state. No expression may blame, shame, imply a score, or suggest that audio is required.
 
-Fox animation follows the activity energy and uses the motion tokens only where motion improves orientation or feedback. It never loops continuously during successful play. Entry, correction, and completion cues may be skipped by leaving the state; the guide cannot block Start, Retry, Done, Back, or a safety action.
+Fox animation follows the activity energy and uses the motion tokens only where motion improves orientation or feedback. It never loops continuously during successful play. Entry, correction, and completion cues may be skipped by leaving the state; the guide cannot block Start, Retry, Done, Back, or Stop.
 
 Fox accessibility rules:
 
@@ -417,14 +417,14 @@ Fox accessibility rules:
 - Spoken guidance, when present, is bundled and offline. The same instruction and result remain visible as text.
 - Captions or a stable text equivalent appear with meaningful spoken guidance. Audio failure falls back to text without blocking progress.
 - A parent/settings route may document guide frequency, but this task does not authorize continuous guide playback or a new mute control.
-- Guide cues stop or release priority when Back, a safety action, app backgrounding, or a destination change occurs.
+- Guide cues stop or release priority when Back, Stop, app backgrounding, or a destination change occurs.
 
 ### Illustration and images
 
 Illustration supports comprehension, orientation, or a state. It does not fill every card.
 
 - Use original flat illustrated forms with a restrained palette and clear silhouettes.
-- Activity cards remain text-first. A small image or fox cue may accompany a title, but duration, participant fit, energy, materials, setup, and safety remain text.
+- Activity cards remain text-first. A small image or fox cue may accompany a title, but duration, participant fit, energy, materials, and setup remain text.
 - Instructional images have a visible text instruction and a Compose semantics equivalent.
 - Do not copy reference-product artwork, characters, silhouettes, costumes, faces, scene layouts, logos, category art, or status marks.
 - Generate new visual assets only through Google Gemini Nano Banana. Preserve the untouched generated master and its prompt/provenance record.
@@ -443,24 +443,24 @@ Motion tokens:
 - `settle`: 240 ms for route or panel settling.
 - `completion`: 280 ms for a completion state change.
 - Do not use continuous ambient motion, flashing, or repeated celebratory loops.
-- Motion must never delay safety, Back, Retry, Done, or completion acknowledgement.
+- Motion must never delay Stop, Back, Retry, Done, or completion acknowledgement.
 
 Owner boundary for reduced motion:
 
 - The current owner decision does not authorize an app-defined reduced-motion mode, toggle, or alternate motion implementation.
 - Do not add reduced-motion behavior in this task, and do not claim that the current runtime supports it.
-- Preserve readable text, semantics, safe navigation, and audio-independent instructions. A later owner amendment may reopen reduced-motion behavior as a separate design and validation decision.
+- Preserve readable text, semantics, stable navigation, and audio-independent instructions. A later owner amendment may reopen reduced-motion behavior as a separate design and validation decision.
 
 Sound rules:
 
 - Sound is bundled and offline. No remote narration, runtime generation, or network dependency is implied.
 - Sound is activity-matched. High-energy activities may start their approved sound automatically; quiet activities remain low-key.
-- The essential instruction, correctness result, safety information, and completion result are visible in text and semantics without sound.
+- The essential instruction, correctness result, and completion result are visible in text and semantics without sound.
 - Meaningful spoken guidance has a caption or stable text equivalent. Music does not carry instructions.
-- Sound and guide playback stop or release safely on Back, destination change, app backgrounding, interruption, and completion. No audio continues invisibly.
+- Sound and guide playback stop or release on Back, destination change, app backgrounding, interruption, and completion. No audio continues invisibly.
 - Do not add another in-app mute control. Do not make a new activity control compete with the owner-approved automatic sound behavior.
 
-Haptics are deferred. No activity, state, fox cue, or safety message depends on haptics. A future haptics decision requires owner approval, accessibility review, and a device test.
+Haptics are deferred. No activity, state, fox cue, or message depends on haptics. A future haptics decision requires owner approval, accessibility review, and a device test.
 
 ### Accessibility
 
@@ -474,7 +474,7 @@ Include accessibility requirements in each component contract from the start.
 - Preserve focus after selection, correction, completion, error recovery, and Back. Focus must not land on a removed guide cue.
 - Switch Access and keyboard traversal follow the same semantic order. No filter, dialog, or guide panel may trap focus.
 - Every icon-only control has a concise accessible label. Decorative art has no redundant label.
-- Keep safety warnings, setup, materials, and next-step meaning in text.
+- Keep setup, materials, and next-step meaning in text.
 - Validate contrast for text, controls, focus indicators, error states, and selected states.
 - Validate on physical devices when available. Emulator semantics and screenshot evidence do not prove service-level behavior.
 
@@ -482,7 +482,7 @@ Include accessibility requirements in each component contract from the start.
 
 Reflow content to support large text; do not hide it.
 
-- At 1.5x text scale, titles, labels, metadata, setup, safety, and action text remain present and readable.
+- At 1.5x text scale, titles, labels, metadata, setup, and action text remain present and readable.
 - Cards stack when needed. Buttons may become full-width. Metadata may wrap to multiple lines.
 - Do not reduce text below the base token to keep a row on one line.
 - Do not clip the fox caption, task rule, error, completion, or next-step action.
@@ -516,17 +516,17 @@ Reject an asset if it changes identity cues, copies a trade-dress element, hides
 
 - Do keep the D1 visual foundation, D2 parent-speed utility, and D3 focused active session as one approved hybrid.
 - Do prioritize No prep or no materials, Together, and Move.
-- Do expose materials, setup, participant fit, energy, duration, and safety before Start.
+- Do expose materials, setup, participant fit, energy, and duration before Start.
 - Do give every state a text and semantic equivalent.
 - Do use the fox at entry, correction, and completion, with no continuous interruption during successful play.
 - Do preserve valid progress during correction and ignore duplicate submissions.
 - Do keep content, audio, and generated assets offline and local.
 - Do run product review before the Humanizer pass on customer-facing copy.
 - Do record Unknown behavior instead of presenting a design intention as runtime proof.
-- Don't add a child profile, account, social exchange, ad, purchase, remote curriculum, runtime AI, or telemetry without a separate approval.
+- Don't add a social exchange, ad, purchase, remote curriculum, runtime AI, or telemetry without a separate approval.
 - Don't add a new per-activity mute control or an app-defined reduced-motion mode under this owner decision.
 - Don't make the fox, sound, motion, color, or illustration the only carrier of meaning.
 - Don't copy a reference product's artwork, exact composition, wording, taxonomy, control placement, or reward mechanic.
 - Don't use raw decorative colors for normal text without a contrast check.
-- Don't let a guide, transition, audio cue, or celebration block Back, safety, correction, completion, or the next safe action.
+- Don't let a guide, transition, audio cue, or celebration block Back, correction, completion, or the next action.
 - Don't claim physical-device, TalkBack, Switch Access, offline breadth, or completion behavior until the corresponding evidence exists.

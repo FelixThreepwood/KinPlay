@@ -53,17 +53,22 @@ class HomeCopyReductionTest {
     }
 
     @Test
-    fun protectedSafetyPrivacyAndInstructionalDetailCopyRemainsUnchanged() {
+    fun activityDetailsKeepUsefulCopyWithoutTechnicalDisclosureLabels() {
         listOf(
             "Text(item.summary",
             "item.detailSections().forEach",
             "Text(item.parentNotes)",
-            "Safety tags: ${'$'}{item.safetyTags.joinToString { it.displayTagLabel() }}",
-            "KidPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.",
-            "No accounts, analytics, ads, purchases, camera, microphone, contacts, location, or other sensitive Android permissions are requested.",
         ).forEach { protectedCopy ->
-            assertTrue("Protected or functional copy changed: $protectedCopy", mainSource.contains(protectedCopy))
+            assertTrue("Activity detail binding disappeared: $protectedCopy", mainSource.contains(protectedCopy))
         }
+        assertFalse(mainSource.contains("displayTagLabel"))
+        assertFalse(mainSource.contains("reviewedSafetyTagSummary"))
+        assertFalse(mainSource.contains("No account system is included in this MVP"))
+    }
+
+    @Test
+    fun homeDoesNotShowAnUnsupportedReadinessPercentage() {
+        assertFalse(mainSource.contains("StatPill(\"100%\", \"ready\")"))
     }
 
     private fun projectRoot(): Path {

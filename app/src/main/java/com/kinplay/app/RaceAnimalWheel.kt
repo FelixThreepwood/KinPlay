@@ -23,12 +23,12 @@ import com.kinplay.wheel.SpinnerWheel
 import com.kinplay.wheel.SpinnerWheelOption
 
 val RACE_ANIMAL_OPTIONS = listOf(
-    SpinnerWheelOption("kangaroo", "Kangaroo", "Use gentle kangaroo hops, or walk while making the pose."),
-    SpinnerWheelOption("cheetah", "Cheetah", "Take quick small steps without sprinting."),
-    SpinnerWheelOption("rabbit", "Rabbit", "Make small rabbit hops, or use small steps."),
-    SpinnerWheelOption("frog", "Frog", "Squat and rise like a frog without leaping forward."),
-    SpinnerWheelOption("turtle", "Turtle", "Take slow, steady steps and keep the path clear."),
-    SpinnerWheelOption("penguin", "Penguin", "Waddle with small steps and relaxed arms."),
+    SpinnerWheelOption("kangaroo", "Kangaroo", "Do kangaroo hops, or walk while doing the pose."),
+    SpinnerWheelOption("cheetah", "Cheetah", "Take quick, light steps."),
+    SpinnerWheelOption("rabbit", "Rabbit", "Do rabbit hops, or walk with springy steps."),
+    SpinnerWheelOption("frog", "Frog", "Do a frog squat, then stand up."),
+    SpinnerWheelOption("turtle", "Turtle", "Take slow, steady steps."),
+    SpinnerWheelOption("penguin", "Penguin", "Waddle with short steps and relaxed arms."),
 )
 
 /** Compatibility list for the reviewed content and existing unit contracts. */

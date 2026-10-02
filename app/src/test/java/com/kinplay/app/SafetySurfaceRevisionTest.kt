@@ -22,7 +22,7 @@ class SafetySurfaceRevisionTest {
             durationMinutes = 5,
             energyLevel = "calm",
             safetyTags = listOf("parent_supervision"),
-            setupSteps = listOf("Choose one adult-approved object everyone can see; use the ready-made clues below."),
+            setupSteps = listOf("Choose one object everyone can see, then use the clues below."),
             playSteps = listOf(
                 "The adult starts: I spy with my little eye something blue.",
                 "Players point or guess until someone finds a blue object.",
@@ -37,11 +37,26 @@ class SafetySurfaceRevisionTest {
     }
 
     @Test
-    fun safetyLabelsAreNotRenderedOnTheNormalDetailsSurface() {
-        val source = java.nio.file.Files.newBufferedReader(repositoryRoot().resolve("app/src/main/java/com/kinplay/app/MainActivity.kt")).use { it.readText() }
-        assertFalse(source.contains("Text(\"Safety tags: ${'$'}{item.safetyTags.joinToString { it.displayTagLabel() }}\")"))
-        assertTrue(source.contains("Safety and privacy"))
-        assertTrue(source.contains("reviewedSafetyTagSummary"))
+    fun internalClassificationIsNotRenderedOnTheNormalDetailsSurface() {
+        val item = KinPlayItem(
+            id = "quiet_color_hunt",
+            type = "activity",
+            status = "active",
+            title = "I Spy",
+            summary = "Play I Spy with ready-made color and shape clues.",
+            modes = listOf("calm_down"),
+            minAge = 2,
+            maxAge = 8,
+            durationMinutes = 5,
+            energyLevel = "calm",
+            safetyTags = listOf("parent_supervision"),
+            setupSteps = listOf("Choose one object everyone can see, then use the clues below."),
+        )
+
+        assertEquals(listOf("parent_supervision"), item.safetyTags)
+        val visibleDetails = item.detailSections().flatMap { it.lines }.joinToString(" ")
+        assertFalse(visibleDetails.contains("parent_supervision"))
+        assertFalse(visibleDetails.contains("Parent supervision", ignoreCase = true))
     }
 
     @Test
@@ -56,11 +71,10 @@ class SafetySurfaceRevisionTest {
             val item = (0 until items.length())
                 .map { items.getJSONObject(it) }
                 .single { it.getString("id") == "quiet_color_hunt" }
-            assertEquals(
-                "Choose one adult-approved object everyone can see; use the ready-made clues below.",
-                item.getJSONArray("setupSteps").getString(0),
-            )
-            assertFalse(item.toString().contains("tired", ignoreCase = true))
+            val setup = item.getJSONArray("setupSteps").getString(0)
+            assertEquals("Pick one thing everyone can see, then use the clues below.", setup)
+            assertTrue(setup.contains("clues", ignoreCase = true))
+            assertFalse(setup.contains("supervis", ignoreCase = true))
         }
     }
 

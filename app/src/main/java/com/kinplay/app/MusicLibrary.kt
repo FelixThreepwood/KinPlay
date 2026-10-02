@@ -13,7 +13,7 @@ data class MusicTrack(
 val KINPLAY_MUSIC_TRACKS = listOf(
     MusicTrack("sunshine_steps", "Sunshine Steps", "Bright and bouncy for dancing", R.raw.kinplay_music_sunshine),
     MusicTrack("bouncy_balloon", "Bouncy Balloon", "Playful rhythm for silly movement", R.raw.kinplay_music_bouncy),
-    MusicTrack("twinkle_trail", "Twinkle Trail", "Light melody for gentle games", R.raw.kinplay_music_twinkle),
+    MusicTrack("twinkle_trail", "Twinkle Trail", "Light melody for quiet games", R.raw.kinplay_music_twinkle),
     MusicTrack("silly_sneak", "Silly Sneak", "A quiet groove for freeze-and-pose play", R.raw.kinplay_music_sneaky),
     MusicTrack("jungle_jamboree", "Jungle Jamboree", "Animal-movement adventure music", R.raw.kinplay_music_jungle),
     MusicTrack("dreamy_drift", "Dreamy Drift", "Soft instrumental reset", R.raw.kinplay_music_dreamy),

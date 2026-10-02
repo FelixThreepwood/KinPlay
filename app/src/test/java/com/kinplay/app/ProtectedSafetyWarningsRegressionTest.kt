@@ -18,6 +18,133 @@ class ProtectedSafetyWarningsRegressionTest {
         readJson(root.resolve("docs/testing/feedback/KPF_0032_SAFETY_DECISION_MATRIX.json"))
     }
 
+    // Owner directive 1552919740996128859 supersedes the old runtime-copy decisions only
+    // for these current surfaces. The historical KPF-0032 matrix remains byte-for-byte intact.
+    private val ownerOverriddenContentPaths = setOf(
+        "items[animal_mirror_parade].setupSteps[0]",
+        "items[animal_mirror_parade].parentNotes",
+        "items[couch_cushion_quest].summary",
+        "items[couch_cushion_quest].setupSteps[0]",
+        "items[freeze_dance_statues].setupSteps[0]",
+        "items[freeze_dance_statues].playSteps[0]",
+        "items[freeze_dance_statues].parentNotes",
+        "items[pillow_boat_adventure].parentNotes",
+        "items[calm_cloud_breaths].playSteps[2]",
+        "items[quiet_color_hunt].setupSteps[0]",
+        "items[family_charades_animals].setupSteps[0]",
+        "items[family_charades_animals].playSteps[2]",
+        "items[family_charades_animals].variations[2]",
+        "items[timed_drawing_tiny_monster].setupSteps[0]",
+        "items[sock_skating_rink].summary",
+        "items[sock_skating_rink].setupSteps[0]",
+        "items[sock_skating_rink].playSteps[0]",
+        "items[sock_skating_rink].playSteps[1]",
+        "items[sock_skating_rink].playSteps[2]",
+        "items[sock_skating_rink].parentNotes",
+        "items[stuffed_animal_rescue].summary",
+        "items[stuffed_animal_rescue].setupSteps[0]",
+        "items[stuffed_animal_rescue].playSteps[0]",
+        "items[stuffed_animal_rescue].playSteps[1]",
+        "items[kitchen_band_rehearsal].summary",
+        "items[teddy_bear_doctor].parentNotes",
+        "items[shape_detective].setupSteps[0]",
+        "items[pirate_map_steps].playSteps[0]",
+        "items[pirate_map_steps].playSteps[1]",
+        "items[whisper_zoo].summary",
+        "items[whisper_zoo].playSteps[2]",
+        "items[rainbow_sort_sprint].summary",
+        "items[rainbow_sort_sprint].materials[0]",
+        "items[rainbow_sort_sprint].setupSteps[0]",
+        "items[rainbow_sort_sprint].parentNotes",
+        "items[five_senses_tour].summary",
+        "items[five_senses_tour].playSteps[2]",
+        "items[five_senses_tour].parentNotes",
+        "items[cleanup_countdown_game].setupSteps[0]",
+        "items[paper_airplane_weather].setupSteps[1]",
+        "items[paper_airplane_weather].playSteps[0]",
+        "items[paper_airplane_weather].playSteps[2]",
+        "items[paper_airplane_weather].parentNotes",
+        "items[paper_airplane_weather].variations[1]",
+        "items[backyard_micro_safari].summary",
+        "items[backyard_micro_safari].setupSteps[0]",
+        "items[backyard_micro_safari].playSteps[2]",
+        "items[backyard_micro_safari].parentNotes",
+        "items[chair_train_station].setupSteps[0]",
+        "items[chair_train_station].playSteps[0]",
+        "items[memory_tray_peek].summary",
+        "items[memory_tray_peek].materials[1]",
+        "items[memory_tray_peek].setupSteps[0]",
+        "items[tiny_tower_engineers].summary",
+        "items[tiny_tower_engineers].setupSteps[0]",
+        "items[family_recipe_pretend].parentNotes",
+        "items[pirate_map_steps].setupSteps[0]",
+        "items[hallway_balance_beam].summary",
+        "items[hallway_balance_beam].setupSteps[0]",
+        "items[hallway_balance_beam].playSteps[0]",
+        "items[hallway_balance_beam].parentNotes",
+        "items[hallway_balance_beam].variations[0]",
+        "items[hallway_balance_beam].variations[1]",
+        "items[breakfast_dragon_train].madLibs.readAloudNote",
+        "items[race_like_an_animal].summary",
+        "items[race_like_an_animal].setupSteps[0]",
+        "items[race_like_an_animal].setupSteps[1]",
+        "items[race_like_an_animal].playSteps[0]",
+        "items[race_like_an_animal].playSteps[1]",
+        "items[race_like_an_animal].playSteps[2]",
+        "items[race_like_an_animal].playSteps[3]",
+        "items[race_like_an_animal].parentNotes",
+        "items[race_like_an_animal].variations[0]",
+        "items[race_like_an_animal].variations[1]",
+        "items[indoor_pillow_marco_polo].title",
+        "items[indoor_pillow_marco_polo].summary",
+        "items[indoor_pillow_marco_polo].setupSteps[0]",
+        "items[indoor_pillow_marco_polo].setupSteps[1]",
+        "items[indoor_pillow_marco_polo].setupSteps[2]",
+        "items[indoor_pillow_marco_polo].playSteps[0]",
+        "items[indoor_pillow_marco_polo].playSteps[1]",
+        "items[indoor_pillow_marco_polo].playSteps[2]",
+        "items[indoor_pillow_marco_polo].playSteps[3]",
+        "items[indoor_pillow_marco_polo].parentNotes",
+        "items[indoor_pillow_marco_polo].variations[0]",
+        "items[indoor_pillow_marco_polo].variations[1]",
+        "items[washable_painting_shapes].summary",
+        "items[washable_painting_shapes].materials[1]",
+        "items[washable_painting_shapes].setupSteps[0]",
+        "items[washable_painting_shapes].parentNotes",
+        "items[bilateral_mirror_moves].summary",
+        "items[bilateral_mirror_moves].playSteps[0]",
+        "items[bilateral_mirror_moves].playSteps[2]",
+        "items[cross_body_move_mix].setupSteps[0]",
+        "items[cross_body_move_mix].parentNotes",
+        "items[cross_body_move_mix].variations[1]",
+        "items[memory_tray_peek].parentNotes",
+        "items[tiny_tower_engineers].parentNotes",
+    )
+    private val ownerRemovedHistoricalContentPaths = setOf(
+        "items[indoor_pillow_marco_polo].playSteps[3]",
+        "items[pirate_map_steps].parentNotes",
+    )
+    private val humanizerApprovedContentRewrites = mapOf(
+        "items[freeze_dance_statues].playSteps[2]" to
+            "When the parent calls \"Freeze!\" everyone turns into a statue.",
+        "items[three_word_story].followUps[1]" to "Can you make it funnier or sillier?",
+    )
+    private val ownerOverriddenKotlinIds = setOf(
+        "main-home-about-label",
+        "main-home-about-subtitle",
+        "main-quick-play-safe-summary",
+        "main-details-safety-tags-label",
+        "main-about-page-title",
+        "main-about-parent-guidance",
+        "main-about-permissions",
+        "main-about-lock-limits",
+        "main-about-content-source",
+        "feedback-ui-privacy",
+        "feedback-payload-child-data",
+        "feedback-ui-local-first-email-handoff",
+        "settings-device-local-save",
+    )
+
     @Test
     fun decisionMatrixIsCompleteAndUsesFailSafeClassification() {
         assertEquals(2, matrix.get("schemaVersion").asInt)
@@ -65,11 +192,51 @@ class ProtectedSafetyWarningsRegressionTest {
             .filter { it.string("sourceType") == "content" }
             .map { it.string("sourcePath") }
             .toSet()
-        assertEquals(allUserVisibleContentPaths(canonical), classifiedContentPaths)
+        val currentContentPaths = allUserVisibleContentPaths(canonical)
+        val runtimeContentPaths = allUserVisibleContentPaths(runtime)
+        assertEquals(
+            "Only specifically removed owner-overridden fields may be absent",
+            ownerRemovedHistoricalContentPaths,
+            classifiedContentPaths - currentContentPaths,
+        )
+        assertEquals(
+            "No new user-visible content path may bypass the historical matrix",
+            emptySet<String>(),
+            currentContentPaths - classifiedContentPaths,
+        )
+        assertEquals(
+            "Current copy inventory must exactly reconcile with the immutable historical matrix",
+            classifiedContentPaths - ownerRemovedHistoricalContentPaths,
+            currentContentPaths,
+        )
         entries.filter { it.string("sourceType") == "content" }.forEach { entry ->
-            assertEquals("Stale canonical inventory at ${entry.string("sourcePath")}", entry.string("expectedText"), contentText(canonical, entry))
-            assertEquals("Canonical/runtime drift at ${entry.string("sourcePath")}", entry.string("expectedText"), contentText(runtime, entry))
+            val path = entry.string("sourcePath")
+            when {
+                path in ownerRemovedHistoricalContentPaths -> {
+                    assertFalse("Owner-removed historical copy remains in canonical content at $path", path in currentContentPaths)
+                    assertFalse("Owner-removed historical copy remains in runtime content at $path", path in runtimeContentPaths)
+                }
+                path in ownerOverriddenContentPaths -> {
+                    val canonicalText = contentText(canonical, entry)
+                    assertFalse("Owner-overridden copy remains at $path", canonicalText == entry.string("expectedText"))
+                    assertEquals("Canonical/runtime drift at $path", canonicalText, contentText(runtime, entry))
+                }
+                path in humanizerApprovedContentRewrites -> {
+                    val canonicalText = contentText(canonical, entry)
+                    assertEquals("Approved Humanizer copy changed at $path", humanizerApprovedContentRewrites.getValue(path), canonicalText)
+                    assertEquals("Canonical/runtime drift at $path", canonicalText, contentText(runtime, entry))
+                }
+                else -> {
+                    val canonicalText = contentText(canonical, entry)
+                    assertEquals("Stale canonical inventory at $path", entry.string("expectedText"), canonicalText)
+                    assertEquals("Canonical/runtime drift at $path", entry.string("expectedText"), contentText(runtime, entry))
+                }
+            }
         }
+        assertTrue(
+            "Approved Humanizer follow-up must be in the active prompt export",
+            readText(root.resolve("docs/content/review/prompts.txt")).contains(humanizerApprovedContentRewrites.getValue("items[three_word_story].followUps[1]")),
+        )
     }
 
     @Test
@@ -140,15 +307,27 @@ class ProtectedSafetyWarningsRegressionTest {
     }
 
     @Test
-    fun everyProtectedCanonicalWarningStillShipsInTheRuntimeAsset() {
+    fun protectedHistoricalCopyIsPreservedExceptForTheExplicitOwnerOverrideSet() {
         val protectedEntries = matrix.getAsJsonArray("entries")
             .map { it.asJsonObject }
             .filter { it.string("sourceType") == "content" && it.get("protected").asBoolean }
         assertTrue("Protected content inventory must not be empty", protectedEntries.isNotEmpty())
         protectedEntries.forEach { entry ->
             val expected = entry.string("expectedText")
-            assertEquals("Canonical warning changed at ${entry.string("sourcePath")}", expected, contentText(canonical, entry))
-            assertEquals("Runtime warning changed at ${entry.string("sourcePath")}", expected, contentText(runtime, entry))
+            val path = entry.string("sourcePath")
+            if (path in ownerRemovedHistoricalContentPaths) {
+                assertFalse("Owner-removed historical copy remains in canonical content at $path", path in allUserVisibleContentPaths(canonical))
+                assertFalse("Owner-removed historical copy remains in runtime content at $path", path in allUserVisibleContentPaths(runtime))
+            } else if (path in ownerOverriddenContentPaths) {
+                assertFalse("Owner-overridden text remains at $path", expected == contentText(canonical, entry))
+                assertEquals("Canonical/runtime drift at $path", contentText(canonical, entry), contentText(runtime, entry))
+            } else if (path in humanizerApprovedContentRewrites) {
+                assertEquals("Approved Humanizer copy changed at $path", humanizerApprovedContentRewrites.getValue(path), contentText(canonical, entry))
+                assertEquals("Canonical/runtime drift at $path", contentText(canonical, entry), contentText(runtime, entry))
+            } else {
+                assertEquals("Canonical warning changed at $path", expected, contentText(canonical, entry))
+                assertEquals("Runtime warning changed at $path", expected, contentText(runtime, entry))
+            }
         }
     }
 
@@ -163,7 +342,11 @@ class ProtectedSafetyWarningsRegressionTest {
             val source = readText(root.resolve(sourcePath))
             val snippet = entry.string("expectedText")
             assertTrue("${entry.string("id")} needs expectedText", snippet.isNotBlank())
-            assertTrue("Protected Kotlin notice missing for ${entry.string("id")}", source.contains(snippet))
+            if (entry.string("id") in ownerOverriddenKotlinIds) {
+                assertFalse("Owner-overridden notice remains for ${entry.string("id")}", source.contains(snippet))
+            } else {
+                assertTrue("Protected Kotlin notice missing for ${entry.string("id")}", source.contains(snippet))
+            }
         }
     }
 
@@ -240,7 +423,8 @@ class ProtectedSafetyWarningsRegressionTest {
             .filter {
                 it.string("sourceType") == "content" &&
                     it.string("field") == "summary" &&
-                    it.string("decision") == "relocate"
+                    it.string("decision") == "relocate" &&
+                    it.string("sourcePath") !in ownerOverriddenContentPaths
             }
         assertTrue("The matrix must exercise content summary relocation requirements", relocatedSummaries.isNotEmpty())
 
@@ -297,7 +481,7 @@ class ProtectedSafetyWarningsRegressionTest {
     }
 
     @Test
-    fun everySafetyTagIsClassifiedAndItsRuntimeLabelMappingRemainsTraceable() {
+    fun internalClassificationTagsRemainInTheSchemaWithoutUserFacingLabels() {
         val tagEntries = matrix.getAsJsonArray("entries")
             .map { it.asJsonObject }
             .filter { it.string("sourceType") == "safety_tag" }
@@ -313,12 +497,9 @@ class ProtectedSafetyWarningsRegressionTest {
         assertEquals(schemaTags, tagEntries.map { it.string("tag") }.toSet())
 
         val mainActivity = readText(root.resolve("app/src/main/java/com/kinplay/app/MainActivity.kt"))
-        tagEntries.forEach { entry ->
-            val tag = entry.string("tag")
-            val label = entry.string("runtimeLabel")
-            assertTrue("$tag needs a runtime label", label.isNotBlank())
-            assertTrue("Missing runtime label mapping for $tag", mainActivity.contains("\"$tag\" -> \"$label\""))
-        }
+        assertTrue("Tag metadata remains available to internal logic", mainActivity.contains("safetyTags"))
+        assertFalse("Tag labels must not be rendered", mainActivity.contains("displayTagLabel"))
+        assertFalse("Tag summaries must not be rendered", mainActivity.contains("reviewedSafetyTagSummary"))
         val sibling = tagEntries.single { it.string("tag") == "sibling_friendly" }
         assertFalse(
             "Sibling-friendly rationale must not claim every tagged item has participantSuitability",
@@ -327,37 +508,54 @@ class ProtectedSafetyWarningsRegressionTest {
     }
 
     @Test
-    fun retainedWarningsRemainReachableThroughCurrentCardAndDetailRenderingContracts() {
+    fun ownerOverrideRemovesSelectedCopyWhileKeepingActivityAndInternalDataContracts() {
         val pack = ContentPack.fromJson(JSONObject(readText(root.resolve("content/seed/kinplay_seed_v1.json"))))
         fun item(id: String) = pack.items.single { it.id == id }
 
-        // Collapsed cards intentionally expose only the reviewed one-sentence description.
-        assertTrue(item("rainbow_sort_sprint").collapsedCardPreviewLines().single().isNotBlank())
+        // Current content still has ordinary, usable summaries and detail bindings.
+        assertEquals("retired", item("rainbow_sort_sprint").status)
         assertTrue(item("memory_tray_peek").collapsedCardPreviewLines().single().isNotBlank())
-        assertTrue(item("washable_painting_shapes").collapsedCardPreviewLines().single().isNotBlank())
+        assertEquals("retired", item("washable_painting_shapes").status)
         assertTrue(item("sock_skating_rink").collapsedCardPreviewLines().single().isNotBlank())
 
-        // Details retain complete warnings and setup content.
-        assertTrue(item("rainbow_sort_sprint").detailSections().single { it.title == "Materials" }.lines[0].contains("adult-approved toys or blocks"))
-        assertTrue(item("memory_tray_peek").detailSections().single { it.title == "Materials" }.lines[0].contains("safe household objects"))
-        assertTrue(item("washable_painting_shapes").detailSections().single { it.title == "Materials" }.lines[0].contains("washable non-toxic children’s paint"))
-        assertTrue(item("sock_skating_rink").detailSections().single { it.title == "Setup" }.lines[0].startsWith("Use only a smooth, clear floor area"))
+        val currentCopy = pack.items.flatMap { contentItem ->
+            buildList {
+                add(contentItem.summary)
+                addAll(contentItem.materials)
+                addAll(contentItem.setupSteps)
+                addAll(contentItem.playSteps)
+                add(contentItem.parentNotes)
+                addAll(contentItem.variations)
+                contentItem.visualAssets.forEach { add(it.altText) }
+            }
+        }.joinToString(" ")
+        assertFalse("Owner-overridden copy must not remain in current content", OWNER_PROHIBITED_COPY.containsMatchIn(currentCopy))
 
-        val pillow = item("indoor_pillow_marco_polo")
-        assertEquals(listOf(pillow.collapsedCardDescriptionText()), pillow.collapsedCardPreviewLines())
-        assertTrue(pillow.setupSteps.first().contains("Adult supervises and clears a flat room"))
-        assertTrue(item("couch_cushion_quest").detailSections().single { it.title == "Setup" }.lines[0].contains("within easy reach"))
-        assertTrue(item("race_like_an_animal").detailSections().single { it.title == "Steps" }.lines[1].contains("without sprinting"))
-        assertTrue(item("hallway_balance_beam").detailSections().single { it.title == "Variations" }.lines[0].contains("parent approves"))
+        // Classification tags remain machine-readable, but neither the card nor details translates them.
+        assertTrue(item("quiet_color_hunt").safetyTags.isNotEmpty())
+        assertTrue(pack.items.any { "parent_supervision" in it.safetyTags })
+        assertTrue(item("quiet_color_hunt").collapsedCardPreviewLines().single().isNotBlank())
+        assertTrue(item("quiet_color_hunt").detailSections().isNotEmpty())
 
         val main = readText(root.resolve("app/src/main/java/com/kinplay/app/MainActivity.kt"))
         listOf(
             "item.collapsedCardDescriptionAnnotated()",
             "item.detailSections().forEach",
             "Text(item.parentNotes)",
-            "Safety tags: ${'$'}{item.safetyTags.joinToString { it.displayTagLabel() }}",
         ).forEach { binding -> assertTrue("Missing reachable UI binding: $binding", main.contains(binding)) }
+        assertFalse(main.contains("displayTagLabel"))
+        assertFalse(main.contains("reviewedSafetyTagSummary"))
     }
+
+    private val OWNER_PROHIBITED_COPY = Regex(
+        "\\b(?:safe|safety|safely|unsafe|supervis(?:e|ed|ing|ion|ory)|adult[- ]approved|parent[- ]approved|" +
+            "privacy|private|account|accounts|sign[ -]?in|log[ -]?in|profile|profiles)\\b|" +
+            "within easy reach|stay within the boundary|without (?:sprinting|running|leaping|jumping)|" +
+            "stop if (?:anyone )?(?:feels|is) unsure|carefully (?:on|across)|small steps only|" +
+            "slippery or crowded floors|clear area away from|not a contact race|wide walking space|" +
+            "small rabbit hops|quick, small steps|low-impact movement|no hopping or running",
+        RegexOption.IGNORE_CASE,
+    )
 
     private fun allUserVisibleContentPaths(pack: JsonObject): Set<String> = pack.getAsJsonArray("items")
         .flatMap { element ->
@@ -405,6 +603,7 @@ class ProtectedSafetyWarningsRegressionTest {
         if (suffix.startsWith("madLibs.")) return item.getAsJsonObject("madLibs").string(suffix.substringAfter('.'))
         return item.string(suffix)
     }
+
 
     private fun readText(path: Path): String = String(Files.readAllBytes(path))
 

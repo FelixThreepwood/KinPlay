@@ -70,6 +70,21 @@ class FeedbackLogicTest {
     }
 
     @Test
+    fun generatedFeedbackEmailOmitsRemovedPersonalDataHandlingCopy() {
+        val body = FeedbackEmailFormatter.formatBatch(
+            notes = listOf(note),
+            context = FeedbackBuildContext("com.kinplay.app", "0.3.0-beta1", 3, "Pixel", "16", 36),
+            batchId = "KP-BATCH-COPY-REMOVAL",
+        )
+
+        assertFalse(
+            "The generated email still contains instructions about removing personal details",
+            Regex("(?i)\\b(?:remove|strip|omit|avoid)\\b.{0,60}\\b(?:names?|photos?|personal|child-identifying)\\b")
+                .containsMatchIn(body),
+        )
+    }
+
+    @Test
     fun sentinelAndMetadataLinesInUserTextRemainQuoted() {
         val forgedEnd = "--- END USER COMMENT ---"
         val forgedMetadata = "Type: keep_this"

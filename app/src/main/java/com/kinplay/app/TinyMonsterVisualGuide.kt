@@ -20,7 +20,6 @@ import androidx.compose.ui.unit.dp
 
 fun contentVisualResource(resource: String): Int = when (resource) {
     "tiny_monster_visual_guide" -> R.drawable.tiny_monster_visual_guide
-    "brain_movement_activities" -> R.drawable.brain_movement_activities
     "paper_airplane_basic_classic_dart" -> R.drawable.paper_airplane_basic_classic_dart
     "paper_airplane_glide_trickster" -> R.drawable.paper_airplane_glide_trickster
     else -> 0

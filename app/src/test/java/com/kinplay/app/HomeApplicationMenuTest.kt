@@ -3,6 +3,7 @@ package com.kinplay.app
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -17,24 +18,23 @@ class HomeApplicationMenuTest {
     }
 
     @Test
-    fun menuProvidesEveryStagedApplicationDestination() {
-        listOf("Settings", "Account", "About the app", "Safety and privacy").forEach { label ->
+    fun menuProvidesSettingsAndAboutWithoutRemovedDestinations() {
+        listOf("Settings", "About the app").forEach { label ->
             assertTrue("Missing application-menu destination: $label", mainSource.contains(label))
         }
-        assertTrue(mainSource.contains("No account system is included in this MVP"))
-        assertTrue(mainSource.contains("SafetyPrivacy"))
+        listOf("AccountScreen(", "SafetyPrivacyScreen(", "Text(\"Account\")", "Safety and privacy").forEach { removed ->
+            assertFalse("Removed destination remains in production source: $removed", mainSource.contains(removed))
+        }
         assertTrue(mainSource.contains("AboutApp"))
         assertTrue(mainSource.contains("leadingIcon = { Icon(Icons.Default.Settings"))
-        assertTrue(mainSource.contains("leadingIcon = { Icon(Icons.Default.Person"))
         assertTrue(mainSource.contains("leadingIcon = { Icon(Icons.Default.Info"))
-        assertTrue(mainSource.contains("leadingIcon = { Icon(Icons.Default.Lock"))
     }
 
     @Test
-    fun menuDestinationsHaveRealRoutesAndDuplicateSettingsIsIntentional() {
-        assertTrue(mainSource.contains("Routes.Account"))
+    fun onlyCurrentApplicationDestinationsHaveProductionRoutes() {
+        assertFalse(mainSource.contains("Routes.Account"))
         assertTrue(mainSource.contains("Routes.AboutApp"))
-        assertTrue(mainSource.contains("Routes.SafetyPrivacy"))
+        assertFalse(mainSource.contains("Routes.SafetyPrivacy"))
         assertTrue(mainSource.contains("Routes.Settings"))
         assertTrue(mainSource.contains("HOME_SHORTCUTS"))
     }

@@ -1,9 +1,9 @@
-# KinPlay content and safety QA checklist
+# KinPlay content QA checklist
 
 Status: ready for use on every content revision
 Applies to: canonical JSON, runtime JSON, review exports, tests, and packaged APK assets
 
-This checklist prevents schema-valid but incomplete or unsafe content from reaching normal app flows.
+This checklist prevents schema-valid but incomplete or unclear content from reaching normal app flows.
 
 ## A. Intake and provenance
 
@@ -49,7 +49,7 @@ For every active activity:
 - [ ] Setup steps explain the actual setup burden.
 - [ ] Play steps contain the complete procedure.
 - [ ] Any needed clues, patterns, destinations, scenarios, messages, recipes, folds, turns, or examples are supplied in the content.
-- [ ] Parent notes explain supervision or adaptation without negative parent-state framing.
+- [ ] Parent notes offer useful variations or adaptations without asking an adult to monitor play.
 - [ ] Replay variations are actionable and do not require invention.
 - [ ] Participant suitability and timed-session eligibility match the reviewed decision.
 
@@ -59,7 +59,7 @@ For every Mad Libs template:
 - [ ] Placeholder keys match the ordered field list.
 - [ ] The resulting story is readable after substitution.
 - [ ] The read-aloud note is present when the story needs facilitation guidance.
-- [ ] The story contains no identifying or unsafe sample text.
+- [ ] The story contains no personal or misleading sample text.
 
 For prompt libraries:
 
@@ -69,16 +69,16 @@ For prompt libraries:
 - [ ] Prompt order/randomization behavior is tested.
 - [ ] Persisted progress cannot expose a retired or missing prompt.
 
-## D. Safety review
+## D. Content review
 
-- [ ] Parent supervision is stated where movement, small objects, food, outdoor play, or reading support requires it.
-- [ ] Unsafe physical contact is absent.
+- [ ] Review setup, movement, and object use; revise the activity itself instead of adding precaution instructions for players.
+- [ ] Physical contact is not needed to complete play.
 - [ ] Scary, violent, sexual, political, medical, and public-sharing content is absent unless an explicit later product review authorizes a change.
-- [ ] Safety warnings are retained or relocated according to the approved safety decision matrix.
-- [ ] A safety warning is not removed only because a normal card should be compact.
+- [ ] Historical review records remain unchanged when current copy decisions supersede them.
+- [ ] Do not present a historical review entry as a current customer-copy requirement.
 - [ ] The activity remains appropriate for the stated age range.
-- [ ] Materials, furniture, cords, stairs, pets, and fragile objects are addressed where relevant.
-- [ ] The activity can be stopped safely when a family session becomes chaotic.
+- [ ] Activity materials and setup steps match the play instructions.
+- [ ] Players have a clear way to stop or leave an activity when they choose.
 
 ## E. UI and accessibility review
 
@@ -110,7 +110,7 @@ For prompt libraries:
 | Review date |  |
 | Canonical seed commit |  |
 | Schema/parity result |  |
-| Safety result |  |
+| Content review result |  |
 | Focused tests |  |
 | Full tests |  |
 | APK validation |  |

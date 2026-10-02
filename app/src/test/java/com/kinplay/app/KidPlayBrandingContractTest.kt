@@ -15,11 +15,10 @@ class KidPlayBrandingContractTest {
 
         assertTrue(mainSource.contains("Text(\"KidPlay\", fontSize = titleFontSize"))
         assertTrue(mainSource.contains("Text(\"KidPlay\", style = MaterialTheme.typography.headlineLarge"))
-        assertTrue(
-            mainSource.contains(
-                "KidPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.",
-            ),
-        )
+        assertFalse(mainSource.contains("KidPlay is for adults to guide short play sessions with children."))
+        assertFalse(mainSource.contains("Parent-led by design"))
+        assertFalse(mainSource.contains("MVP privacy"))
+        assertFalse(mainSource.contains("Controls remain available during play."))
         assertTrue(mainSource.contains("root.optString(\"title\", \"KidPlay Seed Pack\")"))
 
         assertFalse(mainSource.contains("Text(\"KinPlay\""))

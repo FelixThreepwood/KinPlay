@@ -63,7 +63,6 @@ class Batch57AcceptanceTest {
     @Test
     fun onlyPlayCriticalActivitiesKeepDetailSessionControls() {
         assertTrue(item("timed_drawing_tiny_monster").isTimedSessionEssential())
-        assertTrue(item("rainbow_sort_sprint").isTimedSessionEssential())
         assertTrue(item("cleanup_countdown_game").isTimedSessionEssential())
         assertFalse(item("paper_airplane_weather").isTimedSessionEssential())
         assertFalse(item("race_like_an_animal").isTimedSessionEssential())

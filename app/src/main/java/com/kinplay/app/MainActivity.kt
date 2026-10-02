@@ -174,9 +174,7 @@ private object Routes {
     const val PickGame = "pick_game"
     const val GameType = "game_type/{groupId}"
     const val CalmDown = "calm_down"
-    const val Account = "account"
     const val AboutApp = "about_app"
-    const val SafetyPrivacy = "safety_privacy"
     const val Settings = "settings"
     const val Search = "search"
     const val Favorites = "favorites"
@@ -287,9 +285,7 @@ fun KinPlayApp() {
                     composable(Routes.CalmDown) {
                         ContentListScreen("Calm Down", contentPack.calmDownItems(), favoriteIds, navController, onToggleFavorite = ::toggleFavorite)
                     }
-                    composable(Routes.Account) { AccountScreen(navController) }
                     composable(Routes.AboutApp) { AboutAppScreen(navController) }
-                    composable(Routes.SafetyPrivacy) { SafetyPrivacyScreen(contentPack, navController) }
                     composable(Routes.Settings) {
                         SettingsScreen(
                             settings = appSettings,
@@ -502,27 +498,11 @@ fun HomeScreen(
                                 },
                             )
                             DropdownMenuItem(
-                                leadingIcon = { Icon(Icons.Default.Person, contentDescription = null) },
-                                text = { Text("Account") },
-                                onClick = {
-                                    appMenuExpanded = false
-                                    navController.navigate(Routes.Account)
-                                },
-                            )
-                            DropdownMenuItem(
                                 leadingIcon = { Icon(Icons.Default.Info, contentDescription = null) },
                                 text = { Text("About the app") },
                                 onClick = {
                                     appMenuExpanded = false
                                     navController.navigate(Routes.AboutApp)
-                                },
-                            )
-                            DropdownMenuItem(
-                                leadingIcon = { Icon(Icons.Default.Lock, contentDescription = null) },
-                                text = { Text("Safety and privacy") },
-                                onClick = {
-                                    appMenuExpanded = false
-                                    navController.navigate(Routes.SafetyPrivacy)
                                 },
                             )
                         }
@@ -724,13 +704,13 @@ fun HeroPanel(contentPack: ContentPack) {
         Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
             Text("KidPlay", style = MaterialTheme.typography.headlineLarge, color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold)
             Text(
-                "Professional, offline-first family play for parent-led moments: quick games and activities, calm resets, creative prompts, and read-aloud silliness.",
+                "Try quick games and activities, take calm breaks, explore creative prompts, and enjoy silly read-aloud fun.",
                 color = MaterialTheme.colorScheme.onPrimary,
             )
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 StatPill("${contentPack.gameLibraryItems().size}", "games and activities")
                 StatPill("${QuickCategory.defaultGrid.size}", "quick lists")
-                StatPill("100%", "offline")
+
             }
         }
     }
@@ -823,7 +803,7 @@ fun HomeButton(
 fun SeedCard(contentPack: ContentPack) {
     Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer), modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Text("Local seed pack", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSecondaryContainer)
+            Text("Starter pack", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSecondaryContainer)
             Text(contentPack.title, color = MaterialTheme.colorScheme.onSurface)
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 DetailPill("${contentPack.gameLibraryItems().size} games and activities")
@@ -854,7 +834,7 @@ fun QuickPlayScreen(
     }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
             Text(RANDOM_GAME_LABEL, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-            Text("A short, safe, local-content activity selected without network access.")
+            Text("Get a quick activity from the game collection.")
             if (quickPick == null) {
                 Text("No eligible game or activity found yet.")
             } else {
@@ -923,7 +903,7 @@ fun GameTypeDetailScreen(
         } else {
             Text(group.description, color = MaterialTheme.colorScheme.onSurfaceVariant)
             if (items.isEmpty()) {
-                Text("No matching local content found.")
+                Text("No games or activities match.")
             }
             items.forEach { item ->
                 ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
@@ -945,7 +925,7 @@ fun ContentListScreen(
     Scaffold(topBar = { TopAppBar(title = { Text(title) }, actions = { SearchTopBarAction(navController); BackTopBarAction { navController.popBackStack() } }) }) { innerPadding ->
         PageColumn(Modifier.padding(innerPadding)) {
             if (items.isEmpty()) {
-                Text("No matching local content found.")
+                Text("No games or activities match.")
             }
             items.forEach { item ->
                 ContentCard(item, favoriteIds, navController, onToggleFavorite = { onToggleFavorite(item.id) })
@@ -984,7 +964,7 @@ fun SearchScreen(
             if (query.isBlank()) {
                 Text("Search names, descriptions, and instructions.", color = MaterialTheme.colorScheme.onSurfaceVariant)
             } else if (results.isEmpty()) {
-                Text("No matching local content found.")
+                Text("No games or activities match.")
             } else {
                 SectionTitle("Search results", "${results.size} matching activities")
                 results.forEach { item ->
@@ -1717,48 +1697,19 @@ fun MadLibPlayPanel(story: KinPlayItem, enabled: Boolean = true) {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun AccountScreen(navController: NavController) {
-    DestinationScreen(title = "Account", navController = navController) {
-        Text("No account system is included in this MVP.", fontWeight = FontWeight.Bold)
-        Text("Settings and feedback stay on this device. Account features are staged for a future product decision.")
-    }
-}
-
 @Composable
 fun AboutAppScreen(navController: NavController) {
     DestinationScreen(title = "About the app", navController = navController) {
         Text("KidPlay", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-        Text("Offline-first family play for parent-led moments.")
+        Text("Games and activities for families to play together.")
         Text("Version ${BuildConfig.VERSION_NAME}")
         Text("Release notes", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-        KIDPLAY_RELEASE_CHANGELOG.forEach { release ->
+        KIDPLAY_RELEASE_CHANGELOG.take(1).forEach { release ->
             Text("Version ${release.version} · ${release.releaseDate}", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             release.changes.forEach { change ->
                 Text("${change.itemId}: ${change.summary}")
             }
         }
-    }
-}
-
-@Composable
-fun SafetyPrivacyScreen(contentPack: ContentPack, navController: NavController) {
-    DestinationScreen(title = "Safety and privacy", navController = navController) {
-        Text("Parent-led by design", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-        Text("KidPlay is for adults to guide short play sessions with children. Review the activity, clear the space, and supervise movement or materials.")
-            Text("MVP privacy", fontWeight = FontWeight.Bold)
-            Text("No accounts, analytics, ads, purchases, camera, microphone, contacts, location, or other sensitive Android permissions are requested.")
-            Text("Play controls", fontWeight = FontWeight.Bold)
-            Text("Controls remain available during play. Adults should supervise activities and use Android system navigation when needed.")
-            Text("Content source", fontWeight = FontWeight.Bold)
-            Text("The app ships seed content as a local JSON asset and does not need network access for the MVP flow.")
-            Text("Reviewed content safety", fontWeight = FontWeight.Bold)
-            contentPack.activeItems()
-                .map(::reviewedSafetyTagSummary)
-                .distinct()
-                .take(3)
-                .forEach { summary -> Text(summary) }
     }
 }
 
@@ -2136,28 +2087,8 @@ private fun NavController.openItem(item: KinPlayItem) {
     navigate(itemDestination(item))
 }
 
-fun String.displayTagLabel(): String = when (this) {
-    "parent_supervision" -> "Parent supervision"
-    "movement" -> "Movement"
-    "quiet" -> "Quiet"
-    "no_materials" -> "No materials"
-    "small_objects" -> "Small objects"
-    "food_optional" -> "Food optional"
-    "outdoor_optional" -> "Outdoor optional"
-    "reading_help" -> "Reading help"
-    "sibling_friendly" -> "Sibling friendly"
-    "calming" -> "Calming"
-    else -> split('_')
-        .filter { it.isNotBlank() }
-        .joinToString(" ") { it.lowercase() }
-        .replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
-}
-
-fun reviewedSafetyTagSummary(item: KinPlayItem): String =
-    "Safety tags: ${item.safetyTags.joinToString { it.displayTagLabel() }}"
-
 fun KinPlayItem.detailSections(): List<DetailSection> = buildList {
-    add(DetailSection("Players", listOf(participantFitLabel() ?: "Parent-led play")))
+    add(DetailSection("Players", listOf(participantFitLabel() ?: "Family play")))
     if (materials.isNotEmpty()) add(DetailSection("Materials", listOf(materials.joinToString())))
     if (displaySetupSteps().isNotEmpty()) add(DetailSection("Setup", displaySetupSteps()))
     if (id == "quiet_color_hunt") {

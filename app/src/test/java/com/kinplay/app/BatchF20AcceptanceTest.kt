@@ -22,12 +22,16 @@ class BatchF20AcceptanceTest {
     ).asJsonObject
 
     @Test
-    fun releaseTargetAndVersionedDatedChangelogAreReady() {
+    fun configuredVersionMatchesTheVersionedDatedChangelog() {
         val build = readText(root.resolve("app/build.gradle.kts"))
-        assertTrue(build.contains("val appVersionName = \"0.7.4\""))
-        assertTrue(build.contains("versionCode = 17"))
-        assertEquals("0.7.4", KIDPLAY_RELEASE_CHANGELOG.first().version)
-        assertEquals("2026-09-12", KIDPLAY_RELEASE_CHANGELOG.first().releaseDate)
+        val versionName = Regex("val appVersionName = \\\"([^\\\"]+)\\\"")
+            .find(build)?.groupValues?.get(1)
+        val versionCode = Regex("versionCode = (\\d+)")
+            .find(build)?.groupValues?.get(1)?.toInt()
+        assertTrue("A configured app version name is required", !versionName.isNullOrBlank())
+        assertTrue("A positive version code is required", (versionCode ?: 0) > 0)
+        assertEquals(versionName, KIDPLAY_RELEASE_CHANGELOG.first().version)
+        assertEquals("2026-09-25", KIDPLAY_RELEASE_CHANGELOG.first().releaseDate)
         assertTrue(KIDPLAY_RELEASE_CHANGELOG.all { it.releaseDate.matches(Regex("\\d{4}-\\d{2}-\\d{2}")) })
         KIDPLAY_RELEASE_CHANGELOG.flatMap { it.changes }.forEach { change ->
             val wordCount = change.summary.trim().split(Regex("\\s+")).size
@@ -104,16 +108,16 @@ class BatchF20AcceptanceTest {
         val safari = item("backyard_micro_safari")
         assertEquals(3, safari.get("durationMinutes").asInt)
         val safariText = safari.toString()
-        assertTrue(safariText.contains("three-minute", ignoreCase = true))
+        assertTrue(safariText.contains("three minutes", ignoreCase = true))
         assertTrue(safariText.contains("explain", ignoreCase = true))
-        assertTrue(safariText.contains("approved", ignoreCase = true))
-        assertTrue(safariText.contains("undisturbed", ignoreCase = true) || safariText.contains("without touching", ignoreCase = true))
+        assertFalse(safariText.contains("undisturbed", ignoreCase = true))
+        assertFalse(safariText.contains("without touching", ignoreCase = true))
         assertEquals(ActivityDuration.THREE_MINUTES, sessionDefaultDuration(KinPlayItem.fromJson(JSONObject(safari.toString()))))
 
         val rainbow = item("rainbow_sort_sprint")
+        assertEquals("retired", rainbow.string("status"))
         assertFalse(rainbow.string("summary").contains("safe", ignoreCase = true))
         assertFalse(rainbow.stringList("materials").joinToString().contains("safe", ignoreCase = true))
-        assertTrue(rainbow.string("parentNotes").contains("Avoid small items", ignoreCase = true))
     }
 
     @Test

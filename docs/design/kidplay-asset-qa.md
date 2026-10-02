@@ -5,7 +5,7 @@ Scope: original illustrations, instructional images, fox states, icons, audio-li
 
 ## 1. Asset policy
 
-KidPlay uses visual assets only when they improve comprehension, orientation, or state recognition. Activity cards remain text-first. Assets must not become a requirement for understanding the rule, safety instruction, result, or next action.
+KidPlay uses visual assets only when they improve comprehension, orientation, or state recognition. Activity cards remain text-first. Assets must not become a requirement for understanding the rule, result, or next action.
 
 Google Gemini Nano Banana is the exclusive image-generation path for new KidPlay visuals. Do not use a different image generator, vector construction workflow, programmatic geometry, copied reference artwork, or a reference product’s character or screen composition.
 
@@ -13,12 +13,12 @@ The untouched generated master is preserved. Do not blur, add borders, add paddi
 
 No asset may introduce:
 
-- a child identity, face, voice, name, or profile cue;
+- a personal cue such as a face, voice, or name;
 - a copied character, costume, silhouette, logo, scene, category illustration, status symbol, or distinctive composition;
 - an unrequested person, animal, prop, hand, limb, or duplicate subject;
 - essential text that is not also present as reviewed UI text;
-- a safety instruction that is absent from the accessible text path;
-- a network, account, purchase, ad, social, or telemetry dependency.
+- an instruction that is absent from the accessible text path;
+- a network, purchase, ad, social, or telemetry dependency that the shipped UI would display.
 
 ## 2. Required asset record
 
@@ -65,7 +65,7 @@ Do not prompt for a reference product’s exact composition, character, category
 - [ ] The subject, age cues, clothing cues, and intended expression are correct for the approved asset.
 - [ ] No extra person, face, limb, hand, animal, prop, logo, or watermark appears.
 - [ ] The asset leaves the required space for UI controls and captions.
-- [ ] The visual does not cover the task target, Back, safety, completion, or primary action.
+- [ ] The visual does not cover the task target, Back, Stop, completion, or primary action.
 - [ ] The composition is original and does not reproduce a reference screen or illustration.
 
 ### Edges and file integrity

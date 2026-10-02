@@ -295,7 +295,7 @@ fun FeedbackOverlay(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 Text("Beta feedback", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-                Text("Saved on this device first. Your email app opens only when you choose to send.")
+                Text("Your email app opens only when you choose to send.")
                 Text(
                     "Unsent: ${counts.unsent}  •  Created this app revision: ${counts.sinceRevision}",
                     fontWeight = FontWeight.Bold,
@@ -366,16 +366,6 @@ fun FeedbackOverlay(
                         }
                     }
                 }
-                Text(
-                    "Privacy: do not include child names, photos, audio, exact birthdates, or private family details.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.error,
-                )
-                Text(
-                    "Privacy: attach only an approved image, PDF, or plain-text file you reviewed. Maximum 3 files, 10 MB each; no device-wide logs or unrelated media.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.error,
-                )
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     Button(
                         onClick = {

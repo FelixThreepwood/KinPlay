@@ -102,8 +102,14 @@ class ContentRevisionInvariantTest {
     }
 
     @Test
-    fun couchCushionQuestSuppliesReadyMadeObjectsAndConcreteClues() {
-        val item = activeItem("couch_cushion_quest")
+    fun couchCushionQuestIsRetiredFromActiveContent() {
+        assertTrue(items.any { it.string("id") == "couch_cushion_quest" && it.string("status") == "retired" })
+        assertFalse(activeItems.any { it.string("id") == "couch_cushion_quest" })
+    }
+
+    @Test
+    fun retiredCouchCushionQuestKeepsReadyMadeObjectsAndConcreteClues() {
+        val item = items.single { it.string("id") == "couch_cushion_quest" }
         val setupText = item.strings("setupSteps").joinToString(" ")
         val playText = item.strings("playSteps").joinToString(" ")
 
@@ -124,7 +130,7 @@ class ContentRevisionInvariantTest {
         val playText = item.strings("playSteps").joinToString(" ")
 
         assertTrue(setupText.contains("X (start) → couch → doorway → table (treasure)"))
-        listOf("four tiny steps", "turn right", "three tiny steps", "turn left", "golden banana", "sparkling seashell", "tiny dragon egg").forEach { routeText ->
+        listOf("four paces", "turn right", "three paces", "turn left", "golden banana", "sparkling seashell", "tiny dragon egg").forEach { routeText ->
             assertTrue("Pirate Map Steps must supply route/treasure text containing $routeText", playText.contains(routeText, ignoreCase = true))
         }
         assertFalse("Pirate Map Steps must not ask the parent to invent the treasure", playText.contains("invent", ignoreCase = true))
@@ -144,29 +150,36 @@ class ContentRevisionInvariantTest {
     }
 
     @Test
-    fun kpf0004RaceLikeAnAnimalIsActiveCompleteAndSafelyCategorized() {
+    fun kpf0004RaceLikeAnAnimalRemainsCompleteAndCategorized() {
         val item = activeItem("race_like_an_animal")
         val text = item.allText()
         assertTrue(item.strings("quickCategories").contains("get_energy_out"))
         assertTrue(item.strings("quickCategories").contains("outdoor_adventures"))
-        listOf("kangaroo", "cheetah", "rabbit", "frog", "clear", "walk", "low-impact").forEach {
+        listOf("kangaroo", "cheetah", "rabbit", "frog", "takes a turn", "course").forEach {
             assertTrue("Race Like an Animal must mention $it", text.contains(it, ignoreCase = true))
         }
     }
 
     @Test
-    fun kpf0005PillowMarcoPoloUsesOnlyTheSafetyRedesignedVariant() {
+    fun kpf0005PillowMarcoPoloHasReadyToUseCallAndResponseInstructions() {
         val item = activeItem("indoor_pillow_marco_polo")
         val text = item.allText()
-        assertTrue(item.string("title").contains("Eyes-Open"))
-        assertTrue(item.string("summary").contains("safe", ignoreCase = true))
-        listOf(
-            "eyes remain open", "walk only", "stationary", "adult supervises", "stairs", "furniture edges",
-            "cords", "pets", "fragile", "no throwing", "face covering", "piling", "jumping", "stop if",
-            "chaotic",
-        ).forEach { assertTrue("Safe Marco Polo must mention $it", text.contains(it, ignoreCase = true)) }
+        assertTrue(item.string("title").contains("Pillow Marco Polo"))
+        assertTrue(item.string("summary").contains("call-and-response", ignoreCase = true))
+        listOf("Marco", "Polo", "caller", "pillow").forEach {
+            assertTrue("Pillow Marco Polo must mention $it", text.contains(it, ignoreCase = true))
+        }
         assertTrue(item.strings("quickCategories").contains("get_energy_out"))
         assertTrue(item.strings("quickCategories").contains("quality_time"))
+    }
+
+    @Test
+    fun pillowMarcoPoloChangesCallerOnlyOnceAfterThreeRounds() {
+        val steps = activeItem("indoor_pillow_marco_polo").strings("playSteps")
+
+        assertEquals(3, steps.size)
+        assertTrue(steps.last().contains("three rounds", ignoreCase = true))
+        assertTrue(steps.last().contains("caller", ignoreCase = true))
     }
 
     @Test
@@ -179,16 +192,11 @@ class ContentRevisionInvariantTest {
     }
 
     @Test
-    fun kpf0009DrawingColoringAndPaintingAreActiveSafeActivities() {
+    fun kpf0009DrawingActivitiesRemainReadyToUse() {
         assertNotNull(activeItem("timed_drawing_tiny_monster"))
-        listOf("washable_painting_shapes").forEach { id ->
-            val item = activeItem(id)
-            assertEquals("activity", item.string("type"))
-            val text = item.allText()
-            listOf("washable", "non-toxic", "surface", "supervis").forEach {
-                assertTrue("$id must mention $it", text.contains(it, ignoreCase = true))
-            }
-        }
+        val retiredPainting = items.single { it.string("id") == "washable_painting_shapes" }
+        assertEquals("retired", retiredPainting.string("status"))
+        assertFalse(activeItems.any { it.string("id") == "washable_painting_shapes" })
     }
 
     @Test
@@ -225,12 +233,11 @@ class ContentRevisionInvariantTest {
             "pattern 2: clap-pause-clap-clap",
             "pattern 3: clap-clap-clap-pause-clap",
         )
-        assertSupplies(
-            id = "chair_train_station",
-            "stop 1: teddy bear town",
-            "stop 2: dinosaur park",
-            "stop 3: moon station",
-        )
+        val retiredTrain = items.single { it.string("id") == "chair_train_station" }
+        assertEquals("retired", retiredTrain.string("status"))
+        listOf("stop 1: teddy bear town", "stop 2: dinosaur park", "stop 3: moon station").forEach { expected ->
+            assertTrue("chair_train_station must keep $expected", retiredTrain.allText().contains(expected, ignoreCase = true))
+        }
         assertSupplies(
             id = "stuffed_animal_rescue",
             "rescue 1: bear",
@@ -259,7 +266,6 @@ class ContentRevisionInvariantTest {
         listOf(
             "paper_airplane_weather",
             "copycat_clap_code",
-            "chair_train_station",
             "stuffed_animal_rescue",
             "blanket_fort_post_office",
             "family_recipe_pretend",
